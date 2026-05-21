@@ -101,12 +101,18 @@ jobs:
           BIZROUTER_API_KEY: ${{ secrets.BIZROUTER_API_KEY }}
         run: node scripts/extract-eligibility.mjs --limit 9999
 
-      - name: Phase 6 — 큰 자산을 Vercel Blob 으로 (cover photos + vectors)
+      - name: Phase 6a — cover 사진 Blob 업로드
         env:
           BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
-        run: |
-          node scripts/upload-covers-to-blob.mjs
-          node scripts/upload-vectors-to-blob.mjs
+        run: node scripts/upload-covers-to-blob.mjs
+
+      # vectors.bin (550MB+) 가 Vercel Blob 의 timeout/limit 에 자주 실패.
+      # 실패해도 Phase 7/commit 계속 — 옛 blob URL 사용 (기능 영향 적음, 신규 매물 검색만 일부 제한).
+      - name: Phase 6b — vectors.bin Blob 업로드 (실패 허용)
+        continue-on-error: true
+        env:
+          BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
+        run: node scripts/upload-vectors-to-blob.mjs
 
       - name: Phase 7 — 최종 sync (LH 공공데이터 API + 좌표 보강)
         env:
