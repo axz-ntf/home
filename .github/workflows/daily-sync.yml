@@ -27,33 +27,28 @@ jobs:
 
       - run: npm ci
 
-      # gitignored 폴더 → runs 간 GitHub cache 로 누적.
-      # 캐시 없으면 매 run 마다 전부 다시 파싱/임베딩 (Phase 3 ~2h, Phase 4 ~30m+).
-      # 캐시 hit 시 신규 매물만 처리 (각 수분).
+      # actions/cache 의 post-step save 는 job 성공 시에만 실행 → cancelled/timeout
+      # 시 영원히 cache 안 됨. 해결: restore/save 분리 + Phase 끝나자마자 즉시 save.
       - name: Restore notice-texts cache
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         with:
           path: lib/notice-texts
           key: notice-texts-v1-${{ github.run_id }}
-          restore-keys: |
-            notice-texts-v1-
+          restore-keys: notice-texts-v1-
 
       - name: Restore notice-embeddings cache
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         with:
           path: lib/notice-embeddings
           key: notice-embeddings-v1-${{ github.run_id }}
-          restore-keys: |
-            notice-embeddings-v1-
+          restore-keys: notice-embeddings-v1-
 
-      # lh-complexes.json — 66MB, sync-lh-api 가 캐시 있으면 그대로 사용 / 없으면 시도구별 풀 fetch.
       - name: Restore lh-complexes cache
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         with:
           path: lib/lh-complexes.json
           key: lh-complexes-v1-${{ github.run_id }}
-          restore-keys: |
-            lh-complexes-v1-
+          restore-keys: lh-complexes-v1-
 
       - name: Phase 1 — LH 공고 list sync (data.go.kr)
         env:
@@ -74,6 +69,15 @@ jobs:
           node scripts/enrich-notice-text.mjs --limit 9999 --active-only
           node scripts/enrich-notice-text.mjs --limit 9999 --active-only --from-api
 
+      # 캐시 즉시 저장 — Phase 3 가 1시간 37분 걸리는 가장 비싼 단계.
+      # 이후 step 이 timeout/실패해도 이 cache 는 보존 → 다음 run 부터 hit.
+      - name: Save notice-texts cache (즉시)
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: lib/notice-texts
+          key: notice-texts-v1-${{ github.run_id }}
+
       - name: Phase 3.5 — markdown 표 → supply / 임대조건 정형 추출 (regex)
         # PDF→md 의 모집세대수·보증금·월세 표를 결정론적으로 파싱 → listings-api 정정.
         # LH API 부정확 값 (supplyUnits=1 등) / null 임대조건 보강. 데이터 정합성 최우선.
@@ -84,6 +88,13 @@ jobs:
           SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
         run: |
           node scripts/embed-notice-texts.mjs --limit 9999
+
+      - name: Save notice-embeddings cache (즉시)
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: lib/notice-embeddings
+          key: notice-embeddings-v1-${{ github.run_id }}
 
       - name: Phase 5 — 자격 정보 구조화 추출 (Claude)
         env:
@@ -102,6 +113,13 @@ jobs:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
           VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
         run: node scripts/sync-lh-api.mjs
+
+      - name: Save lh-complexes cache (즉시)
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: lib/lh-complexes.json
+          key: lh-complexes-v1-${{ github.run_id }}
 
       - name: Commit & push data updates
         run: |
