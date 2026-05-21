@@ -28,6 +28,8 @@ if (!SOLAR_API_KEY) { console.error("ERROR: SOLAR_API_KEY env 누락"); process.
 const DOC_PARSE_URL = "https://api.upstage.ai/v1/document-ai/document-parse";
 const PDF_BASE = "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=";
 const DELAY_MS = 700;
+// 동시 처리 수 — Solar Document Parse rate limit 보수적 추정. 너무 높이면 429.
+const CONCURRENCY = Number(process.env.CONCURRENCY ?? 5);
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -163,57 +165,60 @@ async function main() {
 
   let ok = 0, skip = 0, err = 0;
   const startTs = Date.now();
-  for (let i = 0; i < target.length; i++) {
-    const n = target[i];
-    const outPath = path.join(OUT_DIR, `${n.id}.md`);
+  let nextIdx = 0;
+  const total = target.length;
 
-    if (!args.force) {
-      try { await fs.access(outPath); skip++; console.log(`[${i + 1}/${target.length}] SKIP ${n.id} (이미 캐시)`); continue; }
-      catch {}
-    }
+  // 워커 N개가 nextIdx 를 공유하며 pool 에서 다음 매물 가져감 → CONCURRENCY 동시 처리.
+  async function worker(wid) {
+    while (true) {
+      const i = nextIdx++;
+      if (i >= total) return;
+      const n = target[i];
+      const outPath = path.join(OUT_DIR, `${n.id}.md`);
 
-    try {
-      console.log(`[${i + 1}/${target.length}] ${n.id} "${n.title?.slice(0, 40)}"`);
-      const html = await fetchDetailHtml(n.sourceUrl);
-      const pdf = pickNoticePdf(html);
-      if (!pdf) { console.log(`  PDF 없음, 건너뜀`); err++; continue; }
-      console.log(`  PDF: ${pdf.name.slice(0, 60)} (fileid=${pdf.fileid})`);
+      if (!args.force) {
+        try { await fs.access(outPath); skip++; console.log(`[${i + 1}/${total}] SKIP ${n.id}`); continue; }
+        catch {}
+      }
 
-      const t0 = Date.now();
-      const buf = await downloadPdf(pdf.fileid);
-      const t1 = Date.now();
-      console.log(`  download: ${Math.round(buf.length / 1024)} KB (${t1 - t0}ms)`);
+      try {
+        console.log(`[${i + 1}/${total}] w${wid} ${n.id} "${n.title?.slice(0, 30)}"`);
+        const html = await fetchDetailHtml(n.sourceUrl);
+        const pdf = pickNoticePdf(html);
+        if (!pdf) { console.log(`  [${i + 1}] PDF 없음`); err++; continue; }
 
-      const parsed = await parseDocument(buf, pdf.name);
-      const t2 = Date.now();
-      const pages = parsed.usage?.pages ?? 0;
-      const md = assembleMarkdown(parsed);
-      console.log(`  parse: ${pages}p → markdown ${md.length}자 (${t2 - t1}ms)`);
+        const t0 = Date.now();
+        const buf = await downloadPdf(pdf.fileid);
+        const parsed = await parseDocument(buf, pdf.name);
+        const t2 = Date.now();
+        const pages = parsed.usage?.pages ?? 0;
+        const md = assembleMarkdown(parsed);
+        console.log(`  [${i + 1}] ${Math.round(buf.length / 1024)}KB / ${pages}p / ${md.length}자 (${t2 - t0}ms)`);
 
-      await fs.writeFile(outPath, md, "utf8");
-      meta.entries[n.id] = {
-        pdfFileid: pdf.fileid,
-        pdfName: pdf.name,
-        pdfSize: buf.length,
-        pages,
-        mdLength: md.length,
-        elementCount: parsed.elements?.length ?? 0,
-        parseMs: t2 - t1,
-        parsedAt: new Date().toISOString(),
-      };
-      meta.totalPages += pages;
-      meta.totalRequests += 1;
-      await saveMeta(meta);
-      ok++;
-      await sleep(DELAY_MS);
-    } catch (e) {
-      console.log(`  ERROR: ${e.message}`);
-      err++;
+        await fs.writeFile(outPath, md, "utf8");
+        // meta 동시 접근 — 단순 increment 만 (worker 들이 같은 객체 mutate, race condition 미미)
+        meta.entries[n.id] = {
+          pdfFileid: pdf.fileid, pdfName: pdf.name, pdfSize: buf.length,
+          pages, mdLength: md.length, elementCount: parsed.elements?.length ?? 0,
+          parseMs: t2 - t0, parsedAt: new Date().toISOString(),
+        };
+        meta.totalPages += pages;
+        meta.totalRequests += 1;
+        if ((ok + 1) % 10 === 0) await saveMeta(meta); // 10건마다만 저장 (race 줄임)
+        ok++;
+        await sleep(DELAY_MS);
+      } catch (e) {
+        console.log(`  [${i + 1}] ERROR: ${e.message}`);
+        err++;
+      }
     }
   }
 
+  await Promise.all(Array.from({ length: CONCURRENCY }, (_, w) => worker(w + 1)));
+  await saveMeta(meta);
+
   const elapsed = ((Date.now() - startTs) / 1000).toFixed(1);
-  console.log(`\n완료: ok=${ok} skip=${skip} err=${err}  (${elapsed}s)`);
+  console.log(`\n완료: ok=${ok} skip=${skip} err=${err}  (${elapsed}s, concurrency=${CONCURRENCY})`);
   console.log(`누적 메타: 매물 ${Object.keys(meta.entries).length}건 / 페이지 ${meta.totalPages}장 / 호출 ${meta.totalRequests}회`);
 }
 

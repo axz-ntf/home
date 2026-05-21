@@ -176,32 +176,36 @@ async function main() {
   let ok = 0, err = 0;
   let totalIn = 0, totalOut = 0;
   const t0 = Date.now();
+  // 병렬 처리 — Claude (BizRouter) rate limit 고려해 보수적으로. 환경변수로 조정 가능.
+  const CONCURRENCY = Number(process.env.CONCURRENCY ?? 5);
 
-  for (let i = 0; i < files.length; i++) {
-    const id = files[i];
-    const tStart = Date.now();
-    try {
-      const { object, usage } = await extractOne(id);
-      const tiers = object.tiers?.length ?? 0;
-      console.log(
-        `[${i + 1}/${files.length}] ${id}  tiers=${tiers}  priority=${object.priority?.length ?? 0}  (${Date.now() - tStart}ms)`,
-      );
-      // 첫 매물엔 한 매물 샘플 출력
-      if (i === 0) {
-        console.log("   →", JSON.stringify(object).slice(0, 500), "...");
+  let nextIdx = 0;
+  const total = files.length;
+  async function worker(wid) {
+    while (true) {
+      const i = nextIdx++;
+      if (i >= total) return;
+      const id = files[i];
+      const tStart = Date.now();
+      try {
+        const { object, usage } = await extractOne(id);
+        const tiers = object.tiers?.length ?? 0;
+        console.log(`[${i + 1}/${total}] w${wid} ${id}  tiers=${tiers}  priority=${object.priority?.length ?? 0}  (${Date.now() - tStart}ms)`);
+        await fs.writeFile(path.join(OUT_DIR, `${id}.json`), JSON.stringify(object, null, 2) + "\n", "utf8");
+        totalIn += usage?.inputTokens ?? 0;
+        totalOut += usage?.outputTokens ?? 0;
+        ok++;
+      } catch (e) {
+        console.log(`[${i + 1}/${total}] w${wid} ${id}  ERROR: ${e.message?.slice(0, 200)}`);
+        err++;
       }
-      await fs.writeFile(path.join(OUT_DIR, `${id}.json`), JSON.stringify(object, null, 2) + "\n", "utf8");
-      totalIn += usage?.inputTokens ?? 0;
-      totalOut += usage?.outputTokens ?? 0;
-      ok++;
-    } catch (e) {
-      console.log(`[${i + 1}/${files.length}] ${id}  ERROR: ${e.message?.slice(0, 200)}`);
-      err++;
     }
   }
 
+  await Promise.all(Array.from({ length: CONCURRENCY }, (_, w) => worker(w + 1)));
+
   const elapsed = ((Date.now() - t0) / 1000).toFixed(1);
-  console.log(`\n완료: ok=${ok} err=${err} (${elapsed}s)`);
+  console.log(`\n완료: ok=${ok} err=${err} (${elapsed}s, concurrency=${CONCURRENCY})`);
   console.log(`토큰: in=${totalIn.toLocaleString()} out=${totalOut.toLocaleString()}`);
 }
 
