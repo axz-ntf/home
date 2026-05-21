@@ -1,62 +1,43 @@
 {
   "id": "lh-rental-2015122300019978",
-  "supplyTotal": 1045,
+  "supplyTotal": 685,
   "integrated": false,
   "units": [
     {
-      "type": "26",
-      "area": 26.83,
-      "supply": 50,
-      "deposit": 8623000,
-      "rent": 161140
-    },
-    {
-      "type": "36",
-      "area": 36.66,
-      "supply": 80
-    },
-    {
-      "type": "39",
-      "area": 39.86,
-      "supply": 50
-    },
-    {
-      "type": "46",
-      "area": 46.21,
-      "supply": 40
-    },
-    {
-      "type": "51",
-      "area": 51.3,
-      "supply": 40,
-      "deposit": 31321000,
-      "rent": 183830
-    },
-    {
-      "type": "59",
-      "area": 59.48,
-      "supply": 40
-    },
-    {
-      "type": "59E",
+      "type": "부산정관1",
       "area": 59.57,
       "supply": 100,
       "deposit": 40252000,
       "rent": 240080
     },
     {
-      "type": "24A",
-      "area": 24.72,
-      "supply": 70,
-      "deposit": 7943000,
-      "rent": 153190
+      "type": "부산정관2",
+      "area": 51.93,
+      "supply": 100,
+      "deposit": 31321000,
+      "rent": 183830
     },
     {
-      "type": "24B",
-      "area": 24.79,
-      "supply": 30,
-      "deposit": 7943000,
-      "rent": 153190
+      "type": "부산정관7",
+      "area": 26.83,
+      "supply": 50,
+      "deposit": 8623000,
+      "rent": 161140
+    },
+    {
+      "type": "부산송정1",
+      "area": 46.96,
+      "supply": 40
+    },
+    {
+      "type": "부산송정2",
+      "area": 59.47,
+      "supply": 25
+    },
+    {
+      "type": "부산안락4",
+      "area": 51.93,
+      "supply": 10
     }
   ]
 }

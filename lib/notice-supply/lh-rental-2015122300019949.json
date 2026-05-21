@@ -1,10 +1,12 @@
 {
   "id": "lh-rental-2015122300019949",
-  "supplyTotal": null,
-  "integrated": false,
+  "supplyTotal": 70,
+  "integrated": true,
   "units": [
     {
-      "type": "29",
+      "type": "나주빛가람6 (광주전남혁신6)",
+      "area": 29.95,
+      "supply": 70,
       "deposit": 9259000,
       "rent": 134630
     }

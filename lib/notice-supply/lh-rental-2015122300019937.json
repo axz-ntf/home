@@ -4,60 +4,32 @@
   "integrated": false,
   "units": [
     {
-      "type": "29",
-      "area": 29.91,
-      "supply": 18,
-      "deposit": 8555000,
-      "rent": 171320
-    },
-    {
-      "type": "33",
-      "area": 33.4,
-      "supply": 12,
-      "deposit": 9649000,
-      "rent": 140140
-    },
-    {
-      "type": "36",
-      "area": 36.53,
-      "supply": 55,
-      "deposit": 10449000,
-      "rent": 220770
-    },
-    {
-      "type": "39",
-      "area": 39.48,
-      "supply": 20,
-      "deposit": 15561000,
-      "rent": 129690
-    },
-    {
-      "type": "46",
-      "area": 46.93,
-      "supply": 10,
-      "deposit": 23083000,
-      "rent": 290910
-    },
-    {
-      "type": "49",
-      "area": 49.86,
-      "supply": 54,
-      "deposit": 25043000,
-      "rent": 241240
-    },
-    {
-      "type": "51",
-      "area": 51.86,
+      "type": "안동송현3",
+      "area": 46.9,
       "supply": 30,
-      "deposit": 21111000,
-      "rent": 169590
+      "deposit": 20750000,
+      "rent": 168580
     },
     {
-      "type": "59",
+      "type": "안동옥동6",
+      "area": 59.57,
+      "supply": 10,
+      "deposit": 24822000,
+      "rent": 198560
+    },
+    {
+      "type": "상주무양7",
       "area": 59.97,
       "supply": 4,
       "deposit": 30213000,
       "rent": 338890
+    },
+    {
+      "type": "상주함창1",
+      "area": 46.93,
+      "supply": 10,
+      "deposit": 23083000,
+      "rent": 290910
     }
   ]
 }

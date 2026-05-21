@@ -1,42 +1,24 @@
 {
   "id": "lh-rental-2015122300019980",
-  "supplyTotal": 49,
-  "integrated": false,
+  "supplyTotal": 20,
+  "integrated": true,
   "units": [
     {
-      "type": "27",
-      "area": 27.38,
-      "supply": 7,
-      "deposit": 7118000,
-      "rent": 136900
-    },
-    {
-      "type": "29",
-      "area": 29.44,
-      "supply": 10,
-      "deposit": 7226000,
-      "rent": 138970
-    },
-    {
-      "type": "36",
+      "type": "장성영천2",
       "area": 36.16,
       "supply": 20,
       "deposit": 8765000,
       "rent": 71450
     },
     {
-      "type": "37",
-      "area": 37.43,
-      "supply": 7,
-      "deposit": 13171000,
-      "rent": 186060
-    },
-    {
-      "type": "46",
-      "area": 46.61,
-      "supply": 5,
+      "type": "장성삼계",
       "deposit": 21124000,
       "rent": 233480
+    },
+    {
+      "type": "장성수산",
+      "deposit": 13171000,
+      "rent": 186060
     }
   ]
 }

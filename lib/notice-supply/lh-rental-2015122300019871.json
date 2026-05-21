@@ -4,54 +4,59 @@
   "integrated": true,
   "units": [
     {
-      "type": "36",
-      "area": 36.42,
-      "supply": 20,
-      "deposit": 16242000,
-      "rent": 225660
+      "type": "오산세교3 (A-2BL)",
+      "area": 46.99,
+      "supply": 40,
+      "deposit": 32273000,
+      "rent": 219240
     },
     {
-      "type": "39",
-      "area": 39.46,
+      "type": "오산세교4 (A-5BL)",
+      "area": 51.99,
       "supply": 10,
-      "deposit": 1789700025420000,
-      "rent": 181560
+      "deposit": 40583000,
+      "rent": 276430
     },
     {
-      "type": "41",
+      "type": "오산세교7 (A-6BL)",
+      "area": 41.64,
+      "supply": 30,
+      "deposit": 25761000,
+      "rent": 175820
+    },
+    {
+      "type": "오산세교8 (A-3BL)",
+      "area": 51.99,
+      "supply": 30,
+      "deposit": 40157000,
+      "rent": 273550
+    },
+    {
+      "type": "오산세교10 (A-4BL)",
+      "area": 51.99,
+      "supply": 40,
+      "deposit": 40157000,
+      "rent": 273550
+    },
+    {
+      "type": "오산세교16 (A-7BL)",
       "area": 41.64,
       "supply": 40,
       "deposit": 28147000,
       "rent": 243030
     },
     {
-      "type": "46",
-      "area": 46.9,
-      "supply": 90,
-      "deposit": 25601000,
-      "rent": 185170
-    },
-    {
-      "type": "51",
-      "area": 51.93,
-      "supply": 20,
-      "deposit": 31867000,
-      "rent": 231490
-    },
-    {
-      "type": "59",
+      "type": "오산누읍1",
       "area": 59.78,
-      "supply": 20,
-      "deposit": 40174000,
-      "rent": 291420
+      "supply": 20
     },
     {
-      "type": "(-)13,000,000",
-      "deposit": 4897000,
-      "rent": 127090
+      "type": "오산청호1",
+      "area": 51.93,
+      "supply": 20
     },
     {
-      "type": "46 51",
+      "type": "오산누읍1 오산청호1",
       "deposit": 31646000,
       "rent": 225670
     }

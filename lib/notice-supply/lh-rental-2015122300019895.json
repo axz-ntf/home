@@ -1,20 +1,10 @@
 {
   "id": "lh-rental-2015122300019895",
-  "supplyTotal": 170,
-  "integrated": true,
+  "supplyTotal": null,
+  "integrated": false,
   "units": [
     {
-      "type": "26A",
-      "area": 26.5195,
-      "supply": 170
-    },
-    {
-      "type": "26B",
-      "area": 26.4673,
-      "supply": 170
-    },
-    {
-      "type": "26A 26B",
+      "type": "익산한스빌",
       "deposit": 4076000,
       "rent": 72820
     }

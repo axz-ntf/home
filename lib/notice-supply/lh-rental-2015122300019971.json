@@ -4,92 +4,49 @@
   "integrated": false,
   "units": [
     {
-      "type": "33형",
-      "area": 33.83,
-      "supply": 20,
-      "deposit": 12387000,
-      "rent": 222220
-    },
-    {
-      "type": "39형",
-      "area": 39.52,
-      "supply": 10,
-      "deposit": 21075000,
-      "rent": 270690
-    },
-    {
-      "type": "51형",
+      "type": "물금1",
       "area": 51.96,
       "supply": 20,
       "deposit": 33103000,
       "rent": 364070
     },
     {
-      "type": "46형",
-      "area": 46.62,
-      "supply": 20,
-      "deposit": 28698000,
-      "rent": 300000
-    },
-    {
-      "type": "36형",
-      "area": 36.61,
+      "type": "물금2",
+      "area": 46.63,
       "supply": 10,
-      "deposit": 12331000,
-      "rent": 256500
+      "deposit": 29517000,
+      "rent": 336890
     },
     {
-      "type": "29A-1 (주거약자용)",
-      "area": 29.21,
-      "supply": 30
+      "type": "신도시3",
+      "area": 46.48,
+      "supply": 10,
+      "deposit": 17471000,
+      "rent": 230550
     },
     {
-      "type": "37A",
-      "area": 37.66,
-      "supply": 30,
-      "deposit": 18486000,
-      "rent": 231000
+      "type": "물금5",
+      "area": 46.78,
+      "supply": 10,
+      "deposit": 26811000,
+      "rent": 333340
     },
     {
-      "type": "37A-1 (주거약자용)",
-      "area": 37.66,
-      "supply": 3
-    },
-    {
-      "type": "37B",
-      "area": 37.38,
-      "supply": 5,
-      "deposit": 18349000,
-      "rent": 229850
-    },
-    {
-      "type": "49형",
+      "type": "사송-4",
       "area": 49.48,
-      "supply": 10,
-      "deposit": 31295000,
-      "rent": 314390
+      "supply": 10
     },
     {
-      "type": "29형",
+      "type": "사송A-5",
       "area": 29.9,
       "supply": 50,
-      "deposit": 9802000,
-      "rent": 159200
-    },
-    {
-      "type": "29A-1",
-      "deposit": 10403000,
-      "rent": 174450
-    },
-    {
-      "type": "37A-1",
-      "deposit": 18486000,
-      "rent": 231000
-    },
-    {
-      "type": "37형",
       "deposit": 16964000,
       "rent": 207300
+    },
+    {
+      "type": "사송A-4",
+      "deposit": 31295000,
+      "rent": 314390
     }
   ]
 }

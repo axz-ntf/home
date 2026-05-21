@@ -1,12 +1,10 @@
 {
   "id": "lh-rental-2015122300019948",
-  "supplyTotal": 20,
-  "integrated": true,
+  "supplyTotal": null,
+  "integrated": false,
   "units": [
     {
-      "type": "51",
-      "area": 51.69,
-      "supply": 20,
+      "type": "영천문내",
       "deposit": 16869000,
       "rent": 115860
     }

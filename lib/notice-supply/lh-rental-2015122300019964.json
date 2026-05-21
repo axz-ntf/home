@@ -1,12 +1,15 @@
 {
   "id": "lh-rental-2015122300019964",
-  "supplyTotal": 50,
-  "integrated": true,
+  "supplyTotal": null,
+  "integrated": false,
   "units": [
     {
-      "type": "31",
-      "area": 31.39,
-      "supply": 50,
+      "type": "도산청암",
+      "deposit": 10181000,
+      "rent": 85190
+    },
+    {
+      "type": "삼라미주",
       "deposit": 9802000,
       "rent": 74870
     }

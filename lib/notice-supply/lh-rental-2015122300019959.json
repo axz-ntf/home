@@ -1,42 +1,22 @@
 {
   "id": "lh-rental-2015122300019959",
-  "supplyTotal": 300,
+  "supplyTotal": null,
   "integrated": false,
   "units": [
     {
-      "type": "36",
-      "area": 36.92,
-      "supply": 70,
-      "deposit": 12565000,
-      "rent": 105810
+      "type": "진천벽암",
+      "deposit": 19311000,
+      "rent": 169320
     },
     {
-      "type": "39",
-      "area": 39.51,
-      "supply": 20,
-      "deposit": 13000000,
-      "rent": 91640
+      "type": "진천덕산",
+      "deposit": 21829000,
+      "rent": 185570
     },
     {
-      "type": "46",
-      "area": 46.9,
-      "supply": 30,
-      "deposit": 15183000,
-      "rent": 112190
-    },
-    {
-      "type": "59",
-      "area": 59.57,
-      "supply": 30,
+      "type": "진천신정",
       "deposit": 24251000,
       "rent": 190200
-    },
-    {
-      "type": "46B",
-      "area": 46.71,
-      "supply": 20,
-      "deposit": 15490000,
-      "rent": 111190
     }
   ]
 }

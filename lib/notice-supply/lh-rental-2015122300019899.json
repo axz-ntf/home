@@ -4,88 +4,58 @@
   "integrated": true,
   "units": [
     {
-      "type": "36.63",
+      "type": "의정부금오2",
       "area": 36.63,
       "supply": 50,
       "deposit": 16977000,
       "rent": 215050
     },
     {
-      "type": "36.68",
-      "area": 36.68,
-      "supply": 40,
-      "deposit": 17020000,
-      "rent": 212260
-    },
-    {
-      "type": "36.78",
+      "type": "의정부녹양1",
       "area": 36.78,
       "supply": 20,
       "deposit": 17020000,
       "rent": 213210
     },
     {
-      "type": "36형",
-      "area": 36.84,
-      "supply": 20,
-      "deposit": 11748000,
-      "rent": 128390
+      "type": "의정부민락3",
+      "area": 36.9,
+      "supply": 60,
+      "deposit": 18068000,
+      "rent": 184390
     },
     {
-      "type": "32형",
-      "area": 32.16,
-      "supply": 30,
-      "deposit": 14850000,
-      "rent": 148500
-    },
-    {
-      "type": "51형",
+      "type": "의정부민락8",
       "area": 51.74,
       "supply": 50,
       "deposit": 34653000,
       "rent": 290840
     },
     {
-      "type": "29형",
-      "area": 29.65,
-      "supply": 40,
-      "deposit": 14972000,
-      "rent": 168870
-    },
-    {
-      "type": "36형 (주거약자)",
-      "area": 36.65,
-      "supply": 10,
-      "deposit": 18012000,
-      "rent": 218400
-    },
-    {
-      "type": "46형",
+      "type": "의정부민락13",
       "area": 46.7,
       "supply": 60,
       "deposit": 39403000,
       "rent": 281450
     },
     {
-      "type": "39.144",
-      "area": 39.144,
-      "supply": 10,
-      "deposit": 9969000,
-      "rent": 83440
-    },
-    {
-      "type": "45형",
-      "area": 45.87,
+      "type": "의정부민락16",
+      "area": 36.89,
       "supply": 40,
-      "deposit": 16730000,
-      "rent": 220470
+      "deposit": 16706000,
+      "rent": 176960
     },
     {
-      "type": "50형",
+      "type": "포천신읍1",
       "area": 50.52,
       "supply": 20,
       "deposit": 20620000,
       "rent": 233440
+    },
+    {
+      "type": "포천산호",
+      "deposit": 9969000,
+      "rent": 83440
     }
   ]
 }

@@ -4,14 +4,21 @@
   "integrated": true,
   "units": [
     {
-      "type": "36",
+      "type": "익산장신1",
+      "area": 36.55,
+      "supply": 40,
+      "deposit": 13486000,
+      "rent": 114640
+    },
+    {
+      "type": "익산장신2",
       "area": 36.62,
       "supply": 40,
       "deposit": 13486000,
       "rent": 114640
     },
     {
-      "type": "39",
+      "type": "익산장신3",
       "area": 39.57,
       "supply": 40,
       "deposit": 16185000,

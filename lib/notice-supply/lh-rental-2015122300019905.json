@@ -1,22 +1,12 @@
 {
   "id": "lh-rental-2015122300019905",
-  "supplyTotal": 240,
+  "supplyTotal": null,
   "integrated": false,
   "units": [
     {
-      "type": "33",
-      "area": 33.48,
-      "supply": 70
-    },
-    {
-      "type": "46",
-      "area": 46.9,
-      "supply": 90
-    },
-    {
-      "type": "51",
-      "area": 51.97,
-      "supply": 80
+      "type": "함양교산",
+      "deposit": 23844000,
+      "rent": 185450
     }
   ]
 }

@@ -1,12 +1,10 @@
 {
   "id": "lh-rental-2015122300019921",
-  "supplyTotal": 10,
-  "integrated": true,
+  "supplyTotal": null,
+  "integrated": false,
   "units": [
     {
-      "type": "55",
-      "area": 55.83,
-      "supply": 10,
+      "type": "괴산동부",
       "deposit": 19735,
       "rent": 166220
     }

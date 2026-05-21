@@ -1,12 +1,10 @@
 {
   "id": "lh-rental-2015122300019958",
-  "supplyTotal": 10,
-  "integrated": true,
+  "supplyTotal": null,
+  "integrated": false,
   "units": [
     {
-      "type": "33",
-      "area": 33.53,
-      "supply": 10,
+      "type": "함평향교",
       "deposit": 7275000,
       "rent": 125360
     }

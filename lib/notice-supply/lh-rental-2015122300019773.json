@@ -4,38 +4,25 @@
   "integrated": false,
   "units": [
     {
-      "type": "26",
+      "type": "산본매화1",
       "area": null,
-      "supply": 100,
-      "deposit": 2753000,
-      "rent": 54760
+      "supply": 30,
+      "deposit": 3263000,
+      "rent": 64920
     },
     {
-      "type": "31",
+      "type": "산본주몽1",
+      "area": null,
+      "supply": 50,
+      "deposit": 3263000,
+      "rent": 64920
+    },
+    {
+      "type": "산본가야2",
       "area": null,
       "supply": 40,
       "deposit": 3291000,
       "rent": 65480
-    },
-    {
-      "type": "31A",
-      "area": null,
-      "supply": 50
-    },
-    {
-      "type": "31B",
-      "area": null,
-      "supply": 50
-    },
-    {
-      "type": "26A",
-      "area": null,
-      "supply": 60
-    },
-    {
-      "type": "26B",
-      "area": null,
-      "supply": 60
     }
   ]
 }

@@ -4,32 +4,21 @@
   "integrated": true,
   "units": [
     {
-      "type": "30",
+      "type": "철원동송2",
       "area": 30.71,
       "supply": 5,
-      "deposit": 11873000,
-      "rent": 143560
+      "deposit": 12942000,
+      "rent": 153830
     },
     {
-      "type": "39",
-      "area": 39.56,
-      "supply": 5,
-      "deposit": 10030000,
-      "rent": 83810
-    },
-    {
-      "type": "46",
-      "area": 46.9,
-      "supply": 20,
+      "type": "철원동송",
       "deposit": 13743000,
       "rent": 112670
     },
     {
-      "type": "29A",
-      "area": 29.59,
-      "supply": 15,
-      "deposit": 11334000,
-      "rent": 139240
+      "type": "철원갈말",
+      "deposit": 11873000,
+      "rent": 143560
     }
   ]
 }

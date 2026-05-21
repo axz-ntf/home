@@ -1,19 +1,10 @@
 {
   "id": "lh-rental-2015122300019915",
-  "supplyTotal": 10,
+  "supplyTotal": null,
   "integrated": false,
   "units": [
     {
-      "type": "34",
-      "area": 34.28,
-      "supply": 3,
-      "deposit": 17867000,
-      "rent": 116800
-    },
-    {
-      "type": "42",
-      "area": 42.87,
-      "supply": 7,
+      "type": "김제하동",
       "deposit": 24919000,
       "rent": 149490
     }

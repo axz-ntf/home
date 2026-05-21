@@ -4,25 +4,25 @@
   "integrated": false,
   "units": [
     {
-      "type": "36",
-      "area": 36.16,
+      "type": "화성태안6",
+      "area": 36.63,
       "supply": 100,
-      "deposit": 16082000,
-      "rent": 184430
+      "deposit": 15561000,
+      "rent": 183890
     },
     {
-      "type": "45",
-      "area": 45.48,
-      "supply": 50,
-      "deposit": 20338000,
-      "rent": 239800
-    },
-    {
-      "type": "51",
+      "type": "화성태안8",
       "area": 51.86,
       "supply": 100,
       "deposit": 21589000,
       "rent": 278860
+    },
+    {
+      "type": "화성태안12",
+      "area": 45.48,
+      "supply": 50,
+      "deposit": 20338000,
+      "rent": 239800
     }
   ]
 }

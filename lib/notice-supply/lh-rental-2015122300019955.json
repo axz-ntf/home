@@ -4,24 +4,19 @@
   "integrated": false,
   "units": [
     {
-      "type": "39",
-      "deposit": 10633000,
-      "rent": 59060
+      "type": "논산금강 빌리지",
+      "deposit": 9917000,
+      "rent": 55070
     },
     {
-      "type": "41",
-      "deposit": 9898000,
-      "rent": 82490
-    },
-    {
-      "type": "49",
-      "deposit": 15339000,
-      "rent": 85490
-    },
-    {
-      "type": "59",
+      "type": "논산조흥",
       "deposit": 18862000,
       "rent": 105610
+    },
+    {
+      "type": "논산월야",
+      "deposit": 9898000,
+      "rent": 82490
     }
   ]
 }

@@ -4,18 +4,28 @@
   "integrated": false,
   "units": [
     {
-      "type": "37",
-      "area": 37.25,
-      "supply": 200,
-      "deposit": 16711000,
-      "rent": 202270
+      "type": "율곡2",
+      "area": 51.78,
+      "supply": 40,
+      "deposit": 27760000,
+      "rent": 166560
     },
     {
-      "type": "51",
+      "type": "율현12",
       "area": 51.93,
       "supply": 20,
       "deposit": 27491000,
       "rent": 164940
+    },
+    {
+      "type": "율하2 LH1",
+      "area": 37.25,
+      "supply": 200
+    },
+    {
+      "type": "율하 LH1",
+      "deposit": 16711000,
+      "rent": 202270
     }
   ]
 }

@@ -4,18 +4,16 @@
   "integrated": true,
   "units": [
     {
-      "type": "51",
-      "area": 51.61,
-      "supply": 30,
-      "deposit": 27237000,
-      "rent": 168600
-    },
-    {
-      "type": "39A",
+      "type": "정읍첨단 A1-1BL",
       "area": 39.45,
       "supply": 30,
       "deposit": 14474000,
       "rent": 156080
+    },
+    {
+      "type": "김제교동",
+      "deposit": 27237000,
+      "rent": 168600
     }
   ]
 }

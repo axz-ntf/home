@@ -1,32 +1,12 @@
 {
   "id": "lh-rental-2015122300019906",
-  "supplyTotal": 220,
+  "supplyTotal": null,
   "integrated": false,
   "units": [
     {
-      "type": "36",
-      "area": 36.72,
-      "supply": 30
-    },
-    {
-      "type": "39",
-      "area": 39.49,
-      "supply": 40
-    },
-    {
-      "type": "46",
-      "area": 46.45,
-      "supply": 50
-    },
-    {
-      "type": "51",
-      "area": 51.86,
-      "supply": 60
-    },
-    {
-      "type": "59",
-      "area": 59.99,
-      "supply": 40
+      "type": "사천진사",
+      "deposit": 25307000,
+      "rent": 140590
     }
   ]
 }
