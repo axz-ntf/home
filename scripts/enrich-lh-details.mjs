@@ -17,6 +17,7 @@ const HEADERS = {
   Accept: "text/html",
 };
 const DELAY_MS = 700;
+const CONCURRENCY = Number(process.env.CONCURRENCY ?? 5);
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -208,67 +209,74 @@ async function main() {
   let errCount = 0;
   const startIdx = resume ? progress.done : 0;
 
-  for (let i = startIdx; i < notices.length; i++) {
-    if (processed >= limit) break;
-    const n = notices[i];
-    // 이미 enrichment 완료된 항목은 건너뜀. photos는 별도 보강(아래)에서 처리.
-    // noticeStatus 추가 이후 옛 항목은 그 필드 없으므로, 없으면 다시 enrich.
-    if (n.details?.enrichedAt && n.photos?.length && n.details?.noticeStatus) {
-      skipCount++;
-      progress.done = i + 1;
-      continue;
-    }
-    if (!isLhDetailUrl(n.sourceUrl)) {
-      skipCount++;
-      progress.done = i + 1;
-      continue;
-    }
-    processed++;
+  // 병렬 처리 — N개 워커가 같은 인덱스 큐 소비.
+  let nextIdx = startIdx;
+  const writeLock = { busy: false };
+  async function saveAll() {
+    while (writeLock.busy) await sleep(10);
+    writeLock.busy = true;
     try {
-      const html = await fetchDetail(n.sourceUrl);
-      const coords = extractAllCoords(html);
-      const tabs = extractTabNames(html);
-      const { coord, matchedTab } = pickCoordForTitle(coords, tabs, n.title);
-      const pageAddress = extractPageAddress(html);
-      const housingTypes = extractHousingTypes(html);
-      const schedule = extractSchedule(html);
-      const photos = extractPhotos(html);
-      const noticeStatus = extractNoticeStatus(html);
-
-      if (coord && coord.lat && coord.lng) {
-        n.lat = coord.lat;
-        n.lng = coord.lng;
-      }
-      if (photos.length > 0) n.photos = photos;
-      n.details = {
-        pageAddress,
-        matchedTab,
-        coordCount: Object.keys(coords).length,
-        housingTypes,
-        schedule,
-        noticeStatus,
-        enrichedAt: new Date().toISOString(),
-      };
-      okCount++;
-      if (processed % 20 === 0 || processed <= 10) {
-        const pct = (((i + 1) / notices.length) * 100).toFixed(1);
-        console.log(
-          `[${i + 1}/${notices.length} ${pct}%] ${n.id} "${n.title.slice(0, 28)}" → tab="${matchedTab ?? "-"}" coord=${coord?.lat ?? "-"},${coord?.lng ?? "-"} types=${housingTypes.length}`,
-        );
-      }
-    } catch (error) {
-      errCount++;
-      progress.errors.push({ id: n.id, url: n.sourceUrl, error: String(error.message) });
-      console.log(`[${i + 1}] ${n.id} ERROR: ${error.message}`);
-    }
-    progress.done = i + 1;
-    // 매 50건마다 중간 저장
-    if (processed % 50 === 0) {
       await fs.writeFile(DATA_PATH, JSON.stringify(notices, null, 2) + "\n", "utf8");
       await saveProgress(progress);
+    } finally {
+      writeLock.busy = false;
     }
-    await sleep(DELAY_MS);
   }
+  async function worker(wid) {
+    while (true) {
+      if (processed >= limit) return;
+      const i = nextIdx++;
+      if (i >= notices.length) return;
+      const n = notices[i];
+
+      if (n.details?.enrichedAt && n.photos?.length && n.details?.noticeStatus) {
+        skipCount++;
+        if (i + 1 > progress.done) progress.done = i + 1;
+        continue;
+      }
+      if (!isLhDetailUrl(n.sourceUrl)) {
+        skipCount++;
+        if (i + 1 > progress.done) progress.done = i + 1;
+        continue;
+      }
+      processed++;
+      try {
+        const html = await fetchDetail(n.sourceUrl);
+        const coords = extractAllCoords(html);
+        const tabs = extractTabNames(html);
+        const { coord, matchedTab } = pickCoordForTitle(coords, tabs, n.title);
+        const pageAddress = extractPageAddress(html);
+        const housingTypes = extractHousingTypes(html);
+        const schedule = extractSchedule(html);
+        const photos = extractPhotos(html);
+        const noticeStatus = extractNoticeStatus(html);
+
+        if (coord && coord.lat && coord.lng) {
+          n.lat = coord.lat;
+          n.lng = coord.lng;
+        }
+        if (photos.length > 0) n.photos = photos;
+        n.details = {
+          pageAddress, matchedTab,
+          coordCount: Object.keys(coords).length,
+          housingTypes, schedule, noticeStatus,
+          enrichedAt: new Date().toISOString(),
+        };
+        okCount++;
+        if (okCount % 20 === 0 || okCount <= 10) {
+          console.log(`[${i + 1}/${notices.length}] w${wid} ${n.id} "${n.title.slice(0, 26)}"`);
+        }
+      } catch (error) {
+        errCount++;
+        progress.errors.push({ id: n.id, url: n.sourceUrl, error: String(error.message) });
+        console.log(`[${i + 1}] w${wid} ${n.id} ERROR: ${error.message}`);
+      }
+      if (i + 1 > progress.done) progress.done = i + 1;
+      if (okCount % 50 === 0 && okCount > 0) await saveAll();
+      await sleep(DELAY_MS);
+    }
+  }
+  await Promise.all(Array.from({ length: CONCURRENCY }, (_, w) => worker(w + 1)));
 
   await fs.writeFile(DATA_PATH, JSON.stringify(notices, null, 2) + "\n", "utf8");
   await saveProgress(progress);

@@ -26,8 +26,8 @@ const EMBED_URL = "https://api.upstage.ai/v1/embeddings";
 const MODEL = "solar-embedding-1-large-passage";
 const CHUNK_SIZE = 900;       // 문자 단위 — Solar 는 한국어에서 토큰당 ~1.5자
 const CHUNK_OVERLAP = 100;    // 청크 경계에서 컨텍스트 손실 방지
-const BATCH_SIZE = 10;        // 한 번 API 호출에 보낼 청크 수
-const REQUEST_DELAY_MS = 200; // rate-limit 방어
+const BATCH_SIZE = Number(process.env.BATCH_SIZE ?? 32);  // Solar embedding-1-large 의 max batch 권장 ~32
+const REQUEST_DELAY_MS = Number(process.env.REQUEST_DELAY_MS ?? 80); // rate-limit 방어 (보수적 80ms)
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 

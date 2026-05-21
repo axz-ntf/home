@@ -11,6 +11,7 @@ const DATA_PATH = path.join(ROOT, "lib/listings-api.json");
 
 const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 doongji-app/1.0";
 const DELAY_MS = 300;
+const CONCURRENCY = Number(process.env.CONCURRENCY ?? 5);
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // 페이지에서 단지 단위로 (제목 h4.tit2 + 직후 주택형 안내 표) 추출.
@@ -118,24 +119,30 @@ async function main() {
   console.log(`targets: ${targets.length} / total ${listings.length}`);
 
   let ok = 0, empty = 0, multi = 0, fail = 0;
-  for (const [i, l] of targets.entries()) {
-    const tag = `[${i + 1}/${targets.length}] ${l.id}`;
-    try {
-      const res = await fetch(l.sourceUrl, { headers: { "User-Agent": UA } });
-      if (!res.ok) { fail++; continue; }
-      const html = await res.text();
-      const complexes = extractComplexTables(html);
-      if (!complexes.length) { empty++; continue; }
-      l.complexes = complexes;
-      ok++;
-      if (complexes.length > 1) multi++;
-      if (ok % 20 === 0) console.log(`${tag} ✓ ${complexes.length}개 단지`);
-    } catch (e) {
-      fail++;
-      if (fail < 5) console.warn(`${tag} error: ${e.message}`);
+  let nextIdx = 0;
+  async function worker(wid) {
+    while (true) {
+      const i = nextIdx++;
+      if (i >= targets.length) return;
+      const l = targets[i];
+      try {
+        const res = await fetch(l.sourceUrl, { headers: { "User-Agent": UA } });
+        if (!res.ok) { fail++; continue; }
+        const html = await res.text();
+        const complexes = extractComplexTables(html);
+        if (!complexes.length) { empty++; continue; }
+        l.complexes = complexes;
+        ok++;
+        if (complexes.length > 1) multi++;
+        if (ok % 20 === 0) console.log(`[${i + 1}/${targets.length}] w${wid} ${l.id} ✓ ${complexes.length}개`);
+      } catch (e) {
+        fail++;
+        if (fail < 5) console.warn(`[${i + 1}] w${wid} ${l.id} error: ${e.message}`);
+      }
+      await sleep(DELAY_MS);
     }
-    await sleep(DELAY_MS);
   }
+  await Promise.all(Array.from({ length: CONCURRENCY }, (_, w) => worker(w + 1)));
 
   fs.writeFileSync(DATA_PATH, JSON.stringify(listings, null, 2));
   console.log("---");
