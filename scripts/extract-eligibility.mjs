@@ -26,7 +26,8 @@ const bizrouter = createOpenAICompatible({
   baseURL: process.env.BIZROUTER_BASE_URL ?? "https://api.bizrouter.ai/v1",
   apiKey: BIZROUTER_API_KEY,
 });
-const MODEL = process.env.EXTRACT_MODEL ?? "anthropic/claude-sonnet-4.6";
+// Haiku 4.5: $1/M in, $5/M out (Sonnet 대비 5배↓). 자격 추출은 비교적 단순 → 품질 충분.
+const MODEL = process.env.EXTRACT_MODEL ?? "anthropic/claude-haiku-4.5";
 
 // 자격 정보 schema — LLM 이 생성할 구조.
 // 모든 숫자는 만원 단위 (소득/자산), percent 는 도시근로자 % (예: 70, 100, 150).
@@ -121,16 +122,46 @@ const SCHEMA_HINT = `\n출력 형식 (JSON, 다른 텍스트 금지):
   "priority": ["다자녀", "한부모", ...]
 }`;
 
+// LH 공고문 markdown 에서 자격 정보 섹션만 추출 — input token 90%↓ 비용 절감.
+// "신청자격"/"입주자격"/"자격요건" 첫 등장부터 다음 큰 섹션 (신청서류/계약절차 등) 직전까지.
+function extractEligibilityRegion(md) {
+  // 시작 marker — 자격 관련 첫 등장
+  const startRes = [/신\s*청\s*자\s*격/, /입\s*주\s*자\s*격/, /자\s*격\s*요\s*건/, /4\.\s*신청\s*자격/];
+  let start = -1;
+  for (const re of startRes) {
+    const m = md.search(re);
+    if (m >= 0 && (start < 0 || m < start)) start = m;
+  }
+  if (start < 0) return md.slice(0, 15000); // fallback — 자격 marker 못 찾으면 앞 15K
+
+  // 종료 marker — 자격 정보 끝났을 가능성 큰 큰 섹션 헤더
+  const endRes = [
+    /\d+\.\s*신청\s*서류/, /\d+\.\s*첨부\s*서류/, /\d+\.\s*제출\s*서류/,
+    /\d+\.\s*계약\s*및\s*입주/, /\d+\.\s*계약\s*절차/,
+    /\d+\.\s*유의\s*사항/, /\d+\.\s*기타\s*안내/, /\d+\.\s*문의\s*처/,
+  ];
+  let end = md.length;
+  const sliceForEnd = md.slice(start + 200); // 시작 직후엔 같은 키워드 잔류물 있을 수 있어 skip
+  for (const re of endRes) {
+    const m = sliceForEnd.search(re);
+    if (m >= 0) end = Math.min(end, start + 200 + m);
+  }
+
+  const region = md.slice(start, end);
+  // 안전 상한 — 너무 길면 자르기 (Haiku context 충분하지만 비용 효율)
+  return region.length > 20000 ? region.slice(0, 20000) : region;
+}
+
 async function extractOne(id) {
   const md = await loadMarkdown(id);
-  const truncated = md.length > 40000 ? md.slice(0, 40000) : md;
+  const eligibilityRegion = extractEligibilityRegion(md);
 
   const result = await generateText({
     model: bizrouter(MODEL),
     system: SYSTEM_PROMPT + SCHEMA_HINT,
     prompt:
-      `다음은 LH 공고문 본문입니다. 자격 정보를 추출해 위 schema 의 JSON 만 출력하세요. 설명/주석/마크다운 헤더 금지, 오직 JSON 한 덩어리.\n\n` +
-      truncated,
+      `다음은 LH 공고문의 자격 관련 섹션입니다. 자격 정보를 추출해 위 schema 의 JSON 만 출력하세요. 설명/주석/마크다운 헤더 금지, 오직 JSON 한 덩어리.\n\n` +
+      eligibilityRegion,
   });
 
   const raw = extractJsonFromText(result.text ?? "");
