@@ -1,0 +1,35 @@
+{
+  "id": "lh-rental-2015122300019998",
+  "supplyTotal": 247,
+  "integrated": false,
+  "units": [
+    {
+      "type": "대구도남1",
+      "area": 43.24,
+      "supply": 13,
+      "deposit": 27601000,
+      "rent": 244300
+    },
+    {
+      "type": "대구도남2",
+      "area": 46.23,
+      "supply": 60,
+      "deposit": 28885000,
+      "rent": 279090
+    },
+    {
+      "type": "대구칠곡7",
+      "area": 46.9,
+      "supply": 30,
+      "deposit": 26786000,
+      "rent": 181800
+    },
+    {
+      "type": "대구남산1",
+      "area": 59.88,
+      "supply": 16,
+      "deposit": 43655000,
+      "rent": 295720
+    }
+  ]
+}
