@@ -2,8 +2,9 @@ import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   const body = await req.json().catch(() => ({}));
-  const password = typeof body?.password === "string" ? body.password : "";
-  const expected = process.env.ADMIN_PASSWORD;
+  // .trim() — vercel env 등 외부에서 값에 trailing newline/whitespace 가 섞이는 경우 방어.
+  const password = typeof body?.password === "string" ? body.password.trim() : "";
+  const expected = (process.env.ADMIN_PASSWORD ?? "").trim();
   if (!expected) return NextResponse.json({ error: "ADMIN_PASSWORD 미설정" }, { status: 500 });
   if (password !== expected) {
     return NextResponse.json({ error: "비밀번호가 틀렸어요" }, { status: 401 });

@@ -11,11 +11,12 @@ export function proxy(req: NextRequest) {
     return NextResponse.next();
   }
 
-  const expected = process.env.ADMIN_PASSWORD;
+  // .trim() — vercel env trailing newline 등 방어 (login route 와 일관).
+  const expected = (process.env.ADMIN_PASSWORD ?? "").trim();
   if (!expected) {
     return new NextResponse("ADMIN_PASSWORD 미설정", { status: 500 });
   }
-  const session = req.cookies.get("admin_session")?.value;
+  const session = (req.cookies.get("admin_session")?.value ?? "").trim();
   if (session && session === expected) {
     return NextResponse.next();
   }
