@@ -1,6 +1,25 @@
 import type { District, HousingTypeId, Listing, StatusId } from "./types";
 import apiListings from "./listings-api.json";
 import BLOB_COVERS from "./blob-covers.json";
+import allNotices from "./lh-notices-all.json";
+import { applyOverride } from "./manual-overrides";
+
+// lh-notices-all 에는 listings-api 에 없는 raw 상태 필드 (noticeStatus, progressStatus) 가 있음.
+// pblancId 로 lookup 만들어 매칭. 빌드/서버 초기화 시 1회만 실행.
+interface RawNotice {
+  pblancId?: string;
+  noticeStatus?: string;
+  progressStatus?: string;
+  announceDate?: string;
+}
+const RAW_BY_PANID: Map<string, RawNotice> = (() => {
+  const arr = allNotices as unknown as RawNotice[];
+  const m = new Map<string, RawNotice>();
+  for (const n of arr) {
+    if (n?.pblancId) m.set(String(n.pblancId), n);
+  }
+  return m;
+})();
 
 // LH 공공데이터 API 3종 + VWorld 통합 sync 결과 (scripts/sync-lh-api.mjs)
 // 일부 메타 필드는 API1 응답이 빈 객체(`{}`)로 직렬화돼 들어오는 경우가 있어 unknown 으로 받고 런타임에 정규화.
@@ -138,10 +157,14 @@ function adaptApi(r: ApiListing): Listing | null {
   if (!r.lat || !r.lng) return null;
   if (!r.districtId) return null;
   const [deposit, rent] = guardPrice(r.type, r.depositManwon || 0, r.monthlyRentManwon || 0);
+  const raw = RAW_BY_PANID.get(r.pblancId);
   return {
     id: r.id,
     pblancId: r.pblancId,
     title: r.title,
+    noticeStatus: raw?.noticeStatus || undefined,
+    progressStatus: raw?.progressStatus || undefined,
+    announceDate: raw?.announceDate || r.announceDate || undefined,
     type: r.type as HousingTypeId,
     agency: "LH",
     districtId: r.districtId,
@@ -220,7 +243,8 @@ const ALL: Listing[] = (apiListings as unknown as ApiListing[])
     const base = adaptApi(r);
     if (!base) return [];
     return splitByComplex(base, r);
-  });
+  })
+  .map(applyOverride);
 
 // 같은 공고가 정정공고/재게시 형태로 여러 번 올라오는 경우 dedupe.
 // title 에서 [정정공고]/[재게시] 같은 접두 라벨을 떼고 남는 본 title 로 그룹핑 → 그룹당 1건.

@@ -69,6 +69,10 @@ export interface Listing {
   coverPhotoUrl?: string;
   attachments?: ListingPhoto[];
   complexes?: ComplexInfo[]; // 한 공고에 여러 단지가 묶인 경우 단지별 표
+  // LH raw 상태 필드 — lh-notices-all 에서 pblancId 로 매칭. 어드민/필터/표시에 활용.
+  noticeStatus?: string;     // "일반공고" / "정정공고" / "취소공고" 등
+  progressStatus?: string;   // "모집중" / "모집완료" / "모집예정"
+  announceDate?: string;     // raw 공고일 (YYYY.MM.DD)
 }
 
 export interface ComplexRow {

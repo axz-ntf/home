@@ -1,0 +1,416 @@
+"use client";
+
+import { useMemo, useState, useEffect } from "react";
+import Link from "next/link";
+import { useSearchParams, useRouter } from "next/navigation";
+import AdminShell, { type NavItem } from "../admin-shell";
+import { AIcon } from "../icons";
+
+export interface DashboardRow {
+  id: string;
+  pblancId?: string;
+  title: string;
+  district: string;
+  type: string;
+  status: "open" | "upcoming" | "closing" | "closed";
+  noticeStatus: string;
+  progressStatus: string;
+  deadline: string;
+  beginDate: string;
+  announceDate: string;
+  supplyUnits: number | null;
+  deposit: number;
+  rent: number;
+  salePriceManwon: number | null;
+  sourceUrl: string;
+  reviewed: boolean;
+  needsReview: boolean;
+  note: string;
+}
+
+type FilterKey = "all" | "review" | "open" | "upcoming" | "closing" | "closed";
+
+const STATUS_LABEL: Record<DashboardRow["status"], string> = {
+  open: "모집중", upcoming: "모집예정", closing: "마감임박", closed: "마감",
+};
+const TYPE_LABEL: Record<string, string> = {
+  happy: "행복주택", nation: "국민임대", integ: "통합공공임대", perm: "영구임대",
+  buy: "매입임대", jeonse: "전세임대", fifty: "50년임대", sale: "분양",
+};
+
+function formatDday(deadline: string): { text: string; urgent: boolean } | null {
+  if (!deadline) return null;
+  const m = deadline.match(/^(\d{4})[.\-](\d{2})[.\-](\d{2})/);
+  if (!m) return null;
+  const d = new Date(`${m[1]}-${m[2]}-${m[3]}T23:59:59+09:00`);
+  if (isNaN(d.getTime())) return null;
+  const now = Date.now();
+  const days = Math.ceil((d.getTime() - now) / (1000 * 60 * 60 * 24));
+  if (days < 0) return { text: `D+${Math.abs(days)}`, urgent: false };
+  if (days === 0) return { text: "D-Day", urgent: true };
+  return { text: `D-${days}`, urgent: days <= 7 };
+}
+
+export default function Dashboard({ rows, user }: { rows: DashboardRow[]; user?: { name: string; role: string; initial: string } }) {
+  const router = useRouter();
+  const params = useSearchParams();
+  const urlFilter = (params.get("filter") || "all") as FilterKey;
+  const urlQuery = params.get("q") || "";
+  const [filter, setFilter] = useState<FilterKey>(urlFilter);
+  const [query, setQuery] = useState(urlQuery);
+
+  // URL ↔ local state 동기화 — 사이드바 "검수 큐" 클릭 시 filter 자동 적용.
+  useEffect(() => { setFilter(urlFilter); }, [urlFilter]);
+  useEffect(() => { setQuery(urlQuery); }, [urlQuery]);
+
+  // filter chip 클릭 → URL 도 같이 업데이트 (사이드바 active state 즉시 반영).
+  function changeFilter(next: FilterKey) {
+    setFilter(next);
+    const sp = new URLSearchParams(params.toString());
+    if (next === "all") sp.delete("filter");
+    else sp.set("filter", next);
+    const qs = sp.toString();
+    router.replace(qs ? `/admin/review?${qs}` : "/admin/review", { scroll: false });
+  }
+
+  const stats = useMemo(() => {
+    const s = { total: rows.length, open: 0, upcoming: 0, closing: 0, closed: 0, review: 0, reviewed: 0 };
+    for (const r of rows) {
+      s[r.status]++;
+      if (r.needsReview && !r.reviewed) s.review++;
+      if (r.reviewed) s.reviewed++;
+    }
+    return s;
+  }, [rows]);
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return rows.filter((r) => {
+      if (filter === "review" && !(r.needsReview && !r.reviewed)) return false;
+      if (filter !== "all" && filter !== "review" && r.status !== filter) return false;
+      if (q && !r.title.toLowerCase().includes(q) && !r.district.toLowerCase().includes(q)) return false;
+      return true;
+    });
+  }, [rows, filter, query]);
+
+  // ── 페이지네이션 ──
+  const PAGE_SIZE = 50;
+  const pageFromUrl = Math.max(1, Number(params.get("page") || "1"));
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const page = Math.min(pageFromUrl, totalPages);
+  const pageStart = (page - 1) * PAGE_SIZE;
+  const paged = filtered.slice(pageStart, pageStart + PAGE_SIZE);
+
+  // 필터/검색이 바뀌면 page=1 로 자동 리셋.
+  useEffect(() => {
+    if (pageFromUrl !== 1 && (filter !== urlFilter || query !== urlQuery)) {
+      const sp = new URLSearchParams(params.toString());
+      sp.delete("page");
+      router.replace(sp.toString() ? `/admin/review?${sp.toString()}` : "/admin/review", { scroll: false });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filter, query]);
+
+  function goToPage(p: number) {
+    const sp = new URLSearchParams(params.toString());
+    if (p <= 1) sp.delete("page");
+    else sp.set("page", String(p));
+    const qs = sp.toString();
+    router.replace(qs ? `/admin/review?${qs}` : "/admin/review", { scroll: false });
+    // 페이지 변경 시 테이블 상단으로 스크롤
+    document.querySelector(".a-table-wrap")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  const today = new Date();
+  const todayStr = `${today.getFullYear()}년 ${today.getMonth() + 1}월 ${today.getDate()}일`;
+  const weekday = ["일", "월", "화", "수", "목", "금", "토"][today.getDay()];
+
+  const navItems: NavItem[] = [
+    { href: "/admin/review", label: "대시보드", icon: "dash" },
+    { href: "/admin/review?filter=review", label: "검수 큐", icon: "listing", badge: stats.review, badgeKind: "danger" },
+    { href: "/admin/activity", label: "검수 내역", icon: "history", badge: stats.reviewed, badgeKind: "subtle" },
+    { href: "/admin/complexes", label: "단지 관리", icon: "building" },
+    { href: "/admin/settings", label: "설정", icon: "settings" },
+  ];
+
+  return (
+    <AdminShell
+      pageTitle="대시보드"
+      pageSub={`${todayStr} ${weekday}요일 · 실시간`}
+      navItems={navItems}
+      user={user}
+    >
+      <SearchInTopbarSync onChange={setQuery} />
+
+      <section className="a-kpi-row">
+        <KpiCard label="전체 공고" value={stats.total} sub={`모집중 ${stats.open}건 · 마감임박 ${stats.closing}건`} />
+        <KpiCard label="모집중" value={stats.open} sub={`예정 ${stats.upcoming} · 마감 ${stats.closed}`} accent />
+        <KpiCard label="검수 필요" value={stats.review} sub={stats.review > 0 ? "PDF 확인해서 정정 필요" : "모두 검수됨 ✓"} warn={stats.review > 0} highlight="warn" />
+        <KpiCard label="검수됨" value={stats.reviewed} sub="사용자가 정정한 매물" highlight="success" />
+      </section>
+
+      <div className="a-table-wrap">
+        <div className="a-table-head">
+          <div className="a-table-filters">
+            <FilterChip active={filter === "all"} onClick={() => changeFilter("all")} count={stats.total}>전체</FilterChip>
+            <FilterChip active={filter === "review"} onClick={() => changeFilter("review")} count={stats.review}>검수 필요</FilterChip>
+            <FilterChip active={filter === "open"} onClick={() => changeFilter("open")} count={stats.open}>모집중</FilterChip>
+            <FilterChip active={filter === "upcoming"} onClick={() => changeFilter("upcoming")} count={stats.upcoming}>예정</FilterChip>
+            <FilterChip active={filter === "closing"} onClick={() => changeFilter("closing")} count={stats.closing}>마감임박</FilterChip>
+            <FilterChip active={filter === "closed"} onClick={() => changeFilter("closed")} count={stats.closed}>마감</FilterChip>
+          </div>
+          <div className="a-card-actions">
+            <input
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="제목·지역 검색"
+              style={{
+                padding: "7px 12px",
+                border: "1px solid var(--a-line-2)",
+                borderRadius: 7,
+                fontSize: 12,
+                outline: "none",
+                fontFamily: "inherit",
+                color: "var(--a-ink)",
+                background: "white",
+                minWidth: 200,
+              }}
+            />
+          </div>
+        </div>
+
+        <table className="a-table">
+          <thead>
+            <tr>
+              <th style={{ width: 120 }}>공고 ID</th>
+              <th>공고</th>
+              <th>유형</th>
+              <th>지역</th>
+              <th>마감</th>
+              <th>상태</th>
+              <th style={{ textAlign: "right" }}>세대수</th>
+              <th>검수</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {paged.length === 0 && (
+              <tr>
+                <td colSpan={9} className="a-empty">
+                  <div style={{ fontSize: 28, marginBottom: 6 }}>🔍</div>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: "var(--a-ink)", marginBottom: 4 }}>
+                    해당하는 공고가 없어요
+                  </div>
+                  <div style={{ fontSize: 12, color: "var(--a-ink-3)", marginBottom: 12 }}>
+                    {filter !== "all" && <>필터: <strong style={{ color: "var(--a-ink-2)" }}>{filter === "review" ? "검수 필요" : filter}</strong></>}
+                    {filter !== "all" && query && " · "}
+                    {query && <>검색어: <strong style={{ color: "var(--a-ink-2)" }}>&quot;{query}&quot;</strong></>}
+                  </div>
+                  {(filter !== "all" || query) && (
+                    <button
+                      type="button"
+                      onClick={(e) => { e.stopPropagation(); setQuery(""); changeFilter("all"); }}
+                      className="a-cta ghost"
+                      style={{ background: "var(--a-bg-2)", color: "var(--a-ink-2)" }}
+                    >
+                      필터 초기화
+                    </button>
+                  )}
+                </td>
+              </tr>
+            )}
+            {paged.map((r) => {
+              const dday = formatDday(r.deadline);
+              return (
+                <tr
+                  key={r.id}
+                  onClick={() => router.push(`/admin/review/${encodeURIComponent(r.id)}`)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <td><span className="id-mono">{r.pblancId ?? r.id.slice(-12)}</span></td>
+                  <td>
+                    <div className="title">{r.title}</div>
+                    <div className="sub">
+                      {r.noticeStatus && (
+                        <span className={`a-badge ${r.noticeStatus.includes("정정") ? "notice-correction" : "notice-normal"}`} style={{ marginRight: 6 }}>
+                          {r.noticeStatus}
+                        </span>
+                      )}
+                      LH · 공고일 {r.announceDate || "—"}
+                    </div>
+                  </td>
+                  <td><TypeBadge type={r.type} /></td>
+                  <td style={{ color: "var(--a-ink-2)" }}>{r.district}</td>
+                  <td>
+                    <div style={{ fontWeight: 700, fontSize: 12.5, color: "var(--a-ink)" }}>
+                      {r.deadline ? r.deadline.replace(/\./g, ". ") : "—"}
+                    </div>
+                    {dday && (
+                      <div className="sub" style={{ color: dday.urgent ? "var(--a-red)" : "var(--a-ink-3)", fontWeight: 700 }}>
+                        {dday.text}
+                      </div>
+                    )}
+                  </td>
+                  <td>
+                    <span className={`a-status ${r.status}`}>
+                      <span className="dot" />
+                      {STATUS_LABEL[r.status]}
+                    </span>
+                  </td>
+                  <td className="num">
+                    {r.supplyUnits == null ? (
+                      <span style={{ color: "var(--a-red)", fontWeight: 700 }}>없음</span>
+                    ) : r.supplyUnits === 1 ? (
+                      <span style={{ color: "var(--a-yellow)", fontWeight: 700 }}>1?</span>
+                    ) : (
+                      <span style={{ fontWeight: 700 }}>{r.supplyUnits.toLocaleString()}</span>
+                    )}
+                  </td>
+                  <td>
+                    <div style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
+                      {r.reviewed ? (
+                        <span className="a-review-chip done">✓ 검수</span>
+                      ) : r.needsReview ? (
+                        <span className="a-review-chip need">필요</span>
+                      ) : (
+                        <span className="a-review-chip muted">—</span>
+                      )}
+                      {r.note && (
+                        <span
+                          title={r.note}
+                          aria-label={`메모: ${r.note}`}
+                          style={{
+                            display: "inline-flex",
+                            width: 18, height: 18,
+                            alignItems: "center", justifyContent: "center",
+                            borderRadius: 4,
+                            background: "var(--a-yellow-low)",
+                            color: "var(--a-yellow)",
+                            fontSize: 11,
+                            cursor: "help",
+                          }}
+                        >📝</span>
+                      )}
+                    </div>
+                  </td>
+                  <td onClick={(e) => e.stopPropagation()}>
+                    <div className="a-row-actions">
+                      <Link
+                        href={`/admin/review/${encodeURIComponent(r.id)}`}
+                        className="a-icon-btn"
+                        aria-label="편집"
+                        title="편집"
+                      >
+                        <AIcon.Edit />
+                      </Link>
+                      {r.sourceUrl && (
+                        <a
+                          href={r.sourceUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="a-icon-btn"
+                          aria-label="LH 공고 페이지"
+                          title="LH 공고 페이지"
+                        >
+                          <AIcon.External />
+                        </a>
+                      )}
+                    </div>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+        <div className="a-table-foot">
+          <div>
+            총 <strong style={{ color: "var(--a-ink)" }}>{filtered.length.toLocaleString()}</strong>건 ·{" "}
+            {filtered.length > 0 && (
+              <>
+                <strong style={{ color: "var(--a-ink)" }}>{pageStart + 1}–{Math.min(pageStart + PAGE_SIZE, filtered.length)}</strong>건 표시
+              </>
+            )}
+          </div>
+          <Pagination page={page} totalPages={totalPages} onChange={goToPage} />
+        </div>
+      </div>
+    </AdminShell>
+  );
+}
+
+function KpiCard({
+  label, value, sub, accent, warn, highlight,
+}: {
+  label: string;
+  value: number;
+  sub?: string;
+  accent?: boolean;
+  warn?: boolean;
+  highlight?: "warn" | "success";
+}) {
+  return (
+    <div className={`a-kpi-card ${accent ? "accent" : ""} ${warn ? "warn" : ""}`}>
+      <div className="a-kpi-label">{label}</div>
+      <div className="a-kpi-value">{value.toLocaleString()}<small>건</small></div>
+      {sub && <div className={`a-kpi-sub ${highlight ?? ""}`}>{sub}</div>}
+    </div>
+  );
+}
+
+function FilterChip({ active, onClick, count, children }: {
+  active: boolean;
+  onClick: () => void;
+  count: number;
+  children: React.ReactNode;
+}) {
+  return (
+    <button type="button" className={`a-filter-chip ${active ? "on" : ""}`} onClick={onClick}>
+      {children}
+      <span className="count">{count.toLocaleString()}</span>
+    </button>
+  );
+}
+
+function TypeBadge({ type }: { type: string }) {
+  return <span className={`a-badge ${type}`}>{TYPE_LABEL[type] ?? type}</span>;
+}
+
+function Pagination({ page, totalPages, onChange }: { page: number; totalPages: number; onChange: (p: number) => void }) {
+  if (totalPages <= 1) return null;
+  // 표시 페이지: 현재 ± 2 + 양 끝 + ellipsis.
+  const pages: (number | "...")[] = [];
+  const add = (p: number) => { if (!pages.includes(p) && p >= 1 && p <= totalPages) pages.push(p); };
+  add(1);
+  if (page > 4) pages.push("...");
+  for (let p = page - 2; p <= page + 2; p++) add(p);
+  if (page < totalPages - 3) pages.push("...");
+  add(totalPages);
+
+  return (
+    <div className="a-pagi">
+      <button type="button" onClick={() => onChange(page - 1)} disabled={page <= 1} aria-label="이전 페이지">‹</button>
+      {pages.map((p, i) =>
+        p === "..." ? (
+          <span key={`e${i}`} style={{ padding: "0 4px", color: "var(--a-ink-4)" }}>…</span>
+        ) : (
+          <button
+            key={p}
+            type="button"
+            onClick={() => onChange(p)}
+            className={p === page ? "on" : ""}
+            disabled={p === page}
+          >
+            {p}
+          </button>
+        ),
+      )}
+      <button type="button" onClick={() => onChange(page + 1)} disabled={page >= totalPages} aria-label="다음 페이지">›</button>
+    </div>
+  );
+}
+
+// topbar 의 search 와 dashboard 의 query state 를 동기화하지 않는 dummy — 추후 통합 가능.
+function SearchInTopbarSync({ onChange: _onChange }: { onChange: (v: string) => void }) {
+  return null;
+}
