@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LH_LISTINGS } from "@/lib/lh-adapter";
+import { LH_ADMIN_LISTINGS } from "@/lib/lh-adapter";
 import { OVERRIDES, type ManualOverride } from "@/lib/manual-overrides";
 import AdminShell, { type NavItem } from "../admin-shell";
 import { getAdminUser } from "@/lib/admin-user";
@@ -43,7 +43,7 @@ function formatField(key: string, value: unknown): { label: string; value: strin
 }
 
 export default function ActivityPage() {
-  const needsReview = LH_LISTINGS.filter(
+  const needsReview = LH_ADMIN_LISTINGS.filter(
     (l) => !(l.id in OVERRIDES) && (l.supplyUnits == null || l.supplyUnits === 1),
   ).length;
 
@@ -56,7 +56,7 @@ export default function ActivityPage() {
   ];
 
   // 매물 ID 로 listing 조회 맵
-  const listingMap = new Map(LH_LISTINGS.map((l) => [l.id, l] as const));
+  const listingMap = new Map(LH_ADMIN_LISTINGS.map((l) => [l.id, l] as const));
 
   // OVERRIDES → 시간 역순 정렬 (최근이 위)
   const activities = Object.entries(OVERRIDES)

@@ -1,4 +1,4 @@
-import { LH_LISTINGS } from "@/lib/lh-adapter";
+import { LH_ADMIN_LISTINGS } from "@/lib/lh-adapter";
 import { OVERRIDES, type OverrideRow } from "@/lib/manual-overrides";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -31,7 +31,7 @@ const TYPE_LABEL: Record<string, string> = {
 export default async function ReviewDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const decodedId = decodeURIComponent(id);
-  const listing = LH_LISTINGS.find((l) => l.id === decodedId);
+  const listing = LH_ADMIN_LISTINGS.find((l) => l.id === decodedId);
   if (!listing) notFound();
 
   const override = OVERRIDES[decodedId] ?? null;
@@ -49,7 +49,7 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
   }));
 
   // 검수 큐 — 미검수 + supplyUnits 의심값.
-  const queue = LH_LISTINGS.filter((l) => {
+  const queue = LH_ADMIN_LISTINGS.filter((l) => {
     if (l.id in OVERRIDES) return false;
     return l.supplyUnits == null || l.supplyUnits === 1;
   });

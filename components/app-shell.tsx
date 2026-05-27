@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import type { Density, District, Filters, HousingTypeId, Listing, SortKey } from "@/lib/types";
 import { effectiveStatus } from "@/lib/dday";
 import { FilterBar } from "./filter-bar";
@@ -36,9 +37,11 @@ function shortRegionName(name: string): string {
 export function AppShell({
   listings,
   districts,
+  regionalCount = 0,
 }: {
   listings: Listing[];
   districts: District[];
+  regionalCount?: number;
 }) {
   const router = useRouter();
   const [filters, setFilters] = useState<Filters>(INITIAL_FILTERS);
@@ -216,6 +219,25 @@ export function AppShell({
           )}
         </div>
         <div className="topbar-spacer" />
+        {regionalCount > 0 && (
+          <Link
+            href="/nationwide"
+            style={{
+              display: "inline-flex", alignItems: "center", gap: 6,
+              padding: "8px 14px", borderRadius: 999,
+              background: "var(--seed-scale-color-gray-900)", color: "#fff",
+              fontSize: 13, fontWeight: 700, textDecoration: "none",
+              whiteSpace: "nowrap", letterSpacing: "-0.02em",
+            }}
+          >
+            🌐 전국 모집
+            <span style={{
+              background: "var(--seed-scale-color-carrot-500)", color: "#fff",
+              borderRadius: 999, padding: "1px 7px", fontSize: 11, fontWeight: 800,
+              fontVariantNumeric: "tabular-nums",
+            }}>{regionalCount}</span>
+          </Link>
+        )}
       </header>
 
       <div className={`main ${detailOpen && selectedItem ? "detail-open" : ""}`}>

@@ -149,13 +149,15 @@ const SIDOS: SidoEntry[] = [
   { id: "jeju", name: "제주특별자치도", lat: 33.4996, lng: 126.5312 },
 ];
 
-function adaptApi(r: ApiListing): Listing | null {
-  // 광역(매입임대/전세형 등 다지점) 공고는 단일 좌표 의미 없음 → 지도 노출 제외.
-  // 향후 별도 "전국 공고" 섹션에서 노출하려면 별도 export 추가.
-  if (r.scope === "regional") return null;
-  // 좌표/시도 없는 항목 제외
-  if (!r.lat || !r.lng) return null;
-  if (!r.districtId) return null;
+// loose=true 면 광역(regional)·좌표없는 매물도 adapt — "전국 모집" 섹션 / 어드민 검수용.
+// 지도에 띄울 수 없으므로 메인 LH_LISTINGS 에는 안 들어가고 LH_REGIONAL_LISTINGS 로 분리.
+function adaptApi(r: ApiListing, loose = false): Listing | null {
+  if (!loose) {
+    // 광역(매입임대/전세형 등 다지점) 공고는 단일 좌표 의미 없음 → 지도 노출 제외.
+    if (r.scope === "regional") return null;
+    if (!r.lat || !r.lng) return null;
+    if (!r.districtId) return null;
+  }
   const [deposit, rent] = guardPrice(r.type, r.depositManwon || 0, r.monthlyRentManwon || 0);
   const raw = RAW_BY_PANID.get(r.pblancId);
   return {
@@ -167,10 +169,10 @@ function adaptApi(r: ApiListing): Listing | null {
     announceDate: raw?.announceDate || r.announceDate || undefined,
     type: r.type as HousingTypeId,
     agency: "LH",
-    districtId: r.districtId,
-    district: r.district,
-    lat: r.lat,
-    lng: r.lng,
+    districtId: r.districtId || "nationwide",
+    district: r.district || "전국",
+    lat: r.lat ?? 0,
+    lng: r.lng ?? 0,
     address: r.address || "",
     pnu: r.pnu || undefined,
     deposit,
@@ -281,6 +283,21 @@ function dedupeListings(items: Listing[]): Listing[] {
 }
 
 export const LH_LISTINGS: Listing[] = dedupeListings(ALL);
+
+// 광역(regional) 또는 좌표 없는 매물 — 지도/메인 리스트에서 빠진 것들.
+// "전국 모집" 섹션 + 어드민 검수 큐용. LH_LISTINGS 와 중복 없음.
+const mainIds = new Set(ALL.map((l) => l.pblancId));
+const REGIONAL: Listing[] = (apiListings as unknown as ApiListing[])
+  .flatMap((r) => {
+    // 이미 메인에 들어간 매물 (scope single + 좌표 + districtId) 은 제외.
+    if (mainIds.has(r.pblancId)) return [];
+    const base = adaptApi(r, true);
+    return base ? [applyOverride(base)] : [];
+  });
+export const LH_REGIONAL_LISTINGS: Listing[] = dedupeListings(REGIONAL);
+
+// 어드민 검수용 — 지도 노출 매물 + 광역 매물 전체. 검수 큐는 지도와 무관하므로 다 포함.
+export const LH_ADMIN_LISTINGS: Listing[] = [...LH_LISTINGS, ...LH_REGIONAL_LISTINGS];
 
 export function buildDistricts(listings: Listing[]): District[] {
   const counts = new Map<string, number>();

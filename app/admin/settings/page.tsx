@@ -1,10 +1,10 @@
-import { LH_LISTINGS } from "@/lib/lh-adapter";
+import { LH_ADMIN_LISTINGS } from "@/lib/lh-adapter";
 import { OVERRIDES } from "@/lib/manual-overrides";
 import AdminShell, { type NavItem } from "../admin-shell";
 import { getAdminUser } from "@/lib/admin-user";
 
 export default function SettingsPage() {
-  const needsReview = LH_LISTINGS.filter(
+  const needsReview = LH_ADMIN_LISTINGS.filter(
     (l) => !(l.id in OVERRIDES) && (l.supplyUnits == null || l.supplyUnits === 1),
   ).length;
 
