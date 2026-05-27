@@ -10,7 +10,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { generateText } from "ai";
-import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
+import { createAnthropic } from "@ai-sdk/anthropic";
 import { z } from "zod";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -18,16 +18,12 @@ const ROOT = path.resolve(__dirname, "..");
 const TEXTS_DIR = path.join(ROOT, "lib/notice-texts");
 const OUT_DIR = path.join(ROOT, "lib/notice-eligibility");
 
-const BIZROUTER_API_KEY = process.env.BIZROUTER_API_KEY;
-if (!BIZROUTER_API_KEY) { console.error("ERROR: BIZROUTER_API_KEY 누락"); process.exit(1); }
+const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
+if (!ANTHROPIC_API_KEY) { console.error("ERROR: ANTHROPIC_API_KEY 누락"); process.exit(1); }
 
-const bizrouter = createOpenAICompatible({
-  name: "bizrouter",
-  baseURL: process.env.BIZROUTER_BASE_URL ?? "https://api.bizrouter.ai/v1",
-  apiKey: BIZROUTER_API_KEY,
-});
+const anthropic = createAnthropic({ apiKey: ANTHROPIC_API_KEY.trim() });
 // Haiku 4.5: $1/M in, $5/M out (Sonnet 대비 5배↓). 자격 추출은 비교적 단순 → 품질 충분.
-const MODEL = process.env.EXTRACT_MODEL ?? "anthropic/claude-haiku-4.5";
+const MODEL = process.env.EXTRACT_MODEL ?? "claude-haiku-4-5";
 
 // 자격 정보 schema — LLM 이 생성할 구조.
 // 모든 숫자는 만원 단위 (소득/자산), percent 는 도시근로자 % (예: 70, 100, 150).
@@ -157,7 +153,7 @@ async function extractOne(id) {
   const eligibilityRegion = extractEligibilityRegion(md);
 
   const result = await generateText({
-    model: bizrouter(MODEL),
+    model: anthropic(MODEL),
     system: SYSTEM_PROMPT + SCHEMA_HINT,
     prompt:
       `다음은 LH 공고문의 자격 관련 섹션입니다. 자격 정보를 추출해 위 schema 의 JSON 만 출력하세요. 설명/주석/마크다운 헤더 금지, 오직 JSON 한 덩어리.\n\n` +

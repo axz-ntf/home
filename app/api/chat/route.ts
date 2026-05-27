@@ -1,4 +1,4 @@
-import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
+import { createAnthropic } from "@ai-sdk/anthropic";
 import { convertToModelMessages, stepCountIs, streamText, tool, type UIMessage } from "ai";
 import { z } from "zod";
 import { LH_LISTINGS } from "@/lib/lh-adapter";
@@ -7,14 +7,11 @@ import { searchByQueryVector } from "@/lib/notice-search";
 
 export const maxDuration = 60;
 
-// BizRouter (OpenAI-compatible) → Claude Sonnet 4.6.
-// Solar Pro 3 로 갈아타려면 upstage provider + SOLAR_* env 사용 (git 히스토리 참고).
-const bizrouter = createOpenAICompatible({
-  name: "bizrouter",
-  baseURL: process.env.BIZROUTER_BASE_URL ?? "https://api.bizrouter.ai/v1",
-  apiKey: process.env.BIZROUTER_API_KEY,
+// Anthropic Claude (직접 API). 이전엔 BizRouter 프록시 사용했으나 중단되어 직접 호출로 전환.
+const anthropic = createAnthropic({
+  apiKey: (process.env.ANTHROPIC_API_KEY ?? "").trim(),
 });
-const MODEL_ID = process.env.BIZROUTER_MODEL ?? "anthropic/claude-sonnet-4.6";
+const MODEL_ID = process.env.ANTHROPIC_MODEL ?? "claude-sonnet-4-6";
 
 const SYSTEM_PROMPT = `당신은 한국 LH/마이홈 공공임대주택·공공분양 자격 상담 도우미 "둥지 AI"입니다.
 
@@ -284,7 +281,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: bizrouter(MODEL_ID),
+    model: anthropic(MODEL_ID),
     system: SYSTEM_PROMPT,
     messages: await convertToModelMessages(messages),
     tools: { recommendListings, suggestActions, searchNoticeContent },
