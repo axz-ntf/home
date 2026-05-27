@@ -2,6 +2,7 @@ import type { District, HousingTypeId, Listing, StatusId } from "./types";
 import apiListings from "./listings-api.json";
 import BLOB_COVERS from "./blob-covers.json";
 import allNotices from "./lh-notices-all.json";
+import dundeonSeoul from "./dundeon-seoul.json";
 import { applyOverride } from "./manual-overrides";
 
 // lh-notices-all 에는 listings-api 에 없는 raw 상태 필드 (noticeStatus, progressStatus) 가 있음.
@@ -282,7 +283,43 @@ function dedupeListings(items: Listing[]): Listing[] {
   return out;
 }
 
-export const LH_LISTINGS: Listing[] = dedupeListings(ALL);
+// ── 서울 든든전세 (광역 1건) 의 개별 주택 103건 — 지도 표시용으로 분리 ──
+// xlsx 주택목록 → VWorld geocoding (scripts/geocode-dundeon.mjs) → lib/dundeon-seoul.json.
+// 모 매물 메타(type/자격/일정)는 상속, 위치/면적/보증금만 주택별로.
+const DUNDEON_SEOUL_PID = "2015122300019992";
+interface DundeonUnit {
+  seq: number; group: string; addressRaw: string; address: string;
+  dong: string | null; ho: string | null; sizeType: string | null;
+  areaExclusive: number | null; rooms: string | null; floor: string | null;
+  houseType: string | null; depositManwon: number | null;
+  lat: number | null; lng: number | null;
+}
+function buildDundeonSeoulListings(): Listing[] {
+  const parent = (apiListings as unknown as ApiListing[]).find((r) => r.pblancId === DUNDEON_SEOUL_PID);
+  if (!parent) return [];
+  const base = adaptApi(parent, true);
+  if (!base) return [];
+  return (dundeonSeoul as DundeonUnit[])
+    .filter((u) => u.lat != null && u.lng != null)
+    .map((u) => ({
+      ...base,
+      id: `lh-rental-${DUNDEON_SEOUL_PID}-h${u.seq}`,
+      title: `${u.group}${u.dong ? ` ${u.dong}동` : ""}${u.ho ? ` ${u.ho}호` : ""} · 든든전세`,
+      districtId: "seoul",
+      district: "서울특별시",
+      lat: u.lat!,
+      lng: u.lng!,
+      address: u.addressRaw,
+      deposit: u.depositManwon ?? 0,
+      rent: 0,
+      area: u.areaExclusive ? `${Math.round(u.areaExclusive)}㎡` : "",
+      supplyUnits: 1,
+      suplyTyNm: u.houseType ?? undefined,
+      complexes: undefined,
+    }));
+}
+
+export const LH_LISTINGS: Listing[] = [...dedupeListings(ALL), ...buildDundeonSeoulListings()];
 
 // 광역(regional) 또는 좌표 없는 매물 — 지도/메인 리스트에서 빠진 것들.
 // "전국 모집" 섹션 + 어드민 검수 큐용. LH_LISTINGS 와 중복 없음.
@@ -291,6 +328,8 @@ const REGIONAL: Listing[] = (apiListings as unknown as ApiListing[])
   .flatMap((r) => {
     // 이미 메인에 들어간 매물 (scope single + 좌표 + districtId) 은 제외.
     if (mainIds.has(r.pblancId)) return [];
+    // 서울 든든전세는 개별 주택으로 지도 분리됨 → 전국 모집 중복 제외.
+    if (r.pblancId === DUNDEON_SEOUL_PID) return [];
     const base = adaptApi(r, true);
     return base ? [applyOverride(base)] : [];
   });
