@@ -3,6 +3,7 @@ import apiListings from "./listings-api.json";
 import BLOB_COVERS from "./blob-covers.json";
 import allNotices from "./lh-notices-all.json";
 import dundeonSeoul from "./dundeon-seoul.json";
+import mappedRegional from "./mapped-regional.json";
 import { applyOverride } from "./manual-overrides";
 
 // lh-notices-all 에는 listings-api 에 없는 raw 상태 필드 (noticeStatus, progressStatus) 가 있음.
@@ -319,7 +320,52 @@ function buildDundeonSeoulListings(): Listing[] {
     }));
 }
 
-export const LH_LISTINGS: Listing[] = [...dedupeListings(ALL), ...buildDundeonSeoulListings()];
+// ── 광역/좌표없음 매물 중 지오코딩으로 지도에 올린 것 (든든전세 방식 일반화) ──
+// lib/mapped-regional.json: pblancId → { districtId, district, points[{lat,lng,...}] }.
+// 단일단지면 point 1개(대표 1핀), 흩어진 주택목록이면 point N개(주택별 핀).
+// 모 매물 메타 상속 + point별 위치/가격 덮어쓰기. 해당 pblancId 는 전국모집에서 제외.
+interface MappedPoint {
+  lat: number; lng: number; address?: string; label?: string;
+  area?: string; depositManwon?: number; rentManwon?: number; units?: number;
+}
+interface MappedCfg { districtId?: string; district?: string; points: MappedPoint[]; }
+const MAPPED_REGIONAL = mappedRegional as Record<string, MappedCfg>;
+const MAPPED_REGIONAL_PIDS = new Set(Object.keys(MAPPED_REGIONAL));
+
+function buildMappedRegionalListings(): Listing[] {
+  const out: Listing[] = [];
+  for (const [pid, cfg] of Object.entries(MAPPED_REGIONAL)) {
+    const parent = (apiListings as unknown as ApiListing[]).find((r) => r.pblancId === pid);
+    if (!parent) continue;
+    const base = adaptApi(parent, true);
+    if (!base) continue;
+    const multi = cfg.points.length > 1;
+    cfg.points.forEach((p, i) => {
+      out.push({
+        ...base,
+        id: multi ? `${base.id}-m${i}` : base.id,
+        lat: p.lat,
+        lng: p.lng,
+        districtId: cfg.districtId ?? base.districtId,
+        district: cfg.district ?? base.district,
+        ...(p.address && { address: p.address }),
+        ...(p.label && { title: p.label }),
+        ...(p.area && { area: p.area }),
+        ...(p.depositManwon != null && { deposit: p.depositManwon }),
+        ...(p.rentManwon != null && { rent: p.rentManwon }),
+        ...(p.units != null && { supplyUnits: p.units }),
+        complexes: undefined,
+      });
+    });
+  }
+  return out.map(applyOverride);
+}
+
+export const LH_LISTINGS: Listing[] = [
+  ...dedupeListings(ALL),
+  ...buildDundeonSeoulListings(),
+  ...buildMappedRegionalListings(),
+];
 
 // 광역(regional) 또는 좌표 없는 매물 — 지도/메인 리스트에서 빠진 것들.
 // "전국 모집" 섹션 + 어드민 검수 큐용. LH_LISTINGS 와 중복 없음.
@@ -330,6 +376,8 @@ const REGIONAL: Listing[] = (apiListings as unknown as ApiListing[])
     if (mainIds.has(r.pblancId)) return [];
     // 서울 든든전세는 개별 주택으로 지도 분리됨 → 전국 모집 중복 제외.
     if (r.pblancId === DUNDEON_SEOUL_PID) return [];
+    // 지오코딩으로 지도에 올린 광역 매물 → 전국 모집 중복 제외.
+    if (MAPPED_REGIONAL_PIDS.has(r.pblancId ?? "")) return [];
     const base = adaptApi(r, true);
     return base ? [applyOverride(base)] : [];
   });
