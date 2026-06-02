@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { District, Listing } from "@/lib/types";
 import { loadNaverMaps } from "@/lib/naver-loader";
 import "@/lib/naver-types";
@@ -94,6 +94,28 @@ function gridStepForZoom(zoom: number): number {
   if (zoom <= 12) return 0.05;
   if (zoom <= 13) return 0.025;
   return 0; // 14 이상은 개별 핀
+}
+
+// 같은 좌표(같은 건물·주소)의 여러 매물을 지도에선 대표 1개로 묶는다.
+// 든든전세처럼 한 단지 N세대가 호별 매물로 분리돼 같은 좌표에 핀 N개로 쌓이는 걸 방지.
+// 리스트/상세 데이터(전체 매물)는 그대로 — 지도 렌더에서만 압축한다.
+// repOf: 멤버 매물 id → 대표 매물 id (호버/선택 하이라이트를 깨지지 않게 매핑).
+function groupPinsByLocation(pins: Listing[]): { mapPins: Listing[]; repOf: Map<string, string> } {
+  const buckets = new Map<string, Listing[]>();
+  for (const p of pins) {
+    const key = `${p.lat.toFixed(6)}|${p.lng.toFixed(6)}`;
+    const arr = buckets.get(key);
+    if (arr) arr.push(p);
+    else buckets.set(key, [p]);
+  }
+  const mapPins: Listing[] = [];
+  const repOf = new Map<string, string>();
+  for (const group of buckets.values()) {
+    const rep = group[0];
+    mapPins.push(rep);
+    for (const p of group) repOf.set(p.id, rep.id);
+  }
+  return { mapPins, repOf };
 }
 
 function clusterPins(pins: Listing[], zoom: number): Array<
@@ -244,6 +266,9 @@ export function NaverMapView({
     });
   }, [ready, showDistrictMarkers, districtCounts, districts, onDistrictClick]);
 
+  // 같은 좌표 매물은 지도에서 대표 1개로 — 호별 분리 매물이 한 점에 쌓이는 것 방지.
+  const { mapPins, repOf } = useMemo(() => groupPinsByLocation(pins), [pins]);
+
   // Individual listing pin markers + clustering
   useEffect(() => {
     if (!ready || !mapRef.current || !window.naver) return;
@@ -259,7 +284,7 @@ export function NaverMapView({
     if (!activeDistrict && zoom <= 10) return;
 
     // 시도 선택 모드에선 클러스터 없이 모두 개별 핀, 그 외엔 줌 기반 그리드 클러스터
-    const groups = clusterPins(pins, activeDistrict ? 99 : zoom);
+    const groups = clusterPins(mapPins, activeDistrict ? 99 : zoom);
     for (const g of groups) {
       if (g.kind === "single") {
         const p = g.pin;
@@ -292,15 +317,18 @@ export function NaverMapView({
         clusterMarkersRef.current.push(marker);
       }
     }
-  }, [ready, activeDistrict, pins, zoom, onPinHover, onPinClick]);
+  }, [ready, activeDistrict, mapPins, zoom, onPinHover, onPinClick]);
 
-  // Sync hovered/selected visual state onto existing pin elements
+  // Sync hovered/selected visual state onto existing pin elements.
+  // 멤버 매물 id 는 대표 핀 id 로 변환 — 묶인 세대 중 하나를 가리켜도 대표 핀이 하이라이트됨.
   useEffect(() => {
+    const repHovered = hoveredId ? repOf.get(hoveredId) ?? hoveredId : null;
+    const repSelected = selectedId ? repOf.get(selectedId) ?? selectedId : null;
     pinMarkersRef.current.forEach(({ el }, id) => {
-      el.classList.toggle("hovered", id === hoveredId);
-      el.classList.toggle("selected", id === selectedId);
+      el.classList.toggle("hovered", id === repHovered);
+      el.classList.toggle("selected", id === repSelected);
     });
-  }, [hoveredId, selectedId]);
+  }, [hoveredId, selectedId, repOf]);
 
   // Pan/zoom to active district
   useEffect(() => {
