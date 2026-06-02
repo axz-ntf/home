@@ -1,0 +1,22 @@
+{
+  "supplyTotal": 470,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 470,
+      "age": "19세 이상",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "서울·인천·경기도 거주(주민등록 기준)",
+        "청약저축 가입 불필요",
+        "1세대 1주택 기준",
+        "분양전환 시까지 무주택세대구성원 유지 필수"
+      ]
+    }
+  ],
+  "priority": []
+}

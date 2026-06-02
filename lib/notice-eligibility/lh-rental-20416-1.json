@@ -1,0 +1,35 @@
+{
+  "supplyTotal": 35,
+  "tiers": [
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": 35,
+      "age": null,
+      "marriage": "혼인기간 7년 이내 또는 6세 이하 자녀(태아 포함) 있는 혼인 중인 사람",
+      "income": null,
+      "asset": null,
+      "other": [
+        "예비신혼부부: 입주 전까지 혼인사실 증명 가능한 사람",
+        "무주택세대구성원 필수",
+        "최대 거주기간 10~14년",
+        "1세대 1주택에만 신청가능"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": "6세 이하 자녀(태아 포함) 있는 한부모",
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원 필수",
+        "최대 거주기간 10~14년",
+        "1세대 1주택에만 신청가능"
+      ]
+    }
+  ],
+  "priority": []
+}

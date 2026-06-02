@@ -1,0 +1,185 @@
+{
+  "supplyTotal": 30,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 12,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준 중위소득 200% 이하"
+      },
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "세대구성원 전원 금융자산 정보 제공 동의 필수",
+        "과거 공공임대주택 불법양도·전대 행위자는 4년 경과 필요"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": 1,
+      "age": "18세 이상 39세 이하 미혼자",
+      "marriage": "미혼",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준 중위소득 200% 이하"
+      },
+      "asset": null,
+      "other": [
+        "미혼인 아동복지시설 퇴소자 포함",
+        "미혼인 청소년복지시설 퇴소자 포함"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부 등",
+      "units": 3,
+      "age": null,
+      "marriage": "혼인기간 7년 이내 또는 6세 이하 자녀 보유",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준 중위소득 200% 이하"
+      },
+      "asset": null,
+      "other": [
+        "예비신혼부부 포함",
+        "6세 이하 자녀를 둔 한부모가족 포함",
+        "예비신혼부부는 당사자 2인 중 1인을 대표로 지정 신청"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": 2,
+      "age": "65세 이상",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준 중위소득 200% 이하"
+      },
+      "asset": null,
+      "other": [
+        "혼인 중이 아닌 경우 단독세대주로 입주"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "국가유공자 등",
+      "units": 2,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준 중위소득 200% 이하"
+      },
+      "asset": null,
+      "other": [
+        "국가유공자, 보훈보상대상자, 5·18민주유공자, 특수임무유공자, 참전유공자, 국가유공자에 준하는 군경"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "북한이탈주민 등",
+      "units": 1,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준 중위소득 200% 이하"
+      },
+      "asset": null,
+      "other": [
+        "북한이탈주민, 납북피해자, 중소기업근로자, 비정규직근로자, 가정폭력피해자, 성폭력피해자, 아동위탁가정, 범죄피해자, 탄광근로자, 파독근로자, 영구임대 입주자격 상실 퇴거자, 일본군위안부피해자, 소년소녀가정, 해외거주재외동포, 등록포로"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "다자녀가구 등",
+      "units": 2,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준 중위소득 200% 이하"
+      },
+      "asset": null,
+      "other": [
+        "미성년자녀 2명 이상 가구(조손가정 포함)",
+        "65세 이상 직계존속 부양자",
+        "지원대상 한부모가족"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "장애인",
+      "units": 1,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준 중위소득 200% 이하"
+      },
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "etc",
+      "name": "비주택거주자 등",
+      "units": 1,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준 중위소득 200% 이하"
+      },
+      "asset": null,
+      "other": [
+        "비닐간이공작물 거주자",
+        "비주택거주자",
+        "최저주거기준 미달 거주자",
+        "무허가건축물 세입자"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "급여수급자 등",
+      "units": 2,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준 중위소득 200% 이하"
+      },
+      "asset": null,
+      "other": [
+        "생계급여 수급자",
+        "주거급여 수급자",
+        "의료급여 수급자"
+      ]
+    }
+  ],
+  "priority": [
+    "철거민",
+    "국가유공자",
+    "북한이탈주민",
+    "다자녀가구",
+    "장애인",
+    "비주택거주자",
+    "급여수급자",
+    "한부모가족"
+  ]
+}

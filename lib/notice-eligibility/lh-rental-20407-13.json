@@ -1,0 +1,22 @@
+{
+  "supplyTotal": 470,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 470,
+      "age": "19세 이상",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "서울특별시, 인천광역시, 경기도 거주(주민등록표등본 기준)",
+        "1세대 1주택 기준 공급",
+        "청약저축 가입 불필요",
+        "소득 및 자산기준 충족 불필요"
+      ]
+    }
+  ],
+  "priority": []
+}
