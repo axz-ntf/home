@@ -9,6 +9,7 @@ import { applyUrlFor, infoUrlFor } from "@/lib/notice-match";
 import { NaverPanorama } from "./naver-panorama";
 import { CloseIcon, HeartIcon, TrainIcon } from "./icons";
 import { EligibilityDetail } from "./eligibility-detail";
+import { TypeIntro, TypePrice, accentVars } from "./detail-type";
 
 // 1평 ≈ 3.3058㎡ — 부동산 공인 환산
 const PYEONG_PER_M2 = 1 / 3.3058;
@@ -203,7 +204,7 @@ export function DetailPanel({
         : { label: "접수 마감", active: false };
 
   return (
-    <aside className={`detail-panel ${open ? "open" : ""}`}>
+    <aside className={`detail-panel ${open ? "open" : ""}`} style={accentVars(item.type)}>
       <button className="detail-close" onClick={onClose}>
         <CloseIcon size={16} />
       </button>
@@ -252,6 +253,8 @@ export function DetailPanel({
           </span>
         </div>
 
+        <TypeIntro item={item} />
+
         {isRegularRecruitment(item.deadline, item.status) ? (
           <div className="detail-empty-notice">
             <div className="detail-empty-notice-title">정례모집 단지</div>
@@ -279,45 +282,7 @@ export function DetailPanel({
         <ListingPhotos item={item} />
         <ListingComplexes item={item} />
 
-        {item.type === "sale" ? (
-          <div className="detail-price">
-            <div className="detail-price-cell detail-price-cell--full">
-              <div className="detail-price-label">분양가 (평균)</div>
-              <div className="detail-price-value">
-                {item.salePriceManwon && item.salePriceManwon > 0
-                  ? `${Math.floor(item.salePriceManwon / 10000) > 0 ? `${Math.floor(item.salePriceManwon / 10000)}억 ` : ""}${(item.salePriceManwon % 10000).toLocaleString()}만원`
-                  : "공고문 확인"}
-              </div>
-            </div>
-          </div>
-        ) : (
-          <div className="detail-price">
-            <div className="detail-price-cell">
-              <div className="detail-price-label">보증금</div>
-              <div className="detail-price-value">
-                {item.deposit > 0 ? (
-                  `${item.deposit.toLocaleString()}만원`
-                ) : (
-                  <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="detail-confirm-link">
-                    공고문에서 확인 →
-                  </a>
-                )}
-              </div>
-            </div>
-            <div className="detail-price-cell">
-              <div className="detail-price-label">월 임대료</div>
-              <div className="detail-price-value">
-                {item.rent > 0 ? (
-                  `${item.rent}만원`
-                ) : (
-                  <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="detail-confirm-link">
-                    공고문에서 확인 →
-                  </a>
-                )}
-              </div>
-            </div>
-          </div>
-        )}
+        <TypePrice item={item} />
 
         <section className="detail-section">
           <EligibilityDetail listingId={item.id} sourceUrl={item.sourceUrl} housingType={item.type} />

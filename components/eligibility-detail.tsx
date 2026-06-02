@@ -9,7 +9,7 @@ import { eligibilitySummaryByType } from "@/lib/mock-data";
 
 type HousingType = "happy" | "nation" | "perm" | "integ" | "fifty" | "sale" | "buy" | "jeonse";
 
-const TYPE_DESCRIPTIONS: Record<HousingType, { title: string; detail: string[] }> = {
+export const TYPE_DESCRIPTIONS: Record<HousingType, { title: string; detail: string[] }> = {
   happy: {
     title: "행복주택 — 청년·신혼·고령 등 다계층",
     detail: [
@@ -90,7 +90,6 @@ const IconRing = () => <MSIcon name="favorite" />;
 const IconCoin = () => <MSIcon name="payments" />;
 const IconHome = () => <MSIcon name="savings" />;
 const IconCheck = () => <MSIcon name="check_circle" />;
-const IconStar = () => <MSIcon name="star" />;
 
 function IncomeTable({ income }: { income: NonNullable<Tier["income"]> }) {
   if (!income.byHousehold) return null;
@@ -123,6 +122,22 @@ function expandOtherItem(item: string): string[] {
   return [item];
 }
 
+// "라벨: a, b, c …" 처럼 라벨 뒤로 항목이 길게 나열되는 "기타" 줄은
+// 한 문장으로 줄바꿈되며 벽처럼 보인다 (예: 영구임대 "해당 입주자격: …13개 계층").
+// 라벨 + 태그 칩으로 분해해 스캔성을 높인다.
+// · 천단위 콤마(숫자 3자리 직전)는 분해 대상이 아니므로 무시한다 (예: 82,800,000원).
+// · 항목이 3개 미만이면 보통 나열이 아니라 문장/키-값이라 그대로 둔다 (예: "…이하, 자동차 소유 불가").
+function parseEnumOther(text: string): { label: string; tags: string[] } | null {
+  const m = text.match(/^(.{1,16}?)\s*[:：]\s*(.+)$/);
+  if (!m) return null;
+  const tags = m[2]
+    .split(/\s*,(?!\d{3})\s*/)
+    .map((s) => s.trim())
+    .filter(Boolean);
+  if (tags.length < 3) return null;
+  return { label: m[1].trim(), tags };
+}
+
 function OtherList({ items }: { items: string[] }) {
   const [expanded, setExpanded] = useState(false);
   const all = items.flatMap(expandOtherItem);
@@ -134,6 +149,19 @@ function OtherList({ items }: { items: string[] }) {
     <>
       <ul className="eli-other-list">
         {visibleItems.map((o, i) => {
+          const enumerated = parseEnumOther(o);
+          if (enumerated) {
+            return (
+              <li key={i} className="eli-other-enum">
+                <span className="eli-other-enum-label">{enumerated.label}</span>
+                <span className="eli-tag-list">
+                  {enumerated.tags.map((tag, j) => (
+                    <span key={j} className="eli-tag">{tag}</span>
+                  ))}
+                </span>
+              </li>
+            );
+          }
           const hasMarker = /^[①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳]/.test(o.trim());
           return <li key={i} className={hasMarker ? "has-marker" : ""}>{o}</li>;
         })}
@@ -147,49 +175,35 @@ function OtherList({ items }: { items: string[] }) {
   );
 }
 
-function TierBody({ tier }: { tier: Tier }) {
+// 계층 본문에 보여줄 실제 내용이 있는지 (이름만 있는 "구조뿐인" 계층 판별용).
+function hasContent(t: Tier): boolean {
+  return (
+    Boolean(t.age) || Boolean(t.marriage) ||
+    t.income?.percent != null || Boolean(t.income?.byHousehold) || Boolean(t.income?.note) ||
+    t.asset?.total != null || t.asset?.car != null ||
+    (t.other?.length ?? 0) > 0
+  );
+}
+
+// "1순위 - 생계·의료급여 수급자" → "생계·의료급여 수급자" (행정 순위 접두어 제거).
+function stripRankPrefix(name: string): string {
+  const stripped = name.replace(/^\s*\d+\s*순위\s*[-–—·:()]*\s*/, "").trim();
+  return stripped || name;
+}
+
+// 핵심 행 — 연령 / 혼인 / 월소득(중위 X% 한 줄). 표·노트는 MoreDetails 로.
+function CoreRows({ tier }: { tier: Tier }) {
   const rows: { icon: React.ReactNode; label: string; content: React.ReactNode }[] = [];
   if (tier.age) rows.push({ icon: <IconClock />, label: "연령", content: tier.age });
   if (tier.marriage) rows.push({ icon: <IconRing />, label: "혼인", content: tier.marriage });
-  if (tier.income) {
+  if (tier.income?.percent != null) {
     rows.push({
       icon: <IconCoin />,
       label: "월 소득",
-      content: (
-        <>
-          {tier.income.percent != null && (
-            <div className="eli-row-headline">
-              중위소득 <strong>{tier.income.percent}%</strong> 이하
-            </div>
-          )}
-          <IncomeTable income={tier.income} />
-          {tier.income.note && <div className="eli-row-note">💡 {tier.income.note}</div>}
-        </>
-      ),
+      content: <>중위소득 <strong>{tier.income.percent}%</strong> 이하</>,
     });
   }
-  if (tier.asset && (tier.asset.total != null || tier.asset.car != null)) {
-    rows.push({
-      icon: <IconHome />,
-      label: "자산",
-      content: (
-        <div className="eli-asset-list">
-          {tier.asset.total != null && <div>총자산 <strong>{formatManwon(tier.asset.total)}</strong> 이하</div>}
-          {tier.asset.car != null && <div>자동차 <strong>{formatManwon(tier.asset.car)}</strong> 이하</div>}
-        </div>
-      ),
-    });
-  }
-  if (tier.other?.length) {
-    rows.push({
-      icon: <IconCheck />,
-      label: "기타",
-      content: <OtherList items={tier.other} />,
-    });
-  }
-  if (!rows.length) {
-    return <div className="eli-empty">이 계층의 세부 자격은 공고문을 확인해 주세요.</div>;
-  }
+  if (!rows.length) return null;
   return (
     <div className="eli-rows">
       {rows.map((r, i) => (
@@ -200,6 +214,51 @@ function TierBody({ tier }: { tier: Tier }) {
         </div>
       ))}
     </div>
+  );
+}
+
+// 접히는 디테일 — 가구원수별 소득표 · 자산 · 기타.
+function MoreDetails({ tier }: { tier: Tier }) {
+  const hasIncomeTable = !!tier.income?.byHousehold;
+  const hasNote = !!tier.income?.note;
+  const hasAsset = !!tier.asset && (tier.asset.total != null || tier.asset.car != null);
+  const hasOther = !!tier.other?.length;
+  if (!hasIncomeTable && !hasNote && !hasAsset && !hasOther) return null;
+  return (
+    <details className="eli-more">
+      <summary>소득·자산 자세히 보기</summary>
+      <div className="eli-rows eli-more-body">
+        {hasIncomeTable && (
+          <div className="eli-row">
+            <div className="eli-row-icon" aria-hidden><IconCoin /></div>
+            <div className="eli-row-label">월소득표</div>
+            <div className="eli-row-content">
+              <IncomeTable income={tier.income!} />
+              {hasNote && <div className="eli-row-note">💡 {tier.income!.note}</div>}
+            </div>
+          </div>
+        )}
+        {hasAsset && (
+          <div className="eli-row">
+            <div className="eli-row-icon" aria-hidden><IconHome /></div>
+            <div className="eli-row-label">자산</div>
+            <div className="eli-row-content">
+              <div className="eli-asset-list">
+                {tier.asset!.total != null && <div>총자산 <strong>{formatManwon(tier.asset!.total)}</strong> 이하</div>}
+                {tier.asset!.car != null && <div>자동차 <strong>{formatManwon(tier.asset!.car)}</strong> 이하</div>}
+              </div>
+            </div>
+          </div>
+        )}
+        {hasOther && (
+          <div className="eli-row">
+            <div className="eli-row-icon" aria-hidden><IconCheck /></div>
+            <div className="eli-row-label">기타</div>
+            <div className="eli-row-content"><OtherList items={tier.other!} /></div>
+          </div>
+        )}
+      </div>
+    </details>
   );
 }
 
@@ -272,74 +331,88 @@ export function EligibilityDetail({
     );
   }
 
-  // 데이터 정리:
-  // 1) units=0/null + 모든 자격필드 비어있는 tier 는 제외 (Solar 가 의미없이 채운 케이스)
-  // 2) name 중복 dedupe (첫 번째 우선)
-  const allTiers = data.tiers ?? [];
+  // 정리: name dedupe + 빈 tier(내용·세대수 모두 없음) 제외.
   const seenNames = new Set<string>();
-  const tiers = allTiers.filter((t) => {
+  const tiers = (data.tiers ?? []).filter((t) => {
     if (seenNames.has(t.name)) return false;
     seenNames.add(t.name);
     const hasUnits = typeof t.units === "number" && t.units > 0;
-    const hasDetail =
-      Boolean(t.age) || Boolean(t.marriage) ||
-      Boolean(t.income?.percent) || Boolean(t.income?.byHousehold) || Boolean(t.income?.note) ||
-      Boolean(t.asset?.total) || Boolean(t.asset?.car) ||
-      (t.other?.length ?? 0) > 0;
-    return hasUnits || hasDetail;
+    return hasUnits || hasContent(t);
   });
-  const activeTier = tiers[activeTierIdx] ?? tiers[0];
+
+  // 내용 있는 계층(본문 후보). 그룹이 많으면(>TAB_LIMIT) 탭 벽 대신 "대상 칩" 요약,
+  // 그룹별 세부(소득/자산)는 카드에서 빼 자가진단으로 위임. 적으면 탭 유지.
+  const richTiers = tiers.filter(hasContent);
+  const TAB_LIMIT = 5;
+  const useChips = richTiers.length > TAB_LIMIT;
+  const targetNames = Array.from(new Set(tiers.map((t) => stripRankPrefix(t.name))));
+  const summaryNames = Array.from(
+    new Set(tiers.filter((t) => !hasContent(t)).map((t) => stripRankPrefix(t.name)))
+  );
+  const activeTier = richTiers[activeTierIdx] ?? richTiers[0];
 
   return (
     <div className="eli-detail">
       <div className="eli-section-title">입주 자격</div>
-      {/* 계층 탭 — 2개 이상일 때만 노출. 1개 매물은 탭 자체가 의미 없음. */}
-      {tiers.length > 1 && (
-        <div className="eli-tabs" role="tablist">
-          {tiers.map((t, i) => (
-            <button
-              key={i}
-              type="button"
-              role="tab"
-              aria-selected={i === activeTierIdx}
-              className={`eli-tab ${i === activeTierIdx ? "on" : ""}`}
-              onClick={() => setActiveTierIdx(i)}
-            >
-              <div className="eli-tab-name">{t.name}</div>
-              {typeof t.units === "number" && t.units > 0 && <div className="eli-tab-units">{t.units}</div>}
-            </button>
-          ))}
+
+      {useChips ? (
+        /* 그룹 과다 → 대상 칩 요약 (세부 판단은 자가진단) */
+        <div className="eli-target">
+          <div className="eli-target-label">대상</div>
+          <div className="eli-tag-list">
+            {targetNames.map((n, i) => <span key={i} className="eli-tag">{n}</span>)}
+          </div>
         </div>
+      ) : (
+        <>
+          {/* 내용 있는 계층: 2개 이상이면 탭, 1개면 바로 본문 */}
+          {richTiers.length > 1 && (
+            <div className="eli-tabs" role="tablist">
+              {richTiers.map((t, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  role="tab"
+                  aria-selected={i === activeTierIdx}
+                  className={`eli-tab ${i === activeTierIdx ? "on" : ""}`}
+                  onClick={() => setActiveTierIdx(i)}
+                >
+                  <div className="eli-tab-name">{stripRankPrefix(t.name)}</div>
+                </button>
+              ))}
+            </div>
+          )}
+          {activeTier && (
+            <>
+              <CoreRows tier={activeTier} />
+              <MoreDetails tier={activeTier} />
+            </>
+          )}
+
+          {/* 이름만 있는(세부 없는) 계층은 "그 외 대상" 칩으로 */}
+          {summaryNames.length > 0 && (
+            <div className="eli-target">
+              <div className="eli-target-label">{richTiers.length > 0 ? "그 외 대상" : "대상"}</div>
+              <div className="eli-tag-list">
+                {summaryNames.map((n, i) => <span key={i} className="eli-tag">{n}</span>)}
+              </div>
+            </div>
+          )}
+        </>
       )}
 
-      {/* 활성 계층 본문 */}
-      {activeTier && <TierBody tier={activeTier} />}
-
-      {/* 우선공급 대상 */}
+      {/* 우선공급 대상 — 한 줄 + 접기 */}
       {data.priority && data.priority.length > 0 && (
-        <div className="eli-priority">
-          <div className="eli-priority-title"><IconStar /> 우선공급 대상이면 가점이 있어요</div>
-          <ul className="eli-priority-list">
+        <details className="eli-more">
+          <summary>우선공급 대상 {data.priority.length}개</summary>
+          <ul className="eli-priority-list eli-more-body">
             {data.priority.map((p, i) => (
               <li key={i} className="eli-priority-item">{p}</li>
             ))}
           </ul>
-        </div>
+        </details>
       )}
 
-      {/* CTA — 자가 진단 흐름 (TODO: 사용자 프로필 입력 모달) */}
-      <button
-        type="button"
-        className="eli-cta"
-        onClick={() => alert("자격 자가진단 — 준비 중입니다. 곧 만나요 :)")}
-      >
-        <div className="eli-cta-spark" aria-hidden>✨</div>
-        <div className="eli-cta-text">
-          <div className="eli-cta-title">내 조건으로 자격 확인하기</div>
-          <div className="eli-cta-sub">30초만에 둥지가 확인해드려요</div>
-        </div>
-        <div className="eli-cta-arrow">›</div>
-      </button>
     </div>
   );
 }
