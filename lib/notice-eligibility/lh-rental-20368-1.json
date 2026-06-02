@@ -1,0 +1,68 @@
+{
+  "supplyTotal": 171,
+  "tiers": [
+    {
+      "id": "youth",
+      "name": "청년 계층",
+      "units": 80,
+      "age": "19세 이상 39세 이하(출생일 1986.05.21~2007.05.20)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "소득이 없는 청년과 소득이 있는 청년으로 구분",
+        "사회초년생(소득 있는 업무 종사 5년 이내, 퇴직 후 1년 미만 구직급여 수급자, 예술인 포함)",
+        "소득이 없는 청년은 동일 면적의 대학생 계층 임대조건 적용"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": 49,
+      "age": null,
+      "marriage": "혼인 중이며 혼인기간 7년 이내(2019.05.20 이후) 또는 6세 이하 자녀 보유",
+      "income": null,
+      "asset": null,
+      "other": [
+        "예비신혼부부: 입주 전까지 혼인사실 증명 가능한 자"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": 20,
+      "age": "65세 이상(출생일 1961.05.20 이전)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "주거약자용(철원철원 3층): 편의시설 설치, 안전하고 편리한 주거생활 제공"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": 1,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "주거급여법 제2조 제2호 및 제3호에 따른 수급권자 또는 수급자"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "한부모가족",
+      "units": 0,
+      "age": null,
+      "marriage": "6세 이하 자녀를 둔 한부모",
+      "income": null,
+      "asset": null,
+      "other": []
+    }
+  ],
+  "priority": [
+    "2세 미만 자녀(세대구성원, 태아 포함): 모집호수의 30% 범위 내 우선배정"
+  ]
+}

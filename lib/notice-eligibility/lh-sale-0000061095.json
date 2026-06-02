@@ -1,0 +1,42 @@
+{
+  "supplyTotal": 459,
+  "tiers": [
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "혼인 중인 자로서 혼인기간이 7년 이내 또는 6세 이하 자녀를 둔 경우",
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원 자격 필수"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "예비신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "혼인을 계획 중이며, 공고일(2026.05.21.)로부터 입주 전까지 혼인사실을 증명할 수 있는 자",
+      "income": null,
+      "asset": null,
+      "other": [
+        "계약일로부터 6개월 이내 입주 완료 및 입주 전 혼인관계증명서 제출 필수"
+      ]
+    },
+    {
+      "id": "single",
+      "name": "한부모가족",
+      "units": null,
+      "age": "6세 이하 자녀를 둔 부 또는 모",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원 자격 필수"
+      ]
+    }
+  ],
+  "priority": []
+}

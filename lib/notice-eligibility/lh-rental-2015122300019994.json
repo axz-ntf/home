@@ -1,0 +1,139 @@
+{
+  "supplyTotal": 150,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "생계·의료급여 수급자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": 245000,
+        "car": 4542
+      },
+      "other": []
+    },
+    {
+      "id": "general",
+      "name": "지원대상 한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": 245000,
+        "car": 4542
+      },
+      "other": []
+    },
+    {
+      "id": "general",
+      "name": "주거지원 시급가구",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": 245000,
+        "car": 4542
+      },
+      "other": []
+    },
+    {
+      "id": "senior",
+      "name": "저소득 고령자",
+      "units": null,
+      "age": "65세 이상",
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": 245000,
+        "car": 4542
+      },
+      "other": []
+    },
+    {
+      "id": "general",
+      "name": "장애인(소득 70% 이하)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 70,
+        "byHousehold": {
+          "1": 3432,
+          "2": 4693,
+          "3": 5718,
+          "4": 6162,
+          "5": 6529,
+          "6": 6934,
+          "7": 7340
+        },
+        "note": null
+      },
+      "asset": {
+        "total": 245000,
+        "car": 4542
+      },
+      "other": []
+    },
+    {
+      "id": "general",
+      "name": "월평균소득 50% 이하",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 50,
+        "byHousehold": {
+          "1": 2669,
+          "2": 3520,
+          "3": 4084,
+          "4": 4401,
+          "5": 4663,
+          "6": 4953,
+          "7": 5243
+        },
+        "note": null
+      },
+      "asset": {
+        "total": 245000,
+        "car": 4542
+      },
+      "other": []
+    },
+    {
+      "id": "general",
+      "name": "장애인(소득 100% 이하)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 100,
+        "byHousehold": {
+          "1": 4576,
+          "2": 6453,
+          "3": 8168,
+          "4": 8802,
+          "5": 9327,
+          "6": 9906,
+          "7": 10486
+        },
+        "note": null
+      },
+      "asset": {
+        "total": 245000,
+        "car": 4542
+      },
+      "other": []
+    }
+  ],
+  "priority": [
+    "미성년 자녀 3명 이상",
+    "미성년 자녀 2명",
+    "미성년 자녀 1명",
+    "65세 이상 직계존속 부양",
+    "중증장애인"
+  ]
+}

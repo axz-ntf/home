@@ -1,0 +1,20 @@
+{
+  "supplyTotal": 694,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "공고일 기준 모집권역 거주",
+        "신생아 가구 2점, 자녀 3인 이상 3점, 2인 2점, 1인 1점 배점 적용"
+      ]
+    }
+  ],
+  "priority": []
+}

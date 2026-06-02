@@ -1,0 +1,85 @@
+{
+  "supplyTotal": 1250,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": 330,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "대학에 재학 중이거나 다음 학기에 입·복학 예정인 사람",
+        "취업준비생: 대학 또는 고등학교 졸업(또는 중퇴)한 지 2년 이내"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": 760,
+      "age": "19세 이상 39세 이하 (출생일 1986.05.21.~2007.05.20.)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득이 없는 청년은 대학생 계층 임대조건 적용; 사회초년생은 소득이 있는 업무에 종사한 기간 7년 이내"
+      },
+      "asset": null,
+      "other": [
+        "자동차기준 4,542만원 이하",
+        "소득기준 적용배제"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족",
+      "units": 380,
+      "age": null,
+      "marriage": "신혼부부: 혼인기간 10년 이내 또는 9세 이하 자녀 보유; 한부모가족: 9세 이하 자녀 보유",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득기준 적용배제"
+      },
+      "asset": null,
+      "other": [
+        "자산기준 적용배제",
+        "자동차기준 4,542만원 이하"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": 490,
+      "age": "65세 이상 (출생일 1961.05.20. 이전)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득기준 적용배제"
+      },
+      "asset": null,
+      "other": [
+        "자산기준 적용배제",
+        "자동차기준 4,542만원 이하",
+        "주거약자용 편의시설 설치된 저층 주택"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": 190,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "주거급여법 제2조 제2호 및 제3호에 따른 수급권자 또는 수급자"
+      },
+      "asset": null,
+      "other": []
+    }
+  ],
+  "priority": []
+}

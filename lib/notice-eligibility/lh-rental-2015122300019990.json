@@ -1,0 +1,20 @@
+{
+  "supplyTotal": 80,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 80,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "주택건설지역(익산시) 거주",
+        "청약저축 6개월 이상 가입 및 월납입 6회 이상(1순위) 또는 청약저축 가입(2순위)"
+      ]
+    }
+  ],
+  "priority": []
+}

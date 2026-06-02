@@ -1,0 +1,21 @@
+{
+  "supplyTotal": 49,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "기존임차인",
+      "units": 49,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "공급대상주택(김포시 마산동 로렌하우스)에 거주 중인 계약자",
+        "무주택세대구성원",
+        "주민등록표상 수도권(서울·인천·경기) 거주자",
+        "입주자격 유지 필수(입주시까지)"
+      ]
+    }
+  ],
+  "priority": []
+}

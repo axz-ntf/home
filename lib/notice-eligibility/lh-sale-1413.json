@@ -1,0 +1,21 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반(법인 및 만 19세 이상)",
+      "units": null,
+      "age": "만 19세 이상",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "국내 거주 재외동포, 외국국적동포, 외국인 포함",
+        "주택소유여부, 입주자저축 가입여부, 거주지역 불문",
+        "1인 2실 이상 계약가능",
+        "법인도 계약 가능"
+      ]
+    }
+  ],
+  "priority": []
+}

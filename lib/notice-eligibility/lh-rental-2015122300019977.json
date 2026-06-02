@@ -1,0 +1,91 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "etc",
+      "name": "수급자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "국민기초생활보장법 제7조제1항제1호에 따른 생계급여 수급자",
+        "국민기초생활보장법 제7조제1항제3호에 따른 의료급여 수급자"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "보호대상 한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "한부모가족지원법 시행규칙 제3조에 따라 여성가족부장관이 정하여 고시하는 한부모가족"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거지원 시급가구",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "국민기초생활보장법 제2조제1호에 따른 수급권자 또는 제2조제10호에 따른 차상위계층",
+        "소득 대비 임차료 비율 30% 이상"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "장애인",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 70,
+        "byHousehold": {
+          "1": 343,
+          "2": 469,
+          "3": 572,
+          "4": 616,
+          "5": 653,
+          "6": 693,
+          "7": 734,
+          "8": 775
+        },
+        "note": "도시근로자 가구원수별 가구당 월평균소득 70% 이하"
+      },
+      "asset": {
+        "total": 2450,
+        "car": 454
+      },
+      "other": [
+        "장애인등록증 소유",
+        "영구임대주택 자산기준 충족"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": null,
+      "age": "65세 이상(1961.05.21. 이전 출생)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "국민기초생활보장법 제2조제1호에 따른 수급권자 또는 제2조제10호에 따른 차상위계층"
+      ]
+    }
+  ],
+  "priority": [
+    "다자녀(3명 이상)",
+    "미성년 자녀(2명)",
+    "미성년 자녀(1명)",
+    "65세 이상 직계존속 부양",
+    "중증장애인 가구원"
+  ]
+}

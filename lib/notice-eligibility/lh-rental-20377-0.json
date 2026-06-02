@@ -1,0 +1,23 @@
+{
+  "supplyTotal": 71,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "무주택세대구성원",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "수도권(서울·경기·인천) 거주",
+        "공고일 기준 무주택세대구성원",
+        "신청 후 입주까지 자격 계속 유지 필요"
+      ]
+    }
+  ],
+  "priority": [
+    "신생아 가구 (2024.05.21 이후 출산·입양, 태아)",
+    "자녀 수 (3인 이상, 2인, 1인)"
+  ]
+}

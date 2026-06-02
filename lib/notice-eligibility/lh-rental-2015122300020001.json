@@ -1,0 +1,24 @@
+{
+  "supplyTotal": 290,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 290,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "소득요건 배제",
+        "자산요건 배제",
+        "무주택세대구성원",
+        "차량기준가액 4,542만원 이하"
+      ]
+    }
+  ],
+  "priority": []
+}

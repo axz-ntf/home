@@ -1,0 +1,63 @@
+{
+  "supplyTotal": 152,
+  "tiers": [
+    {
+      "id": "youth",
+      "name": "청년 계층",
+      "units": 76,
+      "age": "19세 이상 39세 이하 (1986.05.21~2007.05.20)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "사회초년생: 소득이 있는 업무 종사 5년 이내",
+        "소득無 청년은 대학생 임대조건 적용",
+        "거주기간 최대 10년"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": 49,
+      "age": null,
+      "marriage": "혼인 7년 이내 또는 6세 이하 자녀 소유",
+      "income": null,
+      "asset": null,
+      "other": [
+        "거주기간 최대 10년 (자녀 출산 시 14년)",
+        "예비신혼부부 포함"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": 17,
+      "age": "65세 이상 (1961.05.20. 이전 출생)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "거주기간 최대 20년",
+        "주거약자용: 1~3층 편의시설 설치"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": 10,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "주거급여법 제2조 제2호, 제3호 수급권자",
+        "거주기간 최대 20년"
+      ]
+    }
+  ],
+  "priority": [
+    "2세 미만 자녀 (세대구성원, 태아 포함)",
+    "다자녀",
+    "한부모가족"
+  ]
+}

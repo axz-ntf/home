@@ -1,0 +1,20 @@
+{
+  "supplyTotal": 476,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 476,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "주택건설지역(전라남도, 광주광역시) 거주자",
+        "성년자(만 19세 이상) 또는 자녀가 있는 미성년 세대주"
+      ]
+    }
+  ],
+  "priority": []
+}

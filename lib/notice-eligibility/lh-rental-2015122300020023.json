@@ -1,0 +1,83 @@
+{
+  "supplyTotal": 266,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": 148,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": 10800,
+        "car": 0
+      },
+      "other": [
+        "대학에 재학 중이거나 다음 학기에 입·복학 예정인 사람",
+        "취업준비생: 대학 또는 고등학교를 졸업(또는 중퇴)한 지 2년 이내인 사람"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": 174,
+      "age": "19세 이상 39세 이하(출생일 1986.05.27.∼2007.05.26.)",
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": 25100,
+        "car": 4542
+      },
+      "other": [
+        "사회초년생: 소득이 있는 업무에 종사한 기간이 총 5년 이내",
+        "소득이 있는 업무에 종사하는 사람, 퇴직 후 1년 미만인 구직급여 수급자, 예술인"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족",
+      "units": 40,
+      "age": null,
+      "marriage": "신혼부부: 혼인기간 7년 이내 또는 6세 이하 자녀를 둔 사람, 예비신혼부부, 한부모가족: 6세 이하 자녀를 둔 한부모",
+      "income": null,
+      "asset": {
+        "total": 34500,
+        "car": 4542
+      },
+      "other": []
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": 32,
+      "age": "65세 이상(출생일 1961.05.26. 이전)",
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": 34500,
+        "car": 4542
+      },
+      "other": [
+        "36AS(주거약자)형 주택은 편의시설이 설치된 3층 이하 주택"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": 20,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "주거급여법 제2조제2호 및 제3호에 따른 수급권자 또는 수급자"
+      ]
+    }
+  ],
+  "priority": [
+    "다자녀",
+    "한부모",
+    "노부모부양",
+    "장애인"
+  ]
+}

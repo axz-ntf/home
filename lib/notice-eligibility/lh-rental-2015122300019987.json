@@ -1,0 +1,21 @@
+{
+  "supplyTotal": 71,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "수도권(서울·경기·인천) 거주",
+        "신생아 가구 배점(2024.05.21 이후 출생·입양·태아): 2점",
+        "자녀 수 배점(3인 이상 3점, 2인 2점, 1인 1점)"
+      ]
+    }
+  ],
+  "priority": []
+}
