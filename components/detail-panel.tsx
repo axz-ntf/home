@@ -9,6 +9,7 @@ import { applyUrlFor, infoUrlFor } from "@/lib/notice-match";
 import { NaverPanorama } from "./naver-panorama";
 import { CloseIcon, HeartIcon, TrainIcon } from "./icons";
 import { EligibilityDetail } from "./eligibility-detail";
+import { formatManwon } from "@/lib/format";
 import { TypeIntro, TypePrice, accentVars } from "./detail-type";
 
 // 1평 ≈ 3.3058㎡ — 부동산 공인 환산
@@ -30,7 +31,8 @@ function ListingComplexes({ item }: { item: Listing }) {
   if (!item.complexes || !item.complexes.length) return null;
   function fmtPrice(v: number | null): string {
     if (v == null) return "공고문 확인";
-    return Math.round(v / 10000).toLocaleString() + "만원";
+    const m = Math.round(v / 10000);
+    return formatManwon(m) || `${m.toLocaleString()}만원`;
   }
   // 모든 row 의 deposit/rent 가 null 인지 — 매입임대/위탁임대 등 LH 가 등록 안 한 케이스
   const allRowsEmpty = item.complexes.every((c) =>

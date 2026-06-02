@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import type { Listing, HousingTypeId } from "@/lib/types";
 import { housingTypeMeta } from "@/lib/housing-type-meta";
 import { HOUSING_TYPES } from "@/lib/mock-data";
+import { formatManwon } from "@/lib/format";
 
 // 타입별 상세 패널 분화 — 공통 골격(DetailPanel)은 유지하고,
 // 제도 인트로 카드와 가격 블록만 타입 의미에 맞게 렌더한다.
@@ -53,27 +54,26 @@ function ConfirmLink({ url }: { url?: string }) {
   );
 }
 
-function formatSalePrice(manwon: number): string {
-  const eok = Math.floor(manwon / 10000);
-  const rest = manwon % 10000;
-  return `${eok > 0 ? `${eok}억 ` : ""}${rest.toLocaleString()}만원`;
-}
-
-// 타입별 가격 의미 분화:
-//  · sale   → 분양가 (소유)
-//  · jeonse → 전세보증금 (월세는 rent>0 일 때만 — 전세임대는 소액 월세 있고, 순수 전세는 0)
-//  · 그 외  → 보증금 + 월 임대료
+// 거래 유형별 가격 표현 (사용자 멘탈모델 기준):
+//  · 매매/분양(sale) → 분양가 또는 매매가 (단일)
+//  · 월세 (rent>0)   → 보증금 + 월 임대료
+//  · 전세 (월세 없음) → 전세보증금 (단일, 월세 칸 없음)
+//  · 둘 다 없음      → 단지별 상이
 export function TypePrice({ item }: { item: Listing }) {
   const variant = housingTypeMeta(item.type).variant;
+  const isJeonse = variant === "jeonse" || /전세/.test(item.title ?? "");
+  const depositLabel = isJeonse ? "전세보증금" : "보증금";
 
+  // 매매/분양 — 단일 가격
   if (variant === "sale") {
+    const isResale = /매각|분양전환/.test(item.title ?? "");
     return (
       <div className="detail-price">
         <div className="detail-price-cell detail-price-cell--full">
-          <div className="detail-price-label">분양가 (평균)</div>
+          <div className="detail-price-label">{isResale ? "매매가" : "분양가 (평균)"}</div>
           <div className="detail-price-value">
             {item.salePriceManwon && item.salePriceManwon > 0 ? (
-              formatSalePrice(item.salePriceManwon)
+              formatManwon(item.salePriceManwon)
             ) : (
               <>
                 <span style={{ fontSize: 14, marginRight: 8 }}>단지별 상이</span>
@@ -86,52 +86,44 @@ export function TypePrice({ item }: { item: Listing }) {
     );
   }
 
-  if (variant === "jeonse") {
+  // 월세 — 보증금 + 월 임대료
+  if (item.rent > 0) {
     return (
       <div className="detail-price">
-        <div className={`detail-price-cell ${item.rent > 0 ? "" : "detail-price-cell--full"}`}>
-          <div className="detail-price-label">전세보증금</div>
+        <div className="detail-price-cell">
+          <div className="detail-price-label">{depositLabel}</div>
           <div className="detail-price-value">
-            {item.deposit > 0 ? `${item.deposit.toLocaleString()}만원` : <ConfirmLink url={item.sourceUrl} />}
+            {item.deposit > 0 ? formatManwon(item.deposit) : <ConfirmLink url={item.sourceUrl} />}
           </div>
         </div>
-        {item.rent > 0 && (
-          <div className="detail-price-cell">
-            <div className="detail-price-label">월 임대료</div>
-            <div className="detail-price-value">{item.rent}만원</div>
-          </div>
-        )}
+        <div className="detail-price-cell">
+          <div className="detail-price-label">월 임대료</div>
+          <div className="detail-price-value">{item.rent}만원</div>
+        </div>
       </div>
     );
   }
 
-  // 보증금·월세 둘 다 listing 레벨에 없으면(매입/일부 임대) "공고문 확인" 셀 2개가 누락처럼 보임 → 한 줄로 통합.
-  if (item.deposit <= 0 && item.rent <= 0) {
+  // 전세 (월세 없음) — 단일 칸, 월세 칸 안 만듦
+  if (item.deposit > 0) {
     return (
       <div className="detail-price">
         <div className="detail-price-cell detail-price-cell--full">
-          <div className="detail-price-label">임대조건</div>
-          <div className="detail-price-value">
-            <span style={{ fontSize: 14, marginRight: 8 }}>단지별 상이</span>
-            <ConfirmLink url={item.sourceUrl} />
-          </div>
+          <div className="detail-price-label">{depositLabel}</div>
+          <div className="detail-price-value">{formatManwon(item.deposit)}</div>
         </div>
       </div>
     );
   }
 
+  // 가격 정보 없음
   return (
     <div className="detail-price">
-      <div className="detail-price-cell">
-        <div className="detail-price-label">보증금</div>
+      <div className="detail-price-cell detail-price-cell--full">
+        <div className="detail-price-label">임대조건</div>
         <div className="detail-price-value">
-          {item.deposit > 0 ? `${item.deposit.toLocaleString()}만원` : <ConfirmLink url={item.sourceUrl} />}
-        </div>
-      </div>
-      <div className="detail-price-cell">
-        <div className="detail-price-label">월 임대료</div>
-        <div className="detail-price-value">
-          {item.rent > 0 ? `${item.rent}만원` : <ConfirmLink url={item.sourceUrl} />}
+          <span style={{ fontSize: 14, marginRight: 8 }}>단지별 상이</span>
+          <ConfirmLink url={item.sourceUrl} />
         </div>
       </div>
     </div>

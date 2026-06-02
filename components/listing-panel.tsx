@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import type { Listing, SortKey } from "@/lib/types";
 import { eligibilitySummaryByType, HOUSING_TYPES } from "@/lib/mock-data";
 import { dDayText, effectiveStatus } from "@/lib/dday";
+import { formatManwon } from "@/lib/format";
 
 function typeBadge(type: Listing["type"]) {
   const t = HOUSING_TYPES.find((x) => x.id === type);
@@ -12,27 +13,28 @@ function typeBadge(type: Listing["type"]) {
 }
 
 function priceText(item: Listing) {
+  const isJeonse = item.type === "jeonse" || /전세/.test(item.title ?? "");
+  const depositLabel = isJeonse ? "전세보증금" : "보증금";
   if (item.type === "sale") {
     if (item.salePriceManwon && item.salePriceManwon > 0) {
-      const eok = Math.floor(item.salePriceManwon / 10000);
-      const man = item.salePriceManwon % 10000;
-      return (
-        <strong>
-          분양가 {eok > 0 ? `${eok}억 ` : ""}
-          {man > 0 ? `${man.toLocaleString()}만` : eok > 0 ? "" : "—"}
-        </strong>
-      );
+      const isResale = /매각|분양전환/.test(item.title ?? "");
+      return <strong>{isResale ? "매매가" : "분양가"} {formatManwon(item.salePriceManwon)}</strong>;
     }
     return <span style={{ color: "var(--seed-semantic-color-ink-text-low)" }}>분양가 공고문 확인</span>;
   }
-  if (item.deposit > 0 || item.rent > 0) {
+  // 월세 — 보증금 + 월세
+  if (item.rent > 0) {
     return (
       <>
-        <strong>보증금 {item.deposit.toLocaleString()}만</strong>
+        <strong>{depositLabel} {formatManwon(item.deposit) || "공고문 확인"}</strong>
         <span className="sep">·</span>
         <span>월세 {item.rent}만</span>
       </>
     );
+  }
+  // 전세 — 보증금만 (월세 없음)
+  if (item.deposit > 0) {
+    return <strong>{depositLabel} {formatManwon(item.deposit)}</strong>;
   }
   return <span style={{ color: "var(--seed-semantic-color-ink-text-low)" }}>임대조건 공고문 확인</span>;
 }
