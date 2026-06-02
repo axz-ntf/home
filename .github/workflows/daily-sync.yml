@@ -98,7 +98,7 @@ jobs:
 
       - name: Phase 5 — 자격 정보 구조화 추출 (Claude)
         env:
-          BIZROUTER_API_KEY: ${{ secrets.BIZROUTER_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node scripts/extract-eligibility.mjs --limit 9999
 
       - name: Phase 6a — cover 사진 Blob 업로드
