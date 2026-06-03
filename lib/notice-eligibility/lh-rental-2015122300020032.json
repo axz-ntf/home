@@ -1,0 +1,35 @@
+{
+  "supplyTotal": 40,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 16,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준 중위소득 200% 이하"
+      },
+      "asset": null,
+      "other": [
+        "성년자인 무주택세대구성원",
+        "1세대 1주택 기준",
+        "소득인정액 기준 적용"
+      ]
+    }
+  ],
+  "priority": [
+    "철거민",
+    "국가유공자",
+    "북한이탈주민",
+    "다자녀가구",
+    "장애인",
+    "비주택거주자",
+    "생계급여수급자",
+    "청년",
+    "신혼부부",
+    "고령자"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "supplyTotal": 1223,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 1223,
+      "age": "만 19세 이상",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "부산광역시, 울산광역시 및 경상남도 거주",
+        "무주택세대구성원",
+        "입주저축 가입여부, 과거당첨사실여부, 소득 및 자산기준 무관"
+      ]
+    }
+  ],
+  "priority": []
+}

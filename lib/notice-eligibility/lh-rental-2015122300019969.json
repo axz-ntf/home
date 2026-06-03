@@ -1,0 +1,81 @@
+{
+  "supplyTotal": 30,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 12,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준중위소득 200% 이하"
+      },
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "1세대 1주택 기준"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": 1,
+      "age": "18~39세",
+      "marriage": "미혼",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준중위소득 200% 이하"
+      },
+      "asset": null,
+      "other": [
+        "무주택자(본인만 검증)",
+        "미혼인 아동복지시설 퇴소자 포함",
+        "미혼인 청소년복지시설 퇴소자 포함"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부 등",
+      "units": 3,
+      "age": null,
+      "marriage": "혼인기간 7년 이내 또는 예비신혼부부 또는 6세 이하 자녀 보유",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준중위소득 200% 이하"
+      },
+      "asset": null,
+      "other": [
+        "무주택세대구성원"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": 2,
+      "age": "65세 이상",
+      "marriage": "혼인 중이 아닌 경우 단독세대주",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준중위소득 200% 이하"
+      },
+      "asset": null,
+      "other": [
+        "무주택자(본인만 검증, 단독세대주인 경우)"
+      ]
+    }
+  ],
+  "priority": [
+    "철거민 등",
+    "국가유공자 등",
+    "북한이탈주민 등",
+    "다자녀가구 등",
+    "장애인",
+    "비주택거주자 등",
+    "급여수급자 등"
+  ]
+}

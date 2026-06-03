@@ -1,0 +1,135 @@
+{
+  "supplyTotal": 473,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반공급",
+      "units": 119,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "수도권(서울, 인천, 경기) 거주 성년 무주택세대구성원",
+        "1세대 1주택 기준",
+        "화성시 1년 이상 거주자 우선"
+      ]
+    },
+    {
+      "id": "child",
+      "name": "다자녀가구",
+      "units": 47,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 120,
+        "byHousehold": null,
+        "note": "맞벌이 200%"
+      },
+      "asset": {
+        "total": 215500,
+        "car": 45420
+      },
+      "other": [
+        "입주자저축 6개월 6회 이상 필요"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": 47,
+      "age": null,
+      "marriage": "혼인으로 구성될 세대",
+      "income": {
+        "percent": 130,
+        "byHousehold": null,
+        "note": "맞벌이 200%"
+      },
+      "asset": {
+        "total": 215500,
+        "car": 45420
+      },
+      "other": [
+        "입주자저축 6개월 6회 이상 필요"
+      ]
+    },
+    {
+      "id": "student",
+      "name": "생애최초",
+      "units": 71,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 130,
+        "byHousehold": null,
+        "note": "맞벌이 200%"
+      },
+      "asset": {
+        "total": 215500,
+        "car": 45420
+      },
+      "other": [
+        "입주자저축 12개월 12회 이상 필요",
+        "저축액 600만원 이상"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "노부모부양",
+      "units": 24,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 120,
+        "byHousehold": null,
+        "note": "맞벌이 200%"
+      },
+      "asset": {
+        "total": 215500,
+        "car": 45420
+      },
+      "other": [
+        "신청자 본인이 세대주여야 함",
+        "입주자저축 12개월 12회 이상 필요"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "신생아",
+      "units": 95,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 140,
+        "byHousehold": null,
+        "note": "맞벌이 200%"
+      },
+      "asset": {
+        "total": 215500,
+        "car": 45420
+      },
+      "other": [
+        "입주자저축 6개월 6회 이상 필요"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "기관추천 등",
+      "units": 23,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "국가유공자, 장애인, 철거민은 입주자저축 불필요"
+      ]
+    }
+  ],
+  "priority": [
+    "다자녀",
+    "한부모",
+    "노부모부양",
+    "신생아",
+    "장애인"
+  ]
+}

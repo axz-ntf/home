@@ -1,0 +1,20 @@
+{
+  "supplyTotal": 163,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 163,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원만 신청 가능",
+        "신생아 가구 여부(2024.05.28. 이후 출생·입양) 2점",
+        "자녀 수: 3인 이상 3점, 2인 2점, 1인 1점"
+      ]
+    }
+  ],
+  "priority": []
+}
