@@ -10,6 +10,7 @@ import { NaverPanorama } from "./naver-panorama";
 import { CloseIcon, HeartIcon, TrainIcon } from "./icons";
 import { EligibilityDetail } from "./eligibility-detail";
 import { formatManwon } from "@/lib/format";
+import { nearestStation } from "@/lib/subway";
 import { TypeIntro, TypePrice, accentVars } from "./detail-type";
 
 // 1평 ≈ 3.3058㎡ — 부동산 공인 환산
@@ -195,6 +196,7 @@ export function DetailPanel({
   const housingType = HOUSING_TYPES.find((t) => t.id === item.type);
   const applyUrl = applyUrlFor(item.type);
   const infoUrl = infoUrlFor(item.type);
+  const nearStation = nearestStation(item.lat, item.lng);
   // 청약 신청 버튼 — raw status 대신 effStatus 기반 (sync stale 보정 반영)
   const isRecurring = isRegularRecruitment(item.deadline, item.status);
   const applyButton: { label: string; active: boolean } = isRecurring
@@ -338,33 +340,38 @@ export function DetailPanel({
           </dl>
         </section>
 
-        <section className="detail-section">
-          <h3>입지·편의</h3>
-          <div className="detail-feat-row">
-            <div className="feat-chip">
-              <TrainIcon size={12} />
-              {item.transit}
+        {(nearStation || item.features.length > 0 || item.competition != null) && (
+          <section className="detail-section">
+            <h3>입지·편의</h3>
+            <div className="detail-feat-row">
+              {/* 역세권 — 실제 도보권(800m 이내) 역이 있을 때만 표시 */}
+              {nearStation && (
+                <div className="feat-chip">
+                  <TrainIcon size={12} />
+                  {nearStation.name}역 도보 {nearStation.walkMin}분
+                </div>
+              )}
+              {item.features.map((f) => (
+                <div key={f} className="feat-chip">
+                  #{f}
+                </div>
+              ))}
+              {item.competition != null && (
+                <div
+                  className="feat-chip"
+                  style={{
+                    borderColor: "var(--seed-scale-color-carrot-200)",
+                    background: "var(--seed-semantic-color-primary-low)",
+                    color: "var(--seed-scale-color-carrot-700)",
+                    fontWeight: 600,
+                  }}
+                >
+                  지난 회차 경쟁률 {item.competition}:1
+                </div>
+              )}
             </div>
-            {item.features.map((f) => (
-              <div key={f} className="feat-chip">
-                #{f}
-              </div>
-            ))}
-            {item.competition != null && (
-              <div
-                className="feat-chip"
-                style={{
-                  borderColor: "var(--seed-scale-color-carrot-200)",
-                  background: "var(--seed-semantic-color-primary-low)",
-                  color: "var(--seed-scale-color-carrot-700)",
-                  fontWeight: 600,
-                }}
-              >
-                지난 회차 경쟁률 {item.competition}:1
-              </div>
-            )}
-          </div>
-        </section>
+          </section>
+        )}
 
         <section className="detail-section">
           <h3>신청 방법</h3>
