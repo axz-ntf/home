@@ -130,6 +130,15 @@ jobs:
           node scripts/enrich-photos-api.mjs
           node scripts/upload-covers-to-blob.mjs
 
+      # 다지점 공고(여러 단지/지역)를 단지별 핀으로 지도 분리 — .md 단지목록 AI 추출 +
+      # VWorld 지오코딩. 제목 사전필터로 후보만 검사(비용↓). 이미 분리된 건 skip.
+      - name: Phase 7.6 — 다지점 공고 지도 분리 (AI + 지오코딩)
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
+        run: node scripts/extract-mapped-regional.mjs --active
+
       - name: Save lh-complexes cache (즉시)
         if: always()
         uses: actions/cache/save@v4
