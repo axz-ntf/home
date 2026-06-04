@@ -406,5 +406,100 @@
         "rentManwon": 5
       }
     ]
+  },
+  "2015122300019978": {
+    "districtId": "busan",
+    "points": [
+      {
+        "lat": 35.325135130080255,
+        "lng": 129.1675029543116,
+        "label": "부산정관1",
+        "address": "부산광역시 기장군 정관읍 정관4로 23",
+        "depositManwon": 4025,
+        "rentManwon": 24
+      },
+      {
+        "lat": 35.333382406364265,
+        "lng": 129.16536429041525,
+        "label": "부산정관2",
+        "address": "부산광역시 기장군 정관읍 정관2로 24",
+        "depositManwon": 3132,
+        "rentManwon": 18
+      },
+      {
+        "lat": 35.33691617839841,
+        "lng": 129.1687224585894,
+        "label": "부산정관7",
+        "address": "부산광역시 기장군 정관읍 모전로 41",
+        "depositManwon": 794,
+        "rentManwon": 15
+      },
+      {
+        "lat": 35.18295665826862,
+        "lng": 129.1976271125011,
+        "label": "부산송정1",
+        "address": "부산광역시 해운대구 송정1로 20",
+        "depositManwon": 1581,
+        "rentManwon": 13,
+        "coverPhotoLocal": "/lh-covers/lh-2015122300019978-26271719.jpg"
+      },
+      {
+        "lat": 35.19036997146415,
+        "lng": 129.205076919212,
+        "label": "부산송정2",
+        "address": "부산광역시 해운대구 해운대로 1188",
+        "depositManwon": 3132,
+        "rentManwon": 26
+      },
+      {
+        "lat": 35.19745030973476,
+        "lng": 129.1079164824352,
+        "label": "부산안락4",
+        "address": "부산광역시 동래구 충렬대로447번길 38",
+        "depositManwon": 3891,
+        "rentManwon": 25
+      },
+      {
+        "lat": 35.15101936841789,
+        "lng": 128.83573079632245,
+        "label": "부산지사",
+        "address": "부산광역시 강서구 과학산단2로20번길 35",
+        "depositManwon": 1059,
+        "rentManwon": 9
+      },
+      {
+        "lat": 35.14748480922351,
+        "lng": 129.05492852942263,
+        "label": "부산범천",
+        "address": "부산광역시 부산진구 신암로 66",
+        "depositManwon": 2924,
+        "rentManwon": 33,
+        "coverPhotoLocal": "/lh-covers/lh-2015122300019978-26809711.jpg"
+      },
+      {
+        "lat": 35.165942191581266,
+        "lng": 128.98024253019443,
+        "label": "부산괘법",
+        "address": "부산광역시 사상구 광장로21번길 66",
+        "depositManwon": 4439,
+        "rentManwon": 37
+      },
+      {
+        "lat": 35.15637769349395,
+        "lng": 128.99400844782082,
+        "label": "부산감전",
+        "address": "부산광역시 사상구 백양대로 539",
+        "depositManwon": 3115,
+        "rentManwon": 26
+      },
+      {
+        "lat": 35.166866182255376,
+        "lng": 129.06747794735605,
+        "label": "부산전포",
+        "address": "부산광역시 부산진구 중앙대로 862",
+        "depositManwon": 2922,
+        "rentManwon": 27
+      }
+    ]
   }
 }
