@@ -47,7 +47,6 @@ next-env.d.ts
 # script progress files
 lib/*.progress.json
 lib/lh-complexes.json
-lib/subway-stations.json
 .cache/
 .env*.local
 
