@@ -156,22 +156,32 @@ export function ListingPanel({
   snap?: SheetSnap;
   setSnap?: (s: SheetSnap) => void;
 }) {
-  const [loadedCount, setLoadedCount] = useState(15);
+  const [loadedCount, setLoadedCount] = useState(20);
   const itemsRef = useRef<HTMLDivElement>(null);
+  const sentinelRef = useRef<HTMLDivElement>(null);
 
   const closeSheet = () => setSnap?.("hidden");
 
   useEffect(() => {
-    setLoadedCount(15);
+    setLoadedCount(20);
     if (itemsRef.current) itemsRef.current.scrollTop = 0;
   }, [items.length, activeDistrict]);
 
-  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
-    const el = e.currentTarget;
-    if (el.scrollHeight - el.scrollTop - el.clientHeight < 200) {
-      setLoadedCount((c) => Math.min(c + 10, items.length));
-    }
-  };
+  // 무한스크롤 — 센티넬이 (300px 안에) 보이면 자동으로 다음 배치 로드.
+  // 스크롤 이벤트 의존 X → 화면을 안 넘쳐도 안 멈춤. 로드는 클라이언트 slice 라 즉시.
+  useEffect(() => {
+    const el = sentinelRef.current;
+    if (!el || loadedCount >= items.length) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) setLoadedCount((c) => Math.min(c + 24, items.length));
+      },
+      // root=null(뷰포트) — 데스크톱은 페이지 스크롤, 모바일은 시트 스크롤 둘 다 대응.
+      { rootMargin: "400px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [loadedCount, items.length]);
 
   const visible = items.slice(0, loadedCount);
 
@@ -200,7 +210,7 @@ export function ListingPanel({
           ))}
         </div>
       </div>
-      <div className="listing-items" ref={itemsRef} onScroll={handleScroll}>
+      <div className="listing-items" ref={itemsRef}>
         {visible.length === 0 && (
           <div style={{ padding: "40px 16px", textAlign: "center", color: "var(--seed-semantic-color-ink-text-low)" }}>
             <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 4 }}>조건에 맞는 매물이 없어요</div>
@@ -218,7 +228,7 @@ export function ListingPanel({
           />
         ))}
         {loadedCount < items.length && (
-          <div className="scroll-sentinel">
+          <div className="scroll-sentinel" ref={sentinelRef}>
             <div
               className="spinner"
               style={{
