@@ -362,7 +362,8 @@ function buildMappedRegionalListings(): Listing[] {
 }
 
 export const LH_LISTINGS: Listing[] = [
-  ...dedupeListings(ALL),
+  // 지오코딩으로 분리한 매물의 원본(단일 핀)은 제외 — 분리 핀과 중복 방지.
+  ...dedupeListings(ALL.filter((l) => !MAPPED_REGIONAL_PIDS.has(l.pblancId ?? ""))),
   ...buildDundeonSeoulListings(),
   ...buildMappedRegionalListings(),
 ];
