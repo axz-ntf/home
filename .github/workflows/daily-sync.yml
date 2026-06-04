@@ -139,6 +139,15 @@ jobs:
           VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
         run: node scripts/extract-mapped-regional.mjs --active
 
+      # 분리된 다지점 단지마다 제 조감도 크롤(없으면 비움) → Blob 업로드.
+      - name: Phase 7.7 — 다지점 단지별 조감도 크롤 + Blob 업로드
+        continue-on-error: true
+        env:
+          BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
+        run: |
+          node scripts/enrich-mapped-covers.mjs
+          node scripts/upload-covers-to-blob.mjs
+
       - name: Save lh-complexes cache (즉시)
         if: always()
         uses: actions/cache/save@v4

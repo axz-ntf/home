@@ -327,6 +327,7 @@ function buildDundeonSeoulListings(): Listing[] {
 interface MappedPoint {
   lat: number; lng: number; address?: string; label?: string;
   area?: string; depositManwon?: number; rentManwon?: number; units?: number;
+  coverPhotoLocal?: string; // 단지별 조감도 (없으면 모 조감도 안 물려받음)
 }
 interface MappedCfg { districtId?: string; district?: string; points: MappedPoint[]; }
 const MAPPED_REGIONAL = mappedRegional as Record<string, MappedCfg>;
@@ -354,6 +355,8 @@ function buildMappedRegionalListings(): Listing[] {
         ...(p.depositManwon != null && { deposit: p.depositManwon }),
         ...(p.rentManwon != null && { rent: p.rentManwon }),
         ...(p.units != null && { supplyUnits: p.units }),
+        // 단지별 조감도 — point에 있으면 그것, 없으면 모 조감도 안 물려받고 비움.
+        coverPhotoUrl: resolveCoverPhoto(p.coverPhotoLocal ?? null, null),
         complexes: undefined,
       });
     });
