@@ -120,6 +120,16 @@ jobs:
           VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
         run: node scripts/sync-lh-api.mjs
 
+      # 최종 sync 로 listings-api 가 갱신된 뒤 신규 매물의 단지조감도 크롤(기존은 skip)
+      # → Blob 업로드. sync-lh-api 가 기존 cover 는 보존하므로 매일 신규분만 처리.
+      - name: Phase 7.5 — 단지조감도 크롤 + Blob 업로드 (신규 매물)
+        continue-on-error: true
+        env:
+          BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
+        run: |
+          node scripts/enrich-photos-api.mjs
+          node scripts/upload-covers-to-blob.mjs
+
       - name: Save lh-complexes cache (즉시)
         if: always()
         uses: actions/cache/save@v4
