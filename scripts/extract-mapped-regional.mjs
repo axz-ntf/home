@@ -15,6 +15,17 @@ if (!KEY || !VKEY) { console.error("ERROR: ANTHROPIC_API_KEY / VWORLD_API_KEY �
 const args = process.argv.slice(2);
 const idArg = (args.find((a) => a.startsWith("--ids=")) || "").split("=")[1];
 const ACTIVE = args.includes("--active");
+const FORCE = args.includes("--force"); // 이미 분리된 것도 재처리(가격 보강 등)
+
+// 원 → 만원 변환 + 임대료 타당성 게이트 (틀린 추출 차단). 통과 못하면 null.
+function sanePriceManwon(depositWon, rentWon) {
+  const d = depositWon != null ? Math.round(depositWon / 10000) : null;
+  const r = rentWon != null ? Math.round(rentWon / 10000) : null;
+  const okD = d != null && d >= 50 && d <= 60000;
+  const okR = r != null && r >= 1 && r <= 150;
+  if (!okD || !okR || r >= d) return { deposit: null, rent: null };
+  return { deposit: d, rent: r };
+}
 const LIMIT = Number((args.find((a) => a.startsWith("--limit=")) || "").split("=")[1] || 9999);
 
 const listings = JSON.parse(await fs.readFile(path.join(ROOT, "lib/listings-api.json"), "utf8"));
@@ -28,10 +39,14 @@ function districtIdOf(addr) {
   return (m && SIDO_ID[m[1]]) || null;
 }
 
-const SYSTEM = `한국 LH 공고문에서 "공급 주택단지 목록"을 추출하는 전문가.
+const SYSTEM = `한국 LH 공고문에서 "공급 주택단지 목록"과 단지별 임대조건을 추출하는 전문가.
 주택단지 개요/모집대상 표에서 각 단지의 이름과 도로명 주소(시·도부터 번지까지)를 뽑아라.
-소득기준 예시주소·관할 사무소 주소·신청 안내 주소는 제외. 실제 공급되는 단지만.
-단지가 1개뿐이면 1개만. JSON만: {"complexes":[{"name":"단지명","address":"전체 도로명주소"}]}`;
+임대조건 표에서 단지별 "기본 임대보증금(계)"과 "기본 월임대료"를 원(KRW) 숫자 그대로 뽑아라.
+- 계약금/잔금/전환가능보증금/최대전환시 컬럼은 절대 쓰지 말 것. "계"(총 보증금)와 기본 월임대료만.
+- 금액은 변환하지 말고 공고문에 적힌 원 단위 숫자 그대로 (예: 26,030,000 → 26030000, 236,330 → 236330).
+- 한 단지에 주택형이 여러 개면 가장 작은(대표) 주택형 기준 1세트.
+소득기준 예시주소·관할 사무소 주소는 제외. 실제 공급 단지만.
+JSON만: {"complexes":[{"name":"단지명","address":"전체 도로명주소","depositWon":<원 정수|null>,"rentWon":<원 정수|null>}]}`;
 
 async function aiComplexes(md) {
   const region = md.slice(0, 14000);
@@ -68,7 +83,7 @@ function multiLocTitle(t) {
 }
 
 // 대상 선정
-let pool = listings.filter((l) => !DONE.has(l.pblancId) && l.sourceUrl?.includes("selectWrtancInfo.do"));
+let pool = listings.filter((l) => (FORCE || !DONE.has(l.pblancId)) && l.sourceUrl?.includes("selectWrtancInfo.do"));
 if (ACTIVE) pool = pool.filter((l) => ["open", "upcoming", "closing"].includes(l.status));
 if (idArg) { const ids = new Set(idArg.split(",")); pool = pool.filter((l) => ids.has(l.pblancId)); }
 // --ids 직접 지정이 아니면 제목 사전필터로 후보만 (매일 전수 AI 호출 방지)
@@ -92,7 +107,11 @@ for (const l of pool) {
     if (!co) continue;
     const key = co.lat.toFixed(5) + "," + co.lng.toFixed(5);
     if (seen.has(key)) continue; seen.add(key);
-    points.push({ lat: co.lat, lng: co.lng, label: c.name ? `${c.name}` : undefined, address: c.address });
+    const { deposit, rent } = sanePriceManwon(c.depositWon, c.rentWon);
+    points.push({
+      lat: co.lat, lng: co.lng, label: c.name ? `${c.name}` : undefined, address: c.address,
+      ...(deposit != null && { depositManwon: deposit, rentManwon: rent }),
+    });
   }
   if (points.length >= 2) {
     const did = districtIdOf(points[0].address);
