@@ -1,0 +1,19 @@
+{
+  "supplyTotal": 254,
+  "tiers": [
+    {
+      "id": "etc",
+      "name": "행복주택",
+      "units": 254,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "소득·자산요건 배제",
+        "무주택요건 완화"
+      ]
+    }
+  ],
+  "priority": []
+}

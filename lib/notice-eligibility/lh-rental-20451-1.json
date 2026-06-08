@@ -1,0 +1,32 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "etc",
+      "name": "가군(생계·의료급여 수급자 등)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "생계·의료급여 수급자",
+        "국가유공자 등으로서 소득인정액이 생계·의료급여 수급자에 해당하는 자",
+        "위안부 피해자",
+        "지원대상 한부모가족",
+        "생계·의료급여 수급자선정 기준의 소득인정액 이하인 자"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "나군(그 외 영구임대 입주 가능자)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": []
+    }
+  ],
+  "priority": []
+}

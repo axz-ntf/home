@@ -1,0 +1,19 @@
+{
+  "supplyTotal": 30,
+  "tiers": [
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": 30,
+      "age": "만 65세 이상 (1961.06.08. 이전 출생)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "1세대 1주택 신청 원칙"
+      ]
+    }
+  ],
+  "priority": []
+}
