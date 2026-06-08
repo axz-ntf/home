@@ -1,0 +1,22 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "소형·저가주택은 무주택으로 간주",
+        "해당지역(익산시) 또는 연접지역에 주택이 없을 경우 허용"
+      ]
+    }
+  ],
+  "priority": []
+}

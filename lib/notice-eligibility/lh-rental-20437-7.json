@@ -1,0 +1,130 @@
+{
+  "supplyTotal": 4380,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": 1328,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "대학에 재학 중이거나 다음 학기에 입·복학 예정인 사람",
+        "최대 거주기간 10년"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": 1285,
+      "age": "19세 이상 39세 이하(1986.06.06.~2007.06.05.)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "최대 거주기간 10년"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "사회초년생",
+      "units": null,
+      "age": "19세 이상 39세 이하",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "소득이 있는 업무에 종사한 기간이 총 5년 이내",
+        "소득이 있는 업무에 종사하는 사람 또는 퇴직 후 1년 미만 구직급여 수급자 또는 예술인"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": 45,
+      "age": null,
+      "marriage": "혼인 중이며 혼인기간 7년 이내 또는 6세 이하 자녀를 둔 사람",
+      "income": null,
+      "asset": null,
+      "other": [
+        "최대 거주기간 10~14년"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "예비신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "입주 전까지 혼인사실을 증명할 수 있는 사람",
+      "income": null,
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "single",
+      "name": "한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": "6세 이하 자녀를 둔 한부모인 사람",
+      "income": null,
+      "asset": null,
+      "other": [
+        "최대 거주기간 10~14년"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": 262,
+      "age": "만 65세 이상(1961.06.05. 이전 출생자)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "최대 거주기간 20년",
+        "주거약자형 편의시설 설치, 3층 이하 배정"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": 45,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "주거급여법 제2조제2호 및 제3호에 따른 수급권자 또는 수급자",
+        "최대 거주기간 20년"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "취업준비생",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "대학 또는 고등학교를 졸업(또는 중퇴)한 지 2년 이내인 사람"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "산업단지 근로자",
+      "units": 15,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "최대 거주기간 10년"
+      ]
+    }
+  ],
+  "priority": [
+    "2세 미만 자녀(태아 포함)가 있는 자 - 모집호수의 30% 범위 내 우선배정"
+  ]
+}
