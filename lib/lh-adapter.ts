@@ -328,6 +328,7 @@ interface MappedPoint {
   lat: number; lng: number; address?: string; label?: string;
   area?: string; depositManwon?: number; rentManwon?: number; units?: number;
   coverPhotoLocal?: string; // 단지별 조감도 (없으면 모 조감도 안 물려받음)
+  districtId?: string; district?: string; // 한 공고가 여러 시/도에 걸칠 때 핀별 소속
 }
 interface MappedCfg { districtId?: string; district?: string; points: MappedPoint[]; }
 const MAPPED_REGIONAL = mappedRegional as Record<string, MappedCfg>;
@@ -347,8 +348,8 @@ function buildMappedRegionalListings(): Listing[] {
         id: multi ? `${base.id}-m${i}` : base.id,
         lat: p.lat,
         lng: p.lng,
-        districtId: cfg.districtId ?? base.districtId,
-        district: cfg.district ?? base.district,
+        districtId: p.districtId ?? cfg.districtId ?? base.districtId,
+        district: p.district ?? cfg.district ?? base.district,
         ...(p.address && { address: p.address }),
         ...(p.label && { title: p.label }),
         ...(p.area && { area: p.area }),

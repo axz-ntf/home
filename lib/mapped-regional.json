@@ -501,5 +501,103 @@
         "rentManwon": 27
       }
     ]
+  },
+  "2015122300020037": {
+    "districtId": "gyeongnam",
+    "district": "경상남도",
+    "points": [
+      {
+        "lat": 35.34703656840885,
+        "lng": 129.03739529576086,
+        "address": "경상남도 양산시",
+        "districtId": "gyeongnam",
+        "district": "경상남도"
+      }
+    ]
+  },
+  "2015122300020049": {
+    "districtId": "daegu",
+    "district": "대구광역시",
+    "points": [
+      {
+        "lat": 35.66283392527496,
+        "lng": 128.40675231627924,
+        "address": "대구광역시 달성군",
+        "districtId": "daegu",
+        "district": "대구광역시"
+      },
+      {
+        "lat": 35.712065420553714,
+        "lng": 128.27197299425617,
+        "address": "경상북도 고령군",
+        "districtId": "gyeongbuk",
+        "district": "경상북도"
+      }
+    ]
+  },
+  "2015122300020052": {
+    "districtId": "chungnam",
+    "district": "충청남도",
+    "points": [
+      {
+        "lat": 36.82102664526191,
+        "lng": 127.1634091084328,
+        "address": "충청남도 천안시",
+        "districtId": "chungnam",
+        "district": "충청남도"
+      }
+    ]
+  },
+  "2015122300020051": {
+    "districtId": "daejeon",
+    "district": "대전광역시",
+    "points": [
+      {
+        "lat": 36.26806461294116,
+        "lng": 127.47233764088298,
+        "address": "대전광역시 동구",
+        "districtId": "daejeon",
+        "district": "대전광역시"
+      }
+    ]
+  },
+  "2015122300020050": {
+    "districtId": "daejeon",
+    "district": "대전광역시",
+    "points": [
+      {
+        "lat": 36.349278364486636,
+        "lng": 127.36449964170137,
+        "address": "대전광역시 서구",
+        "districtId": "daejeon",
+        "district": "대전광역시"
+      }
+    ]
+  },
+  "2015122300020000": {
+    "districtId": "gyeongnam",
+    "district": "경상남도",
+    "points": [
+      {
+        "lat": 34.860012100781134,
+        "lng": 128.43009061095316,
+        "address": "경상남도 통영시",
+        "districtId": "gyeongnam",
+        "district": "경상남도"
+      }
+    ]
+  },
+  "2015122300019994": {
+    "districtId": "daegu",
+    "district": "대구광역시",
+    "points": [
+      {
+        "lat": 35.84725326496334,
+        "lng": 128.5122139036107,
+        "address": "대구광역시 달서구",
+        "districtId": "daegu",
+        "district": "대구광역시"
+      }
+    ]
   }
 }

@@ -58,7 +58,10 @@ export default function NationwideList({ rows }: { rows: NationwideRow[] }) {
 
   return (
     <main style={{
-      minHeight: "100vh",
+      // body 가 overflow:hidden(지도 풀스크린용)이라 이 페이지는 자체 스크롤 컨테이너로 둔다.
+      height: "100dvh",
+      overflowY: "auto",
+      WebkitOverflowScrolling: "touch",
       background: "var(--seed-scale-color-gray-50)",
       fontFamily: "'Pretendard Variable', Pretendard, -apple-system, sans-serif",
       color: "var(--seed-scale-color-gray-900)",

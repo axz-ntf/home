@@ -139,6 +139,14 @@ jobs:
           VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
         run: node scripts/extract-mapped-regional.mjs --active
 
+      # "전국 모집"에 잘못 떨어진 단일 공고(제목에 시·군·구 명확)를 지역 단위 지도 핀으로 이동.
+      # 다지점 분리(7.6) 다음에 실행 — 이미 분리된 pid 는 skip. 시/도만 넓은 광역은 잔류.
+      - name: Phase 7.6b — 단일 지역 공고 지오코딩 → 지도 이동
+        continue-on-error: true
+        env:
+          VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
+        run: node scripts/geocode-regional-singles.mjs --active
+
       # 분리된 다지점 단지마다 제 조감도 크롤(없으면 비움) → Blob 업로드.
       - name: Phase 7.7 — 다지점 단지별 조감도 크롤 + Blob 업로드
         continue-on-error: true
