@@ -1,0 +1,20 @@
+{
+  "supplyTotal": 250,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 250,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "성년자(만 19세 이상) 또는 특정 조건의 미성년자",
+        "주택청약종합저축 가입자(1순위: 6개월 이상 가입 및 월납입금 6회 이상 납입, 2순위: 가입자)"
+      ]
+    }
+  ],
+  "priority": []
+}
