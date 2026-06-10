@@ -6,6 +6,7 @@ import dundeonSeoul from "./dundeon-seoul.json";
 import mappedRegional from "./mapped-regional.json";
 import { applyOverride } from "./manual-overrides";
 import { effectiveStatus } from "./dday";
+import { SH_ADMIN_LISTINGS } from "./sh-adapter";
 
 // lh-notices-all 에는 listings-api 에 없는 raw 상태 필드 (noticeStatus, progressStatus) 가 있음.
 // pblancId 로 lookup 만들어 매칭. 빌드/서버 초기화 시 1회만 실행.
@@ -389,8 +390,9 @@ const REGIONAL: Listing[] = (apiListings as unknown as ApiListing[])
   });
 export const LH_REGIONAL_LISTINGS: Listing[] = dedupeListings(REGIONAL);
 
-// 어드민 검수용 — 지도 노출 매물 + 광역 매물 전체. 검수 큐는 지도와 무관하므로 다 포함.
-export const LH_ADMIN_LISTINGS: Listing[] = [...LH_LISTINGS, ...LH_REGIONAL_LISTINGS];
+// 어드민 검수용 — 지도 노출 매물 + 광역 매물 + SH 전체. 검수 큐는 지도와 무관하므로 다 포함.
+// SH 는 어드민에만(공개 LH_LISTINGS 엔 미포함) — 검수 후 공개 승격 예정.
+export const LH_ADMIN_LISTINGS: Listing[] = [...LH_LISTINGS, ...LH_REGIONAL_LISTINGS, ...SH_ADMIN_LISTINGS.map(applyOverride)];
 
 // 검수 필요 여부 — 공급세대수가 의심값(없음/1)인 매물. 단, 이미 마감(closed)된 매물은
 // 정정해도 사용자 노출이 끝나 검수 의미가 없으므로 제외. (active 만 큐에 노출)

@@ -6,6 +6,7 @@
 
 import fs from "node:fs/promises";
 import path from "node:path";
+import shNotices from "./sh-notices.json";
 
 const UA = "doongji-app/1.0 (admin extract; polite)";
 const DOC_PARSE_URL = "https://api.upstage.ai/v1/document-ai/document-parse";
@@ -96,11 +97,24 @@ export async function parseUploadedPdf(buf: Buffer, filename: string): Promise<s
   return docParse(buf, filename);
 }
 
+// SH(sh-{seq}) → sh-notices.json 의 pdfUrl(Innorix innoFD) 직접 다운로드 → Document Parse.
+async function resolveShMarkdown(id: string): Promise<string> {
+  const seq = id.replace(/^sh-/, "");
+  const n = (shNotices as { seq: string; pdfUrl?: string | null; pdfName?: string | null; detailUrl?: string }[]).find((x) => x.seq === seq);
+  if (!n?.pdfUrl) throw new Error("SH 공고문 PDF 를 찾을 수 없습니다.");
+  const r = await fetch(n.pdfUrl, { headers: { "User-Agent": UA, Referer: n.detailUrl ?? "https://www.i-sh.co.kr/" } });
+  if (!r.ok) throw new Error(`SH PDF 다운로드 실패 (${r.status})`);
+  return docParse(Buffer.from(await r.arrayBuffer()), n.pdfName ?? "sh.pdf");
+}
+
 // id(+sourceUrl) 로 마크다운 확보. 캐시 우선, 없으면 원본 PDF 파싱.
 export async function resolveMarkdown(
   id: string,
   sourceUrl: string | null,
 ): Promise<{ markdown: string; source: MarkdownSource }> {
+  if (id.startsWith("sh-")) {
+    return { markdown: await resolveShMarkdown(id), source: "parsed" };
+  }
   const cached = await readCachedMarkdown(id);
   if (cached) return { markdown: cached, source: "cache" };
   if (!sourceUrl) throw new Error("캐시가 없고 sourceUrl 도 없어 공고문을 가져올 수 없습니다.");
