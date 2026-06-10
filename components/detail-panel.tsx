@@ -7,7 +7,7 @@ import { thumbnailSVG } from "@/lib/svg";
 import { calcDday, isRegularRecruitment, effectiveStatus } from "@/lib/dday";
 import { applyUrlFor, infoUrlFor } from "@/lib/notice-match";
 import { NaverPanorama } from "./naver-panorama";
-import { CloseIcon, HeartIcon, TrainIcon } from "./icons";
+import { CloseIcon, HeartIcon } from "./icons";
 import { EligibilityDetail } from "./eligibility-detail";
 import { formatManwon } from "@/lib/format";
 import { nearestStation } from "@/lib/subway";
@@ -29,7 +29,19 @@ function formatAreaCell(m2: number, unit: AreaUnit): string {
 
 function ListingComplexes({ item }: { item: Listing }) {
   const [areaUnit, setAreaUnit] = useState<AreaUnit>("m2");
-  if (!item.complexes || !item.complexes.length) return null;
+  // 골격 통일 — 평형별 데이터가 없어도 섹션 자리는 유지.
+  if (!item.complexes || !item.complexes.length) {
+    return (
+      <section className="detail-section">
+        <h3>단지별 공급 정보</h3>
+        <div className="detail-empty-notice" style={{ marginBottom: 0 }}>
+          <div className="detail-empty-notice-sub">
+            평형별 공급 정보가 아직 정리되지 않았어요. 위 가격·세대수 정보를 참고해 주세요.
+          </div>
+        </div>
+      </section>
+    );
+  }
   function fmtPrice(v: number | null): string {
     if (v == null) return "공고문 확인";
     const m = Math.round(v / 10000);
@@ -90,7 +102,7 @@ function ListingComplexes({ item }: { item: Listing }) {
               <tbody>
                 {c.rows.map((r, ri) => {
                   const m2 = Number(r.houseType);
-                  const units = r.supplyTotal ?? r.area ?? null;
+                  const units = r.supplyTotal ?? r.supplyThisRound ?? null;
                   return (
                     <tr key={ri} style={{ borderBottom: "1px solid var(--seed-scale-color-gray-100)" }}>
                       <td style={{ padding: "6px 8px" }}>{formatAreaCell(m2, areaUnit)}</td>
@@ -126,7 +138,17 @@ function ListingPhotos({ item }: { item: Listing }) {
     };
   }, [lightboxOpen]);
 
-  if (!cover) return null;
+  // 골격 통일 — 조감도가 없어도 섹션 자리는 유지하고 정제된 안내로 채운다.
+  if (!cover) {
+    return (
+      <section className="detail-section detail-photos">
+        <h3>단지 조감도</h3>
+        <div className="detail-empty-notice" style={{ marginBottom: 0 }}>
+          <div className="detail-empty-notice-sub">이 공고는 조감도 이미지가 제공되지 않았어요.</div>
+        </div>
+      </section>
+    );
+  }
   return (
     <section className="detail-section detail-photos">
       <h3>단지 조감도</h3>
@@ -233,7 +255,7 @@ export function DetailPanel({
           </span>
         </div>
         <h1 className="detail-title">{item.title}</h1>
-        <div className="detail-address">{item.address}</div>
+        {item.address && <div className="detail-address">{item.address}</div>}
 
         <div style={{ display: "flex", gap: 6, marginBottom: 16 }}>
           {housingType && (
@@ -295,101 +317,43 @@ export function DetailPanel({
         <section className="detail-section">
           <h3>기본 정보</h3>
           <dl className="detail-specs">
+            {/* 골격 통일 — 핵심 행(공급유형·세대수·접수기간)은 항상 표시, 없으면 "—".
+                부가 행(공고명·총세대·난방·교통)은 값이 있을 때만. */}
             {item.pblancNm ? (
               <>
                 <dt>공고명</dt>
                 <dd>{item.pblancNm}</dd>
               </>
             ) : null}
-            {item.suplyTyNm ? (
-              <>
-                <dt>공급 유형</dt>
-                <dd>{item.suplyTyNm}</dd>
-              </>
-            ) : null}
+            <dt>공급 유형</dt>
+            <dd>{item.suplyTyNm || "—"}</dd>
+            <dt>공급 세대 수</dt>
+            <dd>{item.supplyUnits ? `${item.supplyUnits}세대` : "—"}</dd>
             {item.totalUnits ? (
               <>
                 <dt>총 세대 수</dt>
                 <dd>{item.totalUnits}세대</dd>
               </>
             ) : null}
-            {item.supplyUnits ? (
-              <>
-                <dt>공급 세대 수</dt>
-                <dd>{item.supplyUnits}세대</dd>
-              </>
-            ) : null}
+            <dt>접수 기간</dt>
+            <dd>
+              {item.beginDate || item.deadline
+                ? `${item.beginDate || "공고문 참조"} ~ ${item.deadline || "공고문 참조"}`
+                : "—"}
+            </dd>
             {item.heatMethod ? (
               <>
                 <dt>난방</dt>
                 <dd>{item.heatMethod}</dd>
               </>
             ) : null}
-            {item.beginDate ? (
+            {nearStation ? (
               <>
-                <dt>접수 시작</dt>
-                <dd>{item.beginDate}</dd>
-              </>
-            ) : null}
-            {item.deadline ? (
-              <>
-                <dt>접수 마감</dt>
-                <dd>{item.deadline}</dd>
+                <dt>교통</dt>
+                <dd>{nearStation.name}역 도보 {nearStation.walkMin}분</dd>
               </>
             ) : null}
           </dl>
-        </section>
-
-        {(nearStation || item.features.length > 0 || item.competition != null) && (
-          <section className="detail-section">
-            <h3>입지·편의</h3>
-            <div className="detail-feat-row">
-              {/* 역세권 — 실제 도보권(800m 이내) 역이 있을 때만 표시 */}
-              {nearStation && (
-                <div className="feat-chip">
-                  <TrainIcon size={12} />
-                  {nearStation.name}역 도보 {nearStation.walkMin}분
-                </div>
-              )}
-              {item.features.map((f) => (
-                <div key={f} className="feat-chip">
-                  #{f}
-                </div>
-              ))}
-              {item.competition != null && (
-                <div
-                  className="feat-chip"
-                  style={{
-                    borderColor: "var(--seed-scale-color-carrot-200)",
-                    background: "var(--seed-semantic-color-primary-low)",
-                    color: "var(--seed-scale-color-carrot-700)",
-                    fontWeight: 600,
-                  }}
-                >
-                  지난 회차 경쟁률 {item.competition}:1
-                </div>
-              )}
-            </div>
-          </section>
-        )}
-
-        <section className="detail-section">
-          <h3>신청 방법</h3>
-          <ol
-            style={{
-              margin: 0,
-              paddingLeft: 18,
-              fontSize: 13,
-              lineHeight: 1.75,
-              color: "var(--seed-semantic-color-ink-text)",
-            }}
-          >
-            <li>{item.agency} 청약 플랫폼에서 회원가입 및 공인인증</li>
-            <li>모집공고 기간 내 온라인 청약 신청서 제출</li>
-            <li>서류 제출 (주민등록, 소득 증빙 등)</li>
-            <li>소득·자산 조사 및 당첨자 발표</li>
-            <li>계약 체결 및 입주</li>
-          </ol>
         </section>
 
         <div className="detail-actions">
