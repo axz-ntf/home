@@ -1,11 +1,11 @@
-import { LH_ADMIN_LISTINGS } from "@/lib/lh-adapter";
+import { LH_ADMIN_LISTINGS, needsSupplyReview } from "@/lib/lh-adapter";
 import { OVERRIDES } from "@/lib/manual-overrides";
 import AdminShell, { type NavItem } from "../admin-shell";
 import { getAdminUser } from "@/lib/admin-user";
 
 export default function ComplexesPage() {
   const needsReview = LH_ADMIN_LISTINGS.filter(
-    (l) => !(l.id in OVERRIDES) && (l.supplyUnits == null || l.supplyUnits === 1),
+    (l) => !(l.id in OVERRIDES) && needsSupplyReview(l),
   ).length;
 
   const navItems: NavItem[] = [
