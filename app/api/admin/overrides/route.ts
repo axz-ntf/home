@@ -2,11 +2,19 @@ import { NextResponse } from "next/server";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
-// 검수값을 lib/manual-overrides.json 에 저장. fs.write 가 필요해서 nodejs runtime.
-// Vercel 배포 환경은 fs 가 read-only → 어드민은 로컬 dev 에서만 동작 (현재 운영 흐름과 일치).
+// 검수값을 lib/manual-overrides.json 에 반영.
+//   - 로컬 dev: 파일 직접 write (기존 흐름 — 커밋은 사람이).
+//   - 배포(Vercel): fs 가 read-only 라 GitHub Contents API 로 커밋 → 자동 재배포 → 메인앱 반영(~1분).
+// 메인앱은 manual-overrides.json 을 빌드시 static import 하므로 읽기 경로는 변경 불필요.
 export const runtime = "nodejs";
 
 const FILE = path.join(process.cwd(), "lib", "manual-overrides.json");
+const GH_TOKEN = (process.env.GITHUB_TOKEN ?? "").trim();
+const GH_REPO = process.env.GITHUB_REPO ?? "bobbypark-axz/home";
+const GH_BRANCH = process.env.GITHUB_BRANCH ?? "main";
+const GH_PATH = "lib/manual-overrides.json";
+// Vercel 런타임(VERCEL=1)이고 토큰이 있을 때만 GitHub 모드. 그 외(로컬)는 fs.
+const useGitHub = Boolean(GH_TOKEN) && Boolean(process.env.VERCEL);
 
 interface PayloadRow {
   houseType: string;
@@ -32,22 +40,73 @@ interface OverridePayload {
   _note?: string;
 }
 
-async function readOverrides(): Promise<Record<string, unknown>> {
+// 안정적 정렬 — 검수 diff 가 git 에서 깔끔하게.
+function serialize(data: Record<string, unknown>): string {
+  const ordered: Record<string, unknown> = {};
+  for (const k of Object.keys(data).sort()) ordered[k] = data[k];
+  return JSON.stringify(ordered, null, 2) + "\n";
+}
+
+const GH_HEADERS = {
+  Authorization: `Bearer ${GH_TOKEN}`,
+  Accept: "application/vnd.github+json",
+  "User-Agent": "doongji-admin",
+  "X-GitHub-Api-Version": "2022-11-28",
+};
+const GH_CONTENTS = `https://api.github.com/repos/${GH_REPO}/contents/${GH_PATH}`;
+
+// 현재 overrides + (GitHub 모드일 때) 파일 sha.
+async function readOverrides(): Promise<{ data: Record<string, unknown>; sha: string | null }> {
+  if (useGitHub) {
+    const r = await fetch(`${GH_CONTENTS}?ref=${GH_BRANCH}`, { headers: GH_HEADERS, cache: "no-store" });
+    if (r.status === 404) return { data: {}, sha: null };
+    if (!r.ok) throw new Error(`GitHub 읽기 실패 (${r.status}): ${(await r.text()).slice(0, 200)}`);
+    const j = await r.json();
+    const decoded = Buffer.from(j.content ?? "", "base64").toString("utf8");
+    return { data: decoded.trim() ? JSON.parse(decoded) : {}, sha: j.sha };
+  }
   try {
-    const raw = await fs.readFile(FILE, "utf8");
-    return JSON.parse(raw);
+    return { data: JSON.parse(await fs.readFile(FILE, "utf8")), sha: null };
   } catch (e) {
-    if ((e as NodeJS.ErrnoException).code === "ENOENT") return {};
+    if ((e as NodeJS.ErrnoException).code === "ENOENT") return { data: {}, sha: null };
     throw e;
   }
 }
 
-async function writeOverrides(data: Record<string, unknown>) {
-  // JSON.stringify 안정적 정렬 — 검수 diff 가 git 에서 깔끔하게 보이도록.
-  const keys = Object.keys(data).sort();
-  const ordered: Record<string, unknown> = {};
-  for (const k of keys) ordered[k] = data[k];
-  await fs.writeFile(FILE, JSON.stringify(ordered, null, 2) + "\n", "utf8");
+async function writeOverrides(data: Record<string, unknown>, sha: string | null, message: string) {
+  const content = serialize(data);
+  if (!useGitHub) {
+    await fs.writeFile(FILE, content, "utf8");
+    return;
+  }
+  const r = await fetch(GH_CONTENTS, {
+    method: "PUT",
+    headers: { ...GH_HEADERS, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      message,
+      content: Buffer.from(content, "utf8").toString("base64"),
+      branch: GH_BRANCH,
+      ...(sha ? { sha } : {}),
+    }),
+  });
+  if (!r.ok) throw new Error(`GitHub 커밋 실패 (${r.status}): ${(await r.text()).slice(0, 200)}`);
+}
+
+// sha 충돌(다른 커밋이 끼어듦) 시 1회 재시도하며 read-modify-write.
+// mutator 가 false 를 반환하면(변경 없음) write/commit 을 건너뛴다 — 빈 커밋 방지.
+async function mutate(message: string, mutator: (data: Record<string, unknown>) => boolean) {
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const { data, sha } = await readOverrides();
+    if (!mutator(data)) return;
+    try {
+      await writeOverrides(data, sha, message);
+      return;
+    } catch (e) {
+      const conflict = /\b409\b/.test((e as Error).message);
+      if (conflict && attempt === 0) continue;
+      throw e;
+    }
+  }
 }
 
 export async function POST(req: Request) {
@@ -60,7 +119,7 @@ export async function POST(req: Request) {
   if (!body?.id || typeof body.id !== "string") {
     return NextResponse.json({ error: "id 필요" }, { status: 400 });
   }
-  const overrides = await readOverrides();
+
   // undefined 필드는 저장 안 함 (자동값 유지). null 은 "명시적으로 비움" 의미라 저장.
   const entry: Record<string, unknown> = { _reviewedAt: new Date().toISOString().slice(0, 10) };
   if (body.supplyUnits !== undefined) entry.supplyUnits = body.supplyUnits;
@@ -69,7 +128,6 @@ export async function POST(req: Request) {
   if (body.salePriceManwon !== undefined) entry.salePriceManwon = body.salePriceManwon;
   if (body.area !== undefined) entry.area = body.area;
   if (Array.isArray(body.rows) && body.rows.length > 0) {
-    // 유효한 행만 (houseType 있고 최소 한 값) 필터
     const cleanRows = body.rows
       .filter((r) => r && typeof r.houseType === "string" && r.houseType.trim())
       .map((r) => {
@@ -88,9 +146,16 @@ export async function POST(req: Request) {
   if (body.progressStatus !== undefined) entry.progressStatus = body.progressStatus;
   if (body.deadline !== undefined) entry.deadline = body.deadline;
   if (body._note) entry._note = body._note;
-  overrides[body.id] = entry;
-  await writeOverrides(overrides);
-  return NextResponse.json({ ok: true, id: body.id });
+
+  try {
+    await mutate(`data(review): override ${body.id}`, (data) => {
+      data[body.id] = entry;
+      return true;
+    });
+  } catch (e) {
+    return NextResponse.json({ error: (e as Error).message }, { status: 500 });
+  }
+  return NextResponse.json({ ok: true, id: body.id, persisted: useGitHub ? "github" : "fs" });
 }
 
 export async function DELETE(req: Request) {
@@ -98,11 +163,16 @@ export async function DELETE(req: Request) {
   if (!body?.id || typeof body.id !== "string") {
     return NextResponse.json({ error: "id 필요" }, { status: 400 });
   }
-  const overrides = await readOverrides();
-  if (!(body.id in overrides)) {
-    return NextResponse.json({ ok: true, id: body.id, deleted: false });
+  let deleted = false;
+  try {
+    await mutate(`data(review): remove override ${body.id}`, (data) => {
+      if (!(body.id in data)) return false;
+      delete data[body.id];
+      deleted = true;
+      return true;
+    });
+  } catch (e) {
+    return NextResponse.json({ error: (e as Error).message }, { status: 500 });
   }
-  delete overrides[body.id];
-  await writeOverrides(overrides);
-  return NextResponse.json({ ok: true, id: body.id, deleted: true });
+  return NextResponse.json({ ok: true, id: body.id, deleted });
 }

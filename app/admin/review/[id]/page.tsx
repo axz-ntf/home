@@ -125,6 +125,7 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
         nextHref={nextHref}
         queueIndex={currentIdx >= 0 ? { current: currentIdx + 1, total: queue.length } : null}
         initialRows={initialRows.length > 0 ? initialRows : null}
+        sourceUrl={listing.sourceUrl ?? null}
       />
     </AdminShell>
   );

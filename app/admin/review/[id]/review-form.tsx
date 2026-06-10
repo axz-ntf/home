@@ -87,6 +87,7 @@ export default function ReviewForm({
   nextHref,
   queueIndex,
   initialRows,
+  sourceUrl,
 }: {
   id: string;
   type: HousingTypeId;
@@ -96,6 +97,7 @@ export default function ReviewForm({
   nextHref?: string | null;
   queueIndex?: { current: number; total: number } | null;
   initialRows?: OverrideRow[] | null;
+  sourceUrl?: string | null;
 }) {
   const router = useRouter();
   const isSale = type === "sale";
@@ -123,6 +125,80 @@ export default function ReviewForm({
   const [note, setNote] = useState(override?._note ?? "");
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<{ kind: "error" | "success"; text: string } | null>(null);
+
+  // AI 자동 추출 — Solar(open2)가 공고문을 읽어 폼을 채운다. reasoning 모델이라 수십 초 걸림.
+  const [extracting, setExtracting] = useState(false);
+  const [extractMsg, setExtractMsg] = useState<{ kind: "error" | "success" | "info"; text: string } | null>(null);
+
+  // 추출 결과를 폼 state 에 반영. 저장은 사람이 확인 후 직접 — 자동 저장하지 않는다.
+  function applyExtracted(fields: {
+    rows: { houseType: string; area: string | null; supplyUnits: number | null; deposit: number | null; rent: number | null; salePriceManwon: number | null }[];
+    deadline: string | null;
+    noticeStatus: string | null;
+    progressStatus: string | null;
+  }) {
+    const s = (n: number | null) => (n != null ? String(n) : "");
+    if (fields.rows.length >= 2) {
+      setByRows(true);
+      setRowsList(fields.rows.map((r) => ({
+        houseType: r.houseType ?? "",
+        area: r.area ?? "",
+        supplyUnits: s(r.supplyUnits),
+        deposit: s(r.deposit),
+        rent: s(r.rent),
+        salePriceManwon: s(r.salePriceManwon),
+      })));
+    } else if (fields.rows.length === 1) {
+      const r = fields.rows[0];
+      setByRows(false);
+      if (r.supplyUnits != null) setSupplyUnits(s(r.supplyUnits));
+      if (isSale) {
+        if (r.salePriceManwon != null) setSalePrice(s(r.salePriceManwon));
+      } else {
+        if (r.deposit != null) setDeposit(s(r.deposit));
+        if (r.rent != null) setRent(s(r.rent));
+      }
+      if (r.area) setArea(r.area);
+    }
+    if (fields.deadline) setDeadline(fields.deadline);
+    if (fields.noticeStatus) setNoticeStatus(fields.noticeStatus);
+    if (fields.progressStatus) setProgressStatus(fields.progressStatus);
+  }
+
+  async function runExtract(file?: File) {
+    setExtracting(true);
+    setExtractMsg({ kind: "info", text: "Solar 가 공고문을 읽는 중… (추론 모델이라 30~90초 걸릴 수 있어요)" });
+    try {
+      const res = file
+        ? await fetch("/api/admin/extract", { method: "POST", body: (() => {
+            const fd = new FormData();
+            fd.append("file", file);
+            fd.append("isSale", String(isSale));
+            return fd;
+          })() })
+        : await fetch("/api/admin/extract", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ id, sourceUrl: sourceUrl ?? null, isSale }),
+          });
+      const j = await res.json();
+      if (!res.ok || !j.ok) {
+        setExtractMsg({ kind: "error", text: `추출 실패: ${j.error ?? res.statusText}` });
+        return;
+      }
+      applyExtracted(j.fields);
+      const rowsN = j.fields.rows.length;
+      const srcLabel = j.source === "cache" ? "캐시" : j.source === "upload" ? "업로드 PDF" : "원본 PDF 파싱";
+      setExtractMsg({
+        kind: "success",
+        text: `자동 채움 완료 — ${srcLabel}에서 ${rowsN}개 평형 추출 (${Math.round(j.ms / 1000)}초). 값 확인 후 저장하세요.`,
+      });
+    } catch (e) {
+      setExtractMsg({ kind: "error", text: `추출 오류: ${(e as Error).message}` });
+    } finally {
+      setExtracting(false);
+    }
+  }
 
   function num(s: string): number | null {
     const t = s.trim();
@@ -235,6 +311,42 @@ export default function ReviewForm({
           {override._note && <span className="note">메모: {override._note}</span>}
         </div>
       )}
+
+      <FormSection title="AI 자동 채움" subtitle="Solar 가 공고문을 읽어 금액·세대수·평형을 채웁니다. 값은 반드시 확인 후 저장하세요.">
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 10, alignItems: "center" }}>
+          <button
+            type="button"
+            onClick={() => runExtract()}
+            disabled={extracting || busy}
+            className="a-btn primary"
+            style={{ background: "var(--a-carrot)" }}
+          >
+            {extracting ? "추출 중…" : "공고문에서 자동 채움"}
+          </button>
+          <label className="a-btn ghost" style={{ cursor: extracting ? "default" : "pointer", margin: 0 }}>
+            PDF 업로드
+            <input
+              type="file"
+              accept="application/pdf"
+              disabled={extracting || busy}
+              style={{ display: "none" }}
+              onChange={(e) => {
+                const f = e.target.files?.[0];
+                if (f) runExtract(f);
+                e.target.value = "";
+              }}
+            />
+          </label>
+          <span style={{ fontSize: 11, color: "var(--a-ink-3)" }}>
+            기존 공고는 캐시 사용, 신규는 PDF 업로드
+          </span>
+        </div>
+        {extractMsg && (
+          <div className={`a-msg ${extractMsg.kind === "info" ? "" : extractMsg.kind}`} style={{ marginTop: 10 }}>
+            {extractMsg.text}
+          </div>
+        )}
+      </FormSection>
 
       <FormSection title="공고 상태" subtitle="자동 추출이 틀린 경우 수동 교정. 화면 분류 / 필터에 즉시 반영.">
         <Field label="활성 상태" hint="대시보드 분류 기준 — 모집중 / 모집예정 / 마감임박 / 마감">
