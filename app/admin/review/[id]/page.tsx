@@ -1,4 +1,4 @@
-import { LH_ADMIN_LISTINGS } from "@/lib/lh-adapter";
+import { LH_ADMIN_LISTINGS, needsSupplyReview } from "@/lib/lh-adapter";
 import { OVERRIDES, type OverrideRow } from "@/lib/manual-overrides";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -48,10 +48,10 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
     salePriceManwon: null, // sale 매물은 별도 (rows 안에 salePrice 없을 수도)
   }));
 
-  // 검수 큐 — 미검수 + supplyUnits 의심값.
+  // 검수 큐 — 미검수 + supplyUnits 의심값 (마감 매물 제외).
   const queue = LH_ADMIN_LISTINGS.filter((l) => {
     if (l.id in OVERRIDES) return false;
-    return l.supplyUnits == null || l.supplyUnits === 1;
+    return needsSupplyReview(l);
   });
   const needsReview = queue.length;
 

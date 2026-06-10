@@ -5,6 +5,7 @@ import allNotices from "./lh-notices-all.json";
 import dundeonSeoul from "./dundeon-seoul.json";
 import mappedRegional from "./mapped-regional.json";
 import { applyOverride } from "./manual-overrides";
+import { effectiveStatus } from "./dday";
 
 // lh-notices-all 에는 listings-api 에 없는 raw 상태 필드 (noticeStatus, progressStatus) 가 있음.
 // pblancId 로 lookup 만들어 매칭. 빌드/서버 초기화 시 1회만 실행.
@@ -390,6 +391,13 @@ export const LH_REGIONAL_LISTINGS: Listing[] = dedupeListings(REGIONAL);
 
 // 어드민 검수용 — 지도 노출 매물 + 광역 매물 전체. 검수 큐는 지도와 무관하므로 다 포함.
 export const LH_ADMIN_LISTINGS: Listing[] = [...LH_LISTINGS, ...LH_REGIONAL_LISTINGS];
+
+// 검수 필요 여부 — 공급세대수가 의심값(없음/1)인 매물. 단, 이미 마감(closed)된 매물은
+// 정정해도 사용자 노출이 끝나 검수 의미가 없으므로 제외. (active 만 큐에 노출)
+export function needsSupplyReview(l: Listing): boolean {
+  if (effectiveStatus(l.status, l.deadline ?? "", l.beginDate) === "closed") return false;
+  return l.supplyUnits == null || l.supplyUnits === 1;
+}
 
 export function buildDistricts(listings: Listing[]): District[] {
   const counts = new Map<string, number>();
