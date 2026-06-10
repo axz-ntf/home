@@ -171,6 +171,16 @@ export function applyOverride(listing: Listing): Listing {
     ...(o.progressStatus !== undefined && { progressStatus: o.progressStatus }),
     ...(o.deadline !== undefined && { deadline: o.deadline }),
     ...(complexesPatched !== listing.complexes && { complexes: complexesPatched }),
+    // 구조화 가격 모델 → 디테일 렌더용 priceDetail (priceModel 있을 때만).
+    ...(o.priceModel && (o.tiers || o.householdTypes || o.supportLimit || o.conversion) && {
+      priceDetail: {
+        model: o.priceModel,
+        ...(o.tiers && { tiers: o.tiers }),
+        ...(o.householdTypes && { householdTypes: o.householdTypes }),
+        ...(o.supportLimit && { supportLimit: o.supportLimit }),
+        ...(o.conversion && { conversion: { rateUp: o.conversion.rateUp ?? null, rateDown: o.conversion.rateDown ?? null } }),
+      },
+    }),
   };
 }
 

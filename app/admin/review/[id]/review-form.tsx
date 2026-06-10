@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import type { ManualOverride, OverrideRow } from "@/lib/manual-overrides";
+import { priceModelFor, type ManualOverride, type OverrideRow } from "@/lib/manual-overrides";
 import type { HousingTypeId, StatusId } from "@/lib/types";
+import { TieredEditor, HouseholdEditor, SupportEditor, type TierDraft, type HouseholdDraft, type SupportDraft } from "./model-editors";
 
 interface Current {
   supplyUnits: number | string | null;
@@ -78,6 +79,43 @@ function buildInitialRows(override: ManualOverride | null, initialRows: Override
   return [emptyRow()];
 }
 
+const sn = (n: number | null | undefined) => (n != null ? String(n) : "");
+const rangeStr = (v: number | [number, number] | null | undefined) =>
+  Array.isArray(v) ? `${v[0]}~${v[1]}` : sn(v);
+
+function initTiers(o: ManualOverride | null): TierDraft[] {
+  if (!o?.tiers?.length) return [{ houseType: "", area: "", supplyUnits: "", incomes: [{ label: "", deposit: "", rent: "" }] }];
+  return o.tiers.map((t) => ({
+    houseType: t.houseType ?? "", area: t.area ?? "", supplyUnits: sn(t.supplyUnits),
+    incomes: (t.incomes ?? []).map((i) => ({ label: i.label ?? "", deposit: sn(i.deposit), rent: sn(i.rent) })),
+  }));
+}
+function initHouseholds(o: ManualOverride | null): HouseholdDraft[] {
+  if (!o?.householdTypes?.length) return [{ label: "", areaRange: "", supplyUnits: "", deposit: "", rent: "" }];
+  return o.householdTypes.map((h) => ({
+    label: h.label ?? "", areaRange: h.areaRange ?? "", supplyUnits: sn(h.supplyUnits),
+    deposit: rangeStr(h.deposit), rent: rangeStr(h.rent),
+  }));
+}
+function initSupport(o: ManualOverride | null): SupportDraft[] {
+  const rows = o?.supportLimit?.byHousehold ?? [];
+  if (!rows.length) return [{ label: "", limit: "" }];
+  return rows.map((b) => ({ label: b.label ?? "", limit: sn(b.limitManwon) }));
+}
+
+// "850~1200" → [850,1200], "850" → 850, "" → null.
+function parseRange(s: string): number | [number, number] | null {
+  const t = s.trim();
+  if (!t) return null;
+  const m = t.match(/^(\d+(?:\.\d+)?)\s*[~\-]\s*(\d+(?:\.\d+)?)$/);
+  if (m) {
+    const a = Number(m[1]), b = Number(m[2]);
+    return a === b ? a : [Math.min(a, b), Math.max(a, b)];
+  }
+  const n = Number(t.replace(/[^0-9.]/g, ""));
+  return Number.isFinite(n) ? n : null;
+}
+
 export default function ReviewForm({
   id,
   type,
@@ -101,6 +139,7 @@ export default function ReviewForm({
 }) {
   const router = useRouter();
   const isSale = type === "sale";
+  const priceModel = priceModelFor(type);
 
   // 평형별 모드 — override 에 rows 가 있으면 즉시 활성화. 자동 임포트된 complexes 가 있어도 활성화.
   const hasMultipleRows =
@@ -118,6 +157,14 @@ export default function ReviewForm({
   const [salePrice, setSalePrice] = useState(String(current.salePriceManwon ?? ""));
   const [area, setArea] = useState(current.area ?? "");
 
+  // 유형별 모델 state (3-3) — tiered/household/support + 전환보증금 + 당첨발표일
+  const [tiers, setTiers] = useState<TierDraft[]>(() => initTiers(override));
+  const [households, setHouseholds] = useState<HouseholdDraft[]>(() => initHouseholds(override));
+  const [supportRows, setSupportRows] = useState<SupportDraft[]>(() => initSupport(override));
+  const [convUp, setConvUp] = useState(override?.conversion?.rateUp != null ? String(override.conversion.rateUp) : "");
+  const [convDown, setConvDown] = useState(override?.conversion?.rateDown != null ? String(override.conversion.rateDown) : "");
+  const [winnerAt, setWinnerAt] = useState(override?.schedule?.winnerAt ?? "");
+
   const [status, setStatus] = useState<StatusId>(current.status);
   const [noticeStatus, setNoticeStatus] = useState(current.noticeStatus);
   const [progressStatus, setProgressStatus] = useState(current.progressStatus);
@@ -131,16 +178,33 @@ export default function ReviewForm({
   const [extractMsg, setExtractMsg] = useState<{ kind: "error" | "success" | "info"; text: string } | null>(null);
 
   // 추출 결과를 폼 state 에 반영. 저장은 사람이 확인 후 직접 — 자동 저장하지 않는다.
-  function applyExtracted(fields: {
-    rows: { houseType: string; area: string | null; supplyUnits: number | null; deposit: number | null; rent: number | null; salePriceManwon: number | null }[];
-    deadline: string | null;
-    noticeStatus: string | null;
-    progressStatus: string | null;
-  }) {
+  /* eslint-disable @typescript-eslint/no-explicit-any */
+  function applyExtracted(fields: any) {
     const s = (n: number | null) => (n != null ? String(n) : "");
+    // 모델별 구조화 결과 우선 반영
+    if (Array.isArray(fields.tiers) && fields.tiers.length) {
+      setTiers(fields.tiers.map((t: any) => ({
+        houseType: t.houseType ?? "", area: t.area ?? "", supplyUnits: s(t.supplyUnits),
+        incomes: (t.incomes ?? []).map((i: any) => ({ label: i.label ?? "", deposit: s(i.deposit), rent: s(i.rent) })),
+      })));
+    }
+    if (Array.isArray(fields.householdTypes) && fields.householdTypes.length) {
+      setHouseholds(fields.householdTypes.map((h: any) => ({
+        label: h.label ?? "", areaRange: h.areaRange ?? "", supplyUnits: s(h.supplyUnits),
+        deposit: rangeStr(h.deposit), rent: rangeStr(h.rent),
+      })));
+    }
+    if (fields.supportLimit?.byHousehold?.length) {
+      setSupportRows(fields.supportLimit.byHousehold.map((b: any) => ({ label: b.label ?? "", limit: s(b.limitManwon) })));
+    }
+    if (fields.conversion) {
+      if (fields.conversion.rateUp != null) setConvUp(s(fields.conversion.rateUp));
+      if (fields.conversion.rateDown != null) setConvDown(s(fields.conversion.rateDown));
+    }
+    if (fields.schedule?.winnerAt) setWinnerAt(fields.schedule.winnerAt);
     if (fields.rows.length >= 2) {
       setByRows(true);
-      setRowsList(fields.rows.map((r) => ({
+      setRowsList(fields.rows.map((r: any) => ({
         houseType: r.houseType ?? "",
         area: r.area ?? "",
         supplyUnits: s(r.supplyUnits),
@@ -164,6 +228,7 @@ export default function ReviewForm({
     if (fields.noticeStatus) setNoticeStatus(fields.noticeStatus);
     if (fields.progressStatus) setProgressStatus(fields.progressStatus);
   }
+  /* eslint-enable @typescript-eslint/no-explicit-any */
 
   async function runExtract(file?: File) {
     setExtracting(true);
@@ -174,12 +239,13 @@ export default function ReviewForm({
             const fd = new FormData();
             fd.append("file", file);
             fd.append("isSale", String(isSale));
+            fd.append("type", type);
             return fd;
           })() })
         : await fetch("/api/admin/extract", {
             method: "POST",
             headers: { "content-type": "application/json" },
-            body: JSON.stringify({ id, sourceUrl: sourceUrl ?? null, isSale }),
+            body: JSON.stringify({ id, sourceUrl: sourceUrl ?? null, isSale, type }),
           });
       const j = await res.json();
       if (!res.ok || !j.ok) {
@@ -187,11 +253,12 @@ export default function ReviewForm({
         return;
       }
       applyExtracted(j.fields);
-      const rowsN = j.fields.rows.length;
+      const f = j.fields;
+      const n = f.tiers?.length || f.householdTypes?.length || f.supportLimit?.byHousehold?.length || f.rows?.length || 0;
       const srcLabel = j.source === "cache" ? "캐시" : j.source === "upload" ? "업로드 PDF" : "원본 PDF 파싱";
       setExtractMsg({
         kind: "success",
-        text: `자동 채움 완료 — ${srcLabel}에서 ${rowsN}개 평형 추출 (${Math.round(j.ms / 1000)}초). 값 확인 후 저장하세요.`,
+        text: `자동 채움 완료 — ${srcLabel}에서 ${n}건 추출 (${Math.round(j.ms / 1000)}초). 값 확인 후 저장하세요.`,
       });
     } catch (e) {
       setExtractMsg({ kind: "error", text: `추출 오류: ${(e as Error).message}` });
@@ -236,7 +303,37 @@ export default function ReviewForm({
       _note: note.trim() || undefined,
     };
 
-    if (byRows) {
+    if (priceModel === "tiered-by-income") {
+      payload.priceModel = "tiered-by-income";
+      payload.tiers = tiers
+        .filter((t) => t.houseType.trim() || t.incomes.some((i) => i.deposit.trim()))
+        .map((t) => ({
+          houseType: t.houseType.trim() || "—",
+          area: t.area.trim() || undefined,
+          supplyUnits: num(t.supplyUnits),
+          incomes: t.incomes
+            .filter((i) => i.label.trim() || i.deposit.trim() || i.rent.trim())
+            .map((i) => ({ label: i.label.trim() || "—", deposit: num(i.deposit), rent: num(i.rent) })),
+        }));
+    } else if (priceModel === "by-household-size") {
+      payload.priceModel = "by-household-size";
+      payload.householdTypes = households
+        .filter((h) => h.label.trim() || h.deposit.trim() || h.supplyUnits.trim())
+        .map((h) => ({
+          label: h.label.trim() || "—",
+          areaRange: h.areaRange.trim() || undefined,
+          supplyUnits: num(h.supplyUnits),
+          deposit: parseRange(h.deposit),
+          rent: parseRange(h.rent),
+        }));
+    } else if (priceModel === "support-limit") {
+      payload.priceModel = "support-limit";
+      payload.supportLimit = {
+        byHousehold: supportRows
+          .filter((r) => r.label.trim() || r.limit.trim())
+          .map((r) => ({ label: r.label.trim() || "—", limitManwon: num(r.limit) })),
+      };
+    } else if (byRows) {
       const cleanRows = rowsList
         .filter((r) => r.houseType.trim() || r.supplyUnits.trim() || r.salePriceManwon.trim() || r.deposit.trim() || r.rent.trim())
         .map((r) => ({
@@ -257,6 +354,12 @@ export default function ReviewForm({
       payload.salePriceManwon = num(salePrice);
       payload.area = area.trim() || undefined;
     }
+
+    // 전환보증금 + 당첨발표일 (공통, 값 있을 때만)
+    if (convUp.trim() || convDown.trim()) {
+      payload.conversion = { rateUp: num(convUp), rateDown: num(convDown) };
+    }
+    if (winnerAt.trim()) payload.schedule = { winnerAt: winnerAt.trim() };
 
     const r = await fetch("/api/admin/overrides", {
       method: "POST",
@@ -365,6 +468,10 @@ export default function ReviewForm({
           <input value={deadline} onChange={(e) => setDeadline(e.target.value)} type="text" placeholder="YYYY.MM.DD" />
         </Field>
 
+        <Field label="당첨자 발표일" hint="예비입주자/당첨자 발표 — 사용자 최다 질문">
+          <input value={winnerAt} onChange={(e) => setWinnerAt(e.target.value)} type="text" placeholder="YYYY.MM.DD" />
+        </Field>
+
         {current.announceDate && (
           <div style={{ fontSize: 11, color: "var(--a-ink-3)", fontWeight: 500 }}>
             공고일: <strong style={{ color: "var(--a-ink-2)", fontWeight: 700 }}>{current.announceDate}</strong> (자동 추출, 수정 불가)
@@ -372,61 +479,88 @@ export default function ReviewForm({
         )}
       </FormSection>
 
-      <FormSection
-        title={isSale ? "분양 정보" : "임대 조건"}
-        subtitle={byRows
-          ? "평형별 행 — 한 공고에 59㎡/74㎡/84㎡ 등 여러 평형이 있을 때 행을 나눠서 입력."
-          : (isSale
-              ? "분양가 · 공급 세대수. PDF 표 합계 확인."
-              : "보증금 · 월세 · 공급 세대수. LH API 부정확값 정정.")}
-      >
-        <div style={{
-          display: "flex", alignItems: "center", gap: 12, padding: "10px 0",
-          borderBottom: "1px dashed var(--a-line)",
-        }}>
-          <ModeToggle byRows={byRows} onChange={setByRows} />
-          {byRows && (
-            <span style={{ fontSize: 11.5, color: "var(--a-ink-3)", marginLeft: "auto" }}>
-              총 공급 세대수: <strong style={{ color: "var(--a-ink)", fontVariantNumeric: "tabular-nums" }}>
-                {totalSupply != null ? totalSupply.toLocaleString() : "—"}
-              </strong>
-            </span>
-          )}
-        </div>
-
-        {byRows ? (
-          <RowsEditor
-            isSale={isSale}
-            rows={rowsList}
-            onUpdate={updateRow}
-            onRemove={removeRow}
-            onAdd={addRow}
-          />
-        ) : (
-          <>
-            <Field label="공급 세대수" hint="LH API 가 1로 잘못 주는 경우가 많음. PDF 표 합계 확인.">
-              <input value={supplyUnits} onChange={(e) => setSupplyUnits(e.target.value)} type="number" min="0" />
-            </Field>
-            {isSale ? (
-              <Field label="분양가 (만원)" hint="공급 가격 (분양 매물)">
-                <input value={salePrice} onChange={(e) => setSalePrice(e.target.value)} type="number" min="0" />
-              </Field>
-            ) : (
-              <>
-                <Field label="보증금 (만원)">
-                  <input value={deposit} onChange={(e) => setDeposit(e.target.value)} type="number" min="0" />
-                </Field>
-                <Field label="월세 (만원)">
-                  <input value={rent} onChange={(e) => setRent(e.target.value)} type="number" min="0" />
-                </Field>
-              </>
+      {priceModel === "tiered-by-income" ? (
+        <FormSection title="임대 조건 — 소득계층별" subtitle="영구·통합공공임대: 같은 평형도 소득계층(가/나군)별 임대료가 다름.">
+          <TieredEditor tiers={tiers} onChange={setTiers} />
+        </FormSection>
+      ) : priceModel === "by-household-size" ? (
+        <FormSection title="임대 조건 — 가구원수 유형별" subtitle="매입·집주인 임대: 가구원수 유형(1/2/3형) + 면적구간. 가격은 범위(850~1200) 가능.">
+          <HouseholdEditor rows={households} onChange={setHouseholds} />
+        </FormSection>
+      ) : priceModel === "support-limit" ? (
+        <FormSection title="전세 지원한도" subtitle="전세임대: 평형 없이 가구원수/지역별 전세 지원한도액.">
+          <SupportEditor rows={supportRows} onChange={setSupportRows} />
+        </FormSection>
+      ) : (
+        <FormSection
+          title={isSale ? "분양 정보" : "임대 조건"}
+          subtitle={byRows
+            ? "평형별 행 — 한 공고에 59㎡/74㎡/84㎡ 등 여러 평형이 있을 때 행을 나눠서 입력."
+            : (isSale
+                ? "분양가 · 공급 세대수. PDF 표 합계 확인."
+                : "보증금 · 월세 · 공급 세대수. LH API 부정확값 정정.")}
+        >
+          <div style={{
+            display: "flex", alignItems: "center", gap: 12, padding: "10px 0",
+            borderBottom: "1px dashed var(--a-line)",
+          }}>
+            <ModeToggle byRows={byRows} onChange={setByRows} />
+            {byRows && (
+              <span style={{ fontSize: 11.5, color: "var(--a-ink-3)", marginLeft: "auto" }}>
+                총 공급 세대수: <strong style={{ color: "var(--a-ink)", fontVariantNumeric: "tabular-nums" }}>
+                  {totalSupply != null ? totalSupply.toLocaleString() : "—"}
+                </strong>
+              </span>
             )}
-            <Field label="면적" hint="예: 29~46㎡">
-              <input value={area} onChange={(e) => setArea(e.target.value)} type="text" />
+          </div>
+
+          {byRows ? (
+            <RowsEditor
+              isSale={isSale}
+              rows={rowsList}
+              onUpdate={updateRow}
+              onRemove={removeRow}
+              onAdd={addRow}
+            />
+          ) : (
+            <>
+              <Field label="공급 세대수" hint="LH API 가 1로 잘못 주는 경우가 많음. PDF 표 합계 확인.">
+                <input value={supplyUnits} onChange={(e) => setSupplyUnits(e.target.value)} type="number" min="0" />
+              </Field>
+              {isSale ? (
+                <Field label="분양가 (만원)" hint="공급 가격 (분양 매물)">
+                  <input value={salePrice} onChange={(e) => setSalePrice(e.target.value)} type="number" min="0" />
+                </Field>
+              ) : (
+                <>
+                  <Field label="보증금 (만원)">
+                    <input value={deposit} onChange={(e) => setDeposit(e.target.value)} type="number" min="0" />
+                  </Field>
+                  <Field label="월세 (만원)">
+                    <input value={rent} onChange={(e) => setRent(e.target.value)} type="number" min="0" />
+                  </Field>
+                </>
+              )}
+              <Field label="면적" hint="예: 29~46㎡">
+                <input value={area} onChange={(e) => setArea(e.target.value)} type="text" />
+              </Field>
+            </>
+          )}
+        </FormSection>
+      )}
+
+      {!isSale && (
+        <FormSection title="전환보증금 (선택)" subtitle="보증금을 더 내면 월세가 내려가는 제도 — '저가' 핵심 정보. 전환이율만 입력하면 됨.">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+            <Field label="보증금→월세 전환이율 (%)" hint="보통 3.5">
+              <input value={convDown} onChange={(e) => setConvDown(e.target.value)} type="number" step="0.1" placeholder="3.5" />
             </Field>
-          </>
-        )}
-      </FormSection>
+            <Field label="월세→보증금 전환이율 (%)" hint="보통 6">
+              <input value={convUp} onChange={(e) => setConvUp(e.target.value)} type="number" step="0.1" placeholder="6" />
+            </Field>
+          </div>
+        </FormSection>
+      )}
 
       <ContextSection context={context} coverUrl={context.coverPhotoUrl} />
 

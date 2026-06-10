@@ -73,6 +73,16 @@ export interface Listing {
   noticeStatus?: string;     // "일반공고" / "정정공고" / "취소공고" 등
   progressStatus?: string;   // "모집중" / "모집완료" / "모집예정"
   announceDate?: string;     // raw 공고일 (YYYY.MM.DD)
+  // 유형별 가격 모델 구조화 데이터 — applyOverride 가 priceModel 검수값에서 채움(3-4 디테일 렌더용).
+  priceDetail?: PriceDetail;
+}
+
+export interface PriceDetail {
+  model: "tiered-by-income" | "by-household-size" | "support-limit" | "deposit-only" | "per-unit-sale" | "rows-by-area";
+  tiers?: { houseType: string; area?: string; supplyUnits?: number | null; incomes: { label: string; deposit: number | null; rent: number | null }[] }[];
+  householdTypes?: { label: string; areaRange?: string; supplyUnits?: number | null; deposit?: number | [number, number] | null; rent?: number | [number, number] | null }[];
+  supportLimit?: { byHousehold: { label: string; limitManwon: number }[] };
+  conversion?: { rateUp?: number | null; rateDown?: number | null };
 }
 
 export interface ComplexRow {

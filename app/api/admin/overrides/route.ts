@@ -33,6 +33,13 @@ interface OverridePayload {
   salePriceManwon?: number | null;
   area?: string;
   rows?: PayloadRow[];
+  // 유형별 가격 모델 (3-3) — 구조는 lib/manual-overrides.ts 참고. 패스스루 저장.
+  priceModel?: string;
+  tiers?: unknown;
+  householdTypes?: unknown;
+  supportLimit?: unknown;
+  conversion?: unknown;
+  schedule?: unknown;
   status?: "open" | "upcoming" | "closing" | "closed";
   noticeStatus?: string;
   progressStatus?: string;
@@ -141,6 +148,13 @@ export async function POST(req: Request) {
       });
     if (cleanRows.length > 0) entry.rows = cleanRows;
   }
+  // 유형별 가격 모델 (3-3) — 구조화 데이터 패스스루.
+  if (body.priceModel !== undefined) entry.priceModel = body.priceModel;
+  if (Array.isArray(body.tiers) && body.tiers.length > 0) entry.tiers = body.tiers;
+  if (Array.isArray(body.householdTypes) && body.householdTypes.length > 0) entry.householdTypes = body.householdTypes;
+  if (body.supportLimit && Array.isArray((body.supportLimit as { byHousehold?: unknown }).byHousehold)) entry.supportLimit = body.supportLimit;
+  if (body.conversion !== undefined) entry.conversion = body.conversion;
+  if (body.schedule !== undefined) entry.schedule = body.schedule;
   if (body.status !== undefined) entry.status = body.status;
   if (body.noticeStatus !== undefined) entry.noticeStatus = body.noticeStatus;
   if (body.progressStatus !== undefined) entry.progressStatus = body.progressStatus;

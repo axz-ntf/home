@@ -12,6 +12,7 @@ import { EligibilityDetail } from "./eligibility-detail";
 import { formatManwon } from "@/lib/format";
 import { nearestStation } from "@/lib/subway";
 import { TypeIntro, TypePrice, accentVars } from "./detail-type";
+import { StructuredPrice } from "./structured-price";
 
 // 1평 ≈ 3.3058㎡ — 부동산 공인 환산
 const PYEONG_PER_M2 = 1 / 3.3058;
@@ -306,9 +307,18 @@ export function DetailPanel({
         )}
 
         <ListingPhotos item={item} />
-        <ListingComplexes item={item} />
-
-        <TypePrice item={item} />
+        {/* 구조화 모델(소득계층·가구원수·지원한도)은 전용 렌더, 그 외는 평형별 표 + 단일 가격 */}
+        {item.priceDetail && item.priceDetail.model !== "rows-by-area" && item.priceDetail.model !== "per-unit-sale" && item.priceDetail.model !== "deposit-only" ? (
+          <section className="detail-section">
+            <h3>임대 조건</h3>
+            <StructuredPrice detail={item.priceDetail} />
+          </section>
+        ) : (
+          <>
+            <ListingComplexes item={item} />
+            <TypePrice item={item} />
+          </>
+        )}
 
         <section className="detail-section">
           <EligibilityDetail listingId={item.id} sourceUrl={item.sourceUrl} housingType={item.type} />
