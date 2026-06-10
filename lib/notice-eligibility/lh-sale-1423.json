@@ -1,0 +1,23 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": null,
+      "age": "만 19세 이상",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "국내 거주자(주민등록표등본 기준)",
+        "청약저축 가입여부 불문",
+        "과거당첨 사실여부 불문",
+        "주택 소유여부 불문",
+        "소득 및 자산기준 미적용",
+        "1세대 1주택만 신청가능"
+      ]
+    }
+  ],
+  "priority": []
+}
