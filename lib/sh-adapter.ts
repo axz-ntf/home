@@ -13,6 +13,10 @@ interface ShNotice {
   status: string;
   detailUrl?: string;
   pdfUrl?: string | null;
+  lat?: number;
+  lng?: number;
+  geocoded?: boolean;
+  geoPlace?: string;
 }
 
 // SH 청약유형(11종) → 우리 HousingTypeId. 청년안심·희망하우징은 청년 대상이라 happy.
@@ -58,9 +62,9 @@ export const SH_ADMIN_LISTINGS: Listing[] = (shNotices as ShNotice[]).map((n, i)
   type: mapType(n.supplyType),
   agency: "SH",
   districtId: "",
-  district: regionFromTitle(n.title),
-  lat: 0,
-  lng: 0,
+  district: n.geoPlace ?? regionFromTitle(n.title),
+  lat: n.lat ?? 0,
+  lng: n.lng ?? 0,
   address: "",
   deposit: 0,
   rent: 0,
@@ -80,3 +84,9 @@ export const SH_ADMIN_LISTINGS: Listing[] = (shNotices as ShNotice[]).map((n, i)
   suplyTyNm: n.supplyType,
   sourceUrl: n.detailUrl ?? "",
 }));
+
+// 공개(지도) 노출용 — 좌표가 있고(제목서 지오코딩됨) 마감 안 된 SH 만.
+// 산재형·시단위(좌표 없음)는 제외. 가격은 미검수라 디테일에서 "공고문 확인"으로 표시됨.
+export const SH_PUBLIC_LISTINGS: Listing[] = SH_ADMIN_LISTINGS.filter(
+  (l) => l.lat !== 0 && l.lng !== 0 && l.status !== "closed",
+);
