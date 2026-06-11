@@ -1,4 +1,4 @@
-import { LH_ADMIN_LISTINGS, needsSupplyReview } from "@/lib/lh-adapter";
+import { LH_ADMIN_LISTINGS, listingIssues } from "@/lib/lh-adapter";
 import { OVERRIDES } from "@/lib/manual-overrides";
 import { effectiveStatus } from "@/lib/dday";
 import { getAdminUser } from "@/lib/admin-user";
@@ -31,7 +31,8 @@ export default function AdminDashboardPage() {
       salePriceManwon: l.salePriceManwon ?? null,
       sourceUrl: l.sourceUrl ?? "",
       reviewed: l.id in OVERRIDES,
-      needsReview: needsSupplyReview(l),
+      issues: listingIssues(l),
+      needsReview: listingIssues(l).length > 0,
       note: OVERRIDES[l.id]?._note ?? "",
     };
   });

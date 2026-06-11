@@ -26,6 +26,7 @@ export interface DashboardRow {
   salePriceManwon: number | null;
   sourceUrl: string;
   reviewed: boolean;
+  issues: string[];
   needsReview: boolean;
   note: string;
 }
@@ -87,11 +88,23 @@ export default function Dashboard({ rows, user }: { rows: DashboardRow[]; user?:
     return s;
   }, [rows]);
 
+  // 이슈 종류별 미검수 건수 (P2) — "검수 필요 N"이 아니라 무엇이 비었는지로 큐를 본다.
+  const issueCounts = useMemo(() => {
+    const m: Record<string, number> = {};
+    for (const r of rows) {
+      if (r.reviewed) continue;
+      for (const issue of r.issues) m[issue] = (m[issue] ?? 0) + 1;
+    }
+    return m;
+  }, [rows]);
+  const [issueFilter, setIssueFilter] = useState<string | null>(null);
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return rows.filter((r) => {
       if (filter === "review" && !(r.needsReview && !r.reviewed)) return false;
       if (filter !== "all" && filter !== "review" && r.status !== filter) return false;
+      if (issueFilter && (r.reviewed || !r.issues.includes(issueFilter))) return false;
       // 청년안심처럼 유형명이 제목에 없는 공고도 "청년안심"·"서울시"로 찾히게 — suplyTyNm·agency 포함.
       if (
         q &&
@@ -103,7 +116,7 @@ export default function Dashboard({ rows, user }: { rows: DashboardRow[]; user?:
         return false;
       return true;
     });
-  }, [rows, filter, query]);
+  }, [rows, filter, query, issueFilter]);
 
   // ── 페이지네이션 ──
   const PAGE_SIZE = 50;
@@ -171,6 +184,24 @@ export default function Dashboard({ rows, user }: { rows: DashboardRow[]; user?:
             <FilterChip active={filter === "closing"} onClick={() => changeFilter("closing")} count={stats.closing}>마감임박</FilterChip>
             <FilterChip active={filter === "closed"} onClick={() => changeFilter("closed")} count={stats.closed}>마감</FilterChip>
           </div>
+          {/* 이슈별 검수 큐 (P2) — 미검수 active 공고의 결손 종류. 클릭 토글로 교차 필터. */}
+          {Object.keys(issueCounts).length > 0 && (
+            <div className="a-table-filters" style={{ marginTop: 6 }}>
+              <span style={{ fontSize: 11.5, fontWeight: 700, color: "var(--a-ink-3)", alignSelf: "center" }}>이슈:</span>
+              {(["가격", "좌표", "PDF", "마감일", "자격", "세대수"] as const)
+                .filter((k) => issueCounts[k])
+                .map((k) => (
+                  <FilterChip
+                    key={k}
+                    active={issueFilter === k}
+                    onClick={() => setIssueFilter((cur) => (cur === k ? null : k))}
+                    count={issueCounts[k]}
+                  >
+                    {k}
+                  </FilterChip>
+                ))}
+            </div>
+          )}
           <div className="a-card-actions">
             <input
               type="search"
@@ -284,7 +315,10 @@ export default function Dashboard({ rows, user }: { rows: DashboardRow[]; user?:
                       {r.reviewed ? (
                         <span className="a-review-chip done">✓ 검수</span>
                       ) : r.needsReview ? (
-                        <span className="a-review-chip need">필요</span>
+                        <span className="a-review-chip need" title={`이슈: ${r.issues.join(", ")}`}>
+                          {r.issues.slice(0, 2).join("·")}
+                          {r.issues.length > 2 ? ` +${r.issues.length - 2}` : ""}
+                        </span>
                       ) : (
                         <span className="a-review-chip muted">—</span>
                       )}

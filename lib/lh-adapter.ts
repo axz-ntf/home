@@ -443,6 +443,24 @@ export function needsSupplyReview(l: Listing): boolean {
   return l.supplyUnits == null || l.supplyUnits === 1;
 }
 
+// 검수 품질 이슈 — 세대수 단일 신호(needsSupplyReview)의 다중화 (어드민 P2).
+// LH 단일 소스 시절엔 세대수가 대표 신호였지만, SH(가격/일정 결손)·청년안심(좌표·PDF)
+// 3소스 체제에선 이슈 종류별로 보여야 어떤 검수부터 할지 정할 수 있다. closed 제외.
+export type ReviewIssue = "가격" | "좌표" | "PDF" | "마감일" | "자격" | "세대수";
+
+export function listingIssues(l: Listing): ReviewIssue[] {
+  if (effectiveStatus(l.status, l.deadline ?? "", l.beginDate) === "closed") return [];
+  const issues: ReviewIssue[] = [];
+  if (!l.deposit && !l.salePriceManwon) issues.push("가격");
+  if (!l.lat || !l.lng) issues.push("좌표");
+  // LH 는 상세 페이지에서 PDF 를 찾으므로 noticePdfUrl 없음이 정상 — SH/서울시만 결손 신호.
+  if (!l.noticePdfUrl && l.agency !== "LH") issues.push("PDF");
+  if (!l.deadline) issues.push("마감일");
+  if (!l.eligible?.length) issues.push("자격");
+  if (l.supplyUnits == null || l.supplyUnits === 1) issues.push("세대수");
+  return issues;
+}
+
 export function buildDistricts(listings: Listing[]): District[] {
   const counts = new Map<string, number>();
   // 시도별 listing 좌표 누적 — 시도 기하학적 중심 대신 실제 listing 분포의 평균(centroid)으로
