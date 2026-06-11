@@ -29,6 +29,7 @@ export interface DashboardRow {
   issues: string[];
   needsReview: boolean;
   hasDraft: boolean;
+  pinCount: number | null;
   note: string;
 }
 
@@ -93,7 +94,7 @@ function SyncHealthStrip({ meta }: { meta: Record<string, SyncEntry | undefined>
   );
 }
 
-export default function Dashboard({ rows, user, syncMeta }: { rows: DashboardRow[]; user?: { name: string; role: string; initial: string }; syncMeta?: Record<string, SyncEntry | undefined> }) {
+export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: DashboardRow[]; user?: { name: string; role: string; initial: string }; syncMeta?: Record<string, SyncEntry | undefined>; activePins?: number }) {
   const router = useRouter();
   const params = useSearchParams();
   const urlFilter = (params.get("filter") || "all") as FilterKey;
@@ -208,7 +209,13 @@ export default function Dashboard({ rows, user, syncMeta }: { rows: DashboardRow
 
       <section className="a-kpi-row">
         <KpiCard label="전체 공고" value={stats.total} sub={`모집중 ${stats.open}건 · 마감임박 ${stats.closing}건`} />
-        <KpiCard label="모집중" value={stats.open} sub={`예정 ${stats.upcoming} · 마감 ${stats.closed}`} accent />
+        {/* 공고 단위 vs 지도 핀 단위 병기 — 메가공고 1건이 PC 지도에선 단지별 N핀이라 수가 다르다 */}
+        <KpiCard
+          label="모집중 (공고)"
+          value={stats.open + stats.closing}
+          sub={activePins != null ? `PC 지도 핀 ${activePins}개 · 마감임박 ${stats.closing} 포함` : `예정 ${stats.upcoming} · 마감 ${stats.closed}`}
+          accent
+        />
         <KpiCard label="검수 필요" value={stats.review} sub={stats.review > 0 ? "PDF 확인해서 정정 필요" : "모두 검수됨 ✓"} warn={stats.review > 0} highlight="warn" />
         <KpiCard label="검수됨" value={stats.reviewed} sub="사용자가 정정한 매물" highlight="success" />
       </section>
@@ -320,6 +327,11 @@ export default function Dashboard({ rows, user, syncMeta }: { rows: DashboardRow
                         </span>
                       )}
                       {r.agency} · 공고일 {r.announceDate || "—"}
+                      {r.pinCount != null && (
+                        <span title={`PC 지도에선 단지별 ${r.pinCount}개 핀으로 표시 — 클릭해 핀 편집`} style={{ marginLeft: 6, fontWeight: 700, color: "var(--a-ink-2)" }}>
+                          📍{r.pinCount}
+                        </span>
+                      )}
                     </div>
                   </td>
                   <td><TypeBadge type={r.type} /></td>

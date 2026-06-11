@@ -1,4 +1,5 @@
-import { LH_ADMIN_LISTINGS, listingIssues } from "@/lib/lh-adapter";
+import { LH_ADMIN_LISTINGS, LH_LISTINGS, listingIssues } from "@/lib/lh-adapter";
+import shMapped from "@/lib/sh-mapped.json";
 import { OVERRIDES } from "@/lib/manual-overrides";
 import { effectiveStatus } from "@/lib/dday";
 import { getAdminUser } from "@/lib/admin-user";
@@ -36,9 +37,19 @@ export default function AdminDashboardPage() {
       issues: listingIssues(l),
       needsReview: listingIssues(l).length > 0,
       hasDraft: l.id in extractDrafts,
+      // SH 메가공고 부모 행 — 지도에선 단지별 핀으로 펼쳐짐 (어드민 1행 = PC N핀 안내)
+      pinCount: (() => {
+        const seq = l.id.match(/^sh-(\d+)$/)?.[1];
+        return seq ? ((shMapped as Record<string, { points: unknown[] }>)[seq]?.points.length ?? null) : null;
+      })(),
       note: OVERRIDES[l.id]?._note ?? "",
     };
   });
 
-  return <Dashboard rows={rows} user={getAdminUser()} syncMeta={syncMeta} />;
+  // 공개 지도 핀 단위 모집중(마감임박 포함) — 어드민 공고 수와 PC 핀 수가 다른 이유를 KPI 에 병기.
+  const activePins = LH_LISTINGS.filter((l) =>
+    ["open", "closing"].includes(effectiveStatus(l.status, l.deadline ?? "", l.beginDate)),
+  ).length;
+
+  return <Dashboard rows={rows} user={getAdminUser()} syncMeta={syncMeta} activePins={activePins} />;
 }
