@@ -98,6 +98,12 @@ export function AppShell({
     } else {
       list.sort((a, b) => a.id.localeCompare(b.id));
     }
+    // 마감 공고는 어떤 정렬에서든 뒤로 — 모집중·예정이 먼저 보이게.
+    // stable sort 라 각 그룹 내에선 위 정렬 순서가 유지된다.
+    list.sort((a, b) =>
+      Number(effectiveStatus(a.status, a.deadline, a.beginDate) === "closed") -
+      Number(effectiveStatus(b.status, b.deadline, b.beginDate) === "closed"),
+    );
     return list;
   }, [filters, sort, activeDistrict, searchBounds, listings]);
 
