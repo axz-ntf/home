@@ -64,6 +64,8 @@ export interface Listing {
   pblancNm?: string;
   sourceUrl?: string;
   noticePdfUrl?: string; // 공고문 PDF 직접 열기 (개선안1차 M2) — LH는 _meta fileid, SH는 innoFD
+  complexName?: string | null; // 단지명 (M3 — 카드 제목 우선 표시, 공고명 전체는 상세에)
+  buildingType?: string | null; // 주택 종류: 아파트/오피스텔/다가구 등 (M3)
   pcUrl?: string;
   mobileUrl?: string;
   photos?: ListingPhoto[];

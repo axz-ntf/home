@@ -14,6 +14,13 @@ function typeBadge(type: Listing["type"], item?: Listing) {
   return <span className={`badge ${t.badge}`}>{label}</span>;
 }
 
+// 대상 계층 태그 (M3) — eligible 엔 자격조건(무주택·자산·소득)과 계층이 섞여 있어 계층만 추림.
+const TIER_TAGS = ["청년", "신혼", "대학생", "고령", "다자녀", "자녀", "한부모", "수급자", "주거급여"];
+function tierTags(item: Listing): string[] {
+  const tags = (item.eligible ?? []).filter((e) => TIER_TAGS.some((t) => e.includes(t)));
+  return [...new Set(tags)].slice(0, 3);
+}
+
 function priceText(item: Listing) {
   const isJeonse = item.type === "jeonse" || /전세/.test(item.title ?? "");
   const depositLabel = isJeonse ? "전세보증금" : "보증금";
@@ -64,9 +71,10 @@ function ListingCard({
     : effStatus === "closing" ? (dday || "마감임박")
     : effStatus === "upcoming" ? "모집 예정"
     : (dday || "수시모집");
+  const tiers = tierTags(item);
   return (
     <article
-      className={`card ${hovered ? "hovered" : ""} ${selected ? "selected" : ""}`}
+      className={`card ${hovered ? "hovered" : ""} ${selected ? "selected" : ""} ${effStatus === "closed" ? "is-closed" : ""}`}
       onMouseEnter={() => onHover(item.id)}
       onMouseLeave={() => onHover(null)}
       onClick={() => onClick(item.id)}
@@ -76,7 +84,8 @@ function ListingCard({
           {typeBadge(item.type, item)}
           <span className="badge agency">{item.agency}</span>
         </div>
-        <div className="card-title">{item.title}</div>
+        {/* M3: 단지명 우선 — 공고명 전체는 상세에서 */}
+        <div className="card-title">{item.complexName || item.title}</div>
         <div className="card-price">{priceText(item)}</div>
         <div className="card-meta">
           {item.area && (
@@ -86,6 +95,12 @@ function ListingCard({
             </>
           )}
           {item.district}
+          {item.buildingType && (
+            <>
+              <span className="dot">·</span>
+              {item.buildingType}
+            </>
+          )}
           {typeof item.supplyUnits === "number" && item.supplyUnits > 0 && (
             <>
               <span className="dot">·</span>
@@ -94,7 +109,12 @@ function ListingCard({
           )}
         </div>
         <div className="card-foot">
-          <span className="eligibility">{eligibilitySummaryByType(item.type)}</span>
+          {/* M3: 대상 계층 태그 (있을 때) — 없으면 유형별 요약 fallback */}
+          {tiers.length > 0 ? (
+            <span className="eligibility">{tiers.map((t) => `#${t}`).join(" ")}</span>
+          ) : (
+            <span className="eligibility">{eligibilitySummaryByType(item.type)}</span>
+          )}
           {item.competition != null && (
             <>
               <span style={{ color: "var(--seed-scale-color-gray-400)" }}>·</span>

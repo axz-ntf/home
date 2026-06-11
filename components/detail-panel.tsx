@@ -255,7 +255,13 @@ export function DetailPanel({
             {item.agency} · {item.district}
           </span>
         </div>
-        <h1 className="detail-title">{item.title}</h1>
+        {/* M3: 단지명을 제목으로, 공고명 전체는 부제로 (단지명 없으면 공고명이 제목) */}
+        <h1 className="detail-title">{item.complexName || item.title}</h1>
+        {item.complexName && (
+          <div style={{ fontSize: 12.5, color: "var(--seed-semantic-color-ink-text-low)", marginTop: -6, marginBottom: 8 }}>
+            {item.title}
+          </div>
+        )}
         {item.address && <div className="detail-address">{item.address}</div>}
 
         <div style={{ display: "flex", gap: 6, marginBottom: 16 }}>
@@ -336,8 +342,8 @@ export function DetailPanel({
                 <dd>{item.pblancNm}</dd>
               </>
             ) : null}
-            <dt>공급 유형</dt>
-            <dd>{item.suplyTyNm || "—"}</dd>
+            <dt>주택 종류</dt>
+            <dd>{item.buildingType || "—"}</dd>
             <dt>공급 세대 수</dt>
             <dd>{item.supplyUnits ? `${item.supplyUnits}세대` : "—"}</dd>
             {item.totalUnits ? (

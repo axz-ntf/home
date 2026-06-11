@@ -13,6 +13,17 @@ import noticeTextMeta from "./notice-texts/_meta.json";
 // 키는 base id(lh-rental-{panId}) — listing id 의 -c0 등 suffix 제거 후 조회.
 const PDF_META: Record<string, { pdfFileid?: string }> =
   (noticeTextMeta as { entries?: Record<string, { pdfFileid?: string }> }).entries ?? {};
+// raw complexName 의 ~42%가 단지명이 아니라 "경상남도 창원시" 같은 주소 조각 (M3).
+// 시도명으로 시작하면서 단지 단서 단어가 없으면 단지명으로 안 쓴다(카드 제목 오염 방지).
+const SIDO_PREFIX = /^(서울|경기|인천|부산|대구|광주|대전|울산|세종|강원|충청|충북|충남|전라|전북|전남|경상|경북|경남|제주)/;
+const COMPLEX_HINT = /단지|블록|BL|마을|타운|캐슬|아파트|빌|하임|스테이|팰|푸르지오|자이|힐|LH|행복주택|타워|파크|시티|뜨란|리채|숲|채/;
+function cleanComplexName(name: string | null | undefined): string | null {
+  const n = (name ?? "").trim();
+  if (!n) return null;
+  if (SIDO_PREFIX.test(n) && !COMPLEX_HINT.test(n)) return null;
+  return n;
+}
+
 function noticePdfUrlFor(id: string): string | undefined {
   const m = id.match(/^lh-(rental|sale)-(\d+)/);
   const base = m ? `lh-${m[1]}-${m[2]}` : id;
@@ -213,6 +224,8 @@ function adaptApi(r: ApiListing, loose = false): Listing | null {
     competition: null,
     thumbSeed: r.thumbSeed,
     suplyTyNm: safeString(r.houseType) || undefined,
+    complexName: cleanComplexName(r.complexName),
+    buildingType: safeString(r.houseType) || null,
     complexes: Array.isArray(r.complexes) ? (r.complexes as Listing["complexes"]) : undefined,
     pblancNm: r.noticeTitle,
     sourceUrl: r.sourceUrl,

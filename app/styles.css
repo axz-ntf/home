@@ -778,6 +778,9 @@ input, select { font-family: inherit; }
   position: relative;
   align-items: start;
 }
+/* 마감 공고 카드 — 리스트에 표시하되 흐리게 (M1·M3, D+ 회색 톤) */
+.card.is-closed { opacity: 0.55; }
+.card.is-closed:hover { opacity: 0.8; }
 .card-side {
   grid-column: 2;
   grid-row: 1;
