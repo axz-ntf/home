@@ -122,6 +122,57 @@ function ListingComplexes({ item }: { item: Listing }) {
   );
 }
 
+// 모집 일정 타임라인 (개선안1차) — 공고등록→접수시작→접수마감→당첨자발표.
+// 있는 단계만 표시(2개 미만이면 섹션 생략). 지난 단계는 회색, 다음 단계 강조.
+function ScheduleTimeline({ item }: { item: Listing }) {
+  const steps = [
+    { label: "공고 등록", date: item.announceDate },
+    { label: "접수 시작", date: item.beginDate },
+    { label: "접수 마감", date: item.deadline },
+    { label: "당첨자 발표", date: item.winnerAt },
+  ].filter((s): s is { label: string; date: string } => Boolean(s.date));
+  if (steps.length < 2) return null;
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const isPast = (d: string) => {
+    const m = d.match(/^(\d{4})[.\-](\d{1,2})[.\-](\d{1,2})/);
+    if (!m) return false;
+    return new Date(+m[1], +m[2] - 1, +m[3]).getTime() < today.getTime();
+  };
+  // 다음 단계 = 아직 안 지난 첫 단계
+  const nextIdx = steps.findIndex((s) => !isPast(s.date));
+
+  return (
+    <section className="detail-section">
+      <h3>모집 일정</h3>
+      <ol style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 0 }}>
+        {steps.map((s, i) => {
+          const past = isPast(s.date);
+          const isNext = i === nextIdx;
+          return (
+            <li key={s.label} style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 2px", borderBottom: i < steps.length - 1 ? "1px solid var(--seed-scale-color-gray-100)" : "none" }}>
+              <span style={{
+                width: 22, height: 22, borderRadius: "50%", flexShrink: 0,
+                display: "inline-flex", alignItems: "center", justifyContent: "center",
+                fontSize: 11, fontWeight: 800,
+                background: isNext ? "var(--seed-semantic-color-primary)" : past ? "var(--seed-scale-color-gray-200)" : "var(--seed-scale-color-gray-100)",
+                color: isNext ? "white" : "var(--seed-semantic-color-ink-text-low)",
+              }}>{i + 1}</span>
+              <span style={{ fontSize: 13, fontWeight: isNext ? 700 : 500, color: past ? "var(--seed-semantic-color-ink-text-low)" : "var(--seed-semantic-color-ink-text)" }}>
+                {s.label}
+              </span>
+              <span style={{ marginLeft: "auto", fontSize: 13, fontVariantNumeric: "tabular-nums", fontWeight: isNext ? 700 : 500, color: past ? "var(--seed-semantic-color-ink-text-low)" : "var(--seed-semantic-color-ink-text)" }}>
+                {s.date}
+              </span>
+            </li>
+          );
+        })}
+      </ol>
+    </section>
+  );
+}
+
 function ListingPhotos({ item }: { item: Listing }) {
   const cover = item.coverPhotoUrl;
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -312,6 +363,8 @@ export function DetailPanel({
             </div>
           </div>
         )}
+
+        <ScheduleTimeline item={item} />
 
         <ListingPhotos item={item} />
         {/* 구조화 모델(소득계층·가구원수·지원한도)은 전용 렌더, 그 외는 평형별 표 + 단일 가격 */}

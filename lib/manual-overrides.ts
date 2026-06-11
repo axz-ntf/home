@@ -170,6 +170,7 @@ export function applyOverride(listing: Listing): Listing {
     ...(o.noticeStatus !== undefined && { noticeStatus: o.noticeStatus }),
     ...(o.progressStatus !== undefined && { progressStatus: o.progressStatus }),
     ...(o.deadline !== undefined && { deadline: o.deadline }),
+    ...(o.schedule?.winnerAt && { winnerAt: o.schedule.winnerAt }),
     ...(complexesPatched !== listing.complexes && { complexes: complexesPatched }),
     // 구조화 가격 모델 → 디테일 렌더용 priceDetail (priceModel 있을 때만).
     ...(o.priceModel && (o.tiers || o.householdTypes || o.supportLimit || o.conversion) && {

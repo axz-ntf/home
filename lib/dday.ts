@@ -28,7 +28,15 @@ export function isRegularRecruitment(deadline: string, status: StatusId): boolea
 
 export function dDayText(deadline: string, status: StatusId): string {
   if (status === "upcoming") return "모집 예정";
-  if (status === "closed") return "마감";
+  if (status === "closed") {
+    // 개선안1차: 마감 직후엔 D+N(회색) — 30일 지난 마감은 그냥 "마감".
+    const target = parseDeadline(deadline);
+    if (target) {
+      const diff = diffDays(target);
+      if (diff < 0 && diff >= -30) return `D+${-diff}`;
+    }
+    return "마감";
+  }
   if (isRegularRecruitment(deadline, status)) return "정례모집";
   // status === "open" + deadline 이 과거: "마감" 대신 빈 문자열 →
   // listing-panel 쪽에서 "수시모집" 으로 fallback.
@@ -83,7 +91,7 @@ export function calcDday(deadline: string): string {
   const target = parseDeadline(deadline);
   if (!target) return "";
   const diff = diffDays(target);
-  if (diff < 0) return "마감";
+  if (diff < 0) return diff >= -30 ? `D+${-diff}` : "마감";
   // 1년 이상 미래는 정례/수시모집의 프로그램 만료일일 가능성이 높음 — D-N 숨김
   if (diff > 365) return "";
   if (diff === 0) return "D-DAY";

@@ -21,6 +21,23 @@ function tierTags(item: Listing): string[] {
   return [...new Set(tags)].slice(0, 3);
 }
 
+// 평형별 데이터가 있으면 보증금·월세 min~max 범위 (M3 — "800만 ~ 2,100만원" 형식).
+// rows 의 금액은 원 단위 → 만원 변환. 값이 하나뿐이거나 min==max 면 null(단일가 표시).
+function priceRange(item: Listing): { dep: [number, number] | null; rent: [number, number] | null } | null {
+  const rows = (item.complexes ?? []).flatMap((c) => c.rows ?? []);
+  if (rows.length < 2) return null;
+  const deps = rows.map((r) => r.deposit).filter((d): d is number => d != null && d > 0).map((d) => Math.round(d / 10000));
+  const rents = rows.map((r) => r.rent).filter((r): r is number => r != null && r > 0).map((r) => Math.round(r / 10000));
+  const range = (ns: number[]): [number, number] | null => {
+    if (ns.length < 2) return null;
+    const lo = Math.min(...ns), hi = Math.max(...ns);
+    return lo === hi ? null : [lo, hi];
+  };
+  const dep = range(deps), rentR = range(rents);
+  if (!dep && !rentR) return null;
+  return { dep, rent: rentR };
+}
+
 function priceText(item: Listing) {
   const isJeonse = item.type === "jeonse" || /전세/.test(item.title ?? "");
   const depositLabel = isJeonse ? "전세보증금" : "보증금";
@@ -30,6 +47,23 @@ function priceText(item: Listing) {
       return <strong>{isResale ? "매매가" : "분양가"} {formatManwon(item.salePriceManwon)}</strong>;
     }
     return <span style={{ color: "var(--seed-semantic-color-ink-text-low)" }}>분양가 공고문 확인</span>;
+  }
+  // 평형별 범위가 있으면 범위 우선 (M3)
+  const ranges = priceRange(item);
+  if (ranges) {
+    return (
+      <>
+        <strong>
+          {depositLabel} {ranges.dep ? `${formatManwon(ranges.dep[0])}~${formatManwon(ranges.dep[1])}` : formatManwon(item.deposit) || "공고문 확인"}
+        </strong>
+        {(ranges.rent || item.rent > 0) && (
+          <>
+            <span className="sep">·</span>
+            <span>월세 {ranges.rent ? `${ranges.rent[0]}~${ranges.rent[1]}만` : `${item.rent}만`}</span>
+          </>
+        )}
+      </>
+    );
   }
   // 월세 — 보증금 + 월세
   if (item.rent > 0) {
@@ -67,7 +101,7 @@ function ListingCard({
   const dday = dDayText(item.deadline, effStatus);
   // statusLabel — effStatus 우선. raw status 가 "open" 이지만 마감 지났으면 effStatus=closed → "마감".
   const statusLabel =
-    effStatus === "closed" ? "마감"
+    effStatus === "closed" ? (dday || "마감")
     : effStatus === "closing" ? (dday || "마감임박")
     : effStatus === "upcoming" ? "모집 예정"
     : (dday || "수시모집");
