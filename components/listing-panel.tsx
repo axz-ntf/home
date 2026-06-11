@@ -6,10 +6,12 @@ import { eligibilitySummaryByType, HOUSING_TYPES } from "@/lib/mock-data";
 import { dDayText, effectiveStatus } from "@/lib/dday";
 import { formatManwon } from "@/lib/format";
 
-function typeBadge(type: Listing["type"]) {
+function typeBadge(type: Listing["type"], item?: Listing) {
   const t = HOUSING_TYPES.find((x) => x.id === type);
   if (!t) return null;
-  return <span className={`badge ${t.badge}`}>{t.name}</span>;
+  // SH 는 자체 청약유형(청년안심주택·수요자맞춤형 등)을 그대로 노출 (개선안1차 M4).
+  const label = item?.agency === "SH" && item.suplyTyNm ? item.suplyTyNm : t.name;
+  return <span className={`badge ${t.badge}`}>{label}</span>;
 }
 
 function priceText(item: Listing) {
@@ -71,7 +73,7 @@ function ListingCard({
     >
       <div className="card-body">
         <div className="card-type-row">
-          {typeBadge(item.type)}
+          {typeBadge(item.type, item)}
           <span className="badge agency">{item.agency}</span>
         </div>
         <div className="card-title">{item.title}</div>

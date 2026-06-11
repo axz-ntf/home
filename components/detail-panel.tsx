@@ -261,7 +261,8 @@ export function DetailPanel({
         <div style={{ display: "flex", gap: 6, marginBottom: 16 }}>
           {housingType && (
             <span className={`badge ${housingType.badge}`} style={{ fontSize: 12, padding: "4px 9px" }}>
-              {housingType.name}
+              {/* SH 는 자체 청약유형(청년안심주택 등) 그대로 (M4) */}
+              {item.agency === "SH" && item.suplyTyNm ? item.suplyTyNm : housingType.name}
             </span>
           )}
           <span className="badge agency" style={{ fontSize: 12, padding: "4px 9px" }}>

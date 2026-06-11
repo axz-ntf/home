@@ -54,6 +54,8 @@ function pinClass(type: Listing["type"]): string {
 }
 
 function pinLabel(p: Listing): string {
+  // SH 는 자체 청약유형(청년안심주택 등) 그대로 (개선안1차 M4).
+  if (p.agency === "SH" && p.suplyTyNm) return p.suplyTyNm;
   switch (p.type) {
     case "sale": return "공공분양";
     case "happy": return "행복주택";
