@@ -1,0 +1,99 @@
+{
+  "supplyTotal": 80,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "1순위 우선 - 수급자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "생계급여(보장시설 수급자 포함), 의료급여, 주거급여, 교육급여 수급자",
+        "1순위 내 우선공급 최상위"
+      ]
+    },
+    {
+      "id": "general",
+      "name": "1순위 우선 - 차상위계층",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "국민기초생활보장법 제2조제10호에 해당하는 차상위계층"
+      ]
+    },
+    {
+      "id": "single",
+      "name": "1순위 우선 - 지원대상 한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": "한부모가족",
+      "income": null,
+      "asset": null,
+      "other": [
+        "한부모가족지원법 시행규칙 제3조에 따른 기준 충족"
+      ]
+    },
+    {
+      "id": "general",
+      "name": "1순위 일반 - 장애인",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 70,
+        "byHousehold": {
+          "1": 3432,
+          "2": 4693,
+          "3": 5718,
+          "4": 6162,
+          "5": 6529,
+          "6": 6934,
+          "7": 7340
+        },
+        "note": "전년도 도시근로자 가구원수별 가구당 월평균소득의 70% 이하"
+      },
+      "asset": null,
+      "other": [
+        "장애인복지법 제32조제1항에 따라 장애인등록증 교부된 자",
+        "지적장애인, 정신장애인, 심한 뇌병변장애인의 경우 배우자 포함"
+      ]
+    },
+    {
+      "id": "general",
+      "name": "2순위",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 100,
+        "byHousehold": {
+          "1": 4576,
+          "2": 6453,
+          "3": 8168,
+          "4": 8802,
+          "5": 9327,
+          "6": 9906,
+          "7": 10486
+        },
+        "note": "전년도 도시근로자 가구원수별 가구당 월평균소득의 100% 이하"
+      },
+      "asset": null,
+      "other": [
+        "월평균소득이 기준 이하인 무주택세대구성원"
+      ]
+    }
+  ],
+  "priority": [
+    "다자녀",
+    "한부모",
+    "노부모부양",
+    "장애인",
+    "공급대상지역 거주자",
+    "가구원수 많은 자"
+  ]
+}

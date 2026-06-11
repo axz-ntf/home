@@ -1,0 +1,52 @@
+{
+  "supplyTotal": 338,
+  "tiers": [
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": 338,
+      "age": null,
+      "marriage": "혼인기간 7년 이내 또는 6세 이하 자녀 보유",
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "1세대 1주택 신청만 가능",
+        "최대거주기간: 무자녀 10년, 자녀 1명 이상 14년",
+        "2세미만 자녀 있는 경우 모집호수 30% 범위 내 우선배정"
+      ]
+    },
+    {
+      "id": "single",
+      "name": "한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": "6세 이하 자녀를 둔 한부모",
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "1세대 1주택 신청만 가능",
+        "최대거주기간: 무자녀 10년, 자녀 1명 이상 14년"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "예비신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "입주 전까지 혼인사실 증명 가능",
+      "income": null,
+      "asset": null,
+      "other": [
+        "성년자 아닌 경우에도 신청 가능",
+        "2인 1주택 신청만 가능",
+        "세대구성원 무주택 여부 검증"
+      ]
+    }
+  ],
+  "priority": [
+    "다자녀",
+    "2세미만 자녀 보유"
+  ]
+}

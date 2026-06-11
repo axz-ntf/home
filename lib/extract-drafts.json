@@ -50,5 +50,325 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집예정"
     }
+  },
+  "lh-rental-2015122300020054": {
+    "at": "2026-06-11T19:27:19.198Z",
+    "type": "integ",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.10.07"
+      },
+      "deadline": "2026.06.30",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300019897": {
+    "at": "2026-06-11T19:28:23.546Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "26A",
+          "area": "26.84㎡",
+          "supplyUnits": 200,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 259,
+              "rent": 5
+            },
+            {
+              "label": "나군",
+              "deposit": 1305,
+              "rent": 12
+            }
+          ]
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "26A 가군",
+            "limitManwon": 400,
+            "maxDeposit": 659,
+            "minRent": 3
+          },
+          {
+            "houseType": "26A 나군",
+            "limitManwon": 1300,
+            "maxDeposit": 2605,
+            "minRent": 5
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.09.28"
+      },
+      "deadline": "2026.06.25",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020070": {
+    "at": "2026-06-11T19:28:47.478Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.11.06"
+      },
+      "deadline": "2026.06.26",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020058": {
+    "at": "2026-06-11T19:29:00.862Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": "2026.06.25",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020056": {
+    "at": "2026-06-11T19:29:16.699Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "경주시 경주금장로얄 35A",
+          "area": "35.71",
+          "supplyUnits": 56,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.09.30"
+      },
+      "deadline": "2026.06.18",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020052": {
+    "at": "2026-06-11T19:29:56.059Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "2형",
+          "area": "36.21",
+          "supplyUnits": 1,
+          "deposit": 850,
+          "rent": 43,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "2형",
+          "area": "26.6",
+          "supplyUnits": 1,
+          "deposit": 850,
+          "rent": 31,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "2형",
+          "area": "45.5",
+          "supplyUnits": 1,
+          "deposit": 850,
+          "rent": 53,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "2형",
+          "area": "36.21",
+          "supplyUnits": 1,
+          "deposit": 850,
+          "rent": 43,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "2형",
+          "area": "26.6",
+          "supplyUnits": 1,
+          "deposit": 850,
+          "rent": 31,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "2형",
+          "area": "45.5",
+          "supplyUnits": 1,
+          "deposit": 850,
+          "rent": 53,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020051": {
+    "at": "2026-06-11T19:30:41.947Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "1형",
+          "area": "16.1200",
+          "supplyUnits": 1,
+          "deposit": 168,
+          "rent": 28,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "1형",
+          "area": "16.1200",
+          "supplyUnits": 1,
+          "deposit": 168,
+          "rent": 28,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "1형",
+          "area": "16.1700",
+          "supplyUnits": 1,
+          "deposit": 168,
+          "rent": 28,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "1형",
+          "area": "16.1200",
+          "supplyUnits": 1,
+          "deposit": 179,
+          "rent": 30,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "1형",
+          "area": "16.1700",
+          "supplyUnits": 1,
+          "deposit": 179,
+          "rent": 30,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": null,
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020038": {
+    "at": "2026-06-11T19:31:31.009Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.08.27"
+      },
+      "deadline": "2026.06.24",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020101": {
+    "at": "2026-06-11T19:32:19.521Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020103": {
+    "at": "2026-06-11T19:33:21.576Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": 6
+      },
+      "schedule": {
+        "winnerAt": "2026.07.27"
+      },
+      "deadline": "2026.06.25",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020094": {
+    "at": "2026-06-11T19:34:20.823Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.08.14"
+      },
+      "deadline": "2026.06.26",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020087": {
+    "at": "2026-06-11T19:35:04.077Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.08.14"
+      },
+      "deadline": "2026.06.26",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-sale-0000061095": {
+    "at": "2026-06-11T19:35:31.412Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "울주군 서사시티프라디움 55형",
+          "area": "55㎡",
+          "supplyUnits": 459,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }

@@ -1,0 +1,104 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "etc",
+      "name": "산업단지근로자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "1순위: 1인 120%, 2인 110%, 3인 이상 100% / 2순위: 1인 140%, 2인 130%, 3인 이상 120% / 3순위: 150%"
+      },
+      "asset": null,
+      "other": [
+        "평택시, 안성시 또는 연접지역 산업단지 입주·입주예정 기업 재직자"
+      ]
+    },
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "1순위: 1인 120%, 2인 110%, 3인 이상 100% / 2순위: 1인 140%, 2인 130%, 3인 이상 120% / 3순위: 150%"
+      },
+      "asset": null,
+      "other": [
+        "대학 재학 중 또는 다음 학기 입·복학 예정",
+        "취업준비생: 고졸/대졸 후 2년 이내"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "19세 이상 39세 이하(1986.06.12~2007.06.11)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "1순위: 소득 5년 이내 / 2순위: 소득 7년 이내 / 3순위: 150% / 사회초년생: 소득 종사 기간 5년(완화 7년) 이내"
+      },
+      "asset": null,
+      "other": [
+        "소득 있는 업무 종사자",
+        "퇴직 후 1년 이내 구직급여 수급자",
+        "예술인 복지법 해당자"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "1순위: 7년 이내 / 2순위: 10년 이내",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "일반: 1순위 1인 120%, 2인 110%, 3인 이상 100% / 2순위 1인 140%, 2인 130%, 3인 이상 120% / 3순위: 150% / 맞벌이: 1순위 2인 130%, 3인 이상 120% / 2순위 2인 140%, 3인 이상 130%"
+      },
+      "asset": null,
+      "other": [
+        "만6세 이하 자녀(태아 포함) 소유 가능(완화: 만9세 이하)",
+        "예비신혼부부: 입주 전까지 혼인 증명 필요"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "1순위: 1인 120%, 2인 110%, 3인 이상 100% / 2순위: 1인 140%, 2인 130%, 3인 이상 120% / 3순위: 150%"
+      },
+      "asset": null,
+      "other": [
+        "만6세 이하 자녀(태아 포함) 양육(완화: 만9세 이하)"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": null,
+      "age": "만 65세 이상(1961.06.11 이전)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "1순위: 1인 120%, 2인 110%, 3인 이상 100% / 2순위: 1인 140%, 2인 130%, 3인 이상 120% / 3순위: 150%"
+      },
+      "asset": null,
+      "other": []
+    }
+  ],
+  "priority": []
+}

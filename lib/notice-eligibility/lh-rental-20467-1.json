@@ -1,0 +1,87 @@
+{
+  "supplyTotal": 92,
+  "tiers": [
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "19세 이상 39세 이하 (1986.06.12 ~ 2007.06.11)",
+      "marriage": "혼인 중이 아닌 사람",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준 중위소득 100% 이상 130% 이하"
+      },
+      "asset": null,
+      "other": [
+        "무주택세대구성원 (청년은 입주자 본인)",
+        "사업소득 또는 근로소득이 있는 사람",
+        "최대 거주기간 10년 (자녀 있으면 14년)"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "혼인 중인 사람",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준 중위소득 100% 이상 130% 이하"
+      },
+      "asset": null,
+      "other": [
+        "혼인기간 7년 이내 또는 6세 이하 자녀 가정",
+        "예비신혼부부 포함 (입주 전 혼인증명)",
+        "사업소득 또는 근로소득이 있는 사람",
+        "무주택세대구성원 (혼인으로 구성될 세대원)"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준 중위소득 100% 이상 130% 이하"
+      },
+      "asset": null,
+      "other": [
+        "한부모가족지원법에 따른 모자가족 또는 부자가족",
+        "6세 이하의 자녀 필수",
+        "사업소득 또는 근로소득이 있는 사람"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "장기종사자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준 중위소득 100% 이상 130% 이하"
+      },
+      "asset": null,
+      "other": [
+        "미성년자 자녀 1명 이상 포함 3명 이상 세대",
+        "중소기업 3년 이상 근속 (합산 5년 이상 또는 동일기업 3년 이상)",
+        "또는 동일기업 5년 이상 근속",
+        "또는 동일 업종 사업 5년 이상 영위"
+      ]
+    }
+  ],
+  "priority": [
+    "다자녀",
+    "한부모",
+    "노부모부양",
+    "장애인",
+    "생계급여수급자",
+    "의료급여수급자"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "supplyTotal": 30,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 30,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "주택청약종합저축(청약저축 포함) 가입 1년 이상 월 12회 이상 납입(1순위)",
+        "주택청약종합저축(청약저축 포함) 가입(2순위)",
+        "경기도, 서울특별시, 인천광역시 거주"
+      ]
+    }
+  ],
+  "priority": []
+}
