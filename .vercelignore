@@ -8,7 +8,11 @@ public/lh-covers/
 lib/notice-embeddings/
 
 # 런타임에 안 쓰는 데이터
-lib/notice-texts/
+# notice-texts 는 md 본문만 제외 — _meta.json(224KB)은 lh-adapter 가
+# 공고문 PDF URL(fileid) 구성에 import 하므로 포함 필수 (개선안1차 M2).
+# 디렉토리 통째(lib/notice-texts/) 제외하면 ! 재포함이 안 먹어 contents 패턴 사용.
+lib/notice-texts/*
+!lib/notice-texts/_meta.json
 lib/lh-complexes.json
 lib/myhome-all-notices.json
 lib/myhome-rental-notices.json
