@@ -63,7 +63,22 @@ function assembleMarkdown(parsed: { elements?: { content?: { markdown?: string; 
       out.push(e.category?.startsWith("heading") ? `## ${txt}` : txt);
     }
   }
-  return out.filter(Boolean).join("\n\n").trim();
+  return stripWatermark(out.filter(Boolean).join("\n\n").trim());
+}
+
+// 워터마크 제거 — 일부 PDF(특히 매각 공고)는 단지명·"선착순"·"잔여세대" 등 짧은 문구가
+// 사선 워터마크로 깔려 마크다운에 수십 번 반복된다(전체의 절반까지). 짧고 과도하게 반복되는
+// 라인을 제거해 RAG 검색·추출 정확도를 높인다. 표 행(|)·긴 문장은 보존.
+function stripWatermark(md: string): string {
+  const lines = md.split("\n");
+  const freq = new Map<string, number>();
+  for (const l of lines) {
+    const t = l.trim();
+    if (t && t.length < 25 && !t.includes("|")) freq.set(t, (freq.get(t) ?? 0) + 1);
+  }
+  const noise = new Set([...freq.entries()].filter(([, c]) => c >= 8).map(([t]) => t));
+  if (noise.size === 0) return md;
+  return lines.filter((l) => !noise.has(l.trim())).join("\n").replace(/\n{3,}/g, "\n\n").trim();
 }
 
 async function docParse(pdfBuf: Buffer, filename: string): Promise<string> {
