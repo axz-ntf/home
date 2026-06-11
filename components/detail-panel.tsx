@@ -14,6 +14,7 @@ import { nearestStation } from "@/lib/subway";
 import { useSavedListings } from "@/lib/use-saved";
 import { TypeIntro, TypePrice, accentVars } from "./detail-type";
 import { StructuredPrice } from "./structured-price";
+import { FloorplanSection } from "./floorplan-section";
 
 // 1평 ≈ 3.3058㎡ — 부동산 공인 환산
 const PYEONG_PER_M2 = 1 / 3.3058;
@@ -370,6 +371,7 @@ export function DetailPanel({
         <ScheduleTimeline item={item} />
 
         <ListingPhotos item={item} />
+        <FloorplanSection listingId={item.id} />
         {/* 구조화 모델(소득계층·가구원수·지원한도)은 전용 렌더, 그 외는 평형별 표 + 단일 가격 */}
         {item.priceDetail && item.priceDetail.model !== "rows-by-area" && item.priceDetail.model !== "per-unit-sale" && item.priceDetail.model !== "deposit-only" ? (
           <section className="detail-section">

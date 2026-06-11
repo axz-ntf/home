@@ -12,6 +12,9 @@ import mappedRegional from "@/lib/mapped-regional.json";
 import MappedPointsEditor, { type MappedPoint } from "./mapped-points-editor";
 import { youthDirectoryInfo } from "@/lib/youth-adapter";
 import extractDrafts from "@/lib/extract-drafts.json";
+import floorplanSpecs from "@/lib/floorplan-specs.json";
+import FloorplanEditor from "./floorplan-editor";
+import type { FloorPlanSpec } from "@/lib/floorplan-spec";
 
 interface RawApiListing {
   pblancId: string;
@@ -206,6 +209,11 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
           currentPinIndex={pinIdx != null ? Number(pinIdx) : null}
         />
       )}
+
+      <FloorplanEditor
+        listingId={decodedId}
+        initialSpec={(floorplanSpecs as Record<string, FloorPlanSpec>)[decodedId] ?? null}
+      />
     </AdminShell>
   );
 }
