@@ -156,6 +156,18 @@ jobs:
           node scripts/enrich-mapped-covers.mjs
           node scripts/upload-covers-to-blob.mjs
 
+      # SH(서울주거포털)·청년안심주택(soco) 공고 sync — 어드민 검수 큐 공급원.
+      # sync-sh 가 sh-notices.json 을 전체 재작성하므로 geocode-sh 를 바로 뒤에 실행해
+      # 좌표(lat/lng) 재부여 (geocode-sh 는 매 실행 전 건 재지오코딩). 스크래핑이라 실패 허용.
+      - name: Phase 8 — SH·청년안심 공고 sync
+        continue-on-error: true
+        env:
+          VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
+        run: |
+          node scripts/sync-sh.mjs
+          node scripts/geocode-sh.mjs
+          node scripts/sync-youth.mjs
+
       - name: Save lh-complexes cache (즉시)
         if: always()
         uses: actions/cache/save@v4
