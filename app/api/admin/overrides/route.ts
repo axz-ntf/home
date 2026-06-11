@@ -116,6 +116,33 @@ async function mutate(message: string, mutator: (data: Record<string, unknown>) 
   }
 }
 
+// Solar 추출 출력이 옵셔널 자리에 null 을 내는 경우가 있어(rateUp 등) 저장 전 정리.
+// perHouseType 은 필수 숫자 셋이 모두 있어야 행으로 의미가 있다.
+function sanitizeConversion(raw: unknown): unknown {
+  if (!raw || typeof raw !== "object") return undefined;
+  const c = raw as { rateUp?: number | null; rateDown?: number | null; perHouseType?: { houseType?: string; limitManwon?: number | null; maxDeposit?: number | null; minRent?: number | null }[] };
+  const out: Record<string, unknown> = {};
+  if (typeof c.rateUp === "number") out.rateUp = c.rateUp;
+  if (typeof c.rateDown === "number") out.rateDown = c.rateDown;
+  if (Array.isArray(c.perHouseType)) {
+    const rows = c.perHouseType.filter(
+      (p) => p && typeof p.houseType === "string" && typeof p.limitManwon === "number" && typeof p.maxDeposit === "number" && typeof p.minRent === "number",
+    );
+    if (rows.length > 0) out.perHouseType = rows;
+  }
+  return Object.keys(out).length > 0 ? out : undefined;
+}
+
+function sanitizeSchedule(raw: unknown): unknown {
+  if (!raw || typeof raw !== "object") return undefined;
+  const out: Record<string, string> = {};
+  for (const k of ["applyStart", "applyEnd", "docResultAt", "winnerAt"] as const) {
+    const v = (raw as Record<string, unknown>)[k];
+    if (typeof v === "string" && v.trim()) out[k] = v;
+  }
+  return Object.keys(out).length > 0 ? out : undefined;
+}
+
 export async function POST(req: Request) {
   let body: OverridePayload;
   try {
@@ -153,8 +180,10 @@ export async function POST(req: Request) {
   if (Array.isArray(body.tiers) && body.tiers.length > 0) entry.tiers = body.tiers;
   if (Array.isArray(body.householdTypes) && body.householdTypes.length > 0) entry.householdTypes = body.householdTypes;
   if (body.supportLimit && Array.isArray((body.supportLimit as { byHousehold?: unknown }).byHousehold)) entry.supportLimit = body.supportLimit;
-  if (body.conversion !== undefined) entry.conversion = body.conversion;
-  if (body.schedule !== undefined) entry.schedule = body.schedule;
+  // 추출 출력의 null 이 그대로 저장되면 ManualOverride 타입(number|undefined)과 어긋나
+  // 다음 빌드(=데이터 배포)가 타입체크에서 죽는다. 옵셔널 자리의 null 은 여기서 걸러 저장.
+  if (body.conversion !== undefined) entry.conversion = sanitizeConversion(body.conversion);
+  if (body.schedule !== undefined) entry.schedule = sanitizeSchedule(body.schedule);
   if (body.status !== undefined) entry.status = body.status;
   if (body.noticeStatus !== undefined) entry.noticeStatus = body.noticeStatus;
   if (body.progressStatus !== undefined) entry.progressStatus = body.progressStatus;
