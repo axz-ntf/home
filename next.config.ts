@@ -44,6 +44,13 @@ const nextConfig: NextConfig = {
       "lib/notice-texts/**/*",
       "public/lh-covers/**/*",
       "scripts/**/*",
+      // sync 스크립트 전용 대형 데이터 — 런타임 함수 미사용인데 트레이싱에 끌려와
+      // 함수 크기 한도 초과로 배포 실패 (lh-complexes 66MB 등). 명시적 제외.
+      "lib/lh-complexes.json",
+      "lib/myhome-all-notices.json",
+      "lib/myhome-sale-notices.json",
+      "lib/notice-embeddings/vectors.bin",
+      "_prototype/**/*",
     ],
   },
 };
