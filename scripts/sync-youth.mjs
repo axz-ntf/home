@@ -13,6 +13,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const OUT_PATH = path.join(ROOT, "lib/youth-notices.json");
+const COMPLEX_PATH = path.join(ROOT, "lib/youth-complexes.json");
 
 const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36";
 const BASE = "https://soco.seoul.go.kr";
@@ -54,6 +55,33 @@ async function resolveDetail(boardId) {
   const pdfs = files.filter((f) => /\.pdf$/i.test(f.name));
   const notice = pdfs.find((f) => /공고문|모집공고|입주자\s*모집/.test(f.name)) ?? pdfs[0];
   return { gu, pdfUrl: notice?.url ?? null, pdfName: notice?.name ?? null, fileCount: files.length };
+}
+
+// 단지 디렉토리(maplist.json) — 좌표·주소·역세권·가격범위·세대수·사진까지 공식 제공.
+// 공고(게시판)에 없는 단지 정보의 원천. 어댑터가 공고 제목 ↔ homeName 으로 매칭한다.
+async function fetchComplexes() {
+  const r = await fetch(`${BASE}/youth/pgm/home/yohome/maplist.json`, {
+    method: "POST",
+    headers: { "User-Agent": UA, "Content-Type": "application/x-www-form-urlencoded" },
+    body: "",
+  });
+  if (!r.ok) throw new Error(`HTTP ${r.status} maplist`);
+  const rows = (await r.json()).mapResultList ?? [];
+  return rows.map((c) => ({
+    homeCode: c.homeCode,
+    homeName: c.homeName,
+    gu: c.adresGu ?? "",
+    address: c.adres ?? "",
+    subway: c.optionSubway ?? "",
+    depositLowWon: c.moneyDepositLow ?? null,
+    rentLowWon: c.moneyRentalLow ?? null,
+    totalUnits: Number(c.scaleTot) || null,
+    phone: c.managerPhone ?? "",
+    homepage: c.homepage ?? "",
+    lat: Number(c.ypos) || 0,
+    lng: Number(c.xpos) || 0,
+    photoUrl: c.fileId ? `${BASE}/coHouse/cmmn/file/fileDown.do?atchFileId=${c.fileId}&fileSn=${c.fileSn ?? 1}` : null,
+  }));
 }
 
 function parseArgs() {
@@ -108,6 +136,10 @@ async function main() {
 
   await fs.writeFile(OUT_PATH, JSON.stringify(notices, null, 2) + "\n", "utf8");
   console.log(`저장: ${OUT_PATH}`);
+
+  const complexes = await fetchComplexes();
+  await fs.writeFile(COMPLEX_PATH, JSON.stringify(complexes, null, 2) + "\n", "utf8");
+  console.log(`단지 디렉토리 ${complexes.length}건 저장: ${COMPLEX_PATH}`);
 
   if (args.probePdf) {
     const t = notices.find((n) => n.pdfUrl);

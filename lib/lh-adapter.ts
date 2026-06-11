@@ -7,7 +7,7 @@ import mappedRegional from "./mapped-regional.json";
 import { applyOverride } from "./manual-overrides";
 import { effectiveStatus } from "./dday";
 import { SH_ADMIN_LISTINGS, SH_PUBLIC_LISTINGS } from "./sh-adapter";
-import { YOUTH_ADMIN_LISTINGS } from "./youth-adapter";
+import { YOUTH_ADMIN_LISTINGS, YOUTH_PUBLIC_LISTINGS } from "./youth-adapter";
 import noticeTextMeta from "./notice-texts/_meta.json";
 
 // 공고문 PDF 직접 열기(M2) — enrich 가 기록한 pdfFileid 로 LH 파일서버 URL 구성.
@@ -406,6 +406,8 @@ export const LH_LISTINGS: Listing[] = [
   ...LH_LISTINGS_BASE,
   // SH 중 좌표 확보 + 모집중인 건만 공개 지도에. (대부분 SH 는 산재형이라 어드민 전용)
   ...SH_PUBLIC_LISTINGS.map(applyOverride),
+  // 청년안심(민간임대) 중 모집중 + 단지 디렉토리 매칭(좌표·가격 공식 출처)된 건.
+  ...YOUTH_PUBLIC_LISTINGS.map(applyOverride),
 ];
 
 // 광역(regional) 또는 좌표 없는 매물 — 지도/메인 리스트에서 빠진 것들.
