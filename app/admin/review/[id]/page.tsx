@@ -136,6 +136,11 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
         </a>
       )}
 
+      <FloorplanEditor
+        listingId={decodedId}
+        initialSpec={(floorplanSpecs as Record<string, FloorPlanSpec>)[decodedId] ?? null}
+      />
+
       {dirRows && (
         <section style={{ margin: "14px 0 4px", padding: "12px 14px", border: "1px solid var(--a-line)", borderRadius: 10, background: "var(--a-bg-2)" }}>
           <div style={{ fontSize: 13, fontWeight: 800, marginBottom: 8 }}>
@@ -199,11 +204,6 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
         sourceUrl={listing.sourceUrl ?? null}
         canAutoExtract={!(listing.id.startsWith("sh-") && !listing.noticePdfUrl)}
         draft={(extractDrafts as Record<string, { at: string; fields: unknown }>)[decodedId] ?? null}
-      />
-
-      <FloorplanEditor
-        listingId={decodedId}
-        initialSpec={(floorplanSpecs as Record<string, FloorPlanSpec>)[decodedId] ?? null}
       />
 
       {mapped && (
