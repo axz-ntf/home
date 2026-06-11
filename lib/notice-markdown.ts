@@ -7,6 +7,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import shNotices from "./sh-notices.json";
+import youthNotices from "./youth-notices.json";
 
 const UA = "doongji-app/1.0 (admin extract; polite)";
 const DOC_PARSE_URL = "https://api.upstage.ai/v1/document-ai/document-parse";
@@ -122,6 +123,16 @@ async function resolveShMarkdown(id: string): Promise<string> {
   return docParse(Buffer.from(await r.arrayBuffer()), n.pdfName ?? "sh.pdf");
 }
 
+// 청년안심(youth-{boardId}) → youth-notices.json 의 pdfUrl(fileDown.do) 직접 다운로드 → Document Parse.
+async function resolveYouthMarkdown(id: string): Promise<string> {
+  const boardId = Number(id.replace(/^youth-/, ""));
+  const n = (youthNotices as { boardId: number; pdfUrl?: string | null; pdfName?: string | null; detailUrl?: string }[]).find((x) => x.boardId === boardId);
+  if (!n?.pdfUrl) throw new Error("청년안심주택 공고문 PDF 를 찾을 수 없습니다.");
+  const r = await fetch(n.pdfUrl, { headers: { "User-Agent": UA, Referer: n.detailUrl ?? "https://soco.seoul.go.kr/" } });
+  if (!r.ok) throw new Error(`청년안심 PDF 다운로드 실패 (${r.status})`);
+  return docParse(Buffer.from(await r.arrayBuffer()), n.pdfName ?? "youth.pdf");
+}
+
 // id(+sourceUrl) 로 마크다운 확보. 캐시 우선, 없으면 원본 PDF 파싱.
 export async function resolveMarkdown(
   id: string,
@@ -129,6 +140,9 @@ export async function resolveMarkdown(
 ): Promise<{ markdown: string; source: MarkdownSource }> {
   if (id.startsWith("sh-")) {
     return { markdown: await resolveShMarkdown(id), source: "parsed" };
+  }
+  if (id.startsWith("youth-")) {
+    return { markdown: await resolveYouthMarkdown(id), source: "parsed" };
   }
   const cached = await readCachedMarkdown(id);
   if (cached) return { markdown: cached, source: "cache" };
