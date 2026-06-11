@@ -29,6 +29,13 @@ export const FILTER_CONFIG: Record<FilterKey, FilterConfigEntry> = {
       { value: "closed", label: "마감" },
     ],
   },
+  agency: {
+    label: "공급기관",
+    options: [
+      { value: "LH", label: "LH" },
+      { value: "SH", label: "SH (서울)" },
+    ],
+  },
 };
 
 function FilterPopover({

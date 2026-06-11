@@ -18,6 +18,7 @@ import { MobileChrome } from "./mobile-chrome";
 const INITIAL_FILTERS: Filters = {
   type: [],
   status: [],
+  agency: [],
 };
 
 const SHORT_SIDO_NAMES: Record<string, string> = {
@@ -77,6 +78,7 @@ export function AppShell({
     if (filters.type.length) list = list.filter((x) => filters.type.includes(x.type));
     // 마감임박(closing)은 raw status 에 없고 deadline 으로 derive 되므로 effectiveStatus 비교.
     if (filters.status.length) list = list.filter((x) => filters.status.includes(effectiveStatus(x.status, x.deadline, x.beginDate)));
+    if (filters.agency.length) list = list.filter((x) => filters.agency.includes(x.agency));
     // 지역 필터: 지도 영역 모드가 우선, 그 다음 시도 클릭 모드
     if (searchBounds) {
       list = list.filter((x) =>
@@ -109,6 +111,7 @@ export function AppShell({
     if (!showClosed) list = list.filter((x) => effectiveStatus(x.status, x.deadline, x.beginDate) !== "closed");
     if (filters.type.length) list = list.filter((x) => filters.type.includes(x.type));
     if (filters.status.length) list = list.filter((x) => filters.status.includes(effectiveStatus(x.status, x.deadline, x.beginDate)));
+    if (filters.agency.length) list = list.filter((x) => filters.agency.includes(x.agency));
     list.forEach((x) => {
       map[x.districtId] = (map[x.districtId] ?? 0) + 1;
     });

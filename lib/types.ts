@@ -106,7 +106,7 @@ export interface ListingPhoto {
   source?: string;
 }
 
-export type FilterKey = "type" | "status";
+export type FilterKey = "type" | "status" | "agency";
 export type Filters = Record<FilterKey, string[]>;
 export type SortKey = "recent" | "deadline" | "low-rent" | "low-depo";
 export type ViewMode = "split" | "list";
