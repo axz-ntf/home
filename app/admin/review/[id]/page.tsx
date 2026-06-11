@@ -201,6 +201,11 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
         draft={(extractDrafts as Record<string, { at: string; fields: unknown }>)[decodedId] ?? null}
       />
 
+      <FloorplanEditor
+        listingId={decodedId}
+        initialSpec={(floorplanSpecs as Record<string, FloorPlanSpec>)[decodedId] ?? null}
+      />
+
       {mapped && (
         <MappedPointsEditor
           file={mapped.file}
@@ -209,11 +214,6 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
           currentPinIndex={pinIdx != null ? Number(pinIdx) : null}
         />
       )}
-
-      <FloorplanEditor
-        listingId={decodedId}
-        initialSpec={(floorplanSpecs as Record<string, FloorPlanSpec>)[decodedId] ?? null}
-      />
     </AdminShell>
   );
 }

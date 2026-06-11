@@ -73,14 +73,12 @@ export default function FloorplanEditor({ listingId, initialSpec }: { listingId:
   }
 
   return (
-    <section className="a-form-section" style={{ marginTop: 24 }}>
-      <h2 style={{ fontSize: 15, fontWeight: 800, marginBottom: 4 }}>
-        평면도 3D{" "}
-        <span style={{ fontWeight: 500, color: "var(--a-ink-3)", fontSize: 12.5 }}>
-          — 평면도 이미지를 올리면 AI 가 3D 스펙을 만들고, 검수자가 교정해 저장합니다.
-        </span>
-      </h2>
-      <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap", marginBottom: 10 }}>
+    <section className="a-form-section" style={{ marginTop: 14, maxWidth: 760 }}>
+      <header>
+        <h2>평면도 3D</h2>
+        <p className="section-sub">평면도 이미지를 올리면 AI 가 3D 스펙을 만들고, 검수자가 교정해 저장합니다.</p>
+      </header>
+      <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
         <label className="a-btn primary" style={{ cursor: busy ? "default" : "pointer", margin: 0 }}>
           {busy === "extract" ? "추출 중…" : "평면도 이미지 업로드"}
           <input
@@ -115,9 +113,9 @@ export default function FloorplanEditor({ listingId, initialSpec }: { listingId:
           </>
         )}
       </div>
-      {msg && <div className="a-msg" style={{ marginBottom: 10 }}>{msg}</div>}
+      {msg && <div className="a-msg">{msg}</div>}
       {spec && showJson && (
-        <div style={{ marginBottom: 10 }}>
+        <div>
           <textarea
             value={draft}
             onChange={(e) => setDraft(e.target.value)}
