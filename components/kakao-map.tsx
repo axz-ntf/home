@@ -6,6 +6,7 @@ import { loadNaverMaps } from "@/lib/naver-loader";
 import "@/lib/naver-types";
 import type { NaverMarker, NaverMap } from "@/lib/naver-types";
 import { LocateIcon } from "./icons";
+import { effectiveStatus } from "@/lib/dday";
 
 const SEOUL_CENTER = { lat: 37.5665, lng: 126.978 };
 const DEFAULT_ZOOM = 11;
@@ -70,7 +71,9 @@ function makePinEl(p: Listing): HTMLElement {
   const el = document.createElement("div");
   el.className = "map-pin-wrap";
   el.dataset.listingId = p.id;
-  el.innerHTML = `<div class="${pinClass(p.type)}">${pinLabel(p)}</div>`;
+  // 마감 공고도 지도에 표시하되 회색으로 구분 (개선안 1차).
+  const isClosed = effectiveStatus(p.status, p.deadline, p.beginDate) === "closed";
+  el.innerHTML = `<div class="${pinClass(p.type)}${isClosed ? " is-closed" : ""}">${pinLabel(p)}</div>`;
   return el;
 }
 

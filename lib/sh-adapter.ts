@@ -85,8 +85,8 @@ export const SH_ADMIN_LISTINGS: Listing[] = (shNotices as ShNotice[]).map((n, i)
   sourceUrl: n.detailUrl ?? "",
 }));
 
-// 공개(지도) 노출용 — 좌표가 있고(제목서 지오코딩됨) 마감 안 된 SH 만.
-// 산재형·시단위(좌표 없음)는 제외. 가격은 미검수라 디테일에서 "공고문 확인"으로 표시됨.
+// 공개(지도) 노출용 — 좌표가 있는(제목서 지오코딩됨) SH. 마감 포함(개선안 1차: 전체 표시
+// 후 필터 구분, 마감 핀은 회색). 산재형·시단위(좌표 없음)는 제외.
 export const SH_PUBLIC_LISTINGS: Listing[] = SH_ADMIN_LISTINGS.filter(
-  (l) => l.lat !== 0 && l.lng !== 0 && l.status !== "closed",
+  (l) => l.lat !== 0 && l.lng !== 0,
 );

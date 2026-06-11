@@ -70,11 +70,9 @@ export function AppShell({
   }, [density]);
 
   const filtered = useMemo(() => {
-    // 마감된 공고는 기본적으로 숨김 — 마감 필터를 명시적으로 켰을 때만 노출
-    const showClosed = filters.status.includes("closed");
+    // 개선안 1차: 마감·예정 공고도 전체 표시하고 필터로 구분 (지도에 공고가 많아 보이는 구조).
+    // 마감 핀/카드는 회색으로 구분 렌더.
     let list = listings.slice();
-    // raw status 가 open 이라도 deadline 지났으면 effStatus=closed — 마감 매물 노출 방지.
-    if (!showClosed) list = list.filter((x) => effectiveStatus(x.status, x.deadline, x.beginDate) !== "closed");
     if (filters.type.length) list = list.filter((x) => filters.type.includes(x.type));
     // 마감임박(closing)은 raw status 에 없고 deadline 으로 derive 되므로 effectiveStatus 비교.
     if (filters.status.length) list = list.filter((x) => filters.status.includes(effectiveStatus(x.status, x.deadline, x.beginDate)));
@@ -105,10 +103,8 @@ export function AppShell({
 
   const districtCounts = useMemo<Record<string, number>>(() => {
     const map: Record<string, number> = {};
-    const showClosed = filters.status.includes("closed");
+    // 개선안 1차: 마감 포함 전체 카운트 (filtered 와 동일 정책).
     let list = listings.slice();
-    // raw status 가 open 이라도 deadline 지났으면 effStatus=closed — 마감 매물 노출 방지.
-    if (!showClosed) list = list.filter((x) => effectiveStatus(x.status, x.deadline, x.beginDate) !== "closed");
     if (filters.type.length) list = list.filter((x) => filters.type.includes(x.type));
     if (filters.status.length) list = list.filter((x) => filters.status.includes(effectiveStatus(x.status, x.deadline, x.beginDate)));
     if (filters.agency.length) list = list.filter((x) => filters.agency.includes(x.agency));

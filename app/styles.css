@@ -1025,6 +1025,9 @@ input, select { font-family: inherit; }
 .map-pin.jeonse::after { border-top-color: #0a8db8; }
 .map-pin.fifty { background: #4b5563; }
 .map-pin.fifty::after { border-top-color: #4b5563; }
+/* 마감 공고 — 지도에 표시하되 회색·반투명으로 구분 (개선안 1차). 타입색 뒤에 선언해 우선. */
+.map-pin.is-closed { background: #b3aca2; opacity: 0.75; }
+.map-pin.is-closed::after { border-top-color: #b3aca2; }
 
 /* 내 위치 마커 */
 .map-me {
