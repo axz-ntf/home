@@ -13,6 +13,7 @@ export interface DashboardRow {
   district: string;
   type: string;
   agency: string;
+  suplyTyNm: string;
   status: "open" | "upcoming" | "closing" | "closed";
   noticeStatus: string;
   progressStatus: string;
@@ -91,7 +92,15 @@ export default function Dashboard({ rows, user }: { rows: DashboardRow[]; user?:
     return rows.filter((r) => {
       if (filter === "review" && !(r.needsReview && !r.reviewed)) return false;
       if (filter !== "all" && filter !== "review" && r.status !== filter) return false;
-      if (q && !r.title.toLowerCase().includes(q) && !r.district.toLowerCase().includes(q)) return false;
+      // 청년안심처럼 유형명이 제목에 없는 공고도 "청년안심"·"서울시"로 찾히게 — suplyTyNm·agency 포함.
+      if (
+        q &&
+        !r.title.toLowerCase().includes(q) &&
+        !r.district.toLowerCase().includes(q) &&
+        !r.suplyTyNm.toLowerCase().includes(q) &&
+        !r.agency.toLowerCase().includes(q)
+      )
+        return false;
       return true;
     });
   }, [rows, filter, query]);

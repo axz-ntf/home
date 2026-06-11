@@ -57,31 +57,68 @@ async function resolveDetail(boardId) {
   return { gu, pdfUrl: notice?.url ?? null, pdfName: notice?.name ?? null, fileCount: files.length };
 }
 
-// 단지 디렉토리(maplist.json) — 좌표·주소·역세권·가격범위·세대수·사진까지 공식 제공.
-// 공고(게시판)에 없는 단지 정보의 원천. 어댑터가 공고 제목 ↔ homeName 으로 매칭한다.
+// 단지 디렉토리 — 정본은 카드 목록(yoHomeListJson, 전체 84단지·가격·주소·역·사진),
+// 좌표·세대수·전화·홈피는 지도 목록(maplist, 50단지 서브셋)에만 있어 homeCode 로 병합.
+// 좌표 없는 단지는 지번 주소(adresRo)가 정확해 VWorld 지오코딩으로 채운다(키 있을 때).
 async function fetchComplexes() {
-  const r = await fetch(`${BASE}/youth/pgm/home/yohome/maplist.json`, {
+  const cardRes = await fetch(`${BASE}/youth/pgm/home/yohome/yoHomeListJson.json`, {
+    method: "POST",
+    headers: { "User-Agent": UA, "Content-Type": "application/x-www-form-urlencoded" },
+    body: "pageNum=1&rowCount=300&searchPresale=&searchTheme=&searchMovinHoman=&searchHouseType=&searchHouseForm=&searchAdresGu=&searchSil=",
+  });
+  if (!cardRes.ok) throw new Error(`HTTP ${cardRes.status} yoHomeListJson`);
+  const cards = (await cardRes.json()).resultList ?? [];
+
+  const mapRes = await fetch(`${BASE}/youth/pgm/home/yohome/maplist.json`, {
     method: "POST",
     headers: { "User-Agent": UA, "Content-Type": "application/x-www-form-urlencoded" },
     body: "",
   });
-  if (!r.ok) throw new Error(`HTTP ${r.status} maplist`);
-  const rows = (await r.json()).mapResultList ?? [];
-  return rows.map((c) => ({
-    homeCode: c.homeCode,
-    homeName: c.homeName,
-    gu: c.adresGu ?? "",
-    address: c.adres ?? "",
-    subway: c.optionSubway ?? "",
-    depositLowWon: c.moneyDepositLow ?? null,
-    rentLowWon: c.moneyRentalLow ?? null,
-    totalUnits: Number(c.scaleTot) || null,
-    phone: c.managerPhone ?? "",
-    homepage: c.homepage ?? "",
-    lat: Number(c.ypos) || 0,
-    lng: Number(c.xpos) || 0,
-    photoUrl: c.fileId ? `${BASE}/coHouse/cmmn/file/fileDown.do?atchFileId=${c.fileId}&fileSn=${c.fileSn ?? 1}` : null,
-  }));
+  const mapRows = mapRes.ok ? (await mapRes.json()).mapResultList ?? [] : [];
+  const byCode = new Map(mapRows.map((m) => [m.homeCode, m]));
+
+  const complexes = cards.map((c) => {
+    const m = byCode.get(c.homeCode);
+    return {
+      homeCode: c.homeCode,
+      homeName: c.homeName,
+      gu: c.adresGu ?? "",
+      address: `${c.adresGu ?? ""} ${c.adresRo ?? ""}`.trim(),
+      subway: c.optionSubway ?? "",
+      depositLowWon: c.moneyDepositLow ?? null,
+      rentLowWon: c.moneyRentalLow ?? null,
+      totalUnits: (m && Number(m.scaleTot)) || null,
+      phone: m?.managerPhone ?? "",
+      homepage: m?.homepage ?? "",
+      lat: (m && Number(m.ypos)) || 0,
+      lng: (m && Number(m.xpos)) || 0,
+      photoUrl: c.fileId ? `${BASE}/coHouse/cmmn/file/fileDown.do?atchFileId=${c.fileId}&fileSn=${c.fileSn ?? 1}` : null,
+    };
+  });
+
+  const KEY = (process.env.VWORLD_API_KEY ?? "").trim();
+  const missing = complexes.filter((c) => !c.lat || !c.lng);
+  if (KEY && missing.length > 0) {
+    console.log(`좌표 누락 ${missing.length}단지 — VWorld 지오코딩...`);
+    const inSeoul = (lat, lng) => lat > 37.42 && lat < 37.71 && lng > 126.76 && lng < 127.19;
+    for (const c of missing) {
+      const q = encodeURIComponent(`서울특별시 ${c.address}`);
+      for (const type of ["parcel", "road"]) {
+        try {
+          const j = await (await fetch(`https://api.vworld.kr/req/address?service=address&request=getcoord&version=2.0&crs=epsg:4326&type=${type}&address=${q}&format=json&key=${KEY}`)).json();
+          const p = j.response?.result?.point;
+          if (p && inSeoul(Number(p.y), Number(p.x))) {
+            c.lat = Number(p.y);
+            c.lng = Number(p.x);
+            break;
+          }
+        } catch { /* 다음 type */ }
+      }
+      await sleep(200);
+    }
+    console.log(`  지오코딩 후 좌표 보유: ${complexes.filter((c) => c.lat).length}/${complexes.length}`);
+  }
+  return complexes;
 }
 
 function parseArgs() {

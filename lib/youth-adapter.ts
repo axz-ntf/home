@@ -61,9 +61,20 @@ function matchComplex(title: string): YouthComplex | undefined {
   if (exact) return exact;
   // 2차: 양쪽 괄호 부가표기 제거 후 매칭.
   const ts = normalize(stripParen(title));
-  return complexes.find((c) => {
+  const stripped = complexes.find((c) => {
     const h = normalize(stripParen(c.homeName));
     return h.length >= 4 && ts.includes(h);
+  });
+  if (stripped) return stripped;
+  // 3차: 토큰 AND — "등촌역 아르체움 등촌 청년주택"(접미사 잉여) ↔ "등촌역 아르체움 등촌 추가모집공고",
+  // "연신내역 루미노 816" ↔ "연신내역 Lumino 816 (루미노 816)" 같은 어순·표기 차이 흡수.
+  // 괄호 병기("(루미노 816)")가 매칭 단서일 수 있어 괄호 보존 문자열(t)에서 찾는다.
+  const tl = t.toLowerCase();
+  return complexes.find((c) => {
+    const tokens = stripParen(c.homeName)
+      .split(/\s+/)
+      .filter((w) => w && !/^청년(안심)?주택$/.test(w));
+    return tokens.length >= 2 && tokens.every((w) => tl.includes(w.toLowerCase()));
   });
 }
 

@@ -3,6 +3,7 @@
 // 아직 0(공개 지도 미노출). district 는 제목에서 추출. 가격/세대수는 검수로 채운다.
 import type { HousingTypeId, Listing } from "./types";
 import shNotices from "./sh-notices.json";
+import shMapped from "./sh-mapped.json";
 
 interface ShNotice {
   seq: string;
@@ -87,8 +88,45 @@ export const SH_ADMIN_LISTINGS: Listing[] = (shNotices as ShNotice[]).map((n, i)
   noticePdfUrl: n.pdfUrl ?? undefined,
 }));
 
-// 공개(지도) 노출용 — 좌표가 있는(제목서 지오코딩됨) SH. 마감 포함(개선안 1차: 전체 표시
-// 후 필터 구분, 마감 핀은 회색). 산재형·시단위(좌표 없음)는 제외.
-export const SH_PUBLIC_LISTINGS: Listing[] = SH_ADMIN_LISTINGS.filter(
-  (l) => l.lat !== 0 && l.lng !== 0,
-);
+// 다지점(메가)공고 단지별 분리 — extract-sh-mapped.mjs 가 만든 sh-mapped.json
+// (seq → points). 행복주택 1차·장기전세·미리내집처럼 좌표가 없던 시단위 공고를
+// 단지별 핀으로 전개한다 (LH mapped-regional 과 동일 패턴, SH 전용 경로).
+interface ShMappedPoint {
+  lat: number;
+  lng: number;
+  label?: string;
+  address?: string;
+  units?: number;
+  depositManwon?: number;
+  rentManwon?: number;
+}
+const SH_MAPPED = shMapped as Record<string, { points: ShMappedPoint[] }>;
+
+function buildShMappedListings(): Listing[] {
+  const out: Listing[] = [];
+  for (const [seq, cfg] of Object.entries(SH_MAPPED)) {
+    const parent = SH_ADMIN_LISTINGS.find((l) => l.id === `sh-${seq}`);
+    if (!parent || parent.status === "closed") continue;
+    cfg.points.forEach((p, i) => {
+      out.push({
+        ...parent,
+        id: `sh-${seq}-m${i}`,
+        lat: p.lat,
+        lng: p.lng,
+        district: p.address?.match(/([가-힣]{2,4}구)/)?.[1] ?? parent.district,
+        ...(p.address && { address: p.address }),
+        ...(p.label && { title: p.label }),
+        ...(p.units != null && { supplyUnits: p.units }),
+        ...(p.depositManwon != null && { deposit: p.depositManwon, rent: p.rentManwon ?? 0 }),
+      });
+    });
+  }
+  return out;
+}
+
+// 공개(지도) 노출용 — 좌표가 있는(제목서 지오코딩됨) SH + 다지점 분리 핀. 마감 포함
+// (개선안 1차: 전체 표시 후 필터 구분, 마감 핀은 회색). 분리 안 된 산재형은 제외.
+export const SH_PUBLIC_LISTINGS: Listing[] = [
+  ...SH_ADMIN_LISTINGS.filter((l) => l.lat !== 0 && l.lng !== 0),
+  ...buildShMappedListings(),
+];

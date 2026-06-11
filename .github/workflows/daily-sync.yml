@@ -168,6 +168,15 @@ jobs:
           node scripts/geocode-sh.mjs
           node scripts/sync-youth.mjs
 
+      # 신규 SH 메가공고(행복주택·장기전세 등 시단위) 단지별 분리 — 이미 분리된 seq 는 skip.
+      - name: Phase 8.5 — SH 다지점 공고 단지 분리 (AI + 지오코딩)
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
+          SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
+        run: node scripts/extract-sh-mapped.mjs
+
       - name: Save lh-complexes cache (즉시)
         if: always()
         uses: actions/cache/save@v4

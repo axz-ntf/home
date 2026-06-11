@@ -18,6 +18,7 @@ export default function AdminDashboardPage() {
       district: l.district,
       type: l.type,
       agency: l.agency,
+      suplyTyNm: l.suplyTyNm ?? "",
       status: derivedStatus,
       noticeStatus: l.noticeStatus ?? "",
       progressStatus: l.progressStatus ?? "",
