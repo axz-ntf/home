@@ -3508,3 +3508,22 @@ div:has(> img[src*="streetview_btn"]) {
   /* iOS safe area (홈 인디케이터) — 키보드 닫혔을 때 하단 여백 */
   padding-bottom: calc(12px + env(safe-area-inset-bottom));
 }
+
+/* 저장 목록 — 해제 버튼 (카드 우측 분리 열, N1) */
+.saved-remove-btn {
+  width: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--seed-semantic-color-divider-2);
+  color: var(--seed-scale-color-gray-400);
+  cursor: pointer;
+  transition: color .12s, background .12s;
+}
+.saved-remove-btn:hover {
+  color: var(--seed-semantic-color-danger, #e23859);
+  background: var(--seed-scale-color-gray-50);
+}

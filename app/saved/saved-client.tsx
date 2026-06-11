@@ -43,25 +43,27 @@ export function SavedClient({ listings }: { listings: Listing[] }) {
 
       <div>
         {saved.map((item) => (
-          <div key={item.id} style={{ position: "relative" }}>
-            <ListingCard
-              item={item}
-              hovered={false}
-              selected={false}
-              onHover={() => {}}
-              onClick={(id) => router.push(`/listings/${encodeURIComponent(id)}`)}
-            />
+          // 해제 버튼을 카드와 분리된 우측 열로 — 카드 내부 칩/썸네일과 안 겹침.
+          <div key={item.id} style={{ display: "flex", alignItems: "stretch" }}>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <ListingCard
+                item={item}
+                hovered={false}
+                selected={false}
+                onHover={() => {}}
+                onClick={(id) => router.push(`/listings/${encodeURIComponent(id)}`)}
+              />
+            </div>
             <button
               type="button"
-              aria-label="저장 해제"
-              onClick={(e) => { e.stopPropagation(); toggle(item.id); }}
-              style={{
-                position: "absolute", top: 10, right: 12,
-                background: "none", border: "none", cursor: "pointer",
-                fontSize: 16, color: "var(--seed-semantic-color-primary)", lineHeight: 1,
-              }}
+              aria-label={`${item.complexName || item.title} 저장 해제`}
+              title="저장 해제"
+              onClick={() => toggle(item.id)}
+              className="saved-remove-btn"
             >
-              ♥
+              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden>
+                <path d="M 3 3 L 11 11 M 11 3 L 3 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+              </svg>
             </button>
           </div>
         ))}
