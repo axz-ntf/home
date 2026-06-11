@@ -1,20 +1,11 @@
 import { NextResponse } from "next/server";
-import { promises as fs } from "node:fs";
-import path from "node:path";
+import { mutateJsonFile, persistMode } from "@/lib/admin-json-file";
 
-// 검수값을 lib/manual-overrides.json 에 반영.
-//   - 로컬 dev: 파일 직접 write (기존 흐름 — 커밋은 사람이).
-//   - 배포(Vercel): fs 가 read-only 라 GitHub Contents API 로 커밋 → 자동 재배포 → 메인앱 반영(~1분).
-// 메인앱은 manual-overrides.json 을 빌드시 static import 하므로 읽기 경로는 변경 불필요.
+// 검수값을 lib/manual-overrides.json 에 반영. 저장 경로(로컬 fs / Vercel GitHub 커밋)는
+// lib/admin-json-file.ts 공용 헬퍼 — mapped 라우트와 공유.
 export const runtime = "nodejs";
 
-const FILE = path.join(process.cwd(), "lib", "manual-overrides.json");
-const GH_TOKEN = (process.env.GITHUB_TOKEN ?? "").trim();
-const GH_REPO = process.env.GITHUB_REPO ?? "bobbypark-axz/home";
-const GH_BRANCH = process.env.GITHUB_BRANCH ?? "main";
 const GH_PATH = "lib/manual-overrides.json";
-// Vercel 런타임(VERCEL=1)이고 토큰이 있을 때만 GitHub 모드. 그 외(로컬)는 fs.
-const useGitHub = Boolean(GH_TOKEN) && Boolean(process.env.VERCEL);
 
 interface PayloadRow {
   houseType: string;
@@ -47,74 +38,8 @@ interface OverridePayload {
   _note?: string;
 }
 
-// 안정적 정렬 — 검수 diff 가 git 에서 깔끔하게.
-function serialize(data: Record<string, unknown>): string {
-  const ordered: Record<string, unknown> = {};
-  for (const k of Object.keys(data).sort()) ordered[k] = data[k];
-  return JSON.stringify(ordered, null, 2) + "\n";
-}
-
-const GH_HEADERS = {
-  Authorization: `Bearer ${GH_TOKEN}`,
-  Accept: "application/vnd.github+json",
-  "User-Agent": "doongji-admin",
-  "X-GitHub-Api-Version": "2022-11-28",
-};
-const GH_CONTENTS = `https://api.github.com/repos/${GH_REPO}/contents/${GH_PATH}`;
-
-// 현재 overrides + (GitHub 모드일 때) 파일 sha.
-async function readOverrides(): Promise<{ data: Record<string, unknown>; sha: string | null }> {
-  if (useGitHub) {
-    const r = await fetch(`${GH_CONTENTS}?ref=${GH_BRANCH}`, { headers: GH_HEADERS, cache: "no-store" });
-    if (r.status === 404) return { data: {}, sha: null };
-    if (!r.ok) throw new Error(`GitHub 읽기 실패 (${r.status}): ${(await r.text()).slice(0, 200)}`);
-    const j = await r.json();
-    const decoded = Buffer.from(j.content ?? "", "base64").toString("utf8");
-    return { data: decoded.trim() ? JSON.parse(decoded) : {}, sha: j.sha };
-  }
-  try {
-    return { data: JSON.parse(await fs.readFile(FILE, "utf8")), sha: null };
-  } catch (e) {
-    if ((e as NodeJS.ErrnoException).code === "ENOENT") return { data: {}, sha: null };
-    throw e;
-  }
-}
-
-async function writeOverrides(data: Record<string, unknown>, sha: string | null, message: string) {
-  const content = serialize(data);
-  if (!useGitHub) {
-    await fs.writeFile(FILE, content, "utf8");
-    return;
-  }
-  const r = await fetch(GH_CONTENTS, {
-    method: "PUT",
-    headers: { ...GH_HEADERS, "Content-Type": "application/json" },
-    body: JSON.stringify({
-      message,
-      content: Buffer.from(content, "utf8").toString("base64"),
-      branch: GH_BRANCH,
-      ...(sha ? { sha } : {}),
-    }),
-  });
-  if (!r.ok) throw new Error(`GitHub 커밋 실패 (${r.status}): ${(await r.text()).slice(0, 200)}`);
-}
-
-// sha 충돌(다른 커밋이 끼어듦) 시 1회 재시도하며 read-modify-write.
-// mutator 가 false 를 반환하면(변경 없음) write/commit 을 건너뛴다 — 빈 커밋 방지.
-async function mutate(message: string, mutator: (data: Record<string, unknown>) => boolean) {
-  for (let attempt = 0; attempt < 2; attempt++) {
-    const { data, sha } = await readOverrides();
-    if (!mutator(data)) return;
-    try {
-      await writeOverrides(data, sha, message);
-      return;
-    } catch (e) {
-      const conflict = /\b409\b/.test((e as Error).message);
-      if (conflict && attempt === 0) continue;
-      throw e;
-    }
-  }
-}
+const mutate = (message: string, mutator: (data: Record<string, unknown>) => boolean) =>
+  mutateJsonFile(GH_PATH, message, mutator);
 
 // Solar 추출 출력이 옵셔널 자리에 null 을 내는 경우가 있어(rateUp 등) 저장 전 정리.
 // perHouseType 은 필수 숫자 셋이 모두 있어야 행으로 의미가 있다.
@@ -201,7 +126,7 @@ export async function POST(req: Request) {
   } catch (e) {
     return NextResponse.json({ error: (e as Error).message }, { status: 500 });
   }
-  return NextResponse.json({ ok: true, id: body.id, persisted: useGitHub ? "github" : "fs" });
+  return NextResponse.json({ ok: true, id: body.id, persisted: persistMode() });
 }
 
 export async function DELETE(req: Request) {

@@ -7,6 +7,9 @@ import AdminShell, { type NavItem } from "../../admin-shell";
 import { AIcon } from "../../icons";
 import { getAdminUser } from "@/lib/admin-user";
 import rawApiListings from "@/lib/listings-api.json";
+import shMapped from "@/lib/sh-mapped.json";
+import mappedRegional from "@/lib/mapped-regional.json";
+import MappedPointsEditor, { type MappedPoint } from "./mapped-points-editor";
 
 interface RawApiListing {
   pblancId: string;
@@ -36,6 +39,19 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
 
   const override = OVERRIDES[decodedId] ?? null;
   const raw = listing.pblancId ? RAW_API_BY_PANID.get(listing.pblancId) : undefined;
+
+  // 다지점 분리 핀 (P1) — SH 는 부모 공고(sh-{seq})에서, LH 는 분리 핀(-mN) 페이지에서 접근.
+  const shSeq = decodedId.match(/^sh-(\d+)/)?.[1];
+  const shCfg = shSeq ? (shMapped as Record<string, { points: MappedPoint[] }>)[shSeq] : undefined;
+  const lhCfg = !shCfg && listing.pblancId
+    ? (mappedRegional as Record<string, { points: MappedPoint[] }>)[listing.pblancId]
+    : undefined;
+  const mapped = shCfg
+    ? { file: "sh" as const, key: shSeq as string, points: shCfg.points }
+    : lhCfg
+      ? { file: "lh" as const, key: listing.pblancId as string, points: lhCfg.points }
+      : null;
+  const pinIdx = decodedId.match(/-m(\d+)$/)?.[1];
 
   // listing.complexes[0].rows 에서 RowDraft 초기값 derive (단위 변환: 원 → 만원)
   const complexRows = listing.complexes?.[0]?.rows ?? [];
@@ -128,6 +144,15 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
         sourceUrl={listing.sourceUrl ?? null}
         canAutoExtract={!(listing.id.startsWith("sh-") && !listing.noticePdfUrl)}
       />
+
+      {mapped && (
+        <MappedPointsEditor
+          file={mapped.file}
+          mappedKey={mapped.key}
+          initialPoints={mapped.points}
+          currentPinIndex={pinIdx != null ? Number(pinIdx) : null}
+        />
+      )}
     </AdminShell>
   );
 }
