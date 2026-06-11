@@ -75,7 +75,8 @@ export const SH_ADMIN_LISTINGS: Listing[] = (shNotices as ShNotice[]).map((n, i)
   status: mapStatus(n.status),
   deadline: "",
   beginDate: "",
-  announceDate: n.postedAt ?? "",
+  // LH 와 포맷 통일 (YYYY.MM.DD) — SH 원본은 "2026-05-11" (감사 L3)
+  announceDate: (n.postedAt ?? "").replace(/-/g, "."),
   eligible: [],
   features: [],
   transit: "",

@@ -12,6 +12,7 @@ export interface DashboardRow {
   title: string;
   district: string;
   type: string;
+  agency: string;
   status: "open" | "upcoming" | "closing" | "closed";
   noticeStatus: string;
   progressStatus: string;
@@ -46,6 +47,8 @@ function formatDday(deadline: string): { text: string; urgent: boolean } | null 
   if (isNaN(d.getTime())) return null;
   const now = Date.now();
   const days = Math.ceil((d.getTime() - now) / (1000 * 60 * 60 * 24));
+  // 마감 30일 지난 건 D+N 대신 표기 생략 — 메인앱 dday.ts 와 정책 통일 (감사 L1)
+  if (days < -30) return null;
   if (days < 0) return { text: `D+${Math.abs(days)}`, urgent: false };
   if (days === 0) return { text: "D-Day", urgent: true };
   return { text: `D-${days}`, urgent: days <= 7 };
@@ -237,7 +240,7 @@ export default function Dashboard({ rows, user }: { rows: DashboardRow[]; user?:
                           {r.noticeStatus}
                         </span>
                       )}
-                      LH · 공고일 {r.announceDate || "—"}
+                      {r.agency} · 공고일 {r.announceDate || "—"}
                     </div>
                   </td>
                   <td><TypeBadge type={r.type} /></td>
@@ -310,8 +313,8 @@ export default function Dashboard({ rows, user }: { rows: DashboardRow[]; user?:
                           target="_blank"
                           rel="noreferrer"
                           className="a-icon-btn"
-                          aria-label="LH 공고 페이지"
-                          title="LH 공고 페이지"
+                          aria-label={`${r.agency} 공고 페이지`}
+                          title={`${r.agency} 공고 페이지`}
                         >
                           <AIcon.External />
                         </a>

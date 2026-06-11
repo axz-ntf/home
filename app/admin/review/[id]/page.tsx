@@ -92,7 +92,7 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
 
       {listing.sourceUrl && (
         <a href={listing.sourceUrl} target="_blank" rel="noreferrer" className="a-pdf-btn">
-          LH 공고 페이지 열기 <AIcon.External />
+          {listing.agency} 공고 페이지 열기 <AIcon.External />
         </a>
       )}
 
@@ -126,6 +126,7 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
         queueIndex={currentIdx >= 0 ? { current: currentIdx + 1, total: queue.length } : null}
         initialRows={initialRows.length > 0 ? initialRows : null}
         sourceUrl={listing.sourceUrl ?? null}
+        canAutoExtract={!(listing.id.startsWith("sh-") && !listing.noticePdfUrl)}
       />
     </AdminShell>
   );

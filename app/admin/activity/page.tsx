@@ -11,10 +11,24 @@ const TYPE_LABEL: Record<string, string> = {
 
 // override 의 메타 키 (변경 필드 아님)
 const META_KEYS = new Set(["_reviewedAt", "_note"]);
+// 구조화 모델 키 — 그대로 String() 하면 "[object Object]" 로 깨짐 (감사 M1). 전용 포맷.
+const STRUCT_KEYS = new Set(["rows", "tiers", "householdTypes", "supportLimit", "conversion", "schedule"]);
 
-// 사람이 변경한 필드만 추출 (rows 제외 — 별도 렌더)
+// 사람이 변경한 필드만 추출 (구조화 키 제외 — 별도/요약 렌더)
 function changedKeys(o: ManualOverride): string[] {
-  return Object.keys(o).filter((k) => !META_KEYS.has(k) && k !== "rows");
+  return Object.keys(o).filter((k) => !META_KEYS.has(k) && !STRUCT_KEYS.has(k));
+}
+
+// 구조화 필드 요약 라벨 (검수내역 한 줄 표시용)
+function structSummaries(o: ManualOverride): string[] {
+  const out: string[] = [];
+  if (o.rows?.length) out.push(`평형별 ${o.rows.length}행`);
+  if (o.tiers?.length) out.push(`소득계층 ${o.tiers.length}평형`);
+  if (o.householdTypes?.length) out.push(`가구원수 ${o.householdTypes.length}유형`);
+  if (o.supportLimit?.byHousehold?.length) out.push(`지원한도 ${o.supportLimit.byHousehold.length}구간`);
+  if (o.conversion) out.push("전환보증금");
+  if (o.schedule?.winnerAt) out.push(`당첨발표 ${o.schedule.winnerAt}`);
+  return out;
 }
 
 // 필드 라벨 + 값 포맷 — 화면용
@@ -29,6 +43,7 @@ function formatField(key: string, value: unknown): { label: string; value: strin
     noticeStatus: "공고 종류",
     progressStatus: "모집 진행",
     deadline: "마감일",
+    priceModel: "가격 모델",
   };
   const statusLabel: Record<string, string> = {
     open: "모집중", upcoming: "모집예정", closing: "마감임박", closed: "마감",
@@ -144,8 +159,16 @@ export default function ActivityPage() {
                         </Link>
                       </div>
 
-                      {fields.length > 0 && (
+                      {(fields.length > 0 || structSummaries(override).length > 0) && (
                         <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                          {structSummaries(override).map((s) => (
+                            <div key={s} style={{
+                              padding: "5px 10px", background: "var(--a-bg-2)", borderRadius: 6,
+                              fontSize: 11.5, fontWeight: 700, color: "var(--a-ink-2)",
+                            }}>
+                              {s}
+                            </div>
+                          ))}
                           {fields.map((k) => {
                             const f = formatField(k, (override as unknown as Record<string, unknown>)[k]);
                             return (

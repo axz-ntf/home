@@ -163,7 +163,10 @@ export async function POST(req: Request) {
 
   try {
     await mutate(`data(review): override ${body.id}`, (data) => {
-      data[body.id] = entry;
+      // 부분 머지 — 폼이 보내지 않은 기존 필드(legacy rows, schedule 등)를 보존.
+      // 통째 교체였을 때 모델 폼(tiers 등)에서 저장 시 기존 검수값이 유실됐다 (감사 H1).
+      const prev = (data[body.id] as Record<string, unknown> | undefined) ?? {};
+      data[body.id] = { ...prev, ...entry };
       return true;
     });
   } catch (e) {

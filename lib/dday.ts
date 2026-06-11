@@ -5,7 +5,8 @@ const CLOSING_THRESHOLD_DAYS = 7;
 
 function parseDeadline(deadline: string): Date | null {
   if (!deadline) return null;
-  const parts = deadline.split(".").map((s) => Number(s.trim()));
+  // "YYYY.MM.DD" 와 "YYYY-MM-DD" 둘 다 허용 — 어드민 입력/SH 데이터 포맷 혼재 (감사 L2)
+  const parts = deadline.split(/[.\-]/).map((s) => Number(s.trim()));
   if (parts.length !== 3 || parts.some((n) => !Number.isFinite(n))) return null;
   const [y, m, d] = parts;
   return new Date(y, m - 1, d);

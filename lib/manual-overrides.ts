@@ -151,7 +151,10 @@ export function applyOverride(listing: Listing): Listing {
       rent: r.rent != null ? r.rent * 10000 : null,
     }));
     complexesPatched = [{ name: listing.complexes?.[0]?.name ?? null, rows }];
-    derivedSupply = effectiveRows.reduce((sum, r) => sum + (r.supplyUnits ?? 0), 0);
+    // 세대수 합계 — 행에 세대수가 하나도 없으면 0 으로 박제하지 않고 미정으로 둔다 (감사 H2).
+    if (effectiveRows.some((r) => r.supplyUnits != null)) {
+      derivedSupply = effectiveRows.reduce((sum, r) => sum + (r.supplyUnits ?? 0), 0);
+    }
   }
 
   // headline 가격 — 새 모델이면 derived 대표가, 아니면 레거시 o.deposit/o.rent.
@@ -160,8 +163,9 @@ export function applyOverride(listing: Listing): Listing {
 
   return {
     ...listing,
-    ...(o.supplyUnits !== undefined && { supplyUnits: o.supplyUnits, totalUnits: o.supplyUnits }),
+    // derived(평형 합계) 먼저, 명시적 검수값(o.supplyUnits)이 있으면 그것이 우선 (감사 H2).
     ...(derivedSupply !== undefined && { supplyUnits: derivedSupply, totalUnits: derivedSupply }),
+    ...(o.supplyUnits !== undefined && o.supplyUnits !== null && { supplyUnits: o.supplyUnits, totalUnits: o.supplyUnits }),
     ...(headlineDeposit !== undefined && headlineDeposit !== null && { deposit: headlineDeposit }),
     ...(headlineRent !== undefined && headlineRent !== null && { rent: headlineRent }),
     ...(o.salePriceManwon !== undefined && { salePriceManwon: o.salePriceManwon }),

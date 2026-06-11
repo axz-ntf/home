@@ -84,23 +84,43 @@ const rangeStr = (v: number | [number, number] | null | undefined) =>
   Array.isArray(v) ? `${v[0]}~${v[1]}` : sn(v);
 
 function initTiers(o: ManualOverride | null): TierDraft[] {
-  if (!o?.tiers?.length) return [{ houseType: "", area: "", supplyUnits: "", incomes: [{ label: "", deposit: "", rent: "" }] }];
-  return o.tiers.map((t) => ({
-    houseType: t.houseType ?? "", area: t.area ?? "", supplyUnits: sn(t.supplyUnits),
-    incomes: (t.incomes ?? []).map((i) => ({ label: i.label ?? "", deposit: sn(i.deposit), rent: sn(i.rent) })),
-  }));
+  if (o?.tiers?.length) {
+    return o.tiers.map((t) => ({
+      houseType: t.houseType ?? "", area: t.area ?? "", supplyUnits: sn(t.supplyUnits),
+      incomes: (t.incomes ?? []).map((i) => ({ label: i.label ?? "", deposit: sn(i.deposit), rent: sn(i.rent) })),
+    }));
+  }
+  // legacy rows 로 저장된 기존 검수값을 에디터에 보여줌 (감사 H1 — 안 보이면 저장 시 유실로 오인).
+  if (o?.rows?.length) {
+    return o.rows.map((r) => ({
+      houseType: r.houseType ?? "", area: r.area ?? "", supplyUnits: sn(r.supplyUnits),
+      incomes: [{ label: "기본", deposit: sn(r.deposit), rent: sn(r.rent) }],
+    }));
+  }
+  return [{ houseType: "", area: "", supplyUnits: "", incomes: [{ label: "", deposit: "", rent: "" }] }];
 }
 function initHouseholds(o: ManualOverride | null): HouseholdDraft[] {
-  if (!o?.householdTypes?.length) return [{ label: "", areaRange: "", supplyUnits: "", deposit: "", rent: "" }];
-  return o.householdTypes.map((h) => ({
-    label: h.label ?? "", areaRange: h.areaRange ?? "", supplyUnits: sn(h.supplyUnits),
-    deposit: rangeStr(h.deposit), rent: rangeStr(h.rent),
-  }));
+  if (o?.householdTypes?.length) {
+    return o.householdTypes.map((h) => ({
+      label: h.label ?? "", areaRange: h.areaRange ?? "", supplyUnits: sn(h.supplyUnits),
+      deposit: rangeStr(h.deposit), rent: rangeStr(h.rent),
+    }));
+  }
+  // legacy rows fallback (감사 H1)
+  if (o?.rows?.length) {
+    return o.rows.map((r) => ({
+      label: r.houseType ?? "", areaRange: r.area ?? "", supplyUnits: sn(r.supplyUnits),
+      deposit: sn(r.deposit), rent: sn(r.rent),
+    }));
+  }
+  return [{ label: "", areaRange: "", supplyUnits: "", deposit: "", rent: "" }];
 }
 function initSupport(o: ManualOverride | null): SupportDraft[] {
   const rows = o?.supportLimit?.byHousehold ?? [];
-  if (!rows.length) return [{ label: "", limit: "" }];
-  return rows.map((b) => ({ label: b.label ?? "", limit: sn(b.limitManwon) }));
+  if (rows.length) return rows.map((b) => ({ label: b.label ?? "", limit: sn(b.limitManwon) }));
+  // legacy 단일 보증금을 한도로 보여줌 (감사 H1)
+  if (o?.deposit != null && o.deposit > 0) return [{ label: "전체", limit: sn(o.deposit) }];
+  return [{ label: "", limit: "" }];
 }
 
 // "850~1200" → [850,1200], "850" → 850, "" → null.
@@ -126,6 +146,7 @@ export default function ReviewForm({
   queueIndex,
   initialRows,
   sourceUrl,
+  canAutoExtract = true,
 }: {
   id: string;
   type: HousingTypeId;
@@ -136,6 +157,7 @@ export default function ReviewForm({
   queueIndex?: { current: number; total: number } | null;
   initialRows?: OverrideRow[] | null;
   sourceUrl?: string | null;
+  canAutoExtract?: boolean; // SH 인데 공고문 PDF 가 없으면 false — 자동 채움 비활성 (감사 M3)
 }) {
   const router = useRouter();
   const isSale = type === "sale";
@@ -152,9 +174,10 @@ export default function ReviewForm({
 
   // 단일값 모드 state
   const [supplyUnits, setSupplyUnits] = useState(String(current.supplyUnits ?? ""));
-  const [deposit, setDeposit] = useState(String(current.deposit ?? ""));
-  const [rent, setRent] = useState(String(current.rent ?? ""));
-  const [salePrice, setSalePrice] = useState(String(current.salePriceManwon ?? ""));
+  // 0 은 "미상" 의미(특히 SH 어댑트값) — "0" 프리필이 저장되면 보증금 0원으로 박제됨 (감사 M2).
+  const [deposit, setDeposit] = useState(current.deposit ? String(current.deposit) : "");
+  const [rent, setRent] = useState(current.rent ? String(current.rent) : "");
+  const [salePrice, setSalePrice] = useState(current.salePriceManwon ? String(current.salePriceManwon) : "");
   const [area, setArea] = useState(current.area ?? "");
 
   // 유형별 모델 state (3-3) — tiered/household/support + 전환보증금 + 당첨발표일
@@ -202,7 +225,7 @@ export default function ReviewForm({
       if (fields.conversion.rateDown != null) setConvDown(s(fields.conversion.rateDown));
     }
     if (fields.schedule?.winnerAt) setWinnerAt(fields.schedule.winnerAt);
-    if (fields.rows.length >= 2) {
+    if ((fields.rows?.length ?? 0) >= 2) {
       setByRows(true);
       setRowsList(fields.rows.map((r: any) => ({
         houseType: r.houseType ?? "",
@@ -212,7 +235,7 @@ export default function ReviewForm({
         rent: s(r.rent),
         salePriceManwon: s(r.salePriceManwon),
       })));
-    } else if (fields.rows.length === 1) {
+    } else if (fields.rows?.length === 1) {
       const r = fields.rows[0];
       setByRows(false);
       if (r.supplyUnits != null) setSupplyUnits(s(r.supplyUnits));
@@ -305,6 +328,7 @@ export default function ReviewForm({
 
     if (priceModel === "tiered-by-income") {
       payload.priceModel = "tiered-by-income";
+      payload.supplyUnits = num(supplyUnits); // 총 세대수 — 모델 유형도 정정 가능 (감사 H2)
       payload.tiers = tiers
         .filter((t) => t.houseType.trim() || t.incomes.some((i) => i.deposit.trim()))
         .map((t) => ({
@@ -317,6 +341,7 @@ export default function ReviewForm({
         }));
     } else if (priceModel === "by-household-size") {
       payload.priceModel = "by-household-size";
+      payload.supplyUnits = num(supplyUnits);
       payload.householdTypes = households
         .filter((h) => h.label.trim() || h.deposit.trim() || h.supplyUnits.trim())
         .map((h) => ({
@@ -328,6 +353,7 @@ export default function ReviewForm({
         }));
     } else if (priceModel === "support-limit") {
       payload.priceModel = "support-limit";
+      payload.supplyUnits = num(supplyUnits);
       payload.supportLimit = {
         byHousehold: supportRows
           .filter((r) => r.label.trim() || r.limit.trim())
@@ -420,11 +446,12 @@ export default function ReviewForm({
           <button
             type="button"
             onClick={() => runExtract()}
-            disabled={extracting || busy}
+            disabled={extracting || busy || !canAutoExtract}
             className="a-btn primary"
-            style={{ background: "var(--a-carrot)" }}
+            style={{ background: "var(--a-carrot)", opacity: canAutoExtract ? 1 : 0.5 }}
+            title={canAutoExtract ? undefined : "이 공고는 첨부 PDF 가 없어요 — 아래 PDF 업로드를 이용하세요"}
           >
-            {extracting ? "추출 중…" : "공고문에서 자동 채움"}
+            {extracting ? "추출 중…" : canAutoExtract ? "공고문에서 자동 채움" : "PDF 없음 — 업로드 필요"}
           </button>
           <label className="a-btn ghost" style={{ cursor: extracting ? "default" : "pointer", margin: 0 }}>
             PDF 업로드
@@ -481,14 +508,23 @@ export default function ReviewForm({
 
       {priceModel === "tiered-by-income" ? (
         <FormSection title="임대 조건 — 소득계층별" subtitle="영구·통합공공임대: 같은 평형도 소득계층(가/나군)별 임대료가 다름.">
+          <Field label="총 공급 세대수" hint="모델과 별개로 정정 가능 — 비우면 평형별 합계 사용">
+            <input value={supplyUnits} onChange={(e) => setSupplyUnits(e.target.value)} type="number" min="0" />
+          </Field>
           <TieredEditor tiers={tiers} onChange={setTiers} />
         </FormSection>
       ) : priceModel === "by-household-size" ? (
         <FormSection title="임대 조건 — 가구원수 유형별" subtitle="매입·집주인 임대: 가구원수 유형(1/2/3형) + 면적구간. 가격은 범위(850~1200) 가능.">
+          <Field label="총 공급 세대수" hint="모델과 별개로 정정 가능 — 비우면 유형별 합계 사용">
+            <input value={supplyUnits} onChange={(e) => setSupplyUnits(e.target.value)} type="number" min="0" />
+          </Field>
           <HouseholdEditor rows={households} onChange={setHouseholds} />
         </FormSection>
       ) : priceModel === "support-limit" ? (
         <FormSection title="전세 지원한도" subtitle="전세임대: 평형 없이 가구원수/지역별 전세 지원한도액.">
+          <Field label="총 공급 세대수" hint="전세임대는 한도표에 세대수가 없어 여기서 정정 (감사 H2)">
+            <input value={supplyUnits} onChange={(e) => setSupplyUnits(e.target.value)} type="number" min="0" />
+          </Field>
           <SupportEditor rows={supportRows} onChange={setSupportRows} />
         </FormSection>
       ) : (
