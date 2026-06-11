@@ -80,6 +80,15 @@ function matchComplex(title: string): YouthComplex | undefined {
 
 const manwon = (won: number | null) => (won ? Math.round(won / 10000) : 0);
 
+// 어드민 소스 대조용 (P3) — 공고 제목으로 매칭된 공식 디렉토리 값을 그대로 노출.
+// 검수자가 "공식 vs 현재값" 비교로 soco 오입력(보↔월 뒤바뀜 등)을 눈으로 잡는다.
+export function youthDirectoryInfo(title: string): (YouthComplex & { depositManwon: number; rentManwon: number }) | null {
+  const c = matchComplex(title);
+  if (!c) return null;
+  const { deposit, rent } = depositRent(c);
+  return { ...c, depositManwon: deposit, rentManwon: rent };
+}
+
 // soco 디렉토리에 보증금↔월세가 뒤바뀌어 입력된 단지가 있다(유벤투스 240: 보증금 25만/
 // 월세 6,100만). 보증금이 월세보다 작은 조합은 현실에 없으므로 스왑으로 교정.
 function depositRent(c: YouthComplex | undefined): { deposit: number; rent: number } {

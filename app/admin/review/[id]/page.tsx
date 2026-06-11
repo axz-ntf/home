@@ -10,6 +10,7 @@ import rawApiListings from "@/lib/listings-api.json";
 import shMapped from "@/lib/sh-mapped.json";
 import mappedRegional from "@/lib/mapped-regional.json";
 import MappedPointsEditor, { type MappedPoint } from "./mapped-points-editor";
+import { youthDirectoryInfo } from "@/lib/youth-adapter";
 
 interface RawApiListing {
   pblancId: string;
@@ -52,6 +53,25 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
       ? { file: "lh" as const, key: listing.pblancId as string, points: lhCfg.points }
       : null;
   const pinIdx = decodedId.match(/-m(\d+)$/)?.[1];
+
+  // 청년안심 소스 대조 (P3) — 공식 단지 디렉토리 vs 현재(override 반영) 값.
+  // soco 오입력(보↔월 뒤바뀜 등)·검수 드리프트를 비교로 잡는다. 불일치 행 하이라이트.
+  const dir = decodedId.startsWith("youth-") ? youthDirectoryInfo(listing.title) : null;
+  const dirRows = dir
+    ? ([
+        ["보증금(만)", dir.depositManwon || "—", listing.deposit || "—"],
+        ["월세(만)", dir.rentManwon || "—", listing.rent || "—"],
+        ["세대수", dir.totalUnits ?? "—", listing.totalUnits ?? "—"],
+        ["자치구", dir.gu || "—", listing.district || "—"],
+        ["주소", dir.address || "—", listing.address.replace(/^서울\s*/, "") || "—"],
+        ["역세권", dir.subway || "—", listing.transit || "—"],
+      ] as const).map(([label, official, current]) => ({
+        label,
+        official: String(official),
+        current: String(current),
+        mismatch: String(official) !== String(current),
+      }))
+    : null;
 
   // listing.complexes[0].rows 에서 RowDraft 초기값 derive (단위 변환: 원 → 만원)
   const complexRows = listing.complexes?.[0]?.rows ?? [];
@@ -110,6 +130,37 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
         <a href={listing.sourceUrl} target="_blank" rel="noreferrer" className="a-pdf-btn">
           {listing.agency} 공고 페이지 열기 <AIcon.External />
         </a>
+      )}
+
+      {dirRows && (
+        <section style={{ margin: "14px 0 4px", padding: "12px 14px", border: "1px solid var(--a-line)", borderRadius: 10, background: "var(--a-bg-2)" }}>
+          <div style={{ fontSize: 13, fontWeight: 800, marginBottom: 8 }}>
+            공식 단지 디렉토리 대조 <span style={{ fontWeight: 500, color: "var(--a-ink-3)", fontSize: 12 }}>(soco 단지정보 vs 현재 표시값 — 다르면 강조)</span>
+          </div>
+          <table style={{ borderCollapse: "collapse", fontSize: 12.5, width: "100%" }}>
+            <thead>
+              <tr style={{ color: "var(--a-ink-3)", textAlign: "left" }}>
+                <th style={{ padding: "2px 8px 2px 0" }}></th>
+                <th style={{ padding: "2px 8px" }}>디렉토리(공식)</th>
+                <th style={{ padding: "2px 8px" }}>현재값</th>
+              </tr>
+            </thead>
+            <tbody>
+              {dirRows.map((r) => (
+                <tr key={r.label} style={r.mismatch ? { background: "var(--a-yellow-low, #fff7e0)" } : undefined}>
+                  <td style={{ padding: "3px 8px 3px 0", fontWeight: 700, color: "var(--a-ink-2)", whiteSpace: "nowrap" }}>{r.label}</td>
+                  <td style={{ padding: "3px 8px" }}>{r.official}</td>
+                  <td style={{ padding: "3px 8px", fontWeight: r.mismatch ? 800 : 400 }}>{r.current}{r.mismatch ? " ⚠" : ""}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      )}
+      {decodedId.startsWith("youth-") && !dirRows && (
+        <p style={{ fontSize: 12.5, color: "var(--a-ink-3)", margin: "10px 0 0" }}>
+          공식 단지 디렉토리에 매칭되는 단지가 없습니다 (만실로 내려간 단지 추정) — 공고문 기준으로 검수하세요.
+        </p>
       )}
 
       <ReviewForm
