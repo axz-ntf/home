@@ -13,6 +13,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { recordSync } from "./sync-meta.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT_PATH = path.join(ROOT, "lib/listings-api.json");
@@ -560,6 +561,7 @@ async function main() {
   }
 
   fs.writeFileSync(OUT_PATH, JSON.stringify(listings, null, 2));
+  await recordSync("lh", listings.length);
   console.log(`\n저장: ${OUT_PATH}`);
   console.log(`  공급정보 추출: 성공 ${supplyOk} / 실패 ${supplyFail}`);
   console.log(`  단지 매칭 (API 1): ${complexMatched} / ${notices.length}`);

@@ -177,6 +177,14 @@ jobs:
           SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
         run: node scripts/extract-sh-mapped.mjs
 
+      # 검수 큐(미검수+이슈) 야간 일괄 추출 → 초안(extract-drafts.json) 커밋.
+      # 검수자는 아침에 "초안 불러오기"로 대기 없이 확인·저장 (어드민 P5).
+      - name: Phase 9 — 검수 큐 일괄 추출 초안
+        continue-on-error: true
+        env:
+          SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
+        run: npx tsx scripts/batch-extract.ts --limit 15
+
       - name: Save lh-complexes cache (즉시)
         if: always()
         uses: actions/cache/save@v4

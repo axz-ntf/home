@@ -1,0 +1,54 @@
+{
+  "lh-rental-2015122300020062": {
+    "at": "2026-06-11T08:51:51.857Z",
+    "type": "fifty",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "오산운암6단지 39",
+          "area": "39.99",
+          "supplyUnits": 30,
+          "deposit": 1528,
+          "rent": 19,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "오산운암6단지 39",
+            "limitManwon": 2300,
+            "maxDeposit": 3828,
+            "minRent": 8
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020076": {
+    "at": "2026-06-11T08:52:03.349Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "양산물금2 H-1BL 17형",
+          "area": "17",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": "2026.06.30",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  }
+}

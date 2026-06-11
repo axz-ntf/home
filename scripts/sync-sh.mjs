@@ -8,6 +8,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { recordSync } from "./sync-meta.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -111,6 +112,7 @@ async function main() {
   console.log("청약유형 분포:", byType);
 
   await fs.writeFile(OUT_PATH, JSON.stringify(notices, null, 2) + "\n", "utf8");
+  await recordSync("sh", notices.length);
   console.log(`저장: ${OUT_PATH}`);
 
   if (args.probePdf) {

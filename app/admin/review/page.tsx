@@ -3,6 +3,8 @@ import { OVERRIDES } from "@/lib/manual-overrides";
 import { effectiveStatus } from "@/lib/dday";
 import { getAdminUser } from "@/lib/admin-user";
 import Dashboard, { type DashboardRow } from "./dashboard";
+import syncMeta from "@/lib/_sync-meta.json";
+import extractDrafts from "@/lib/extract-drafts.json";
 
 // 어드민 대시보드 — 모든 공고를 한 곳에서 보고 상태/검수여부로 필터.
 // 데이터는 서버에서 빌드 시점에 로드 (LH_ADMIN_LISTINGS), 필터링은 클라이언트.
@@ -33,9 +35,10 @@ export default function AdminDashboardPage() {
       reviewed: l.id in OVERRIDES,
       issues: listingIssues(l),
       needsReview: listingIssues(l).length > 0,
+      hasDraft: l.id in extractDrafts,
       note: OVERRIDES[l.id]?._note ?? "",
     };
   });
 
-  return <Dashboard rows={rows} user={getAdminUser()} />;
+  return <Dashboard rows={rows} user={getAdminUser()} syncMeta={syncMeta} />;
 }

@@ -28,6 +28,7 @@ export interface DashboardRow {
   reviewed: boolean;
   issues: string[];
   needsReview: boolean;
+  hasDraft: boolean;
   note: string;
 }
 
@@ -56,7 +57,43 @@ function formatDday(deadline: string): { text: string; urgent: boolean } | null 
   return { text: `D-${days}`, urgent: days <= 7 };
 }
 
-export default function Dashboard({ rows, user }: { rows: DashboardRow[]; user?: { name: string; role: string; initial: string } }) {
+// 소스 헬스 (P4) — 마지막 sync 가 오래되면 데이터가 썩고 있다는 뜻. 24h 노랑 / 48h 빨강.
+interface SyncEntry { at: string; count: number }
+const SYNC_SOURCES: { key: string; label: string }[] = [
+  { key: "lh", label: "LH" },
+  { key: "sh", label: "SH" },
+  { key: "youth", label: "청년안심" },
+];
+
+function SyncHealthStrip({ meta }: { meta: Record<string, SyncEntry | undefined> }) {
+  // 마운트 시각 기준 신선도 — 렌더 중 Date.now() 호출(불순) 금지 룰 준수.
+  const [now] = useState(() => Date.now());
+  return (
+    <div style={{ display: "flex", gap: 14, flexWrap: "wrap", fontSize: 12, color: "var(--a-ink-2)", margin: "2px 0 10px" }}>
+      {SYNC_SOURCES.map(({ key, label }) => {
+        const e = meta[key];
+        if (!e) {
+          return (
+            <span key={key} style={{ color: "var(--a-ink-3)" }}>
+              <strong>{label}</strong> 기록 없음 — 다음 daily sync 부터
+            </span>
+          );
+        }
+        const hours = (now - new Date(e.at).getTime()) / 3600000;
+        const tone = hours >= 48 ? "var(--a-red)" : hours >= 24 ? "var(--a-yellow)" : "var(--a-green, #1a9c5b)";
+        const ago = hours < 1 ? "방금" : hours < 24 ? `${Math.floor(hours)}시간 전` : `${Math.floor(hours / 24)}일 전`;
+        return (
+          <span key={key}>
+            <span style={{ display: "inline-block", width: 7, height: 7, borderRadius: 99, background: tone, marginRight: 5, verticalAlign: "middle" }} />
+            <strong>{label}</strong> {ago} · {e.count}건
+          </span>
+        );
+      })}
+    </div>
+  );
+}
+
+export default function Dashboard({ rows, user, syncMeta }: { rows: DashboardRow[]; user?: { name: string; role: string; initial: string }; syncMeta?: Record<string, SyncEntry | undefined> }) {
   const router = useRouter();
   const params = useSearchParams();
   const urlFilter = (params.get("filter") || "all") as FilterKey;
@@ -166,6 +203,8 @@ export default function Dashboard({ rows, user }: { rows: DashboardRow[]; user?:
       user={user}
     >
       <SearchInTopbarSync onChange={setQuery} />
+
+      {syncMeta && <SyncHealthStrip meta={syncMeta} />}
 
       <section className="a-kpi-row">
         <KpiCard label="전체 공고" value={stats.total} sub={`모집중 ${stats.open}건 · 마감임박 ${stats.closing}건`} />
@@ -316,6 +355,7 @@ export default function Dashboard({ rows, user }: { rows: DashboardRow[]; user?:
                         <span className="a-review-chip done">✓ 검수</span>
                       ) : r.needsReview ? (
                         <span className="a-review-chip need" title={`이슈: ${r.issues.join(", ")}`}>
+                          {r.hasDraft ? "🌙 " : ""}
                           {r.issues.slice(0, 2).join("·")}
                           {r.issues.length > 2 ? ` +${r.issues.length - 2}` : ""}
                         </span>

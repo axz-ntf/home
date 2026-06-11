@@ -11,6 +11,7 @@ import shMapped from "@/lib/sh-mapped.json";
 import mappedRegional from "@/lib/mapped-regional.json";
 import MappedPointsEditor, { type MappedPoint } from "./mapped-points-editor";
 import { youthDirectoryInfo } from "@/lib/youth-adapter";
+import extractDrafts from "@/lib/extract-drafts.json";
 
 interface RawApiListing {
   pblancId: string;
@@ -194,6 +195,7 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
         initialRows={initialRows.length > 0 ? initialRows : null}
         sourceUrl={listing.sourceUrl ?? null}
         canAutoExtract={!(listing.id.startsWith("sh-") && !listing.noticePdfUrl)}
+        draft={(extractDrafts as Record<string, { at: string; fields: unknown }>)[decodedId] ?? null}
       />
 
       {mapped && (

@@ -9,6 +9,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { recordSync } from "./sync-meta.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -177,6 +178,7 @@ async function main() {
   const complexes = await fetchComplexes();
   await fs.writeFile(COMPLEX_PATH, JSON.stringify(complexes, null, 2) + "\n", "utf8");
   console.log(`단지 디렉토리 ${complexes.length}건 저장: ${COMPLEX_PATH}`);
+  await recordSync("youth", notices.length);
 
   if (args.probePdf) {
     const t = notices.find((n) => n.pdfUrl);

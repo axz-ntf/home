@@ -147,6 +147,7 @@ export default function ReviewForm({
   initialRows,
   sourceUrl,
   canAutoExtract = true,
+  draft = null,
 }: {
   id: string;
   type: HousingTypeId;
@@ -158,6 +159,7 @@ export default function ReviewForm({
   initialRows?: OverrideRow[] | null;
   sourceUrl?: string | null;
   canAutoExtract?: boolean; // SH 인데 공고문 PDF 가 없으면 false — 자동 채움 비활성 (감사 M3)
+  draft?: { at: string; fields: unknown } | null; // 야간 일괄 추출 초안 (P5) — 불러오기만, 자동 적용 안함
 }) {
   const router = useRouter();
   const isSale = type === "sale";
@@ -442,6 +444,24 @@ export default function ReviewForm({
       )}
 
       <FormSection title="AI 자동 채움" subtitle="Solar 가 공고문을 읽어 금액·세대수·평형을 채웁니다. 값은 반드시 확인 후 저장하세요.">
+        {draft && (
+          <div className="a-msg" style={{ marginBottom: 10, display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+            <span>
+              🌙 야간 일괄 추출 초안이 있습니다 ({draft.at.slice(0, 10)} {draft.at.slice(11, 16)} UTC) — 90초 대기 없이 바로 채울 수 있어요.
+            </span>
+            <button
+              type="button"
+              className="a-btn primary"
+              disabled={extracting || busy}
+              onClick={() => {
+                applyExtracted(draft.fields);
+                setExtractMsg({ kind: "success", text: "초안을 불러왔습니다 — 값 확인 후 저장하세요." });
+              }}
+            >
+              초안 불러오기
+            </button>
+          </div>
+        )}
         <div style={{ display: "flex", flexWrap: "wrap", gap: 10, alignItems: "center" }}>
           <button
             type="button"
