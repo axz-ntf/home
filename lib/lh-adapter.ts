@@ -7,6 +7,18 @@ import mappedRegional from "./mapped-regional.json";
 import { applyOverride } from "./manual-overrides";
 import { effectiveStatus } from "./dday";
 import { SH_ADMIN_LISTINGS, SH_PUBLIC_LISTINGS } from "./sh-adapter";
+import noticeTextMeta from "./notice-texts/_meta.json";
+
+// 공고문 PDF 직접 열기(M2) — enrich 가 기록한 pdfFileid 로 LH 파일서버 URL 구성.
+// 키는 base id(lh-rental-{panId}) — listing id 의 -c0 등 suffix 제거 후 조회.
+const PDF_META: Record<string, { pdfFileid?: string }> =
+  (noticeTextMeta as { entries?: Record<string, { pdfFileid?: string }> }).entries ?? {};
+function noticePdfUrlFor(id: string): string | undefined {
+  const m = id.match(/^lh-(rental|sale)-(\d+)/);
+  const base = m ? `lh-${m[1]}-${m[2]}` : id;
+  const fileid = PDF_META[id]?.pdfFileid ?? PDF_META[base]?.pdfFileid;
+  return fileid ? `https://apply.lh.or.kr/lhapply/lhFile.do?fileid=${fileid}` : undefined;
+}
 
 // lh-notices-all 에는 listings-api 에 없는 raw 상태 필드 (noticeStatus, progressStatus) 가 있음.
 // pblancId 로 lookup 만들어 매칭. 빌드/서버 초기화 시 1회만 실행.
@@ -204,6 +216,7 @@ function adaptApi(r: ApiListing, loose = false): Listing | null {
     complexes: Array.isArray(r.complexes) ? (r.complexes as Listing["complexes"]) : undefined,
     pblancNm: r.noticeTitle,
     sourceUrl: r.sourceUrl,
+    noticePdfUrl: noticePdfUrlFor(r.id),
     coverPhotoUrl: resolveCoverPhoto(r.coverPhotoLocal, r.coverPhotoUrl),
   };
 }

@@ -83,6 +83,7 @@ export const SH_ADMIN_LISTINGS: Listing[] = (shNotices as ShNotice[]).map((n, i)
   thumbSeed: 10000 + i,
   suplyTyNm: n.supplyType,
   sourceUrl: n.detailUrl ?? "",
+  noticePdfUrl: n.pdfUrl ?? undefined,
 }));
 
 // 공개(지도) 노출용 — 좌표가 있는(제목서 지오코딩됨) SH. 마감 포함(개선안 1차: 전체 표시

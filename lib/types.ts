@@ -63,6 +63,7 @@ export interface Listing {
   suplyTyNm?: string;
   pblancNm?: string;
   sourceUrl?: string;
+  noticePdfUrl?: string; // 공고문 PDF 직접 열기 (개선안1차 M2) — LH는 _meta fileid, SH는 innoFD
   pcUrl?: string;
   mobileUrl?: string;
   photos?: ListingPhoto[];

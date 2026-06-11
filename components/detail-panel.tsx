@@ -374,14 +374,15 @@ export function DetailPanel({
           >
             <HeartIcon size={20} filled={liked} />
           </button>
+          {/* M2: PDF 가 있으면 공고문을 바로 연다(브라우저 PDF 뷰어). 없으면 기존 공고 페이지 링크. */}
           <a
             className="secondary"
-            href={item.sourceUrl ?? infoUrl}
+            href={item.noticePdfUrl ?? item.sourceUrl ?? infoUrl}
             target="_blank"
             rel="noreferrer"
             style={{ textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center" }}
           >
-            공고문 원문 보기
+            {item.noticePdfUrl ? "공고문 PDF 열기" : "공고문 원문 보기"}
           </a>
           {applyButton.active ? (
             <a
