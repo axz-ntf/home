@@ -82,7 +82,7 @@ function priceText(item: Listing) {
   return <span style={{ color: "var(--seed-semantic-color-ink-text-low)" }}>임대조건 공고문 확인</span>;
 }
 
-function ListingCard({
+export function ListingCard({
   item,
   hovered,
   selected,

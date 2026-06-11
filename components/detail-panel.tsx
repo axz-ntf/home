@@ -11,6 +11,7 @@ import { CloseIcon, HeartIcon } from "./icons";
 import { EligibilityDetail } from "./eligibility-detail";
 import { formatManwon } from "@/lib/format";
 import { nearestStation } from "@/lib/subway";
+import { useSavedListings } from "@/lib/use-saved";
 import { TypeIntro, TypePrice, accentVars } from "./detail-type";
 import { StructuredPrice } from "./structured-price";
 
@@ -261,8 +262,10 @@ export function DetailPanel({
   open: boolean;
   onClose: () => void;
 }) {
-  const [liked, setLiked] = useState(false);
+  // N1: 하트 = 실제 저장(localStorage). 저장 목록은 /saved 에서 모아보기.
+  const { isSaved, toggle } = useSavedListings();
   if (!item) return <div className={`detail-panel ${open ? "open" : ""}`} />;
+  const liked = isSaved(item.id);
 
   const svg = thumbnailSVG(item.thumbSeed, item.type);
   const effStatus = effectiveStatus(item.status, item.deadline, item.beginDate);
@@ -429,7 +432,7 @@ export function DetailPanel({
         <div className="detail-actions">
           <button
             className={`icon-btn ${liked ? "active" : ""}`}
-            onClick={() => setLiked(!liked)}
+            onClick={() => toggle(item.id)}
             aria-label="관심 목록"
           >
             <HeartIcon size={20} filled={liked} />

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import type { FilterKey, Filters } from "@/lib/types";
 import { ChevronIcon } from "./icons";
 
@@ -142,6 +143,10 @@ export function FilterBar({
             </div>
           );
         })}
+        {/* N1: 저장한 공고 모아보기 */}
+        <Link href="/saved" className="filter-chip" style={{ textDecoration: "none" }}>
+          ♥ 저장
+        </Link>
       </div>
     </div>
   );
