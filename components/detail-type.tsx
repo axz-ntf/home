@@ -33,14 +33,16 @@ export function TypeIntro({ item }: { item: Listing }) {
         {name}
       </div>
       <div className="type-intro-tagline">{meta.tagline}</div>
-      <dl className="type-intro-metrics">
-        {meta.metrics.map((m) => (
-          <div key={m.label} className="type-metric">
-            <dt className="type-metric-label">{m.label}</dt>
-            <dd className="type-metric-value">{m.value}</dd>
-          </div>
-        ))}
-      </dl>
+      {meta.metrics.length > 0 && (
+        <dl className="type-intro-metrics">
+          {meta.metrics.map((m) => (
+            <div key={m.label} className="type-metric">
+              <dt className="type-metric-label">{m.label}</dt>
+              <dd className="type-metric-value">{m.value}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
     </section>
   );
 }
