@@ -200,9 +200,22 @@ function ScheduleTimeline({ item }: { item: Listing }) {
   // 다음 단계 = 아직 안 지난 첫 단계
   const nextIdx = steps.findIndex((s) => !isPast(s.date));
 
+  // "접수 마감" 단계가 강조되면 모집중인데도 마감처럼 읽힌다 —
+  // 제목 옆 현재 상태 칩 + 마감 단계에 D-day 를 붙여 진행 상태를 명시.
+  const status = effectiveStatus(item.status, item.deadline, item.beginDate);
+  const statusLabel = STATUS_LABELS[status];
+  const dday = status !== "closed" ? calcDday(item.deadline) : "";
+
   return (
     <section className="detail-section">
-      <h3>모집 일정</h3>
+      <h3 style={{ display: "flex", alignItems: "center", gap: 8 }}>
+        모집 일정
+        <span style={{
+          fontSize: 11, fontWeight: 700, lineHeight: 1,
+          padding: "4px 8px", borderRadius: 999,
+          color: "white", background: statusLabel.color,
+        }}>{statusLabel.text}</span>
+      </h3>
       <ol style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 0 }}>
         {steps.map((s, i) => {
           const past = isPast(s.date);
@@ -218,6 +231,9 @@ function ScheduleTimeline({ item }: { item: Listing }) {
               }}>{i + 1}</span>
               <span style={{ fontSize: 13, fontWeight: isNext ? 700 : 500, color: past ? "var(--seed-semantic-color-ink-text-low)" : "var(--seed-semantic-color-ink-text)" }}>
                 {s.label}
+                {isNext && s.label === "접수 마감" && dday && (
+                  <span style={{ marginLeft: 6, fontSize: 11, fontWeight: 800, color: "var(--seed-semantic-color-primary)" }}>{dday}</span>
+                )}
               </span>
               <span style={{ marginLeft: "auto", fontSize: 13, fontVariantNumeric: "tabular-nums", fontWeight: isNext ? 700 : 500, color: past ? "var(--seed-semantic-color-ink-text-low)" : "var(--seed-semantic-color-ink-text)" }}>
                 {s.date}
