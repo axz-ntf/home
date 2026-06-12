@@ -36,6 +36,13 @@ const TYPE_LABEL: Record<string, string> = {
   buy: "매입임대", jeonse: "전세임대", fifty: "50년임대", sale: "분양",
 };
 
+// 값이 문자열이면 같은 공고 페이지를 공유하는 대표 매물 id 별칭 (분리 핀)
+function resolveFloorplanSpec(id: string): FloorPlanSpec | null {
+  const specs = floorplanSpecs as Record<string, FloorPlanSpec | string>;
+  const raw = specs[id];
+  return (typeof raw === "string" ? (specs[raw] as FloorPlanSpec | undefined) : raw) ?? null;
+}
+
 export default async function ReviewDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const decodedId = decodeURIComponent(id);
@@ -138,7 +145,7 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
 
       <FloorplanEditor
         listingId={decodedId}
-        initialSpec={(floorplanSpecs as Record<string, FloorPlanSpec>)[decodedId] ?? null}
+        initialSpec={resolveFloorplanSpec(decodedId)}
       />
 
       {dirRows && (

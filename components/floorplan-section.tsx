@@ -18,7 +18,10 @@ const FloorPlan3D = dynamic(() => import("./floor-plan-3d"), {
 });
 
 export function FloorplanSection({ listingId }: { listingId: string }) {
-  const spec = (floorplanSpecs as Record<string, FloorPlanSpec>)[listingId];
+  // 값이 문자열이면 같은 공고 페이지를 공유하는 대표 매물 id 별칭 (분리 핀)
+  const specs = floorplanSpecs as Record<string, FloorPlanSpec | string>;
+  const raw = specs[listingId];
+  const spec = typeof raw === "string" ? (specs[raw] as FloorPlanSpec | undefined) : raw;
   const [open, setOpen] = useState(false);
   if (!spec) return null;
 
