@@ -148,6 +148,26 @@ function extractEligibilityRegion(md) {
   return region.length > 20000 ? region.slice(0, 20000) : region;
 }
 
+// 단위 가드 — 만원 지시에도 LH 원 단위 표를 천원 단위로 출력하는 사례가 있어 보정.
+// 소득표: 만원 단위 최솟값 상한(1인 150% ≈ 690만) < 천원 단위 최솟값 하한(1인 50% ≈ 1,750)
+// 이라 표 최솟값 1500 이상이면 천원 단위로 판정. 자산은 LH 한도 범위 기준.
+function normalizeUnits(obj) {
+  let fixed = false;
+  for (const tier of obj.tiers ?? []) {
+    const table = tier.income?.byHousehold;
+    if (table) {
+      const vals = Object.values(table).filter((v) => v != null);
+      if (vals.length && Math.min(...vals) >= 1500) {
+        for (const k of Object.keys(table)) if (table[k] != null) table[k] = Math.round(table[k] / 10);
+        fixed = true;
+      }
+    }
+    if (tier.asset?.total != null && tier.asset.total > 100000) { tier.asset.total = Math.round(tier.asset.total / 10); fixed = true; }
+    if (tier.asset?.car != null && tier.asset.car > 10000) { tier.asset.car = Math.round(tier.asset.car / 10); fixed = true; }
+  }
+  return fixed;
+}
+
 async function extractOne(id) {
   const md = await loadMarkdown(id);
   const eligibilityRegion = extractEligibilityRegion(md);
@@ -171,7 +191,8 @@ async function extractOne(id) {
   if (!validated.success) {
     throw new Error(`schema 검증 실패: ${validated.error.issues.map((i) => `${i.path.join(".")}=${i.message}`).slice(0, 3).join("; ")}`);
   }
-  return { object: validated.data, usage: result.usage };
+  const unitFixed = normalizeUnits(validated.data);
+  return { object: validated.data, usage: result.usage, unitFixed };
 }
 
 function parseArgs() {
@@ -215,9 +236,9 @@ async function main() {
       const id = files[i];
       const tStart = Date.now();
       try {
-        const { object, usage } = await extractOne(id);
+        const { object, usage, unitFixed } = await extractOne(id);
         const tiers = object.tiers?.length ?? 0;
-        console.log(`[${i + 1}/${total}] w${wid} ${id}  tiers=${tiers}  priority=${object.priority?.length ?? 0}  (${Date.now() - tStart}ms)`);
+        console.log(`[${i + 1}/${total}] w${wid} ${id}  tiers=${tiers}  priority=${object.priority?.length ?? 0}${unitFixed ? "  (단위보정됨)" : ""}  (${Date.now() - tStart}ms)`);
         await fs.writeFile(path.join(OUT_DIR, `${id}.json`), JSON.stringify(object, null, 2) + "\n", "utf8");
         totalIn += usage?.inputTokens ?? 0;
         totalOut += usage?.outputTokens ?? 0;
