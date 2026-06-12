@@ -13,96 +13,11 @@ import { formatManwon } from "@/lib/format";
 import { nearestStation } from "@/lib/subway";
 import { useSavedListings } from "@/lib/use-saved";
 import { TypeIntro, accentVars } from "./detail-type";
-import { StructuredPrice } from "./structured-price";
 import { summarizePrice, type Range } from "@/lib/price-summary";
 import { FloorplanSection } from "./floorplan-section";
 
-// 1평 ≈ 3.3058㎡ — 부동산 공인 환산
-const PYEONG_PER_M2 = 1 / 3.3058;
-type AreaUnit = "m2" | "pyeong";
-
-function formatAreaCell(m2: number, unit: AreaUnit): string {
-  if (!Number.isFinite(m2) || m2 <= 0) return "-";
-  if (unit === "pyeong") {
-    const py = m2 * PYEONG_PER_M2;
-    return py >= 100 ? `${Math.round(py)}평` : `${py.toFixed(1)}평`;
-  }
-  // ㎡ 표시: 정수면 그대로, 소수면 .00 절단 (74.96 → 74.96, 75.00 → 75)
-  return Number.isInteger(m2) ? `${m2}㎡` : `${m2}㎡`;
-}
-
-// 단지·평형별 표 — "상세 임대조건" 접기 내부에서만 사용 (1차 노출은 RentSummarySection).
-function ListingComplexes({ item }: { item: Listing }) {
-  const [areaUnit, setAreaUnit] = useState<AreaUnit>("m2");
-  if (!item.complexes || !item.complexes.length) return null;
-  function fmtPrice(v: number | null): string {
-    if (v == null) return "공고문 확인";
-    const m = Math.round(v / 10000);
-    return formatManwon(m) || `${m.toLocaleString()}만원`;
-  }
-  return (
-    <div>
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", marginBottom: 8 }}>
-        <div className="area-unit-toggle" role="group" aria-label="면적 단위">
-          <button
-            type="button"
-            className={`area-unit-toggle-btn ${areaUnit === "m2" ? "on" : ""}`}
-            onClick={() => setAreaUnit("m2")}
-            aria-pressed={areaUnit === "m2"}
-          >
-            ㎡
-          </button>
-          <button
-            type="button"
-            className={`area-unit-toggle-btn ${areaUnit === "pyeong" ? "on" : ""}`}
-            onClick={() => setAreaUnit("pyeong")}
-            aria-pressed={areaUnit === "pyeong"}
-          >
-            평
-          </button>
-        </div>
-      </div>
-      {item.complexes.map((c, ci) => (
-        <div key={ci} style={{ marginTop: ci === 0 ? 0 : 16 }}>
-          {c.name && (
-            <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 6 }}>{c.name}</div>
-          )}
-          <div style={{ overflowX: "auto" }}>
-            <table style={{ width: "100%", fontSize: 12, borderCollapse: "collapse" }}>
-              <thead>
-                <tr style={{ borderBottom: "1px solid var(--seed-scale-color-gray-200)", color: "var(--seed-semantic-color-ink-text-low)" }}>
-                  <th style={{ textAlign: "left", padding: "6px 8px" }}>
-                    전용면적 ({areaUnit === "pyeong" ? "평" : "㎡"})
-                  </th>
-                  <th style={{ textAlign: "right", padding: "6px 8px" }}>세대수</th>
-                  <th style={{ textAlign: "right", padding: "6px 8px" }}>보증금</th>
-                  <th style={{ textAlign: "right", padding: "6px 8px" }}>월세</th>
-                </tr>
-              </thead>
-              <tbody>
-                {c.rows.map((r, ri) => {
-                  const m2 = Number(r.houseType);
-                  const units = r.supplyTotal ?? r.supplyThisRound ?? null;
-                  return (
-                    <tr key={ri} style={{ borderBottom: "1px solid var(--seed-scale-color-gray-100)" }}>
-                      <td style={{ padding: "6px 8px" }}>{formatAreaCell(m2, areaUnit)}</td>
-                      <td style={{ textAlign: "right", padding: "6px 8px" }}>{units ?? "-"}</td>
-                      <td style={{ textAlign: "right", padding: "6px 8px" }}>{fmtPrice(r.deposit)}</td>
-                      <td style={{ textAlign: "right", padding: "6px 8px" }}>{fmtPrice(r.rent)}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 // 임대 조건 요약 — 모든 매물 공통 골격 (스펙: 범위로 표시, 정보 없으면 행 자체 미표시).
-// 가격 모델이 무엇이든 summarizePrice 가 범위로 정규화. 상세 표는 접기 안으로.
+// 가격 모델이 무엇이든 summarizePrice 가 범위로 정규화.
 function RentSummarySection({ item }: { item: Listing }) {
   const s = summarizePrice(item);
   const fmtRange = (r: Range) =>
@@ -125,10 +40,6 @@ function RentSummarySection({ item }: { item: Listing }) {
   if (s.areaM2) cells.push({ label: "전용면적", value: fmtAreaRange(s.areaM2), full: true });
 
   const isRanged = [s.deposit, s.rent, s.supportLimit].some((r) => r && r.min < r.max);
-  const hasStructured =
-    item.priceDetail && item.priceDetail.model !== "rows-by-area" &&
-    item.priceDetail.model !== "per-unit-sale" && item.priceDetail.model !== "deposit-only";
-  const hasComplexRows = (item.complexes ?? []).some((c) => (c.rows ?? []).length > 0);
 
   return (
     <section className="detail-section">
@@ -166,14 +77,6 @@ function RentSummarySection({ item }: { item: Listing }) {
           보증금·월세는{" "}
           <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="detail-confirm-link">공고문에서 확인 →</a>
         </p>
-      )}
-      {(hasStructured || hasComplexRows) && (
-        <details className="eli-more" style={{ marginTop: 10 }}>
-          <summary>단지·평형별 상세 보기</summary>
-          <div style={{ marginTop: 10 }}>
-            {hasStructured ? <StructuredPrice detail={item.priceDetail!} /> : <ListingComplexes item={item} />}
-          </div>
-        </details>
       )}
     </section>
   );

@@ -75,10 +75,10 @@ export default function NationwideList({ rows }: { rows: NationwideRow[] }) {
             ← 지도로 돌아가기
           </Link>
           <h1 style={{ margin: 0, fontSize: 23, fontWeight: 800, letterSpacing: "-0.03em" }}>
-            전국 모집
+            전체 공고
           </h1>
           <p style={{ margin: "6px 0 0", fontSize: 13.5, color: "var(--seed-scale-color-gray-600)", lineHeight: 1.5 }}>
-            여러 지역에서 동시 모집하는 광역 공고예요. 매입임대·전세임대·든든전세 등 지도에 표시되지 않는 매물입니다.
+            모집 중인 공공임대·분양 공고를 최근 공고일 순으로 모았어요. 지도에 표시되는 단지부터 전국 단위 광역 공고까지 한눈에.
           </p>
         </header>
 

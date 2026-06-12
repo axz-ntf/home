@@ -1,15 +1,19 @@
 import { AppShell } from "@/components/app-shell";
 import { LH_DISTRICTS, LH_LISTINGS, LH_REGIONAL_LISTINGS } from "@/lib/lh-adapter";
 import { effectiveStatus } from "@/lib/dday";
+import type { Listing } from "@/lib/types";
 import "./m/tokens.css";
 import "./m/mobile.css";
 
 export default function Page() {
-  // 전국 모집 (광역) 활성 매물 수 — topbar 버튼 배지용.
-  const regionalCount = LH_REGIONAL_LISTINGS.filter((l) => {
-    const s = effectiveStatus(l.status, l.deadline ?? "", l.beginDate);
-    return s === "open" || s === "upcoming" || s === "closing";
-  }).length;
+  // "전체 공고" 버튼 배지 — 활성(모집중/예정/마감임박) 공고 수, 공고 단위(분리 핀 합산).
+  const noticeKey = (l: Listing) => l.pblancId || l.id.replace(/-m\d+$/, "");
+  const seen = new Set<string>();
+  for (const l of [...LH_LISTINGS, ...LH_REGIONAL_LISTINGS]) {
+    if (effectiveStatus(l.status, l.deadline ?? "", l.beginDate) === "closed") continue;
+    seen.add(noticeKey(l));
+  }
+  const regionalCount = seen.size;
 
   return <AppShell listings={LH_LISTINGS} districts={LH_DISTRICTS} regionalCount={regionalCount} />;
 }

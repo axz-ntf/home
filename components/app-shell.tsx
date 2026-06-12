@@ -240,7 +240,7 @@ export function AppShell({
               whiteSpace: "nowrap", letterSpacing: "-0.02em",
             }}
           >
-            🌐 전국 모집
+            🌐 전체 공고
             <span style={{
               background: "var(--seed-scale-color-carrot-500)", color: "#fff",
               borderRadius: 999, padding: "1px 7px", fontSize: 11, fontWeight: 800,
