@@ -69,13 +69,15 @@ function pinLabel(p: Listing): string {
   }
 }
 
-function makePinEl(p: Listing): HTMLElement {
+function makePinEl(p: Listing, memberCount = 1): HTMLElement {
   const el = document.createElement("div");
   el.className = "map-pin-wrap";
   el.dataset.listingId = p.id;
   // 마감 공고도 지도에 표시하되 회색으로 구분 (개선안 1차).
   const isClosed = effectiveStatus(p.status, p.deadline, p.beginDate) === "closed";
-  el.innerHTML = `<div class="${pinClass(p.type)}${isClosed ? " is-closed" : ""}">${pinLabel(p)}</div>`;
+  // 같은 좌표에 N개가 묶이면 배지로 표시 — 헤더 매물 수와 지도가 어긋나 보이지 않게.
+  const badge = memberCount > 1 ? `<span class="map-pin-count">${memberCount}</span>` : "";
+  el.innerHTML = `<div class="${pinClass(p.type)}${isClosed ? " is-closed" : ""}">${pinLabel(p)}</div>${badge}`;
   return el;
 }
 
@@ -105,7 +107,12 @@ function gridStepForZoom(zoom: number): number {
 // 든든전세처럼 한 단지 N세대가 호별 매물로 분리돼 같은 좌표에 핀 N개로 쌓이는 걸 방지.
 // 리스트/상세 데이터(전체 매물)는 그대로 — 지도 렌더에서만 압축한다.
 // repOf: 멤버 매물 id → 대표 매물 id (호버/선택 하이라이트를 깨지지 않게 매핑).
-function groupPinsByLocation(pins: Listing[]): { mapPins: Listing[]; repOf: Map<string, string> } {
+// membersOf: 대표 매물 id → 같은 좌표에 묶인 매물 전체 (배지 수·스택 팝오버용).
+function groupPinsByLocation(pins: Listing[]): {
+  mapPins: Listing[];
+  repOf: Map<string, string>;
+  membersOf: Map<string, Listing[]>;
+} {
   const buckets = new Map<string, Listing[]>();
   for (const p of pins) {
     const key = `${p.lat.toFixed(6)}|${p.lng.toFixed(6)}`;
@@ -115,12 +122,14 @@ function groupPinsByLocation(pins: Listing[]): { mapPins: Listing[]; repOf: Map<
   }
   const mapPins: Listing[] = [];
   const repOf = new Map<string, string>();
+  const membersOf = new Map<string, Listing[]>();
   for (const group of buckets.values()) {
     const rep = group[0];
     mapPins.push(rep);
+    membersOf.set(rep.id, group);
     for (const p of group) repOf.set(p.id, rep.id);
   }
-  return { mapPins, repOf };
+  return { mapPins, repOf, membersOf };
 }
 
 function clusterPins(pins: Listing[], zoom: number): Array<
@@ -272,7 +281,9 @@ export function NaverMapView({
   }, [ready, showDistrictMarkers, districtCounts, districts, onDistrictClick]);
 
   // 같은 좌표 매물은 지도에서 대표 1개로 — 호별 분리 매물이 한 점에 쌓이는 것 방지.
-  const { mapPins, repOf } = useMemo(() => groupPinsByLocation(pins), [pins]);
+  const { mapPins, repOf, membersOf } = useMemo(() => groupPinsByLocation(pins), [pins]);
+  // 같은 좌표에 여러 매물이 묶인 핀 클릭 시 띄울 목록.
+  const [stack, setStack] = useState<Listing[] | null>(null);
 
   // Individual listing pin markers + clustering
   useEffect(() => {
@@ -293,10 +304,12 @@ export function NaverMapView({
     for (const g of groups) {
       if (g.kind === "single") {
         const p = g.pin;
-        const el = makePinEl(p);
+        const members = membersOf.get(p.id) ?? [p];
+        const el = makePinEl(p, members.length);
         el.addEventListener("mouseenter", () => onPinHover(p.id));
         el.addEventListener("mouseleave", () => onPinHover(null));
-        el.addEventListener("click", () => onPinClick(p.id));
+        // 묶인 매물이 여럿이면 목록을 띄워 고르게, 하나면 바로 상세.
+        el.addEventListener("click", () => (members.length > 1 ? setStack(members) : onPinClick(p.id)));
         const marker = new naver.maps.Marker({
           position: new naver.maps.LatLng(p.lat, p.lng),
           map,
@@ -306,7 +319,9 @@ export function NaverMapView({
         });
         pinMarkersRef.current.set(p.id, { marker, el });
       } else {
-        const el = makeClusterEl(g.pins.length);
+        // 클러스터 숫자는 묶인 매물 총수 — 헤더 매물 수와 합이 맞게.
+        const total = g.pins.reduce((s, p) => s + (membersOf.get(p.id)?.length ?? 1), 0);
+        const el = makeClusterEl(total);
         const lat = g.lat;
         const lng = g.lng;
         el.addEventListener("click", () => {
@@ -322,7 +337,7 @@ export function NaverMapView({
         clusterMarkersRef.current.push(marker);
       }
     }
-  }, [ready, activeDistrict, mapPins, zoom, onPinHover, onPinClick]);
+  }, [ready, activeDistrict, mapPins, membersOf, zoom, onPinHover, onPinClick]);
 
   // Sync hovered/selected visual state onto existing pin elements.
   // 멤버 매물 id 는 대표 핀 id 로 변환 — 묶인 세대 중 하나를 가리켜도 대표 핀이 하이라이트됨.
@@ -412,6 +427,32 @@ export function NaverMapView({
     <div className="map-wrap">
       <div ref={containerRef} style={{ position: "absolute", inset: 0 }} />
       {overlay && <div className="map-overlay-top">{overlay}</div>}
+
+      {/* 같은 위치 매물 N개 — 핀 클릭 시 목록에서 선택 */}
+      {stack && stack.length > 1 && (
+        <>
+          <div className="map-stack-scrim" onClick={() => setStack(null)} />
+          <div className="map-stack" role="dialog" aria-label="같은 위치 공고 목록">
+            <div className="map-stack-head">
+              <span>이 위치 공고 <em>{stack.length}</em>개</span>
+              <button type="button" onClick={() => setStack(null)} aria-label="닫기">✕</button>
+            </div>
+            <div className="map-stack-list">
+              {stack.map((p) => (
+                <button
+                  key={p.id}
+                  type="button"
+                  className="map-stack-row"
+                  onClick={() => { onPinClick(p.id); setStack(null); }}
+                >
+                  <span className="map-stack-type">{pinLabel(p)}</span>
+                  <span className="map-stack-title">{p.complexName || p.title}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </>
+      )}
 
       {loadError && (
         <div
