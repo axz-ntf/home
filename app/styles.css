@@ -490,7 +490,7 @@ input, select { font-family: inherit; }
   top: 16px;
   left: 16px;
   right: 16px;
-  z-index: 4;
+  z-index: 6; /* .map-research(5) 위 — 필터 드롭다운이 "다시 검색" 버튼에 가리지 않게 */
   pointer-events: none;
   display: flex;
   justify-content: flex-start;
