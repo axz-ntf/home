@@ -48,13 +48,11 @@ function formatDday(deadline: string): string {
 export default function NationwideList({ rows }: { rows: NationwideRow[] }) {
   const [type, setType] = useState<string>("all");
 
-  const types = useMemo(() => {
-    return Array.from(new Set(rows.map((r) => r.type)));
-  }, [rows]);
-
-  const filtered = useMemo(() => {
-    return type === "all" ? rows : rows.filter((r) => r.type === type);
-  }, [rows, type]);
+  const types = useMemo(() => Array.from(new Set(rows.map((r) => r.type))), [rows]);
+  const filtered = useMemo(
+    () => (type === "all" ? rows : rows.filter((r) => r.type === type)),
+    [rows, type],
+  );
 
   return (
     <main style={{
@@ -66,9 +64,9 @@ export default function NationwideList({ rows }: { rows: NationwideRow[] }) {
       fontFamily: "'Pretendard Variable', Pretendard, -apple-system, sans-serif",
       color: "var(--seed-scale-color-gray-900)",
     }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "20px 16px 80px" }}>
+      <div style={{ maxWidth: 920, margin: "0 auto", padding: "20px 16px 80px" }}>
         {/* 헤더 */}
-        <header style={{ marginBottom: 20 }}>
+        <header style={{ marginBottom: 18 }}>
           <Link href="/" style={{
             display: "inline-flex", alignItems: "center", gap: 4,
             color: "var(--seed-scale-color-gray-600)", fontSize: 13, fontWeight: 600,
@@ -76,16 +74,16 @@ export default function NationwideList({ rows }: { rows: NationwideRow[] }) {
           }}>
             ← 지도로 돌아가기
           </Link>
-          <h1 style={{ margin: 0, fontSize: 24, fontWeight: 800, letterSpacing: "-0.03em" }}>
+          <h1 style={{ margin: 0, fontSize: 23, fontWeight: 800, letterSpacing: "-0.03em" }}>
             전국 모집
           </h1>
-          <p style={{ margin: "6px 0 0", fontSize: 14, color: "var(--seed-scale-color-gray-600)", lineHeight: 1.5 }}>
+          <p style={{ margin: "6px 0 0", fontSize: 13.5, color: "var(--seed-scale-color-gray-600)", lineHeight: 1.5 }}>
             여러 지역에서 동시 모집하는 광역 공고예요. 매입임대·전세임대·든든전세 등 지도에 표시되지 않는 매물입니다.
           </p>
         </header>
 
         {/* 유형 필터 */}
-        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 16 }}>
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 14 }}>
           <FilterChip active={type === "all"} onClick={() => setType("all")}>전체 {rows.length}</FilterChip>
           {types.map((t) => {
             const count = rows.filter((r) => r.type === t).length;
@@ -97,111 +95,124 @@ export default function NationwideList({ rows }: { rows: NationwideRow[] }) {
           })}
         </div>
 
-        {/* 카드 그리드 */}
+        {/* 공고 게시판 */}
         {filtered.length === 0 ? (
           <div style={{ textAlign: "center", padding: 64, color: "var(--seed-scale-color-gray-500)" }}>
             현재 모집 중인 전국 공고가 없어요
           </div>
         ) : (
           <div style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
-            gap: 12,
+            background: "var(--seed-scale-color-gray-00)",
+            border: "1px solid var(--seed-scale-color-gray-200)",
+            borderRadius: 12,
+            overflow: "hidden",
           }}>
-            {filtered.map((r) => (
-              <Card key={r.id} r={r} />
-            ))}
+            {/* 컬럼 헤더 (넓은 화면) */}
+            <div className="nw-head">
+              <span>유형</span>
+              <span>공고</span>
+              <span style={{ textAlign: "right" }}>공고일</span>
+              <span style={{ textAlign: "right" }}>마감</span>
+            </div>
+            {filtered.map((r) => <NoticeRow key={r.id} r={r} />)}
           </div>
         )}
       </div>
+
+      <style>{`
+        .nw-head, .nw-row {
+          display: grid;
+          grid-template-columns: 84px 1fr 96px 92px;
+          align-items: center;
+          gap: 12px;
+          padding: 12px 16px;
+        }
+        .nw-head {
+          font-size: 12px; font-weight: 700;
+          color: var(--seed-scale-color-gray-500);
+          background: var(--seed-scale-color-gray-50);
+          border-bottom: 1px solid var(--seed-scale-color-gray-200);
+        }
+        .nw-row {
+          border-bottom: 1px solid var(--seed-scale-color-gray-100);
+          text-decoration: none; color: inherit;
+          transition: background 120ms ease;
+        }
+        .nw-row:last-child { border-bottom: 0; }
+        .nw-row:hover { background: var(--seed-scale-color-gray-50); }
+        @media (max-width: 640px) {
+          .nw-head { display: none; }
+          .nw-row {
+            grid-template-columns: 1fr auto;
+            grid-template-areas: "type meta" "title title";
+            row-gap: 8px;
+          }
+          .nw-row .nw-type { grid-area: type; }
+          .nw-row .nw-title { grid-area: title; }
+          .nw-row .nw-announce { display: none; }
+          .nw-row .nw-deadline { grid-area: meta; text-align: right; }
+        }
+      `}</style>
     </main>
   );
 }
 
-function Card({ r }: { r: NationwideRow }) {
+function NoticeRow({ r }: { r: NationwideRow }) {
   const sc = STATUS_COLOR[r.status];
   const dday = formatDday(r.deadline);
+  const urgent = dday === "D-Day" || (dday.startsWith("D-") && Number(dday.slice(2)) <= 7);
   const isSale = r.type === "sale";
 
+  const meta: string[] = [r.district];
+  if (r.supplyUnits != null && r.supplyUnits > 1) meta.push(`${r.supplyUnits.toLocaleString()}호`);
+  if (isSale && r.salePriceManwon) meta.push(`분양 ${r.salePriceManwon.toLocaleString()}만`);
+  else if (!isSale && r.deposit && r.rent) meta.push(`보증 ${r.deposit.toLocaleString()}/월 ${r.rent.toLocaleString()}만`);
+  else if (!isSale && r.deposit) meta.push(`보증금 ${r.deposit.toLocaleString()}만`);
+  else if (!isSale && r.rent) meta.push(`월세 ${r.rent.toLocaleString()}만`);
+  if (r.area) meta.push(r.area); // formatArea 가 이미 ㎡ 포함
+
   return (
-    <a
-      href={r.sourceUrl}
-      target="_blank"
-      rel="noreferrer"
-      style={{
-        display: "block",
-        background: "var(--seed-scale-color-gray-00)",
-        border: "1px solid var(--seed-scale-color-gray-200)",
-        borderRadius: 14,
-        padding: 18,
-        textDecoration: "none",
-        color: "inherit",
-        transition: "box-shadow 160ms ease, transform 160ms ease",
-      }}
-    >
-      <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 10, flexWrap: "wrap" }}>
+    <a href={r.sourceUrl} target="_blank" rel="noreferrer" className="nw-row">
+      <span className="nw-type" style={{ display: "inline-flex", flexDirection: "column", gap: 4, alignItems: "flex-start" }}>
         <span style={{
-          padding: "3px 9px", borderRadius: 999, fontSize: 11, fontWeight: 700,
-          background: sc.bg, color: sc.fg,
+          padding: "2px 8px", borderRadius: 999, fontSize: 11, fontWeight: 700,
+          background: sc.bg, color: sc.fg, whiteSpace: "nowrap",
         }}>
           {STATUS_LABEL[r.status]}
         </span>
-        <span style={{
-          padding: "3px 9px", borderRadius: 999, fontSize: 11, fontWeight: 600,
-          background: "var(--seed-scale-color-gray-100)", color: "var(--seed-scale-color-gray-700)",
-        }}>
+        <span style={{ fontSize: 11, fontWeight: 600, color: "var(--seed-scale-color-gray-600)" }}>
           {TYPE_LABEL[r.type] ?? r.type}
         </span>
+      </span>
+
+      <span className="nw-title" style={{ minWidth: 0 }}>
+        <span style={{
+          display: "block", fontSize: 14.5, fontWeight: 600, lineHeight: 1.35,
+          letterSpacing: "-0.01em",
+          overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
+        }}>
+          {r.title}
+        </span>
+        <span style={{ display: "block", marginTop: 3, fontSize: 12, color: "var(--seed-scale-color-gray-500)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+          {meta.join(" · ")}
+        </span>
+      </span>
+
+      <span className="nw-announce" style={{ textAlign: "right", fontSize: 12.5, color: "var(--seed-scale-color-gray-500)", fontVariantNumeric: "tabular-nums" }}>
+        {r.announceDate || "—"}
+      </span>
+
+      <span className="nw-deadline" style={{ textAlign: "right" }}>
+        <span style={{ display: "block", fontSize: 12.5, color: "var(--seed-scale-color-gray-700)", fontVariantNumeric: "tabular-nums" }}>
+          {r.deadline || "—"}
+        </span>
         {dday && dday !== "마감" && (
-          <span style={{ marginLeft: "auto", fontSize: 12, fontWeight: 700, color: dday === "D-Day" || (dday.startsWith("D-") && Number(dday.slice(2)) <= 7) ? "var(--seed-scale-color-red-600)" : "var(--seed-scale-color-gray-500)" }}>
+          <span style={{ display: "block", marginTop: 2, fontSize: 12, fontWeight: 800, color: urgent ? "var(--seed-scale-color-red-600)" : "var(--seed-scale-color-gray-500)" }}>
             {dday}
           </span>
         )}
-      </div>
-
-      <h2 style={{
-        margin: "0 0 10px", fontSize: 15, fontWeight: 700, lineHeight: 1.4, letterSpacing: "-0.01em",
-        display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden",
-      }}>
-        {r.title}
-      </h2>
-
-      <div style={{ fontSize: 13, color: "var(--seed-scale-color-gray-700)", display: "flex", flexDirection: "column", gap: 4 }}>
-        <Row label="지역" value={r.district} />
-        {r.supplyUnits != null && r.supplyUnits > 1 && <Row label="모집" value={`${r.supplyUnits.toLocaleString()}호`} />}
-        {isSale
-          ? (r.salePriceManwon ? <Row label="분양가" value={`${r.salePriceManwon.toLocaleString()}만원`} /> : null)
-          : (r.deposit || r.rent
-              ? <Row label="보증금/월세" value={`${r.deposit.toLocaleString()} / ${r.rent.toLocaleString()}만원`} />
-              : null)}
-        {r.area && <Row label="면적" value={r.area} />}
-        {r.deadline && <Row label="마감" value={r.deadline} />}
-      </div>
-
-      {r.eligible.length > 0 && (
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 4, marginTop: 12 }}>
-          {r.eligible.slice(0, 4).map((e) => (
-            <span key={e} style={{
-              fontSize: 11, fontWeight: 600, padding: "2px 7px", borderRadius: 6,
-              background: "var(--seed-scale-color-carrot-50)", color: "var(--seed-scale-color-carrot-700)",
-            }}>{e}</span>
-          ))}
-        </div>
-      )}
-
-      <div style={{ marginTop: 14, fontSize: 12, fontWeight: 700, color: "var(--seed-scale-color-carrot-600)" }}>
-        LH 공고 보기 ↗
-      </div>
+      </span>
     </a>
-  );
-}
-
-function Row({ label, value }: { label: string; value: string }) {
-  return (
-    <div style={{ display: "flex", gap: 8 }}>
-      <span style={{ color: "var(--seed-scale-color-gray-500)", minWidth: 64 }}>{label}</span>
-      <span style={{ fontWeight: 600, color: "var(--seed-scale-color-gray-900)" }}>{value}</span>
-    </div>
   );
 }
 
@@ -216,7 +227,7 @@ function FilterChip({ active, onClick, children }: { active: boolean; onClick: (
         borderColor: active ? "var(--seed-scale-color-gray-900)" : "var(--seed-scale-color-gray-200)",
         background: active ? "var(--seed-scale-color-gray-900)" : "var(--seed-scale-color-gray-00)",
         color: active ? "#fff" : "var(--seed-scale-color-gray-700)",
-        padding: "8px 14px", borderRadius: 999, fontSize: 13, fontWeight: 600,
+        padding: "7px 13px", borderRadius: 999, fontSize: 13, fontWeight: 600,
         cursor: "pointer", fontFamily: "inherit",
       }}
     >
