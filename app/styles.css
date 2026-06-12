@@ -36,7 +36,7 @@ input, select { font-family: inherit; }
   z-index: 20;
 }
 .brand {
-  display: flex; align-items: center; gap: 8px;
+  display: flex; align-items: center;
   margin-right: 20px;
   font-weight: 700;
   font-size: 16px;
@@ -118,22 +118,23 @@ input, select { font-family: inherit; }
 
 .topbar-spacer { flex: 1; }
 .brand-name {
-  font-size: 22px;
+  font-size: 19px;
   font-weight: 800;
   letter-spacing: -0.04em;
   color: var(--seed-semantic-color-ink-text);
   line-height: 1;
+  margin: 0 0 0 5px; /* Daum GNB 로고-서비스명 간격 */
 }
 .brand-logo {
-  height: 44px;
-  width: auto;
+  width: 24px;
+  height: 24px;
   display: block;
 }
 .brand-ai-cta {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-left: 4px;
+  margin-left: 12px;
   padding: 7px 12px 7px 10px;
   border-radius: 999px;
   background: linear-gradient(135deg, #fff4e8 0%, #fce8ff 50%, #e8f1ff 100%);
