@@ -2124,8 +2124,9 @@ input, select { font-family: inherit; }
   grid-template-columns: 48px 1fr 1fr;
   gap: 8px;
   position: sticky; bottom: 0;
-  /* detail-body 의 padding(20px 24px) 을 negative margin 으로 해제 → 가장자리까지 닿는 toolbar */
-  margin: 14px -24px 0;
+  /* detail-body 의 padding(20px 24px 40px) 을 negative margin 으로 해제 → 가장자리·바닥까지 닿는 toolbar.
+     bottom -40px 가 없으면 스크롤 끝에서 바가 바닥에서 40px 떠 보인다 */
+  margin: 14px -24px -40px;
   padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
   background: white;
   border-top: 1px solid var(--seed-semantic-color-divider-2);
