@@ -9,6 +9,7 @@ import { FilterBar } from "./filter-bar";
 import { ListingPanel } from "./listing-panel";
 import { NaverMapView } from "./kakao-map";
 import { DetailPanel } from "./detail-panel";
+import { DetailAiPanel } from "./detail-ai-panel";
 import { EligibilityModal } from "./eligibility-modal";
 import { FloatingChat } from "./floating-chat";
 import { TweaksPanel } from "./tweaks-panel";
@@ -157,7 +158,18 @@ export function AppShell({
     },
     [],
   );
-  const handleDetailClose = useCallback(() => setDetailOpen(false), []);
+  const handleDetailClose = useCallback(() => { setDetailOpen(false); setAiFocusId(null); }, []);
+
+  // 상세 옆 도킹 AI 상담 — PC 는 컬럼으로, 모바일/태블릿은 /ai 풀스크린 라우트.
+  const [aiFocusId, setAiFocusId] = useState<string | null>(null);
+  const aiFocusItem = aiFocusId ? (listings.find((x) => x.id === aiFocusId) ?? null) : null;
+  const handleAskAI = useCallback((id: string) => {
+    if (typeof window !== "undefined" && window.matchMedia("(max-width: 1199px)").matches) {
+      router.push(`/ai?focus=${encodeURIComponent(id)}`);
+      return;
+    }
+    setAiFocusId(id);
+  }, [router]);
 
   return (
     <div className="app">
@@ -260,7 +272,7 @@ export function AppShell({
         )}
       </header>
 
-      <div className={`main ${detailOpen && selectedItem ? "detail-open" : ""}`}>
+      <div className={`main ${detailOpen && selectedItem ? "detail-open" : ""} ${aiFocusItem ? "ai-open" : ""}`}>
         <ListingPanel
           items={filtered}
           sort={sort}
@@ -305,7 +317,10 @@ export function AppShell({
           }
         />
 
-        <DetailPanel item={selectedItem} open={detailOpen} onClose={handleDetailClose} />
+        <DetailPanel item={selectedItem} open={detailOpen} onClose={handleDetailClose} onAskAI={handleAskAI} />
+        {aiFocusItem && (
+          <DetailAiPanel listing={aiFocusItem} allListings={listings} onClose={() => setAiFocusId(null)} />
+        )}
       </div>
 
       <EligibilityModal

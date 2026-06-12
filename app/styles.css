@@ -707,6 +707,17 @@ input, select { font-family: inherit; }
 .main.detail-open {
   grid-template-columns: minmax(280px, 360px) minmax(0, 1fr) minmax(360px, 460px);
 }
+/* 상세 + AI 상담 열림: 리스트 + 지도 + 상세 + AI 컬럼 (네이버식 다중 패널) */
+.main.detail-open.ai-open {
+  grid-template-columns: minmax(240px, 320px) minmax(0, 1fr) minmax(340px, 420px) minmax(360px, 440px);
+}
+/* AI 컬럼 들어올 공간 확보 위해 더 좁아지면 지도부터 숨김 */
+@media (max-width: 1439px) {
+  .main.detail-open.ai-open {
+    grid-template-columns: minmax(240px, 300px) minmax(340px, 1fr) minmax(360px, 440px);
+  }
+  .main.detail-open.ai-open .map-wrap { display: none; }
+}
 /* 좁은 화면(<1200px): 지도 숨김 → 리스트 + 상세 2컬럼 */
 @media (max-width: 1199px) {
   .main.detail-open {
@@ -2185,6 +2196,36 @@ input, select { font-family: inherit; }
   color: var(--seed-semantic-color-ink-text);
   background: var(--seed-scale-color-gray-50);
 }
+
+/* 상세 옆 도킹 AI 상담 컬럼 (PC) */
+.detail-ai-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+  background: white;
+  border-left: 1px solid var(--seed-semantic-color-divider-2);
+  animation: detailFadeIn .14s ease-out;
+}
+.detail-ai-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--seed-semantic-color-divider-2);
+  flex-shrink: 0;
+}
+.detail-ai-title { display: inline-flex; align-items: center; gap: 7px; }
+.detail-ai-name { font-size: 15px; font-weight: 700; letter-spacing: -0.02em; }
+.detail-ai-beta {
+  font-size: 10px; font-weight: 800; color: var(--seed-scale-color-carrot-600);
+  background: var(--seed-scale-color-carrot-50); padding: 2px 6px; border-radius: 999px;
+}
+.detail-ai-close {
+  appearance: none; border: 0; background: transparent; cursor: pointer;
+  color: var(--seed-semantic-color-ink-text-low); padding: 4px; line-height: 1;
+  display: inline-flex;
+}
+/* 도킹 컬럼 안에선 ChatPanelBody 가 컬럼 높이를 꽉 채우게 */
+.detail-ai-panel .chat-body { flex: 1; min-height: 0; }
 
 /* 공고문 원문(PDF) 보조 링크 — 액션바 위에 작게 */
 .detail-notice-link {

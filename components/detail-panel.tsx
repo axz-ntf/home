@@ -232,10 +232,13 @@ export function DetailPanel({
   item,
   open,
   onClose,
+  onAskAI,
 }: {
   item: Listing | null | undefined;
   open: boolean;
   onClose: () => void;
+  // 제공되면(PC 앱셸) 상세 옆 컬럼으로 AI 상담 — 없으면(단독 페이지) /ai 라우트로.
+  onAskAI?: (id: string) => void;
 }) {
   // N1: 하트 = 실제 저장(localStorage). 저장 목록은 /saved 에서 모아보기.
   const { isSaved, toggle } = useSavedListings();
@@ -418,14 +421,24 @@ export function DetailPanel({
           >
             <HeartIcon size={20} filled={liked} />
           </button>
-          {/* 공고문을 임베딩한 AI 가 이 공고 자격을 바로 상담 */}
-          <a
-            className="secondary"
-            href={`/ai?focus=${encodeURIComponent(item.id)}`}
-            style={{ textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}
-          >
-            ✨ AI로 자격 확인하기
-          </a>
+          {/* 공고문을 임베딩한 AI 가 이 공고 자격을 바로 상담. PC=옆 컬럼, 그 외=라우트 */}
+          {onAskAI ? (
+            <button
+              className="secondary"
+              onClick={() => onAskAI(item.id)}
+              style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}
+            >
+              ✨ AI로 자격 확인하기
+            </button>
+          ) : (
+            <a
+              className="secondary"
+              href={`/ai?focus=${encodeURIComponent(item.id)}`}
+              style={{ textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}
+            >
+              ✨ AI로 자격 확인하기
+            </a>
+          )}
           {applyButton.active ? (
             <a
               className="primary"
