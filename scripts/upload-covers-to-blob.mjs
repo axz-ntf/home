@@ -31,8 +31,8 @@ const force = args.includes("--force");
 let mapping = {};
 try { mapping = JSON.parse(await fs.readFile(MAPPING_PATH, "utf8")); } catch {}
 
-const files = (await fs.readdir(COVERS_DIR)).filter((f) => f.endsWith(".jpg"));
-console.log(`전체 jpg: ${files.length} / 이미 업로드: ${Object.keys(mapping).length}`);
+const files = (await fs.readdir(COVERS_DIR)).filter((f) => /\.(jpe?g|png)$/i.test(f));
+console.log(`전체 이미지(jpg/png): ${files.length} / 이미 업로드: ${Object.keys(mapping).length}`);
 
 const todo = files.filter((f) => force || !mapping[f]).slice(0, limit);
 console.log(`처리 대상: ${todo.length}건\n`);
@@ -47,7 +47,7 @@ async function uploadOne(filename) {
     access: "public",
     token: TOKEN,
     addRandomSuffix: false, // deterministic path — 같은 파일명 재업로드 가능
-    contentType: "image/jpeg",
+    contentType: /\.png$/i.test(filename) ? "image/png" : "image/jpeg",
     allowOverwrite: true,
   });
   return blob.url;
