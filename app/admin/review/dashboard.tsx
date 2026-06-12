@@ -40,7 +40,7 @@ const STATUS_LABEL: Record<DashboardRow["status"], string> = {
 };
 const TYPE_LABEL: Record<string, string> = {
   happy: "행복주택", nation: "국민임대", integ: "통합공공임대", perm: "영구임대",
-  buy: "매입임대", jeonse: "전세임대", fifty: "50년임대", sale: "분양",
+  buy: "매입임대", jeonse: "전세임대", fifty: "50년임대", sale: "분양", youth: "청년주택",
 };
 
 function formatDday(deadline: string): { text: string; urgent: boolean } | null {

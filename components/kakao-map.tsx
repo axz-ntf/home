@@ -50,6 +50,7 @@ function pinClass(type: Listing["type"]): string {
   if (type === "buy") return "map-pin buy";
   if (type === "jeonse") return "map-pin jeonse";
   if (type === "fifty") return "map-pin fifty";
+  if (type === "youth") return "map-pin youth";
   return "map-pin";
 }
 
@@ -65,6 +66,7 @@ function pinLabel(p: Listing): string {
     case "jeonse": return "전세임대";
     case "fifty": return "50년임대";
     case "integ": return "통합공공임대";
+    case "youth": return "청년주택";
     default: return p.suplyTyNm || "LH";
   }
 }

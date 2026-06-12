@@ -8,6 +8,7 @@ export const HOUSING_TYPES: HousingType[] = [
   { id: "jeonse", name: "전세임대", badge: "jeonse" },
   { id: "fifty", name: "50년임대", badge: "fifty" },
   { id: "integ", name: "통합공공임대", badge: "integ" },
+  { id: "youth", name: "청년주택", badge: "youth" },
   { id: "sale", name: "공공분양", badge: "sale" },
 ];
 
@@ -66,6 +67,7 @@ const ELIGIBILITY_SUMMARY_BY_TYPE: Record<string, string> = {
   happy: "청년·신혼·고령 등 6대 계층",
   nation: "무주택 · 소득 70% 이하",
   perm: "수급·차상위·장애 등 특별 자격",
+  youth: "만 19~39세 청년 · 무주택",
   integ: "무주택 · 소득 기준 차등 (100~150%)",
   fifty: "무주택 · 소득 70% 이하",
   buy: "청년·신혼·자녀 (매입임대)",

@@ -69,6 +69,12 @@ export const HOUSING_TYPE_META: Record<HousingTypeId, HousingTypeMeta> = {
     tagline: "무주택자를 위한 합리적 분양 (소유)",
     metrics: [],
   },
+  youth: {
+    variant: "happy",
+    accent: "green",
+    tagline: "만 19~39세 청년을 위한 임대주택",
+    metrics: [],
+  },
 };
 
 export function housingTypeMeta(type: HousingTypeId): HousingTypeMeta {

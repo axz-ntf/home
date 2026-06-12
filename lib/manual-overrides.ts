@@ -25,6 +25,7 @@ const PRICE_MODEL_BY_TYPE: Record<HousingTypeId, PriceModel> = {
   buy: "by-household-size",
   jeonse: "support-limit",
   sale: "per-unit-sale",
+  youth: "rows-by-area",
 };
 
 export function priceModelFor(type: HousingTypeId): PriceModel {

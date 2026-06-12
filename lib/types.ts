@@ -6,7 +6,8 @@ export type HousingTypeId =
   | "buy"
   | "jeonse"
   | "fifty"
-  | "sale";
+  | "sale"
+  | "youth";
 export type StatusId = "open" | "upcoming" | "closing" | "closed";
 export type Agency = "LH" | "SH" | "GH" | "서울시"; // 서울시 = 청년안심주택(민간임대, soco)
 

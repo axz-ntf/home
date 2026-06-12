@@ -52,6 +52,7 @@ export function thumbnailSVG(seed: number, type: HousingTypeId): string {
     jeonse: ["#cce6ff", "#7fb8ff", "#3d8fff", "#0a4bb8"],
     fifty: ["#e0e6ed", "#a6b0bd", "#6e7886", "#2c333d"],
     sale: ["#ffe2e7", "#ffb0bd", "#ff6f87", "#b00029"],
+    youth: ["#c9f5e4", "#86e8c2", "#3fd49b", "#0a8f63"],
   };
   const p = palettes[type] ?? palettes.happy;
   const [sky, bg, fg, ac] = p;

@@ -132,6 +132,7 @@ const ELIGIBILITY_BY_TYPE: Record<string, string[]> = {
   buy:    ["청년", "신혼", "자녀", "무주택", "소득70", "자산"],
   jeonse: ["청년", "신혼", "무주택", "소득70"],
   sale:   ["무주택", "청약저축"],
+  youth:  ["청년", "무주택", "소득", "자산"],
 };
 
 // 주택 종류 — LH 단지 DB(houseTyNm) 매칭 실패 시 제도 기반 기본값.

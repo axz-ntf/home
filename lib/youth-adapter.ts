@@ -107,7 +107,7 @@ export const YOUTH_ADMIN_LISTINGS: Listing[] = (youthNotices as YouthNotice[])
       id: `youth-${n.boardId}`,
       pblancId: String(n.boardId),
       title: n.title.replace(/^\[민간임대\]\s*/, ""),
-      type: "happy" as const,
+      type: "youth" as const,
       agency: "서울시" as const,
       districtId: "",
       district: c?.gu || n.gu || "서울",

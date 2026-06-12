@@ -6,7 +6,7 @@
 
 import { useEffect, useState } from "react";
 
-type HousingType = "happy" | "nation" | "perm" | "integ" | "fifty" | "sale" | "buy" | "jeonse";
+type HousingType = "happy" | "nation" | "perm" | "integ" | "fifty" | "sale" | "buy" | "jeonse" | "youth";
 
 export const TYPE_DESCRIPTIONS: Record<HousingType, { title: string; detail: string[] }> = {
   happy: {
@@ -44,6 +44,10 @@ export const TYPE_DESCRIPTIONS: Record<HousingType, { title: string; detail: str
   jeonse: {
     title: "전세임대 — 청년·신혼",
     detail: ["청년, 신혼부부 대상", "본인이 원하는 집을 LH 가 전세 계약", "무주택 세대구성원"],
+  },
+  youth: {
+    title: "청년주택 — 만 19~39세 청년",
+    detail: ["만 19~39세 청년 (대학생·사회초년생 등)", "무주택 세대구성원", "소득·자산 기준 충족"],
   },
 };
 

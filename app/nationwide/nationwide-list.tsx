@@ -22,7 +22,7 @@ export interface NationwideRow {
 
 const TYPE_LABEL: Record<string, string> = {
   happy: "행복주택", nation: "국민임대", integ: "통합공공임대", perm: "영구임대",
-  buy: "매입임대", jeonse: "전세임대", fifty: "50년임대", sale: "분양",
+  buy: "매입임대", jeonse: "전세임대", fifty: "50년임대", sale: "분양", youth: "청년주택",
 };
 const STATUS_LABEL: Record<NationwideRow["status"], string> = {
   open: "모집중", upcoming: "모집예정", closing: "마감임박", closed: "마감",

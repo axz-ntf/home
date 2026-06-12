@@ -24,8 +24,8 @@ interface ShNotice {
 // 장기전세/장기안심은 전세형이라 jeonse(모델 뉘앙스는 후속 보정).
 const SH_TYPE_MAP: Record<string, HousingTypeId> = {
   행복주택: "happy",
-  청년안심주택: "happy",
-  희망하우징: "happy",
+  청년안심주택: "youth",
+  희망하우징: "youth",
   매입임대주택: "buy",
   수요자맞춤형: "buy",
   두레주택: "buy",
