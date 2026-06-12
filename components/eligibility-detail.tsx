@@ -185,6 +185,14 @@ function hasContent(t: Tier): boolean {
   );
 }
 
+// 보여줄 내용이 전혀 없는 데이터(tiers 빈 배열 등)는 데이터 없음과 동일 취급 — 타입 안내 fallback.
+function hasUsableData(d: EligibilityData): boolean {
+  return (
+    (d.tiers ?? []).some((t) => (typeof t.units === "number" && t.units > 0) || hasContent(t)) ||
+    (d.priority?.length ?? 0) > 0
+  );
+}
+
 // "1순위 - 생계·의료급여 수급자" → "생계·의료급여 수급자" (행정 순위 접두어 제거).
 function stripRankPrefix(name: string): string {
   const stripped = name.replace(/^\s*\d+\s*순위\s*[-–—·:()]*\s*/, "").trim();
@@ -245,7 +253,8 @@ function MoreDetails({ tier }: { tier: Tier }) {
             <div className="eli-row-content">
               <div className="eli-asset-list">
                 {tier.asset!.total != null && <div>총자산 <strong>{formatManwon(tier.asset!.total)}</strong> 이하</div>}
-                {tier.asset!.car != null && <div>자동차 <strong>{formatManwon(tier.asset!.car)}</strong> 이하</div>}
+                {tier.asset!.car === 0 && <div>자동차 <strong>비소유</strong></div>}
+                {tier.asset!.car != null && tier.asset!.car > 0 && <div>자동차 <strong>{formatManwon(tier.asset!.car)}</strong> 이하</div>}
               </div>
             </div>
           </div>
@@ -298,7 +307,7 @@ export function EligibilityDetail({
     );
   }
 
-  if (!data) {
+  if (!data || !hasUsableData(data)) {
     const desc = housingType ? TYPE_DESCRIPTIONS[housingType] : null;
     const summary = housingType ? eligibilitySummaryByType(housingType) : null;
     return (
