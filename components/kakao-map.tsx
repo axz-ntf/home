@@ -8,8 +8,9 @@ import type { NaverMarker, NaverMap } from "@/lib/naver-types";
 import { LocateIcon } from "./icons";
 import { effectiveStatus } from "@/lib/dday";
 
-const SEOUL_CENTER = { lat: 37.5665, lng: 126.978 };
-const DEFAULT_ZOOM = 11;
+// 진입 기본 뷰 = 전국. 한반도 남부 중앙 + 전 시도 마커가 보이는 줌.
+const KOREA_CENTER = { lat: 36.3, lng: 127.8 };
+const DEFAULT_ZOOM = 7;
 const DISTRICT_ZOOM = 12;
 const CLIENT_ID = process.env.NEXT_PUBLIC_NAVER_MAPS_CLIENT_ID;
 
@@ -221,7 +222,7 @@ export function NaverMapView({
         if (cancelled || !containerRef.current || !window.naver) return;
         const { naver } = window;
         const map = new naver.maps.Map(containerRef.current, {
-          center: new naver.maps.LatLng(SEOUL_CENTER.lat, SEOUL_CENTER.lng),
+          center: new naver.maps.LatLng(KOREA_CENTER.lat, KOREA_CENTER.lng),
           zoom: DEFAULT_ZOOM,
           scaleControl: false,
           logoControl: true,
@@ -277,6 +278,8 @@ export function NaverMapView({
         map,
         icon: { content: el, anchor: { x: 0, y: 0 } },
         clickable: true,
+        // 수도권(서울·인천·경기)처럼 마커가 겹칠 때 큰 카운트가 위로 — 서울이 안 가리게.
+        zIndex: count,
       });
       districtMarkersRef.current.push(marker);
     });
@@ -362,7 +365,7 @@ export function NaverMapView({
       const d = districts.find((x) => x.id === activeDistrict);
       if (d) mapRef.current.morph(new naver.maps.LatLng(d.lat, d.lng), DISTRICT_ZOOM);
     } else {
-      mapRef.current.morph(new naver.maps.LatLng(SEOUL_CENTER.lat, SEOUL_CENTER.lng), DEFAULT_ZOOM);
+      mapRef.current.morph(new naver.maps.LatLng(KOREA_CENTER.lat, KOREA_CENTER.lng), DEFAULT_ZOOM);
     }
     setHasMoved(false);
   }, [ready, activeDistrict, districts]);
