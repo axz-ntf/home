@@ -12,8 +12,9 @@ import { EligibilityDetail } from "./eligibility-detail";
 import { formatManwon } from "@/lib/format";
 import { nearestStation } from "@/lib/subway";
 import { useSavedListings } from "@/lib/use-saved";
-import { TypeIntro, TypePrice, accentVars } from "./detail-type";
+import { TypeIntro, accentVars } from "./detail-type";
 import { StructuredPrice } from "./structured-price";
+import { summarizePrice, type Range } from "@/lib/price-summary";
 import { FloorplanSection } from "./floorplan-section";
 
 // 1평 ≈ 3.3058㎡ — 부동산 공인 환산
@@ -30,34 +31,18 @@ function formatAreaCell(m2: number, unit: AreaUnit): string {
   return Number.isInteger(m2) ? `${m2}㎡` : `${m2}㎡`;
 }
 
+// 단지·평형별 표 — "상세 임대조건" 접기 내부에서만 사용 (1차 노출은 RentSummarySection).
 function ListingComplexes({ item }: { item: Listing }) {
   const [areaUnit, setAreaUnit] = useState<AreaUnit>("m2");
-  // 골격 통일 — 평형별 데이터가 없어도 섹션 자리는 유지.
-  if (!item.complexes || !item.complexes.length) {
-    return (
-      <section className="detail-section">
-        <h3>단지별 공급 정보</h3>
-        <div className="detail-empty-notice" style={{ marginBottom: 0 }}>
-          <div className="detail-empty-notice-sub">
-            평형별 공급 정보가 아직 정리되지 않았어요. 위 가격·세대수 정보를 참고해 주세요.
-          </div>
-        </div>
-      </section>
-    );
-  }
+  if (!item.complexes || !item.complexes.length) return null;
   function fmtPrice(v: number | null): string {
     if (v == null) return "공고문 확인";
     const m = Math.round(v / 10000);
     return formatManwon(m) || `${m.toLocaleString()}만원`;
   }
-  // 모든 row 의 deposit/rent 가 null 인지 — 매입임대/위탁임대 등 LH 가 등록 안 한 케이스
-  const allRowsEmpty = item.complexes.every((c) =>
-    (c.rows ?? []).every((r) => (r.deposit ?? 0) === 0 && (r.rent ?? 0) === 0),
-  );
   return (
-    <section className="detail-section">
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 8 }}>
-        <h3 style={{ margin: 0 }}>단지별 공급 정보</h3>
+    <div>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", marginBottom: 8 }}>
         <div className="area-unit-toggle" role="group" aria-label="면적 단위">
           <button
             type="button"
@@ -77,14 +62,6 @@ function ListingComplexes({ item }: { item: Listing }) {
           </button>
         </div>
       </div>
-      {allRowsEmpty && (
-        <div className="detail-confirm-box">
-          <span>임대조건 정보가 등록되지 않은 매물입니다.</span>
-          <a href={item.sourceUrl} target="_blank" rel="noreferrer">
-            LH 공고문에서 단지별 보증금·월세 확인 →
-          </a>
-        </div>
-      )}
       {item.complexes.map((c, ci) => (
         <div key={ci} style={{ marginTop: ci === 0 ? 0 : 16 }}>
           {c.name && (
@@ -120,6 +97,84 @@ function ListingComplexes({ item }: { item: Listing }) {
           </div>
         </div>
       ))}
+    </div>
+  );
+}
+
+// 임대 조건 요약 — 모든 매물 공통 골격 (스펙: 범위로 표시, 정보 없으면 행 자체 미표시).
+// 가격 모델이 무엇이든 summarizePrice 가 범위로 정규화. 상세 표는 접기 안으로.
+function RentSummarySection({ item }: { item: Listing }) {
+  const s = summarizePrice(item);
+  const fmtRange = (r: Range) =>
+    r.min === r.max ? formatManwon(r.min) : `${formatManwon(r.min)} ~ ${formatManwon(r.max)}`;
+  const fmtM2 = (n: number) => (Number.isInteger(n) ? `${n}` : n.toFixed(1));
+  const fmtAreaRange = (r: Range) =>
+    r.min === r.max ? `${fmtM2(r.min)}㎡` : `${fmtM2(r.min)} ~ ${fmtM2(r.max)}㎡`;
+
+  const cells: { label: string; value: string; full?: boolean }[] = [];
+  if (item.type === "sale") {
+    const sale = s.deposit ?? (item.salePriceManwon ? { min: item.salePriceManwon, max: item.salePriceManwon } : undefined);
+    if (sale) cells.push({ label: "분양가", value: fmtRange(sale), full: true });
+  } else if (s.supportLimit) {
+    cells.push({ label: "전세 지원한도", value: fmtRange(s.supportLimit), full: true });
+  } else {
+    const isJeonse = item.type === "jeonse" || (!s.rent && /전세/.test(item.title ?? ""));
+    if (s.deposit) cells.push({ label: isJeonse ? "전세보증금" : "보증금", value: fmtRange(s.deposit), full: !s.rent });
+    if (s.rent) cells.push({ label: "월세", value: fmtRange(s.rent), full: !s.deposit });
+  }
+  if (s.areaM2) cells.push({ label: "전용면적", value: fmtAreaRange(s.areaM2), full: true });
+
+  const isRanged = [s.deposit, s.rent, s.supportLimit].some((r) => r && r.min < r.max);
+  const hasStructured =
+    item.priceDetail && item.priceDetail.model !== "rows-by-area" &&
+    item.priceDetail.model !== "per-unit-sale" && item.priceDetail.model !== "deposit-only";
+  const hasComplexRows = (item.complexes ?? []).some((c) => (c.rows ?? []).length > 0);
+
+  return (
+    <section className="detail-section">
+      <h3>{item.type === "sale" ? "분양 조건" : "임대 조건"}</h3>
+      {cells.length > 0 ? (
+        <div className="detail-price" style={{ marginBottom: 0 }}>
+          {cells.map((c) => (
+            <div key={c.label} className={`detail-price-cell${c.full ? " detail-price-cell--full" : ""}`}>
+              <div className="detail-price-label">{c.label}</div>
+              <div className="detail-price-value">{c.value}</div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="detail-price" style={{ marginBottom: 0 }}>
+          <div className="detail-price-cell detail-price-cell--full">
+            <div className="detail-price-label">{item.type === "sale" ? "분양 조건" : "임대조건"}</div>
+            <div className="detail-price-value">
+              <span style={{ fontSize: 14, marginRight: 8 }}>단지별 상이</span>
+              {item.sourceUrl && (
+                <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="detail-confirm-link">원문 보기 →</a>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+      {isRanged && (
+        <p style={{ fontSize: 11.5, color: "var(--seed-semantic-color-ink-text-low)", margin: "8px 0 0" }}>
+          계층·평형에 따라 달라요. 정확한 조건은 상세에서 확인하세요.
+        </p>
+      )}
+      {/* 면적 등은 있지만 가격이 없는 경우 — 어디서 확인할지 안내 */}
+      {cells.length > 0 && !s.deposit && !s.rent && !s.supportLimit && item.type !== "sale" && item.sourceUrl && (
+        <p style={{ fontSize: 12, margin: "8px 0 0" }}>
+          보증금·월세는{" "}
+          <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="detail-confirm-link">공고문에서 확인 →</a>
+        </p>
+      )}
+      {(hasStructured || hasComplexRows) && (
+        <details className="eli-more" style={{ marginTop: 10 }}>
+          <summary>단지·평형별 상세 보기</summary>
+          <div style={{ marginTop: 10 }}>
+            {hasStructured ? <StructuredPrice detail={item.priceDetail!} /> : <ListingComplexes item={item} />}
+          </div>
+        </details>
+      )}
     </section>
   );
 }
@@ -372,18 +427,8 @@ export function DetailPanel({
 
         <ListingPhotos item={item} />
         <FloorplanSection listingId={item.id} />
-        {/* 구조화 모델(소득계층·가구원수·지원한도)은 전용 렌더, 그 외는 평형별 표 + 단일 가격 */}
-        {item.priceDetail && item.priceDetail.model !== "rows-by-area" && item.priceDetail.model !== "per-unit-sale" && item.priceDetail.model !== "deposit-only" ? (
-          <section className="detail-section">
-            <h3>임대 조건</h3>
-            <StructuredPrice detail={item.priceDetail} />
-          </section>
-        ) : (
-          <>
-            <ListingComplexes item={item} />
-            <TypePrice item={item} />
-          </>
-        )}
+        {/* 임대 조건 — 모든 매물 공통 골격: 범위 요약 1차 노출, 모델별 상세 표는 접기 */}
+        <RentSummarySection item={item} />
 
         <section className="detail-section">
           <EligibilityDetail listingId={item.id} sourceUrl={item.sourceUrl} housingType={item.type} />
