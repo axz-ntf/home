@@ -134,6 +134,18 @@ const ELIGIBILITY_BY_TYPE: Record<string, string[]> = {
   sale:   ["무주택", "청약저축"],
 };
 
+// 주택 종류 — LH 단지 DB(houseTyNm) 매칭 실패 시 제도 기반 기본값.
+// 건설임대 5종은 LH 가 건설·공급하는 아파트 단지라 "아파트"가 제도 사실.
+// 매입임대는 다가구·다세대·오피스텔 혼재라 단일 종류 없음. 전세임대·분양은 추정하지 않는다.
+const BUILDING_TYPE_FALLBACK: Record<string, string> = {
+  nation: "아파트",
+  perm: "아파트",
+  happy: "아파트",
+  integ: "아파트",
+  fifty: "아파트",
+  buy: "다가구·다세대 등",
+};
+
 // 자격 키 정렬 우선순위 — 계층 > 기본 조건 > 소득/자산. 카드 slice(0,2) 시 더 직관적인 라벨이 먼저.
 const ELIGIBILITY_ORDER: string[] = [
   "청년", "신혼", "자녀", "고령", "대학생", "한부모",
@@ -226,7 +238,7 @@ function adaptApi(r: ApiListing, loose = false): Listing | null {
     thumbSeed: r.thumbSeed,
     suplyTyNm: safeString(r.houseType) || undefined,
     complexName: cleanComplexName(r.complexName),
-    buildingType: safeString(r.houseType) || null,
+    buildingType: safeString(r.houseType) || BUILDING_TYPE_FALLBACK[r.type] || null,
     complexes: Array.isArray(r.complexes) ? (r.complexes as Listing["complexes"]) : undefined,
     pblancNm: r.noticeTitle,
     sourceUrl: r.sourceUrl,

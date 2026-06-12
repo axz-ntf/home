@@ -40,6 +40,19 @@ function mapType(supplyType: string): HousingTypeId {
   return SH_TYPE_MAP[supplyType] ?? "nation";
 }
 
+// 주택 종류 — SH 원본에 건물종류 필드가 없어 공급유형의 제도 사실로 채움.
+// 건설형(행복·국민·장기전세)은 아파트 단지, 매입형은 다가구·다세대 혼재.
+// 청년안심주택(아파트·오피스텔 혼재)·희망하우징·전세임대·장기안심주택은 추정하지 않는다.
+const SH_BUILDING_TYPE: Record<string, string> = {
+  행복주택: "아파트",
+  국민공공임대주택: "아파트",
+  장기전세주택: "아파트",
+  도시형생활주택: "도시형생활주택",
+  매입임대주택: "다가구·다세대 등",
+  수요자맞춤형: "다가구·다세대 등",
+  두레주택: "다가구·다세대 등",
+};
+
 // 제목에서 지역(구 우선, 없으면 동/시, 없으면 서울).
 function regionFromTitle(title: string): string {
   return (
@@ -84,6 +97,7 @@ export const SH_ADMIN_LISTINGS: Listing[] = (shNotices as ShNotice[]).map((n, i)
   competition: null,
   thumbSeed: 10000 + i,
   suplyTyNm: n.supplyType,
+  buildingType: SH_BUILDING_TYPE[n.supplyType] ?? null,
   sourceUrl: n.detailUrl ?? "",
   noticePdfUrl: n.pdfUrl ?? undefined,
 }));

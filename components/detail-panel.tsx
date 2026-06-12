@@ -461,8 +461,13 @@ export function DetailPanel({
                 <dd>{item.pblancNm}</dd>
               </>
             ) : null}
-            <dt>주택 종류</dt>
-            <dd>{item.buildingType || "—"}</dd>
+            {/* 주택 종류 — 단지 매칭·제도 기본값 어느 쪽도 없으면(전세임대·분양 일부) 행 숨김 */}
+            {item.buildingType ? (
+              <>
+                <dt>주택 종류</dt>
+                <dd>{item.buildingType}</dd>
+              </>
+            ) : null}
             <dt>공급 세대 수</dt>
             <dd>{item.supplyUnits ? `${item.supplyUnits}세대` : "—"}</dd>
             {item.totalUnits ? (
