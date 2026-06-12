@@ -182,7 +182,7 @@ export function AppShell({
       <header className="topbar">
         <div className="brand">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.svg" alt="둥지" className="brand-logo" />
+          <img src="/logo.svg" alt="다음부동산" className="brand-logo" />
           <button className="brand-ai-cta" onClick={() => setChatOpen(true)}>
             <span className="ai-spark" aria-hidden>✨</span>
             AI로 조건 찾기

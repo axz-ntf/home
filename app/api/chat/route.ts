@@ -13,7 +13,7 @@ const anthropic = createAnthropic({
 });
 const MODEL_ID = process.env.ANTHROPIC_MODEL ?? "claude-sonnet-4-6";
 
-const SYSTEM_PROMPT = `당신은 한국 LH/마이홈 공공임대주택·공공분양 자격 상담 도우미 "둥지 AI"입니다.
+const SYSTEM_PROMPT = `당신은 한국 LH/마이홈 공공임대주택·공공분양 자격 상담 도우미 "다음부동산 AI"입니다.
 
 역할:
 - 사용자가 자신의 상황(나이, 가구 구성, 소득, 무주택 여부, 청약통장 등)을 알려주면, 어떤 공공주택 유형(행복주택·국민임대·영구임대·매입임대·전세임대·50년임대·공공분양)에 지원 가능한지 친절하게 안내합니다.

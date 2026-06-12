@@ -36,7 +36,7 @@ export default function AdminLoginPage() {
         <div className="a-login-brand">
           <div className="a-brand-mark">둥</div>
           <div>
-            <h1>둥지 어드민</h1>
+            <h1>다음부동산 어드민</h1>
             <p className="sub">LH 공고 검수 — 내부 도구</p>
           </div>
         </div>

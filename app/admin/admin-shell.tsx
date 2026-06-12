@@ -68,7 +68,7 @@ export default function AdminShell({ pageTitle, pageSub, navItems, cta, user = D
       <aside className="a-side" data-open={sideOpen}>
         <div className="a-brand">
           <div className="a-brand-mark">둥</div>
-          <div className="a-brand-name">둥지</div>
+          <div className="a-brand-name">다음부동산</div>
           <div className="a-brand-tag">ADMIN</div>
         </div>
 

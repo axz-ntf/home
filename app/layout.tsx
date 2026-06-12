@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "둥지 · 공공임대주택 정보",
+  title: "다음부동산 · 공공임대주택 정보",
   description: "행복주택·국민임대·통합공공임대 공고를 한눈에",
 };
 
