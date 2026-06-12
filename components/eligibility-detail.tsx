@@ -5,7 +5,6 @@
 // /api/eligibility/{listingId} 에서 lazy fetch.
 
 import { useEffect, useState } from "react";
-import { eligibilitySummaryByType } from "@/lib/mock-data";
 
 type HousingType = "happy" | "nation" | "perm" | "integ" | "fifty" | "sale" | "buy" | "jeonse";
 
@@ -145,14 +144,13 @@ export function EligibilityDetail({
 
   if (!data || !hasUsableData(data)) {
     const desc = housingType ? TYPE_DESCRIPTIONS[housingType] : null;
-    const summary = housingType ? eligibilitySummaryByType(housingType) : null;
     return (
       <div className="eli-detail">
         <div className="eli-empty">
           {desc ? (
             <>
+              {/* 제목이 이미 "유형 — 핵심 자격"을 담고 있어 요약 줄은 중복 → 생략 */}
               <div className="eli-empty-title">{desc.title}</div>
-              <div className="eli-empty-summary">{summary}</div>
               <ul className="eli-empty-list">
                 {desc.detail.map((d, i) => <li key={i}>{d}</li>)}
               </ul>
