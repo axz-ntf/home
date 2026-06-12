@@ -232,18 +232,28 @@ export function AppShell({
         {regionalCount > 0 && (
           <Link
             href="/nationwide"
+            aria-label={`전체 공고 ${regionalCount}건 보기`}
             style={{
-              display: "inline-flex", alignItems: "center", gap: 6,
-              padding: "8px 14px", borderRadius: 999,
+              display: "inline-flex", alignItems: "center", gap: 7,
+              padding: "7px 9px 7px 13px", borderRadius: 999,
               background: "var(--seed-scale-color-gray-900)", color: "#fff",
-              fontSize: 13, fontWeight: 700, textDecoration: "none",
+              fontSize: 13.5, fontWeight: 700, textDecoration: "none",
               whiteSpace: "nowrap", letterSpacing: "-0.02em",
+              boxShadow: "0 2px 8px rgba(0,0,0,.16)",
             }}
           >
-            🌐 전체 공고
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden style={{ opacity: 0.92 }}>
+              <path d="M5.5 4h7M5.5 8h7M5.5 12h7" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" />
+              <circle cx="2.6" cy="4" r="1.1" fill="#fff" />
+              <circle cx="2.6" cy="8" r="1.1" fill="#fff" />
+              <circle cx="2.6" cy="12" r="1.1" fill="#fff" />
+            </svg>
+            전체 공고
             <span style={{
+              minWidth: 20, height: 20, padding: "0 6px",
+              display: "inline-flex", alignItems: "center", justifyContent: "center",
               background: "var(--seed-scale-color-carrot-500)", color: "#fff",
-              borderRadius: 999, padding: "1px 7px", fontSize: 11, fontWeight: 800,
+              borderRadius: 999, fontSize: 11.5, fontWeight: 800,
               fontVariantNumeric: "tabular-nums",
             }}>{regionalCount}</span>
           </Link>
