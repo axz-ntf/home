@@ -2186,6 +2186,19 @@ input, select { font-family: inherit; }
   background: var(--seed-scale-color-gray-50);
 }
 
+/* 공고문 원문(PDF) 보조 링크 — 액션바 위에 작게 */
+.detail-notice-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--seed-semantic-color-ink-text-low);
+  text-decoration: none;
+}
+.detail-notice-link:hover { color: var(--seed-semantic-color-ink-text); }
+
 .detail-actions {
   display: grid;
   grid-template-columns: 48px 1fr 1fr;

@@ -116,7 +116,7 @@ function extractSuggestedActions(m: UIMessage): SuggestionAction[] {
 // localStorage 가 아니라 sessionStorage — 탭 닫으면 자동 초기화 (개인정보 노출 우려 ↓).
 const CHAT_STORAGE_KEY = "doongji:ai-chat:messages";
 
-export function ChatPanelBody({ allListings = [] }: { allListings?: Listing[] } = {}) {
+export function ChatPanelBody({ allListings = [], focusListing }: { allListings?: Listing[]; focusListing?: Listing } = {}) {
   const [input, setInput] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
   const [hydrated, setHydrated] = useState(false);
@@ -196,34 +196,67 @@ export function ChatPanelBody({ allListings = [] }: { allListings?: Listing[] } 
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/ai-icon.svg" alt="" />
             </div>
-            <div className="chat-welcome-lines">
-              <div>안녕하세요!</div>
-              <div>
-                <strong>둥지 AI 상담사</strong>예요 ☺️
-              </div>
-              <div>공공임대·분양 자격이 고민이라면</div>
-              <div>조건에 맞춰 추천해드릴게요.</div>
-            </div>
-            <div className="chat-questions">
-              <div className="chat-questions-title">많은 분들이 자주 물어보시는 질문이에요.</div>
-              {[
-                "28살 청년 1인가구, 월소득 250만원인데 어디 지원 가능해?",
-                "신혼부부 무자녀, 맞벌이 월 600만원이에요. 행복주택 되나요?",
-                "행복주택과 국민임대 차이가 뭐예요?",
-              ].map((q) => (
-                <button
-                  key={q}
-                  className="chat-question"
-                  onClick={() => sendMessage({ text: q })}
-                >
-                  <span className="chat-question-icon" aria-hidden>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/ai-icon.svg" alt="" />
-                  </span>
-                  <span>{q}</span>
-                </button>
-              ))}
-            </div>
+            {focusListing ? (
+              <>
+                <div className="chat-welcome-lines">
+                  <div><strong>{focusListing.complexName || focusListing.title}</strong></div>
+                  <div>이 공고에 대해 무엇이든 물어보세요.</div>
+                  <div>공고문을 읽고 답해드릴게요 ☺️</div>
+                </div>
+                <div className="chat-questions">
+                  <div className="chat-questions-title">이런 게 궁금하지 않으세요?</div>
+                  {[
+                    "이 공고 입주 자격이 어떻게 되나요?",
+                    "소득·자산 기준 알려주세요",
+                    "보증금·임대료가 얼마예요?",
+                    "접수 일정이 언제예요?",
+                  ].map((q) => (
+                    <button
+                      key={q}
+                      className="chat-question"
+                      onClick={() => sendMessage({ text: `${focusListing.complexName || focusListing.title} — ${q}` })}
+                    >
+                      <span className="chat-question-icon" aria-hidden>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src="/ai-icon.svg" alt="" />
+                      </span>
+                      <span>{q}</span>
+                    </button>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="chat-welcome-lines">
+                  <div>안녕하세요!</div>
+                  <div>
+                    <strong>둥지 AI 상담사</strong>예요 ☺️
+                  </div>
+                  <div>공공임대·분양 자격이 고민이라면</div>
+                  <div>조건에 맞춰 추천해드릴게요.</div>
+                </div>
+                <div className="chat-questions">
+                  <div className="chat-questions-title">많은 분들이 자주 물어보시는 질문이에요.</div>
+                  {[
+                    "28살 청년 1인가구, 월소득 250만원인데 어디 지원 가능해?",
+                    "신혼부부 무자녀, 맞벌이 월 600만원이에요. 행복주택 되나요?",
+                    "행복주택과 국민임대 차이가 뭐예요?",
+                  ].map((q) => (
+                    <button
+                      key={q}
+                      className="chat-question"
+                      onClick={() => sendMessage({ text: q })}
+                    >
+                      <span className="chat-question-icon" aria-hidden>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src="/ai-icon.svg" alt="" />
+                      </span>
+                      <span>{q}</span>
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
         )}
         {messages.map((m, i) => {

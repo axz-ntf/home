@@ -400,6 +400,16 @@ export function DetailPanel({
           </dl>
         </section>
 
+        {/* 공고문 원문(PDF) 은 보조 링크로 — 1차 행동은 AI 자격확인 */}
+        <a
+          className="detail-notice-link"
+          href={item.noticePdfUrl ?? item.sourceUrl ?? infoUrl}
+          target="_blank"
+          rel="noreferrer"
+        >
+          📄 {item.noticePdfUrl ? "공고문 PDF 원문" : "공고문 원문"} 보기 →
+        </a>
+
         <div className="detail-actions">
           <button
             className={`icon-btn ${liked ? "active" : ""}`}
@@ -408,15 +418,13 @@ export function DetailPanel({
           >
             <HeartIcon size={20} filled={liked} />
           </button>
-          {/* M2: PDF 가 있으면 공고문을 바로 연다(브라우저 PDF 뷰어). 없으면 기존 공고 페이지 링크. */}
+          {/* 공고문을 임베딩한 AI 가 이 공고 자격을 바로 상담 */}
           <a
             className="secondary"
-            href={item.noticePdfUrl ?? item.sourceUrl ?? infoUrl}
-            target="_blank"
-            rel="noreferrer"
-            style={{ textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center" }}
+            href={`/ai?focus=${encodeURIComponent(item.id)}`}
+            style={{ textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}
           >
-            {item.noticePdfUrl ? "공고문 PDF 열기" : "공고문 원문 보기"}
+            ✨ AI로 자격 확인하기
           </a>
           {applyButton.active ? (
             <a
