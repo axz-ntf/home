@@ -190,6 +190,17 @@ const SIDOS: SidoEntry[] = [
   { id: "jeju", name: "제주특별자치도", lat: 33.4996, lng: 126.5312 },
 ];
 
+// 서울 25개 자치구 — 장기전세·청년 등 일부 매물은 districtId 없이 구 이름만 와서
+// "seoul" 시도 집계 마커가 0 으로 빠진다(서울이 지도에서 통째로 안 보임). 구 이름으로 보정.
+const SEOUL_GU = new Set([
+  "종로구", "중구", "용산구", "성동구", "광진구", "동대문구", "중랑구", "성북구",
+  "강북구", "도봉구", "노원구", "은평구", "서대문구", "마포구", "양천구", "강서구",
+  "구로구", "금천구", "영등포구", "동작구", "관악구", "서초구", "강남구", "송파구", "강동구",
+]);
+// districtId 가 비었지만 district 가 서울 자치구면 "seoul" 로 채운다 (그 외엔 그대로).
+const fillDistrictId = (l: Listing): Listing =>
+  l.districtId || !SEOUL_GU.has(l.district) ? l : { ...l, districtId: "seoul" };
+
 // loose=true 면 광역(regional)·좌표없는 매물도 adapt — "전국 모집" 섹션 / 어드민 검수용.
 // 지도에 띄울 수 없으므로 메인 LH_LISTINGS 에는 안 들어가고 LH_REGIONAL_LISTINGS 로 분리.
 function adaptApi(r: ApiListing, loose = false): Listing | null {
@@ -413,7 +424,7 @@ const LH_LISTINGS_BASE: Listing[] = [
   ...dedupeListings(ALL.filter((l) => !MAPPED_REGIONAL_PIDS.has(l.pblancId ?? ""))),
   ...buildDundeonSeoulListings(),
   ...buildMappedRegionalListings(),
-];
+].map(fillDistrictId);
 
 export const LH_LISTINGS: Listing[] = [
   ...LH_LISTINGS_BASE,
@@ -421,7 +432,7 @@ export const LH_LISTINGS: Listing[] = [
   ...SH_PUBLIC_LISTINGS.map(applyOverride),
   // 청년안심(민간임대) 중 모집중 + 단지 디렉토리 매칭(좌표·가격 공식 출처)된 건.
   ...YOUTH_PUBLIC_LISTINGS.map(applyOverride),
-];
+].map(fillDistrictId);
 
 // 광역(regional) 또는 좌표 없는 매물 — 지도/메인 리스트에서 빠진 것들.
 // "전국 모집" 섹션 + 어드민 검수 큐용. LH_LISTINGS 와 중복 없음.
