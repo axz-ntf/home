@@ -1,0 +1,23 @@
+{
+  "supplyTotal": 265,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 265,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 454
+      },
+      "other": [
+        "무주택세대구성원",
+        "소득요건 배제",
+        "자산요건 배제"
+      ]
+    }
+  ],
+  "priority": []
+}

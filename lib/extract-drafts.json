@@ -370,5 +370,342 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020110": {
+    "at": "2026-06-13T17:28:41.983Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "대구국가산단 A7-1블록 26A 청년(소득無)",
+          "area": "26.94",
+          "supplyUnits": 155,
+          "deposit": 1639,
+          "rent": 8,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "대구국가산단 A7-1블록 26A 청년(소득有)",
+          "area": "26.94",
+          "supplyUnits": 155,
+          "deposit": 1735,
+          "rent": 9,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "대구국가산단 A7-1블록 26A 산업단지 근로자",
+          "area": "26.94",
+          "supplyUnits": 108,
+          "deposit": 1928,
+          "rent": 10,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "대구국가산단 A7-1블록 26A 청년(소득無)",
+            "limitManwon": 200,
+            "maxDeposit": 1839,
+            "minRent": 7
+          },
+          {
+            "houseType": "대구국가산단 A7-1블록 26A 청년(소득有)",
+            "limitManwon": 300,
+            "maxDeposit": 2035,
+            "minRent": 7
+          },
+          {
+            "houseType": "대구국가산단 A7-1블록 26A 산업단지 근로자",
+            "limitManwon": 500,
+            "maxDeposit": 2428,
+            "minRent": 7
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.10.02"
+      },
+      "deadline": "2026.06.25",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020104": {
+    "at": "2026-06-13T17:29:23.101Z",
+    "type": "integ",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.11.20"
+      },
+      "deadline": "2026.07.03",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020091": {
+    "at": "2026-06-13T17:29:59.052Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "26.40",
+          "area": "26.40㎡",
+          "supplyUnits": 690,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 261,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 971,
+              "rent": 14
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020111": {
+    "at": "2026-06-13T17:30:53.565Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "1~2인 가구(1형)",
+          "areaRange": "50㎡ 이하",
+          "supplyUnits": 1700,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "3~4인 가구(2형)",
+          "areaRange": "50㎡ 초과 ~ 85㎡ 이하",
+          "supplyUnits": 400,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "5인 이상 가구(3형)",
+          "areaRange": "85㎡ 초과",
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020100": {
+    "at": "2026-06-13T17:31:12.814Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "1·2인 가구(1형)",
+          "areaRange": null,
+          "supplyUnits": 15,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "3인 이상 가구(2·3형)",
+          "areaRange": null,
+          "supplyUnits": 21,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020097": {
+    "at": "2026-06-13T17:31:45.790Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-305221": {
+    "at": "2026-06-13T17:32:57.430Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "1인 가구",
+          "areaRange": null,
+          "supplyUnits": 3,
+          "deposit": [
+            1845,
+            2845
+          ],
+          "rent": [
+            11,
+            16
+          ]
+        }
+      ],
+      "conversion": {
+        "rateUp": 7,
+        "rateDown": 3
+      },
+      "schedule": {
+        "winnerAt": "2026.09.30"
+      },
+      "deadline": "2026.06.24",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-305240": {
+    "at": "2026-06-13T17:39:19.655Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 7,
+        "rateDown": null
+      },
+      "deadline": "2026.06.19",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "sh-304864": {
+    "at": "2026-06-13T17:40:11.992Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.10.30"
+      },
+      "deadline": "2026.06.17",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "sh-304555": {
+    "at": "2026-06-13T17:41:38.775Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "1인 가구",
+          "areaRange": "7.31~12.55㎡",
+          "supplyUnits": 5,
+          "deposit": 109,
+          "rent": [
+            9,
+            16
+          ]
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.08.03"
+      },
+      "deadline": "2026.05.28",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-305517": {
+    "at": "2026-06-13T17:42:57.304Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "강동구 29.99㎡형",
+          "areaRange": "29.99㎡",
+          "supplyUnits": 13,
+          "deposit": [
+            100,
+            200
+          ],
+          "rent": [
+            30,
+            53
+          ]
+        },
+        {
+          "label": "강북구 27.73㎡형",
+          "areaRange": "27.73㎡",
+          "supplyUnits": 1,
+          "deposit": [
+            100,
+            200
+          ],
+          "rent": [
+            21,
+            35
+          ]
+        },
+        {
+          "label": "강북구 27.58㎡형",
+          "areaRange": "27.58㎡",
+          "supplyUnits": 1,
+          "deposit": [
+            100,
+            200
+          ],
+          "rent": [
+            22,
+            36
+          ]
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": 7
+      },
+      "schedule": {
+        "winnerAt": "2026.08.28"
+      },
+      "deadline": "2026.06.19",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-303557": {
+    "at": "2026-06-13T17:44:09.695Z",
+    "type": "jeonse",
+    "fields": {
+      "priceModel": "support-limit",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }

@@ -1,0 +1,129 @@
+{
+  "supplyTotal": 80,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "1순위 우선(수급자)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 50,
+        "byHousehold": {
+          "1": 267,
+          "2": 352,
+          "3": 408,
+          "4": 440,
+          "5": 466,
+          "6": 495,
+          "7": 524
+        },
+        "note": "생계·주거·의료·교육급여 수급자"
+      },
+      "asset": null,
+      "other": [
+        "국민기초생활보장법 제7조제1항에 따른 수급자",
+        "보장시설 수급자 포함"
+      ]
+    },
+    {
+      "id": "general",
+      "name": "1순위 우선(차상위계층)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 50,
+        "byHousehold": {
+          "1": 267,
+          "2": 352,
+          "3": 408,
+          "4": 440,
+          "5": 466,
+          "6": 495,
+          "7": 524
+        },
+        "note": null
+      },
+      "asset": null,
+      "other": [
+        "국민기초생활보장법 제2조제10호의 차상위계층"
+      ]
+    },
+    {
+      "id": "general",
+      "name": "1순위 우선(지원대상 한부모가족)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 50,
+        "byHousehold": {
+          "1": 267,
+          "2": 352,
+          "3": 408,
+          "4": 440,
+          "5": 466,
+          "6": 495,
+          "7": 524
+        },
+        "note": null
+      },
+      "asset": null,
+      "other": [
+        "한부모가족지원법 시행규칙 제3조 기준 적용"
+      ]
+    },
+    {
+      "id": "general",
+      "name": "1순위 일반(장애인)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 70,
+        "byHousehold": {
+          "1": 343,
+          "2": 469,
+          "3": 572,
+          "4": 616,
+          "5": 653,
+          "6": 693,
+          "7": 734
+        },
+        "note": "월평균소득 70% 이하"
+      },
+      "asset": null,
+      "other": [
+        "장애인등록증이 교부된 자",
+        "지적·정신·심한 뇌병변장애인의 경우 배우자 포함"
+      ]
+    },
+    {
+      "id": "general",
+      "name": "2순위",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 100,
+        "byHousehold": {
+          "1": 458,
+          "2": 645,
+          "3": 817,
+          "4": 880,
+          "5": 933,
+          "6": 991,
+          "7": 1049
+        },
+        "note": "월평균소득 100% 이하"
+      },
+      "asset": null,
+      "other": []
+    }
+  ],
+  "priority": [
+    "공급대상지역 거주자(전입일 빠른 자)",
+    "가구원수 많은 자"
+  ]
+}

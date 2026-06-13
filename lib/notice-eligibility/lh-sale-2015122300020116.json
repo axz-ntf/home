@@ -1,0 +1,45 @@
+{
+  "supplyTotal": 338,
+  "tiers": [
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": 338,
+      "age": null,
+      "marriage": "혼인기간 7년 이내 또는 6세 이하 자녀 있음",
+      "income": null,
+      "asset": null,
+      "other": [
+        "최대 거주기간: 무자녀 10년, 자녀 1명 이상 14년",
+        "2세 미만 자녀가 있는 자를 대상으로 모집호수의 30% 범위 내 우선배정"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": "6세 이하 자녀를 둔 한부모",
+      "income": null,
+      "asset": null,
+      "other": [
+        "최대 거주기간: 무자녀 10년, 자녀 1명 이상 14년"
+      ]
+    },
+    {
+      "id": "student",
+      "name": "예비신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "입주 전까지 혼인사실을 증명할 수 있는 사람",
+      "income": null,
+      "asset": null,
+      "other": [
+        "2인 1주택 신청 가능"
+      ]
+    }
+  ],
+  "priority": [
+    "2세 미만 자녀 있음"
+  ]
+}

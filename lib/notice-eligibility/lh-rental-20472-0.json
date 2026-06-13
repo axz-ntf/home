@@ -1,0 +1,22 @@
+{
+  "supplyTotal": 57,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "공고일(2026.06.11) 기준 모집권역 거주"
+      ]
+    }
+  ],
+  "priority": [
+    "신생아 가구",
+    "다자녀"
+  ]
+}

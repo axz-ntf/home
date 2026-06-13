@@ -1,0 +1,32 @@
+{
+  "id": "lh-rental-2015122300020105",
+  "supplyTotal": 286,
+  "integrated": false,
+  "units": [
+    {
+      "type": "평택 고덕 Ca1",
+      "area": 36.87,
+      "supply": 15
+    },
+    {
+      "type": "평택 고덕 Ca2",
+      "area": 23.92,
+      "supply": 20
+    },
+    {
+      "type": "안성 아양 A2-1",
+      "area": 26.53,
+      "supply": 20
+    },
+    {
+      "type": "평택 청북 B-12",
+      "deposit": 17200000,
+      "rent": 83130
+    },
+    {
+      "type": "평택 청북 B-13",
+      "deposit": 15600000,
+      "rent": 75400
+    }
+  ]
+}
