@@ -1,4 +1,5 @@
 import { LH_LISTINGS, LH_REGIONAL_LISTINGS } from "@/lib/lh-adapter";
+import { SH_ADMIN_LISTINGS } from "@/lib/sh-adapter";
 import { effectiveStatus } from "@/lib/dday";
 import type { Listing } from "@/lib/types";
 import NationwideList, { type NationwideRow } from "./nationwide-list";
@@ -11,8 +12,10 @@ export default function NationwidePage() {
   // 공고 키 — pblancId 우선, 없으면 분리 핀 suffix 제거한 id.
   const noticeKey = (l: Listing) => l.pblancId || l.id.replace(/-m\d+$/, "");
 
+  // LH 지도/전국 먼저(좌표·가격 풍부) → SH 어드민(좌표 없는 산재형 매입임대·두레 등).
+  // 같은 공고는 noticeKey 로 dedupe 되어 LH/매핑된 SH 가 우선, 나머지 SH 만 추가됨.
   const byNotice = new Map<string, Listing>();
-  for (const l of [...LH_LISTINGS, ...LH_REGIONAL_LISTINGS]) {
+  for (const l of [...LH_LISTINGS, ...LH_REGIONAL_LISTINGS, ...SH_ADMIN_LISTINGS]) {
     const status = effectiveStatus(l.status, l.deadline ?? "", l.beginDate);
     if (status === "closed") continue;
     const k = noticeKey(l);
