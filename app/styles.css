@@ -707,17 +707,6 @@ input, select { font-family: inherit; }
 .main.detail-open {
   grid-template-columns: minmax(280px, 360px) minmax(0, 1fr) minmax(360px, 460px);
 }
-/* 상세 + AI 상담 열림: 리스트 + 지도 + 상세 + AI 컬럼 (네이버식 다중 패널) */
-.main.detail-open.ai-open {
-  grid-template-columns: minmax(240px, 320px) minmax(0, 1fr) minmax(340px, 420px) minmax(360px, 440px);
-}
-/* AI 컬럼 들어올 공간 확보 위해 더 좁아지면 지도부터 숨김 */
-@media (max-width: 1439px) {
-  .main.detail-open.ai-open {
-    grid-template-columns: minmax(240px, 300px) minmax(340px, 1fr) minmax(360px, 440px);
-  }
-  .main.detail-open.ai-open .map-wrap { display: none; }
-}
 /* 좁은 화면(<1200px): 지도 숨김 → 리스트 + 상세 2컬럼 */
 @media (max-width: 1199px) {
   .main.detail-open {
@@ -2197,15 +2186,26 @@ input, select { font-family: inherit; }
   background: var(--seed-scale-color-gray-50);
 }
 
-/* 상세 옆 도킹 AI 상담 컬럼 (PC) */
+/* 상세 옆에 떠 있는 AI 상담 카드 (PC) — 리스트 오른쪽, 지도 위로 둥글게 부유 */
 .detail-ai-panel {
+  position: absolute;
+  left: 376px;          /* 리스트 컬럼 오른쪽으로 살짝 띄움 */
+  top: 16px;
+  bottom: 16px;
+  width: clamp(360px, 30vw, 440px);
+  z-index: 50;
   display: flex;
   flex-direction: column;
-  height: 100%;
   min-width: 0;
   background: white;
-  border-left: 1px solid var(--seed-semantic-color-divider-2);
-  animation: detailFadeIn .14s ease-out;
+  border: 1px solid var(--seed-semantic-color-divider-2);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  animation: chat-panel-in 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+@media (max-width: 1279px) {
+  .detail-ai-panel { left: 16px; } /* 좁은 화면: 화면 왼쪽 가장자리로 */
 }
 .detail-ai-header {
   display: flex; align-items: center; justify-content: space-between;
