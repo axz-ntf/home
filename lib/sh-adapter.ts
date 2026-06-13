@@ -40,6 +40,14 @@ function mapType(supplyType: string): HousingTypeId {
   return SH_TYPE_MAP[supplyType] ?? "nation";
 }
 
+// SH 접수 기간 — 구조화 데이터에 없어 공고문 PDF(lib/notice-texts/sh-*.md)에서 추출.
+// seq 기준 (분리 핀 -mN 은 부모 상속). 순위별 접수는 전체 범위로.
+const SH_PERIOD: Record<string, { begin: string; deadline: string }> = {
+  "303557": { begin: "2026.05.13", deadline: "2026.06.23" }, // 장기전세 50차 (1~3순위 순차)
+  "304864": { begin: "2026.06.15", deadline: "2026.06.17" }, // 행복주택 1차
+  "305240": { begin: "2026.06.15", deadline: "2026.06.19" }, // 자립준비청년 상반기
+};
+
 // 주택 종류 — SH 원본에 건물종류 필드가 없어 공급유형의 제도 사실로 채움.
 // 건설형(행복·국민·장기전세)은 아파트 단지, 매입형은 다가구·다세대 혼재.
 // 청년안심주택(아파트·오피스텔 혼재)·희망하우징·전세임대·장기안심주택은 추정하지 않는다.
@@ -87,9 +95,9 @@ export const SH_ADMIN_LISTINGS: Listing[] = (shNotices as ShNotice[]).map((n, i)
   totalUnits: null,
   supplyUnits: null,
   status: mapStatus(n.status),
-  // SH 구조화 데이터엔 접수 시작·마감이 없다(공고문 PDF 안에만). 게시일·발표일만 매핑.
-  deadline: "",
-  beginDate: "",
+  // SH 구조화 데이터엔 접수 시작·마감이 없어 공고문 PDF 에서 추출해 보강 (SH_PERIOD).
+  deadline: SH_PERIOD[String(n.seq)]?.deadline ?? "",
+  beginDate: SH_PERIOD[String(n.seq)]?.begin ?? "",
   // LH 와 포맷 통일 (YYYY.MM.DD) — SH 원본은 "2026-05-11" (감사 L3)
   announceDate: (n.postedAt ?? "").replace(/-/g, "."),
   winnerAt: (n.announceAt ?? "").replace(/-/g, ".") || undefined, // 당첨자 발표일
