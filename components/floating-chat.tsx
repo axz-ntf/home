@@ -10,13 +10,18 @@ export function FloatingChat({
   onOpenChange,
   shifted = false,
   allListings = [],
+  hidden = false,
 }: {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   shifted?: boolean;
   allListings?: Listing[];
+  // 상세 옆 도킹 AI 패널이 열렸을 땐 FAB·플로팅챗을 숨겨 겹침 방지.
+  hidden?: boolean;
 }) {
   const router = useRouter();
+
+  if (hidden) return null;
 
   const handleFabClick = () => {
     // 모바일 viewport: 풀스크린 라우트로 — overlay 대신 별도 페이지.

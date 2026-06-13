@@ -334,6 +334,7 @@ export function AppShell({
         onOpenChange={setChatOpen}
         shifted={detailOpen && Boolean(selectedItem)}
         allListings={listings}
+        hidden={Boolean(aiFocusItem)}
       />
 
       <TweaksPanel
