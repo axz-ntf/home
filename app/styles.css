@@ -2186,14 +2186,11 @@ input, select { font-family: inherit; }
   background: var(--seed-scale-color-gray-50);
 }
 
-/* 상세 옆에 떠 있는 AI 상담 카드 (PC) — 리스트와 상세 사이(지도 영역) 가운데로 부유.
-   left(리스트 우측)·right(상세 좌측) 경계 안에서 width+margin auto 로 중앙 정렬. */
+/* 상세 옆에 떠 있는 AI 상담 카드 (PC) — 상세 컬럼 바로 왼쪽에 붙여 부유.
+   상세 폭(최대 460px) + 여백만큼 우측에서 띄워 상세 왼쪽에 자리. */
 .detail-ai-panel {
   position: absolute;
-  left: 360px;          /* 리스트 컬럼 오른쪽 */
-  right: 440px;         /* 상세 컬럼 왼쪽 */
-  margin-left: auto;
-  margin-right: auto;
+  right: 476px;
   top: 16px;
   bottom: 16px;
   width: clamp(360px, 28vw, 440px);
@@ -2209,8 +2206,8 @@ input, select { font-family: inherit; }
   animation: chat-panel-in 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 @media (max-width: 1279px) {
-  /* 좁은 화면: 지도 숨고 리스트+상세 2컬럼 → 화면 가운데로 */
-  .detail-ai-panel { left: 16px; right: 16px; }
+  /* 좁은 화면: 지도 숨고 리스트+상세 2컬럼 → 상세(좌측 280~320) 옆 */
+  .detail-ai-panel { right: auto; left: 16px; }
 }
 .detail-ai-header {
   display: flex; align-items: center; justify-content: space-between;
