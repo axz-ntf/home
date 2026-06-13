@@ -87,10 +87,12 @@ export const SH_ADMIN_LISTINGS: Listing[] = (shNotices as ShNotice[]).map((n, i)
   totalUnits: null,
   supplyUnits: null,
   status: mapStatus(n.status),
+  // SH 구조화 데이터엔 접수 시작·마감이 없다(공고문 PDF 안에만). 게시일·발표일만 매핑.
   deadline: "",
   beginDate: "",
   // LH 와 포맷 통일 (YYYY.MM.DD) — SH 원본은 "2026-05-11" (감사 L3)
   announceDate: (n.postedAt ?? "").replace(/-/g, "."),
+  winnerAt: (n.announceAt ?? "").replace(/-/g, ".") || undefined, // 당첨자 발표일
   eligible: [],
   features: [],
   transit: "",
