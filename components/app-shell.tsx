@@ -140,6 +140,7 @@ export function AppShell({
     }
     setSelectedId(id);
     setDetailOpen(true);
+    setAiFocusId(null); // 다른 공고 선택 시 이전 공고의 AI 상담 패널은 닫는다
   }, [router]);
   const handleDistrictClick = useCallback((id: string) => {
     setActiveDistrict(id);
@@ -168,6 +169,8 @@ export function AppShell({
       router.push(`/ai?focus=${encodeURIComponent(id)}`);
       return;
     }
+    // 새로 열 때마다 이전 대화 기록 비우고 시작 (공고별 새 상담).
+    try { sessionStorage.removeItem("doongji:ai-chat:messages"); } catch {}
     setAiFocusId(id);
   }, [router]);
 
