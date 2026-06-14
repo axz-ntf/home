@@ -707,5 +707,38 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "sh-304925": {
+    "at": "2026-06-14T17:44:38.200Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "다자녀 가구",
+          "areaRange": "59.95~59.99㎡",
+          "supplyUnits": 1,
+          "deposit": [
+            3067,
+            5112
+          ],
+          "rent": [
+            32,
+            53
+          ]
+        }
+      ],
+      "conversion": {
+        "rateUp": 3,
+        "rateDown": 7
+      },
+      "schedule": {
+        "winnerAt": "2026.09.02"
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
