@@ -1,0 +1,33 @@
+{
+  "supplyTotal": 80,
+  "tiers": [
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": 80,
+      "age": null,
+      "marriage": "혼인 중이며 혼인기간 7년 이내 또는 만6세 이하 자녀(2019.06.15. 이후 출생)를 둔 사람",
+      "income": null,
+      "asset": null,
+      "other": [
+        "소득, 총자산 보유 기준 제한 없음",
+        "유주택 및 자동차 보유기준 초과 신청 불가"
+      ]
+    },
+    {
+      "id": "single",
+      "name": "한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": "한부모",
+      "income": null,
+      "asset": null,
+      "other": [
+        "만6세 이하 자녀(2019.06.15. 이후 출생)를 둔 한부모인 사람",
+        "소득, 총자산 보유 기준 제한 없음",
+        "유주택 및 자동차 보유기준 초과 신청 불가"
+      ]
+    }
+  ],
+  "priority": []
+}

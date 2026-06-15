@@ -1,0 +1,47 @@
+{
+  "supplyTotal": 370,
+  "tiers": [
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": 270,
+      "age": "19세 이상 39세 이하",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "사회초년생: 소득이 있는 업무에 종사한 기간이 총 5년 이내",
+        "구직급여 수급자격을 인정받은 퇴직자(퇴직 후 1년 미경과)",
+        "예술인",
+        "소득이 없는 청년 계층은 동일 면적의 대학생 계층 임대조건 적용"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": 75,
+      "age": null,
+      "marriage": "혼인 중이며 혼인기간 7년 이내 또는 6세 이하 자녀를 둔 사람",
+      "income": null,
+      "asset": null,
+      "other": [
+        "예비신혼부부: 입주 전까지 혼인사실을 증명할 수 있는 사람"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "한부모가족",
+      "units": 25,
+      "age": null,
+      "marriage": "한부모",
+      "income": null,
+      "asset": null,
+      "other": [
+        "6세 이하 자녀를 둔 한부모인 사람"
+      ]
+    }
+  ],
+  "priority": [
+    "2세 미만 자녀(태아 포함): 모집호수의 30% 범위 내 우선배정"
+  ]
+}

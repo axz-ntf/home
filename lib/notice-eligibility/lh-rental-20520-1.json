@@ -1,0 +1,64 @@
+{
+  "supplyTotal": 30,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": 20,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "대학에 재학 중이거나 다음 학기에 입·복학 예정",
+        "취업준비생: 대학 또는 고등학교 졸업(중퇴)한 지 2년 이내",
+        "최대 거주기간 10년"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": 20,
+      "age": "19세 이상 39세 이하(1986.06.16.~2007.06.15.)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "사회초년생: 소득이 있는 업무에 종사한 기간이 총 5년 이내",
+        "소득이 없는 청년은 동일 면적의 대학생 임대조건 적용",
+        "최대 거주기간 10년"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족",
+      "units": 5,
+      "age": null,
+      "marriage": "혼인기간 7년 이내 또는 만6세 이하 자녀 보유",
+      "income": null,
+      "asset": null,
+      "other": [
+        "신혼부부: 공고일 현재 혼인 중",
+        "예비신혼부부: 입주 전까지 혼인사실 증명 가능",
+        "한부모가족: 만6세 이하 자녀를 둔 한부모",
+        "최대 거주기간 10~14년"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": 5,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "주거급여법 제2조 제2호 및 제3호 수급권자",
+        "최대 거주기간 20년"
+      ]
+    }
+  ],
+  "priority": [
+    "2세미만 자녀(태아 포함)"
+  ]
+}

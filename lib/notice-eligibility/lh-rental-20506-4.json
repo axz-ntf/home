@@ -1,0 +1,59 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "대학에 재학 중이거나 다음 학기에 입·복학 예정인 사람",
+        "취업준비생: 대학 또는 고등학교를 졸업(또는 중퇴)한 지 2년 이내인 사람",
+        "최대 거주기간 10년(36형)"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "19세 이상 39세 이하(1986.06.16. ~ 2007.06.15.)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "사회초년생: 소득이 있는 업무에 종사한 기간이 총 5년 이내",
+        "최대 거주기간 10년(36형)"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": null,
+      "age": "65세 이상(1961.06.15. 이전 출생)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "최대 거주기간 10년(16형), 20년(36형)"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부 및 한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": "신혼부부: 혼인기간 7년 이내(2019.06.15.부터 혼인) 또는 6세 이하 자녀(2019.06.15. 이후 출생) 소유자 / 예비신혼부부: 입주 전까지 혼인사실 증명 가능 / 한부모가족: 6세 이하 자녀를 둔 한부모",
+      "income": null,
+      "asset": null,
+      "other": [
+        "최대 거주기간 10년(36형)"
+      ]
+    }
+  ],
+  "priority": [
+    "2세 미만 자녀(태아 포함)"
+  ]
+}

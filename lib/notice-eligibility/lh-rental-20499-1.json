@@ -1,0 +1,98 @@
+{
+  "supplyTotal": 55,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": 14,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "16㎡ 공급형 대상",
+        "최대 거주기간 10년"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": 41,
+      "age": "19세 이상 39세 이하(1986.06.16.~2007.06.15.)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "사회초년생 포함(소득 업무 종사 5년 이내)",
+        "16㎡, 36㎡ 공급형 대상",
+        "최대 거주기간 10년"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": 16,
+      "age": null,
+      "marriage": "혼인 중이며 혼인기간 7년 이내 또는 6세 이하 자녀 보유",
+      "income": null,
+      "asset": null,
+      "other": [
+        "36㎡ 공급형 대상",
+        "최대 거주기간 10년(무자녀) 또는 14년(유자녀)"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "한부모가족",
+      "units": 16,
+      "age": null,
+      "marriage": "한부모",
+      "income": null,
+      "asset": null,
+      "other": [
+        "6세 이하 자녀 보유",
+        "36㎡ 공급형 대상",
+        "최대 거주기간 10년(무자녀) 또는 14년(유자녀)"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": 30,
+      "age": "만 65세 이상(1961.06.15. 이전 출생자)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "16㎡, 36㎡ 공급형 대상",
+        "최대 거주기간 20년"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": 14,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "16㎡ 공급형 대상",
+        "최대 거주기간 20년"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "예비신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "입주 전까지 혼인사실 증명 가능",
+      "income": null,
+      "asset": null,
+      "other": []
+    }
+  ],
+  "priority": [
+    "2세 미만 자녀 보유(태아 포함)"
+  ]
+}

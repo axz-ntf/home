@@ -1,0 +1,116 @@
+{
+  "supplyTotal": 412,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": 181,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "대학에 재학 중이거나 다음 학기에 입·복학 예정",
+        "최대 거주기간 10년"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": 155,
+      "age": "19세 이상 39세 이하(1986.06.16.~2007.06.15.)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "소득유무에 따라 임대조건 상이",
+        "최대 거주기간 10년"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "취업준비생",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "대학 또는 고등학교 졸업(중퇴) 후 2년 이내"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "사회초년생",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "소득 있는 업무 종사 기간 총 5년 이내",
+        "소득이 있는 업무 종사자 또는 퇴직 후 1년 미만 구직급여 수급자 또는 예술인"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": 52,
+      "age": null,
+      "marriage": "혼인 중이며 혼인기간 7년 이내(2019.06.15. 이후 혼인신고) 또는 6세 이하 자녀 소유(2019.06.16. 이후 출생)",
+      "income": null,
+      "asset": null,
+      "other": [
+        "최대 거주기간 10년(자녀 2인 이상 시 14년)"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "예비신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "입주 전까지 혼인사실 증명 가능",
+      "income": null,
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "etc",
+      "name": "한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": "6세 이하 자녀를 둔 한부모",
+      "income": null,
+      "asset": null,
+      "other": [
+        "최대 거주기간 10년(자녀 2인 이상 시 14년)"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": 4,
+      "age": "65세 이상(1961.06.15. 이전 출생)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "최대 거주기간 20년"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": 24,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "주거급여법 제2조 제2호 및 제3호에 따른 수급권자 또는 수급자",
+        "최대 거주기간 20년"
+      ]
+    }
+  ],
+  "priority": []
+}

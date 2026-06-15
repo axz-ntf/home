@@ -740,5 +740,432 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020144": {
+    "at": "2026-06-15T20:27:04.038Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "26A",
+          "area": "26.94",
+          "supplyUnits": 155,
+          "deposit": 1639,
+          "rent": 8,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "26A",
+          "area": "26.94",
+          "supplyUnits": 155,
+          "deposit": 1735,
+          "rent": 9,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "26A",
+          "area": "26.94",
+          "supplyUnits": 108,
+          "deposit": 1928,
+          "rent": 10,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "26A",
+            "limitManwon": 200,
+            "maxDeposit": 1839,
+            "minRent": 7
+          },
+          {
+            "houseType": "26A",
+            "limitManwon": 300,
+            "maxDeposit": 2035,
+            "minRent": 7
+          },
+          {
+            "houseType": "26A",
+            "limitManwon": 500,
+            "maxDeposit": 2428,
+            "minRent": 7
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.10.02"
+      },
+      "deadline": "2026.06.25",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020147": {
+    "at": "2026-06-15T20:30:24.636Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "32A",
+          "area": "32.32㎡",
+          "supplyUnits": 40,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 310,
+              "rent": 6
+            },
+            {
+              "label": "나군",
+              "deposit": 1385,
+              "rent": 13
+            }
+          ]
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "32A",
+            "limitManwon": 600,
+            "maxDeposit": 910,
+            "minRent": 3
+          },
+          {
+            "houseType": "32A",
+            "limitManwon": 1600,
+            "maxDeposit": 2985,
+            "minRent": 5
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.11.06"
+      },
+      "deadline": "2026.06.26",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020039": {
+    "at": "2026-06-15T20:43:26.176Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "24",
+          "area": "24.83㎡",
+          "supplyUnits": 90,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 237,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 1150,
+              "rent": 12
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-sale-2015122300020098": {
+    "at": "2026-06-15T20:44:30.285Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "진해구 우림필유",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "진해구 청안해오름",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-sale-2015122300020071": {
+    "at": "2026-06-15T20:46:27.452Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "301동 204호",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 18630
+        },
+        {
+          "houseType": "301동 304호",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 19030
+        },
+        {
+          "houseType": "301동 604호",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 19625
+        },
+        {
+          "houseType": "301동 1604호",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 19930
+        },
+        {
+          "houseType": "301동 1704호",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 19930
+        },
+        {
+          "houseType": "301동 1904호",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 19930
+        },
+        {
+          "houseType": "302동 2004호",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 19925
+        },
+        {
+          "houseType": "303동 203호",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 19005
+        },
+        {
+          "houseType": "303동 1003호",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 20330
+        },
+        {
+          "houseType": "303동 1805호",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 20330
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.06.30"
+      },
+      "deadline": "2026.06.23",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020081": {
+    "at": "2026-06-15T20:49:53.600Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020149": {
+    "at": "2026-06-15T20:50:56.993Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.12.01"
+      },
+      "deadline": "2026.06.26",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020131": {
+    "at": "2026-06-15T20:51:55.177Z",
+    "type": "integ",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.07.01"
+      },
+      "deadline": "2026.07.03",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020136": {
+    "at": "2026-06-15T20:52:40.774Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020135": {
+    "at": "2026-06-15T20:55:25.404Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "율하2 LH3단지 16A",
+          "area": "16.02",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "율하2 LH3단지 16B",
+          "area": "16.29",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "율하2 LH3단지 16B-1",
+          "area": "16.27",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "율하2 LH3단지 36A",
+          "area": "36.03",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "율하2 LH3단지 36B",
+          "area": "36.05",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "진영 천년나무2 16A",
+          "area": "16.69",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "진영 천년나무2 26B",
+          "area": "26.52",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "진영 천년나무2 44A",
+          "area": "44.16",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": null,
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020132": {
+    "at": "2026-06-15T21:01:46.667Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "서귀포시 서귀포혁신LH3 36A,B",
+          "area": "36.65",
+          "supplyUnits": 80,
+          "deposit": 4866,
+          "rent": 0,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020095": {
+    "at": "2026-06-15T21:02:34.615Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.10.29"
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
   }
 }
