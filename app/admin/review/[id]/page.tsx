@@ -58,8 +58,9 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
   const lhCfg = !shCfg && listing.pblancId
     ? (mappedRegional as Record<string, { points: MappedPoint[] }>)[listing.pblancId]
     : undefined;
-  const mapped = shCfg
-    ? { file: "sh" as const, key: shSeq as string, points: shCfg.points }
+  // SH 는 점이 0개여도 에디터를 띄운다 — 좌표 없는 산재형도 "주소검색"으로 핀을 추가할 수 있게.
+  const mapped = shSeq
+    ? { file: "sh" as const, key: shSeq, points: shCfg?.points ?? [] }
     : lhCfg
       ? { file: "lh" as const, key: listing.pblancId as string, points: lhCfg.points }
       : null;
