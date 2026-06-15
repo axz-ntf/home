@@ -33,9 +33,12 @@ for (const n of allNotices as Array<{ id?: string; sourceUrl?: string }>) {
 // listings-api 식 ID → notice-all 식 ID (인덱스에서 사용).
 // listings-api 형식: lh-{rental|sale}-{panId}[-c{idx}]
 function apiIdToNoticeId(apiId: string): string | null {
-  const m = apiId.match(/lh-(?:rental|sale)-(\d+)/);
-  if (!m) return null;
-  return PAN_TO_NOTICE_ID.get(m[1]) ?? null;
+  const lh = apiId.match(/lh-(?:rental|sale)-(\d+)/);
+  if (lh) return PAN_TO_NOTICE_ID.get(lh[1]) ?? null;
+  // SH·youth 는 공고문 .md 파일명이 곧 매물 id (sh-{seq}, youth-{boardId}).
+  // 분리 핀(-mN)·단지(-cN) suffix 를 떼고 인덱스 키와 동일한 base id 로 패스스루.
+  const etc = apiId.match(/^(?:sh|youth)-[^-]+/);
+  return etc ? etc[0] : null;
 }
 
 // 인덱스의 notice-all id → listings-api 식 ID (검색 결과 반환용).

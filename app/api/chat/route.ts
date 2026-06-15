@@ -2,10 +2,19 @@ import { createAnthropic } from "@ai-sdk/anthropic";
 import { convertToModelMessages, stepCountIs, streamText, tool, type UIMessage } from "ai";
 import { z } from "zod";
 import { LH_LISTINGS } from "@/lib/lh-adapter";
+import { SH_ADMIN_LISTINGS } from "@/lib/sh-adapter";
+import { YOUTH_ADMIN_LISTINGS } from "@/lib/youth-adapter";
 import { effectiveStatus } from "@/lib/dday";
 import { searchByQueryVector } from "@/lib/notice-search";
 
 export const maxDuration = 60;
+
+// RAG hit 의 listingId → 공고 제목. AI 가 "검색 결과가 사용자가 물은 공고와 같은지"
+// 스스로 확인해 엉뚱한 공고를 답으로 제시하지 않게 한다(오답 방지).
+const TITLE_BY_ID = new Map<string, string>();
+for (const l of [...LH_LISTINGS, ...SH_ADMIN_LISTINGS, ...YOUTH_ADMIN_LISTINGS]) {
+  TITLE_BY_ID.set(l.id, l.pblancNm || l.title);
+}
 
 // Anthropic Claude (직접 API). 이전엔 BizRouter 프록시 사용했으나 중단되어 직접 호출로 전환.
 const anthropic = createAnthropic({
@@ -38,6 +47,7 @@ const SYSTEM_PROMPT = `당신은 한국 LH/마이홈 공공임대주택·공공�
 - 직전 recommendListings 호출 결과의 items[].id 가 컨텍스트에 있으면 그 중 가장 관련된 매물의 id 를 listingId 로 넘기세요. 사용자가 "이 매물", "두 번째 매물" 같이 모호하게 지칭하면 첫 번째(1순위) 매물 id 우선.
 - 사용자가 명확히 다른 매물을 지칭한 경우만 그 id 사용.
 - listingId 없이 전체 인덱스 검색하면 정확도 떨어지므로 가급적 피하세요.
+- **오답 방지 (중요)**: 반환된 hits 의 \`title\` 이 사용자가 물은 공고명과 명백히 다르면(예: 사용자는 "왕십리 모노퍼스"를 물었는데 hit title 이 "논산 국민임대"), 그 내용을 그 공고의 답으로 제시하지 마세요. 이럴 땐 "찾으시는 공고가 아직 AI 데이터에 없어요 — LH 청약플러스(apply.lh.or.kr)/마이홈(myhome.go.kr)에서 직접 확인해 주세요" 라고 안내하고, 자격을 추측해서 지어내지 마세요. (\`scoped:false\` 이고 제목 불일치면 특히 주의)
 - 반환된 hits 의 text 를 그대로 인용하거나 짧게 요약해서 답변하세요. 인용 시 "공고문에 따르면..." 같이 출처 명시.
 - 일반 정책 질문(예: "행복주택 자격이 뭐예요?")에는 호출 금지 — 일반 지식으로 답하세요.
 
@@ -248,8 +258,10 @@ const searchNoticeContent = tool({
     }
     return {
       ok: true,
+      scoped: !!listingId, // listingId 로 특정 공고에 한정해 검색했는지 — 전체검색이면 매칭 신뢰도 낮음
       hits: hits.map((h) => ({
         listingId: h.listingId,
+        title: TITLE_BY_ID.get(h.listingId) ?? "", // 이 청크가 어느 공고에서 왔는지 — 사용자 질문과 대조용
         score: +h.score.toFixed(3),
         text: h.text.slice(0, 600),
       })),
