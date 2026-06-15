@@ -123,6 +123,17 @@ function initSupport(o: ManualOverride | null): SupportDraft[] {
   return [{ label: "", limit: "" }];
 }
 
+// 야간 추출 초안 시각(UTC ISO) → 한국시간 "YYYY.MM.DD HH:mm". 날것 UTC 노출 대신.
+function fmtKst(iso: string): string {
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return iso.slice(0, 16).replace("T", " ");
+  const p = new Intl.DateTimeFormat("ko-KR", {
+    timeZone: "Asia/Seoul", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false,
+  }).formatToParts(d);
+  const g = (t: string) => p.find((x) => x.type === t)?.value ?? "";
+  return `${g("year")}.${g("month")}.${g("day")} ${g("hour")}:${g("minute")}`;
+}
+
 // "850~1200" → [850,1200], "850" → 850, "" → null.
 function parseRange(s: string): number | [number, number] | null {
   const t = s.trim();
@@ -445,13 +456,13 @@ export default function ReviewForm({
 
       <FormSection title="AI 자동 채움" subtitle="Solar 가 공고문을 읽어 금액·세대수·평형을 채웁니다. 값은 반드시 확인 후 저장하세요.">
         {draft && (
-          <div className="a-msg" style={{ marginBottom: 10, display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
-            <span>
-              🌙 야간 일괄 추출 초안이 있습니다 ({draft.at.slice(0, 10)} {draft.at.slice(11, 16)} UTC) — 90초 대기 없이 바로 채울 수 있어요.
+          <div className="a-draft-note">
+            <span className="t">
+              야간 일괄 추출 초안이 있어요 <time>{fmtKst(draft.at)}</time> — 90초 대기 없이 바로 채울 수 있습니다.
             </span>
             <button
               type="button"
-              className="a-btn primary"
+              className="a-btn secondary sm"
               disabled={extracting || busy}
               onClick={() => {
                 applyExtracted(draft.fields);
@@ -468,12 +479,11 @@ export default function ReviewForm({
             onClick={() => runExtract()}
             disabled={extracting || busy || !canAutoExtract}
             className="a-btn primary"
-            style={{ background: "var(--a-carrot)", opacity: canAutoExtract ? 1 : 0.5 }}
             title={canAutoExtract ? undefined : "이 공고는 첨부 PDF 가 없어요 — 아래 PDF 업로드를 이용하세요"}
           >
             {extracting ? "추출 중…" : canAutoExtract ? "공고문에서 자동 채움" : "PDF 없음 — 업로드 필요"}
           </button>
-          <label className="a-btn ghost" style={{ cursor: extracting ? "default" : "pointer", margin: 0 }}>
+          <label className="a-btn secondary" style={{ cursor: extracting ? "default" : "pointer", margin: 0 }}>
             PDF 업로드
             <input
               type="file"

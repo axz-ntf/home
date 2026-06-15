@@ -1065,3 +1065,18 @@ body:has(.a-login-shell) { overflow: auto !important; }
   font-size: 12.5px;
   font-weight: 500;
 }
+
+/* 정보 배너 — 야간 추출 초안 안내 등(녹색 검수 배너의 중립 버전). */
+.a-draft-note {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  padding: 11px 14px;
+  background: var(--a-blue-low);
+  border: 1px solid #CFE0F8;
+  border-radius: 9px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--a-ink-2);
+  letter-spacing: -0.01em;
+}
+.a-draft-note .t { flex: 1; min-width: 200px; }
+.a-draft-note time { font-weight: 700; color: var(--a-ink); font-variant-numeric: tabular-nums; }
