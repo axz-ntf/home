@@ -8,9 +8,13 @@ export const runtime = "nodejs";
 
 const KEY = (process.env.VWORLD_API_KEY ?? "").trim();
 
+let lastStatus = "";
+
 async function vworld(address: string, type: "road" | "parcel"): Promise<{ lat: number; lng: number } | null> {
   const u = `https://api.vworld.kr/req/address?service=address&request=getcoord&version=2.0&crs=epsg:4326&type=${type}&address=${encodeURIComponent(address)}&format=json&key=${KEY}`;
   const j = await (await fetch(u)).json();
+  // 진단 — VWORLD 가 키/IP 거부(ERROR)인지, 주소 미존재(NOT_FOUND)인지 구분해 에러에 노출.
+  lastStatus = j?.response?.status ?? "";
   const p = j?.response?.result?.point;
   return p ? { lat: Number(p.y), lng: Number(p.x) } : null;
 }
@@ -28,11 +32,14 @@ export async function GET(req: Request) {
   if (jibun) tries.push([jibun, "parcel"]);
   if (!jibun && road) tries.push([road, "parcel"]);
 
+  lastStatus = "";
   for (const [address, type] of tries) {
     try {
       const r = await vworld(address, type);
       if (r && Number.isFinite(r.lat) && Number.isFinite(r.lng)) return NextResponse.json({ ok: true, ...r });
     } catch { /* 다음 시도 */ }
   }
-  return NextResponse.json({ error: "좌표를 찾지 못했습니다." }, { status: 404 });
+  // status=ERROR 면 키/IP 거부(서버 리전 문제), NOT_FOUND 면 주소 자체가 안 풀림.
+  const hint = lastStatus === "ERROR" ? " (VWORLD 거부 — 서버 리전/키 문제)" : "";
+  return NextResponse.json({ error: `좌표를 찾지 못했습니다.${hint}`, vworldStatus: lastStatus }, { status: 404 });
 }
