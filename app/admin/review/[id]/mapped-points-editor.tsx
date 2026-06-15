@@ -45,9 +45,6 @@ const num = (s: string): number | null => {
 
 const EMPTY_DRAFT: PointDraft = { lat: "", lng: "", label: "", address: "", units: "", depositManwon: "", rentManwon: "" };
 
-const cell: React.CSSProperties = { padding: "2px 4px" };
-const inp: React.CSSProperties = { width: "100%", boxSizing: "border-box" };
-
 // 다음 우편번호 팝업 — 검색창에 동/도로명 치면 주소 리스트 → 선택. 무료 임베드 스크립트.
 const DAUM_SRC = "//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js";
 interface DaumPostcodeData { roadAddress: string; jibunAddress: string; buildingName: string }
@@ -159,61 +156,69 @@ export default function MappedPointsEditor({
   }
 
   return (
-    <section className="a-form-section" style={{ marginTop: 24 }}>
-      <h2 style={{ fontSize: 15, fontWeight: 800, marginBottom: 4 }}>
-        분리 핀 {drafts.length}개 <span style={{ fontWeight: 500, color: "var(--a-ink-3)", fontSize: 12.5 }}>— AI 추출·지오코딩 결과 교정. 행 삭제 후 저장하면 그 핀만 내려감.</span>
-      </h2>
-      <div style={{ overflowX: "auto" }}>
-        <table style={{ borderCollapse: "collapse", width: "100%", fontSize: 12.5 }}>
+    <section className="a-form-section" style={{ marginTop: 14 }}>
+      <header>
+        <h2>위치 핀 {drafts.length}개</h2>
+        <p className="section-sub">주소검색으로 단지 위치를 등록하면 지도에 핀으로 떠요. 행 삭제 후 저장하면 그 핀만 내려갑니다.</p>
+      </header>
+
+      <div className="a-pins-wrap">
+        <table className="a-pins">
           <thead>
-            <tr style={{ color: "var(--a-ink-3)", textAlign: "left" }}>
+            <tr>
               {["#", "라벨(단지명)", "주소", "위도", "경도", "세대", "보증금(만)", "월세(만)", "", ""].map((h, i) => (
-                <th key={i} style={{ ...cell, fontWeight: 700, borderBottom: "1px solid var(--a-line)" }}>{h}</th>
+                <th key={i}>{h}</th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {drafts.map((d, i) => (
-              <tr key={i} style={i === currentPinIndex ? { background: "var(--a-bg-2)" } : undefined}>
-                <td style={{ ...cell, color: "var(--a-ink-3)", fontWeight: 700 }}>{i + 1}</td>
-                <td style={{ ...cell, minWidth: 150 }}><input style={inp} value={d.label} onChange={(e) => update(i, { label: e.target.value })} /></td>
-                <td style={{ ...cell, minWidth: 220 }}>
-                  <div style={{ display: "flex", gap: 4 }}>
-                    <input style={inp} value={d.address} onChange={(e) => update(i, { address: e.target.value })} />
-                    <button type="button" onClick={() => searchAddress(i)} style={{ whiteSpace: "nowrap", fontSize: 11.5, padding: "0 6px", cursor: "pointer" }}>주소검색</button>
-                  </div>
-                  {geoBusy === i && <span style={{ fontSize: 11, color: "var(--a-ink-3)" }}>좌표 변환 중…</span>}
+            {drafts.length === 0 && (
+              <tr>
+                <td colSpan={10} className="a-pins-empty">
+                  등록된 핀이 없어요. 아래 <strong>+ 핀 추가</strong> 후 <strong>주소검색</strong>으로 위치를 등록하세요.
                 </td>
-                <td style={{ ...cell, width: 90 }}><input style={inp} value={d.lat} onChange={(e) => update(i, { lat: e.target.value })} /></td>
-                <td style={{ ...cell, width: 90 }}><input style={inp} value={d.lng} onChange={(e) => update(i, { lng: e.target.value })} /></td>
-                <td style={{ ...cell, width: 56 }}><input style={inp} value={d.units} onChange={(e) => update(i, { units: e.target.value })} type="number" /></td>
-                <td style={{ ...cell, width: 76 }}><input style={inp} value={d.depositManwon} onChange={(e) => update(i, { depositManwon: e.target.value })} type="number" /></td>
-                <td style={{ ...cell, width: 56 }}><input style={inp} value={d.rentManwon} onChange={(e) => update(i, { rentManwon: e.target.value })} type="number" /></td>
-                <td style={cell}>
+              </tr>
+            )}
+            {drafts.map((d, i) => (
+              <tr key={i} className={i === currentPinIndex ? "current" : undefined}>
+                <td className="idx">{i + 1}</td>
+                <td><input value={d.label} placeholder="단지명" onChange={(e) => update(i, { label: e.target.value })} /></td>
+                <td className="addr-cell">
+                  <div className="addr-row">
+                    <input value={d.address} placeholder="주소검색으로 입력" onChange={(e) => update(i, { address: e.target.value })} />
+                    <button type="button" className="a-pins-search" onClick={() => searchAddress(i)}>주소검색</button>
+                  </div>
+                  {geoBusy === i && <span className="geo-busy">좌표 변환 중…</span>}
+                </td>
+                <td className="coord-cell"><input value={d.lat} placeholder="위도" onChange={(e) => update(i, { lat: e.target.value })} /></td>
+                <td className="coord-cell"><input value={d.lng} placeholder="경도" onChange={(e) => update(i, { lng: e.target.value })} /></td>
+                <td className="num-cell"><input value={d.units} onChange={(e) => update(i, { units: e.target.value })} type="number" /></td>
+                <td className="num-cell"><input value={d.depositManwon} onChange={(e) => update(i, { depositManwon: e.target.value })} type="number" /></td>
+                <td className="num-cell"><input value={d.rentManwon} onChange={(e) => update(i, { rentManwon: e.target.value })} type="number" /></td>
+                <td>
                   <a
+                    className="a-pins-map"
                     href={`https://map.kakao.com/link/map/${encodeURIComponent(d.label || d.address || "핀")},${d.lat},${d.lng}`}
-                    target="_blank" rel="noreferrer" style={{ fontSize: 11.5 }}
+                    target="_blank" rel="noreferrer"
                   >
                     지도
                   </a>
                 </td>
-                <td style={cell}>
-                  <button type="button" onClick={() => remove(i)} aria-label={`핀 ${i + 1} 삭제`}
-                    style={{ border: "none", background: "none", color: "var(--a-danger, #d33)", cursor: "pointer", fontWeight: 800 }}>
-                    ×
-                  </button>
+                <td>
+                  <button type="button" className="a-pins-del" onClick={() => remove(i)} aria-label={`핀 ${i + 1} 삭제`}>×</button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      <div className="a-actions" style={{ marginTop: 10, display: "flex", alignItems: "center", gap: 10 }}>
-        <button type="button" className="a-btn" onClick={addRow}>+ 핀 추가</button>
-        <button type="button" className="a-btn primary" onClick={save} disabled={saving}>
+
+      <div className="a-actions" style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <button type="button" className="a-btn secondary sm" onClick={addRow}>+ 핀 추가</button>
+        <button type="button" className="a-btn primary sm" onClick={save} disabled={saving}>
           {saving ? "저장 중…" : `핀 ${drafts.length}개 저장`}
         </button>
-        {message && <span style={{ fontSize: 12.5, color: "var(--a-ink-2)" }}>{message}</span>}
+        {message && <span className="a-msg" style={{ marginTop: 0, color: "var(--a-ink-2)" }}>{message}</span>}
       </div>
     </section>
   );

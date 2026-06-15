@@ -950,3 +950,118 @@ body:has(.a-login-shell) { overflow: auto !important; }
   font-size: 12px;
   font-weight: 500;
 }
+
+/* ============================================================
+ * PIN EDITOR — 분리 핀(주소검색/지오코딩) 편집 그리드.
+ * .a-form-section 안에서 .a-table 톤을 압축해 편집 가능한 표로.
+ * ============================================================ */
+.a-btn.sm { padding: 7px 12px; font-size: 12px; border-radius: 7px; }
+.a-btn.secondary {
+  background: white;
+  color: var(--a-ink-2);
+  border: 1px solid var(--a-line-2);
+}
+.a-btn.secondary:hover:not(:disabled) { border-color: var(--a-carrot); color: var(--a-carrot-dark); background: var(--a-carrot-low); }
+
+.a-pins-wrap {
+  border: 1px solid var(--a-line);
+  border-radius: 10px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.a-pins {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+.a-pins th {
+  background: var(--a-bg-2);
+  text-align: left;
+  padding: 8px 10px;
+  font-size: 10.5px;
+  font-weight: 800;
+  color: var(--a-ink-3);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--a-line);
+  white-space: nowrap;
+}
+.a-pins td {
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--a-line);
+  vertical-align: middle;
+}
+.a-pins tr:last-child td { border-bottom: none; }
+.a-pins tr.current { background: var(--a-carrot-low); }
+.a-pins .idx { color: var(--a-ink-4); font-weight: 800; font-variant-numeric: tabular-nums; width: 30px; }
+
+.a-pins input {
+  appearance: none;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--a-line-2);
+  background: white;
+  border-radius: 6px;
+  padding: 7px 9px;
+  font-size: 12.5px;
+  color: var(--a-ink);
+  font-family: inherit;
+  transition: border-color 120ms, box-shadow 120ms;
+}
+.a-pins input:focus {
+  outline: none;
+  border-color: var(--a-carrot);
+  box-shadow: 0 0 0 3px rgba(255, 111, 15, 0.15);
+}
+.a-pins input::placeholder { color: var(--a-ink-4); }
+.a-pins .num-cell { width: 64px; }
+.a-pins .coord-cell { width: 96px; }
+.a-pins .coord-cell input { font-variant-numeric: tabular-nums; font-family: ui-monospace, monospace; font-size: 11.5px; }
+
+.a-pins .addr-cell { min-width: 240px; }
+.a-pins .addr-row { display: flex; gap: 5px; align-items: center; }
+.a-pins-search {
+  appearance: none;
+  white-space: nowrap;
+  flex: none;
+  border: 1px solid var(--a-line-2);
+  background: white;
+  color: var(--a-ink-2);
+  border-radius: 6px;
+  padding: 7px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 120ms;
+}
+.a-pins-search:hover { border-color: var(--a-carrot); color: var(--a-carrot-dark); background: var(--a-carrot-low); }
+.a-pins .geo-busy { display: inline-block; margin-top: 3px; font-size: 11px; color: var(--a-carrot-dark); font-weight: 600; }
+
+.a-pins-map {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--a-blue);
+  text-decoration: none;
+}
+.a-pins-map:hover { text-decoration: underline; }
+.a-pins-del {
+  border: none;
+  background: none;
+  color: var(--a-ink-4);
+  cursor: pointer;
+  font-size: 17px;
+  line-height: 1;
+  padding: 2px 4px;
+  border-radius: 6px;
+  transition: all 120ms;
+}
+.a-pins-del:hover { background: var(--a-red-low); color: var(--a-red); }
+
+.a-pins-empty {
+  padding: 22px 16px;
+  text-align: center;
+  color: var(--a-ink-3);
+  font-size: 12.5px;
+  font-weight: 500;
+}
