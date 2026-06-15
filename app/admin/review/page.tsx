@@ -42,9 +42,19 @@ export default function AdminDashboardPage() {
         const seq = l.id.match(/^sh-(\d+)$/)?.[1];
         return seq ? ((shMapped as Record<string, { points: unknown[] }>)[seq]?.points.length ?? null) : null;
       })(),
+      // 검색 보조 — 공고에 등록된 핀(단지명·주소)도 검색에 잡히게. 제목엔 없는 단지명
+      // ("당산센트럴아이파크" 등)으로도 그 공고를 찾을 수 있다.
+      searchExtra: (() => {
+        const seq = l.id.match(/^sh-(\d+)$/)?.[1];
+        const pts = seq ? (shMapped as Record<string, { points: { label?: string; address?: string }[] }>)[seq]?.points : undefined;
+        return pts ? pts.map((p) => `${p.label ?? ""} ${p.address ?? ""}`).join(" ") : "";
+      })(),
       note: OVERRIDES[l.id]?._note ?? "",
     };
   });
+
+  // 공고일 최신순 — SH 가 LH 뒤에 붙어 뒤 페이지로 밀리던 문제 해소(없으면 맨 뒤).
+  rows.sort((a, b) => (b.announceDate || "0").localeCompare(a.announceDate || "0"));
 
   // 공개 지도 핀 단위 모집중(마감임박 포함) — 어드민 공고 수와 PC 핀 수가 다른 이유를 KPI 에 병기.
   const activePins = LH_LISTINGS.filter((l) =>

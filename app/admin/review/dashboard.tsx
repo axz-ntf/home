@@ -30,6 +30,7 @@ export interface DashboardRow {
   needsReview: boolean;
   hasDraft: boolean;
   pinCount: number | null;
+  searchExtra: string;
   note: string;
 }
 
@@ -144,12 +145,14 @@ export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: 
       if (filter !== "all" && filter !== "review" && r.status !== filter) return false;
       if (issueFilter && (r.reviewed || !r.issues.includes(issueFilter))) return false;
       // 청년안심처럼 유형명이 제목에 없는 공고도 "청년안심"·"서울시"로 찾히게 — suplyTyNm·agency 포함.
+      // searchExtra: 공고에 등록된 핀의 단지명·주소(제목엔 없는 "당산센트럴아이파크" 등).
       if (
         q &&
         !r.title.toLowerCase().includes(q) &&
         !r.district.toLowerCase().includes(q) &&
         !r.suplyTyNm.toLowerCase().includes(q) &&
-        !r.agency.toLowerCase().includes(q)
+        !r.agency.toLowerCase().includes(q) &&
+        !r.searchExtra.toLowerCase().includes(q)
       )
         return false;
       return true;
