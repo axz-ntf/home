@@ -100,14 +100,18 @@ function ScheduleTimeline({ item }: { item: Listing }) {
     if (!m) return false;
     return new Date(+m[1], +m[2] - 1, +m[3]).getTime() < today.getTime();
   };
-  // 다음 단계 = 아직 안 지난 첫 단계
-  const nextIdx = steps.findIndex((s) => !isPast(s.date));
+  // 현재 국면 = 마지막으로 지난 마일스톤. 접수중이면 "접수 시작"(진행 중인 국면)이 강조되고,
+  // 마감이 지나면 "접수 마감"이 강조된다. (다음 단계가 아니라 "지금 어디" 를 표시 —
+  // 접수중인데 마감 단계가 강조되던 문제 수정.)
+  let activeIdx = -1;
+  steps.forEach((s, i) => { if (isPast(s.date)) activeIdx = i; });
+  if (activeIdx < 0) activeIdx = 0; // 아직 아무 단계도 안 지남(모집예정) → 첫 단계
 
-  // "접수 마감" 단계가 강조되면 모집중인데도 마감처럼 읽힌다 —
-  // 제목 옆 현재 상태 칩 + 마감 단계에 D-day 를 붙여 진행 상태를 명시.
   const status = effectiveStatus(item.status, item.deadline, item.beginDate);
   const statusLabel = STATUS_LABELS[status];
   const dday = status !== "closed" ? calcDday(item.deadline) : "";
+  // 진행 국면(접수중·모집예정)일 때만 현재 단계 옆에 상태 라벨을 붙인다(마감임박/마감은 칩·D-day 로).
+  const activeTag = status === "open" || status === "upcoming" ? statusLabel.text : "";
 
   return (
     <section className="detail-section">
@@ -122,23 +126,27 @@ function ScheduleTimeline({ item }: { item: Listing }) {
       <ol style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 0 }}>
         {steps.map((s, i) => {
           const past = isPast(s.date);
-          const isNext = i === nextIdx;
+          const isActive = i === activeIdx;
+          const strong = isActive ? "var(--seed-semantic-color-ink-text)" : past ? "var(--seed-semantic-color-ink-text-low)" : "var(--seed-semantic-color-ink-text)";
           return (
             <li key={s.label} style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 2px", borderBottom: i < steps.length - 1 ? "1px solid var(--seed-scale-color-gray-100)" : "none" }}>
               <span style={{
                 width: 22, height: 22, borderRadius: "50%", flexShrink: 0,
                 display: "inline-flex", alignItems: "center", justifyContent: "center",
                 fontSize: 11, fontWeight: 800,
-                background: isNext ? "var(--seed-semantic-color-primary)" : past ? "var(--seed-scale-color-gray-200)" : "var(--seed-scale-color-gray-100)",
-                color: isNext ? "white" : "var(--seed-semantic-color-ink-text-low)",
+                background: isActive ? "var(--seed-semantic-color-primary)" : past ? "var(--seed-scale-color-gray-200)" : "var(--seed-scale-color-gray-100)",
+                color: isActive ? "white" : "var(--seed-semantic-color-ink-text-low)",
               }}>{i + 1}</span>
-              <span style={{ fontSize: 13, fontWeight: isNext ? 700 : 500, color: past ? "var(--seed-semantic-color-ink-text-low)" : "var(--seed-semantic-color-ink-text)" }}>
+              <span style={{ fontSize: 13, fontWeight: isActive ? 700 : 500, color: strong }}>
                 {s.label}
-                {isNext && s.label === "접수 마감" && dday && (
+                {isActive && activeTag && (
+                  <span style={{ marginLeft: 6, fontSize: 11, fontWeight: 800, color: "var(--seed-semantic-color-primary)" }}>{activeTag}</span>
+                )}
+                {!isActive && s.label === "접수 마감" && dday && (
                   <span style={{ marginLeft: 6, fontSize: 11, fontWeight: 800, color: "var(--seed-semantic-color-primary)" }}>{dday}</span>
                 )}
               </span>
-              <span style={{ marginLeft: "auto", fontSize: 13, fontVariantNumeric: "tabular-nums", fontWeight: isNext ? 700 : 500, color: past ? "var(--seed-semantic-color-ink-text-low)" : "var(--seed-semantic-color-ink-text)" }}>
+              <span style={{ marginLeft: "auto", fontSize: 13, fontVariantNumeric: "tabular-nums", fontWeight: isActive ? 700 : 500, color: strong }}>
                 {s.date}
               </span>
             </li>
