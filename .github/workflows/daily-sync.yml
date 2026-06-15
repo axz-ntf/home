@@ -68,6 +68,9 @@ jobs:
         run: |
           node scripts/enrich-notice-text.mjs --limit 9999 --active-only
           node scripts/enrich-notice-text.mjs --limit 9999 --active-only --from-api
+          # 청년안심(민간임대) 공고문 PDF → md — 전날 sync-youth(Phase 8)가 커밋한
+          # youth-notices.json 기준. Phase 4 임베딩 전에 실행해야 RAG 인덱스에 포함됨.
+          npx tsx scripts/enrich-youth-text.ts --limit 9999
 
       # 캐시 즉시 저장 — Phase 3 가 1시간 37분 걸리는 가장 비싼 단계.
       # 이후 step 이 timeout/실패해도 이 cache 는 보존 → 다음 run 부터 hit.
