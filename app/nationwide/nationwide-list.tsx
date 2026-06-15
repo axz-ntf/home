@@ -11,6 +11,7 @@ export interface NationwideRow {
   status: "open" | "upcoming" | "closing" | "closed";
   deadline: string;
   announceDate: string;
+  winnerAt: string;
   supplyUnits: number | null;
   deposit: number;
   rent: number;
@@ -113,6 +114,7 @@ export default function NationwideList({ rows }: { rows: NationwideRow[] }) {
               <span>공고</span>
               <span style={{ textAlign: "right" }}>공고일</span>
               <span style={{ textAlign: "right" }}>마감</span>
+              <span style={{ textAlign: "right" }}>당첨 발표</span>
             </div>
             {filtered.map((r) => <NoticeRow key={r.id} r={r} />)}
           </div>
@@ -122,7 +124,7 @@ export default function NationwideList({ rows }: { rows: NationwideRow[] }) {
       <style>{`
         .nw-head, .nw-row {
           display: grid;
-          grid-template-columns: 84px 1fr 96px 92px;
+          grid-template-columns: 84px 1fr 96px 92px 96px;
           align-items: center;
           gap: 12px;
           padding: 12px 16px;
@@ -150,6 +152,7 @@ export default function NationwideList({ rows }: { rows: NationwideRow[] }) {
           .nw-row .nw-type { grid-area: type; }
           .nw-row .nw-title { grid-area: title; }
           .nw-row .nw-announce { display: none; }
+          .nw-row .nw-winner { display: none; }
           .nw-row .nw-deadline { grid-area: meta; text-align: right; }
         }
       `}</style>
@@ -211,6 +214,10 @@ function NoticeRow({ r }: { r: NationwideRow }) {
             {dday}
           </span>
         )}
+      </span>
+
+      <span className="nw-winner" style={{ textAlign: "right", fontSize: 12.5, color: "var(--seed-scale-color-gray-500)", fontVariantNumeric: "tabular-nums" }}>
+        {r.winnerAt || "—"}
       </span>
     </a>
   );

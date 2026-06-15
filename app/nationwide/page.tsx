@@ -31,6 +31,7 @@ export default function NationwidePage() {
       status: effectiveStatus(l.status, l.deadline ?? "", l.beginDate),
       deadline: l.deadline ?? "",
       announceDate: l.announceDate ?? l.beginDate ?? "",
+      winnerAt: l.winnerAt ?? "",
       supplyUnits: typeof l.supplyUnits === "number" ? l.supplyUnits : null,
       deposit: l.deposit ?? 0,
       rent: l.rent ?? 0,

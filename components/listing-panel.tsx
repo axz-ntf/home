@@ -141,6 +141,12 @@ export function ListingCard({
               모집 {item.supplyUnits}세대
             </>
           )}
+          {item.winnerAt && /^\d{4}[.\-]\d{2}[.\-]\d{2}/.test(item.winnerAt) && (
+            <>
+              <span className="dot">·</span>
+              당첨발표 {item.winnerAt.replace(/-/g, ".").slice(5)}
+            </>
+          )}
         </div>
         <div className="card-foot">
           {/* M3: 대상 계층 태그 (있을 때) — 없으면 유형별 요약 fallback */}
