@@ -13,6 +13,7 @@ export const FILTER_CONFIG: Record<FilterKey, FilterConfigEntry> = {
     label: "공급 유형",
     options: [
       { value: "happy", label: "행복주택" },
+      { value: "youth", label: "청년주택" },
       { value: "nation", label: "국민임대" },
       { value: "perm", label: "영구임대" },
       { value: "buy", label: "매입임대" },
