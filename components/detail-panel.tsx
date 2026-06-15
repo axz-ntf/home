@@ -434,17 +434,17 @@ export function DetailPanel({
             <button
               className="secondary ai-cta"
               onClick={() => onAskAI(item.id)}
-              style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}
+              style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
             >
-              <span className="ai-cta-spark">✨</span> AI 자격상담
+              AI 자격상담
             </button>
           ) : (
             <a
               className="secondary ai-cta"
               href={`/ai?focus=${encodeURIComponent(item.id)}`}
-              style={{ textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}
+              style={{ textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center" }}
             >
-              <span className="ai-cta-spark">✨</span> AI 자격상담
+              AI 자격상담
             </a>
           )}
           {applyButton.active ? (

@@ -2290,14 +2290,20 @@ input, select { font-family: inherit; }
   font-weight: 600;
   color: var(--seed-semantic-color-ink-text);
 }
-/* AI 자격상담 — 레인보우 그라데이션 테두리(라벨 느낌). mask 로 안쪽은 흰 배경 유지. */
+/* AI 자격상담 — 평소엔 일반 테두리, hover 시 연한 레인보우 테두리가 뺑뺑 도는 애니메이션. */
+@property --ai-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
 .detail-actions .ai-cta {
   position: relative;
-  border: none;
+  border: 1px solid var(--seed-semantic-color-divider-2);
   background: white;
   font-weight: 700;
   color: var(--seed-semantic-color-ink-text);
   isolation: isolate;
+  transition: border-color .25s ease;
 }
 .detail-actions .ai-cta::before {
   content: "";
@@ -2305,14 +2311,26 @@ input, select { font-family: inherit; }
   inset: 0;
   border-radius: inherit;
   padding: 1.5px;
-  background: linear-gradient(115deg, #ff6f0f, #ff2d9b, #7b5bff, #2db6ff, #16c784);
+  /* 연한 파스텔 레인보우 (conic — 회전용). 시작색을 끝에 반복해 이음매 제거. */
+  background: conic-gradient(from var(--ai-angle),
+    #ffd6b8, #ffc9de, #dcd2ff, #c7e7ff, #cdf0dc, #ffd6b8);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
           mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
           mask-composite: exclude;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity .25s ease;
 }
-.detail-actions .ai-cta:hover { background: var(--seed-scale-color-gray-50, #fafafa); }
+.detail-actions .ai-cta:hover { border-color: transparent; }
+.detail-actions .ai-cta:hover::before {
+  opacity: 1;
+  animation: ai-cta-spin 2.4s linear infinite;
+}
+@keyframes ai-cta-spin { to { --ai-angle: 360deg; } }
+@media (prefers-reduced-motion: reduce) {
+  .detail-actions .ai-cta:hover::before { animation: none; }
+}
 .detail-actions .primary {
   height: 48px;
   border-radius: 10px;
