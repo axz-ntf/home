@@ -156,6 +156,14 @@ jobs:
           node scripts/enrich-mapped-covers.mjs
           node scripts/upload-covers-to-blob.mjs
 
+      # 활성 LH 공고의 평면도 이미지 → Claude 비전으로 3D 평면도 스펙 생성(없는 건만).
+      # 최종 sync(Phase 7) 뒤라 최신 활성 매물 기준. 이미 스펙 있는 공고는 skip(비용↓).
+      - name: Phase 7.8 — 평면도 3D 스펙 추출 (Claude 비전)
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: npx tsx scripts/extract-floorplans.ts
+
       # SH(서울주거포털)·청년안심주택(soco) 공고 sync — 어드민 검수 큐 공급원.
       # sync-sh 가 sh-notices.json 을 전체 재작성하므로 geocode-sh 를 바로 뒤에 실행해
       # 좌표(lat/lng) 재부여 (geocode-sh 는 매 실행 전 건 재지오코딩). 스크래핑이라 실패 허용.
