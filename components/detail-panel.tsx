@@ -432,19 +432,19 @@ export function DetailPanel({
           {/* 공고문을 임베딩한 AI 가 이 공고 자격을 바로 상담. PC=옆 컬럼, 그 외=라우트 */}
           {onAskAI ? (
             <button
-              className="secondary"
+              className="secondary ai-cta"
               onClick={() => onAskAI(item.id)}
               style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}
             >
-              ✨ AI로 자격 확인하기
+              <span className="ai-cta-spark">✨</span> AI 자격상담
             </button>
           ) : (
             <a
-              className="secondary"
+              className="secondary ai-cta"
               href={`/ai?focus=${encodeURIComponent(item.id)}`}
               style={{ textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}
             >
-              ✨ AI로 자격 확인하기
+              <span className="ai-cta-spark">✨</span> AI 자격상담
             </a>
           )}
           {applyButton.active ? (
