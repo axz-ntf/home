@@ -29,6 +29,24 @@ const BROWSER_HEADERS = {
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+// 공공데이터/마이홈 서버는 간헐적 connect timeout(UND_ERR_CONNECT_TIMEOUT)·5xx 가 잦다.
+// 네트워크 throw / 5xx 는 지수 백오프 재시도, 4xx 응답은 호출 측 .ok 처리로 그대로 반환.
+async function fetchWithRetry(url, init, label) {
+  const MAX = 4;
+  for (let attempt = 1; ; attempt++) {
+    try {
+      const response = await fetch(url, init);
+      if (response.status >= 500 && attempt < MAX) throw new Error(`HTTP ${response.status}`);
+      return response;
+    } catch (error) {
+      if (attempt >= MAX) throw new Error(`${label}: ${attempt}회 시도 실패 — ${error.message}`);
+      const wait = 1000 * 2 ** (attempt - 1); // 1s → 2s → 4s
+      console.log(`${label} 재시도 ${attempt}/${MAX} (${error.message}) — ${wait}ms 대기`);
+      await sleep(wait);
+    }
+  }
+}
+
 async function loadEnvFile() {
   if (process.env.DATA_GO_KR_KEY) return;
   const text = await fs.readFile(ENV_PATH, "utf8").catch(() => "");
@@ -128,7 +146,7 @@ async function fetchRentalPage(pageNo, numOfRows = 100) {
   url.searchParams.set("_type", "json");
   url.searchParams.set("numOfRows", String(numOfRows));
   url.searchParams.set("pageNo", String(pageNo));
-  const response = await fetch(url);
+  const response = await fetchWithRetry(url, undefined, `임대 ${pageNo}p`);
   if (!response.ok) throw new Error(`rental page ${pageNo}: HTTP ${response.status}`);
   const json = await response.json();
   const body = json.response?.body ?? {};
@@ -167,7 +185,7 @@ async function fetchSalePage(pageIndex) {
     srchLttotPblancDeYearMtBegin: "",
     srchLttotPblancDeYearMtEnd: "",
   });
-  const response = await fetch(SALE_LIST_URL, {
+  const response = await fetchWithRetry(SALE_LIST_URL, {
     method: "POST",
     headers: {
       ...BROWSER_HEADERS,
@@ -176,7 +194,7 @@ async function fetchSalePage(pageIndex) {
       Referer: SALE_VIEW_URL,
     },
     body,
-  });
+  }, `분양 ${pageIndex}p`);
   if (!response.ok) throw new Error(`sale page ${pageIndex}: HTTP ${response.status}`);
   return response.json();
 }
