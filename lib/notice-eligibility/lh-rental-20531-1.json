@@ -1,0 +1,24 @@
+{
+  "supplyTotal": 20,
+  "tiers": [
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": 20,
+      "age": "만 65세 이상",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득 및 자산보유 기준 충족 필요"
+      },
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "입주자모집공고일(2026.06.08.) 현재 기준",
+        "입주 시까지 무주택세대구성원 유지 필수"
+      ]
+    }
+  ],
+  "priority": []
+}

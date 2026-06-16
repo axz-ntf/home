@@ -1,0 +1,44 @@
+{
+  "supplyTotal": 20,
+  "tiers": [
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "19세 이상 39세 이하",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "사회초년생: 소득 있는 업무 종사 기간 5년 이내",
+        "소득이 있는 업무에 종사하는 사람",
+        "퇴직 후 1년 미만이며 구직급여 수급자격 인정자",
+        "예술인"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": "신혼부부: 혼인 중이며 혼인기간 7년 이내 또는 6세 이하 자녀 보유",
+      "income": null,
+      "asset": null,
+      "other": [
+        "예비신혼부부: 입주 전까지 혼인사실 증명 가능",
+        "한부모가족: 6세 이하 자녀를 둔 한부모"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": null,
+      "age": "65세 이상",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": []
+    }
+  ],
+  "priority": []
+}

@@ -1,0 +1,27 @@
+{
+  "id": "lh-rental-2015122300020120",
+  "supplyTotal": 100,
+  "integrated": false,
+  "units": [
+    {
+      "type": "26",
+      "area": 26.75,
+      "supply": 30
+    },
+    {
+      "type": "16 (빌트인)",
+      "area": 16.88,
+      "supply": 30
+    },
+    {
+      "type": "36A",
+      "area": 36.52,
+      "supply": 30
+    },
+    {
+      "type": "36-1 (1층)",
+      "area": 36.52,
+      "supply": 10
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "supplyTotal": 880,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": 240,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "대학에 재학 중이거나 다음 학기에 입·복학 예정",
+        "소득 없는 경우 동일 면적의 대학생 임대조건 적용",
+        "주택소유 여부는 신청자 본인만 검증"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": 240,
+      "age": "19세 이상 39세 이하 (1986.06.16. ~ 2007.06.15. 출생)",
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "사회초년생: 소득이 있는 업무 종사 5년 이내",
+        "소득 없는 경우 동일 면적의 대학생 임대조건 적용",
+        "주택소유 여부는 신청자 본인만 검증"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족",
+      "units": 140,
+      "age": null,
+      "marriage": "혼인기간 7년 이내 (2019.06.15. 이후 혼인) 또는 6세 이하 자녀 소유",
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "신혼부부: 공고일 현재 혼인 중",
+        "6세 이하 자녀를 둔 한부모가족",
+        "예비신혼부부: 입주 전까지 혼인 증명 가능"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": 100,
+      "age": "65세 이상 (1961.06.15. 이전 출생)",
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": []
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": 160,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "「주거급여법」제2조제2호 및 제3호에 따른 수급권자 또는 수급자"
+      ]
+    }
+  ],
+  "priority": [
+    "다자녀",
+    "한부모",
+    "장애인"
+  ]
+}

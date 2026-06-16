@@ -1,0 +1,85 @@
+{
+  "supplyTotal": 100,
+  "tiers": [
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": 60,
+      "age": "19세 이상 39세 이하",
+      "marriage": null,
+      "income": {
+        "percent": 100,
+        "byHousehold": {
+          "1": 120,
+          "2": 110
+        },
+        "note": "사회초년생: 소득종사기간 5년 이내(완화 시 7년)"
+      },
+      "asset": {
+        "total": 25100,
+        "car": 4542
+      },
+      "other": [
+        "완화조건 적용 시 소득·자산 요건 배제",
+        "16형 빌트인, 26형 공급",
+        "최대 거주기간 10년"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족",
+      "units": 30,
+      "age": null,
+      "marriage": "혼인기간 7년 이내(완화 시 10년) 또는 6세 이하 자녀(완화 시 9세 이하)",
+      "income": {
+        "percent": 100,
+        "byHousehold": null,
+        "note": "배우자 소득 있는 경우 120% 이하, 완화조건 적용 시 소득요건 배제"
+      },
+      "asset": {
+        "total": 34500,
+        "car": 4542
+      },
+      "other": [
+        "36A형 공급",
+        "최대 거주기간 10~14년",
+        "한부모가족: 6세 이하 자녀(완화 시 9세 이하)"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": 40,
+      "age": "65세 이상",
+      "marriage": null,
+      "income": {
+        "percent": 100,
+        "byHousehold": null,
+        "note": "완화조건 적용 시 소득요건 배제"
+      },
+      "asset": {
+        "total": 34500,
+        "car": 4542
+      },
+      "other": [
+        "26형, 36-1형(주거약자용) 공급",
+        "최대 거주기간 20년",
+        "36-1형은 1층 편의시설 설치"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "16형, 36A형 공급",
+        "최대 거주기간 20년"
+      ]
+    }
+  ],
+  "priority": []
+}

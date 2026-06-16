@@ -1,0 +1,73 @@
+{
+  "supplyTotal": 612,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": 150,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "대학에 재학 중이거나 다음 학기에 입·복학 예정",
+        "취업준비생: 대학 또는 고등학교 졸업(또는 중퇴)한 지 2년 이내",
+        "자동차가액 4,542만원 이하",
+        "대학생계층은 자동차 소유 불가"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": 450,
+      "age": "19세 이상 39세 이하(출생일 1986.06.16.~2007.06.15)",
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "사회초년생: 소득업무 종사기간 총 7년 이내",
+        "소득이 있는 업무에 종사하는 사람 또는 퇴직 후 1년 미만 구직급여 수급자 또는 예술인",
+        "자동차가액 4,542만원 이하",
+        "소득 없는 청년은 대학생 계층 임대조건 적용"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": 375,
+      "age": "65세 이상(출생일 1961.06.15. 이전)",
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "자동차가액 4,542만원 이하"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": 158,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "「주거급여법」제2조제2호 및 제3호에 따른 수급권자 또는 수급자",
+        "자동차가액 4,542만원 이하"
+      ]
+    }
+  ],
+  "priority": []
+}

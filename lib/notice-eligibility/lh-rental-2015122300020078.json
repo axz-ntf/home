@@ -1,0 +1,80 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "대학 재학 중이거나 다음 학기 입·복학 예정",
+        "취업준비생: 대학/고등학교 졸업(중퇴)한 지 2년 이내",
+        "차량 미소유"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "만19세 이상 만39세 이하(1986.06.16.~2007.06.15)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "사회초년생: 소득 있는 업무 종사 7년 이내",
+        "퇴직 후 1년 미경과 구직급여 수급자",
+        "예술인 포함"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "혼인기간 10년 이내 또는 만 9세 이하 자녀 보유(2016.06.16. 이후 출생)",
+      "income": null,
+      "asset": null,
+      "other": [
+        "예비신혼부부: 입주 전까지 혼인사실 증명 가능"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "만 9세 이하 자녀 보유"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": null,
+      "age": "만 65세 이상(1961.06.15. 이전 출생)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "general",
+      "name": "주거급여수급자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "주거급여법 제2조 제2호, 제3호 수급권자 또는 수급자"
+      ]
+    }
+  ],
+  "priority": []
+}

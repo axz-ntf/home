@@ -1,0 +1,32 @@
+{
+  "id": "lh-rental-2015122300020131",
+  "supplyTotal": 95,
+  "integrated": false,
+  "units": [
+    {
+      "type": "26A",
+      "area": 26.32,
+      "supply": 15
+    },
+    {
+      "type": "26Aa (주거약자용)",
+      "area": 26.32,
+      "supply": 15
+    },
+    {
+      "type": "26B",
+      "area": 26.94,
+      "supply": 30
+    },
+    {
+      "type": "36A",
+      "area": 36.22,
+      "supply": 20
+    },
+    {
+      "type": "44A",
+      "area": 44.97,
+      "supply": 15
+    }
+  ]
+}

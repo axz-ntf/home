@@ -1,0 +1,71 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "etc",
+      "name": "창업자/지역전략산업",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "창원시에 사업장 소재지를 둔 창원시 전략산업 분야 창업자 및 예비창업자",
+        "1인창조기업 사업자(창원시장 인정)",
+        "창원시 전략산업 해당 기업 종사자(창업기업근로자)"
+      ]
+    },
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "대학에 재학 중이거나 다음 학기에 입·복학 예정인 사람",
+        "취업준비생: 대학 또는 고등학교를 졸업(또는 중퇴)한 지 2년 이내"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "19세 이상 39세 이하(2007.06.15.~1986.06.16.)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "사회초년생: 소득이 있는 업무에 종사한 기간이 총 5년 이내",
+        "소득이 있는 업무에 종사하는 사람, 퇴직 후 1년 미만 구직급여 수급자, 예술인 포함"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "혼인기간 7년 이내(2019.06.15.~2026.06.15.) 또는 6세 이하 자녀 보유",
+      "income": null,
+      "asset": null,
+      "other": [
+        "예비신혼부부: 입주 전까지 혼인사실 증명 가능",
+        "본인과 배우자 각각 신청 시 중복신청으로 부적격 처리"
+      ]
+    },
+    {
+      "id": "single",
+      "name": "한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "6세 이하(2019.06.16.이후) 자녀를 둔 한부모인 사람"
+      ]
+    }
+  ],
+  "priority": []
+}

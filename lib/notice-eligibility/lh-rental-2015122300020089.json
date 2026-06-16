@@ -1,0 +1,54 @@
+{
+  "supplyTotal": 400,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": 190,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "대학에 재학 중이거나 다음 학기에 입·복학 예정인 사람",
+        "취업준비생: 대학 또는 고등학교를 졸업(또는 중퇴)한 지 2년 이내",
+        "자동차 소유 불가"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": 210,
+      "age": "19세 이상 39세 이하(1986.06.16.~2007.06.15.)",
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "사회초년생: 소득이 있는 업무에 종사한 기간이 총 7년 이내",
+        "소득이 있는 업무에 종사하는 사람 또는 퇴직 후 1년 미만 구직급여 수급자 또는 예술인"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": 4,
+      "age": "65세 이상(1961.06.15. 이전)",
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "주거약자용 주택: 편의시설 설치, 3층 이하 배정"
+      ]
+    }
+  ],
+  "priority": []
+}

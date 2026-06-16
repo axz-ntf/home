@@ -1,0 +1,27 @@
+{
+  "id": "lh-rental-2015122300020135",
+  "supplyTotal": null,
+  "integrated": false,
+  "units": [
+    {
+      "type": "16A·B (빌트인)",
+      "deposit": 15600000,
+      "rent": 81640
+    },
+    {
+      "type": "16B-1",
+      "deposit": 19760000,
+      "rent": 103410
+    },
+    {
+      "type": "36A",
+      "deposit": 33480000,
+      "rent": 175210
+    },
+    {
+      "type": "36B",
+      "deposit": 42408000,
+      "rent": 221930
+    }
+  ]
+}

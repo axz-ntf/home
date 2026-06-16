@@ -1,0 +1,31 @@
+{
+  "id": "lh-sale-2015122300020112",
+  "supplyTotal": 110,
+  "integrated": false,
+  "units": [
+    {
+      "type": "55",
+      "area": 55.99,
+      "supply": 30,
+      "deposit": 82000000,
+      "rent": 410000
+    },
+    {
+      "type": "59",
+      "area": 59.99,
+      "supply": 50,
+      "deposit": 88000000,
+      "rent": 440000
+    },
+    {
+      "type": "55 주거약자",
+      "area": 55.99,
+      "supply": 30
+    },
+    {
+      "type": "55 (주거 약자)",
+      "deposit": 77200000,
+      "rent": 386000
+    }
+  ]
+}

@@ -544,7 +544,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수중",
-      "enrichedAt": "2026-06-15T19:09:38.998Z"
+      "enrichedAt": "2026-06-16T02:15:01.196Z"
     }
   },
   {
@@ -587,7 +587,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수중",
-      "enrichedAt": "2026-06-15T19:09:39.000Z"
+      "enrichedAt": "2026-06-16T02:15:01.379Z"
     }
   },
   {
@@ -630,7 +630,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수중",
-      "enrichedAt": "2026-06-15T19:09:38.942Z"
+      "enrichedAt": "2026-06-16T02:15:01.683Z"
     }
   },
   {
@@ -694,7 +694,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:39.141Z"
+      "enrichedAt": "2026-06-16T02:15:01.689Z"
     }
   },
   {
@@ -758,7 +758,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:39.319Z"
+      "enrichedAt": "2026-06-16T02:15:01.966Z"
     }
   },
   {
@@ -808,12 +808,12 @@
           "금회공급세대수": "56",
           "임대보증금(원)": "공고문 확인",
           "월임대료(원)": "공고문 확인",
-          "인터넷청약": "청약신청전"
+          "인터넷청약": "청약신청하기"
         }
       ],
       "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:40.350Z"
+      "noticeStatus": "접수중",
+      "enrichedAt": "2026-06-16T02:15:02.557Z"
     }
   },
   {
@@ -877,7 +877,7 @@
       ],
       "schedule": [],
       "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-06-15T19:09:40.364Z"
+      "enrichedAt": "2026-06-16T02:15:02.742Z"
     }
   },
   {
@@ -932,7 +932,7 @@
       ],
       "schedule": [],
       "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-06-15T19:09:40.179Z"
+      "enrichedAt": "2026-06-16T02:15:03.055Z"
     }
   },
   {
@@ -975,7 +975,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:40.526Z"
+      "enrichedAt": "2026-06-16T02:15:02.925Z"
     }
   },
   {
@@ -1039,7 +1039,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:40.520Z"
+      "enrichedAt": "2026-06-16T02:15:03.175Z"
     }
   },
   {
@@ -1093,7 +1093,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:41.400Z"
+      "enrichedAt": "2026-06-16T02:15:03.661Z"
     }
   },
   {
@@ -1147,7 +1147,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:41.527Z"
+      "enrichedAt": "2026-06-16T02:15:03.914Z"
     }
   },
   {
@@ -1233,7 +1233,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:41.611Z"
+      "enrichedAt": "2026-06-16T02:15:04.182Z"
     }
   },
   {
@@ -1319,7 +1319,7 @@
       ],
       "schedule": [],
       "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-06-15T19:09:41.754Z"
+      "enrichedAt": "2026-06-16T02:15:04.176Z"
     }
   },
   {
@@ -1371,7 +1371,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:41.739Z"
+      "enrichedAt": "2026-06-16T02:15:04.240Z"
     }
   },
   {
@@ -1635,6 +1635,77 @@
     ]
   },
   {
+    "id": "lh-rental-20533-1",
+    "pblancId": "20533",
+    "houseSn": 1,
+    "category": "임대",
+    "typeId": "happy",
+    "housingType": "행복주택",
+    "houseType": "아파트",
+    "title": "양산물금2 H-1BL",
+    "noticeTitle": "물금2 천년나무(17형) 행복주택 선착순 동호지정 모집(입주자격완화,선게약 후검증)",
+    "provider": "LH",
+    "sido": "경상남도",
+    "sigungu": "양산시",
+    "address": "경상남도 양산시 물금읍 청운로 42 ",
+    "pnu": "4833025321108960001",
+    "totalUnits": 900,
+    "supplyUnits": 72,
+    "depositWon": 10800000,
+    "monthlyRentWon": 54540,
+    "depositManwon": 1080,
+    "monthlyRentManwon": 5,
+    "announceDate": "2026.05.21",
+    "beginDate": "2026.06.01",
+    "endDate": "2026.06.30",
+    "winnerDate": "2026.07.01",
+    "noticeStatus": "정정공고",
+    "progressStatus": "",
+    "activeStatus": "open",
+    "daysToDeadline": 14,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020138&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20533&houseSn=1",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20533&houseSn=1",
+    "attachmentId": "",
+    "lat": 35.3069345,
+    "lng": 128.9922384,
+    "photos": [
+      {
+        "kind": "null",
+        "name": "위치도(양산물금행복주택).png",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=29295678"
+      },
+      {
+        "kind": "null",
+        "name": "단지조감도(양산물금행복주택).png",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=29295676"
+      },
+      {
+        "kind": "null",
+        "name": "단지배치도(양산물금행복주택).png",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=29295677"
+      }
+    ],
+    "details": {
+      "pageAddress": "경상남도 양산시 물금읍 청운로 358 ",
+      "matchedTab": "평면도",
+      "coordCount": 1,
+      "housingTypes": [
+        {
+          "주택형": "17형",
+          "전용면적(㎡)": "17.23",
+          "금회공급세대수(예비자포함)": "100",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        }
+      ],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-06-16T02:15:04.701Z"
+    }
+  },
+  {
     "id": "lh-rental-20454-1",
     "pblancId": "20454",
     "houseSn": 1,
@@ -1816,7 +1887,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:42.373Z"
+      "enrichedAt": "2026-06-16T02:15:04.869Z"
     }
   },
   {
@@ -1859,7 +1930,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-06-15T19:09:42.508Z"
+      "enrichedAt": "2026-06-16T02:15:05.152Z"
     }
   },
   {
@@ -1902,7 +1973,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:42.584Z"
+      "enrichedAt": "2026-06-16T02:15:05.158Z"
     }
   },
   {
@@ -1947,7 +2018,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수중",
-      "enrichedAt": "2026-06-15T19:09:42.848Z"
+      "enrichedAt": "2026-06-16T02:15:05.343Z"
     },
     "geocoded": "sido-center"
   },
@@ -2012,7 +2083,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:42.802Z"
+      "enrichedAt": "2026-06-16T02:15:05.735Z"
     }
   },
   {
@@ -2152,7 +2223,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:43.353Z"
+      "enrichedAt": "2026-06-16T02:15:05.834Z"
     },
     "geocoded": "sido-center"
   },
@@ -2206,8 +2277,8 @@
         }
       ],
       "schedule": [],
-      "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:43.563Z"
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-06-16T02:15:06.183Z"
     },
     "geocoded": "vworld-road"
   },
@@ -2923,7 +2994,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:43.649Z"
+      "enrichedAt": "2026-06-16T02:15:06.193Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -2978,7 +3049,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:43.833Z"
+      "enrichedAt": "2026-06-16T02:15:06.388Z"
     }
   },
   {
@@ -3720,7 +3791,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:43.908Z"
+      "enrichedAt": "2026-06-16T02:15:06.793Z"
     }
   },
   {
@@ -3869,7 +3940,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:44.421Z"
+      "enrichedAt": "2026-06-16T02:15:06.904Z"
     },
     "geocoded": "vworld-road"
   },
@@ -4935,7 +5006,7 @@
     "title": "2026 다자녀 전세임대 입주자 수시모집 공고",
     "noticeTitle": "2026 다자녀 전세임대 입주자 수시모집 공고",
     "provider": "LH",
-    "sido": "전북특별자치도",
+    "sido": "세종특별자치시",
     "sigungu": "",
     "address": "",
     "pnu": "",
@@ -4966,7 +5037,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수중",
-      "enrichedAt": "2026-06-15T19:09:45.355Z"
+      "enrichedAt": "2026-06-16T02:15:08.006Z"
     },
     "geocoded": "sido-center"
   },
@@ -4981,7 +5052,7 @@
     "title": "2026년 신혼·신생아 전세임대 I 입주자 수시모집 공고",
     "noticeTitle": "2026년 신혼·신생아 전세임대 I 입주자 수시모집 공고",
     "provider": "LH",
-    "sido": "세종특별자치시",
+    "sido": "경상북도",
     "sigungu": "",
     "address": "",
     "pnu": "",
@@ -5012,7 +5083,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수중",
-      "enrichedAt": "2026-06-15T19:09:45.457Z"
+      "enrichedAt": "2026-06-16T02:15:07.975Z"
     },
     "geocoded": "sido-center"
   },
@@ -5058,7 +5129,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수중",
-      "enrichedAt": "2026-06-15T19:09:45.671Z"
+      "enrichedAt": "2026-06-16T02:15:08.194Z"
     },
     "geocoded": "sido-center"
   },
@@ -5104,7 +5175,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:44.971Z"
+      "enrichedAt": "2026-06-16T02:15:07.878Z"
     },
     "geocoded": "sido-center"
   },
@@ -5486,7 +5557,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수중",
-      "enrichedAt": "2026-06-15T19:09:46.201Z"
+      "enrichedAt": "2026-06-16T02:15:10.884Z"
     },
     "geocoded": "sido-center"
   },
@@ -5542,7 +5613,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:46.045Z"
+      "enrichedAt": "2026-06-16T02:15:08.989Z"
     }
   },
   {
@@ -5597,7 +5668,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:46.468Z"
+      "enrichedAt": "2026-06-16T02:15:09.055Z"
     }
   },
   {
@@ -5642,7 +5713,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:46.426Z"
+      "enrichedAt": "2026-06-16T02:15:08.959Z"
     },
     "geocoded": "sido-center"
   },
@@ -5840,7 +5911,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:46.736Z"
+      "enrichedAt": "2026-06-16T02:15:09.243Z"
     }
   },
   {
@@ -6027,7 +6098,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:47.006Z"
+      "enrichedAt": "2026-06-16T02:15:09.916Z"
     },
     "geocoded": "sido-center"
   },
@@ -6073,7 +6144,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:47.153Z"
+      "enrichedAt": "2026-06-16T02:15:09.948Z"
     },
     "geocoded": "sido-center"
   },
@@ -6261,7 +6332,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:47.489Z"
+      "enrichedAt": "2026-06-16T02:15:10.114Z"
     }
   },
   {
@@ -6315,7 +6386,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:47.542Z"
+      "enrichedAt": "2026-06-16T02:15:10.270Z"
     }
   },
   {
@@ -6369,7 +6440,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:47.809Z"
+      "enrichedAt": "2026-06-16T02:15:10.980Z"
     }
   },
   {
@@ -6423,7 +6494,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:48.104Z"
+      "enrichedAt": "2026-06-16T02:15:11.068Z"
     }
   },
   {
@@ -6949,7 +7020,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:48.573Z"
+      "enrichedAt": "2026-06-16T02:15:11.544Z"
     }
   },
   {
@@ -7422,7 +7493,7 @@
       ],
       "schedule": [],
       "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-06-15T19:09:48.921Z"
+      "enrichedAt": "2026-06-16T02:15:11.724Z"
     }
   },
   {
@@ -8733,7 +8804,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:48.608Z"
+      "enrichedAt": "2026-06-16T02:15:11.958Z"
     }
   },
   {
@@ -8795,7 +8866,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:48.891Z"
+      "enrichedAt": "2026-06-16T02:15:12.077Z"
     }
   },
   {
@@ -8844,7 +8915,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:49.154Z"
+      "enrichedAt": "2026-06-16T02:15:12.103Z"
     }
   },
   {
@@ -9590,7 +9661,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:49.552Z"
+      "enrichedAt": "2026-06-16T02:15:12.505Z"
     },
     "geocoded": "sido-center"
   },
@@ -9645,7 +9716,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:49.739Z"
+      "enrichedAt": "2026-06-16T02:15:12.905Z"
     }
   },
   {
@@ -9959,7 +10030,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:49.953Z"
+      "enrichedAt": "2026-06-16T02:15:13.005Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -10005,7 +10076,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:49.893Z"
+      "enrichedAt": "2026-06-16T02:15:13.034Z"
     },
     "geocoded": "sido-center"
   },
@@ -10275,7 +10346,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:50.119Z"
+      "enrichedAt": "2026-06-16T02:15:13.064Z"
     },
     "geocoded": "sido-center"
   },
@@ -10344,7 +10415,7 @@
         }
       ],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:50.552Z"
+      "enrichedAt": "2026-06-16T02:15:13.478Z"
     }
   },
   {
@@ -10406,7 +10477,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:50.956Z"
+      "enrichedAt": "2026-06-16T02:15:14.088Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -10452,7 +10523,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:50.868Z"
+      "enrichedAt": "2026-06-16T02:15:14.004Z"
     },
     "geocoded": "sido-center"
   },
@@ -10498,7 +10569,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:50.925Z"
+      "enrichedAt": "2026-06-16T02:15:13.995Z"
     },
     "geocoded": "sido-center"
   },
@@ -11219,7 +11290,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:51.336Z"
+      "enrichedAt": "2026-06-16T02:15:14.309Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -11290,7 +11361,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:51.651Z"
+      "enrichedAt": "2026-06-16T02:15:14.549Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -12062,7 +12133,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:51.932Z"
+      "enrichedAt": "2026-06-16T02:15:15.019Z"
     }
   },
   {
@@ -12465,7 +12536,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:51.966Z"
+      "enrichedAt": "2026-06-16T02:15:15.033Z"
     }
   },
   {
@@ -14117,7 +14188,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:51.927Z"
+      "enrichedAt": "2026-06-16T02:15:15.063Z"
     },
     "geocoded": "sido-center"
   },
@@ -14234,7 +14305,7 @@
         }
       ],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:52.357Z"
+      "enrichedAt": "2026-06-16T02:15:15.311Z"
     }
   },
   {
@@ -14288,7 +14359,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:52.766Z"
+      "enrichedAt": "2026-06-16T02:15:15.675Z"
     }
   },
   {
@@ -14474,7 +14545,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:53.015Z"
+      "enrichedAt": "2026-06-16T02:15:16.131Z"
     }
   },
   {
@@ -14621,7 +14692,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:53.007Z"
+      "enrichedAt": "2026-06-16T02:15:16.192Z"
     }
   },
   {
@@ -14960,7 +15031,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": null,
-      "enrichedAt": "2026-06-15T19:09:52.864Z"
+      "enrichedAt": "2026-06-16T02:15:15.961Z"
     },
     "geocoded": "sido-center"
   },
@@ -15006,7 +15077,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:53.335Z"
+      "enrichedAt": "2026-06-16T02:15:16.271Z"
     },
     "geocoded": "sido-center"
   },
@@ -16016,7 +16087,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:53.913Z"
+      "enrichedAt": "2026-06-16T02:15:16.795Z"
     },
     "geocoded": "sido-center"
   },
@@ -16072,7 +16143,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:53.995Z"
+      "enrichedAt": "2026-06-16T02:15:17.145Z"
     }
   },
   {
@@ -16127,7 +16198,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:54.166Z"
+      "enrichedAt": "2026-06-16T02:15:17.266Z"
     }
   },
   {
@@ -16182,7 +16253,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:54.171Z"
+      "enrichedAt": "2026-06-16T02:15:17.327Z"
     }
   },
   {
@@ -16237,7 +16308,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:54.512Z"
+      "enrichedAt": "2026-06-16T02:15:17.448Z"
     }
   },
   {
@@ -16292,7 +16363,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:55.137Z"
+      "enrichedAt": "2026-06-16T02:15:17.994Z"
     }
   },
   {
@@ -16347,7 +16418,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:55.155Z"
+      "enrichedAt": "2026-06-16T02:15:18.372Z"
     }
   },
   {
@@ -16402,7 +16473,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:55.314Z"
+      "enrichedAt": "2026-06-16T02:15:18.460Z"
     }
   },
   {
@@ -16457,7 +16528,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:55.321Z"
+      "enrichedAt": "2026-06-16T02:15:18.553Z"
     }
   },
   {
@@ -16512,7 +16583,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:09:55.668Z"
+      "enrichedAt": "2026-06-16T02:15:18.670Z"
     }
   },
   {
@@ -17135,7 +17206,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:56.179Z"
+      "enrichedAt": "2026-06-16T02:15:19.041Z"
     }
   },
   {
@@ -17189,7 +17260,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:56.303Z"
+      "enrichedAt": "2026-06-16T02:15:19.527Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -17321,7 +17392,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:56.356Z"
+      "enrichedAt": "2026-06-16T02:15:19.520Z"
     }
   },
   {
@@ -17375,7 +17446,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:56.365Z"
+      "enrichedAt": "2026-06-16T02:15:19.597Z"
     }
   },
   {
@@ -17429,7 +17500,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:56.728Z"
+      "enrichedAt": "2026-06-16T02:15:19.763Z"
     }
   },
   {
@@ -17478,7 +17549,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:57.230Z"
+      "enrichedAt": "2026-06-16T02:15:20.064Z"
     }
   },
   {
@@ -17540,7 +17611,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:57.349Z"
+      "enrichedAt": "2026-06-16T02:15:20.574Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -17743,7 +17814,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:57.413Z"
+      "enrichedAt": "2026-06-16T02:15:20.573Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -17937,7 +18008,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:57.323Z"
+      "enrichedAt": "2026-06-16T02:15:20.570Z"
     },
     "geocoded": "sido-center"
   },
@@ -18221,7 +18292,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:57.711Z"
+      "enrichedAt": "2026-06-16T02:15:20.711Z"
     },
     "geocoded": "sido-center"
   },
@@ -18267,7 +18338,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:58.209Z"
+      "enrichedAt": "2026-06-16T02:15:21.009Z"
     },
     "geocoded": "sido-center"
   },
@@ -18313,7 +18384,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:58.296Z"
+      "enrichedAt": "2026-06-16T02:15:21.523Z"
     },
     "geocoded": "sido-center"
   },
@@ -18359,7 +18430,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:58.315Z"
+      "enrichedAt": "2026-06-16T02:15:21.513Z"
     },
     "geocoded": "sido-center"
   },
@@ -18576,7 +18647,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:58.510Z"
+      "enrichedAt": "2026-06-16T02:15:21.674Z"
     }
   },
   {
@@ -18973,7 +19044,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:58.815Z"
+      "enrichedAt": "2026-06-16T02:15:21.803Z"
     }
   },
   {
@@ -19457,7 +19528,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:59.238Z"
+      "enrichedAt": "2026-06-16T02:15:22.032Z"
     }
   },
   {
@@ -19736,7 +19807,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:59.377Z"
+      "enrichedAt": "2026-06-16T02:15:22.592Z"
     }
   },
   {
@@ -19790,7 +19861,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:59.382Z"
+      "enrichedAt": "2026-06-16T02:15:22.591Z"
     }
   },
   {
@@ -19860,7 +19931,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:59.613Z"
+      "enrichedAt": "2026-06-16T02:15:22.772Z"
     }
   },
   {
@@ -20276,7 +20347,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:09:59.880Z"
+      "enrichedAt": "2026-06-16T02:15:22.829Z"
     }
   },
   {
@@ -20330,7 +20401,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:00.306Z"
+      "enrichedAt": "2026-06-16T02:15:23.101Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -21039,7 +21110,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:00.346Z"
+      "enrichedAt": "2026-06-16T02:15:23.543Z"
     },
     "geocoded": "sido-center"
   },
@@ -22028,7 +22099,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:01.155Z"
+      "enrichedAt": "2026-06-16T02:15:24.381Z"
     }
   },
   {
@@ -22082,7 +22153,7 @@
       ],
       "schedule": [],
       "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-06-15T19:10:01.480Z"
+      "enrichedAt": "2026-06-16T02:15:24.559Z"
     }
   },
   {
@@ -22211,7 +22282,7 @@
         }
       ],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:00.882Z"
+      "enrichedAt": "2026-06-16T02:15:23.811Z"
     }
   },
   {
@@ -22340,7 +22411,7 @@
         }
       ],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:01.327Z"
+      "enrichedAt": "2026-06-16T02:15:24.096Z"
     }
   },
   {
@@ -22469,7 +22540,7 @@
         }
       ],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:01.354Z"
+      "enrichedAt": "2026-06-16T02:15:24.535Z"
     }
   },
   {
@@ -22698,7 +22769,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:01.928Z"
+      "enrichedAt": "2026-06-16T02:15:24.863Z"
     }
   },
   {
@@ -22752,7 +22823,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:02.239Z"
+      "enrichedAt": "2026-06-16T02:15:25.191Z"
     },
     "geocoded": "vworld-road"
   },
@@ -22798,7 +22869,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:02.287Z"
+      "enrichedAt": "2026-06-16T02:15:25.345Z"
     },
     "geocoded": "sido-center"
   },
@@ -22844,7 +22915,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:02.326Z"
+      "enrichedAt": "2026-06-16T02:15:25.491Z"
     },
     "geocoded": "sido-center"
   },
@@ -22890,7 +22961,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-06-15T19:10:02.453Z"
+      "enrichedAt": "2026-06-16T02:15:25.524Z"
     },
     "geocoded": "sido-center"
   },
@@ -22936,7 +23007,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-06-15T19:10:02.898Z"
+      "enrichedAt": "2026-06-16T02:15:25.828Z"
     },
     "geocoded": "sido-center"
   },
@@ -23758,7 +23829,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:03.211Z"
+      "enrichedAt": "2026-06-16T02:15:26.133Z"
     },
     "geocoded": "sido-center"
   },
@@ -23845,7 +23916,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:03.393Z"
+      "enrichedAt": "2026-06-16T02:15:26.448Z"
     }
   },
   {
@@ -23931,7 +24002,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:03.442Z"
+      "enrichedAt": "2026-06-16T02:15:26.581Z"
     }
   },
   {
@@ -23985,7 +24056,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:03.542Z"
+      "enrichedAt": "2026-06-16T02:15:26.626Z"
     }
   },
   {
@@ -24451,7 +24522,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:04.210Z"
+      "enrichedAt": "2026-06-16T02:15:27.091Z"
     }
   },
   {
@@ -24513,7 +24584,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:04.949Z"
+      "enrichedAt": "2026-06-16T02:15:27.861Z"
     }
   },
   {
@@ -24634,7 +24705,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:04.571Z"
+      "enrichedAt": "2026-06-16T02:15:27.654Z"
     }
   },
   {
@@ -24919,7 +24990,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:04.414Z"
+      "enrichedAt": "2026-06-16T02:15:27.550Z"
     },
     "geocoded": "sido-center"
   },
@@ -24974,7 +25045,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:04.622Z"
+      "enrichedAt": "2026-06-16T02:15:27.688Z"
     }
   },
   {
@@ -25120,7 +25191,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:05.183Z"
+      "enrichedAt": "2026-06-16T02:15:28.046Z"
     },
     "geocoded": "sido-center"
   },
@@ -25207,7 +25278,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:05.529Z"
+      "enrichedAt": "2026-06-16T02:15:28.668Z"
     }
   },
   {
@@ -25261,7 +25332,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:05.628Z"
+      "enrichedAt": "2026-06-16T02:15:28.721Z"
     },
     "geocoded": "vworld-road"
   },
@@ -25510,7 +25581,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:05.586Z"
+      "enrichedAt": "2026-06-16T02:15:28.640Z"
     },
     "geocoded": "sido-center"
   },
@@ -25565,7 +25636,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:06.042Z"
+      "enrichedAt": "2026-06-16T02:15:28.943Z"
     }
   },
   {
@@ -25837,7 +25908,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:06.882Z"
+      "enrichedAt": "2026-06-16T02:15:29.665Z"
     }
   },
   {
@@ -26133,7 +26204,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:06.607Z"
+      "enrichedAt": "2026-06-16T02:15:29.679Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -26188,7 +26259,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:06.637Z"
+      "enrichedAt": "2026-06-16T02:15:29.686Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -26259,7 +26330,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:06.914Z"
+      "enrichedAt": "2026-06-16T02:15:30.021Z"
     }
   },
   {
@@ -26397,7 +26468,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:07.012Z"
+      "enrichedAt": "2026-06-16T02:15:31.979Z"
     },
     "geocoded": "sido-center"
   },
@@ -26452,7 +26523,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:07.666Z"
+      "enrichedAt": "2026-06-16T02:15:30.716Z"
     }
   },
   {
@@ -26522,7 +26593,7 @@
         }
       ],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:07.627Z"
+      "enrichedAt": "2026-06-16T02:15:30.645Z"
     }
   },
   {
@@ -26907,7 +26978,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:07.968Z"
+      "enrichedAt": "2026-06-16T02:15:30.748Z"
     }
   },
   {
@@ -26961,7 +27032,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:07.983Z"
+      "enrichedAt": "2026-06-16T02:15:31.062Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -27286,7 +27357,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:08.139Z"
+      "enrichedAt": "2026-06-16T02:15:31.759Z"
     }
   },
   {
@@ -27340,7 +27411,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:08.701Z"
+      "enrichedAt": "2026-06-16T02:15:31.783Z"
     }
   },
   {
@@ -28066,7 +28137,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:08.723Z"
+      "enrichedAt": "2026-06-16T02:15:31.796Z"
     },
     "geocoded": "vworld-road"
   },
@@ -28649,7 +28720,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:09.030Z"
+      "enrichedAt": "2026-06-16T02:15:32.118Z"
     }
   },
   {
@@ -28698,7 +28769,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:09.057Z"
+      "enrichedAt": "2026-06-16T02:15:32.810Z"
     }
   },
   {
@@ -29088,7 +29159,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:09.306Z"
+      "enrichedAt": "2026-06-16T02:15:32.951Z"
     }
   },
   {
@@ -29150,7 +29221,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:09.809Z"
+      "enrichedAt": "2026-06-16T02:15:32.852Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -29200,7 +29271,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:09.759Z"
+      "enrichedAt": "2026-06-16T02:15:33.000Z"
     },
     "geocoded": "vworld-road"
   },
@@ -29250,7 +29321,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:10.115Z"
+      "enrichedAt": "2026-06-16T02:15:33.197Z"
     }
   },
   {
@@ -29304,7 +29375,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:10.097Z"
+      "enrichedAt": "2026-06-16T02:15:33.871Z"
     }
   },
   {
@@ -29538,7 +29609,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:10.438Z"
+      "enrichedAt": "2026-06-16T02:15:33.995Z"
     }
   },
   {
@@ -29592,7 +29663,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:10.907Z"
+      "enrichedAt": "2026-06-16T02:15:34.049Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -29647,7 +29718,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:10.937Z"
+      "enrichedAt": "2026-06-16T02:15:34.121Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -29708,7 +29779,7 @@
         }
       ],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:11.087Z"
+      "enrichedAt": "2026-06-16T02:15:34.179Z"
     }
   },
   {
@@ -29757,7 +29828,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:11.207Z"
+      "enrichedAt": "2026-06-16T02:15:34.947Z"
     }
   },
   {
@@ -29802,7 +29873,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:11.410Z"
+      "enrichedAt": "2026-06-16T02:15:34.955Z"
     },
     "geocoded": "sido-center"
   },
@@ -29857,7 +29928,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:11.981Z"
+      "enrichedAt": "2026-06-16T02:15:35.131Z"
     },
     "geocoded": "vworld-road"
   },
@@ -29912,7 +29983,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:12.110Z"
+      "enrichedAt": "2026-06-16T02:15:35.298Z"
     }
   },
   {
@@ -30064,7 +30135,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:12.266Z"
+      "enrichedAt": "2026-06-16T02:15:35.651Z"
     }
   },
   {
@@ -30118,7 +30189,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:12.500Z"
+      "enrichedAt": "2026-06-16T02:15:36.279Z"
     }
   },
   {
@@ -30219,7 +30290,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:12.446Z"
+      "enrichedAt": "2026-06-16T02:15:35.906Z"
     },
     "geocoded": "sido-center"
   },
@@ -30483,7 +30554,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:13.105Z"
+      "enrichedAt": "2026-06-16T02:15:36.251Z"
     }
   },
   {
@@ -30537,7 +30608,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:13.272Z"
+      "enrichedAt": "2026-06-16T02:15:36.421Z"
     }
   },
   {
@@ -30810,7 +30881,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:13.326Z"
+      "enrichedAt": "2026-06-16T02:15:36.683Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -30952,7 +31023,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:13.997Z"
+      "enrichedAt": "2026-06-16T02:15:37.626Z"
     }
   },
   {
@@ -31014,7 +31085,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:13.563Z"
+      "enrichedAt": "2026-06-16T02:15:37.305Z"
     }
   },
   {
@@ -31068,7 +31139,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:14.217Z"
+      "enrichedAt": "2026-06-16T02:15:37.403Z"
     }
   },
   {
@@ -31154,7 +31225,7 @@
         }
       ],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:14.268Z"
+      "enrichedAt": "2026-06-16T02:15:37.400Z"
     }
   },
   {
@@ -31240,7 +31311,7 @@
         }
       ],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:14.322Z"
+      "enrichedAt": "2026-06-16T02:15:37.655Z"
     }
   },
   {
@@ -31548,7 +31619,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:15.113Z"
+      "enrichedAt": "2026-06-16T02:15:38.951Z"
     }
   },
   {
@@ -31602,7 +31673,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:15.541Z"
+      "enrichedAt": "2026-06-16T02:15:38.971Z"
     }
   },
   {
@@ -31746,7 +31817,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:15.270Z"
+      "enrichedAt": "2026-06-16T02:15:38.456Z"
     }
   },
   {
@@ -32266,7 +32337,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:15.236Z"
+      "enrichedAt": "2026-06-16T02:15:38.584Z"
     },
     "geocoded": "sido-center"
   },
@@ -32823,7 +32894,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:17.282Z"
+      "enrichedAt": "2026-06-16T02:15:38.686Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -32878,7 +32949,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:16.189Z"
+      "enrichedAt": "2026-06-16T02:15:39.499Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -33113,7 +33184,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:16.354Z"
+      "enrichedAt": "2026-06-16T02:15:39.690Z"
     }
   },
   {
@@ -33167,7 +33238,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:16.396Z"
+      "enrichedAt": "2026-06-16T02:15:39.793Z"
     }
   },
   {
@@ -33221,7 +33292,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:16.663Z"
+      "enrichedAt": "2026-06-16T02:15:40.120Z"
     }
   },
   {
@@ -33283,7 +33354,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:17.308Z"
+      "enrichedAt": "2026-06-16T02:15:40.075Z"
     }
   },
   {
@@ -33328,7 +33399,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:17.330Z"
+      "enrichedAt": "2026-06-16T02:15:40.461Z"
     },
     "geocoded": "sido-center"
   },
@@ -33570,7 +33641,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:17.372Z"
+      "enrichedAt": "2026-06-16T02:15:40.652Z"
     },
     "geocoded": "sido-center"
   },
@@ -33625,7 +33696,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:17.757Z"
+      "enrichedAt": "2026-06-16T02:15:40.866Z"
     }
   },
   {
@@ -33679,7 +33750,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:18.358Z"
+      "enrichedAt": "2026-06-16T02:15:41.137Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -34138,7 +34209,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:18.356Z"
+      "enrichedAt": "2026-06-16T02:15:41.146Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -34749,7 +34820,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:18.709Z"
+      "enrichedAt": "2026-06-16T02:15:41.944Z"
     }
   },
   {
@@ -34928,7 +34999,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:18.430Z"
+      "enrichedAt": "2026-06-16T02:15:41.706Z"
     },
     "geocoded": "vworld-road"
   },
@@ -34974,7 +35045,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:18.736Z"
+      "enrichedAt": "2026-06-16T02:15:41.820Z"
     },
     "geocoded": "sido-center"
   },
@@ -35020,7 +35091,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:19.305Z"
+      "enrichedAt": "2026-06-16T02:15:42.106Z"
     },
     "geocoded": "sido-center"
   },
@@ -35066,7 +35137,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:19.318Z"
+      "enrichedAt": "2026-06-16T02:15:42.103Z"
     },
     "geocoded": "sido-center"
   },
@@ -35199,7 +35270,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:19.390Z"
+      "enrichedAt": "2026-06-16T02:15:42.665Z"
     },
     "geocoded": "sido-center"
   },
@@ -35765,7 +35836,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:19.778Z"
+      "enrichedAt": "2026-06-16T02:15:42.865Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -36252,7 +36323,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:19.817Z"
+      "enrichedAt": "2026-06-16T02:15:43.011Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -36438,7 +36509,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:20.291Z"
+      "enrichedAt": "2026-06-16T02:15:43.063Z"
     },
     "geocoded": "sido-center"
   },
@@ -36862,7 +36933,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:20.359Z"
+      "enrichedAt": "2026-06-16T02:15:43.137Z"
     }
   },
   {
@@ -37014,7 +37085,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:20.425Z"
+      "enrichedAt": "2026-06-16T02:15:43.699Z"
     }
   },
   {
@@ -37068,7 +37139,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:20.811Z"
+      "enrichedAt": "2026-06-16T02:15:43.901Z"
     }
   },
   {
@@ -37122,7 +37193,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:20.891Z"
+      "enrichedAt": "2026-06-16T02:15:44.048Z"
     },
     "geocoded": "vworld-road"
   },
@@ -37356,7 +37427,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:21.384Z"
+      "enrichedAt": "2026-06-16T02:15:44.151Z"
     }
   },
   {
@@ -37782,7 +37853,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:21.444Z"
+      "enrichedAt": "2026-06-16T02:15:44.205Z"
     }
   },
   {
@@ -37836,7 +37907,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:21.507Z"
+      "enrichedAt": "2026-06-16T02:15:44.751Z"
     }
   },
   {
@@ -37881,7 +37952,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:21.785Z"
+      "enrichedAt": "2026-06-16T02:15:44.864Z"
     },
     "geocoded": "sido-center"
   },
@@ -37927,7 +37998,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:21.839Z"
+      "enrichedAt": "2026-06-16T02:15:45.002Z"
     },
     "geocoded": "sido-center"
   },
@@ -37977,7 +38048,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:22.421Z"
+      "enrichedAt": "2026-06-16T02:15:45.186Z"
     }
   },
   {
@@ -38497,7 +38568,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:22.527Z"
+      "enrichedAt": "2026-06-16T02:15:45.267Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -38547,7 +38618,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:22.541Z"
+      "enrichedAt": "2026-06-16T02:15:45.835Z"
     }
   },
   {
@@ -38601,7 +38672,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:22.909Z"
+      "enrichedAt": "2026-06-16T02:15:45.959Z"
     }
   },
   {
@@ -38655,7 +38726,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:22.896Z"
+      "enrichedAt": "2026-06-16T02:15:46.075Z"
     }
   },
   {
@@ -38807,7 +38878,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:23.493Z"
+      "enrichedAt": "2026-06-16T02:15:46.229Z"
     },
     "geocoded": "vworld-road"
   },
@@ -38870,7 +38941,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:23.623Z"
+      "enrichedAt": "2026-06-16T02:15:46.312Z"
     },
     "geocoded": "vworld-road"
   },
@@ -39176,7 +39247,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:23.535Z"
+      "enrichedAt": "2026-06-16T02:15:46.793Z"
     },
     "geocoded": "sido-center"
   },
@@ -39339,7 +39410,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:24.010Z"
+      "enrichedAt": "2026-06-16T02:15:47.086Z"
     }
   },
   {
@@ -39466,7 +39537,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:23.974Z"
+      "enrichedAt": "2026-06-16T02:15:47.161Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -39769,7 +39840,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:24.490Z"
+      "enrichedAt": "2026-06-16T02:15:47.193Z"
     },
     "geocoded": "sido-center"
   },
@@ -39824,7 +39895,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:24.619Z"
+      "enrichedAt": "2026-06-16T02:15:47.376Z"
     }
   },
   {
@@ -39878,7 +39949,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:24.661Z"
+      "enrichedAt": "2026-06-16T02:15:47.842Z"
     },
     "geocoded": "vworld-road"
   },
@@ -41029,7 +41100,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:25.121Z"
+      "enrichedAt": "2026-06-16T02:15:48.214Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -41084,7 +41155,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:25.176Z"
+      "enrichedAt": "2026-06-16T02:15:48.324Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -43833,7 +43904,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-06-15T19:10:25.474Z"
+      "enrichedAt": "2026-06-16T02:15:48.168Z"
     },
     "geocoded": "sido-center"
   },
@@ -91370,6 +91441,284 @@
     "geocoded": "sido-center"
   },
   {
+    "id": "lh-rental-20524-1",
+    "pblancId": "20524",
+    "houseSn": 1,
+    "category": "임대",
+    "typeId": "happy",
+    "housingType": "행복주택",
+    "houseType": "아파트",
+    "title": "경북도청",
+    "noticeTitle": "경북북부권 행복주택 예비입주자 모집(경북도청-입주자격완화,문경흥덕)",
+    "provider": "LH",
+    "sido": "경상북도",
+    "sigungu": "예천군",
+    "address": "경상북도 예천군 호명읍 행복로 111 ",
+    "pnu": "4790025330111170000",
+    "totalUnits": 500,
+    "supplyUnits": 137,
+    "depositWon": 15980000,
+    "monthlyRentWon": 77230,
+    "depositManwon": 1598,
+    "monthlyRentManwon": 8,
+    "announceDate": "2026.06.15",
+    "beginDate": "2026.07.02",
+    "endDate": "2026.07.03",
+    "winnerDate": "2026.11.18",
+    "noticeStatus": "일반공고",
+    "progressStatus": "",
+    "activeStatus": "upcoming",
+    "daysToDeadline": 17,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020081&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20524&houseSn=1",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20524&houseSn=1",
+    "attachmentId": "",
+    "lat": 36.5786338,
+    "lng": 128.4752967,
+    "photos": [
+      {
+        "kind": "null",
+        "name": "위치도_경북도청이전신도시.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=45755718"
+      },
+      {
+        "kind": "null",
+        "name": "조감도_경북도청이전신도시.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=45755841"
+      },
+      {
+        "kind": "null",
+        "name": "단지배치도_경북도청이전신도시.png",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=45755719"
+      },
+      {
+        "kind": "null",
+        "name": "동호배치도_경북도청이전신도시.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=45755720"
+      },
+      {
+        "kind": "null",
+        "name": "문경흥덕행복주택_단지조감도-01(최종).jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=43679839"
+      },
+      {
+        "kind": "null",
+        "name": "문경흥덕위치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=43658450"
+      },
+      {
+        "kind": "null",
+        "name": "문경흥덕_동호배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=43658452"
+      }
+    ],
+    "details": {
+      "pageAddress": "경상북도 안동시 광명로 166(옥동) 한양빌딩 3층,LH 경북북부권주거복지지사",
+      "matchedTab": "경북도청이전신도시 행복주택",
+      "coordCount": 2,
+      "housingTypes": [
+        {
+          "주택형": "21A(대학생, 청년)",
+          "전용면적(㎡)": "21.88",
+          "금회공급세대수(예비자포함)": "40",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        },
+        {
+          "주택형": "21B(대학생, 청년)",
+          "전용면적(㎡)": "21.88",
+          "금회공급세대수(예비자포함)": "18",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        },
+        {
+          "주택형": "26A(주거급여수급자)",
+          "전용면적(㎡)": "26.81",
+          "금회공급세대수(예비자포함)": "8",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        },
+        {
+          "주택형": "26A(청년)",
+          "전용면적(㎡)": "26.81",
+          "금회공급세대수(예비자포함)": "15",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        },
+        {
+          "주택형": "36A(신혼부부, 한부모가족)",
+          "전용면적(㎡)": "36.59",
+          "금회공급세대수(예비자포함)": "35",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        },
+        {
+          "주택형": "36A(청년)",
+          "전용면적(㎡)": "36.59",
+          "금회공급세대수(예비자포함)": "15",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        },
+        {
+          "주택형": "36B(신혼부부, 한부모가족)",
+          "전용면적(㎡)": "36.59",
+          "금회공급세대수(예비자포함)": "6",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        }
+      ],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-06-16T02:15:48.571Z"
+    }
+  },
+  {
+    "id": "lh-rental-20524-2",
+    "pblancId": "20524",
+    "houseSn": 2,
+    "category": "임대",
+    "typeId": "happy",
+    "housingType": "행복주택",
+    "houseType": "아파트",
+    "title": "문경흥덕",
+    "noticeTitle": "경북북부권 행복주택 예비입주자 모집(경북도청-입주자격완화,문경흥덕)",
+    "provider": "LH",
+    "sido": "경상북도",
+    "sigungu": "문경시",
+    "address": "경상북도 문경시 호서로 175 ",
+    "pnu": "4728010300108280000",
+    "totalUnits": 200,
+    "supplyUnits": 24,
+    "depositWon": 26280000,
+    "monthlyRentWon": 148920,
+    "depositManwon": 2628,
+    "monthlyRentManwon": 15,
+    "announceDate": "2026.06.15",
+    "beginDate": "2026.07.02",
+    "endDate": "2026.07.03",
+    "winnerDate": "2026.11.18",
+    "noticeStatus": "일반공고",
+    "progressStatus": "",
+    "activeStatus": "upcoming",
+    "daysToDeadline": 17,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020081&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20524&houseSn=2",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20524&houseSn=2",
+    "attachmentId": "",
+    "lat": 36.6090196,
+    "lng": 128.2039734,
+    "photos": [
+      {
+        "kind": "null",
+        "name": "위치도_경북도청이전신도시.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=45755718"
+      },
+      {
+        "kind": "null",
+        "name": "조감도_경북도청이전신도시.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=45755841"
+      },
+      {
+        "kind": "null",
+        "name": "단지배치도_경북도청이전신도시.png",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=45755719"
+      },
+      {
+        "kind": "null",
+        "name": "동호배치도_경북도청이전신도시.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=45755720"
+      },
+      {
+        "kind": "null",
+        "name": "문경흥덕행복주택_단지조감도-01(최종).jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=43679839"
+      },
+      {
+        "kind": "null",
+        "name": "문경흥덕위치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=43658450"
+      },
+      {
+        "kind": "null",
+        "name": "문경흥덕_동호배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=43658452"
+      }
+    ],
+    "details": {
+      "pageAddress": "경상북도 안동시 광명로 166(옥동) 한양빌딩 3층,LH 경북북부권주거복지지사",
+      "matchedTab": "문경흥덕 행복주택",
+      "coordCount": 2,
+      "housingTypes": [
+        {
+          "주택형": "21A(대학생, 청년)",
+          "전용면적(㎡)": "21.88",
+          "금회공급세대수(예비자포함)": "40",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        },
+        {
+          "주택형": "21B(대학생, 청년)",
+          "전용면적(㎡)": "21.88",
+          "금회공급세대수(예비자포함)": "18",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        },
+        {
+          "주택형": "26A(주거급여수급자)",
+          "전용면적(㎡)": "26.81",
+          "금회공급세대수(예비자포함)": "8",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        },
+        {
+          "주택형": "26A(청년)",
+          "전용면적(㎡)": "26.81",
+          "금회공급세대수(예비자포함)": "15",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        },
+        {
+          "주택형": "36A(신혼부부, 한부모가족)",
+          "전용면적(㎡)": "36.59",
+          "금회공급세대수(예비자포함)": "35",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        },
+        {
+          "주택형": "36A(청년)",
+          "전용면적(㎡)": "36.59",
+          "금회공급세대수(예비자포함)": "15",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        },
+        {
+          "주택형": "36B(신혼부부, 한부모가족)",
+          "전용면적(㎡)": "36.59",
+          "금회공급세대수(예비자포함)": "6",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        }
+      ],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-06-16T02:15:49.029Z"
+    }
+  },
+  {
     "id": "lh-rental-20520-1",
     "pblancId": "20520",
     "houseSn": 1,
@@ -91404,13 +91753,6 @@
     "attachmentId": "",
     "lat": 35.4760802,
     "lng": 128.767397,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "동호배치도_밀양가곡1MB.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=53011055"
-      }
-    ],
     "details": {
       "pageAddress": "",
       "matchedTab": "평면도",
@@ -91444,7 +91786,14 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:25.699Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "동호배치도_밀양가곡1MB.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=53011055"
+      }
+    ]
   },
   {
     "id": "lh-rental-20519-1",
@@ -91481,43 +91830,6 @@
     "attachmentId": "",
     "lat": 35.1639233,
     "lng": 128.8250334,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "김해율하2위치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32522019"
-      },
-      {
-        "kind": "null",
-        "name": "김해율하2단지조감도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32522020"
-      },
-      {
-        "kind": "null",
-        "name": "김해율하2단지배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32522040"
-      },
-      {
-        "kind": "null",
-        "name": "김해율하2동호배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32522034"
-      },
-      {
-        "kind": "null",
-        "name": "위치도(김해진영행복주택).png",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=29282043"
-      },
-      {
-        "kind": "null",
-        "name": "단지조감도(김해진영행복주택).jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=29282041"
-      },
-      {
-        "kind": "null",
-        "name": "단지배치도(김해진영행복주택).png",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=29282042"
-      }
-    ],
     "details": {
       "pageAddress": "",
       "matchedTab": "김해율하2 LH3단지",
@@ -91559,43 +91871,7 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:25.877Z"
-    }
-  },
-  {
-    "id": "lh-rental-20519-2",
-    "pblancId": "20519",
-    "houseSn": 2,
-    "category": "임대",
-    "typeId": "happy",
-    "housingType": "행복주택",
-    "houseType": "아파트",
-    "title": "김해진영 천년나무 2단지",
-    "noticeTitle": "김해시 지역 행복주택 예비입주자 모집(26.06.15.공고)",
-    "provider": "LH",
-    "sido": "경상남도",
-    "sigungu": "김해시",
-    "address": "경상남도 김해시 진영읍 김해대로 464-48 ",
-    "pnu": "4825025027109840000",
-    "totalUnits": 480,
-    "supplyUnits": 185,
-    "depositWon": 11560000,
-    "monthlyRentWon": 65600,
-    "depositManwon": 1156,
-    "monthlyRentManwon": 7,
-    "announceDate": "2026.06.15",
-    "beginDate": "2026.07.07",
-    "endDate": "2026.07.08",
-    "winnerDate": "2026.10.29",
-    "noticeStatus": "일반공고",
-    "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 22,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020135&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20519&houseSn=2",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20519&houseSn=2",
-    "attachmentId": "",
-    "lat": 35.3036702,
-    "lng": 128.7397077,
+    },
     "photos": [
       {
         "kind": "null",
@@ -91632,7 +91908,43 @@
         "name": "단지배치도(김해진영행복주택).png",
         "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=29282042"
       }
-    ],
+    ]
+  },
+  {
+    "id": "lh-rental-20519-2",
+    "pblancId": "20519",
+    "houseSn": 2,
+    "category": "임대",
+    "typeId": "happy",
+    "housingType": "행복주택",
+    "houseType": "아파트",
+    "title": "김해진영 천년나무 2단지",
+    "noticeTitle": "김해시 지역 행복주택 예비입주자 모집(26.06.15.공고)",
+    "provider": "LH",
+    "sido": "경상남도",
+    "sigungu": "김해시",
+    "address": "경상남도 김해시 진영읍 김해대로 464-48 ",
+    "pnu": "4825025027109840000",
+    "totalUnits": 480,
+    "supplyUnits": 185,
+    "depositWon": 11560000,
+    "monthlyRentWon": 65600,
+    "depositManwon": 1156,
+    "monthlyRentManwon": 7,
+    "announceDate": "2026.06.15",
+    "beginDate": "2026.07.07",
+    "endDate": "2026.07.08",
+    "winnerDate": "2026.10.29",
+    "noticeStatus": "일반공고",
+    "progressStatus": "",
+    "activeStatus": "upcoming",
+    "daysToDeadline": 22,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020135&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20519&houseSn=2",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20519&houseSn=2",
+    "attachmentId": "",
+    "lat": 35.3036702,
+    "lng": 128.7397077,
     "details": {
       "pageAddress": "",
       "matchedTab": "김해진영 천년나무 2단지",
@@ -91674,7 +91986,44 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:26.320Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "김해율하2위치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32522019"
+      },
+      {
+        "kind": "null",
+        "name": "김해율하2단지조감도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32522020"
+      },
+      {
+        "kind": "null",
+        "name": "김해율하2단지배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32522040"
+      },
+      {
+        "kind": "null",
+        "name": "김해율하2동호배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32522034"
+      },
+      {
+        "kind": "null",
+        "name": "위치도(김해진영행복주택).png",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=29282043"
+      },
+      {
+        "kind": "null",
+        "name": "단지조감도(김해진영행복주택).jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=29282041"
+      },
+      {
+        "kind": "null",
+        "name": "단지배치도(김해진영행복주택).png",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=29282042"
+      }
+    ]
   },
   {
     "id": "lh-rental-20518-1",
@@ -91711,53 +92060,6 @@
     "attachmentId": "",
     "lat": 35.3069345,
     "lng": 128.9922384,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "위치도(양산물금행복주택).png",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=29295678"
-      },
-      {
-        "kind": "null",
-        "name": "단지조감도(양산물금행복주택).png",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=29295676"
-      },
-      {
-        "kind": "null",
-        "name": "단지배치도(양산물금행복주택).png",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=29295677"
-      },
-      {
-        "kind": "null",
-        "name": "양산사송-H-1BL-행복주택-지역조감도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42219227"
-      },
-      {
-        "kind": "null",
-        "name": "양산사송-H-1BL-행복주택-지구조감도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42219228"
-      },
-      {
-        "kind": "null",
-        "name": "위치도(수정).pdf",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42217871"
-      },
-      {
-        "kind": "null",
-        "name": "양산사송H-1BL행복주택이미지투시도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42219229"
-      },
-      {
-        "kind": "null",
-        "name": "양산사송H-1BL행복주택조경배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42219421"
-      },
-      {
-        "kind": "null",
-        "name": "양산사송-H-1BL-행복주택-동호배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42219918"
-      }
-    ],
     "details": {
       "pageAddress": "경상남도 양산시 물금읍 청운로 358 국민연금공단 양산지사 6층(LH 양산권주거복지지사)",
       "matchedTab": "양산 물금LH천년나무",
@@ -91799,43 +92101,7 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:26.430Z"
-    }
-  },
-  {
-    "id": "lh-rental-20518-2",
-    "pblancId": "20518",
-    "houseSn": 2,
-    "category": "임대",
-    "typeId": "happy",
-    "housingType": "행복주택",
-    "houseType": "아파트",
-    "title": "양산사송 H-1BL",
-    "noticeTitle": "양산시 행복주택 입주자격완화 예비입주자 모집공고(2026.6.15 공고)",
-    "provider": "LH",
-    "sido": "경상남도",
-    "sigungu": "양산시",
-    "address": "경상남도 양산시 동면 내송큰들로 94 ",
-    "pnu": "4833031025109070000",
-    "totalUnits": 200,
-    "supplyUnits": 100,
-    "depositWon": 10200000,
-    "monthlyRentWon": 51510,
-    "depositManwon": 1020,
-    "monthlyRentManwon": 5,
-    "announceDate": "2026.06.15",
-    "beginDate": "2026.06.24",
-    "endDate": "2026.06.25",
-    "winnerDate": "2026.08.31",
-    "noticeStatus": "일반공고",
-    "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 9,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020136&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20518&houseSn=2",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20518&houseSn=2",
-    "attachmentId": "",
-    "lat": 35.3226721,
-    "lng": 129.0706318,
+    },
     "photos": [
       {
         "kind": "null",
@@ -91882,7 +92148,43 @@
         "name": "양산사송-H-1BL-행복주택-동호배치도.jpg",
         "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42219918"
       }
-    ],
+    ]
+  },
+  {
+    "id": "lh-rental-20518-2",
+    "pblancId": "20518",
+    "houseSn": 2,
+    "category": "임대",
+    "typeId": "happy",
+    "housingType": "행복주택",
+    "houseType": "아파트",
+    "title": "양산사송 H-1BL",
+    "noticeTitle": "양산시 행복주택 입주자격완화 예비입주자 모집공고(2026.6.15 공고)",
+    "provider": "LH",
+    "sido": "경상남도",
+    "sigungu": "양산시",
+    "address": "경상남도 양산시 동면 내송큰들로 94 ",
+    "pnu": "4833031025109070000",
+    "totalUnits": 200,
+    "supplyUnits": 100,
+    "depositWon": 10200000,
+    "monthlyRentWon": 51510,
+    "depositManwon": 1020,
+    "monthlyRentManwon": 5,
+    "announceDate": "2026.06.15",
+    "beginDate": "2026.06.24",
+    "endDate": "2026.06.25",
+    "winnerDate": "2026.08.31",
+    "noticeStatus": "일반공고",
+    "progressStatus": "",
+    "activeStatus": "upcoming",
+    "daysToDeadline": 9,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020136&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20518&houseSn=2",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20518&houseSn=2",
+    "attachmentId": "",
+    "lat": 35.3226721,
+    "lng": 129.0706318,
     "details": {
       "pageAddress": "경상남도 양산시 물금읍 청운로 358 국민연금공단 양산지사 6층(LH 양산권주거복지지사)",
       "matchedTab": "양산사송 H-1BL 행복주택",
@@ -91924,7 +92226,54 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:26.741Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "위치도(양산물금행복주택).png",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=29295678"
+      },
+      {
+        "kind": "null",
+        "name": "단지조감도(양산물금행복주택).png",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=29295676"
+      },
+      {
+        "kind": "null",
+        "name": "단지배치도(양산물금행복주택).png",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=29295677"
+      },
+      {
+        "kind": "null",
+        "name": "양산사송-H-1BL-행복주택-지역조감도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42219227"
+      },
+      {
+        "kind": "null",
+        "name": "양산사송-H-1BL-행복주택-지구조감도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42219228"
+      },
+      {
+        "kind": "null",
+        "name": "위치도(수정).pdf",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42217871"
+      },
+      {
+        "kind": "null",
+        "name": "양산사송H-1BL행복주택이미지투시도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42219229"
+      },
+      {
+        "kind": "null",
+        "name": "양산사송H-1BL행복주택조경배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42219421"
+      },
+      {
+        "kind": "null",
+        "name": "양산사송-H-1BL-행복주택-동호배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42219918"
+      }
+    ]
   },
   {
     "id": "lh-rental-20517-1",
@@ -91961,23 +92310,6 @@
     "attachmentId": "",
     "lat": 33.2215212,
     "lng": 126.2481917,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "수정됨_조감도(변경안).jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=58492209"
-      },
-      {
-        "kind": "null",
-        "name": "단지배치도.JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=58492210"
-      },
-      {
-        "kind": "null",
-        "name": "동호배치도.JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=58492211"
-      }
-    ],
     "details": {
       "pageAddress": "제주특별자치도 제주시 전농로 100(삼도일동) 1층 마이홈",
       "matchedTab": "평면도",
@@ -92032,7 +92364,24 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:26.819Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "수정됨_조감도(변경안).jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=58492209"
+      },
+      {
+        "kind": "null",
+        "name": "단지배치도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=58492210"
+      },
+      {
+        "kind": "null",
+        "name": "동호배치도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=58492211"
+      }
+    ]
   },
   {
     "id": "lh-rental-20516-1",
@@ -92069,6 +92418,24 @@
     "attachmentId": "",
     "lat": 33.2528604,
     "lng": 126.5212562,
+    "details": {
+      "pageAddress": "제주특별자치도 제주시 전농로 100(삼도일동) 1층 마이홈",
+      "matchedTab": "평면도",
+      "coordCount": 1,
+      "housingTypes": [
+        {
+          "주택형": "36A,B",
+          "전용면적(㎡)": "36.65",
+          "금회공급세대수(예비자포함)": "80",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        }
+      ],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-06-15T19:10:26.921Z"
+    },
     "photos": [
       {
         "kind": "null",
@@ -92090,25 +92457,7 @@
         "name": "동호배치도.jpg",
         "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32512887"
       }
-    ],
-    "details": {
-      "pageAddress": "제주특별자치도 제주시 전농로 100(삼도일동) 1층 마이홈",
-      "matchedTab": "평면도",
-      "coordCount": 1,
-      "housingTypes": [
-        {
-          "주택형": "36A,B",
-          "전용면적(㎡)": "36.65",
-          "금회공급세대수(예비자포함)": "80",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        }
-      ],
-      "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:26.921Z"
-    }
+    ]
   },
   {
     "id": "lh-rental-20515-1",
@@ -92145,23 +92494,6 @@
     "attachmentId": "",
     "lat": 35.9267939,
     "lng": 126.9542334,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "인화행복위치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=31130671"
-      },
-      {
-        "kind": "null",
-        "name": "인화행복조감도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=31130669"
-      },
-      {
-        "kind": "null",
-        "name": "인화행복단지배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=31130670"
-      }
-    ],
     "details": {
       "pageAddress": "전북특별자치도 익산시 선화로3길 16-10(모현동1가) 6층 LH익산권주거급여사업소",
       "matchedTab": "평면도",
@@ -92195,7 +92527,24 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:27.441Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "인화행복위치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=31130671"
+      },
+      {
+        "kind": "null",
+        "name": "인화행복조감도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=31130669"
+      },
+      {
+        "kind": "null",
+        "name": "인화행복단지배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=31130670"
+      }
+    ]
   },
   {
     "id": "lh-rental-20514-1",
@@ -92232,23 +92581,6 @@
     "attachmentId": "",
     "lat": 35.9963422,
     "lng": 126.7577634,
-    "photos": [
-      {
-        "kind": "단지조감도",
-        "name": "군산신역세권A-2블록단지조감도-0529-01(저용량).jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=36223931"
-      },
-      {
-        "kind": "단지배치도",
-        "name": "군산신역세권A-2블록단지배치도(행복주택용)_190621.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=36223932"
-      },
-      {
-        "kind": "동호배치도",
-        "name": "군산신역세권A-2BL행복주택동호배치도01-저해상.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=36223933"
-      }
-    ],
     "details": {
       "pageAddress": "전북특별자치도 군산시 돌끝로 52(내흥동,군산 내흥 7LH아파트) 주민편의시설 내 사회적기업",
       "matchedTab": "평면도",
@@ -92282,7 +92614,24 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:27.519Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "단지조감도",
+        "name": "군산신역세권A-2블록단지조감도-0529-01(저용량).jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=36223931"
+      },
+      {
+        "kind": "단지배치도",
+        "name": "군산신역세권A-2블록단지배치도(행복주택용)_190621.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=36223932"
+      },
+      {
+        "kind": "동호배치도",
+        "name": "군산신역세권A-2BL행복주택동호배치도01-저해상.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=36223933"
+      }
+    ]
   },
   {
     "id": "lh-rental-20512-5",
@@ -92319,6 +92668,48 @@
     "attachmentId": "",
     "lat": 34.8002102,
     "lng": 126.704194,
+    "details": {
+      "pageAddress": "전라남도 목포시 수문로 32(남교동) 2층 LH목포권주거복지지사",
+      "matchedTab": "영암남풍 행복주택",
+      "coordCount": 4,
+      "housingTypes": [
+        {
+          "주택형": "16(고령자)",
+          "전용면적(㎡)": "16.62",
+          "금회공급세대수(예비자포함)": "3",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        },
+        {
+          "주택형": "36(고령자)",
+          "전용면적(㎡)": "36.93",
+          "금회공급세대수(예비자포함)": "3",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        },
+        {
+          "주택형": "36(신혼부부 및 한부모가족)",
+          "전용면적(㎡)": "36.93",
+          "금회공급세대수(예비자포함)": "5",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        },
+        {
+          "주택형": "36(청년)",
+          "전용면적(㎡)": "36.93",
+          "금회공급세대수(예비자포함)": "3",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        }
+      ],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-06-15T19:10:28.146Z"
+    },
     "photos": [
       {
         "kind": "null",
@@ -92370,49 +92761,7 @@
         "name": "동호배치도.jpg",
         "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=28085833"
       }
-    ],
-    "details": {
-      "pageAddress": "전라남도 목포시 수문로 32(남교동) 2층 LH목포권주거복지지사",
-      "matchedTab": "영암남풍 행복주택",
-      "coordCount": 4,
-      "housingTypes": [
-        {
-          "주택형": "16(고령자)",
-          "전용면적(㎡)": "16.62",
-          "금회공급세대수(예비자포함)": "3",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        },
-        {
-          "주택형": "36(고령자)",
-          "전용면적(㎡)": "36.93",
-          "금회공급세대수(예비자포함)": "3",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        },
-        {
-          "주택형": "36(신혼부부 및 한부모가족)",
-          "전용면적(㎡)": "36.93",
-          "금회공급세대수(예비자포함)": "5",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        },
-        {
-          "주택형": "36(청년)",
-          "전용면적(㎡)": "36.93",
-          "금회공급세대수(예비자포함)": "3",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        }
-      ],
-      "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:28.146Z"
-    }
+    ]
   },
   {
     "id": "lh-rental-20509-1",
@@ -92493,7 +92842,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:27.973Z"
+      "enrichedAt": "2026-06-16T02:15:49.295Z"
     }
   },
   {
@@ -92531,18 +92880,6 @@
     "attachmentId": "",
     "lat": 36.122584,
     "lng": 128.1136288,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "김천평화위치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42301745"
-      },
-      {
-        "kind": "null",
-        "name": "김천평화단지조감도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42301744"
-      }
-    ],
     "details": {
       "pageAddress": "경상북도 구미시 송원동로 7(송정동) 용은빌딩 1층, LH경북서부권주거복지지사",
       "matchedTab": "김천평화 행복주택",
@@ -92592,7 +92929,19 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:28.263Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "김천평화위치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42301745"
+      },
+      {
+        "kind": "null",
+        "name": "김천평화단지조감도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42301744"
+      }
+    ]
   },
   {
     "id": "lh-rental-20508-4",
@@ -92629,18 +92978,6 @@
     "attachmentId": "",
     "lat": 36.1205797,
     "lng": 128.3497307,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "김천평화위치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42301745"
-      },
-      {
-        "kind": "null",
-        "name": "김천평화단지조감도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42301744"
-      }
-    ],
     "details": {
       "pageAddress": "경상북도 구미시 송원동로 7(송정동) 용은빌딩 1층, LH경북서부권주거복지지사",
       "matchedTab": "구미송정 행복주택",
@@ -92690,7 +93027,19 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:28.698Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "김천평화위치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42301745"
+      },
+      {
+        "kind": "null",
+        "name": "김천평화단지조감도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42301744"
+      }
+    ]
   },
   {
     "id": "lh-rental-20508-5",
@@ -92727,18 +93076,6 @@
     "attachmentId": "",
     "lat": 36.3856998,
     "lng": 128.4405164,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "김천평화위치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42301745"
-      },
-      {
-        "kind": "null",
-        "name": "김천평화단지조감도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42301744"
-      }
-    ],
     "details": {
       "pageAddress": "경상북도 구미시 송원동로 7(송정동) 용은빌딩 1층, LH경북서부권주거복지지사",
       "matchedTab": "경북의성 행복주택",
@@ -92788,7 +93125,19 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:28.843Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "김천평화위치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42301745"
+      },
+      {
+        "kind": "null",
+        "name": "김천평화단지조감도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=42301744"
+      }
+    ]
   },
   {
     "id": "lh-rental-20507-1",
@@ -92825,33 +93174,6 @@
     "attachmentId": "",
     "lat": 36.1445969,
     "lng": 128.097527,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "지역도(김천삼락).png",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=31668703"
-      },
-      {
-        "kind": "null",
-        "name": "단지조감도(김천삼락).png",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=31668838"
-      },
-      {
-        "kind": "null",
-        "name": "26형.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41125640"
-      },
-      {
-        "kind": "null",
-        "name": "16형.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41125639"
-      },
-      {
-        "kind": "null",
-        "name": "36형.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41125641"
-      }
-    ],
     "details": {
       "pageAddress": "경상북도 구미시 송원동로 7(송정동) 용은빌딩 1층, LH경북서부권주거복지지사",
       "matchedTab": null,
@@ -92901,7 +93223,34 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:29.073Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "지역도(김천삼락).png",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=31668703"
+      },
+      {
+        "kind": "null",
+        "name": "단지조감도(김천삼락).png",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=31668838"
+      },
+      {
+        "kind": "null",
+        "name": "26형.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41125640"
+      },
+      {
+        "kind": "null",
+        "name": "16형.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41125639"
+      },
+      {
+        "kind": "null",
+        "name": "36형.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41125641"
+      }
+    ]
   },
   {
     "id": "lh-rental-20506-2",
@@ -92938,58 +93287,6 @@
     "attachmentId": "",
     "lat": 34.7562444,
     "lng": 126.4626187,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "단지조감도.png",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=35302183"
-      },
-      {
-        "kind": "null",
-        "name": "단지배치도.png",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=35302184"
-      },
-      {
-        "kind": "null",
-        "name": "동호배치도.png",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=35302185"
-      },
-      {
-        "kind": "목포용해5 위치도",
-        "name": "목포용해5_위치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=40334104"
-      },
-      {
-        "kind": "목포용해5 단지조감도",
-        "name": "목포용해5_단지조감도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=40334105"
-      },
-      {
-        "kind": "목포용해5 단지배치도",
-        "name": "목포용해5_단지배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=40334106"
-      },
-      {
-        "kind": "목포용해5 동호배치도",
-        "name": "목포용해5_동호배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=40334107"
-      },
-      {
-        "kind": "교통로",
-        "name": "교통로.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=28085831"
-      },
-      {
-        "kind": "null",
-        "name": "단지배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=28085832"
-      },
-      {
-        "kind": "null",
-        "name": "동호배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=28085833"
-      }
-    ],
     "details": {
       "pageAddress": "전라남도 목포시 수문로 32(남교동) 2층 LH목포권주거복지지사",
       "matchedTab": "영암용앙 행복주택",
@@ -93031,43 +93328,7 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:29.563Z"
-    }
-  },
-  {
-    "id": "lh-rental-20506-3",
-    "pblancId": "20506",
-    "houseSn": 3,
-    "category": "임대",
-    "typeId": "happy",
-    "housingType": "행복주택",
-    "houseType": "아파트",
-    "title": "목포용해5",
-    "noticeTitle": "목포용해5(법원), 목포용해2 6-1(포미6), 영암용앙3 행복주택 예비입주자 모집",
-    "provider": "LH",
-    "sido": "전라남도",
-    "sigungu": "목포시",
-    "address": "전라남도 목포시 양을로 249 ",
-    "pnu": "4611015900110620000",
-    "totalUnits": 400,
-    "supplyUnits": 180,
-    "depositWon": 10744000,
-    "monthlyRentWon": 71620,
-    "depositManwon": 1074,
-    "monthlyRentManwon": 7,
-    "announceDate": "2026.06.15",
-    "beginDate": "2026.07.01",
-    "endDate": "2026.07.02",
-    "winnerDate": "2026.10.16",
-    "noticeStatus": "일반공고",
-    "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 16,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020117&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20506&houseSn=3",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20506&houseSn=3",
-    "attachmentId": "",
-    "lat": 34.8131102,
-    "lng": 126.3968267,
+    },
     "photos": [
       {
         "kind": "null",
@@ -93119,7 +93380,43 @@
         "name": "동호배치도.jpg",
         "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=28085833"
       }
-    ],
+    ]
+  },
+  {
+    "id": "lh-rental-20506-3",
+    "pblancId": "20506",
+    "houseSn": 3,
+    "category": "임대",
+    "typeId": "happy",
+    "housingType": "행복주택",
+    "houseType": "아파트",
+    "title": "목포용해5",
+    "noticeTitle": "목포용해5(법원), 목포용해2 6-1(포미6), 영암용앙3 행복주택 예비입주자 모집",
+    "provider": "LH",
+    "sido": "전라남도",
+    "sigungu": "목포시",
+    "address": "전라남도 목포시 양을로 249 ",
+    "pnu": "4611015900110620000",
+    "totalUnits": 400,
+    "supplyUnits": 180,
+    "depositWon": 10744000,
+    "monthlyRentWon": 71620,
+    "depositManwon": 1074,
+    "monthlyRentManwon": 7,
+    "announceDate": "2026.06.15",
+    "beginDate": "2026.07.01",
+    "endDate": "2026.07.02",
+    "winnerDate": "2026.10.16",
+    "noticeStatus": "일반공고",
+    "progressStatus": "",
+    "activeStatus": "upcoming",
+    "daysToDeadline": 16,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020117&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20506&houseSn=3",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20506&houseSn=3",
+    "attachmentId": "",
+    "lat": 34.8131102,
+    "lng": 126.3968267,
     "details": {
       "pageAddress": "전라남도 목포시 수문로 32(남교동) 2층 LH목포권주거복지지사",
       "matchedTab": "목포용해5(목포법원) 행복주택",
@@ -93161,43 +93458,7 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:29.671Z"
-    }
-  },
-  {
-    "id": "lh-rental-20506-4",
-    "pblancId": "20506",
-    "houseSn": 4,
-    "category": "임대",
-    "typeId": "happy",
-    "housingType": "행복주택",
-    "houseType": "아파트",
-    "title": "목포용해2 6-1",
-    "noticeTitle": "목포용해5(법원), 목포용해2 6-1(포미6), 영암용앙3 행복주택 예비입주자 모집",
-    "provider": "LH",
-    "sido": "전라남도",
-    "sigungu": "목포시",
-    "address": "전라남도 목포시 연산백련로1번길 51 ",
-    "pnu": "4611010300119440001",
-    "totalUnits": 450,
-    "supplyUnits": 244,
-    "depositWon": 15572000,
-    "monthlyRentWon": 103810,
-    "depositManwon": 1557,
-    "monthlyRentManwon": 10,
-    "announceDate": "2026.06.15",
-    "beginDate": "2026.07.01",
-    "endDate": "2026.07.02",
-    "winnerDate": "2026.10.16",
-    "noticeStatus": "일반공고",
-    "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 16,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020117&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20506&houseSn=4",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20506&houseSn=4",
-    "attachmentId": "",
-    "lat": 34.8002102,
-    "lng": 126.704194,
+    },
     "photos": [
       {
         "kind": "null",
@@ -93249,7 +93510,43 @@
         "name": "동호배치도.jpg",
         "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=28085833"
       }
-    ],
+    ]
+  },
+  {
+    "id": "lh-rental-20506-4",
+    "pblancId": "20506",
+    "houseSn": 4,
+    "category": "임대",
+    "typeId": "happy",
+    "housingType": "행복주택",
+    "houseType": "아파트",
+    "title": "목포용해2 6-1",
+    "noticeTitle": "목포용해5(법원), 목포용해2 6-1(포미6), 영암용앙3 행복주택 예비입주자 모집",
+    "provider": "LH",
+    "sido": "전라남도",
+    "sigungu": "목포시",
+    "address": "전라남도 목포시 연산백련로1번길 51 ",
+    "pnu": "4611010300119440001",
+    "totalUnits": 450,
+    "supplyUnits": 244,
+    "depositWon": 15572000,
+    "monthlyRentWon": 103810,
+    "depositManwon": 1557,
+    "monthlyRentManwon": 10,
+    "announceDate": "2026.06.15",
+    "beginDate": "2026.07.01",
+    "endDate": "2026.07.02",
+    "winnerDate": "2026.10.16",
+    "noticeStatus": "일반공고",
+    "progressStatus": "",
+    "activeStatus": "upcoming",
+    "daysToDeadline": 16,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020117&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20506&houseSn=4",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20506&houseSn=4",
+    "attachmentId": "",
+    "lat": 34.8002102,
+    "lng": 126.704194,
     "details": {
       "pageAddress": "전라남도 목포시 수문로 32(남교동) 2층 LH목포권주거복지지사",
       "matchedTab": "영암남풍 행복주택",
@@ -93291,7 +93588,59 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:30.064Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "단지조감도.png",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=35302183"
+      },
+      {
+        "kind": "null",
+        "name": "단지배치도.png",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=35302184"
+      },
+      {
+        "kind": "null",
+        "name": "동호배치도.png",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=35302185"
+      },
+      {
+        "kind": "목포용해5 위치도",
+        "name": "목포용해5_위치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=40334104"
+      },
+      {
+        "kind": "목포용해5 단지조감도",
+        "name": "목포용해5_단지조감도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=40334105"
+      },
+      {
+        "kind": "목포용해5 단지배치도",
+        "name": "목포용해5_단지배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=40334106"
+      },
+      {
+        "kind": "목포용해5 동호배치도",
+        "name": "목포용해5_동호배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=40334107"
+      },
+      {
+        "kind": "교통로",
+        "name": "교통로.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=28085831"
+      },
+      {
+        "kind": "null",
+        "name": "단지배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=28085832"
+      },
+      {
+        "kind": "null",
+        "name": "동호배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=28085833"
+      }
+    ]
   },
   {
     "id": "lh-rental-20505-1",
@@ -93328,38 +93677,6 @@
     "attachmentId": "",
     "lat": 35.2329944,
     "lng": 129.2218167,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "기장광역조감도.JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41476706"
-      },
-      {
-        "kind": "null",
-        "name": "기장지구조감도.JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41476705"
-      },
-      {
-        "kind": "null",
-        "name": "기장위치도.JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41476704"
-      },
-      {
-        "kind": "null",
-        "name": "기장단지조감도.JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41476703"
-      },
-      {
-        "kind": "null",
-        "name": "단지배치도.JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41476776"
-      },
-      {
-        "kind": "null",
-        "name": "동호배치도.JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41476777"
-      }
-    ],
     "details": {
       "pageAddress": "부산광역시 금정구 중앙대로 1817(구서동) ",
       "matchedTab": "평면도",
@@ -93393,7 +93710,39 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:31.559Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "기장광역조감도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41476706"
+      },
+      {
+        "kind": "null",
+        "name": "기장지구조감도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41476705"
+      },
+      {
+        "kind": "null",
+        "name": "기장위치도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41476704"
+      },
+      {
+        "kind": "null",
+        "name": "기장단지조감도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41476703"
+      },
+      {
+        "kind": "null",
+        "name": "단지배치도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41476776"
+      },
+      {
+        "kind": "null",
+        "name": "동호배치도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41476777"
+      }
+    ]
   },
   {
     "id": "lh-rental-20504-1",
@@ -93430,38 +93779,6 @@
     "attachmentId": "",
     "lat": 35.2329944,
     "lng": 129.2218167,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "기장광역조감도.JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41476706"
-      },
-      {
-        "kind": "null",
-        "name": "기장지구조감도.JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41476705"
-      },
-      {
-        "kind": "null",
-        "name": "기장위치도.JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41476704"
-      },
-      {
-        "kind": "null",
-        "name": "기장단지조감도.JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41476703"
-      },
-      {
-        "kind": "null",
-        "name": "단지배치도.JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41476776"
-      },
-      {
-        "kind": "null",
-        "name": "동호배치도.JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41476777"
-      }
-    ],
     "details": {
       "pageAddress": "부산광역시 금정구 중앙대로 1817(구서동) ",
       "matchedTab": "평면도",
@@ -93495,7 +93812,39 @@
       "schedule": [],
       "noticeStatus": "정정공고중",
       "enrichedAt": "2026-06-15T19:10:30.195Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "기장광역조감도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41476706"
+      },
+      {
+        "kind": "null",
+        "name": "기장지구조감도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41476705"
+      },
+      {
+        "kind": "null",
+        "name": "기장위치도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41476704"
+      },
+      {
+        "kind": "null",
+        "name": "기장단지조감도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41476703"
+      },
+      {
+        "kind": "null",
+        "name": "단지배치도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41476776"
+      },
+      {
+        "kind": "null",
+        "name": "동호배치도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=41476777"
+      }
+    ]
   },
   {
     "id": "lh-rental-20503-1",
@@ -93532,18 +93881,6 @@
     "attachmentId": "",
     "lat": 36.4502289,
     "lng": 126.8096839,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "지구조감도.JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=47855534"
-      },
-      {
-        "kind": "null",
-        "name": "마_단지배치도.JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=47855535"
-      }
-    ],
     "details": {
       "pageAddress": "",
       "matchedTab": "평면도",
@@ -93577,7 +93914,19 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:30.688Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "지구조감도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=47855534"
+      },
+      {
+        "kind": "null",
+        "name": "마_단지배치도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=47855535"
+      }
+    ]
   },
   {
     "id": "lh-rental-20502-1",
@@ -93614,28 +93963,6 @@
     "attachmentId": "",
     "lat": 36.0102868,
     "lng": 126.7031703,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "위치도.JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=44687127"
-      },
-      {
-        "kind": "null",
-        "name": "단지조감도.JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=44687125"
-      },
-      {
-        "kind": "null",
-        "name": "단지배치도.JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=44687124"
-      },
-      {
-        "kind": "null",
-        "name": "동호배치도.JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=44689239"
-      }
-    ],
     "details": {
       "pageAddress": "",
       "matchedTab": "평면도",
@@ -93677,7 +94004,29 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:30.862Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "위치도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=44687127"
+      },
+      {
+        "kind": "null",
+        "name": "단지조감도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=44687125"
+      },
+      {
+        "kind": "null",
+        "name": "단지배치도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=44687124"
+      },
+      {
+        "kind": "null",
+        "name": "동호배치도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=44689239"
+      }
+    ]
   },
   {
     "id": "lh-rental-20501-1",
@@ -93714,23 +94063,6 @@
     "attachmentId": "",
     "lat": 36.2352774,
     "lng": 126.5988457,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "보령웅천위치도(수정).jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37328429"
-      },
-      {
-        "kind": "null",
-        "name": "보령웅천단지조감도(수정).jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37331825"
-      },
-      {
-        "kind": "null",
-        "name": "보령웅천단지배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37328428"
-      }
-    ],
     "details": {
       "pageAddress": "",
       "matchedTab": "평면도",
@@ -93780,7 +94112,24 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:31.200Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "보령웅천위치도(수정).jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37328429"
+      },
+      {
+        "kind": "null",
+        "name": "보령웅천단지조감도(수정).jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37331825"
+      },
+      {
+        "kind": "null",
+        "name": "보령웅천단지배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37328428"
+      }
+    ]
   },
   {
     "id": "lh-rental-20500-2",
@@ -93817,83 +94166,6 @@
     "attachmentId": "",
     "lat": 35.1596964,
     "lng": 126.800315,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "LH우산-단지조감도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32479710"
-      },
-      {
-        "kind": "null",
-        "name": "LH우산-단지배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32479709"
-      },
-      {
-        "kind": "null",
-        "name": "LH우산-동호배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32479711"
-      },
-      {
-        "kind": "null",
-        "name": "LH광주하남_위치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=31658739"
-      },
-      {
-        "kind": "null",
-        "name": "LH광주하남_조감도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=31658737"
-      },
-      {
-        "kind": "null",
-        "name": "LH광주하남_배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=31659257"
-      },
-      {
-        "kind": "null",
-        "name": "동호배치도_하남.bmp",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=31636056"
-      },
-      {
-        "kind": "광주도산 위치도",
-        "name": "광주도산위치도copy.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=44683548"
-      },
-      {
-        "kind": "광주도산 단지조감도",
-        "name": "수정됨_광주도산단지조감도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=44683549"
-      },
-      {
-        "kind": "광주도산 단지배치도",
-        "name": "수정됨_광주도산배치도(1)copy(3).jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=44683550"
-      },
-      {
-        "kind": "광주도산 동호배치도",
-        "name": "광주도산동호배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=44683551"
-      },
-      {
-        "kind": "null",
-        "name": "위치도_영광단주행복주택.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=51087404"
-      },
-      {
-        "kind": "null",
-        "name": "단지조감도_영광단주행복주택.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=51087405"
-      },
-      {
-        "kind": "null",
-        "name": "단지배치도_영광단주행복주택.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=51087406"
-      },
-      {
-        "kind": "null",
-        "name": "동호배치도_영광단주행복주택.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=51087407"
-      }
-    ],
     "details": {
       "pageAddress": "광주광역시 광산구 무진대로 246-7(우산동,광주우산 LH 1단지) LH광주광산권주거복지지사 3층 주택계약실",
       "matchedTab": "광주하남 행복주택",
@@ -93935,43 +94207,7 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:31.532Z"
-    }
-  },
-  {
-    "id": "lh-rental-20500-5",
-    "pblancId": "20500",
-    "houseSn": 5,
-    "category": "임대",
-    "typeId": "happy",
-    "housingType": "행복주택",
-    "houseType": "아파트",
-    "title": "광주우산",
-    "noticeTitle": "광주하남. 우산. 도산.영광단주 행복주택 입주자격완화 예비입주자 모집",
-    "provider": "LH",
-    "sido": "광주광역시",
-    "sigungu": "광산구",
-    "address": "광주광역시 광산구 무진대로 246-7 ",
-    "pnu": "2920010900115990001",
-    "totalUnits": 361,
-    "supplyUnits": 110,
-    "depositWon": 14552000,
-    "monthlyRentWon": 75180,
-    "depositManwon": 1455,
-    "monthlyRentManwon": 8,
-    "announceDate": "2026.06.15",
-    "beginDate": "2026.06.29",
-    "endDate": "2026.06.30",
-    "winnerDate": "2026.10.20",
-    "noticeStatus": "일반공고",
-    "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 14,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020123&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20500&houseSn=5",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20500&houseSn=5",
-    "attachmentId": "",
-    "lat": 35.1608173,
-    "lng": 126.8075517,
+    },
     "photos": [
       {
         "kind": "null",
@@ -94048,7 +94284,43 @@
         "name": "동호배치도_영광단주행복주택.jpg",
         "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=51087407"
       }
-    ],
+    ]
+  },
+  {
+    "id": "lh-rental-20500-5",
+    "pblancId": "20500",
+    "houseSn": 5,
+    "category": "임대",
+    "typeId": "happy",
+    "housingType": "행복주택",
+    "houseType": "아파트",
+    "title": "광주우산",
+    "noticeTitle": "광주하남. 우산. 도산.영광단주 행복주택 입주자격완화 예비입주자 모집",
+    "provider": "LH",
+    "sido": "광주광역시",
+    "sigungu": "광산구",
+    "address": "광주광역시 광산구 무진대로 246-7 ",
+    "pnu": "2920010900115990001",
+    "totalUnits": 361,
+    "supplyUnits": 110,
+    "depositWon": 14552000,
+    "monthlyRentWon": 75180,
+    "depositManwon": 1455,
+    "monthlyRentManwon": 8,
+    "announceDate": "2026.06.15",
+    "beginDate": "2026.06.29",
+    "endDate": "2026.06.30",
+    "winnerDate": "2026.10.20",
+    "noticeStatus": "일반공고",
+    "progressStatus": "",
+    "activeStatus": "upcoming",
+    "daysToDeadline": 14,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020123&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20500&houseSn=5",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20500&houseSn=5",
+    "attachmentId": "",
+    "lat": 35.1608173,
+    "lng": 126.8075517,
     "details": {
       "pageAddress": "광주광역시 광산구 무진대로 246-7(우산동,광주우산 LH 1단지) LH광주광산권주거복지지사 3층 주택계약실",
       "matchedTab": "광주우산 행복주택",
@@ -94090,43 +94362,7 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:31.981Z"
-    }
-  },
-  {
-    "id": "lh-rental-20500-6",
-    "pblancId": "20500",
-    "houseSn": 6,
-    "category": "임대",
-    "typeId": "happy",
-    "housingType": "행복주택",
-    "houseType": "아파트",
-    "title": "광주도산",
-    "noticeTitle": "광주하남. 우산. 도산.영광단주 행복주택 입주자격완화 예비입주자 모집",
-    "provider": "LH",
-    "sido": "광주광역시",
-    "sigungu": "광산구",
-    "address": "광주광역시 광산구 송정로52번길 86 ",
-    "pnu": "2920010200113210000",
-    "totalUnits": 50,
-    "supplyUnits": 30,
-    "depositWon": 19618000,
-    "monthlyRentWon": 101350,
-    "depositManwon": 1962,
-    "monthlyRentManwon": 10,
-    "announceDate": "2026.06.15",
-    "beginDate": "2026.06.29",
-    "endDate": "2026.06.30",
-    "winnerDate": "2026.10.20",
-    "noticeStatus": "일반공고",
-    "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 14,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020123&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20500&houseSn=6",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20500&houseSn=6",
-    "attachmentId": "",
-    "lat": 35.1320717,
-    "lng": 126.7937079,
+    },
     "photos": [
       {
         "kind": "null",
@@ -94203,7 +94439,43 @@
         "name": "동호배치도_영광단주행복주택.jpg",
         "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=51087407"
       }
-    ],
+    ]
+  },
+  {
+    "id": "lh-rental-20500-6",
+    "pblancId": "20500",
+    "houseSn": 6,
+    "category": "임대",
+    "typeId": "happy",
+    "housingType": "행복주택",
+    "houseType": "아파트",
+    "title": "광주도산",
+    "noticeTitle": "광주하남. 우산. 도산.영광단주 행복주택 입주자격완화 예비입주자 모집",
+    "provider": "LH",
+    "sido": "광주광역시",
+    "sigungu": "광산구",
+    "address": "광주광역시 광산구 송정로52번길 86 ",
+    "pnu": "2920010200113210000",
+    "totalUnits": 50,
+    "supplyUnits": 30,
+    "depositWon": 19618000,
+    "monthlyRentWon": 101350,
+    "depositManwon": 1962,
+    "monthlyRentManwon": 10,
+    "announceDate": "2026.06.15",
+    "beginDate": "2026.06.29",
+    "endDate": "2026.06.30",
+    "winnerDate": "2026.10.20",
+    "noticeStatus": "일반공고",
+    "progressStatus": "",
+    "activeStatus": "upcoming",
+    "daysToDeadline": 14,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020123&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20500&houseSn=6",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20500&houseSn=6",
+    "attachmentId": "",
+    "lat": 35.1320717,
+    "lng": 126.7937079,
     "details": {
       "pageAddress": "광주광역시 광산구 무진대로 246-7(우산동,광주우산 LH 1단지) LH광주광산권주거복지지사 3층 주택계약실",
       "matchedTab": "광주도산 행복주택",
@@ -94245,43 +94517,7 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:32.184Z"
-    }
-  },
-  {
-    "id": "lh-rental-20500-7",
-    "pblancId": "20500",
-    "houseSn": 7,
-    "category": "임대",
-    "typeId": "happy",
-    "housingType": "행복주택",
-    "houseType": "아파트",
-    "title": "영광단주",
-    "noticeTitle": "광주하남. 우산. 도산.영광단주 행복주택 입주자격완화 예비입주자 모집",
-    "provider": "LH",
-    "sido": "전라남도",
-    "sigungu": "영광군",
-    "address": "전라남도 영광군 영광읍 옥당로1길 34 ",
-    "pnu": "4687025028106870000",
-    "totalUnits": 300,
-    "supplyUnits": 20,
-    "depositWon": 17442000,
-    "monthlyRentWon": 104650,
-    "depositManwon": 1744,
-    "monthlyRentManwon": 10,
-    "announceDate": "2026.06.15",
-    "beginDate": "2026.06.29",
-    "endDate": "2026.06.30",
-    "winnerDate": "2026.10.20",
-    "noticeStatus": "일반공고",
-    "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 14,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020123&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20500&houseSn=7",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20500&houseSn=7",
-    "attachmentId": "",
-    "lat": 35.2829841,
-    "lng": 126.4968081,
+    },
     "photos": [
       {
         "kind": "null",
@@ -94358,7 +94594,43 @@
         "name": "동호배치도_영광단주행복주택.jpg",
         "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=51087407"
       }
-    ],
+    ]
+  },
+  {
+    "id": "lh-rental-20500-7",
+    "pblancId": "20500",
+    "houseSn": 7,
+    "category": "임대",
+    "typeId": "happy",
+    "housingType": "행복주택",
+    "houseType": "아파트",
+    "title": "영광단주",
+    "noticeTitle": "광주하남. 우산. 도산.영광단주 행복주택 입주자격완화 예비입주자 모집",
+    "provider": "LH",
+    "sido": "전라남도",
+    "sigungu": "영광군",
+    "address": "전라남도 영광군 영광읍 옥당로1길 34 ",
+    "pnu": "4687025028106870000",
+    "totalUnits": 300,
+    "supplyUnits": 20,
+    "depositWon": 17442000,
+    "monthlyRentWon": 104650,
+    "depositManwon": 1744,
+    "monthlyRentManwon": 10,
+    "announceDate": "2026.06.15",
+    "beginDate": "2026.06.29",
+    "endDate": "2026.06.30",
+    "winnerDate": "2026.10.20",
+    "noticeStatus": "일반공고",
+    "progressStatus": "",
+    "activeStatus": "upcoming",
+    "daysToDeadline": 14,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020123&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20500&houseSn=7",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20500&houseSn=7",
+    "attachmentId": "",
+    "lat": 35.2829841,
+    "lng": 126.4968081,
     "details": {
       "pageAddress": "광주광역시 광산구 무진대로 246-7(우산동,광주우산 LH 1단지) LH광주광산권주거복지지사 3층 주택계약실",
       "matchedTab": "영광단주 행복주택",
@@ -94400,7 +94672,84 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:32.480Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "LH우산-단지조감도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32479710"
+      },
+      {
+        "kind": "null",
+        "name": "LH우산-단지배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32479709"
+      },
+      {
+        "kind": "null",
+        "name": "LH우산-동호배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32479711"
+      },
+      {
+        "kind": "null",
+        "name": "LH광주하남_위치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=31658739"
+      },
+      {
+        "kind": "null",
+        "name": "LH광주하남_조감도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=31658737"
+      },
+      {
+        "kind": "null",
+        "name": "LH광주하남_배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=31659257"
+      },
+      {
+        "kind": "null",
+        "name": "동호배치도_하남.bmp",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=31636056"
+      },
+      {
+        "kind": "광주도산 위치도",
+        "name": "광주도산위치도copy.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=44683548"
+      },
+      {
+        "kind": "광주도산 단지조감도",
+        "name": "수정됨_광주도산단지조감도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=44683549"
+      },
+      {
+        "kind": "광주도산 단지배치도",
+        "name": "수정됨_광주도산배치도(1)copy(3).jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=44683550"
+      },
+      {
+        "kind": "광주도산 동호배치도",
+        "name": "광주도산동호배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=44683551"
+      },
+      {
+        "kind": "null",
+        "name": "위치도_영광단주행복주택.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=51087404"
+      },
+      {
+        "kind": "null",
+        "name": "단지조감도_영광단주행복주택.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=51087405"
+      },
+      {
+        "kind": "null",
+        "name": "단지배치도_영광단주행복주택.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=51087406"
+      },
+      {
+        "kind": "null",
+        "name": "동호배치도_영광단주행복주택.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=51087407"
+      }
+    ]
   },
   {
     "id": "lh-rental-20499-1",
@@ -94437,28 +94786,6 @@
     "attachmentId": "",
     "lat": 35.2578033,
     "lng": 126.6636766,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "지역위치도copy.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37295547"
-      },
-      {
-        "kind": "null",
-        "name": "단지조감도copy.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37295544"
-      },
-      {
-        "kind": "null",
-        "name": "단지배치도copy.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37295545"
-      },
-      {
-        "kind": "null",
-        "name": "동호배치도copy.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37295546"
-      }
-    ],
     "details": {
       "pageAddress": "광주광역시 광산구 임방울대로800번길 11-5(월계동,광주첨단 LH 3단지) 상가 2층 LH광주북부권주거복지지사",
       "matchedTab": "평면도",
@@ -94484,7 +94811,29 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:32.603Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "지역위치도copy.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37295547"
+      },
+      {
+        "kind": "null",
+        "name": "단지조감도copy.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37295544"
+      },
+      {
+        "kind": "null",
+        "name": "단지배치도copy.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37295545"
+      },
+      {
+        "kind": "null",
+        "name": "동호배치도copy.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37295546"
+      }
+    ]
   },
   {
     "id": "lh-rental-20498-1",
@@ -94521,6 +94870,32 @@
     "attachmentId": "",
     "lat": 35.2182673,
     "lng": 126.8425693,
+    "details": {
+      "pageAddress": "광주광역시 광산구 임방울대로800번길 11-5(월계동,광주첨단 LH 3단지) 2층 LH광주북부권주거복지지사",
+      "matchedTab": "광주첨단 창업지원주택",
+      "coordCount": 2,
+      "housingTypes": [
+        {
+          "주택형": "21형(창업(주거약자용))",
+          "전용면적(㎡)": "21.88",
+          "금회공급세대수(예비자포함)": "20",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        },
+        {
+          "주택형": "21형(창업인)",
+          "전용면적(㎡)": "21.88",
+          "금회공급세대수(예비자포함)": "80",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        }
+      ],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-06-15T19:10:32.682Z"
+    },
     "photos": [
       {
         "kind": "광주첨단H-1 위치도",
@@ -94552,33 +94927,7 @@
         "name": "H-2동호배치도.bmp",
         "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=34284246"
       }
-    ],
-    "details": {
-      "pageAddress": "광주광역시 광산구 임방울대로800번길 11-5(월계동,광주첨단 LH 3단지) 2층 LH광주북부권주거복지지사",
-      "matchedTab": "광주첨단 창업지원주택",
-      "coordCount": 2,
-      "housingTypes": [
-        {
-          "주택형": "21형(창업(주거약자용))",
-          "전용면적(㎡)": "21.88",
-          "금회공급세대수(예비자포함)": "20",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        },
-        {
-          "주택형": "21형(창업인)",
-          "전용면적(㎡)": "21.88",
-          "금회공급세대수(예비자포함)": "80",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        }
-      ],
-      "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:32.682Z"
-    }
+    ]
   },
   {
     "id": "lh-rental-20498-2",
@@ -94615,6 +94964,32 @@
     "attachmentId": "",
     "lat": 35.2182673,
     "lng": 126.8425693,
+    "details": {
+      "pageAddress": "광주광역시 광산구 임방울대로800번길 11-5(월계동,광주첨단 LH 3단지) 2층 LH광주북부권주거복지지사",
+      "matchedTab": "광주첨단 창업지원주택",
+      "coordCount": 2,
+      "housingTypes": [
+        {
+          "주택형": "21형(창업(주거약자용))",
+          "전용면적(㎡)": "21.88",
+          "금회공급세대수(예비자포함)": "20",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        },
+        {
+          "주택형": "21형(창업인)",
+          "전용면적(㎡)": "21.88",
+          "금회공급세대수(예비자포함)": "80",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        }
+      ],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-06-15T19:10:33.087Z"
+    },
     "photos": [
       {
         "kind": "광주첨단H-1 위치도",
@@ -94646,33 +95021,7 @@
         "name": "H-2동호배치도.bmp",
         "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=34284246"
       }
-    ],
-    "details": {
-      "pageAddress": "광주광역시 광산구 임방울대로800번길 11-5(월계동,광주첨단 LH 3단지) 2층 LH광주북부권주거복지지사",
-      "matchedTab": "광주첨단 창업지원주택",
-      "coordCount": 2,
-      "housingTypes": [
-        {
-          "주택형": "21형(창업(주거약자용))",
-          "전용면적(㎡)": "21.88",
-          "금회공급세대수(예비자포함)": "20",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        },
-        {
-          "주택형": "21형(창업인)",
-          "전용면적(㎡)": "21.88",
-          "금회공급세대수(예비자포함)": "80",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        }
-      ],
-      "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:33.087Z"
-    }
+    ]
   },
   {
     "id": "lh-rental-20497-1",
@@ -94709,23 +95058,6 @@
     "attachmentId": "",
     "lat": 34.7429202,
     "lng": 127.749218,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "단지조감도.PNG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=30070541"
-      },
-      {
-        "kind": "null",
-        "name": "단지배치도.PNG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=30070542"
-      },
-      {
-        "kind": "null",
-        "name": "동호배치도.PNG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=30070543"
-      }
-    ],
     "details": {
       "pageAddress": "전라남도 순천시 중앙로 260(석현동) KT석현빌딩 3층 LH순천권주거복지지사",
       "matchedTab": "여수수정 행복주택",
@@ -94751,7 +95083,24 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:33.320Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "단지조감도.PNG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=30070541"
+      },
+      {
+        "kind": "null",
+        "name": "단지배치도.PNG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=30070542"
+      },
+      {
+        "kind": "null",
+        "name": "동호배치도.PNG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=30070543"
+      }
+    ]
   },
   {
     "id": "lh-rental-20497-2",
@@ -94788,23 +95137,6 @@
     "attachmentId": "",
     "lat": 34.7438886,
     "lng": 127.7290612,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "단지조감도.PNG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=30070541"
-      },
-      {
-        "kind": "null",
-        "name": "단지배치도.PNG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=30070542"
-      },
-      {
-        "kind": "null",
-        "name": "동호배치도.PNG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=30070543"
-      }
-    ],
     "details": {
       "pageAddress": "전라남도 순천시 중앙로 260(석현동) KT석현빌딩 3층 LH순천권주거복지지사",
       "matchedTab": "여수서교 행복주택",
@@ -94830,7 +95162,24 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:33.639Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "단지조감도.PNG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=30070541"
+      },
+      {
+        "kind": "null",
+        "name": "단지배치도.PNG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=30070542"
+      },
+      {
+        "kind": "null",
+        "name": "동호배치도.PNG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=30070543"
+      }
+    ]
   },
   {
     "id": "lh-rental-20496-1",
@@ -94867,6 +95216,32 @@
     "attachmentId": "",
     "lat": 35.150712,
     "lng": 126.7821846,
+    "details": {
+      "pageAddress": "광주광역시 광산구 무진대로 246-7(우산동,광주우산 LH 1단지) 우산행복주주택 상가 3층 LH광주광산권주거복지지사 주택계약실",
+      "matchedTab": "광주선운2 신혼희망타운 행복주택 A-1",
+      "coordCount": 2,
+      "housingTypes": [
+        {
+          "주택형": "A-1(주거약자)",
+          "전용면적(㎡)": "55.83",
+          "금회공급세대수": "20",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        },
+        {
+          "주택형": "B-1(주거약자)",
+          "전용면적(㎡)": "55.57",
+          "금회공급세대수": "20",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        }
+      ],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-06-15T19:10:33.734Z"
+    },
     "photos": [
       {
         "kind": "null",
@@ -94943,33 +95318,7 @@
         "name": "3BL-동호배치도.jpg",
         "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=53792321"
       }
-    ],
-    "details": {
-      "pageAddress": "광주광역시 광산구 무진대로 246-7(우산동,광주우산 LH 1단지) 우산행복주주택 상가 3층 LH광주광산권주거복지지사 주택계약실",
-      "matchedTab": "광주선운2 신혼희망타운 행복주택 A-1",
-      "coordCount": 2,
-      "housingTypes": [
-        {
-          "주택형": "A-1(주거약자)",
-          "전용면적(㎡)": "55.83",
-          "금회공급세대수": "20",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "청약신청전"
-        },
-        {
-          "주택형": "B-1(주거약자)",
-          "전용면적(㎡)": "55.57",
-          "금회공급세대수": "20",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "청약신청전"
-        }
-      ],
-      "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:33.734Z"
-    }
+    ]
   },
   {
     "id": "lh-rental-20496-2",
@@ -95006,6 +95355,32 @@
     "attachmentId": "",
     "lat": 35.150712,
     "lng": 126.7821846,
+    "details": {
+      "pageAddress": "광주광역시 광산구 무진대로 246-7(우산동,광주우산 LH 1단지) 우산행복주주택 상가 3층 LH광주광산권주거복지지사 주택계약실",
+      "matchedTab": "광주선운2 신혼희망타운 행복주택 A-1",
+      "coordCount": 2,
+      "housingTypes": [
+        {
+          "주택형": "A-1(주거약자)",
+          "전용면적(㎡)": "55.83",
+          "금회공급세대수": "20",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        },
+        {
+          "주택형": "B-1(주거약자)",
+          "전용면적(㎡)": "55.57",
+          "금회공급세대수": "20",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        }
+      ],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-06-15T19:10:33.860Z"
+    },
     "photos": [
       {
         "kind": "null",
@@ -95082,33 +95457,7 @@
         "name": "3BL-동호배치도.jpg",
         "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=53792321"
       }
-    ],
-    "details": {
-      "pageAddress": "광주광역시 광산구 무진대로 246-7(우산동,광주우산 LH 1단지) 우산행복주주택 상가 3층 LH광주광산권주거복지지사 주택계약실",
-      "matchedTab": "광주선운2 신혼희망타운 행복주택 A-1",
-      "coordCount": 2,
-      "housingTypes": [
-        {
-          "주택형": "A-1(주거약자)",
-          "전용면적(㎡)": "55.83",
-          "금회공급세대수": "20",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "청약신청전"
-        },
-        {
-          "주택형": "B-1(주거약자)",
-          "전용면적(㎡)": "55.57",
-          "금회공급세대수": "20",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "청약신청전"
-        }
-      ],
-      "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:33.860Z"
-    }
+    ]
   },
   {
     "id": "lh-rental-20494-1",
@@ -95145,23 +95494,6 @@
     "attachmentId": "",
     "lat": 36.9552283,
     "lng": 127.926241,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "충주호암A-4블록조감도(방위표)-전송용.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=36259746"
-      },
-      {
-        "kind": "null",
-        "name": "단지배치도-01.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=36259747"
-      },
-      {
-        "kind": "null",
-        "name": "동호배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=36259748"
-      }
-    ],
     "details": {
       "pageAddress": "충청북도 충주시 호암수청1로 30(호암동,충주호암 행복주택) 충주호암 행복주택 관리사무소",
       "matchedTab": "평면도",
@@ -95251,7 +95583,24 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:34.510Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "충주호암A-4블록조감도(방위표)-전송용.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=36259746"
+      },
+      {
+        "kind": "null",
+        "name": "단지배치도-01.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=36259747"
+      },
+      {
+        "kind": "null",
+        "name": "동호배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=36259748"
+      }
+    ]
   },
   {
     "id": "lh-rental-20491-1",
@@ -95288,23 +95637,6 @@
     "attachmentId": "",
     "lat": 36.9552283,
     "lng": 127.926241,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "충주호암A-4블록조감도(방위표)-전송용.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=36259746"
-      },
-      {
-        "kind": "null",
-        "name": "단지배치도-01.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=36259747"
-      },
-      {
-        "kind": "null",
-        "name": "동호배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=36259748"
-      }
-    ],
     "details": {
       "pageAddress": "충청북도 충주시 호암수청1로 30(호암동,충주호암 행복주택) 충주호암 행복주택 관리사무소",
       "matchedTab": "평면도",
@@ -95394,7 +95726,24 @@
       "schedule": [],
       "noticeStatus": "정정공고중",
       "enrichedAt": "2026-06-15T19:10:34.637Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "충주호암A-4블록조감도(방위표)-전송용.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=36259746"
+      },
+      {
+        "kind": "null",
+        "name": "단지배치도-01.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=36259747"
+      },
+      {
+        "kind": "null",
+        "name": "동호배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=36259748"
+      }
+    ]
   },
   {
     "id": "lh-rental-20490-1",
@@ -95431,23 +95780,6 @@
     "attachmentId": "",
     "lat": 37.1559799,
     "lng": 128.21836,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "단지조감도_제천청전.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=38438966"
-      },
-      {
-        "kind": "null",
-        "name": "단지배치도_제천청전.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=38438967"
-      },
-      {
-        "kind": "null",
-        "name": "동호배치도_제천청전.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=38438968"
-      }
-    ],
     "details": {
       "pageAddress": "",
       "matchedTab": "평면도",
@@ -95466,7 +95798,24 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:34.684Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "단지조감도_제천청전.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=38438966"
+      },
+      {
+        "kind": "null",
+        "name": "단지배치도_제천청전.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=38438967"
+      },
+      {
+        "kind": "null",
+        "name": "동호배치도_제천청전.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=38438968"
+      }
+    ]
   },
   {
     "id": "lh-rental-20489-1",
@@ -95503,28 +95852,6 @@
     "attachmentId": "",
     "lat": 36.9233095,
     "lng": 127.5617802,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "음성맹동교통망도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=46437404"
-      },
-      {
-        "kind": "null",
-        "name": "음성맹동단지조감도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=46437403"
-      },
-      {
-        "kind": "null",
-        "name": "음성맹동행복주택배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=46460189"
-      },
-      {
-        "kind": "null",
-        "name": "음성맹동행복주택-동호배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=46465435"
-      }
-    ],
     "details": {
       "pageAddress": "충청북도 음성군 맹동면 맹동산단1길 18 음성맹동 행복주택 관리사무소",
       "matchedTab": "평면도",
@@ -95590,7 +95917,29 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:35.039Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "음성맹동교통망도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=46437404"
+      },
+      {
+        "kind": "null",
+        "name": "음성맹동단지조감도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=46437403"
+      },
+      {
+        "kind": "null",
+        "name": "음성맹동행복주택배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=46460189"
+      },
+      {
+        "kind": "null",
+        "name": "음성맹동행복주택-동호배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=46465435"
+      }
+    ]
   },
   {
     "id": "lh-rental-20488-1",
@@ -95627,23 +95976,6 @@
     "attachmentId": "",
     "lat": 36.8064315,
     "lng": 127.7989658,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "위치도.png",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=33150429"
-      },
-      {
-        "kind": "null",
-        "name": "조감도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=33150430"
-      },
-      {
-        "kind": "null",
-        "name": "동호배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=33150431"
-      }
-    ],
     "details": {
       "pageAddress": "충청북도 괴산군 괴산읍 남산길 43(괴산동부엘에이치행복마을) 괴산동부 행복마을 주거행복지원센터",
       "matchedTab": "평면도",
@@ -95677,7 +96009,24 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:34.954Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "위치도.png",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=33150429"
+      },
+      {
+        "kind": "null",
+        "name": "조감도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=33150430"
+      },
+      {
+        "kind": "null",
+        "name": "동호배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=33150431"
+      }
+    ]
   },
   {
     "id": "lh-rental-20487-1",
@@ -95714,6 +96063,40 @@
     "attachmentId": "",
     "lat": 36.3046531,
     "lng": 127.3466983,
+    "details": {
+      "pageAddress": "",
+      "matchedTab": "도안행복1단지 행복주택",
+      "coordCount": 4,
+      "housingTypes": [
+        {
+          "주택형": "26A-고령자",
+          "전용면적(㎡)": "26.18",
+          "금회공급세대수(예비자포함)": "7",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        },
+        {
+          "주택형": "26A-주거급여수급자",
+          "전용면적(㎡)": "26.18",
+          "금회공급세대수(예비자포함)": "18",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        },
+        {
+          "주택형": "36A",
+          "전용면적(㎡)": "36.77",
+          "금회공급세대수(예비자포함)": "40",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        }
+      ],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-06-15T19:10:35.704Z"
+    },
     "photos": [
       {
         "kind": "동호배치도",
@@ -95755,41 +96138,7 @@
         "name": "사업지구위치도.JPG",
         "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=58393570"
       }
-    ],
-    "details": {
-      "pageAddress": "",
-      "matchedTab": "도안행복1단지 행복주택",
-      "coordCount": 4,
-      "housingTypes": [
-        {
-          "주택형": "26A-고령자",
-          "전용면적(㎡)": "26.18",
-          "금회공급세대수(예비자포함)": "7",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        },
-        {
-          "주택형": "26A-주거급여수급자",
-          "전용면적(㎡)": "26.18",
-          "금회공급세대수(예비자포함)": "18",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        },
-        {
-          "주택형": "36A",
-          "전용면적(㎡)": "36.77",
-          "금회공급세대수(예비자포함)": "40",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        }
-      ],
-      "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:35.704Z"
-    }
+    ]
   },
   {
     "id": "lh-rental-20487-2",
@@ -95826,6 +96175,40 @@
     "attachmentId": "",
     "lat": 36.3354337,
     "lng": 127.4089502,
+    "details": {
+      "pageAddress": "",
+      "matchedTab": "대전목동2 행복주택",
+      "coordCount": 4,
+      "housingTypes": [
+        {
+          "주택형": "26A-고령자",
+          "전용면적(㎡)": "26.18",
+          "금회공급세대수(예비자포함)": "7",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        },
+        {
+          "주택형": "26A-주거급여수급자",
+          "전용면적(㎡)": "26.18",
+          "금회공급세대수(예비자포함)": "18",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        },
+        {
+          "주택형": "36A",
+          "전용면적(㎡)": "36.77",
+          "금회공급세대수(예비자포함)": "40",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        }
+      ],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-06-15T19:10:35.858Z"
+    },
     "photos": [
       {
         "kind": "동호배치도",
@@ -95867,41 +96250,7 @@
         "name": "사업지구위치도.JPG",
         "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=58393570"
       }
-    ],
-    "details": {
-      "pageAddress": "",
-      "matchedTab": "대전목동2 행복주택",
-      "coordCount": 4,
-      "housingTypes": [
-        {
-          "주택형": "26A-고령자",
-          "전용면적(㎡)": "26.18",
-          "금회공급세대수(예비자포함)": "7",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        },
-        {
-          "주택형": "26A-주거급여수급자",
-          "전용면적(㎡)": "26.18",
-          "금회공급세대수(예비자포함)": "18",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        },
-        {
-          "주택형": "36A",
-          "전용면적(㎡)": "36.77",
-          "금회공급세대수(예비자포함)": "40",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        }
-      ],
-      "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:35.858Z"
-    }
+    ]
   },
   {
     "id": "lh-rental-20487-3",
@@ -95938,6 +96287,40 @@
     "attachmentId": "",
     "lat": 36.33279,
     "lng": 127.4141804,
+    "details": {
+      "pageAddress": "",
+      "matchedTab": "대전목동 더샵리슈빌(행복주택)",
+      "coordCount": 4,
+      "housingTypes": [
+        {
+          "주택형": "26A-고령자",
+          "전용면적(㎡)": "26.18",
+          "금회공급세대수(예비자포함)": "7",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        },
+        {
+          "주택형": "26A-주거급여수급자",
+          "전용면적(㎡)": "26.18",
+          "금회공급세대수(예비자포함)": "18",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        },
+        {
+          "주택형": "36A",
+          "전용면적(㎡)": "36.77",
+          "금회공급세대수(예비자포함)": "40",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        }
+      ],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-06-15T19:10:35.860Z"
+    },
     "photos": [
       {
         "kind": "동호배치도",
@@ -95979,41 +96362,7 @@
         "name": "사업지구위치도.JPG",
         "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=58393570"
       }
-    ],
-    "details": {
-      "pageAddress": "",
-      "matchedTab": "대전목동 더샵리슈빌(행복주택)",
-      "coordCount": 4,
-      "housingTypes": [
-        {
-          "주택형": "26A-고령자",
-          "전용면적(㎡)": "26.18",
-          "금회공급세대수(예비자포함)": "7",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        },
-        {
-          "주택형": "26A-주거급여수급자",
-          "전용면적(㎡)": "26.18",
-          "금회공급세대수(예비자포함)": "18",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        },
-        {
-          "주택형": "36A",
-          "전용면적(㎡)": "36.77",
-          "금회공급세대수(예비자포함)": "40",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        }
-      ],
-      "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:35.860Z"
-    }
+    ]
   },
   {
     "id": "lh-rental-20487-4",
@@ -96050,6 +96399,40 @@
     "attachmentId": "",
     "lat": 36.3131333,
     "lng": 127.3835378,
+    "details": {
+      "pageAddress": "",
+      "matchedTab": "대전 도마 이편한세상 포레나(행복주택)",
+      "coordCount": 4,
+      "housingTypes": [
+        {
+          "주택형": "26A-고령자",
+          "전용면적(㎡)": "26.18",
+          "금회공급세대수(예비자포함)": "7",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        },
+        {
+          "주택형": "26A-주거급여수급자",
+          "전용면적(㎡)": "26.18",
+          "금회공급세대수(예비자포함)": "18",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        },
+        {
+          "주택형": "36A",
+          "전용면적(㎡)": "36.77",
+          "금회공급세대수(예비자포함)": "40",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        }
+      ],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-06-15T19:10:36.247Z"
+    },
     "photos": [
       {
         "kind": "동호배치도",
@@ -96091,41 +96474,7 @@
         "name": "사업지구위치도.JPG",
         "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=58393570"
       }
-    ],
-    "details": {
-      "pageAddress": "",
-      "matchedTab": "대전 도마 이편한세상 포레나(행복주택)",
-      "coordCount": 4,
-      "housingTypes": [
-        {
-          "주택형": "26A-고령자",
-          "전용면적(㎡)": "26.18",
-          "금회공급세대수(예비자포함)": "7",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        },
-        {
-          "주택형": "26A-주거급여수급자",
-          "전용면적(㎡)": "26.18",
-          "금회공급세대수(예비자포함)": "18",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        },
-        {
-          "주택형": "36A",
-          "전용면적(㎡)": "36.77",
-          "금회공급세대수(예비자포함)": "40",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        }
-      ],
-      "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:36.247Z"
-    }
+    ]
   },
   {
     "id": "lh-rental-20486-1",
@@ -96162,33 +96511,6 @@
     "attachmentId": "",
     "lat": 35.2533601,
     "lng": 128.6041284,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "지역조감도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=38170072"
-      },
-      {
-        "kind": "null",
-        "name": "교통망도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=38170145"
-      },
-      {
-        "kind": "null",
-        "name": "단지조감도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=38170146"
-      },
-      {
-        "kind": "null",
-        "name": "단지배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=38170147"
-      },
-      {
-        "kind": "null",
-        "name": "동호배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=38170148"
-      }
-    ],
     "details": {
       "pageAddress": "",
       "matchedTab": "평면도",
@@ -96222,7 +96544,34 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:36.127Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "지역조감도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=38170072"
+      },
+      {
+        "kind": "null",
+        "name": "교통망도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=38170145"
+      },
+      {
+        "kind": "null",
+        "name": "단지조감도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=38170146"
+      },
+      {
+        "kind": "null",
+        "name": "단지배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=38170147"
+      },
+      {
+        "kind": "null",
+        "name": "동호배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=38170148"
+      }
+    ]
   },
   {
     "id": "lh-rental-20485-2",
@@ -96259,6 +96608,24 @@
     "attachmentId": "",
     "lat": 35.6000031,
     "lng": 129.3676106,
+    "details": {
+      "pageAddress": "울산광역시 남구 돋질로 220(달동,대상 웰라움 달동) 대상웰라움 1층, LH울산권주거복지지사",
+      "matchedTab": "울산송정 행복주택",
+      "coordCount": 2,
+      "housingTypes": [
+        {
+          "주택형": "36형(신혼부부,청년)",
+          "전용면적(㎡)": "36.16",
+          "금회공급세대수(예비자포함)": "35",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        }
+      ],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-06-15T19:10:36.901Z"
+    },
     "photos": [
       {
         "kind": "null",
@@ -96305,25 +96672,7 @@
         "name": "송정_브로슈어_0703_2.pdf",
         "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32560620"
       }
-    ],
-    "details": {
-      "pageAddress": "울산광역시 남구 돋질로 220(달동,대상 웰라움 달동) 대상웰라움 1층, LH울산권주거복지지사",
-      "matchedTab": "울산송정 행복주택",
-      "coordCount": 2,
-      "housingTypes": [
-        {
-          "주택형": "36형(신혼부부,청년)",
-          "전용면적(㎡)": "36.16",
-          "금회공급세대수(예비자포함)": "35",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        }
-      ],
-      "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:36.901Z"
-    }
+    ]
   },
   {
     "id": "lh-rental-20485-3",
@@ -96360,6 +96709,24 @@
     "attachmentId": "",
     "lat": 35.5200808,
     "lng": 129.3399386,
+    "details": {
+      "pageAddress": "울산광역시 남구 돋질로 220(달동,대상 웰라움 달동) 대상웰라움 1층, LH울산권주거복지지사",
+      "matchedTab": "울산남구 행복주택",
+      "coordCount": 2,
+      "housingTypes": [
+        {
+          "주택형": "36형(신혼부부,청년)",
+          "전용면적(㎡)": "36.16",
+          "금회공급세대수(예비자포함)": "35",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        }
+      ],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-06-15T19:10:37.015Z"
+    },
     "photos": [
       {
         "kind": "null",
@@ -96406,25 +96773,7 @@
         "name": "송정_브로슈어_0703_2.pdf",
         "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32560620"
       }
-    ],
-    "details": {
-      "pageAddress": "울산광역시 남구 돋질로 220(달동,대상 웰라움 달동) 대상웰라움 1층, LH울산권주거복지지사",
-      "matchedTab": "울산남구 행복주택",
-      "coordCount": 2,
-      "housingTypes": [
-        {
-          "주택형": "36형(신혼부부,청년)",
-          "전용면적(㎡)": "36.16",
-          "금회공급세대수(예비자포함)": "35",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        }
-      ],
-      "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:37.015Z"
-    }
+    ]
   },
   {
     "id": "lh-rental-20484-1",
@@ -96461,33 +96810,6 @@
     "attachmentId": "",
     "lat": 35.1808337,
     "lng": 128.1529425,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "위치도(국민임대).jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=27532106"
-      },
-      {
-        "kind": "null",
-        "name": "조감도(국민임대).jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=27532107"
-      },
-      {
-        "kind": "null",
-        "name": "경남혁신A3행복주택팸플릿_페이지_05.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=49897570"
-      },
-      {
-        "kind": "null",
-        "name": "단지배치도(국민임대).jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=27532105"
-      },
-      {
-        "kind": "null",
-        "name": "경남혁신A3행복주택팸플릿_페이지_06.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=49897569"
-      }
-    ],
     "details": {
       "pageAddress": "",
       "matchedTab": "평면도",
@@ -96561,7 +96883,34 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:37.044Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "위치도(국민임대).jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=27532106"
+      },
+      {
+        "kind": "null",
+        "name": "조감도(국민임대).jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=27532107"
+      },
+      {
+        "kind": "null",
+        "name": "경남혁신A3행복주택팸플릿_페이지_05.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=49897570"
+      },
+      {
+        "kind": "null",
+        "name": "단지배치도(국민임대).jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=27532105"
+      },
+      {
+        "kind": "null",
+        "name": "경남혁신A3행복주택팸플릿_페이지_06.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=49897569"
+      }
+    ]
   },
   {
     "id": "lh-rental-20483-1",
@@ -96622,7 +96971,85 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:37.170Z"
+      "enrichedAt": "2026-06-16T02:15:49.289Z"
+    }
+  },
+  {
+    "id": "lh-rental-20532-1",
+    "pblancId": "20532",
+    "houseSn": 1,
+    "category": "임대",
+    "typeId": "happy",
+    "housingType": "행복주택",
+    "houseType": "아파트",
+    "title": "대구국가산단 A7-1블록",
+    "noticeTitle": "대구국가산단 A7-1블록 행복주택(산업단지형) 입주자 최초 모집",
+    "provider": "LH",
+    "sido": "대구광역시",
+    "sigungu": "달성군",
+    "address": "대구광역시 달성군 구지면 대암리 986 ",
+    "pnu": "2771038029109860000",
+    "totalUnits": 448,
+    "supplyUnits": 448,
+    "depositWon": 16388000,
+    "monthlyRentWon": 84670,
+    "depositManwon": 1639,
+    "monthlyRentManwon": 8,
+    "announceDate": "2026.06.12",
+    "beginDate": "2026.06.23",
+    "endDate": "2026.06.25",
+    "winnerDate": "2026.10.02",
+    "noticeStatus": "정정공고",
+    "progressStatus": "",
+    "activeStatus": "upcoming",
+    "daysToDeadline": 9,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020144&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20532&houseSn=1",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20532&houseSn=1",
+    "attachmentId": "",
+    "lat": 35.6250965,
+    "lng": 128.403252,
+    "details": {
+      "pageAddress": "",
+      "matchedTab": "평면도",
+      "coordCount": 1,
+      "housingTypes": [
+        {
+          "주택형": "26A(청년, 산단근로자, 고령자)",
+          "전용면적(㎡)": "26.94",
+          "금회공급세대수": "216",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        },
+        {
+          "주택형": "36A(청년, 산단근로자)",
+          "전용면적(㎡)": "36.97",
+          "금회공급세대수": "129",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        },
+        {
+          "주택형": "36AS(고령자(주거약자))",
+          "전용면적(㎡)": "36.92",
+          "금회공급세대수": "23",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        },
+        {
+          "주택형": "44A(청년, 산단근로자, 신혼부부)",
+          "전용면적(㎡)": "44.79",
+          "금회공급세대수": "80",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        }
+      ],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-06-16T02:15:49.400Z"
     }
   },
   {
@@ -96686,7 +97113,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:37.390Z"
+      "enrichedAt": "2026-06-16T02:15:49.790Z"
     }
   },
   {
@@ -96750,7 +97177,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:38.103Z"
+      "enrichedAt": "2026-06-16T02:15:50.204Z"
     }
   },
   {
@@ -96814,7 +97241,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:38.158Z"
+      "enrichedAt": "2026-06-16T02:15:50.469Z"
     }
   },
   {
@@ -96878,7 +97305,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:38.212Z"
+      "enrichedAt": "2026-06-16T02:15:50.481Z"
     }
   },
   {
@@ -96892,12 +97319,12 @@
     "title": "[대전충남] 일반 매입임대주택 예비입주자 모집 공고",
     "noticeTitle": "[대전충남] 일반 매입임대주택 예비입주자 모집 공고",
     "provider": "LH",
-    "sido": "충청남도",
-    "sigungu": "",
+    "sido": "대전광역시",
+    "sigungu": "서구",
     "address": "",
     "pnu": "",
     "totalUnits": 0,
-    "supplyUnits": 115,
+    "supplyUnits": 660,
     "depositWon": 0,
     "monthlyRentWon": 0,
     "depositManwon": 0,
@@ -96921,7 +97348,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:38.373Z"
+      "enrichedAt": "2026-06-16T02:15:50.522Z"
     }
   },
   {
@@ -96964,7 +97391,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:40.648Z"
+      "enrichedAt": "2026-06-16T02:15:50.895Z"
     }
   },
   {
@@ -97007,7 +97434,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:39.264Z"
+      "enrichedAt": "2026-06-16T02:15:51.284Z"
     }
   },
   {
@@ -97085,7 +97512,7 @@
       ],
       "schedule": [],
       "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-06-15T19:10:39.259Z"
+      "enrichedAt": "2026-06-16T02:15:51.588Z"
     }
   },
   {
@@ -97140,7 +97567,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:39.274Z"
+      "enrichedAt": "2026-06-16T02:15:51.518Z"
     }
   },
   {
@@ -97222,7 +97649,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:39.494Z"
+      "enrichedAt": "2026-06-16T02:15:51.635Z"
     }
   },
   {
@@ -97265,7 +97692,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:40.488Z"
+      "enrichedAt": "2026-06-16T02:15:52.090Z"
     }
   },
   {
@@ -98255,11 +98682,11 @@
     "noticeTitle": "[강원지역본부] 26년 1차 일반 매입임대주택 입주자 모집 공고",
     "provider": "LH",
     "sido": "강원특별자치도",
-    "sigungu": "강릉시",
+    "sigungu": "춘천시",
     "address": "",
     "pnu": "",
     "totalUnits": 0,
-    "supplyUnits": 8,
+    "supplyUnits": 48,
     "depositWon": 0,
     "monthlyRentWon": 0,
     "depositManwon": 0,
@@ -98283,7 +98710,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:40.846Z"
+      "enrichedAt": "2026-06-16T02:15:52.783Z"
     }
   },
   {
@@ -98826,7 +99253,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:40.493Z"
+      "enrichedAt": "2026-06-16T02:15:52.720Z"
     }
   },
   {
@@ -98869,7 +99296,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:40.982Z"
+      "enrichedAt": "2026-06-16T02:15:52.912Z"
     }
   },
   {
@@ -98884,11 +99311,11 @@
     "noticeTitle": "[경남지역본부]26년 1차 분양전환형 든든전세주택 입주자 모집 공고",
     "provider": "LH",
     "sido": "경상남도",
-    "sigungu": "양산시",
+    "sigungu": "통영시",
     "address": "",
     "pnu": "",
     "totalUnits": 0,
-    "supplyUnits": 78,
+    "supplyUnits": 81,
     "depositWon": 0,
     "monthlyRentWon": 0,
     "depositManwon": 0,
@@ -98912,7 +99339,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:41.873Z"
+      "enrichedAt": "2026-06-16T02:15:52.901Z"
     }
   },
   {
@@ -98967,7 +99394,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:41.534Z"
+      "enrichedAt": "2026-06-16T02:15:53.126Z"
     }
   },
   {
@@ -99108,26 +99535,26 @@
     ]
   },
   {
-    "id": "lh-rental-20461-7",
+    "id": "lh-rental-20461-6",
     "pblancId": "20461",
-    "houseSn": 7,
+    "houseSn": 6,
     "category": "임대",
     "typeId": "happy",
     "housingType": "행복주택",
     "houseType": "아파트",
-    "title": "광주월산",
+    "title": "광주쌍촌",
     "noticeTitle": "광주용산,쌍촌,월산 행복주택 예비입주자 모집(2026.06.10)",
     "provider": "LH",
     "sido": "광주광역시",
-    "sigungu": "남구",
-    "address": "광주광역시 남구 구성로8번길 5-6 ",
-    "pnu": "2915510400110630000",
-    "totalUnits": 30,
-    "supplyUnits": 30,
-    "depositWon": 11610000,
-    "monthlyRentWon": 59010,
-    "depositManwon": 1161,
-    "monthlyRentManwon": 6,
+    "sigungu": "서구",
+    "address": "광주광역시 서구 신촌길 8 ",
+    "pnu": "2914011800108940006",
+    "totalUnits": 21,
+    "supplyUnits": 6,
+    "depositWon": 30024000,
+    "monthlyRentWon": 152620,
+    "depositManwon": 3002,
+    "monthlyRentManwon": 15,
     "announceDate": "2026.06.10",
     "beginDate": "2026.06.24",
     "endDate": "2026.06.26",
@@ -99137,14 +99564,14 @@
     "activeStatus": "upcoming",
     "daysToDeadline": 10,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020083&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20461&houseSn=7",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20461&houseSn=7",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20461&houseSn=6",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20461&houseSn=6",
     "attachmentId": "",
-    "lat": 35.1517544,
-    "lng": 126.898892,
+    "lat": 35.144868,
+    "lng": 126.8552141,
     "details": {
       "pageAddress": "광주광역시 서구 시청로 91(치평동) 2층 주택계약실",
-      "matchedTab": "광주월산 행복주택",
+      "matchedTab": "광주쌍촌 행복주택",
       "coordCount": 3,
       "housingTypes": [
         {
@@ -99174,7 +99601,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-10T18:13:09.338Z"
+      "enrichedAt": "2026-06-10T18:13:09.295Z"
     },
     "photos": [
       {
@@ -99245,26 +99672,26 @@
     ]
   },
   {
-    "id": "lh-rental-20461-6",
+    "id": "lh-rental-20461-7",
     "pblancId": "20461",
-    "houseSn": 6,
+    "houseSn": 7,
     "category": "임대",
     "typeId": "happy",
     "housingType": "행복주택",
     "houseType": "아파트",
-    "title": "광주쌍촌",
+    "title": "광주월산",
     "noticeTitle": "광주용산,쌍촌,월산 행복주택 예비입주자 모집(2026.06.10)",
     "provider": "LH",
     "sido": "광주광역시",
-    "sigungu": "서구",
-    "address": "광주광역시 서구 신촌길 8 ",
-    "pnu": "2914011800108940006",
-    "totalUnits": 21,
-    "supplyUnits": 6,
-    "depositWon": 30024000,
-    "monthlyRentWon": 152620,
-    "depositManwon": 3002,
-    "monthlyRentManwon": 15,
+    "sigungu": "남구",
+    "address": "광주광역시 남구 구성로8번길 5-6 ",
+    "pnu": "2915510400110630000",
+    "totalUnits": 30,
+    "supplyUnits": 30,
+    "depositWon": 11610000,
+    "monthlyRentWon": 59010,
+    "depositManwon": 1161,
+    "monthlyRentManwon": 6,
     "announceDate": "2026.06.10",
     "beginDate": "2026.06.24",
     "endDate": "2026.06.26",
@@ -99274,14 +99701,14 @@
     "activeStatus": "upcoming",
     "daysToDeadline": 10,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020083&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20461&houseSn=6",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20461&houseSn=6",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20461&houseSn=7",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20461&houseSn=7",
     "attachmentId": "",
-    "lat": 35.144868,
-    "lng": 126.8552141,
+    "lat": 35.1517544,
+    "lng": 126.898892,
     "details": {
       "pageAddress": "광주광역시 서구 시청로 91(치평동) 2층 주택계약실",
-      "matchedTab": "광주쌍촌 행복주택",
+      "matchedTab": "광주월산 행복주택",
       "coordCount": 3,
       "housingTypes": [
         {
@@ -99311,7 +99738,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-10T18:13:09.295Z"
+      "enrichedAt": "2026-06-10T18:13:09.338Z"
     },
     "photos": [
       {
@@ -99643,7 +100070,232 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:41.706Z"
+      "enrichedAt": "2026-06-16T02:15:53.837Z"
+    }
+  },
+  {
+    "id": "lh-rental-20531-1",
+    "pblancId": "20531",
+    "houseSn": 1,
+    "category": "임대",
+    "typeId": "nation",
+    "housingType": "국민임대",
+    "houseType": "아파트",
+    "title": "인제서화",
+    "noticeTitle": "인제서화(고령자) 국민임대주택 입주자 모집",
+    "provider": "LH",
+    "sido": "강원특별자치도",
+    "sigungu": "인제군",
+    "address": "강원특별자치도 인제군 서화면 천도로81번길 43 ",
+    "pnu": "5181034021105860000",
+    "totalUnits": null,
+    "supplyUnits": 10,
+    "depositWon": 15400000,
+    "monthlyRentWon": 199000,
+    "depositManwon": 1540,
+    "monthlyRentManwon": 20,
+    "announceDate": "2026.06.08",
+    "beginDate": "2026.06.22",
+    "endDate": "2026.06.26",
+    "winnerDate": "2026.11.06",
+    "noticeStatus": "정정공고",
+    "progressStatus": "",
+    "activeStatus": "upcoming",
+    "daysToDeadline": 10,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020149&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20531&houseSn=1",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20531&houseSn=1",
+    "attachmentId": "",
+    "lat": 38.223125,
+    "lng": 128.2081849,
+    "photos": [
+      {
+        "kind": "null",
+        "name": "인제서화_단지조감도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=67152963"
+      },
+      {
+        "kind": "null",
+        "name": "인제서화_단지배치도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=67152964"
+      },
+      {
+        "kind": "null",
+        "name": "인제서화_동호배치도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=67152965"
+      }
+    ],
+    "details": {
+      "pageAddress": "강원특별자치도 춘천시 공지로 337(효자동) ",
+      "matchedTab": "평면도",
+      "coordCount": 1,
+      "housingTypes": [
+        {
+          "주택형": "44B",
+          "전용면적(㎡)": "44.22",
+          "세대수": "10",
+          "금회공급세대수": "10",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        }
+      ],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-06-16T02:15:53.826Z"
+    }
+  },
+  {
+    "id": "lh-rental-20530-1",
+    "pblancId": "20530",
+    "houseSn": 1,
+    "category": "임대",
+    "typeId": "nation",
+    "housingType": "국민임대",
+    "houseType": "아파트",
+    "title": "인제서화",
+    "noticeTitle": "인제서화 고령자복지주택(국민임대) 입주자 모집",
+    "provider": "LH",
+    "sido": "강원특별자치도",
+    "sigungu": "인제군",
+    "address": "강원특별자치도 인제군 서화면 천도로81번길 43 ",
+    "pnu": "5181034021105860000",
+    "totalUnits": null,
+    "supplyUnits": 46,
+    "depositWon": 8300000,
+    "monthlyRentWon": 188000,
+    "depositManwon": 830,
+    "monthlyRentManwon": 19,
+    "announceDate": "2026.06.08",
+    "beginDate": "2026.06.22",
+    "endDate": "2026.06.26",
+    "winnerDate": "2026.11.06",
+    "noticeStatus": "정정공고",
+    "progressStatus": "",
+    "activeStatus": "upcoming",
+    "daysToDeadline": 10,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020148&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20530&houseSn=1",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20530&houseSn=1",
+    "attachmentId": "",
+    "lat": 38.223125,
+    "lng": 128.2081849,
+    "photos": [
+      {
+        "kind": "null",
+        "name": "인제서화_단지조감도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=67152963"
+      },
+      {
+        "kind": "null",
+        "name": "인제서화_단지배치도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=67152964"
+      },
+      {
+        "kind": "null",
+        "name": "인제서화_동호배치도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=67152965"
+      }
+    ],
+    "details": {
+      "pageAddress": "강원특별자치도 춘천시 공지로 337(효자동) ",
+      "matchedTab": "평면도",
+      "coordCount": 1,
+      "housingTypes": [
+        {
+          "주택형": "36A",
+          "전용면적(㎡)": "36.56",
+          "세대수": "20",
+          "금회공급세대수": "20",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        },
+        {
+          "주택형": "44A",
+          "전용면적(㎡)": "44.28",
+          "세대수": "10",
+          "금회공급세대수": "10",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        }
+      ],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-06-16T02:15:53.957Z"
+    }
+  },
+  {
+    "id": "lh-rental-20529-1",
+    "pblancId": "20529",
+    "houseSn": 1,
+    "category": "임대",
+    "typeId": "perm",
+    "housingType": "영구임대",
+    "houseType": "아파트",
+    "title": "인제서화",
+    "noticeTitle": "인제서화 고령자복지주택(영구임대) 입주자 모집",
+    "provider": "LH",
+    "sido": "강원특별자치도",
+    "sigungu": "인제군",
+    "address": "강원특별자치도 인제군 서화면 천도로81번길 43 ",
+    "pnu": "5181034021105860000",
+    "totalUnits": null,
+    "supplyUnits": 40,
+    "depositWon": 3106000,
+    "monthlyRentWon": 61760,
+    "depositManwon": 311,
+    "monthlyRentManwon": 6,
+    "announceDate": "2026.06.08",
+    "beginDate": "2026.06.22",
+    "endDate": "2026.06.26",
+    "winnerDate": "2026.11.06",
+    "noticeStatus": "정정공고",
+    "progressStatus": "",
+    "activeStatus": "upcoming",
+    "daysToDeadline": 10,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020147&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20529&houseSn=1",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20529&houseSn=1",
+    "attachmentId": "",
+    "lat": 38.223125,
+    "lng": 128.2081849,
+    "photos": [
+      {
+        "kind": "null",
+        "name": "인제서화_단지조감도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=67153028"
+      },
+      {
+        "kind": "null",
+        "name": "인제서화_단지배치도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=67153029"
+      },
+      {
+        "kind": "null",
+        "name": "인제서화_동호배치도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=67153030"
+      }
+    ],
+    "details": {
+      "pageAddress": "강원특별자치도 춘천시 공지로 337(효자동) ",
+      "matchedTab": "평면도",
+      "coordCount": 1,
+      "housingTypes": [
+        {
+          "주택형": "32A",
+          "전용면적(㎡)": "32.32",
+          "세대수": "40",
+          "금회공급세대수": "40",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        }
+      ],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-06-16T02:15:53.958Z"
     }
   },
   {
@@ -99681,23 +100333,6 @@
     "attachmentId": "",
     "lat": 36.6732606,
     "lng": 126.6841543,
-    "photos": [
-      {
-        "kind": "null",
-        "name": "내포RM6블록단지조감도_190329.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=35319062"
-      },
-      {
-        "kind": "null",
-        "name": "내포신도시Rm6단지배치도_190329.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=35319063"
-      },
-      {
-        "kind": "null",
-        "name": "내포신도시RM6동호배치도_190329.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=35319064"
-      }
-    ],
     "details": {
       "pageAddress": "",
       "matchedTab": "평면도",
@@ -99725,7 +100360,24 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-06-15T19:10:41.898Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "내포RM6블록단지조감도_190329.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=35319062"
+      },
+      {
+        "kind": "null",
+        "name": "내포신도시Rm6단지배치도_190329.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=35319063"
+      },
+      {
+        "kind": "null",
+        "name": "내포신도시RM6동호배치도_190329.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=35319064"
+      }
+    ]
   },
   {
     "id": "lh-rental-20466-1",
@@ -99788,7 +100440,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:42.064Z"
+      "enrichedAt": "2026-06-16T02:15:54.207Z"
     }
   },
   {
@@ -99831,7 +100483,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:42.756Z"
+      "enrichedAt": "2026-06-16T02:15:54.914Z"
     }
   },
   {
@@ -99895,7 +100547,7 @@
       ],
       "schedule": [],
       "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-06-15T19:10:42.778Z"
+      "enrichedAt": "2026-06-16T02:15:54.909Z"
     }
   },
   {
@@ -100112,7 +100764,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:42.947Z"
+      "enrichedAt": "2026-06-16T02:15:55.028Z"
     }
   },
   {
@@ -103094,11 +103746,11 @@
     "noticeTitle": "부산시 동부권 매입임대주택 예비입주자 모집공고",
     "provider": "LH",
     "sido": "부산광역시",
-    "sigungu": "기장군",
+    "sigungu": "수영구",
     "address": "",
     "pnu": "",
     "totalUnits": 0,
-    "supplyUnits": 35,
+    "supplyUnits": 120,
     "depositWon": 0,
     "monthlyRentWon": 0,
     "depositManwon": 0,
@@ -103122,7 +103774,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:43.098Z"
+      "enrichedAt": "2026-06-16T02:15:55.046Z"
     }
   },
   {
@@ -103171,7 +103823,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-06-15T19:10:43.092Z"
+      "enrichedAt": "2026-06-16T02:15:57.361Z"
     }
   },
   {
