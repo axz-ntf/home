@@ -1,0 +1,68 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "대학에 재학 중이거나 다음 학기에 입·복학 예정인 사람",
+        "대학 또는 고등학교를 졸업(또는 중퇴)한 지 2년 이내인 취업준비생"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "만19세 이상 만39세 이하",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "소득이 있는 업무에 종사한 기간이 총 5년 이내인 사회초년생",
+        "소득이 있는 업무에 종사하는 자",
+        "퇴직한 후 1년이 지나지 않은 구직급여 수급자",
+        "예술인"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": "혼인기간 7년 이내 또는 6세 이하 자녀를 둔 신혼부부, 입주 전까지 혼인사실을 증명할 수 있는 예비신혼부부, 6세 이하 자녀를 둔 한부모",
+      "income": null,
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": null,
+      "age": "만65세 이상",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "주거급여법 제2조제2호 및 제3호에 따른 수급권자 또는 수급자"
+      ]
+    }
+  ],
+  "priority": [
+    "2세 미만 자녀(태아 포함)"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "youth",
+      "name": "청년(19~39세)",
+      "units": null,
+      "age": "19세 이상 39세 이하",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": {
+          "1": 360,
+          "2": 548,
+          "3": 763,
+          "4": 858,
+          "5": 903
+        },
+        "note": "1순위 기준(도시근로자 가구원수별 월평균 소득)"
+      },
+      "asset": {
+        "total": 25400,
+        "car": 4563
+      },
+      "other": [
+        "무주택요건 충족",
+        "혼인관계증명서 제출 필수"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "(예비)신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "신혼부부 또는 예비신혼부부",
+      "income": {
+        "percent": null,
+        "byHousehold": {
+          "1": 360,
+          "2": 548,
+          "3": 763,
+          "4": 858,
+          "5": 903
+        },
+        "note": "1순위 기준(도시근로자 가구원수별 월평균 소득)"
+      },
+      "asset": {
+        "total": 33700,
+        "car": 4563
+      },
+      "other": [
+        "무주택요건 충족",
+        "예비신혼부부는 입주 전 혼인신고 필수"
+      ]
+    }
+  ],
+  "priority": []
+}

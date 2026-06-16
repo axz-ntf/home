@@ -1,0 +1,23 @@
+{
+  "supplyTotal": 1,
+  "tiers": [
+    {
+      "id": "youth",
+      "name": "일반공급 청년",
+      "units": 1,
+      "age": "19세 이상 39세 이하",
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "무주택 요건 충족",
+        "청약자, 계약자, 입주자 동일인",
+        "자동차(이륜차 포함) 소유 가능 (세대당 1대만 등록 사용, 4,542만원 이하)"
+      ]
+    }
+  ],
+  "priority": []
+}

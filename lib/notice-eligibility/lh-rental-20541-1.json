@@ -1,0 +1,99 @@
+{
+  "supplyTotal": 662,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "대학에 재학 중이거나 다음 학기에 입·복학 예정",
+        "취업준비생: 대학 또는 고등학교 졸업(또는 중퇴)한 지 2년 이내",
+        "소득 요건 완화: 배제",
+        "총자산 요건 완화: 배제",
+        "자동차 가액: 미소유 기준"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "19세 이상 39세 이하",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "소득이 있는 업무 종사 기간: 7년 이내(완화 조건)",
+        "사회초년생: 소득 업무 종사 또는 퇴직 후 1년 미만 구직급여 수급자 또는 예술인",
+        "소득 요건 완화: 배제",
+        "총자산 요건 완화: 배제",
+        "자동차 가액: 4,542만원 이하"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "혼인기간 10년 이내 또는 9세 이하 자녀 보유",
+      "income": null,
+      "asset": null,
+      "other": [
+        "공고일 현재 혼인 중",
+        "자녀 연령: 9세 이하(완화 조건)",
+        "예비신혼부부: 입주 전까지 혼인사실 증명 가능",
+        "소득 요건 완화: 배제",
+        "총자산 요건 완화: 배제",
+        "자동차 가액: 4,542만원 이하"
+      ]
+    },
+    {
+      "id": "single",
+      "name": "한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "9세 이하 자녀 보유(완화 조건)",
+        "소득 요건 완화: 배제",
+        "총자산 요건 완화: 배제",
+        "자동차 가액: 4,542만원 이하"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": null,
+      "age": "65세 이상",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "소득 요건 완화: 배제",
+        "총자산 요건 완화: 배제",
+        "자동차 가액: 4,542만원 이하"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "주거급여법 제2조 제2호 및 제3호 수급권자 또는 수급자",
+        "소득 요건 완화: 배제",
+        "총자산 요건 완화: 배제",
+        "자동차 가액: 4,542만원 이하"
+      ]
+    }
+  ],
+  "priority": []
+}

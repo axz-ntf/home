@@ -1,0 +1,41 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "19세 이상 39세 이하",
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": 25100,
+        "car": 4542
+      },
+      "other": [
+        "무주택 요건 충족",
+        "청약자, 계약자, 입주자 동일인",
+        "자동차 1대만 등록 사용 가능"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "(예비)신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "신혼부부 또는 예비신혼부부",
+      "income": null,
+      "asset": {
+        "total": 34500,
+        "car": 4542
+      },
+      "other": [
+        "무주택 요건 충족",
+        "청약자, 계약자, 입주자 동일인",
+        "자동차 1대만 등록 사용 가능",
+        "예비신혼부부는 입주 전 혼인신고 필수"
+      ]
+    }
+  ],
+  "priority": []
+}
