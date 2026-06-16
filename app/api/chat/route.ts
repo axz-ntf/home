@@ -214,7 +214,10 @@ function computeReasons(
 
 // 공고문 본문 의미 검색 — 임베딩 인덱스에서 사용자 질의와 유사한 문단을 가져옴.
 // AI 가 추측이 아닌 실제 공고문 텍스트 기반 답변(RAG) 을 할 수 있게 함.
-const searchNoticeContent = tool({
+// focusListingId: 사용자가 상세페이지에서 보고 있는 매물 id (요청 body 로 전달).
+// LLM 이 listingId 를 명시하지 않아도 이 매물로 scope → 상세페이지 자격 질문이
+// 전체검색(scoped:false)으로 새어 엉뚱한 공고를 답하는 문제 방지.
+const buildSearchNoticeContent = (focusListingId?: string) => tool({
   description:
     "특정 매물의 공고문 본문에서 사용자 질의와 의미적으로 유사한 문단을 찾아 반환합니다. " +
     "사용 시점: 사용자가 매물의 세부 자격/조건/일정/금액 등 공고문에만 적힌 디테일을 묻거나, " +
@@ -229,6 +232,8 @@ const searchNoticeContent = tool({
     topK: z.number().min(1).max(8).default(4).describe("반환 청크 수"),
   }),
   execute: async ({ query, listingId, topK }) => {
+    // LLM 이 안 넘기면 현재 보고 있는 매물로 fallback.
+    const scopeId = listingId ?? focusListingId;
     // 쿼리 임베딩 — solar-embedding-1-large-query
     const r = await fetch(process.env.SOLAR_BASE_URL + "/embeddings", {
       method: "POST",
@@ -247,7 +252,7 @@ const searchNoticeContent = tool({
 
     const hits = await searchByQueryVector(queryVec, {
       topK: topK ?? 4,
-      listingIds: listingId ? [listingId] : undefined,
+      listingIds: scopeId ? [scopeId] : undefined,
     });
     if (!hits.length) {
       return {
@@ -258,7 +263,7 @@ const searchNoticeContent = tool({
     }
     return {
       ok: true,
-      scoped: !!listingId, // listingId 로 특정 공고에 한정해 검색했는지 — 전체검색이면 매칭 신뢰도 낮음
+      scoped: !!scopeId, // 특정 공고에 한정해 검색했는지 — 전체검색이면 매칭 신뢰도 낮음
       hits: hits.map((h) => ({
         listingId: h.listingId,
         title: TITLE_BY_ID.get(h.listingId) ?? "", // 이 청크가 어느 공고에서 왔는지 — 사용자 질문과 대조용
@@ -290,13 +295,20 @@ const suggestActions = tool({
 });
 
 export async function POST(req: Request) {
-  const { messages }: { messages: UIMessage[] } = await req.json();
+  const { messages, focusListingId }: { messages: UIMessage[]; focusListingId?: string } =
+    await req.json();
+
+  // 상세페이지에서 온 요청이면 그 매물을 시스템 컨텍스트로 알려주고, 공고문 RAG 도 이 매물로 scope.
+  const focusTitle = focusListingId ? TITLE_BY_ID.get(focusListingId) : undefined;
+  const system = focusTitle
+    ? `${SYSTEM_PROMPT}\n현재 사용자가 보고 있는 매물: "${focusTitle}" (id: ${focusListingId}). 이 매물의 공고문 디테일(자격/조건/일정/금액)을 물으면 searchNoticeContent 의 listingId 에 이 id 를 넘기세요.`
+    : SYSTEM_PROMPT;
 
   const result = streamText({
     model: anthropic(MODEL_ID),
-    system: SYSTEM_PROMPT,
+    system,
     messages: await convertToModelMessages(messages),
-    tools: { recommendListings, suggestActions, searchNoticeContent },
+    tools: { recommendListings, suggestActions, searchNoticeContent: buildSearchNoticeContent(focusListingId) },
     // 멀티스텝 — tool 호출 후 AI 가 결과를 보고 follow-up 코멘트를 쓰게 함.
     // 없으면 "찾아볼게요!" 만 출력하고 끝나버려 사용자는 0건/N건 알 길 없음.
     stopWhen: stepCountIs(4),

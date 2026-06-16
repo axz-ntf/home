@@ -121,9 +121,22 @@ export function ChatPanelBody({ allListings = [], focusListing }: { allListings?
   const scrollRef = useRef<HTMLDivElement>(null);
   const [hydrated, setHydrated] = useState(false);
 
-  const { messages, setMessages, sendMessage, status } = useChat({
-    transport: new DefaultChatTransport({ api: "/api/chat" }),
-  });
+  // 현재 보고 있는 매물 id 를 매 요청 body 에 실어 서버가 공고문 RAG 를 그 매물로
+  // scope 하게 한다. ref 로 최신값 추적 — transport 는 1회만 생성(재생성 시 useChat 혼란).
+  const focusIdRef = useRef(focusListing?.id);
+  focusIdRef.current = focusListing?.id;
+  const transport = useMemo(
+    () =>
+      new DefaultChatTransport({
+        api: "/api/chat",
+        prepareSendMessagesRequest: ({ messages, id, body }) => ({
+          body: { ...body, id, messages, focusListingId: focusIdRef.current },
+        }),
+      }),
+    [],
+  );
+
+  const { messages, setMessages, sendMessage, status } = useChat({ transport });
 
   // 마운트 1회: sessionStorage 에서 메시지 복원
   useEffect(() => {
