@@ -1,0 +1,50 @@
+{
+  "supplyTotal": 297,
+  "tiers": [
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족",
+      "units": 274,
+      "age": null,
+      "marriage": "혼인 7년 이내 또는 6세 이하 자녀 보유",
+      "income": null,
+      "asset": null,
+      "other": [
+        "예비신혼부부 포함(입주 전까지 혼인사실 증명)",
+        "한부모가족: 6세 이하 자녀 필수",
+        "6세 이하: 2019.06.16 이후 출생(태아포함)"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "신혼부부·한부모가족(주거약자)",
+      "units": 12,
+      "age": null,
+      "marriage": "혼인 7년 이내 또는 6세 이하 자녀 보유",
+      "income": null,
+      "asset": null,
+      "other": [
+        "신혼부부·한부모가족 요건 + 주거약자 요건 필수"
+      ]
+    },
+    {
+      "id": "general",
+      "name": "기존거주자(철거민)",
+      "units": 23,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "우선공급 대상",
+        "사전에 공고를 신청한 무주택세대 구성원",
+        "미달 시 신혼부부·한부모가족에게 전환공급"
+      ]
+    }
+  ],
+  "priority": [
+    "다자녀",
+    "한부모",
+    "기존거주자(철거민)"
+  ]
+}
