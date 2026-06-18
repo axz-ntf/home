@@ -3006,5 +3006,423 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020164": {
+    "at": "2026-06-18T19:24:24.521Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "강화군 강화신문1 26A",
+          "area": "26.95",
+          "supplyUnits": 2,
+          "deposit": 2470,
+          "rent": 12,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강화군 강화신문1 26B",
+          "area": "26.95",
+          "supplyUnits": 4,
+          "deposit": 2470,
+          "rent": 12,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "강화군 강화신문1 26A",
+            "limitManwon": 1100,
+            "maxDeposit": 5500,
+            "minRent": 6
+          },
+          {
+            "houseType": "강화군 강화신문1 26B",
+            "limitManwon": 1100,
+            "maxDeposit": 5500,
+            "minRent": 6
+          }
+        ]
+      },
+      "deadline": "2026.06.29",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020059": {
+    "at": "2026-06-18T19:25:25.696Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.10.29"
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020169": {
+    "at": "2026-06-18T19:26:10.598Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020171": {
+    "at": "2026-06-18T19:27:46.005Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "2인이하 가구 (1형)",
+          "areaRange": "60㎡ 이하",
+          "supplyUnits": 850,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "3～4인 가구 (2형)",
+          "areaRange": "60㎡ 초과 ～ 85㎡ 이하",
+          "supplyUnits": 570,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020127": {
+    "at": "2026-06-18T19:29:17.484Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "천안시(우남퍼스트빌) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "아산시(모종 리슈빌) 70~80㎡",
+          "areaRange": "70~80㎡",
+          "supplyUnits": 16,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "아산시(모종 리슈빌) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 40,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "당진시(센트럴파크푸르지오) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 60,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.08.28"
+      },
+      "deadline": "2026.07.01",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020157": {
+    "at": "2026-06-18T19:30:38.411Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": null
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020156": {
+    "at": "2026-06-18T19:32:16.723Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4
+      },
+      "schedule": {
+        "winnerAt": "2026.07.08"
+      },
+      "deadline": "2026.07.03",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020150": {
+    "at": "2026-06-18T19:33:29.524Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "광주광역시 북구 1·2인 가구(1형)",
+          "areaRange": null,
+          "supplyUnits": 20,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "광주광역시 광산구 1·2인 가구(1형)",
+          "areaRange": null,
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020080": {
+    "at": "2026-06-18T19:35:06.478Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": null
+      },
+      "schedule": {
+        "winnerAt": "2026.07.08"
+      },
+      "deadline": "2026.07.03",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-sale-2015122300020124": {
+    "at": "2026-06-18T19:35:56.792Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.10.20"
+      },
+      "deadline": "2026.06.30",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-sale-0000061094": {
+    "at": "2026-06-18T19:36:45.681Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "51㎡",
+          "area": "51㎡",
+          "supplyUnits": 274,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "55㎡",
+          "area": "55㎡",
+          "supplyUnits": 482,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "59㎡",
+          "area": "59㎡",
+          "supplyUnits": 177,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "sh-305298": {
+    "at": "2026-06-18T19:39:50.230Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "성동구 용답동 도전숙 A동 302호",
+          "areaRange": "33.99㎡",
+          "supplyUnits": 1,
+          "deposit": [
+            1448,
+            2414
+          ],
+          "rent": [
+            19,
+            31
+          ]
+        },
+        {
+          "label": "성동구 용답동 도전숙 A동 304호",
+          "areaRange": "34.25㎡",
+          "supplyUnits": 1,
+          "deposit": [
+            1458,
+            2433
+          ],
+          "rent": [
+            19,
+            32
+          ]
+        },
+        {
+          "label": "성동구 용답동 도전숙 A동 502호",
+          "areaRange": "39.3㎡",
+          "supplyUnits": 1,
+          "deposit": [
+            1640,
+            2734
+          ],
+          "rent": [
+            21,
+            36
+          ]
+        },
+        {
+          "label": "성동구 용답동 도전숙 B동 201호",
+          "areaRange": "33.46㎡",
+          "supplyUnits": 1,
+          "deposit": [
+            1411,
+            2352
+          ],
+          "rent": [
+            18,
+            31
+          ]
+        },
+        {
+          "label": "성동구 용답동 도전숙 B동 302호",
+          "areaRange": "36.62㎡",
+          "supplyUnits": 1,
+          "deposit": [
+            1544,
+            2574
+          ],
+          "rent": [
+            20,
+            34
+          ]
+        },
+        {
+          "label": "성동구 용답동 도전숙 B동 303호",
+          "areaRange": "33.74㎡",
+          "supplyUnits": 1,
+          "deposit": [
+            1423,
+            2372
+          ],
+          "rent": [
+            19,
+            31
+          ]
+        },
+        {
+          "label": "성동구 용답동 도전숙 B동 402호",
+          "areaRange": "36.62㎡",
+          "supplyUnits": 1,
+          "deposit": [
+            1497,
+            2496
+          ],
+          "rent": [
+            20,
+            33
+          ]
+        },
+        {
+          "label": "성동구 용답동 도전숙 B동 501호",
+          "areaRange": "33.46㎡",
+          "supplyUnits": 1,
+          "deposit": [
+            1368,
+            2280
+          ],
+          "rent": [
+            18,
+            30
+          ]
+        },
+        {
+          "label": "성동구 용답동 도전숙 B동 503호",
+          "areaRange": "25.21㎡",
+          "supplyUnits": 1,
+          "deposit": [
+            1040,
+            1735
+          ],
+          "rent": [
+            14,
+            23
+          ]
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": 7
+      },
+      "deadline": "2026.06.23",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "youth-6577": {
+    "at": "2026-06-18T19:40:30.591Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.06.24"
+      },
+      "deadline": "2026.06.22",
+      "noticeStatus": "재공고",
+      "progressStatus": "모집중"
+    }
   }
 }

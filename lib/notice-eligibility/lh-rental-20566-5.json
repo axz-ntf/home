@@ -1,0 +1,122 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "etc",
+      "name": "산업단지근로자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "1순위: 120%(1인), 110%(2인), 100%(3인 이상) / 2순위: 140%(1인), 130%(2인), 120%(3인 이상) / 3순위: 150%"
+      },
+      "asset": null,
+      "other": [
+        "영동군 또는 연접지역(옥천군, 금산군, 무주군, 김천시, 상주시)의 산업단지 입주/입주예정 기업, 교육·연구기관 근무자",
+        "경제자유구역 중소기업 근무자"
+      ]
+    },
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "1순위: 120%(1인), 110%(2인), 100%(3인 이상) / 2순위: 140%(1인), 130%(2인), 120%(3인 이상) / 3순위: 150%"
+      },
+      "asset": null,
+      "other": [
+        "재학중이거나 다음학기 입·복학 예정인 사람",
+        "대학 또는 고등학교 졸업(중퇴)한 지 2년 이내 취업준비생"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "만 19세 이상 만 39세 이하 (출생일 1986.06.19~2007.06.18)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "1순위: 120%(1인), 110%(2인), 100%(3인 이상) / 2순위: 140%(1인), 130%(2인), 120%(3인 이상) / 3순위: 150%"
+      },
+      "asset": null,
+      "other": [
+        "사회초년생: 소득이 있는 업무 종사 기간 5년 이내(완화조건 7년 이내)",
+        "예술인, 구직급여 수급 자격 인정 퇴직자 등 포함"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "공고일 현재 혼인 중이며 혼인기간 7년 이내(완화조건 10년 이내) 또는 만 6세 이하 자녀(태아 포함, 완화조건 만 9세 이하)",
+      "income": {
+        "percent": null,
+        "byHousehold": {
+          "2": null,
+          "3": null
+        },
+        "note": "일반: 1순위 2인 110%, 3인 이상 100% / 맞벌이 2인 130%, 3인 이상 120% / 2순위 2인 130%, 3인 이상 120% / 맞벌이 2인 140%, 3인 이상 130% / 3순위 전체 150%"
+      },
+      "asset": null,
+      "other": [
+        "예비신혼부부: 입주 전까지 혼인 사실 증명 가능자"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "1순위: 120%(1인), 110%(2인), 100%(3인 이상) / 2순위: 140%(1인), 130%(2인), 120%(3인 이상) / 3순위: 150%"
+      },
+      "asset": null,
+      "other": [
+        "만 6세 이하 자녀(태아 포함, 완화조건 만 9세 이하)를 둔 한부모"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": null,
+      "age": "만 65세 이상 (출생일 1961.06.18 이전)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "1순위: 120%(1인), 110%(2인), 100%(3인 이상) / 2순위: 140%(1인), 130%(2인), 120%(3인 이상) / 3순위: 150%"
+      },
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "1순위: 120%(1인), 110%(2인), 100%(3인 이상) / 2순위: 140%(1인), 130%(2인), 120%(3인 이상) / 3순위: 150%"
+      },
+      "asset": null,
+      "other": [
+        "주거급여법 제2조제2호 및 제3호에 따른 수급권자 또는 수급자"
+      ]
+    }
+  ],
+  "priority": []
+}
