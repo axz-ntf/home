@@ -1,0 +1,57 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "19세 이상 39세 이하",
+      "marriage": "미혼",
+      "income": {
+        "percent": 120,
+        "byHousehold": null,
+        "note": "전년도 도시근로자 가구원수별 가구당 월평균소득의 120% 이하 (소득이 없는 경우 부모의 월평균소득 합계)"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "무주택자",
+        "본인 기준 소득증빙서류 제출"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": null,
+      "age": "19세 이상 39세 이하",
+      "marriage": "혼인중 또는 예비신혼부부(입주 전까지 혼인사실 증명 필요)",
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "무주택세대구성원(혼인으로 구성될 세대의 세대구성원 모두)",
+        "혼인 후 7년 이내(혼인 후 2,555일까지)"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": null,
+      "age": "65세 이상",
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "무주택세대구성원(세대 구성원 전원이 무주택)"
+      ]
+    }
+  ],
+  "priority": []
+}

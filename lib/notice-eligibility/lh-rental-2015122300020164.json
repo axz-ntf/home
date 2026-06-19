@@ -1,0 +1,19 @@
+{
+  "supplyTotal": 6,
+  "tiers": [
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": 6,
+      "age": "65세 이상(1961년 6월 17일 이전 출생)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "주거약자용 주택(편의시설 설치, 2층 이하 공급)",
+        "최대 거주기간 20년"
+      ]
+    }
+  ],
+  "priority": []
+}

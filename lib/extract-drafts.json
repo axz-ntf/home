@@ -3424,5 +3424,582 @@
       "noticeStatus": "재공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020165": {
+    "at": "2026-06-19T18:45:15.004Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "고창무장 26A",
+          "area": "26.86",
+          "supplyUnits": 20,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 253,
+              "rent": 5
+            },
+            {
+              "label": "나군",
+              "deposit": 1002,
+              "rent": 11
+            }
+          ]
+        },
+        {
+          "houseType": "고창황산 24B",
+          "area": "22.83",
+          "supplyUnits": 30,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 231,
+              "rent": 5
+            },
+            {
+              "label": "나군",
+              "deposit": 1016,
+              "rent": 10
+            }
+          ]
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "고창무장 26A",
+            "limitManwon": 400,
+            "maxDeposit": 653,
+            "minRent": 3
+          },
+          {
+            "houseType": "고창무장 26A",
+            "limitManwon": 1100,
+            "maxDeposit": 2102,
+            "minRent": 6
+          },
+          {
+            "houseType": "고창황산 24B",
+            "limitManwon": 300,
+            "maxDeposit": 531,
+            "minRent": 3
+          },
+          {
+            "houseType": "고창황산 24B",
+            "limitManwon": 1000,
+            "maxDeposit": 2016,
+            "minRent": 5
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020163": {
+    "at": "2026-06-19T18:47:05.177Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "김제대검산 22A형",
+          "area": "22.83㎡",
+          "supplyUnits": 104,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 213,
+              "rent": 4
+            },
+            {
+              "label": "나군",
+              "deposit": 1031,
+              "rent": 13
+            }
+          ]
+        },
+        {
+          "houseType": "김제대검산 22B형 (주거약자)",
+          "area": "22.83㎡",
+          "supplyUnits": 16,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 213,
+              "rent": 4
+            },
+            {
+              "label": "나군",
+              "deposit": 1031,
+              "rent": 13
+            }
+          ]
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "김제대검산 22A형",
+            "limitManwon": 200,
+            "maxDeposit": 413,
+            "minRent": 3
+          },
+          {
+            "houseType": "김제대검산 22B형 (주거약자)",
+            "limitManwon": 200,
+            "maxDeposit": 413,
+            "minRent": 3
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020168": {
+    "at": "2026-06-19T18:48:55.931Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "대구 비산 16A",
+          "area": "16.62",
+          "supplyUnits": 10,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "대구 비산 26A",
+          "area": "26.72",
+          "supplyUnits": 4,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "대구 비산 36A",
+          "area": "36.63",
+          "supplyUnits": 12,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "대구 비산 36",
+          "area": "36.63",
+          "supplyUnits": 3,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "대구 복현 16A",
+          "area": "16.74",
+          "supplyUnits": 89,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "대구 복현 24A",
+          "area": "24.98",
+          "supplyUnits": 6,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "대구 복현 26A",
+          "area": "26.85",
+          "supplyUnits": 14,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.23"
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020175": {
+    "at": "2026-06-19T18:50:19.171Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "광명하안13 26형",
+          "area": "26.37㎡",
+          "supplyUnits": 588,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 275,
+              "rent": 5
+            },
+            {
+              "label": "나군",
+              "deposit": 636,
+              "rent": 9
+            }
+          ]
+        },
+        {
+          "houseType": "광명하안13 31형",
+          "area": "31.32㎡",
+          "supplyUnits": 690,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 326,
+              "rent": 6
+            },
+            {
+              "label": "나군",
+              "deposit": 756,
+              "rent": 10
+            }
+          ]
+        },
+        {
+          "houseType": "광명하안13 36형",
+          "area": "36.54㎡",
+          "supplyUnits": 98,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 381,
+              "rent": 8
+            },
+            {
+              "label": "나군",
+              "deposit": 881,
+              "rent": 12
+            }
+          ]
+        },
+        {
+          "houseType": "광명하안13 37형",
+          "area": "37.08㎡",
+          "supplyUnits": 98,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 386,
+              "rent": 8
+            },
+            {
+              "label": "나군",
+              "deposit": 894,
+              "rent": 12
+            }
+          ]
+        },
+        {
+          "houseType": "광명하안13 40형",
+          "area": "40.32㎡",
+          "supplyUnits": 690,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 420,
+              "rent": 8
+            },
+            {
+              "label": "나군",
+              "deposit": 973,
+              "rent": 13
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-0000061106": {
+    "at": "2026-06-19T18:51:10.973Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "김포한강데세리브 51형",
+          "area": "51.93",
+          "supplyUnits": 100,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020042": {
+    "at": "2026-06-19T18:52:27.729Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": "2026.12.22",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-0000061105": {
+    "at": "2026-06-19T18:53:10.066Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.07.09"
+      },
+      "deadline": "2026.07.02",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "youth-6576": {
+    "at": "2026-06-19T18:54:19.741Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "동대문구 장안동 하트리움 1513호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 20500,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 장안동 하트리움 904호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 13700,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.06.29"
+      },
+      "deadline": "2026.06.24",
+      "noticeStatus": "재공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "youth-6575": {
+    "at": "2026-06-19T18:56:08.548Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "—",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 9200,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "—",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 5200,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.06.24"
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6574": {
+    "at": "2026-06-19T18:58:19.961Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": "2026.06.26",
+      "noticeStatus": "재공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6573": {
+    "at": "2026-06-19T18:59:17.817Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "도봉구 인히어쌍문 D1타입",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 7448,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.06.23"
+      },
+      "deadline": "2026.06.22",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "youth-6572": {
+    "at": "2026-06-19T19:01:10.826Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "동작구 더클래식 동작 1417호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 5318,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동작구 더클래식 동작 914호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 5318,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동작구 더클래식 동작 706호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 5318,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.06.29"
+      },
+      "deadline": "2026.06.23",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "youth-6571": {
+    "at": "2026-06-19T19:02:52.285Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "동작구 더써밋타워 1804호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 16600,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동작구 더써밋타워 1907호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 16500,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동작구 더써밋타워 2311호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 12700,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.06.23"
+      },
+      "deadline": "2026.06.22",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6570": {
+    "at": "2026-06-19T19:04:20.991Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "광진구 더포디엄 830",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 9300,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "광진구 더포디엄 830",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 9300,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "광진구 더포디엄 830",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 7000,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": "2026.06.23",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "youth-6569": {
+    "at": "2026-06-19T19:05:14.938Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": "2026.06.22",
+      "noticeStatus": "재공고",
+      "progressStatus": "모집중"
+    }
   }
 }

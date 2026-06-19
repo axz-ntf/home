@@ -1,0 +1,24 @@
+{
+  "supplyTotal": 166,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 166,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "공고일 기준 주민등록표등본상 거주하고 있는 모집권역에 한하여 신청 가능"
+      ]
+    }
+  ],
+  "priority": [
+    "신생아 가구 (2024.06.18 이후 출생·입양·태아)",
+    "자녀 3인 이상",
+    "자녀 2인",
+    "자녀 1인"
+  ]
+}

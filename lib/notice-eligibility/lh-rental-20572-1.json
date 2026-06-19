@@ -1,0 +1,20 @@
+{
+  "supplyTotal": 100,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 100,
+      "age": "19세 이상",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "수도권(서울, 인천, 경기도) 거주자",
+        "무주택세대구성원",
+        "세대주 또는 세대원 중 1인만 신청 가능"
+      ]
+    }
+  ],
+  "priority": []
+}
