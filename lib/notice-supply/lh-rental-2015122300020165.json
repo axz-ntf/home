@@ -1,0 +1,24 @@
+{
+  "id": "lh-rental-2015122300020165",
+  "supplyTotal": 30,
+  "integrated": false,
+  "units": [
+    {
+      "type": "26A",
+      "area": null,
+      "supply": 10,
+      "deposit": 10017000,
+      "rent": 112620
+    },
+    {
+      "type": "24A",
+      "area": null,
+      "supply": 20
+    },
+    {
+      "type": "24B",
+      "deposit": 10156000,
+      "rent": 100140
+    }
+  ]
+}

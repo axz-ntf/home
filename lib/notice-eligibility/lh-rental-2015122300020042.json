@@ -1,0 +1,19 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "입주자격 완화 모집",
+        "선계약후검증 방식"
+      ]
+    }
+  ],
+  "priority": []
+}

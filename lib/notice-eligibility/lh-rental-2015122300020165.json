@@ -1,0 +1,42 @@
+{
+  "supplyTotal": 50,
+  "tiers": [
+    {
+      "id": "etc",
+      "name": "영구임대(가군)",
+      "units": null,
+      "age": "만19세 이상",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "생계·의료급여 수급자, 국가유공자등(생계·의료급여 수급자 수준), 위안부 피해자, 지원대상 한부모가족, 생계·의료급여 수급자선정 기준의 소득 인정액 이하인 자"
+      },
+      "asset": null,
+      "other": [
+        "고창군 거주 무주택세대구성원",
+        "입주자모집공고일(2026.06.19.) 현재 기준",
+        "세대에 속하는 사람 전체가 무주택이어야 함"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "영구임대(나군)",
+      "units": null,
+      "age": "만19세 이상",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "가군 해당자 이외의 영구임대 입주 가능한 자"
+      },
+      "asset": null,
+      "other": [
+        "고창군 거주 무주택세대구성원",
+        "입주자모집공고일(2026.06.19.) 현재 기준",
+        "세대에 속하는 사람 전체가 무주택이어야 함"
+      ]
+    }
+  ],
+  "priority": []
+}

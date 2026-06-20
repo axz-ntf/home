@@ -1,0 +1,21 @@
+{
+  "supplyTotal": 190,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 190,
+      "age": "만19세 이상",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "원주시 거주",
+        "무주택세대구성원",
+        "10년 임대의무기간 후 분양전환",
+        "2년 단위 임대차계약 갱신"
+      ]
+    }
+  ],
+  "priority": []
+}

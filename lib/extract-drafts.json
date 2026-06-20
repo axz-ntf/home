@@ -4001,5 +4001,171 @@
       "noticeStatus": "재공고",
       "progressStatus": "모집중"
     }
+  },
+  "youth-6568": {
+    "at": "2026-06-20T17:40:29.939Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "영등포구 신풍역 비스타동원 53타입 특별공급 5층 503호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 29800,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "영등포구 신풍역 비스타동원 51타입 특별공급 7층 705호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 29800,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "영등포구 신풍역 비스타동원 51타입 일반공급 10층 1006호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 36700,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "영등포구 신풍역 비스타동원 51타입 일반공급 16층 1606호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 40800,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "영등포구 신풍역 비스타동원 28타입 일반공급 18층 1810호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 27200,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "영등포구 신풍역 비스타동원 15타입 일반공급 20층 1813호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 16000,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "영등포구 신풍역 비스타동원 28타입 일반공급 21층 2016호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 24500,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": "2026.06.22",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "youth-6567": {
+    "at": "2026-06-20T17:41:07.574Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "강남구 도곡 더써밋타워 518호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 17200,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강남구 도곡 더써밋타워 818호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 21500,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.06.23"
+      },
+      "deadline": "2026.06.22",
+      "noticeStatus": "재공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "youth-6566": {
+    "at": "2026-06-20T17:42:09.943Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.06.25"
+      },
+      "deadline": "2026.06.24",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "youth-6565": {
+    "at": "2026-06-20T17:43:18.375Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "관악구 BX201 15형",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 8000,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "관악구 BX201 15형",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 6000,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "관악구 BX201 15형",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 6000,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.06.23"
+      },
+      "deadline": "2026.06.22",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6564": {
+    "at": "2026-06-20T17:43:50.497Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.06.30"
+      },
+      "deadline": "2026.06.29",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
   }
 }

@@ -1,0 +1,51 @@
+{
+  "supplyTotal": 120,
+  "tiers": [
+    {
+      "id": "etc",
+      "name": "「가」군 (생계·의료급여 수급자 등)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "생계·의료급여 수급자, 국가유공자 등으로서 생계·의료급여 수급자 기준 이하, 위안부 피해자, 지원대상 한부모가족, 그 외 영구임대 입주 가능한 자로서 생계·의료급여 수급자선정 기준의 소득 인정액 이하"
+      },
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "etc",
+      "name": "「나」군 (그 외 영구임대 입주 가능자)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "「가」군 해당자 이외의 영구임대 입주 가능한 자"
+      },
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "etc",
+      "name": "주거약자용(22B형)",
+      "units": 16,
+      "age": "만 65세 이상 또는 장애인 등",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "고령자(만 65세 이상)",
+        "장애인",
+        "국가유공자(상이등급 1~7급)",
+        "보훈보상대상자(상이등급 1~7급)",
+        "5·18민주유공자(신체장해등급 1~14급)",
+        "고엽제후유의증환자(경도 이상 장애등급)"
+      ]
+    }
+  ],
+  "priority": []
+}
