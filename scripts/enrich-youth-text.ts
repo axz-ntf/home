@@ -34,7 +34,8 @@ async function main() {
   for (const n of pool) {
     const id = `youth-${n.boardId}`;
     try {
-      const { markdown } = await resolveMarkdown(id);
+      // youth 는 resolveMarkdown 내부에서 youth-notices.json 의 pdfUrl 로 처리 — sourceUrl 은 보조.
+      const { markdown } = await resolveMarkdown(id, n.pdfUrl ?? null);
       if (!markdown || markdown.trim().length < 50) { console.log(`✗ ${id} 본문 비어있음 — 스킵`); err++; continue; }
       await fs.writeFile(path.join(OUT_DIR, `${id}.md`), markdown + "\n", "utf8");
       ok++;
