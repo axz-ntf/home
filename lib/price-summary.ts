@@ -65,8 +65,15 @@ export function summarizePrice(item: Listing): PriceSummary {
     }
   }
   // 구조화 데이터가 전혀 없으면 대표 단일가로
-  if (!deposits.length && item.deposit > 0) deposits.push(item.deposit);
-  if (!rents.length && item.rent > 0) rents.push(item.rent);
+  // 구조화 데이터 없으면 추출 범위(depositRange) → 단일가 순으로 fallback.
+  if (!deposits.length) {
+    if (item.depositRange) deposits.push(item.depositRange[0], item.depositRange[1]);
+    else if (item.deposit > 0) deposits.push(item.deposit);
+  }
+  if (!rents.length) {
+    if (item.rentRange) rents.push(item.rentRange[0], item.rentRange[1]);
+    else if (item.rent > 0) rents.push(item.rent);
+  }
   if (!areas.length) areas.push(...parseAreaString(item.area));
 
   return {

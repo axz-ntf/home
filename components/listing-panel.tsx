@@ -24,6 +24,10 @@ function tierTags(item: Listing): string[] {
 // 평형별 데이터가 있으면 보증금·월세 min~max 범위 (M3 — "800만 ~ 2,100만원" 형식).
 // rows 의 금액은 원 단위 → 만원 변환. 값이 하나뿐이거나 min==max 면 null(단일가 표시).
 function priceRange(item: Listing): { dep: [number, number] | null; rent: [number, number] | null } | null {
+  // 추출 단계에서 채운 유형별 범위(만원) 우선 — 커버리지 넓음.
+  if (item.depositRange || item.rentRange) {
+    return { dep: item.depositRange ?? null, rent: item.rentRange ?? null };
+  }
   const rows = (item.complexes ?? []).flatMap((c) => c.rows ?? []);
   if (rows.length < 2) return null;
   const deps = rows.map((r) => r.deposit).filter((d): d is number => d != null && d > 0).map((d) => Math.round(d / 10000));

@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { depositText, rentText } from "@/lib/price-label";
 
 export interface NationwideRow {
   id: string;
@@ -15,6 +16,8 @@ export interface NationwideRow {
   supplyUnits: number | null;
   deposit: number;
   rent: number;
+  depositRange?: [number, number] | null;
+  rentRange?: [number, number] | null;
   salePriceManwon: number | null;
   area: string;
   eligible: string[];
@@ -169,9 +172,12 @@ function NoticeRow({ r }: { r: NationwideRow }) {
   const meta: string[] = [r.district];
   if (r.supplyUnits != null && r.supplyUnits > 1) meta.push(`${r.supplyUnits.toLocaleString()}호`);
   if (isSale && r.salePriceManwon) meta.push(`분양 ${r.salePriceManwon.toLocaleString()}만`);
-  else if (!isSale && r.deposit && r.rent) meta.push(`보증 ${r.deposit.toLocaleString()}/월 ${r.rent.toLocaleString()}만`);
-  else if (!isSale && r.deposit) meta.push(`보증금 ${r.deposit.toLocaleString()}만`);
-  else if (!isSale && r.rent) meta.push(`월세 ${r.rent.toLocaleString()}만`);
+  else if (!isSale) {
+    const dt = depositText(r), rt = rentText(r);
+    if (dt && rt) meta.push(`보증 ${dt}/월 ${rt}`);
+    else if (dt) meta.push(`보증금 ${dt}`);
+    else if (rt) meta.push(`월세 ${rt}`);
+  }
   if (r.area) meta.push(r.area); // formatArea 가 이미 ㎡ 포함
 
   return (

@@ -70,6 +70,8 @@ interface ApiListing {
   area: string;
   depositManwon: number;
   monthlyRentManwon: number;
+  depositRange?: [number, number] | null;
+  rentRange?: [number, number] | null;
   salePriceManwon: number | null;
   supplyUnits: number | null;
   complexName: string | null;
@@ -229,6 +231,9 @@ function adaptApi(r: ApiListing, loose = false): Listing | null {
     pnu: r.pnu || undefined,
     deposit,
     rent,
+    // 유형별 보증금/월세 범위 — 단일값이 guard 통과(>0)일 때만 노출.
+    depositRange: deposit > 0 ? (r.depositRange ?? null) : null,
+    rentRange: rent > 0 ? (r.rentRange ?? null) : null,
     area: formatArea(r.area || ""),
     layout: "",
     totalUnits: r.supplyUnits ?? null,

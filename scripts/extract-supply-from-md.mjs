@@ -273,11 +273,19 @@ async function main() {
       const depositManwon = rep ? Math.round(rep.deposit / 10000) : null;
       const rentManwon = rep ? Math.round(rep.rent / 10000) : null;
 
+      // 유형별 보증금/월세 min~max (만원) — min≠max 면 카드·상세에 범위로 표시.
+      const depVals = sorted.map((u) => Math.round(u.deposit / 10000));
+      const rentVals = sorted.map((u) => Math.round(u.rent / 10000));
+      const depositRange = depVals.length ? [Math.min(...depVals), Math.max(...depVals)] : null;
+      const rentRange = rentVals.length ? [Math.min(...rentVals), Math.max(...rentVals)] : null;
+
       updates.push({
         id: l.id,
         supplyUnits: supply.supplyTotal,
         deposit: depositManwon,
         rent: rentManwon,
+        depositRange,
+        rentRange,
         units, // detail-panel 의 단지별 공급 정보 표용
       });
       ok++;
@@ -304,6 +312,11 @@ async function main() {
       if (u.rent != null && (FORCE || item.rent == null || item.rent === 0)) {
         if (item.rent !== u.rent) { item.rent = u.rent; changed = true; }
       }
+      // 가격 범위 — min≠max 면 저장(카드·상세 범위 표시용), 단일이면 제거.
+      const dr = u.depositRange && u.depositRange[0] !== u.depositRange[1] ? u.depositRange : null;
+      const rr = u.rentRange && u.rentRange[0] !== u.rentRange[1] ? u.rentRange : null;
+      if (JSON.stringify(item.depositRange ?? null) !== JSON.stringify(dr)) { if (dr) item.depositRange = dr; else delete item.depositRange; changed = true; }
+      if (JSON.stringify(item.rentRange ?? null) !== JSON.stringify(rr)) { if (rr) item.rentRange = rr; else delete item.rentRange; changed = true; }
     }
     // complexes 비어있고 units 있으면 detail-panel 의 단지별 공급 정보 표용으로 채움.
     if ((!item.complexes || item.complexes.length === 0) && u.units && u.units.length > 0) {

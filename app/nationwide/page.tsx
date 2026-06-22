@@ -35,6 +35,8 @@ export default function NationwidePage() {
       supplyUnits: typeof l.supplyUnits === "number" ? l.supplyUnits : null,
       deposit: l.deposit ?? 0,
       rent: l.rent ?? 0,
+      depositRange: l.depositRange ?? null,
+      rentRange: l.rentRange ?? null,
       salePriceManwon: l.salePriceManwon ?? null,
       area: l.area ?? "",
       eligible: l.eligible ?? [],

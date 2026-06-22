@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import type { Listing } from "@/lib/types";
 import { HOUSING_TYPES } from "@/lib/mock-data";
 import { dDayText, effectiveStatus } from "@/lib/dday";
+import { depositText, rentText } from "@/lib/price-label";
 import { thumbnailSVG } from "@/lib/svg";
 
 function rankLabel(idx: number): string {
@@ -32,7 +33,7 @@ function CarouselCard({ item: { listing: item, reasons }, rank }: { item: Carous
           return `분양가 ${eok > 0 ? `${eok}억 ` : ""}${man > 0 ? `${man.toLocaleString()}만` : ""}`.trim();
         })()
       : item.deposit > 0 || item.rent > 0
-        ? `보 ${item.deposit.toLocaleString()}만 · 월 ${item.rent}만`
+        ? [depositText(item) && `보 ${depositText(item)}`, rentText(item) && `월 ${rentText(item)}`].filter(Boolean).join(" · ")
         : "임대조건 공고문 확인";
 
   return (

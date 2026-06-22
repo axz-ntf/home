@@ -7,6 +7,7 @@
 import { useState, type CSSProperties } from "react";
 import type { Listing as RealListing, District as RealDistrict } from "@/lib/types";
 import { HOUSING_TYPES as REAL_HOUSING_TYPES, STATUS_LABELS as REAL_STATUS_LABELS, ELIGIBILITY_LABELS } from "@/lib/mock-data";
+import { depositText, rentText } from "@/lib/price-label";
 
 // ──────────────────────────────────────────────────────────────
 // 데이터
@@ -200,7 +201,7 @@ function MCard({ item, onClick }: { item: AnyListing; onClick?: (item: AnyListin
         </div>
         <div className="m-card-title">{item.title}</div>
         <div className="m-card-price">
-          {item.deposit > 0 ? <><strong>보 {item.deposit.toLocaleString()}</strong><span className="sep">·</span>월 {item.rent}</> : <span style={{ color: "var(--seed-semantic-color-ink-text-low)" }}>임대조건 공고문 확인</span>}
+          {item.deposit > 0 ? <><strong>보 {depositText(item)}</strong>{rentText(item) && <><span className="sep">·</span>월 {rentText(item)}</>}</> : <span style={{ color: "var(--seed-semantic-color-ink-text-low)" }}>임대조건 공고문 확인</span>}
         </div>
         <div className="m-card-meta">
           {item.layout && <>{item.layout}<span className="dot">·</span></>}
@@ -332,8 +333,8 @@ function DetailScreen({ item: propItem }: { item?: AnyListing }) {
           <div className="v">{dDay(item.deadline, item.status)}</div>
         </div>
         <div className="m-price-grid">
-          <div className="m-price-cell"><div className="m-price-label">보증금</div><div className="m-price-value">{item.deposit.toLocaleString()}만</div></div>
-          <div className="m-price-cell"><div className="m-price-label">월 임대료</div><div className="m-price-value">{item.rent}만</div></div>
+          <div className="m-price-cell"><div className="m-price-label">보증금</div><div className="m-price-value">{depositText(item) ?? "공고문 확인"}</div></div>
+          <div className="m-price-cell"><div className="m-price-label">월 임대료</div><div className="m-price-value">{rentText(item) ?? "—"}</div></div>
           <div className="m-price-cell"><div className="m-price-label">관리비</div><div className="m-price-value">별도</div></div>
         </div>
         <section className="m-section">

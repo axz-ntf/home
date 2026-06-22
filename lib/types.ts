@@ -47,6 +47,9 @@ export interface Listing {
   pnu?: string;
   deposit: number;
   rent: number;
+  // 유형별 보증금/월세 min~max (만원). 단일이면 없음 — 카드·상세에서 범위 표시용.
+  depositRange?: [number, number] | null;
+  rentRange?: [number, number] | null;
   area: string;
   layout: string;
   totalUnits?: number | string | null;
