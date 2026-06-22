@@ -4167,5 +4167,266 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집예정"
     }
+  },
+  "lh-rental-2015122300020173": {
+    "at": "2026-06-22T08:52:18.834Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "파주시 초롱꽃3 26B",
+          "area": "26.83",
+          "supplyUnits": 50,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 281,
+              "rent": 6
+            },
+            {
+              "label": "나군",
+              "deposit": 1837,
+              "rent": 11
+            }
+          ]
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "파주시 초롱꽃3 26B",
+            "limitManwon": 400,
+            "maxDeposit": 681,
+            "minRent": 4
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.10.01"
+      },
+      "deadline": "2026.07.06",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020185": {
+    "at": "2026-06-22T08:54:45.428Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "고창무장 26A",
+          "area": "26.86㎡",
+          "supplyUnits": 20,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 253,
+              "rent": 5
+            },
+            {
+              "label": "나군",
+              "deposit": 1002,
+              "rent": 11
+            }
+          ]
+        },
+        {
+          "houseType": "고창황산 24B",
+          "area": null,
+          "supplyUnits": null,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 231,
+              "rent": 5
+            },
+            {
+              "label": "나군",
+              "deposit": 1016,
+              "rent": 10
+            }
+          ]
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "고창무장 26A",
+            "limitManwon": 400,
+            "maxDeposit": 653,
+            "minRent": 3
+          },
+          {
+            "houseType": "고창황산 24B",
+            "limitManwon": 300,
+            "maxDeposit": 531,
+            "minRent": 3
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020187": {
+    "at": "2026-06-22T08:55:37.447Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "양산물금2 H-1BL 17형",
+          "area": "17㎡",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": "2026.06.30",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020082": {
+    "at": "2026-06-22T08:56:36.020Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "대덕구 대전상서 행복주택 16A (빌트인)",
+          "area": "16.7000",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "대덕구 대전상서 행복주택 26A",
+          "area": "26.7400",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "대덕구 대전상서 행복주택 26B (주거약자)",
+          "area": "26.7400",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": "2026.07.08",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020183": {
+    "at": "2026-06-22T08:57:17.532Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.10.29"
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020182": {
+    "at": "2026-06-22T08:58:41.791Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "김천시 김천평화 22A",
+          "area": "22.69",
+          "supplyUnits": 10,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "김천시 김천평화 27A",
+          "area": "27.01",
+          "supplyUnits": 5,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "구미시 구미송정포레 21A",
+          "area": "21.99",
+          "supplyUnits": 11,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.29"
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020174": {
+    "at": "2026-06-22T09:00:23.933Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "정선신동 26",
+          "area": "26.56㎡",
+          "supplyUnits": 28,
+          "incomes": [
+            {
+              "label": "가군 (수급자 등)",
+              "deposit": 253,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 1088,
+              "rent": 10
+            }
+          ]
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "정선신동 26",
+            "limitManwon": 1100,
+            "maxDeposit": 2188,
+            "minRent": 4
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }

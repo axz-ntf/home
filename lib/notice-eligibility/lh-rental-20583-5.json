@@ -1,0 +1,70 @@
+{
+  "supplyTotal": 372,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": 181,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "대학에 재학 중이거나 다음 학기에 입·복학 예정인 사람",
+        "최대 거주기간 10년"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": 156,
+      "age": "19세 이상 39세 이하 (1986.06.16.~2007.06.15.)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "사회초년생: 소득이 있는 업무에 종사한 기간 총 5년 이내",
+        "최대 거주기간 10년"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족",
+      "units": 52,
+      "age": null,
+      "marriage": "신혼부부: 혼인기간 7년 이내(2019.06.15. 이후 혼인신고) 또는 6세 이하 자녀 소유, 한부모가족: 6세 이하 자녀",
+      "income": null,
+      "asset": null,
+      "other": [
+        "예비신혼부부: 입주 전까지 혼인사실 증명 가능",
+        "최대 거주기간 10년(한부모는 14년)"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": 4,
+      "age": "65세 이상 (1961.06.15. 이전 출생)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "최대 거주기간 20년"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": 24,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "주거급여법 제2조 제2호 및 제3호에 따른 수급권자 또는 수급자",
+        "최대 거주기간 20년"
+      ]
+    }
+  ],
+  "priority": []
+}
