@@ -118,7 +118,6 @@ export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: 
     router.replace(qs ? `/admin/review?${qs}` : "/admin/review", { scroll: false });
   }
 
-  const [issueFilter, setIssueFilter] = useState<string | null>(null);
 
   // 소스 필터 (LH/SH/청년안심). 소스 카운트는 전역(rows) 기준 — 소스 선택과 무관하게 고정.
   type SourceKey = "all" | "LH" | "SH" | "youth";
@@ -146,22 +145,11 @@ export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: 
     return s;
   }, [sourceRows]);
 
-  // 이슈 종류별 미검수 건수 (P2) — "검수 필요 N"이 아니라 무엇이 비었는지로 큐를 본다.
-  const issueCounts = useMemo(() => {
-    const m: Record<string, number> = {};
-    for (const r of sourceRows) {
-      if (r.reviewed) continue;
-      for (const issue of r.issues) m[issue] = (m[issue] ?? 0) + 1;
-    }
-    return m;
-  }, [sourceRows]);
-
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return sourceRows.filter((r) => {
       if (filter === "review" && !(r.needsReview && !r.reviewed)) return false;
       if (filter !== "all" && filter !== "review" && r.status !== filter) return false;
-      if (issueFilter && (r.reviewed || !r.issues.includes(issueFilter))) return false;
       // 청년안심처럼 유형명이 제목에 없는 공고도 "청년안심"·"서울시"로 찾히게 — suplyTyNm·agency 포함.
       // searchExtra: 공고에 등록된 핀의 단지명·주소(제목엔 없는 "당산센트럴아이파크" 등).
       if (
@@ -175,7 +163,7 @@ export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: 
         return false;
       return true;
     });
-  }, [sourceRows, filter, query, issueFilter]);
+  }, [sourceRows, filter, query]);
 
   // ── 페이지네이션 ──
   const PAGE_SIZE = 50;
@@ -237,7 +225,6 @@ export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: 
           sub={activePins != null ? `PC 지도 핀 ${activePins}개 · 마감임박 ${stats.closing} 포함` : `예정 ${stats.upcoming} · 마감 ${stats.closed}`}
           accent
         />
-        <KpiCard label="검수 필요" value={stats.review} sub={stats.review > 0 ? "PDF 확인해서 정정 필요" : "모두 검수됨 ✓"} warn={stats.review > 0} highlight="warn" />
         <KpiCard label="검수됨" value={stats.reviewed} sub="사용자가 정정한 매물" highlight="success" />
       </section>
 
@@ -253,30 +240,11 @@ export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: 
           </div>
           <div className="a-table-filters" style={{ marginTop: 6 }}>
             <FilterChip active={filter === "all"} onClick={() => changeFilter("all")} count={stats.total}>전체</FilterChip>
-            <FilterChip active={filter === "review"} onClick={() => changeFilter("review")} count={stats.review}>검수 필요</FilterChip>
             <FilterChip active={filter === "open"} onClick={() => changeFilter("open")} count={stats.open}>모집중</FilterChip>
             <FilterChip active={filter === "upcoming"} onClick={() => changeFilter("upcoming")} count={stats.upcoming}>예정</FilterChip>
             <FilterChip active={filter === "closing"} onClick={() => changeFilter("closing")} count={stats.closing}>마감임박</FilterChip>
             <FilterChip active={filter === "closed"} onClick={() => changeFilter("closed")} count={stats.closed}>마감</FilterChip>
           </div>
-          {/* 이슈별 검수 큐 (P2) — 미검수 active 공고의 결손 종류. 클릭 토글로 교차 필터. */}
-          {Object.keys(issueCounts).length > 0 && (
-            <div className="a-table-filters" style={{ marginTop: 6 }}>
-              <span style={{ fontSize: 11.5, fontWeight: 700, color: "var(--a-ink-3)", alignSelf: "center" }}>이슈:</span>
-              {(["가격", "좌표", "PDF", "마감일", "자격", "세대수"] as const)
-                .filter((k) => issueCounts[k])
-                .map((k) => (
-                  <FilterChip
-                    key={k}
-                    active={issueFilter === k}
-                    onClick={() => setIssueFilter((cur) => (cur === k ? null : k))}
-                    count={issueCounts[k]}
-                  >
-                    {k}
-                  </FilterChip>
-                ))}
-            </div>
-          )}
           <div className="a-card-actions">
             <input
               type="search"
