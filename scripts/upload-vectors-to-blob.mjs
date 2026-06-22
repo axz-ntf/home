@@ -25,6 +25,8 @@ async function uploadOne(localPath, blobPath, contentType) {
     contentType,
     addRandomSuffix: false,
     allowOverwrite: true,
+    // 대용량(수백 MB~GB) 단일 PUT 은 BlobUnknownError 로 실패 → 청크 분할 업로드.
+    multipart: true,
   });
   console.log(`  → ${((Date.now() - t0) / 1000).toFixed(1)}s  ${blob.url}`);
   return { url: blob.url, bytes: buf.length };

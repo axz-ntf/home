@@ -10,6 +10,7 @@
 
 import fs from "node:fs/promises";
 import path from "node:path";
+import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -30,6 +31,7 @@ const BATCH_SIZE = Number(process.env.BATCH_SIZE ?? 32);  // Solar embedding-1-l
 const REQUEST_DELAY_MS = Number(process.env.REQUEST_DELAY_MS ?? 80); // rate-limit 방어 (보수적 80ms)
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const hashOf = (s) => crypto.createHash("sha1").update(s).digest("hex");
 
 // markdown 을 의미 단위(빈 줄 paragraph)로 끊고, 청크 크기까지 greedy-fill.
 // 큰 단락은 강제 슬라이스 + overlap.
@@ -93,7 +95,7 @@ async function main() {
   await fs.mkdir(OUT_DIR, { recursive: true });
 
   // 이미 인덱싱된 매물은 skip (force 가 아니면)
-  let existing = { dim: null, model: MODEL, listings: {} };
+  let existing = { dim: null, model: MODEL, listings: {}, hashes: {} };
   let existingVecBytes = 0;
   if (!args.force) {
     try {
@@ -103,6 +105,13 @@ async function main() {
     } catch {
       // 신규
     }
+  }
+  if (!existing.hashes) existing.hashes = {};
+  // 내용 해시 → 첫 등장 id. 동일 공고문(houseSn 별 중복 md)은 벡터를 한 번만
+  // 저장하고 같은 offset 을 공유 — 재임베딩·vectors.bin 중복 append 방지.
+  const hashToId = new Map();
+  for (const [id, h] of Object.entries(existing.hashes)) {
+    if (existing.listings[id] && !hashToId.has(h)) hashToId.set(h, id);
   }
 
   const files = (await fs.readdir(TEXTS_DIR))
@@ -125,6 +134,18 @@ async function main() {
     for (let i = 0; i < targets.length; i++) {
       const { id, file } = targets[i];
       const md = await fs.readFile(file, "utf8");
+
+      // 동일 내용(houseSn 별 중복 공고문)이면 이미 임베딩된 벡터 offset 을 그대로 공유.
+      const h = hashOf(md);
+      const dupId = hashToId.get(h);
+      if (dupId) {
+        existing.listings[id] = existing.listings[dupId];
+        existing.hashes[id] = h;
+        console.log(`[${i + 1}/${targets.length}] ${id} ← ${dupId} 동일 공고문 — 벡터 재사용`);
+        await fs.writeFile(INDEX_PATH, JSON.stringify(existing, null, 2) + "\n", "utf8");
+        continue;
+      }
+
       const chunks = chunkMarkdown(md);
       console.log(`[${i + 1}/${targets.length}] ${id}  md=${md.length}자 → 청크 ${chunks.length}개`);
 
@@ -151,6 +172,8 @@ async function main() {
         await sleep(REQUEST_DELAY_MS);
       }
       existing.listings[id] = chunkEntries;
+      existing.hashes[id] = h;
+      hashToId.set(h, id);
       totalChunks += chunkEntries.length;
 
       // 인덱스를 매 매물마다 save — crash 시 재개 가능

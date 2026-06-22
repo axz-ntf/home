@@ -40,8 +40,9 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: lib/notice-embeddings
-          key: notice-embeddings-v1-${{ github.run_id }}
-          restore-keys: notice-embeddings-v1-
+          # v2: 중복 공고문 dedup 도입 + index/vectors desync 해소를 위한 1회 클린 리빌드.
+          key: notice-embeddings-v2-${{ github.run_id }}
+          restore-keys: notice-embeddings-v2-
 
       - name: Restore lh-complexes cache
         uses: actions/cache/restore@v4
@@ -97,7 +98,7 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: lib/notice-embeddings
-          key: notice-embeddings-v1-${{ github.run_id }}
+          key: notice-embeddings-v2-${{ github.run_id }}
 
       - name: Phase 5 — 자격 정보 구조화 추출 (Claude)
         env:
