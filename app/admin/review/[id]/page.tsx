@@ -144,11 +144,6 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
         </a>
       )}
 
-      <FloorplanEditor
-        listingId={decodedId}
-        initialSpec={resolveFloorplanSpec(decodedId)}
-      />
-
       {dirRows && (
         <section style={{ margin: "14px 0 4px", padding: "12px 14px", border: "1px solid var(--a-line)", borderRadius: 10, background: "var(--a-bg-2)" }}>
           <div style={{ fontSize: 13, fontWeight: 800, marginBottom: 8 }}>
@@ -222,6 +217,12 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
           currentPinIndex={pinIdx != null ? Number(pinIdx) : null}
         />
       )}
+
+      {/* 평면도 3D — 보조 정보라 검수(가격·세대수·일정·좌표) 다음으로 배치. */}
+      <FloorplanEditor
+        listingId={decodedId}
+        initialSpec={resolveFloorplanSpec(decodedId)}
+      />
     </AdminShell>
   );
 }
