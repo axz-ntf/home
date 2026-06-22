@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import MapPinPicker from "./map-pin-picker";
 
 // 다지점 분리 핀 편집 (P1) — AI 추출+지오코딩 산출물(sh-mapped/mapped-regional)의
 // 사람 교정 UI. 라벨·주소·좌표·가격·세대 수정, 행 삭제, 전체 저장(교체).
@@ -79,6 +80,8 @@ export default function MappedPointsEditor({
   const [saving, setSaving] = useState(false);
   const [geoBusy, setGeoBusy] = useState<number | null>(null);
   const [message, setMessage] = useState<string | null>(null);
+  // SH 전용 — 지도 클릭으로 좌표 찍는 picker 가 열린 행 인덱스.
+  const [pickerRow, setPickerRow] = useState<number | null>(null);
 
   const update = (i: number, patch: Partial<PointDraft>) =>
     setDrafts((d) => d.map((p, j) => (j === i ? { ...p, ...patch } : p)));
@@ -187,6 +190,9 @@ export default function MappedPointsEditor({
                   <div className="addr-row">
                     <input value={d.address} placeholder="주소검색으로 입력" onChange={(e) => update(i, { address: e.target.value })} />
                     <button type="button" className="a-pins-search" onClick={() => searchAddress(i)}>주소검색</button>
+                    {file === "sh" && (
+                      <button type="button" className="a-pins-search" onClick={() => setPickerRow(i)} title="지도에서 직접 좌표 찍기">📍 지도</button>
+                    )}
                   </div>
                   {geoBusy === i && <span className="geo-busy">좌표 변환 중…</span>}
                 </td>
@@ -220,6 +226,16 @@ export default function MappedPointsEditor({
         </button>
         {message && <span className="a-msg" style={{ marginTop: 0, color: "var(--a-ink-2)" }}>{message}</span>}
       </div>
+
+      {pickerRow !== null && (
+        <MapPinPicker
+          initialLat={num(drafts[pickerRow]?.lat ?? "")}
+          initialLng={num(drafts[pickerRow]?.lng ?? "")}
+          label={drafts[pickerRow]?.label || drafts[pickerRow]?.address || `핀 ${pickerRow + 1}`}
+          onPick={(lat, lng) => update(pickerRow, { lat: String(lat), lng: String(lng) })}
+          onClose={() => setPickerRow(null)}
+        />
+      )}
     </section>
   );
 }
