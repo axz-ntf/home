@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { LH_ADMIN_LISTINGS, needsSupplyReview } from "@/lib/lh-adapter";
+import { LH_ADMIN_LISTINGS } from "@/lib/lh-adapter";
 import { OVERRIDES, type ManualOverride } from "@/lib/manual-overrides";
-import AdminShell, { type NavItem } from "../admin-shell";
+import AdminShell from "../admin-shell";
+import { adminNav } from "@/lib/admin-nav";
 import { getAdminUser } from "@/lib/admin-user";
 
 const TYPE_LABEL: Record<string, string> = {
@@ -58,17 +59,7 @@ function formatField(key: string, value: unknown): { label: string; value: strin
 }
 
 export default function ActivityPage() {
-  const needsReview = LH_ADMIN_LISTINGS.filter(
-    (l) => !(l.id in OVERRIDES) && needsSupplyReview(l),
-  ).length;
-
-  const navItems: NavItem[] = [
-    { href: "/admin/review", label: "대시보드", icon: "dash" },
-    { href: "/admin/review?filter=review", label: "검수 큐", icon: "listing", badge: needsReview, badgeKind: "danger" },
-    { href: "/admin/activity", label: "검수 내역", icon: "history", badge: Object.keys(OVERRIDES).length, badgeKind: "subtle" },
-    { href: "/admin/complexes", label: "단지 관리", icon: "building" },
-    { href: "/admin/settings", label: "설정", icon: "settings" },
-  ];
+  const navItems = adminNav();
 
   // 매물 ID 로 listing 조회 맵
   const listingMap = new Map(LH_ADMIN_LISTINGS.map((l) => [l.id, l] as const));

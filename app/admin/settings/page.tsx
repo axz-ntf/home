@@ -1,21 +1,10 @@
-import { LH_ADMIN_LISTINGS, needsSupplyReview } from "@/lib/lh-adapter";
 import { OVERRIDES } from "@/lib/manual-overrides";
-import AdminShell, { type NavItem } from "../admin-shell";
+import AdminShell from "../admin-shell";
+import { adminNav } from "@/lib/admin-nav";
 import { getAdminUser } from "@/lib/admin-user";
 
 export default function SettingsPage() {
-  const needsReview = LH_ADMIN_LISTINGS.filter(
-    (l) => !(l.id in OVERRIDES) && needsSupplyReview(l),
-  ).length;
-
-  const navItems: NavItem[] = [
-    { href: "/admin/review", label: "대시보드", icon: "dash" },
-    { href: "/admin/review?filter=review", label: "검수 큐", icon: "listing", badge: needsReview, badgeKind: "danger" },
-    { href: "/admin/activity", label: "검수 내역", icon: "history", badge: Object.keys(OVERRIDES).length, badgeKind: "subtle" },
-    { href: "/admin/complexes", label: "단지 관리", icon: "building" },
-    { href: "/admin/settings", label: "설정", icon: "settings" },
-  ];
-
+  const navItems = adminNav();
   const overrideCount = Object.keys(OVERRIDES).length;
 
   return (
@@ -29,11 +18,12 @@ export default function SettingsPage() {
             </div>
           </div>
           <div style={{ fontSize: 13, color: "var(--a-ink-2)", lineHeight: 1.7 }}>
-            <div>• Phase 1: LH 공고 목록 (data.go.kr)</div>
-            <div>• Phase 2: 상세 페이지 스크래핑 (좌표 · 사진 · 일정)</div>
-            <div>• Phase 3: PDF → markdown (Solar)</div>
-            <div>• Phase 4–5: 임베딩 / 자격 추출 (Claude)</div>
-            <div>• Phase 6: Blob 업로드</div>
+            <div>• Phase 1–2: LH 공고 목록 + 상세 스크래핑 (좌표 · 사진 · 일정)</div>
+            <div>• Phase 3: 공고문 PDF → markdown (Upstage Document Parse)</div>
+            <div>• Phase 4: 임베딩 인덱스 (Solar)</div>
+            <div>• Phase 5: 자격 정보 구조화 추출 (Claude)</div>
+            <div>• Phase 6: 임베딩 → Supabase pgvector / 사진 → Blob</div>
+            <div>• Phase 8: SH · 청년안심 공고 sync</div>
           </div>
         </div>
 

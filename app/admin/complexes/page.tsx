@@ -1,20 +1,9 @@
-import { LH_ADMIN_LISTINGS, needsSupplyReview } from "@/lib/lh-adapter";
-import { OVERRIDES } from "@/lib/manual-overrides";
-import AdminShell, { type NavItem } from "../admin-shell";
+import AdminShell from "../admin-shell";
+import { adminNav } from "@/lib/admin-nav";
 import { getAdminUser } from "@/lib/admin-user";
 
 export default function ComplexesPage() {
-  const needsReview = LH_ADMIN_LISTINGS.filter(
-    (l) => !(l.id in OVERRIDES) && needsSupplyReview(l),
-  ).length;
-
-  const navItems: NavItem[] = [
-    { href: "/admin/review", label: "대시보드", icon: "dash" },
-    { href: "/admin/review?filter=review", label: "검수 큐", icon: "listing", badge: needsReview, badgeKind: "danger" },
-    { href: "/admin/activity", label: "검수 내역", icon: "history", badge: Object.keys(OVERRIDES).length, badgeKind: "subtle" },
-    { href: "/admin/complexes", label: "단지 관리", icon: "building" },
-    { href: "/admin/settings", label: "설정", icon: "settings" },
-  ];
+  const navItems = adminNav();
 
   return (
     <AdminShell pageTitle="단지 관리" pageSub="단지별 사진 / 위치 / 모집공고 이력" navItems={navItems} user={getAdminUser()}>
