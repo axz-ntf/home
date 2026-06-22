@@ -110,13 +110,15 @@ jobs:
           BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
         run: node scripts/upload-covers-to-blob.mjs
 
-      # vectors.bin (550MB+) 가 Vercel Blob 의 timeout/limit 에 자주 실패.
-      # 실패해도 Phase 7/commit 계속 — 옛 blob URL 사용 (기능 영향 적음, 신규 매물 검색만 일부 제한).
-      - name: Phase 6b — vectors.bin Blob 업로드 (실패 허용)
+      # 임베딩 인덱스를 Supabase Postgres(pgvector)로 적재. (이전: Vercel Blob — vectors.bin 이
+      # 1GB Hobby 한도를 넘어 매일 업로드 실패했음.) DB 적재는 대량 마이그레이션이라 DIRECT_URL
+      # (세션 풀러 5432) 사용. 실패해도 데이터 commit 은 계속(다음 run 재시도).
+      - name: Phase 6b — 임베딩 인덱스 Supabase(pgvector) 적재 (실패 허용)
         continue-on-error: true
         env:
-          BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
-        run: node scripts/upload-vectors-to-blob.mjs
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
+        run: node scripts/upload-vectors-to-db.mjs
 
       - name: Phase 7 — 최종 sync (LH 공공데이터 API + 좌표 보강)
         env:
