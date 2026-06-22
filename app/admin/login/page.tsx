@@ -34,7 +34,8 @@ export default function AdminLoginPage() {
     <main className="a-login-shell">
       <form onSubmit={submit} className="a-login-card">
         <div className="a-login-brand">
-          <div className="a-brand-mark">둥</div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.svg" alt="다음부동산" className="a-brand-mark" />
           <div>
             <h1>다음부동산 어드민</h1>
             <p className="sub">LH 공고 검수 — 내부 도구</p>

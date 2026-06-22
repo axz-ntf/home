@@ -67,7 +67,8 @@ export default function AdminShell({ pageTitle, pageSub, navItems, cta, user = D
       <div className="a-side-backdrop" data-open={sideOpen} onClick={() => setSideOpen(false)} />
       <aside className="a-side" data-open={sideOpen}>
         <div className="a-brand">
-          <div className="a-brand-mark">둥</div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.svg" alt="다음부동산" className="a-brand-mark" />
           <div className="a-brand-name">다음부동산</div>
           <div className="a-brand-tag">ADMIN</div>
         </div>

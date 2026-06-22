@@ -16,6 +16,8 @@ export default function AdminDashboardPage() {
     const derivedStatus = effectiveStatus(l.status, l.deadline ?? "", l.beginDate);
     return {
       id: l.id,
+      // 소스 — id 프리픽스로 구분 (lh-*/sh-*/youth-*). 어드민 소스 필터용.
+      source: l.id.startsWith("sh-") ? "SH" : l.id.startsWith("youth-") ? "youth" : "LH",
       pblancId: l.pblancId,
       title: l.title,
       district: l.district,

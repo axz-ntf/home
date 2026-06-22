@@ -8,6 +8,7 @@ import { AIcon } from "../icons";
 
 export interface DashboardRow {
   id: string;
+  source: "LH" | "SH" | "youth";
   pblancId?: string;
   title: string;
   district: string;
@@ -117,30 +118,47 @@ export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: 
     router.replace(qs ? `/admin/review?${qs}` : "/admin/review", { scroll: false });
   }
 
+  const [issueFilter, setIssueFilter] = useState<string | null>(null);
+
+  // 소스 필터 (LH/SH/청년안심). 소스 카운트는 전역(rows) 기준 — 소스 선택과 무관하게 고정.
+  type SourceKey = "all" | "LH" | "SH" | "youth";
+  const [source, setSource] = useState<SourceKey>("all");
+  const sourceCounts = useMemo(() => {
+    const m = { LH: 0, SH: 0, youth: 0 };
+    for (const r of rows) m[r.source]++;
+    return m;
+  }, [rows]);
+
+  // 소스로 1차 필터한 집합 — 상태·이슈 칩 카운트와 테이블이 모두 이 집합 기준이라
+  // SH 선택 시 "모집중 N" 이 SH 의 모집중 수를 정확히 가리킨다 (카운트 정합).
+  const sourceRows = useMemo(
+    () => (source === "all" ? rows : rows.filter((r) => r.source === source)),
+    [rows, source],
+  );
+
   const stats = useMemo(() => {
-    const s = { total: rows.length, open: 0, upcoming: 0, closing: 0, closed: 0, review: 0, reviewed: 0 };
-    for (const r of rows) {
+    const s = { total: sourceRows.length, open: 0, upcoming: 0, closing: 0, closed: 0, review: 0, reviewed: 0 };
+    for (const r of sourceRows) {
       s[r.status]++;
       if (r.needsReview && !r.reviewed) s.review++;
       if (r.reviewed) s.reviewed++;
     }
     return s;
-  }, [rows]);
+  }, [sourceRows]);
 
   // 이슈 종류별 미검수 건수 (P2) — "검수 필요 N"이 아니라 무엇이 비었는지로 큐를 본다.
   const issueCounts = useMemo(() => {
     const m: Record<string, number> = {};
-    for (const r of rows) {
+    for (const r of sourceRows) {
       if (r.reviewed) continue;
       for (const issue of r.issues) m[issue] = (m[issue] ?? 0) + 1;
     }
     return m;
-  }, [rows]);
-  const [issueFilter, setIssueFilter] = useState<string | null>(null);
+  }, [sourceRows]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return rows.filter((r) => {
+    return sourceRows.filter((r) => {
       if (filter === "review" && !(r.needsReview && !r.reviewed)) return false;
       if (filter !== "all" && filter !== "review" && r.status !== filter) return false;
       if (issueFilter && (r.reviewed || !r.issues.includes(issueFilter))) return false;
@@ -157,7 +175,7 @@ export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: 
         return false;
       return true;
     });
-  }, [rows, filter, query, issueFilter]);
+  }, [sourceRows, filter, query, issueFilter]);
 
   // ── 페이지네이션 ──
   const PAGE_SIZE = 50;
@@ -225,7 +243,15 @@ export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: 
 
       <div className="a-table-wrap">
         <div className="a-table-head">
+          {/* 소스 필터 (LH/SH/청년안심) — 공급원별로 큐를 좁힌다. */}
           <div className="a-table-filters">
+            <span style={{ fontSize: 11.5, fontWeight: 700, color: "var(--a-ink-3)", alignSelf: "center" }}>소스:</span>
+            <FilterChip active={source === "all"} onClick={() => setSource("all")} count={rows.length}>전체</FilterChip>
+            <FilterChip active={source === "LH"} onClick={() => setSource("LH")} count={sourceCounts.LH}>LH</FilterChip>
+            <FilterChip active={source === "SH"} onClick={() => setSource("SH")} count={sourceCounts.SH}>SH</FilterChip>
+            <FilterChip active={source === "youth"} onClick={() => setSource("youth")} count={sourceCounts.youth}>청년안심</FilterChip>
+          </div>
+          <div className="a-table-filters" style={{ marginTop: 6 }}>
             <FilterChip active={filter === "all"} onClick={() => changeFilter("all")} count={stats.total}>전체</FilterChip>
             <FilterChip active={filter === "review"} onClick={() => changeFilter("review")} count={stats.review}>검수 필요</FilterChip>
             <FilterChip active={filter === "open"} onClick={() => changeFilter("open")} count={stats.open}>모집중</FilterChip>

@@ -111,11 +111,7 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
 .a-brand-mark {
   width: 30px; height: 30px;
   border-radius: 9px;
-  background: var(--a-carrot);
-  color: white;
-  display: grid; place-items: center;
-  font-weight: 900; font-size: 16px;
-  letter-spacing: -0.04em;
+  object-fit: contain;
 }
 .a-brand-name {
   font-size: 16px; font-weight: 800;
