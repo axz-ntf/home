@@ -1,0 +1,60 @@
+{
+  "supplyTotal": 50,
+  "tiers": [
+    {
+      "id": "etc",
+      "name": "가군(생계·의료급여수급자 등)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "생계·의료급여 수급자",
+        "국가유공자 등으로서 생계·의료급여 수급자 선정기준의 소득인정액 이하인 사람",
+        "위안부 피해자",
+        "지원대상 한부모가족"
+      ]
+    },
+    {
+      "id": "general",
+      "name": "나군(일반 등)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "가군 해당자 이외의 영구임대 입주 가능한 자"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "주거약자(26B형)",
+      "units": 122,
+      "age": "65세 이상 또는 장애인 등",
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "고령자(65세 이상)",
+        "장애인복지법 제2조제2항 해당 장애인",
+        "국가유공자(상이등급 1급~7급)",
+        "보훈보상대상자(상이등급 1급~7급)",
+        "5·18민주화운동부상자(신체장해등급 1급~14급)",
+        "고엽제후유의증환자(경도 이상)",
+        "국가유공자에 준하는 군경 등(상이등급 1급~7급)"
+      ]
+    }
+  ],
+  "priority": []
+}
