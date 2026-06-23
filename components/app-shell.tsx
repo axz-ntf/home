@@ -161,6 +161,20 @@ export function AppShell({
   );
   const handleDetailClose = useCallback(() => { setDetailOpen(false); setAiFocusId(null); }, []);
 
+  // 브랜드("부동산") 클릭 → 깨끗한 메인 홈으로 (열린 패널·필터·지역 모두 초기화).
+  const goHome = useCallback(() => {
+    setChatOpen(false);
+    setDetailOpen(false);
+    setTweaksOpen(false);
+    setEliOpen(false);
+    setRegionMenuOpen(false);
+    setSelectedId(null);
+    setAiFocusId(null);
+    setActiveDistrict(null);
+    setSearchBounds(null);
+    setFilters(INITIAL_FILTERS);
+  }, []);
+
   // 상세 옆 도킹 AI 상담 — PC 는 컬럼으로, 모바일/태블릿은 /ai 풀스크린 라우트.
   const [aiFocusId, setAiFocusId] = useState<string | null>(null);
   const aiFocusItem = aiFocusId ? (listings.find((x) => x.id === aiFocusId) ?? null) : null;
@@ -196,12 +210,16 @@ export function AppShell({
       />
       <header className="topbar">
         <div className="brand">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.svg" alt="다음" className="brand-logo" />
-          <span className="brand-name">부동산</span>
-          <button className="brand-ai-cta" onClick={() => setChatOpen(true)}>
-            <span className="ai-spark" aria-hidden>✨</span>
-            AI로 조건 찾기
+          <button
+            type="button"
+            className="brand-home"
+            onClick={goHome}
+            aria-label="홈으로"
+            style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "none", border: "none", padding: 0, cursor: "pointer", font: "inherit" }}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.svg" alt="다음" className="brand-logo" />
+            <span className="brand-name">부동산</span>
           </button>
         </div>
         <div className="region-wrap">

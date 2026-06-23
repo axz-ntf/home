@@ -126,7 +126,7 @@ interface ShMappedPoint {
   depositRange?: [number, number];
   rentRange?: [number, number];
 }
-const SH_MAPPED = shMapped as Record<string, { points: ShMappedPoint[] }>;
+const SH_MAPPED = shMapped as unknown as Record<string, { points: ShMappedPoint[] }>;
 
 function buildShMappedListings(): Listing[] {
   const out: Listing[] = [];
