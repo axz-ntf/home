@@ -72,9 +72,9 @@ async function aiComplexes(md) {
     headers: { "x-api-key": AKEY, "anthropic-version": "2023-06-01", "content-type": "application/json" },
     body: JSON.stringify({
       model: "claude-sonnet-4-6",
-      max_tokens: 8000,
+      max_tokens: 16000,
       system: SYSTEM,
-      messages: [{ role: "user", content: `공급 단지 목록 추출, JSON만:\n\n${md.slice(0, 30000)}` }],
+      messages: [{ role: "user", content: `공급 단지 목록 추출, JSON만:\n\n${md.slice(0, 120000)}` }],
     }),
   });
   if (!r.ok) throw new Error(`AI HTTP ${r.status}`);
@@ -86,16 +86,41 @@ async function aiComplexes(md) {
   return Array.isArray(o.complexes) ? o.complexes : [];
 }
 
-const inSeoul = (lat, lng) => lat > 37.42 && lat < 37.71 && lng > 126.76 && lng < 127.19;
-async function geocode(addr) {
-  for (const type of ["PARCEL", "ROAD"]) {
+// 수도권 포함 한국 범위 (장기전세는 서울+의정부 등 — 서울로만 막으면 누락).
+const inKorea = (lat, lng) => lat > 33 && lat < 39 && lng > 124 && lng < 132;
+
+// 단지명 POI 검색 — 유명 아파트는 건물 단위 정확. 자치구로 결과 검증.
+async function poiSearch(name, gu) {
+  const u = `https://api.vworld.kr/req/search?service=search&request=search&version=2.0&crs=EPSG:4326&size=5&query=${encodeURIComponent(name)}&type=place&format=json&key=${VKEY}`;
+  try {
+    const j = await (await fetch(u)).json();
+    const items = j?.response?.result?.items ?? [];
+    const hit = items.find((it) => {
+      const ad = it.address?.road || it.address?.parcel || "";
+      return gu ? ad.includes(gu) : true;
+    }) || (gu ? null : items[0]);
+    if (hit?.point && inKorea(+hit.point.y, +hit.point.x)) return { lat: +hit.point.y, lng: +hit.point.x };
+  } catch { /* fallthrough */ }
+  return null;
+}
+
+async function addrGeocode(addr) {
+  for (const type of ["ROAD", "PARCEL"]) {
     const u = `https://api.vworld.kr/req/address?service=address&request=getcoord&version=2.0&crs=EPSG:4326&type=${type}&address=${encodeURIComponent(addr)}&key=${VKEY}`;
     try {
       const j = await (await fetch(u)).json();
       const p = j?.response?.result?.point;
-      if (p && inSeoul(+p.y, +p.x)) return { lat: +p.y, lng: +p.x };
+      if (p && inKorea(+p.y, +p.x)) return { lat: +p.y, lng: +p.x };
     } catch { /* 다음 type */ }
   }
+  return null;
+}
+
+// 단지명 POI(정밀) → 주소 지오코딩 순. gu 는 주소에서 추출한 자치구(POI 검증용).
+async function geocode(name, addr) {
+  const gu = (addr || "").match(/([가-힣]{1,4}구)\b/)?.[1] || (name || "").match(/([가-힣]{1,4}구)\b/)?.[1] || "";
+  if (name) { const r = await poiSearch(name.replace(/\([^)]*\)/g, "").trim(), gu); if (r) return r; }
+  if (addr) { const r = await addrGeocode(addr); if (r) return r; }
   return null;
 }
 
@@ -119,11 +144,12 @@ for (const n of pool) {
   const points = [];
   const seen = new Set();
   for (const c of complexes) {
-    if (!c.address) continue;
-    const co = await geocode(c.address);
+    if (!c.address && !c.name) continue;
+    const co = await geocode(c.name, c.address);
     await sleep(120);
     if (!co) continue;
-    const key = co.lat.toFixed(5) + "," + co.lng.toFixed(5);
+    // 단지명 기준 dedup — 같은 좌표(구 중심 충돌)라도 다른 단지면 유지. 같은 단지명만 1회.
+    const key = (c.name || c.address || "").replace(/\s+/g, "");
     if (seen.has(key)) continue;
     seen.add(key);
     const { deposit, rent } = saneManwon(c.depositWon, c.rentWon);
