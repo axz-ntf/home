@@ -22,10 +22,18 @@ export function dedupeCorrections(listings: Listing[]): Listing[] {
   }
   const out: Listing[] = [];
   for (const g of groups.values()) {
-    if (g.length === 1) { out.push(g[0]); continue; }
+    // 정정공고가 하나라도 있으면 정정만, 없으면 그대로.
     const corrections = g.filter(isCorrection);
-    // 정정공고가 하나라도 있으면 정정만, 없으면 그대로 전부.
-    out.push(...(corrections.length ? corrections : g));
+    const candidates = corrections.length ? corrections : g;
+    // 같은 단지(제목)가 같은 좌표에 중복 등재(여러 메가공고에 같은 단지) → 핀 하나만.
+    // 좌표 없는 건 id 로 보존(서로 다른 산재형까지 합치지 않게).
+    const seen = new Set<string>();
+    for (const l of candidates) {
+      const ck = l.lat && l.lng ? `${l.lat.toFixed(4)},${l.lng.toFixed(4)}` : `id:${l.id}`;
+      if (seen.has(ck)) continue;
+      seen.add(ck);
+      out.push(l);
+    }
   }
   return out;
 }
