@@ -199,8 +199,7 @@ export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: 
 
   const navItems: NavItem[] = [
     { href: "/admin/review", label: "대시보드", icon: "dash" },
-    { href: "/admin/review?filter=review", label: "검수 큐", icon: "listing", badge: stats.review, badgeKind: "danger" },
-    { href: "/admin/activity", label: "검수 내역", icon: "history", badge: stats.reviewed, badgeKind: "subtle" },
+    { href: "/admin/activity", label: "수정 내역", icon: "history", badge: stats.reviewed, badgeKind: "subtle" },
     { href: "/admin/complexes", label: "단지 관리", icon: "building" },
     { href: "/admin/settings", label: "설정", icon: "settings" },
   ];
@@ -225,7 +224,7 @@ export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: 
           sub={activePins != null ? `PC 지도 핀 ${activePins}개 · 마감임박 ${stats.closing} 포함` : `예정 ${stats.upcoming} · 마감 ${stats.closed}`}
           accent
         />
-        <KpiCard label="검수됨" value={stats.reviewed} sub="사용자가 정정한 매물" highlight="success" />
+        <KpiCard label="수정됨" value={stats.reviewed} sub="직접 정정한 매물" highlight="success" />
       </section>
 
       <div className="a-table-wrap">

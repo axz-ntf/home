@@ -79,8 +79,8 @@ export default function ActivityPage() {
 
   return (
     <AdminShell
-      pageTitle="검수 내역"
-      pageSub={`총 ${activities.length.toLocaleString()}건의 검수 활동`}
+      pageTitle="수정 내역"
+      pageSub={`총 ${activities.length.toLocaleString()}건의 수정 활동`}
       navItems={navItems}
       user={getAdminUser()}
     >
