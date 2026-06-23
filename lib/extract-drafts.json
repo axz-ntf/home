@@ -4428,5 +4428,162 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020170": {
+    "at": "2026-06-23T18:29:39.380Z",
+    "type": "fifty",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "구미인의 49",
+          "area": "49.86",
+          "supplyUnits": 90,
+          "deposit": 1768,
+          "rent": 17,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "구미인의 49",
+            "limitManwon": 1900,
+            "maxDeposit": 3668,
+            "minRent": 7
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020177": {
+    "at": "2026-06-23T18:30:50.772Z",
+    "type": "integ",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.09.02"
+      },
+      "deadline": "2026.07.03",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020181": {
+    "at": "2026-06-23T18:32:06.534Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": null
+      },
+      "schedule": {
+        "winnerAt": "2026.09.10"
+      },
+      "deadline": "2026.07.10",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020180": {
+    "at": "2026-06-23T18:33:24.376Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4
+      },
+      "schedule": {
+        "winnerAt": "2026.07.15"
+      },
+      "deadline": "2026.07.10",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020179": {
+    "at": "2026-06-23T18:34:29.781Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": 6
+      },
+      "schedule": {
+        "winnerAt": "2026.07.16"
+      },
+      "deadline": "2026.07.10",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020178": {
+    "at": "2026-06-23T18:35:28.842Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": null
+      },
+      "schedule": {
+        "winnerAt": "2026.07.16"
+      },
+      "deadline": "2026.07.10",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-306011": {
+    "at": "2026-06-23T18:38:11.395Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "강서구 가양동 육아 협동조합주택(이음채) 49형",
+          "area": "48.12",
+          "supplyUnits": 3,
+          "deposit": 11456,
+          "rent": 3,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강서구 가양동 육아 협동조합주택(이음채) 49형",
+          "area": "48",
+          "supplyUnits": 1,
+          "deposit": 11456,
+          "rent": 3,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강서구 가양동 육아 협동조합주택(이음채) 49형",
+          "area": "48.79",
+          "supplyUnits": 1,
+          "deposit": 11456,
+          "rent": 3,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.14"
+      },
+      "deadline": "2026.07.08",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
   }
 }
