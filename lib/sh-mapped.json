@@ -2402,5 +2402,43 @@
         "rentManwon": 0
       }
     ]
+  },
+  "305298": {
+    "points": [
+      {
+        "lat": 37.56153207451494,
+        "lng": 127.05762653343571,
+        "label": "용답동 도전숙 A동",
+        "address": "서울특별시 성동구 자동차시장3길 1 (용답동 226-7)",
+        "units": 3,
+        "depositManwon": 1448,
+        "rentManwon": 19,
+        "depositRange": [
+          1448,
+          1640
+        ],
+        "rentRange": [
+          19,
+          21
+        ]
+      },
+      {
+        "lat": 37.56149018401153,
+        "lng": 127.05780788800402,
+        "label": "용답동 도전숙 B동",
+        "address": "서울특별시 성동구 자동차시장3길 3 (용답동 226-13)",
+        "units": 6,
+        "depositManwon": 1040,
+        "rentManwon": 14,
+        "depositRange": [
+          1040,
+          1544
+        ],
+        "rentRange": [
+          14,
+          20
+        ]
+      }
+    ]
   }
 }
