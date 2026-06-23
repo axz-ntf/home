@@ -334,7 +334,11 @@
         "address": "서울특별시 강북구 미아동 194-2, 195 일원",
         "units": 17,
         "depositManwon": 38064,
-        "rentManwon": 0
+        "rentManwon": 0,
+        "depositRange": [
+          38064,
+          60606
+        ]
       },
       {
         "lat": 37.50597272769858,
@@ -343,7 +347,11 @@
         "address": "서울특별시 동작구 상도동 23-42번지 일원",
         "units": 91,
         "depositManwon": 46956,
-        "rentManwon": 0
+        "rentManwon": 0,
+        "depositRange": [
+          46956,
+          59358
+        ]
       },
       {
         "lat": 37.49800723140703,
@@ -357,8 +365,8 @@
       {
         "lat": 37.462090855571965,
         "lng": 127.10196074570595,
-        "label": "세곡지구 (강남데시앙파크, 강남신동아파밀리에 2,3단지, 세곡리엔파크4단지)",
-        "address": "서울특별시 강남구 헌릉로590길 일원",
+        "label": "세곡지구(강남데시앙파크·강남신동아파밀리에2,3단지·세곡리엔파크4단지)",
+        "address": "서울특별시 강남구 헌릉로590길",
         "units": 13,
         "depositManwon": 61698,
         "rentManwon": 0
@@ -366,11 +374,15 @@
       {
         "lat": 37.47678330459975,
         "lng": 127.10979999972426,
-        "label": "세곡2지구 (래미안포레, 강남한양수자인, 강남한신휴플러스6,8단지)",
-        "address": "서울특별시 강남구 밤고개로 일원",
+        "label": "세곡2지구(래미안포레·강남한양수자인·강남한신휴플러스6,8단지)",
+        "address": "서울특별시 강남구 밤고개로",
         "units": 54,
         "depositManwon": 51402,
-        "rentManwon": 0
+        "rentManwon": 0,
+        "depositRange": [
+          51402,
+          65598
+        ]
       },
       {
         "lat": 37.48663292319684,
@@ -402,8 +414,8 @@
       {
         "lat": 37.56437740529017,
         "lng": 127.17372759979892,
-        "label": "강일지구 (강일리버파크 2,3,4,6,9,10단지)",
-        "address": "서울특별시 강동구 아리수로 일원",
+        "label": "강일지구(강일리버파크2,3,4,6,9,10단지)",
+        "address": "서울특별시 강동구 아리수로",
         "units": 10,
         "depositManwon": 51090,
         "rentManwon": 0
@@ -411,8 +423,8 @@
       {
         "lat": 37.56115724724049,
         "lng": 127.17162069525038,
-        "label": "강일2지구 (고덕리엔파크 1~3단지)",
-        "address": "서울특별시 강동구 상일로 일원",
+        "label": "강일2지구(고덕리엔파크1~3단지)",
+        "address": "서울특별시 강동구 상일로",
         "units": 47,
         "depositManwon": 56316,
         "rentManwon": 0
@@ -420,10 +432,45 @@
       {
         "lat": 37.57209584349597,
         "lng": 127.17450289951871,
-        "label": "고덕강일2지구 (강동리버스트 4,6,7,8단지)",
-        "address": "서울특별시 강동구 아리수로93가길 일원",
+        "label": "고덕강일2지구(강동리버스트4,6,7,8단지)",
+        "address": "서울특별시 강동구 아리수로93가길",
         "units": 32,
         "depositManwon": 42510,
+        "rentManwon": 0,
+        "depositRange": [
+          42510,
+          47892
+        ]
+      },
+      {
+        "lat": 37.57216399956759,
+        "lng": 126.8366339998357,
+        "label": "마곡지구(마곡엠밸리1~8,10~12,14~15단지)",
+        "address": "서울특별시 강서구 마곡서1로",
+        "units": 91,
+        "depositManwon": 49920,
+        "rentManwon": 0,
+        "depositRange": [
+          49920,
+          59904
+        ]
+      },
+      {
+        "lat": 37.562267011056534,
+        "lng": 126.8192062463701,
+        "label": "마곡지구9단지(마곡엠밸리9단지)",
+        "address": "서울특별시 강서구 공항대로 103",
+        "units": 1,
+        "depositManwon": 52962,
+        "rentManwon": 0
+      },
+      {
+        "lat": 37.55330380901789,
+        "lng": 126.82417432115383,
+        "label": "발산지구3단지(마곡수명산파크3단지)",
+        "address": "서울특별시 강서구 수명로1길 110",
+        "units": 17,
+        "depositManwon": 50934,
         "rentManwon": 0
       },
       {
@@ -436,55 +483,28 @@
         "rentManwon": 0
       },
       {
-        "lat": 37.57216399956759,
-        "lng": 126.8366339998357,
-        "label": "마곡지구 (마곡엠밸리 1~8, 10~12, 14~15단지)",
-        "address": "서울특별시 강서구 마곡서1로 일원",
-        "units": 31,
-        "depositManwon": 49920,
-        "rentManwon": 0
-      },
-      {
-        "lat": 37.562267011056534,
-        "lng": 126.8192062463701,
-        "label": "마곡지구 9단지 (마곡엠밸리 9단지)",
-        "address": "서울특별시 강서구 공항대로 103",
-        "units": 1,
-        "depositManwon": 52962,
-        "rentManwon": 0
-      },
-      {
-        "lat": 37.55330380901789,
-        "lng": 126.82417432115383,
-        "label": "발산지구3단지 (마곡수명산파크3단지)",
-        "address": "서울특별시 강서구 수명로1길 110",
-        "units": 17,
-        "depositManwon": 50934,
-        "rentManwon": 0
-      },
-      {
         "lat": 37.4849909990957,
         "lng": 126.84193700036161,
-        "label": "천왕지구 (천왕이펜하우스 3~6단지)",
-        "address": "서울특별시 구로구 천왕로 일원",
-        "units": 6,
+        "label": "천왕지구(천왕이펜하우스3~6단지)",
+        "address": "서울특별시 구로구 천왕로",
+        "units": 4,
         "depositManwon": 42276,
         "rentManwon": 0
       },
       {
         "lat": 37.4849909990957,
         "lng": 126.84193700036161,
-        "label": "천왕2지구 (천왕연지타운1,2단지)",
-        "address": "서울특별시 구로구 오류로 일원",
-        "units": 12,
+        "label": "천왕2지구(천왕연지타운1,2단지)",
+        "address": "서울특별시 구로구 오류로 30",
+        "units": 3,
         "depositManwon": 43134,
         "rentManwon": 0
       },
       {
         "lat": 37.58504439444699,
         "lng": 126.87986951136915,
-        "label": "상암2지구 (상암월드컵파크 9~12단지)",
-        "address": "서울특별시 마포구 월드컵북로 일원",
+        "label": "상암2지구(상암월드컵파크9~12단지)",
+        "address": "서울특별시 마포구 월드컵북로",
         "units": 9,
         "depositManwon": 50076,
         "rentManwon": 0
@@ -492,11 +512,15 @@
       {
         "lat": 37.454987557468925,
         "lng": 127.0647976992486,
-        "label": "내곡지구 (서초더샵포레, 서초포레스타 2,3,5,6,7단지)",
-        "address": "서울특별시 서초구 헌릉로8길 일원",
-        "units": 43,
+        "label": "내곡지구(서초더샵포레·서초포레스타2,3,5,6,7단지)",
+        "address": "서울특별시 서초구 헌릉로8길",
+        "units": 42,
         "depositManwon": 44772,
-        "rentManwon": 0
+        "rentManwon": 0,
+        "depositRange": [
+          44772,
+          73086
+        ]
       },
       {
         "lat": 37.473246201437775,
@@ -505,7 +529,11 @@
         "address": "서울특별시 서초구 바우뫼로18길 20",
         "units": 9,
         "depositManwon": 47346,
-        "rentManwon": 0
+        "rentManwon": 0,
+        "depositRange": [
+          47346,
+          78780
+        ]
       },
       {
         "lat": 37.46419307287454,
@@ -514,21 +542,29 @@
         "address": "서울특별시 서초구 매헌로16길 40",
         "units": 20,
         "depositManwon": 46254,
-        "rentManwon": 0
+        "rentManwon": 0,
+        "depositRange": [
+          46254,
+          71448
+        ]
       },
       {
         "lat": 37.465869477234406,
         "lng": 127.01961689863288,
-        "label": "우면2지구 (서초네이처힐 1,2,3,5단지)",
-        "address": "서울특별시 서초구 형촌길 일원",
+        "label": "우면2지구(서초네이처힐1,2,3,5단지)",
+        "address": "서울특별시 서초구 형촌길",
         "units": 40,
         "depositManwon": 49374,
-        "rentManwon": 0
+        "rentManwon": 0,
+        "depositRange": [
+          49374,
+          81900
+        ]
       },
       {
         "lat": 37.56956987393699,
         "lng": 127.0296200261241,
-        "label": "왕십리 주상복합 (왕십리 모노퍼스 주상복합)",
+        "label": "왕십리주상복합(왕십리모노퍼스)",
         "address": "서울특별시 성동구 청계천로 474",
         "units": 1,
         "depositManwon": 22386,
@@ -537,8 +573,8 @@
       {
         "lat": 35.39530439781569,
         "lng": 127.66395610485402,
-        "label": "마천지구 (송파파크데일 1,2단지)",
-        "address": "서울특별시 송파구 성내천로 일원",
+        "label": "마천지구(송파파크데일1,2단지)",
+        "address": "서울특별시 송파구 성내천로37길",
         "units": 5,
         "depositManwon": 48048,
         "rentManwon": 0
@@ -550,7 +586,11 @@
         "address": "서울특별시 송파구 성내천로 6",
         "units": 2,
         "depositManwon": 38142,
-        "rentManwon": 0
+        "rentManwon": 0,
+        "depositRange": [
+          38142,
+          47658
+        ]
       },
       {
         "lat": 37.490102729960256,
@@ -559,7 +599,11 @@
         "address": "서울특별시 송파구 위례북로4길 12",
         "units": 8,
         "depositManwon": 51714,
-        "rentManwon": 0
+        "rentManwon": 0,
+        "depositRange": [
+          51714,
+          59124
+        ]
       },
       {
         "lat": 37.47671120229639,
@@ -568,13 +612,17 @@
         "address": "서울특별시 송파구 위례순환로 477",
         "units": 12,
         "depositManwon": 53196,
-        "rentManwon": 0
+        "rentManwon": 0,
+        "depositRange": [
+          53196,
+          58578
+        ]
       },
       {
         "lat": 37.38907240048247,
         "lng": 127.23496200042497,
-        "label": "장지지구 (송파파인타운 1,6단지)",
-        "address": "서울특별시 송파구 충민로 일원",
+        "label": "장지지구(송파파인타운1,6단지)",
+        "address": "서울특별시 송파구 충민로 188",
         "units": 1,
         "depositManwon": 59826,
         "rentManwon": 0
@@ -582,8 +630,8 @@
       {
         "lat": 37.51897500045407,
         "lng": 126.85681200052419,
-        "label": "신정3지구 (신정이펜하우스 1~4단지)",
-        "address": "서울특별시 양천구 신정이펜1로 일원",
+        "label": "신정3지구(신정이펜하우스1~4단지)",
+        "address": "서울특별시 양천구 신정이펜1로",
         "units": 15,
         "depositManwon": 37752,
         "rentManwon": 0
@@ -595,12 +643,16 @@
         "address": "서울특별시 양천구 신정로 110",
         "units": 4,
         "depositManwon": 24414,
-        "rentManwon": 0
+        "rentManwon": 0,
+        "depositRange": [
+          24414,
+          31044
+        ]
       },
       {
         "lat": 37.63432928828003,
         "lng": 126.93444727935403,
-        "label": "기자촌 11단지 (은평3-12)",
+        "label": "기자촌11단지(은평3-12)",
         "address": "서울특별시 은평구 연서로46길 7",
         "units": 4,
         "depositManwon": 41964,
@@ -609,8 +661,8 @@
       {
         "lat": 37.647830105442225,
         "lng": 126.9309232185324,
-        "label": "은평1지구 (은평뉴타운 상림마을)",
-        "address": "서울특별시 은평구 진관4로 일원",
+        "label": "은평1지구(은평뉴타운 상림마을)",
+        "address": "서울특별시 은평구 진관4로",
         "units": 8,
         "depositManwon": 41340,
         "rentManwon": 0
@@ -618,17 +670,17 @@
       {
         "lat": 34.96701310047993,
         "lng": 127.58344829962613,
-        "label": "은평2지구 (은평뉴타운 마고정, 박석고개, 우물골)",
-        "address": "서울특별시 은평구 진관1로 일원",
+        "label": "은평2지구(은평뉴타운 마고정·박석고개·우물골)",
+        "address": "서울특별시 은평구 진관1로",
         "units": 80,
         "depositManwon": 43368,
         "rentManwon": 0
       },
       {
-        "lat": 37.63946306342643,
-        "lng": 126.91826785480605,
-        "label": "은평3지구 (은평뉴타운 구파발)",
-        "address": "서울특별시 은평구 진관3로 일원",
+        "lat": 37.64038697939917,
+        "lng": 126.92038259778889,
+        "label": "은평3지구(은평뉴타운 구파발)",
+        "address": "서울특별시 은평구 진관3로",
         "units": 121,
         "depositManwon": 46956,
         "rentManwon": 0
@@ -645,8 +697,8 @@
       {
         "lat": 37.68943300447772,
         "lng": 127.0522424997116,
-        "label": "상계장암지구 (수락리버시티 1,2단지)",
-        "address": "경기도 의정부시 누원로 51",
+        "label": "상계장암지구(수락리버시티1,2단지)",
+        "address": "경기도 의정부시 누원로",
         "units": 9,
         "depositManwon": 34944,
         "rentManwon": 0
@@ -775,7 +827,11 @@
         "address": "서울특별시 강동구 양재대로 1300",
         "units": 10,
         "depositManwon": 33618,
-        "rentManwon": 0
+        "rentManwon": 0,
+        "depositRange": [
+          33618,
+          40404
+        ]
       },
       {
         "lat": 37.5267324793458,
@@ -793,7 +849,11 @@
         "address": "서울특별시 강동구 올림픽로91길 30",
         "units": 2,
         "depositManwon": 50622,
-        "rentManwon": 0
+        "rentManwon": 0,
+        "depositRange": [
+          50622,
+          62556
+        ]
       },
       {
         "lat": 37.560580551325664,
@@ -856,7 +916,11 @@
         "address": "서울특별시 동대문구 이문로 120",
         "units": 55,
         "depositManwon": 32214,
-        "rentManwon": 0
+        "rentManwon": 0,
+        "depositRange": [
+          32214,
+          46410
+        ]
       },
       {
         "lat": 37.57224450061581,
@@ -874,12 +938,16 @@
         "address": "서울특별시 동작구 상도로30길 40",
         "units": 2,
         "depositManwon": 51948,
-        "rentManwon": 0
+        "rentManwon": 0,
+        "depositRange": [
+          51948,
+          62556
+        ]
       },
       {
         "lat": 37.54498540564459,
         "lng": 126.94935559991382,
-        "label": "공덕SK리더스뷰 2단지",
+        "label": "공덕SK리더스뷰2단지",
         "address": "서울특별시 마포구 백범로31길 8",
         "units": 2,
         "depositManwon": 92820,
@@ -901,7 +969,11 @@
         "address": "서울특별시 서초구 신반포로 251",
         "units": 5,
         "depositManwon": 69966,
-        "rentManwon": 0
+        "rentManwon": 0,
+        "depositRange": [
+          69966,
+          83460
+        ]
       },
       {
         "lat": 37.503576383569886,
@@ -937,7 +1009,11 @@
         "address": "서울특별시 성북구 숭인로 50",
         "units": 4,
         "depositManwon": 25506,
-        "rentManwon": 0
+        "rentManwon": 0,
+        "depositRange": [
+          25506,
+          63804
+        ]
       },
       {
         "lat": 37.51677813276915,
@@ -946,7 +1022,11 @@
         "address": "서울특별시 송파구 올림픽로 393",
         "units": 77,
         "depositManwon": 52806,
-        "rentManwon": 0
+        "rentManwon": 0,
+        "depositRange": [
+          52806,
+          74958
+        ]
       },
       {
         "lat": 37.60069877440362,
@@ -958,19 +1038,19 @@
         "rentManwon": 0
       },
       {
-        "lat": 37.55861013886903,
-        "lng": 127.14108928452322,
-        "label": "강일지구 - 강일리버파크 2,9,10단지 (서울리츠3호)",
-        "address": "서울특별시 강동구 아리수로 일원",
+        "lat": 37.56655908459553,
+        "lng": 127.17677708267684,
+        "label": "강일지구 서울리츠3호(강일리버파크2,9,10단지)",
+        "address": "서울특별시 강동구 아리수로97길",
         "units": 30,
         "depositManwon": 58266,
         "rentManwon": 0
       },
       {
-        "lat": 37.56465492223879,
-        "lng": 126.82016495234436,
-        "label": "마곡지구 - 마곡엠밸리 2,14단지 (서울리츠3호)",
-        "address": "서울특별시 강서구 마곡서1로 일원",
+        "lat": 37.5691185151601,
+        "lng": 126.82071219134181,
+        "label": "마곡지구 서울리츠3호(마곡엠밸리2,14단지)",
+        "address": "서울특별시 강서구 마곡서1로 146",
         "units": 3,
         "depositManwon": 65676,
         "rentManwon": 0
@@ -978,17 +1058,17 @@
       {
         "lat": 37.48402005352045,
         "lng": 126.84337413940469,
-        "label": "천왕2지구 2단지 - 천왕연지타운 2단지 (서울리츠3호)",
+        "label": "천왕2지구2단지 서울리츠3호(천왕연지타운2단지)",
         "address": "서울특별시 구로구 오리로 1102-10",
         "units": 3,
         "depositManwon": 49296,
         "rentManwon": 0
       },
       {
-        "lat": 37.562559293235594,
-        "lng": 126.91459369019913,
-        "label": "상암2지구 - 상암월드컵파크 9~12단지 (서울리츠3호)",
-        "address": "서울특별시 마포구 월드컵북로 일원",
+        "lat": 37.557132061276924,
+        "lng": 126.91870157038232,
+        "label": "상암2지구 서울리츠3호(상암월드컵파크9~12단지)",
+        "address": "서울특별시 마포구 월드컵북로",
         "units": 35,
         "depositManwon": 56940,
         "rentManwon": 0
@@ -996,16 +1076,16 @@
       {
         "lat": 37.511436801031394,
         "lng": 126.83496150559304,
-        "label": "신정3지구 - 신정이펜하우스 1~4단지 (서울리츠3호)",
-        "address": "서울특별시 양천구 신정이펜1로 일원",
+        "label": "신정3지구 서울리츠3호(신정이펜하우스1~4단지)",
+        "address": "서울특별시 양천구 신정이펜1로",
         "units": 3,
         "depositManwon": 51012,
         "rentManwon": 0
       },
       {
-        "lat": 37.61544540123201,
-        "lng": 127.1100124004006,
-        "label": "신내데시앙포레 (서울리츠3호)",
+        "lat": 37.61658250861978,
+        "lng": 127.10963186259099,
+        "label": "신내데시앙포레 서울리츠3호",
         "address": "서울특별시 중랑구 신내역로 165",
         "units": 3,
         "depositManwon": 45552,
@@ -1073,7 +1153,15 @@
         "address": "서울특별시 동작구 사당동 1046-1",
         "units": 60,
         "depositManwon": 8568,
-        "rentManwon": 33
+        "rentManwon": 33,
+        "depositRange": [
+          8568,
+          12024
+        ],
+        "rentRange": [
+          33,
+          46
+        ]
       },
       {
         "lat": 37.34360594898592,
@@ -1109,7 +1197,15 @@
         "address": "서울특별시 강남구 도곡로93길 23",
         "units": 8,
         "depositManwon": 11492,
-        "rentManwon": 46
+        "rentManwon": 46,
+        "depositRange": [
+          11492,
+          12168
+        ],
+        "rentRange": [
+          46,
+          49
+        ]
       },
       {
         "lat": 37.51667429080065,
@@ -1145,7 +1241,15 @@
         "address": "서울특별시 강남구 개포로 310",
         "units": 22,
         "depositManwon": 17176,
-        "rentManwon": 69
+        "rentManwon": 69,
+        "depositRange": [
+          17176,
+          21840
+        ],
+        "rentRange": [
+          69,
+          87
+        ]
       },
       {
         "lat": 37.56293951764948,
@@ -1163,7 +1267,15 @@
         "address": "서울특별시 강동구 고덕로98길 101",
         "units": 101,
         "depositManwon": 4828,
-        "rentManwon": 19
+        "rentManwon": 19,
+        "depositRange": [
+          4828,
+          10792
+        ],
+        "rentRange": [
+          19,
+          43
+        ]
       },
       {
         "lat": 37.55035481622921,
@@ -1172,7 +1284,15 @@
         "address": "서울특별시 강동구 고덕로98길 160",
         "units": 31,
         "depositManwon": 4760,
-        "rentManwon": 19
+        "rentManwon": 19,
+        "depositRange": [
+          4760,
+          5040
+        ],
+        "rentRange": [
+          19,
+          20
+        ]
       },
       {
         "lat": 37.55072861556659,
@@ -1226,7 +1346,15 @@
         "address": "서울특별시 강동구 아리수로 385",
         "units": 23,
         "depositManwon": 8092,
-        "rentManwon": 32
+        "rentManwon": 32,
+        "depositRange": [
+          8092,
+          11172
+        ],
+        "rentRange": [
+          32,
+          45
+        ]
       },
       {
         "lat": 37.15383040432651,
@@ -1235,16 +1363,32 @@
         "address": "서울특별시 강동구 상일로12길 95",
         "units": 8,
         "depositManwon": 7556,
-        "rentManwon": 25
+        "rentManwon": 25,
+        "depositRange": [
+          7556,
+          8001
+        ],
+        "rentRange": [
+          25,
+          26
+        ]
       },
       {
         "lat": 37.57119230047334,
         "lng": 126.80828419957444,
         "label": "신마곡 벽산블루밍",
         "address": "서울특별시 강서구 양천로10길 38",
-        "units": 13,
+        "units": 21,
         "depositManwon": 12312,
-        "rentManwon": 45
+        "rentManwon": 45,
+        "depositRange": [
+          12312,
+          15600
+        ],
+        "rentRange": [
+          45,
+          57
+        ]
       },
       {
         "lat": 37.5716658979038,
@@ -1261,13 +1405,22 @@
         "label": "더헤르미온(봉천동 1666-51)",
         "address": "서울특별시 관악구 남부순환로 1845",
         "depositManwon": 2312,
-        "rentManwon": 10
+        "rentManwon": 10,
+        "depositRange": [
+          2312,
+          2448
+        ],
+        "rentRange": [
+          10,
+          11
+        ]
       },
       {
         "lat": 37.488833742285124,
         "lng": 126.76184634241696,
         "label": "어울채(서울리츠1호)",
         "address": "서울특별시 광진구 아차산로58길 58",
+        "units": 2,
         "depositManwon": 6868,
         "rentManwon": 25
       },
@@ -1278,7 +1431,15 @@
         "address": "서울특별시 구로구 천왕로 21",
         "units": 64,
         "depositManwon": 4284,
-        "rentManwon": 16
+        "rentManwon": 16,
+        "depositRange": [
+          4284,
+          4536
+        ],
+        "rentRange": [
+          16,
+          17
+        ]
       },
       {
         "lat": 37.48816793641917,
@@ -1287,7 +1448,15 @@
         "address": "서울특별시 구로구 오류로 36-13",
         "units": 47,
         "depositManwon": 2700,
-        "rentManwon": 12
+        "rentManwon": 12,
+        "depositRange": [
+          2700,
+          5776
+        ],
+        "rentRange": [
+          12,
+          25
+        ]
       },
       {
         "lat": 37.48449796281252,
@@ -1296,7 +1465,15 @@
         "address": "서울특별시 구로구 오리로 1102-13",
         "units": 43,
         "depositManwon": 2580,
-        "rentManwon": 11
+        "rentManwon": 11,
+        "depositRange": [
+          2580,
+          5092
+        ],
+        "rentRange": [
+          11,
+          22
+        ]
       },
       {
         "lat": 37.47681314146789,
@@ -1305,7 +1482,15 @@
         "address": "서울특별시 구로구 금오로 882",
         "units": 37,
         "depositManwon": 4964,
-        "rentManwon": 19
+        "rentManwon": 19,
+        "depositRange": [
+          4964,
+          6916
+        ],
+        "rentRange": [
+          19,
+          26
+        ]
       },
       {
         "lat": 37.50512670379767,
@@ -1359,7 +1544,15 @@
         "address": "서울특별시 동대문구 이문로 120",
         "units": 24,
         "depositManwon": 7752,
-        "rentManwon": 30
+        "rentManwon": 30,
+        "depositRange": [
+          7752,
+          8208
+        ],
+        "rentRange": [
+          30,
+          32
+        ]
       },
       {
         "lat": 37.594155181486784,
@@ -1395,21 +1588,37 @@
         "address": "서울특별시 동작구 여의대방로22길 121",
         "units": 11,
         "depositManwon": 10488,
-        "rentManwon": 39
+        "rentManwon": 39,
+        "depositRange": [
+          10488,
+          13360
+        ],
+        "rentRange": [
+          39,
+          50
+        ]
       },
       {
         "lat": 37.503961904081244,
         "lng": 126.95306927654357,
         "label": "상도 청석채",
         "address": "서울특별시 동작구 상도로47바길 54",
-        "units": 9,
+        "units": 10,
         "depositManwon": 5100,
-        "rentManwon": 19
+        "rentManwon": 19,
+        "depositRange": [
+          5100,
+          5400
+        ],
+        "rentRange": [
+          19,
+          20
+        ]
       },
       {
         "lat": 37.49962808039319,
         "lng": 126.94472315032863,
-        "label": "상도동211-435,467 행복주택(서울리츠2호)",
+        "label": "상도동211-435, 467 행복주택(서울리츠2호)",
         "address": "서울특별시 동작구 양녕로 210-4",
         "units": 4,
         "depositManwon": 4198,
@@ -1431,7 +1640,15 @@
         "address": "서울특별시 마포구 신촌로28길 50",
         "units": 4,
         "depositManwon": 8704,
-        "rentManwon": 34
+        "rentManwon": 34,
+        "depositRange": [
+          8704,
+          9216
+        ],
+        "rentRange": [
+          34,
+          36
+        ]
       },
       {
         "lat": 37.54651910097765,
@@ -1458,7 +1675,15 @@
         "address": "서울특별시 서대문구 북아현로1길 17",
         "units": 54,
         "depositManwon": 10645,
-        "rentManwon": 42
+        "rentManwon": 42,
+        "depositRange": [
+          10645,
+          11271
+        ],
+        "rentRange": [
+          42,
+          44
+        ]
       },
       {
         "lat": 37.58462901433538,
@@ -1467,7 +1692,15 @@
         "address": "서울특별시 서대문구 통일로 395",
         "units": 16,
         "depositManwon": 9960,
-        "rentManwon": 38
+        "rentManwon": 38,
+        "depositRange": [
+          9960,
+          10546
+        ],
+        "rentRange": [
+          38,
+          40
+        ]
       },
       {
         "lat": 37.59692110418277,
@@ -1485,7 +1718,15 @@
         "address": "서울특별시 서대문구 거북골로 100",
         "units": 18,
         "depositManwon": 10531,
-        "rentManwon": 37
+        "rentManwon": 37,
+        "depositRange": [
+          10531,
+          11151
+        ],
+        "rentRange": [
+          37,
+          40
+        ]
       },
       {
         "lat": 37.5631033678409,
@@ -1494,7 +1735,15 @@
         "address": "서울특별시 서대문구 이화여대8길 123",
         "units": 8,
         "depositManwon": 12707,
-        "rentManwon": 49
+        "rentManwon": 49,
+        "depositRange": [
+          12707,
+          13454
+        ],
+        "rentRange": [
+          49,
+          52
+        ]
       },
       {
         "lat": 37.600556176031965,
@@ -1584,7 +1833,15 @@
         "address": "서울특별시 서초구 신반포로23길 23",
         "units": 4,
         "depositManwon": 19608,
-        "rentManwon": 77
+        "rentManwon": 77,
+        "depositRange": [
+          19608,
+          22560
+        ],
+        "rentRange": [
+          77,
+          88
+        ]
       },
       {
         "lat": 37.51671221595228,
@@ -1611,7 +1868,15 @@
         "address": "서울특별시 성동구 난계로 100",
         "units": 8,
         "depositManwon": 18680,
-        "rentManwon": 20
+        "rentManwon": 20,
+        "depositRange": [
+          18680,
+          22240
+        ],
+        "rentRange": [
+          20,
+          76
+        ]
       },
       {
         "lat": 37.60660176866358,
@@ -1643,9 +1908,17 @@
         "lng": 127.02795185964811,
         "label": "래미안길음센터피스(길음2)_서울리츠2호",
         "address": "서울특별시 성북구 숭인로 50",
-        "units": 8,
+        "units": 16,
         "depositManwon": 11152,
-        "rentManwon": 43
+        "rentManwon": 43,
+        "depositRange": [
+          11152,
+          11808
+        ],
+        "rentRange": [
+          43,
+          45
+        ]
       },
       {
         "lat": 37.6179208238281,
@@ -1663,7 +1936,15 @@
         "address": "서울특별시 성북구 돌곶이로40길 46",
         "units": 44,
         "depositManwon": 11662,
-        "rentManwon": 44
+        "rentManwon": 44,
+        "depositRange": [
+          11662,
+          12348
+        ],
+        "rentRange": [
+          44,
+          47
+        ]
       },
       {
         "lat": 37.61410624103056,
@@ -1681,7 +1962,15 @@
         "address": "서울특별시 송파구 오금로53길 14",
         "units": 20,
         "depositManwon": 3960,
-        "rentManwon": 15
+        "rentManwon": 15,
+        "depositRange": [
+          3960,
+          6880
+        ],
+        "rentRange": [
+          15,
+          25
+        ]
       },
       {
         "lat": 37.494684804680915,
@@ -1699,16 +1988,24 @@
         "address": "서울특별시 송파구 송파대로 345",
         "units": 39,
         "depositManwon": 17680,
-        "rentManwon": 65
+        "rentManwon": 65,
+        "depositRange": [
+          17680,
+          21600
+        ],
+        "rentRange": [
+          65,
+          79
+        ]
       },
       {
-        "lat": 37.49487258910482,
-        "lng": 127.14746666471366,
+        "lat": 37.49515933596115,
+        "lng": 127.1469975389164,
         "label": "송파시그니처롯데캐슬",
         "address": "서울특별시 송파구 거마로 56",
         "units": 2,
-        "depositManwon": 11492,
-        "rentManwon": 42
+        "depositManwon": 12168,
+        "rentManwon": 45
       },
       {
         "lat": 37.49415139880319,
@@ -1717,7 +2014,15 @@
         "address": "서울특별시 송파구 오금로 551",
         "units": 12,
         "depositManwon": 11866,
-        "rentManwon": 42
+        "rentManwon": 42,
+        "depositRange": [
+          11866,
+          12564
+        ],
+        "rentRange": [
+          42,
+          44
+        ]
       },
       {
         "lat": 37.4970456583591,
@@ -1725,25 +2030,41 @@
         "label": "송파시그니처롯데캐슬(거여2-1)_서울리츠2호",
         "address": "서울특별시 송파구 거마로 56",
         "units": 16,
-        "depositManwon": 15080,
-        "rentManwon": 52
+        "depositManwon": 9304,
+        "rentManwon": 32,
+        "depositRange": [
+          9304,
+          15080
+        ],
+        "rentRange": [
+          32,
+          52
+        ]
       },
       {
         "lat": 37.51538486359449,
         "lng": 126.84136785689417,
         "label": "목동센트럴아이파크위브(신정1-1)_서울리츠2호",
         "address": "서울특별시 양천구 남부순환로83길 18",
-        "depositManwon": 9304,
-        "rentManwon": 32
+        "depositManwon": 19760,
+        "rentManwon": 84
       },
       {
         "lat": 37.512889310291875,
         "lng": 126.8341323837361,
         "label": "이든채(서울리츠1호)",
         "address": "서울특별시 양천구 신정로7길 75",
-        "units": 13,
+        "units": 18,
         "depositManwon": 5610,
-        "rentManwon": 22
+        "rentManwon": 22,
+        "depositRange": [
+          5610,
+          13440
+        ],
+        "rentRange": [
+          22,
+          54
+        ]
       },
       {
         "lat": 37.53010045278086,
@@ -1761,23 +2082,40 @@
         "address": "서울특별시 영등포구 국회대로54길 10",
         "units": 10,
         "depositManwon": 8466,
-        "rentManwon": 34
+        "rentManwon": 34,
+        "depositRange": [
+          8466,
+          8964
+        ],
+        "rentRange": [
+          34,
+          36
+        ]
       },
       {
         "lat": 37.504122174410874,
         "lng": 126.9037611628045,
         "label": "신길센트럴아이파크(신길14)_서울리츠2호",
         "address": "서울특별시 영등포구 가마산로 426",
+        "units": 23,
         "depositManwon": 15556,
-        "rentManwon": 58
+        "rentManwon": 58,
+        "depositRange": [
+          15556,
+          16471
+        ],
+        "rentRange": [
+          58,
+          62
+        ]
       },
       {
         "lat": 37.539319413744074,
         "lng": 126.96309666535328,
         "label": "용산롯데캐슬센터포레(효창5)_서울리츠2호",
         "address": "서울특별시 용산구 백범로 313",
-        "depositManwon": 16471,
-        "rentManwon": 62
+        "depositManwon": 17784,
+        "rentManwon": 76
       },
       {
         "lat": 37.526282981912445,
@@ -1812,7 +2150,15 @@
         "address": "서울특별시 은평구 통일로 610",
         "units": 76,
         "depositManwon": 13120,
-        "rentManwon": 53
+        "rentManwon": 53,
+        "depositRange": [
+          13120,
+          13480
+        ],
+        "rentRange": [
+          53,
+          54
+        ]
       },
       {
         "lat": 37.59686208547689,
@@ -1857,7 +2203,15 @@
         "address": "서울특별시 은평구 통일로 1045",
         "units": 84,
         "depositManwon": 3740,
-        "rentManwon": 15
+        "rentManwon": 15,
+        "depositRange": [
+          3740,
+          3960
+        ],
+        "rentRange": [
+          15,
+          16
+        ]
       },
       {
         "lat": 37.5738431031045,
@@ -1866,7 +2220,15 @@
         "address": "서울특별시 종로구 지봉로 37-29",
         "units": 11,
         "depositManwon": 3060,
-        "rentManwon": 13
+        "rentManwon": 13,
+        "depositRange": [
+          3060,
+          3240
+        ],
+        "rentRange": [
+          13,
+          14
+        ]
       },
       {
         "lat": 37.57223711196538,
@@ -1875,16 +2237,32 @@
         "address": "서울특별시 종로구 송월길 130",
         "units": 115,
         "depositManwon": 13137,
-        "rentManwon": 52
+        "rentManwon": 52,
+        "depositRange": [
+          13137,
+          15456
+        ],
+        "rentRange": [
+          52,
+          61
+        ]
       },
       {
         "lat": 37.617000100549255,
         "lng": 127.09311759970973,
         "label": "신내 글로리움",
         "address": "서울특별시 중랑구 신내로 208",
-        "units": 51,
+        "units": 48,
         "depositManwon": 6664,
-        "rentManwon": 24
+        "rentManwon": 24,
+        "depositRange": [
+          6664,
+          9680
+        ],
+        "rentRange": [
+          24,
+          35
+        ]
       },
       {
         "lat": 37.61764216060092,
@@ -1893,16 +2271,32 @@
         "address": "서울특별시 중랑구 신내역로1길 142",
         "units": 27,
         "depositManwon": 5644,
-        "rentManwon": 25
+        "rentManwon": 25,
+        "depositRange": [
+          5644,
+          6308
+        ],
+        "rentRange": [
+          25,
+          27
+        ]
       },
       {
         "lat": 37.61692170585368,
         "lng": 127.1110846895786,
         "label": "신내3-4 도시형생활주택",
         "address": "서울특별시 중랑구 신내역로 160",
-        "units": 33,
+        "units": 30,
         "depositManwon": 5508,
-        "rentManwon": 23
+        "rentManwon": 23,
+        "depositRange": [
+          5508,
+          5832
+        ],
+        "rentRange": [
+          23,
+          24
+        ]
       },
       {
         "lat": 37.59438757300174,
@@ -1930,16 +2324,16 @@
         "lat": 37.53834360103563,
         "lng": 129.10125820021358,
         "label": "성지빌라",
-        "address": "서울특별시 강동구 양재대로95길 36-9 성지빌라(성내동 404-10)",
+        "address": "서울특별시 강동구 양재대로95길 36-9 (성내동 404-10)",
         "units": 5,
         "depositManwon": 100,
         "rentManwon": 0
       },
       {
-        "lat": 37.48374363029844,
-        "lng": 126.93588287024997,
-        "label": "신림동 A동",
-        "address": "서울특별시 관악구 신림로21길 79 A동(신림동 1562-10 외 1필지)",
+        "lat": 37.466865805759895,
+        "lng": 126.93487951447364,
+        "label": "관악구 신림로21길 79 A동",
+        "address": "서울특별시 관악구 신림로21길 79 A동 (신림동 1562-10 외 1필지)",
         "units": 3,
         "depositManwon": 100,
         "rentManwon": 0
@@ -1948,7 +2342,7 @@
         "lat": 37.534525579500574,
         "lng": 127.08052735848268,
         "label": "자양에스하임4 1동",
-        "address": "서울특별시 광진구 뚝섬로49길 60 자양에스하임4 1동(자양동 622-8 외 3필지)",
+        "address": "서울특별시 광진구 뚝섬로49길 60 자양에스하임4 1동 (자양동 622-8 외 3필지)",
         "units": 2,
         "depositManwon": 100,
         "rentManwon": 0
@@ -1957,7 +2351,7 @@
         "lat": 37.27737235725282,
         "lng": 126.99846525411135,
         "label": "더 엘",
-        "address": "서울특별시 광진구 광나루로30가길 16-6 더 엘(구의동 638-3 외 1필지)",
+        "address": "서울특별시 광진구 광나루로30가길 16-6 더 엘 (구의동 638-3 외 1필지)",
         "units": 1,
         "depositManwon": 100,
         "rentManwon": 0
@@ -1966,7 +2360,7 @@
         "lat": 37.56525720128706,
         "lng": 126.91795629986369,
         "label": "연남하이츠",
-        "address": "서울특별시 마포구 성미산로19길 78 연남하이츠(연남동 478-4)",
+        "address": "서울특별시 마포구 성미산로19길 78 연남하이츠 (연남동 478-4)",
         "units": 2,
         "depositManwon": 100,
         "rentManwon": 0
@@ -1975,7 +2369,7 @@
         "lat": 35.23928625336639,
         "lng": 129.08586399936075,
         "label": "정목빌",
-        "address": "서울특별시 성북구 장월로28길 49 정목빌(장위동 76-330 외 2필지)",
+        "address": "서울특별시 성북구 장월로28길 49 정목빌 (장위동 76-330 외 2필지)",
         "units": 4,
         "depositManwon": 100,
         "rentManwon": 0
@@ -1984,7 +2378,7 @@
         "lat": 37.5038929005507,
         "lng": 127.13954416399822,
         "label": "씨티하우스오금",
-        "address": "서울특별시 송파구 마천로23길 10 씨티하우스오금(오금동 119-18)",
+        "address": "서울특별시 송파구 마천로23길 10 씨티하우스오금 (오금동 119-18)",
         "units": 3,
         "depositManwon": 100,
         "rentManwon": 0
@@ -1993,7 +2387,7 @@
         "lat": 37.50678201356518,
         "lng": 127.11333759955073,
         "label": "송파동 118-5",
-        "address": "서울특별시 송파구 백제고분로44길 25-11(송파동 118-5)",
+        "address": "서울특별시 송파구 백제고분로44길 25-11 (송파동 118-5)",
         "units": 2,
         "depositManwon": 100,
         "rentManwon": 0
@@ -2002,7 +2396,7 @@
         "lat": 35.18170354371246,
         "lng": 129.12699619470584,
         "label": "남양파크빌",
-        "address": "서울특별시 영등포구 도림로48길 9 남양파크빌(대림동 700-28)",
+        "address": "서울특별시 영등포구 도림로48길 9 남양파크빌 (대림동 700-28)",
         "units": 3,
         "depositManwon": 100,
         "rentManwon": 0

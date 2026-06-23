@@ -60,11 +60,11 @@ async function ensureMarkdown(n) {
 
 const SYSTEM = `한국 SH(서울주택도시공사) 모집공고문에서 "공급 대상 주택단지 목록"을 추출하는 전문가.
 공급 단지(주택) 개요 표에서 각 단지의 이름·주소(자치구+동+번지 또는 도로명)·공급(모집) 세대수를 뽑아라.
-임대조건 표가 있으면 단지별 대표(가장 작은 주택형) 임대보증금·월임대료를 원(KRW) 숫자 그대로 — 단, SH 표가 천원 단위면 원으로 환산(×1000)해서.
+임대조건 표가 있으면 단지별 임대보증금·월임대료의 **최소·최대**(여러 주택형 중 가장 싼 것·비싼 것)를 원(KRW) 숫자로 — 단, SH 표가 천원 단위면 원으로 환산(×1000)해서. 주택형이 하나뿐이면 min=max.
 - 소득기준 예시·사무소·신청장소 주소는 제외. 실제 공급 단지만.
 - 주소는 "서울특별시"부터 시작하게 보정.
 - 단지가 매우 많으면 전부 나열 (생략 금지).
-JSON만: {"complexes":[{"name":"단지명","address":"주소","units":<정수|null>,"depositWon":<원|null>,"rentWon":<원|null>}]}`;
+JSON만: {"complexes":[{"name":"단지명","address":"주소","units":<정수|null>,"depositMinWon":<원|null>,"depositMaxWon":<원|null>,"rentMinWon":<원|null>,"rentMaxWon":<원|null>}]}`;
 
 async function aiComplexes(md) {
   const r = await fetch("https://api.anthropic.com/v1/messages", {
@@ -124,14 +124,30 @@ async function geocode(name, addr) {
   return null;
 }
 
-// 가격 타당성 (extract-mapped-regional 과 동일 게이트). 전세형(장기전세)은 월세 0 허용.
-function saneManwon(depositWon, rentWon) {
-  const d = depositWon != null ? Math.round(depositWon / 10000) : null;
-  const r = rentWon != null ? Math.round(rentWon / 10000) : null;
-  const okD = d != null && d >= 50 && d <= 200000;
-  const okR = r == null || r === 0 || (r >= 1 && r <= 150);
-  if (!okD || !okR || (r != null && r >= d)) return { deposit: null, rent: null };
-  return { deposit: d, rent: r };
+// 원 → 만원 (타당 범위만). 보증금 50만~20억, 월세 0~150만.
+const depManwon = (won) => {
+  if (won == null) return null;
+  const d = Math.round(won / 10000);
+  return d >= 50 && d <= 200000 ? d : null;
+};
+const rentManwon = (won) => {
+  if (won == null) return null;
+  const r = Math.round(won / 10000);
+  return r >= 0 && r <= 150 ? r : null;
+};
+
+// 단지별 보증금/월세 min~max 만원. 대표값(min) + 범위([min,max], min≠max 일 때).
+function priceFields(c) {
+  const dMin = depManwon(c.depositMinWon), dMax = depManwon(c.depositMaxWon);
+  const rMin = rentManwon(c.rentMinWon), rMax = rentManwon(c.rentMaxWon);
+  const out = {};
+  if (dMin != null) {
+    out.depositManwon = dMin;
+    out.rentManwon = rMin ?? 0;
+    if (dMax != null && dMax !== dMin) out.depositRange = [dMin, dMax];
+    if (rMin != null && rMax != null && rMax !== rMin) out.rentRange = [rMin, rMax];
+  }
+  return out;
 }
 
 console.log(`대상 SH 공고: ${pool.length}건\n`);
@@ -152,13 +168,12 @@ for (const n of pool) {
     const key = (c.name || c.address || "").replace(/\s+/g, "");
     if (seen.has(key)) continue;
     seen.add(key);
-    const { deposit, rent } = saneManwon(c.depositWon, c.rentWon);
     points.push({
       lat: co.lat, lng: co.lng,
       ...(c.name && { label: c.name }),
       address: c.address,
       ...(c.units != null && { units: c.units }),
-      ...(deposit != null && { depositManwon: deposit, rentManwon: rent ?? 0 }),
+      ...priceFields(c),
     });
   }
   if (points.length >= 2) {

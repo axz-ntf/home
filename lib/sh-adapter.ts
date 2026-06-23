@@ -123,6 +123,8 @@ interface ShMappedPoint {
   units?: number;
   depositManwon?: number;
   rentManwon?: number;
+  depositRange?: [number, number];
+  rentRange?: [number, number];
 }
 const SH_MAPPED = shMapped as Record<string, { points: ShMappedPoint[] }>;
 
@@ -142,6 +144,8 @@ function buildShMappedListings(): Listing[] {
         ...(p.label && { title: p.label }),
         ...(p.units != null && { supplyUnits: p.units }),
         ...(p.depositManwon != null && { deposit: p.depositManwon, rent: p.rentManwon ?? 0 }),
+        ...(p.depositRange && { depositRange: p.depositRange }),
+        ...(p.rentRange && { rentRange: p.rentRange }),
       });
     });
   }
