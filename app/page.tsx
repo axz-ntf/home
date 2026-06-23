@@ -1,6 +1,8 @@
 import { AppShell } from "@/components/app-shell";
 import { LH_DISTRICTS, LH_LISTINGS, LH_REGIONAL_LISTINGS } from "@/lib/lh-adapter";
 import { YOUTH_PUBLIC_LISTINGS } from "@/lib/youth-adapter";
+import { SH_PUBLIC_LISTINGS } from "@/lib/sh-adapter";
+import { dedupeCorrections } from "@/lib/dedupe-corrections";
 import { effectiveStatus } from "@/lib/dday";
 import type { Listing } from "@/lib/types";
 import "./m/tokens.css";
@@ -16,8 +18,8 @@ export default function Page() {
   }
   const regionalCount = seen.size;
 
-  // 청년주택(청년안심) 공개 매물 — 좌표 보유분을 지도에 합류 (공급유형 "청년주택" 필터 대상).
-  const listings = [...LH_LISTINGS, ...YOUTH_PUBLIC_LISTINGS];
+  // LH + 청년안심 + SH 공개 매물 합류. 정정공고가 있는 공고는 일반 버전 숨김(정정 우선).
+  const listings = dedupeCorrections([...LH_LISTINGS, ...YOUTH_PUBLIC_LISTINGS, ...SH_PUBLIC_LISTINGS]);
 
   return <AppShell listings={listings} districts={LH_DISTRICTS} regionalCount={regionalCount} />;
 }
