@@ -266,8 +266,13 @@ async function main() {
       await fs.writeFile(outPath, JSON.stringify(detail, null, 2) + "\n", "utf8");
 
       // 최소 평형 기준 대표값 — LH 공고문 표시 관례 (가장 작은 평수의 임대조건이 기준선).
+      // 타당성 가드: 병합셀·면적 숫자를 가격으로 오인한 비정상값(예: 월세 678조원) 차단.
+      // 보증금 ≤20억, 월세 ≤500만 (공공임대 현실 범위) 벗어나면 제외.
+      const WON_DEP_MAX = 2_000_000_000; // 20억
+      const WON_RENT_MAX = 5_000_000; // 월 500만
       const sorted = units
         .filter((u) => u.deposit != null && u.rent != null)
+        .filter((u) => u.deposit > 0 && u.deposit <= WON_DEP_MAX && u.rent >= 0 && u.rent <= WON_RENT_MAX)
         .sort((a, b) => (a.area ?? Infinity) - (b.area ?? Infinity));
       const rep = sorted[0];
       const depositManwon = rep ? Math.round(rep.deposit / 10000) : null;
@@ -279,9 +284,15 @@ async function main() {
       const depositRange = depVals.length ? [Math.min(...depVals), Math.max(...depVals)] : null;
       const rentRange = rentVals.length ? [Math.min(...rentVals), Math.max(...rentVals)] : null;
 
+      // 세대수 가드: 면적(소수)·병합셀 합산으로 깨진 값 차단. 정수 1~10만만 허용.
+      const supplyUnitsSafe =
+        Number.isInteger(supply.supplyTotal) && supply.supplyTotal >= 1 && supply.supplyTotal <= 100000
+          ? supply.supplyTotal
+          : null;
+
       updates.push({
         id: l.id,
-        supplyUnits: supply.supplyTotal,
+        supplyUnits: supplyUnitsSafe,
         deposit: depositManwon,
         rent: rentManwon,
         depositRange,
