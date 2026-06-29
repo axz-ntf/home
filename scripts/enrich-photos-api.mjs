@@ -14,7 +14,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DATA_PATH = path.join(ROOT, "lib/listings-api.json");
@@ -165,4 +165,9 @@ async function main() {
   console.log(`images → ${OUT_DIR}`);
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+export { main };
+
+// 직접 실행할 때만 자동 구동 (sync-lh-api 가 import 할 땐 호출 안 함)
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((e) => { console.error(e); process.exit(1); });
+}
