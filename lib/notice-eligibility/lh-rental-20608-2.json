@@ -1,0 +1,23 @@
+{
+  "supplyTotal": 2993,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 2993,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "수도권 거주 만19세 이상 무주택세대구성원",
+        "세대주와 세대원 중 1인만 신청가능",
+        "주택 소유 불가",
+        "분양권 등 지위 소유 불가",
+        "분양권 승계취득 불가",
+        "청약저축 가입여부 무관"
+      ]
+    }
+  ],
+  "priority": []
+}

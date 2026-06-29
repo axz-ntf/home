@@ -1,0 +1,24 @@
+{
+  "supplyTotal": 219,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "공고일 기준 모집권역 내 거주"
+      ]
+    }
+  ],
+  "priority": [
+    "신생아 가구 (2024.06.29 이후 출생·입양·태아)",
+    "자녀 3인 이상",
+    "자녀 2인",
+    "자녀 1인"
+  ]
+}
