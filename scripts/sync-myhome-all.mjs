@@ -221,19 +221,55 @@ async function writeJson(file, data) {
   console.log(`저장: ${path.relative(ROOT, file)} (${data.length}건)`);
 }
 
+// 실패한 소스는 기존 파일을 그대로 재사용(빈 배열로 덮어쓰지 않음 → 데이터 유실 방지).
+async function readExisting(file) {
+  try {
+    const v = JSON.parse(await fs.readFile(file, "utf8"));
+    return Array.isArray(v) ? v : [];
+  } catch {
+    return [];
+  }
+}
+
 async function main() {
   await loadEnvFile();
-  console.log("마이홈 전국 임대 모집공고 수집...");
-  const rentals = await fetchAllRentals();
-  console.log("\n마이홈 전국 공공분양 모집공고 수집...");
-  const sales = await fetchAllSales();
+
+  // 마이홈/공공데이터 서버가 종종 connect timeout 으로 죽는다. 한 소스가 실패해도
+  // 전체 파이프라인(LH API·SH·청년·조감도 등 후속 단계)이 멈추지 않도록 각각 graceful 처리.
+  let rentals, rentalsFailed = false;
+  try {
+    console.log("마이홈 전국 임대 모집공고 수집...");
+    rentals = await fetchAllRentals();
+  } catch (e) {
+    console.error(`⚠️ 임대 수집 실패 — 기존 데이터 유지: ${e.message}`);
+    rentals = await readExisting(RENTAL_OUT);
+    rentalsFailed = true;
+  }
+
+  let sales, salesFailed = false;
+  try {
+    console.log("\n마이홈 전국 공공분양 모집공고 수집...");
+    sales = await fetchAllSales();
+  } catch (e) {
+    console.error(`⚠️ 분양 수집 실패 — 기존 데이터 유지: ${e.message}`);
+    sales = await readExisting(SALE_OUT);
+    salesFailed = true;
+  }
+
   const all = [...rentals, ...sales].sort((a, b) =>
     (b.announceDate || "").localeCompare(a.announceDate || ""),
   );
-  await writeJson(RENTAL_OUT, rentals);
-  await writeJson(SALE_OUT, sales);
+  if (!rentalsFailed) await writeJson(RENTAL_OUT, rentals);
+  if (!salesFailed) await writeJson(SALE_OUT, sales);
   await writeJson(ALL_OUT, all);
-  console.log(`\n완료: 임대 ${rentals.length}건 + 분양 ${sales.length}건 = 총 ${all.length}건`);
+  const note = rentalsFailed || salesFailed ? " (일부 소스 실패 — 기존 데이터로 보완)" : "";
+  console.log(`\n완료: 임대 ${rentals.length}건 + 분양 ${sales.length}건 = 총 ${all.length}건${note}`);
+
+  // 둘 다 실패면 진짜 문제 — 비정상 종료로 알림(부분 실패는 통과).
+  if (rentalsFailed && salesFailed) {
+    console.error("❌ 임대·분양 모두 수집 실패 — 마이홈/공공데이터 서버 점검 필요");
+    process.exit(1);
+  }
 }
 
 main().catch((error) => {

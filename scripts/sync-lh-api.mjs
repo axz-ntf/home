@@ -577,6 +577,16 @@ async function main() {
   [...sBy.entries()].forEach(([k, v]) => console.log(`  ${v.toString().padStart(4)} ${k}`));
   console.log("--- type ---");
   [...tBy.entries()].forEach(([k, v]) => console.log(`  ${v.toString().padStart(4)} ${k}`));
+
+  // ── Phase 6: 단지조감도 보강 (enrich-photos-api 재사용) ──
+  // 목록 저장(위) 후 실행 → listings-api.json 을 다시 읽어 coverPhotoUrl/Local 채움.
+  console.log("\n=== Phase 6: 단지조감도 보강 ===");
+  try {
+    const { main: enrichPhotos } = await import("./enrich-photos-api.mjs");
+    await enrichPhotos();
+  } catch (e) {
+    console.error("조감도 보강 실패 (목록은 저장됨):", e.message);
+  }
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });
