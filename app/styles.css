@@ -29,11 +29,57 @@ input, select { font-family: inherit; }
 
 /* ——— Top bar ——— */
 .topbar {
-  display: flex; align-items: center;
-  padding: 0 20px;
+  display: flex; align-items: center; gap: 14px;
+  padding: 0 18px;
+  min-height: 60px;
   border-bottom: 1px solid var(--seed-semantic-color-divider-2);
   background: var(--seed-semantic-color-paper-default);
   z-index: 20;
+}
+/* 헤더 햄버거 — 사이드바 접기/펼치기 */
+.topbar-menu {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; flex-shrink: 0;
+  border: none; background: none; cursor: pointer; border-radius: 10px;
+  color: var(--seed-semantic-color-ink-text); font-size: 24px;
+}
+.topbar-menu:hover { background: var(--seed-scale-color-gray-50); }
+/* 헤더 검색 — 단지·지역·지하철·학교 (네이버부동산식) */
+.topbar-search {
+  display: flex; align-items: center; gap: 9px;
+  flex: 1; max-width: 460px;
+  height: 42px; padding: 0 16px;
+  background: var(--seed-scale-color-gray-50, #f4f5f7);
+  border: 1px solid transparent;
+  border-radius: 999px;
+}
+.topbar-search:focus-within {
+  background: #fff;
+  border-color: var(--seed-semantic-color-primary, #1e84ff);
+  box-shadow: 0 0 0 3px var(--seed-semantic-color-primary-low, #1e84ff1f);
+}
+.topbar-search-ico { flex-shrink: 0; font-size: 20px; color: var(--seed-semantic-color-ink-text-low); }
+.topbar-search-input {
+  flex: 1; min-width: 0; border: none; background: none; outline: none;
+  font-size: 14.5px; color: var(--seed-semantic-color-ink-text);
+}
+.topbar-search-clear {
+  flex-shrink: 0; display: inline-flex; border: none; background: none; cursor: pointer;
+  color: var(--seed-semantic-color-ink-text-low); font-size: 18px; padding: 2px;
+}
+.topbar-search-clear:hover { color: var(--seed-semantic-color-ink-text); }
+/* 헤더 우측 계정 — sidebar 용 스타일을 헤더용(컴팩트·아래로 열림)으로 보정 */
+.topbar-account { flex-shrink: 0; margin-left: 6px; }
+.topbar-account .app-account,
+.topbar-account .app-sidebar-login { width: auto; }
+.topbar-account .app-account { padding: 4px 8px 4px 5px; gap: 6px; border-radius: 999px; }
+.topbar-account .app-account-avatar { width: 26px; height: 26px; font-size: 12px; }
+.topbar-account .app-sidebar-login { padding: 7px 14px; border-radius: 999px; font-size: 13px; }
+.topbar-account .app-account-email { max-width: 120px; font-size: 13px; }
+.topbar-account .app-account-caret svg { width: 13px; height: 13px; }
+.topbar-account .app-account-menu {
+  bottom: auto; top: calc(100% + 6px);
+  left: auto; right: 0; min-width: 150px;
 }
 .brand {
   display: flex; align-items: center;
@@ -1068,11 +1114,8 @@ input, select { font-family: inherit; }
   letter-spacing: -0.02em;
   position: relative;
   white-space: nowrap;
-  /* 흰 외곽선 — 박스+꼬리(::after) 합쳐진 도형 둘레를 drop-shadow 로 균일하게. 단차 없고 확대에도 따라감 */
-  filter:
-    drop-shadow(1px 0 0 #fff) drop-shadow(-1px 0 0 #fff)
-    drop-shadow(0 1px 0 #fff) drop-shadow(0 -1px 0 #fff)
-    drop-shadow(0 3px 4px rgba(0, 0, 0, 0.22));
+  /* 흰 외곽선 제거 — 부드러운 그림자만 (사용자 요청) */
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.26));
   transform-origin: bottom center;   /* 핀 끝(지점) 기준으로 솟아오르게 */
   transition: transform .14s cubic-bezier(.34,1.56,.64,1);
 }
@@ -1111,7 +1154,7 @@ input, select { font-family: inherit; }
   z-index: 3;
 }
 .map-pin-wrap.hovered .map-pin {
-  transform: scale(1.12);
+  transform: scale(1.26);
 }
 /* 클릭(선택) — 확 커지는 팝 (흰 외곽선·그림자는 filter 가 그대로 확대 따라감) */
 .map-pin-wrap.selected {
@@ -4415,6 +4458,61 @@ div:has(> img[src*="streetview_btn"]) {
   color: var(--seed-semantic-color-primary, #1e84ff);
   font-weight: 800;
 }
+.app-sidebar-ico {
+  display: inline-flex; flex-shrink: 0;
+  font-size: 21px; line-height: 0;
+}
+.app-sidebar-label { min-width: 0; }
+/* 접기 토글 */
+.app-sidebar-toggle {
+  display: flex; align-items: center; justify-content: center;
+  margin: 10px 10px 2px; padding: 8px;
+  width: 40px; height: 40px; border-radius: 10px;
+  border: none; background: none; cursor: pointer;
+  color: var(--seed-semantic-color-ink-text-low); font-size: 22px;
+  transition: background .12s, transform .18s;
+}
+.app-sidebar-toggle:hover { background: var(--seed-scale-color-gray-50); color: var(--seed-semantic-color-ink-text); }
+
+/* 접힌 상태 — 사이드바 64px, 아이콘만 (홈/주거/저장/AI 라벨 숨김) */
+.app.sidebar-collapsed { --side-w: 64px; }
+.app.sidebar-collapsed .app-sidebar-label { display: none; }
+.app.sidebar-collapsed .app-sidebar-item {
+  justify-content: center;
+  padding: 11px 0;
+}
+.app.sidebar-collapsed .app-sidebar-nav { padding: 12px 8px; }
+.app.sidebar-collapsed .app-sidebar-toggle { transform: rotate(180deg); }
+/* 접히면 계정(이메일) 텍스트 숨기고 아바타만 */
+.app.sidebar-collapsed .app-account-email,
+.app.sidebar-collapsed .app-account-caret,
+.app.sidebar-collapsed .app-sidebar-login { font-size: 0; }
+
+/* 매물 검색바 (리스트 패널 상단) */
+.listing-search {
+  display: flex; align-items: center; gap: 8px;
+  margin: 10px 14px 6px;
+  padding: 9px 12px;
+  background: var(--seed-scale-color-gray-50, #f4f5f7);
+  border: 1px solid transparent;
+  border-radius: 11px;
+}
+.listing-search:focus-within {
+  background: #fff;
+  border-color: var(--seed-semantic-color-primary, #1e84ff);
+}
+.listing-search-ico { flex-shrink: 0; font-size: 19px; color: var(--seed-semantic-color-ink-text-low); }
+.listing-search-input {
+  flex: 1; min-width: 0; border: none; background: none; outline: none;
+  font-size: 14px; color: var(--seed-semantic-color-ink-text);
+}
+.listing-search-clear {
+  flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center;
+  border: none; background: none; cursor: pointer; padding: 2px;
+  color: var(--seed-semantic-color-ink-text-low); font-size: 17px;
+}
+.listing-search-clear:hover { color: var(--seed-semantic-color-ink-text); }
+
 /* 모바일: 사이드바 숨김 (지도+바텀시트 유지). 데스크톱 그리드는 mobile 에서 flex 로 override 됨 */
 @media (max-width: 767px) {
   .app-sidebar { display: none; }

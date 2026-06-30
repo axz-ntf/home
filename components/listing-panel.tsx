@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { MdOutlineSearch, MdClose } from "react-icons/md";
 import type { Listing, SortKey } from "@/lib/types";
 import { AgencyBadge } from "./agency-badge";
 import { eligibilitySummaryByType, HOUSING_TYPES } from "@/lib/mock-data";
@@ -212,6 +213,8 @@ export function ListingPanel({
   onSelect,
   snap = "hidden",
   setSnap,
+  query = "",
+  onQueryChange,
 }: {
   items: Listing[];
   sort: SortKey;
@@ -223,6 +226,8 @@ export function ListingPanel({
   onSelect: (id: string) => void;
   snap?: SheetSnap;
   setSnap?: (s: SheetSnap) => void;
+  query?: string;
+  onQueryChange?: (q: string) => void;
 }) {
   const [loadedCount, setLoadedCount] = useState(20);
   const itemsRef = useRef<HTMLDivElement>(null);
@@ -262,6 +267,23 @@ export function ListingPanel({
         aria-label="매물 목록 닫기"
         aria-expanded={snap === "expanded"}
       />
+      {onQueryChange && (
+        <div className="listing-search">
+          <MdOutlineSearch className="listing-search-ico" />
+          <input
+            type="text"
+            className="listing-search-input"
+            placeholder="단지명·지역으로 검색"
+            value={query}
+            onChange={(e) => onQueryChange(e.target.value)}
+          />
+          {query && (
+            <button type="button" className="listing-search-clear" onClick={() => onQueryChange("")} aria-label="검색어 지우기">
+              <MdClose />
+            </button>
+          )}
+        </div>
+      )}
       <div className="listing-head">
         <div className="listing-count">
           총 <em>{items.length.toLocaleString()}</em>개의 공공임대 매물

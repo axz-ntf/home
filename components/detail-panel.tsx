@@ -653,7 +653,7 @@ export function DetailPanel({
               onClick={() => onAskAI(item.id)}
               style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
             >
-              AI 자격상담
+              자격 확인하기
             </button>
           ) : (
             <a
@@ -661,7 +661,7 @@ export function DetailPanel({
               href={`/ai?focus=${encodeURIComponent(item.id)}`}
               style={{ textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center" }}
             >
-              AI 자격상담
+              자격 확인하기
             </a>
           )}
           {applyButton.active ? (

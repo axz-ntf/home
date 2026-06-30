@@ -4,21 +4,29 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import type { User } from "@supabase/supabase-js";
 import { createClient } from "@/lib/supabase/client";
+import { loadNickname } from "@/lib/profile";
 
-// 사이드바 하단 계정 영역 — 로그아웃 상태면 "로그인"(전용 페이지로 이동), 로그인 상태면 프로필 클릭 시 드롭다운(로그아웃).
+// 계정 영역(헤더 우측) — 로그아웃 상태면 "로그인", 로그인 상태면 닉네임(없으면 이메일) + 드롭다운.
 export function AuthButton() {
   const [user, setUser] = useState<User | null>(null);
+  const [nickname, setNickname] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const supabase = createClient();
     supabase.auth.getUser().then(({ data }) => setUser(data.user ?? null));
+    loadNickname().then(setNickname);
     const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
       setUser(session?.user ?? null);
+      if (session?.user) loadNickname().then(setNickname);
+      else setNickname(null);
     });
     return () => sub.subscription.unsubscribe();
   }, []);
+
+  // 표시 이름 — 닉네임 우선, 없으면 이메일.
+  const displayName = nickname || user?.email || "";
 
   // 드롭다운 열렸을 때 바깥 클릭 / ESC 로 닫기.
   useEffect(() => {
@@ -63,8 +71,8 @@ export function AuthButton() {
           aria-haspopup="menu"
           aria-expanded={open}
         >
-          <span className="app-account-avatar" aria-hidden>{(user.email ?? "U")[0].toUpperCase()}</span>
-          <span className="app-account-email">{user.email}</span>
+          <span className="app-account-avatar" aria-hidden>{(displayName || "U")[0].toUpperCase()}</span>
+          <span className="app-account-email">{displayName}</span>
           <span className="app-account-caret" aria-hidden>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
               <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

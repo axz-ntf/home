@@ -393,7 +393,6 @@ export function NaverMapView({
     setHasMoved(false);
   }, [ready, activeDistrict, districts]);
 
-
   // Focus map on selected listing — 매물 클릭 시 항상 그 위치로 이동+확대.
   // 단, "선택이 바뀔 때"만 카메라를 움직인다 — pins 데이터 갱신 등으로 effect 가 재실행돼도
   // 같은 선택이면 morph 를 다시 걸지 않아 버벅임 방지 (lastFocusedRef 가드).

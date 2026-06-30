@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { MdOutlineSearch, MdClose } from "react-icons/md";
+import { NewsHomeIcon, GuideBookIcon, SaveBookmarkIcon, SparklesIcon, HandleIcon } from "./icons";
 import type { Density, District, Filters, HousingTypeId, Listing, SortKey } from "@/lib/types";
 import { effectiveStatus } from "@/lib/dday";
 import { FilterBar } from "./filter-bar";
@@ -64,6 +66,8 @@ export function AppShell({
 }) {
   const router = useRouter();
   const [activeSection, setActiveSection] = useState<"home" | "tips" | "saved" | "ai">("home");
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [query, setQuery] = useState("");
   const [filters, setFilters] = useState<Filters>(INITIAL_FILTERS);
   const [sort, setSort] = useState<SortKey>("recent");
   const [activeDistrict, setActiveDistrict] = useState<string | null>(null);
@@ -107,6 +111,14 @@ export function AppShell({
     } else if (activeDistrict) {
       list = list.filter((x) => x.districtId === activeDistrict);
     }
+    // 텍스트 검색 — 단지명·제목·주소·자치구 어디든 매치(공백 무시, 대소문자 무관).
+    const q = query.trim().toLowerCase();
+    if (q) {
+      list = list.filter((x) =>
+        [x.complexName, x.title, x.address, x.district]
+          .some((f) => (f ?? "").toLowerCase().includes(q)),
+      );
+    }
 
     if (sort === "deadline") {
       list.sort((a, b) => (a.deadline || "9999").localeCompare(b.deadline || "9999"));
@@ -126,7 +138,7 @@ export function AppShell({
       Number(effectiveStatus(b.status, b.deadline, b.beginDate) === "closed"),
     );
     return list;
-  }, [filters, sort, activeDistrict, searchBounds, listings]);
+  }, [filters, sort, activeDistrict, searchBounds, listings, query]);
 
   const districtCounts = useMemo<Record<string, number>>(() => {
     const map: Record<string, number> = {};
@@ -205,7 +217,7 @@ export function AppShell({
   }, [router]);
 
   return (
-    <div className="app">
+    <div className={`app ${sidebarCollapsed ? "sidebar-collapsed" : ""}`}>
       {/* 모바일 전용 상단 (지역선택 + 필터칩) — desktop 에서는 CSS 로 숨김 */}
       <MobileChrome.Top
         regionLabel={
@@ -225,6 +237,14 @@ export function AppShell({
         onReset={resetFilters}
       />
       <header className="topbar">
+        <button
+          type="button"
+          className="topbar-menu"
+          onClick={() => setSidebarCollapsed((v) => !v)}
+          aria-label={sidebarCollapsed ? "사이드바 펼치기" : "사이드바 접기"}
+        >
+          <HandleIcon />
+        </button>
         <div className="brand">
           <button
             type="button"
@@ -238,44 +258,48 @@ export function AppShell({
             <span className="brand-name">부동산</span>
           </button>
         </div>
+        <div className="topbar-search">
+          <MdOutlineSearch className="topbar-search-ico" />
+          <input
+            type="text"
+            className="topbar-search-input"
+            placeholder="단지, 지역, 지하철, 초등학교 검색"
+            value={query}
+            onChange={(e) => { setQuery(e.target.value); setActiveSection("home"); }}
+          />
+          {query && (
+            <button type="button" className="topbar-search-clear" onClick={() => setQuery("")} aria-label="검색어 지우기">
+              <MdClose />
+            </button>
+          )}
+        </div>
         <div className="topbar-spacer" />
+        <div className="topbar-account">
+          <AuthButton />
+        </div>
       </header>
 
       <div className={`main ${detailOpen && selectedItem ? "detail-open" : ""} ${aiFocusItem ? "ai-open" : ""}`}>
         <aside className="app-sidebar">
           <nav className="app-sidebar-nav">
-            <button
-              type="button"
-              className={`app-sidebar-item ${activeSection === "home" ? "active" : ""}`}
-              onClick={() => { setActiveSection("home"); setSheetSnap("expanded"); }}
-            >
-              홈
-            </button>
-            <button
-              type="button"
-              className={`app-sidebar-item ${activeSection === "tips" ? "active" : ""}`}
-              onClick={() => { setActiveSection("tips"); setSheetSnap("expanded"); }}
-            >
-              주거
-            </button>
-            <button
-              type="button"
-              className={`app-sidebar-item ${activeSection === "saved" ? "active" : ""}`}
-              onClick={() => { setActiveSection("saved"); setSheetSnap("expanded"); }}
-            >
-              저장
-            </button>
-            <button
-              type="button"
-              className={`app-sidebar-item ${activeSection === "ai" ? "active" : ""}`}
-              onClick={() => { setActiveSection("ai"); setSheetSnap("expanded"); }}
-            >
-              AI
-            </button>
+            {[
+              { id: "home", label: "홈", Icon: NewsHomeIcon },
+              { id: "tips", label: "가이드", Icon: GuideBookIcon },
+              { id: "saved", label: "저장", Icon: SaveBookmarkIcon },
+              { id: "ai", label: "AI", Icon: SparklesIcon },
+            ].map(({ id, label, Icon }) => (
+              <button
+                key={id}
+                type="button"
+                className={`app-sidebar-item ${activeSection === id ? "active" : ""}`}
+                onClick={() => { setActiveSection(id as typeof activeSection); setSheetSnap("expanded"); }}
+                title={label}
+              >
+                <span className="app-sidebar-ico"><Icon /></span>
+                <span className="app-sidebar-label">{label}</span>
+              </button>
+            ))}
           </nav>
-          <div className="app-sidebar-foot">
-            <AuthButton />
-          </div>
         </aside>
         {activeSection === "home" && (
           <ListingPanel
