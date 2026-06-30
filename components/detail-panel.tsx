@@ -158,11 +158,11 @@ function RentSummarySection({ item }: { item: Listing }) {
           계층·평형에 따라 달라요. 정확한 조건은 상세에서 확인하세요.
         </p>
       )}
-      {/* 면적 등은 있지만 가격이 없는 경우 — 호실별 책정이면 그 이유와 함께 확인 경로 안내 */}
-      {cells.length > 0 && !s.deposit && !s.rent && !s.supportLimit && item.type !== "sale" && item.sourceUrl && (
-        <p style={{ fontSize: 12, margin: "8px 0 0" }}>
-          {perUnitPriced ? "보증금·월세가 호실마다 달라요. " : "보증금·월세는 "}
-          <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="detail-confirm-link">공고문에서 확인 →</a>
+      {/* 면적 등은 있지만 가격이 없는 경우 — 안내만(링크 제거, 공고문은 하단 PDF 버튼으로). */}
+      {cells.length > 0 && !s.deposit && !s.rent && !s.supportLimit && item.type !== "sale" && (
+        <p style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12, color: "var(--seed-semantic-color-ink-text-low)", margin: "10px 0 0" }}>
+          <MdErrorOutline style={{ flexShrink: 0, fontSize: 14 }} />
+          <span>{perUnitPriced ? "보증금·월세가 호실마다 달라요." : "보증금·월세는 공고문에서 확인하세요."}</span>
         </p>
       )}
     </section>
