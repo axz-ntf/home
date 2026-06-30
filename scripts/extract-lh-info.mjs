@@ -1,15 +1,6 @@
 #!/usr/bin/env node
 // LH 청약플러스 단지 상세(selectWrtancInfo.do)에서 좌표 + 단지 사진 추출
 // 사용: node scripts/extract-lh-info.mjs <panId> [ccrCnntSysDsCd] [uppAisTpCd] [aisTpCd]
-// 매칭 데이터(lh-listing-notices.json)에서 매물별 panId 자동 사용도 가능: --listing lh-8
-
-import fs from "node:fs/promises";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const ROOT = path.resolve(__dirname, "..");
-const NOTICES_PATH = path.join(ROOT, "lib/lh-listing-notices.json");
 
 const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36";
 const BASE = "https://apply.lh.or.kr";
@@ -83,23 +74,9 @@ async function fetchOne(panId, c2 = "02", c3 = "06", c4 = "08") {
 }
 
 async function main() {
-  const args = process.argv.slice(2);
-  let panId, c2, c3, c4;
-  if (args[0] === "--listing") {
-    const id = args[1];
-    const notices = JSON.parse(await fs.readFile(NOTICES_PATH, "utf8"));
-    const arr = notices[id];
-    if (!arr?.length) throw new Error(`No matched notice for ${id}`);
-    const u = new URL(arr[0].url);
-    panId = u.searchParams.get("panId");
-    c2 = u.searchParams.get("ccrCnntSysDsCd") || "02";
-    c3 = u.searchParams.get("uppAisTpCd") || "06";
-    c4 = u.searchParams.get("aisTpCd") || "08";
-  } else {
-    [panId, c2 = "02", c3 = "06", c4 = "08"] = args;
-  }
+  const [panId, c2 = "02", c3 = "06", c4 = "08"] = process.argv.slice(2);
   if (!panId) {
-    console.error("usage: node scripts/extract-lh-info.mjs <panId> | --listing <listingId>");
+    console.error("usage: node scripts/extract-lh-info.mjs <panId>");
     process.exit(1);
   }
   const result = await fetchOne(panId, c2, c3, c4);
