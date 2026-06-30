@@ -14,6 +14,8 @@ import {
   MdOutlineStorefront,
   MdOutlineLocalHospital,
   MdErrorOutline,
+  MdOutlinePictureAsPdf,
+  MdArrowOutward,
 } from "react-icons/md";
 import { EligibilityDetail } from "./eligibility-detail";
 import { formatManwon } from "@/lib/format";
@@ -624,14 +626,16 @@ export function DetailPanel({
           </section>
         )}
 
-        {/* 공고문 원문(PDF) 은 보조 링크로 — 1차 행동은 AI 자격확인 */}
+        {/* 공고문 원문(PDF) 은 보조 버튼으로 — 1차 행동은 AI 자격확인 */}
         <a
-          className="detail-notice-link"
+          className="detail-notice-btn"
           href={item.noticePdfUrl ?? item.sourceUrl ?? infoUrl}
           target="_blank"
           rel="noreferrer"
         >
-          📄 {item.noticePdfUrl ? "공고문 PDF 원문" : "공고문 원문"} 보기 →
+          <MdOutlinePictureAsPdf className="detail-notice-btn-ico" />
+          <span>{item.noticePdfUrl ? "공고문 PDF 원문 보기" : "공고문 원문 보기"}</span>
+          <MdArrowOutward className="detail-notice-btn-arrow" />
         </a>
 
         <div className="detail-actions">
