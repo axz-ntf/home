@@ -2380,9 +2380,9 @@ input, select { font-family: inherit; }
   color: var(--seed-semantic-color-ink-text);
 }
 .detail-actions .icon-btn.active {
-  color: var(--seed-semantic-color-primary);
-  border-color: var(--seed-scale-color-carrot-200);
-  background: var(--seed-semantic-color-primary-low);
+  color: var(--seed-semantic-color-accent-red, #f5483b);
+  border-color: var(--seed-scale-color-red-200, #ffd2cc);
+  background: var(--seed-scale-color-red-50, #fff1ef);
 }
 .detail-actions .secondary {
   height: 48px;
@@ -3512,7 +3512,7 @@ div:has(> img[src*="streetview_btn"]) {
   color: var(--seed-semantic-color-ink-text);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
-.chat-rec-heart:hover { color: var(--seed-semantic-color-primary); }
+.chat-rec-heart:hover { color: var(--seed-semantic-color-accent-red, #f5483b); }
 
 .chat-rec-dday {
   position: absolute;

@@ -394,17 +394,21 @@ export function NaverMapView({
   }, [ready, activeDistrict, districts]);
 
 
-  // Focus map on selected listing (e.g. when user clicks a card).
-  // 이미 화면 안에 보이는 핀이면 카메라를 움직이지 않는다 — morph 애니메이션이 클릭마다 끼어들면서 끊겨 보이는 버벅임 방지.
+  // Focus map on selected listing — 매물 클릭 시 항상 그 위치로 이동+확대.
+  // 단, "선택이 바뀔 때"만 카메라를 움직인다 — pins 데이터 갱신 등으로 effect 가 재실행돼도
+  // 같은 선택이면 morph 를 다시 걸지 않아 버벅임 방지 (lastFocusedRef 가드).
+  const lastFocusedRef = useRef<string | null>(null);
   useEffect(() => {
-    if (!ready || !mapRef.current || !window.naver || !selectedId) return;
+    if (!selectedId) { lastFocusedRef.current = null; return; }
+    if (!ready || !mapRef.current || !window.naver) return;
+    if (lastFocusedRef.current === selectedId) return;
     const pin = pins.find((p) => p.id === selectedId);
     if (!pin) return;
+    lastFocusedRef.current = selectedId;
     const { naver } = window;
     const map = mapRef.current;
     const target = new naver.maps.LatLng(pin.lat, pin.lng);
-    if (map.getBounds().hasLatLng(target)) return;
-    const targetZoom = Math.max(map.getZoom(), 15);
+    const targetZoom = Math.max(map.getZoom(), 16);
     map.morph(target, targetZoom);
   }, [ready, selectedId, pins]);
 
