@@ -8,17 +8,98 @@ import { calcDday, isRegularRecruitment, effectiveStatus } from "@/lib/dday";
 import { applyUrlFor, infoUrlFor } from "@/lib/notice-match";
 import { NaverPanorama } from "./naver-panorama";
 import { CloseIcon, HeartIcon } from "./icons";
+import {
+  MdOutlineSubway,
+  MdOutlineSchool,
+  MdOutlineStorefront,
+  MdOutlineLocalHospital,
+} from "react-icons/md";
 import { EligibilityDetail } from "./eligibility-detail";
 import { formatManwon } from "@/lib/format";
-import { nearestStation } from "@/lib/subway";
+import { nearbyStations } from "@/lib/subway";
+import { nearbySchools, type NearSchool } from "@/lib/schools";
+import { AgencyBadge } from "./agency-badge";
 import { useSavedListings } from "@/lib/use-saved";
-import { TypeIntro, accentVars } from "./detail-type";
+import { accentVars } from "./detail-type";
 import { summarizePrice, type Range } from "@/lib/price-summary";
 import { FloorplanSection } from "./floorplan-section";
+
+type InsightGroup = { value: string; level: string; tone: "rich" | "good" | "mid" | "low" };
+
+// AI 입지 분석 2×2 타일 설정 (축별 아이콘·색).
+const INSIGHT_TILES = [
+  { key: "transit", label: "교통", Icon: MdOutlineSubway, color: "#1e84ff", bg: "#ebf3ff" },
+  { key: "life", label: "생활", Icon: MdOutlineStorefront, color: "#ff9429", bg: "#fff1e3" },
+  { key: "edu", label: "교육", Icon: MdOutlineSchool, color: "#18ba45", bg: "#e6f7ec" },
+  { key: "medical", label: "의료", Icon: MdOutlineLocalHospital, color: "#ff4e33", bg: "#ffeae6" },
+] as const;
+
+// 주택형 드롭다운 — SH 매입임대는 주택형(32A/36A…) 단위로 신청(호실은 무작위 배정).
+// 선택한 주택형의 면적·보증금·월세를 보여준다. 주택형별 가격이 없으면 단지 공통값으로 폴백.
+function UnitTypePicker({ item, types }: { item: Listing; types: NonNullable<Listing["unitTypes"]> }) {
+  const [idx, setIdx] = useState(0);
+  const fmtM2 = (n: number) => (Number.isInteger(n) ? `${n}` : n.toFixed(1));
+  const t = types[Math.min(idx, types.length - 1)];
+  // 주택형·전용면적 중심. 보증금은 단지 공통값이 있으면만, 월세는 주택형별로 신뢰 어려워 표시 안 함.
+  const deposit = t.depositManwon ?? (item.deposit > 0 ? item.deposit : undefined);
+  const totalUnits = types.reduce((sum, x) => sum + (x.units ?? 0), 0);
+
+  const cells: { label: string; value: string; full?: boolean }[] = [];
+  if (t.areaM2) cells.push({ label: "전용면적", value: `${fmtM2(t.areaM2)}㎡` });
+  if (deposit != null) cells.push({ label: "보증금", value: formatManwon(deposit) });
+  if (cells.length === 1) cells[0].full = true; // 단독이면 꽉 채움
+  if (item.rentTerms?.residence) cells.push({ label: "거주기간", value: item.rentTerms.residence, full: true });
+
+  return (
+    <>
+      <div className="detail-unit-field">
+        <label htmlFor="sh-unit-type">주택형{totalUnits > 0 ? ` · 총 ${totalUnits}호 모집` : ""}</label>
+        <select
+          id="sh-unit-type"
+          className="detail-unit-select"
+          value={idx}
+          onChange={(e) => setIdx(Number(e.target.value))}
+        >
+          {types.map((x, i) => (
+            <option key={i} value={i}>
+              {x.name}
+              {x.areaM2 ? ` · ${fmtM2(x.areaM2)}㎡` : ""}
+              {x.units ? ` · ${x.units}호` : ""}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div className="detail-price" style={{ marginBottom: 0 }}>
+        {cells.map((c) => (
+          <div key={c.label} className={`detail-price-cell${c.full ? " detail-price-cell--full" : ""}`}>
+            <div className="detail-price-label">{c.label}</div>
+            <div className="detail-price-value">{c.value}</div>
+          </div>
+        ))}
+      </div>
+      {item.sourceUrl && (
+        <p style={{ fontSize: 12, margin: "8px 0 0" }}>
+          보증금·월세는 주택형·호실별로 달라요.{" "}
+          <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="detail-confirm-link">공고문에서 확인 →</a>
+        </p>
+      )}
+    </>
+  );
+}
 
 // 임대 조건 요약 — 모든 매물 공통 골격 (스펙: 범위로 표시, 정보 없으면 행 자체 미표시).
 // 가격 모델이 무엇이든 summarizePrice 가 범위로 정규화.
 function RentSummarySection({ item }: { item: Listing }) {
+  // SH 매입임대 등 주택형 옵션이 2개 이상이면 드롭다운으로 (단지 공통 범위 표 대신).
+  const unitTypes = item.unitTypes;
+  if (item.type !== "sale" && unitTypes && unitTypes.length >= 2) {
+    return (
+      <section className="detail-section">
+        <h3>임대 조건</h3>
+        <UnitTypePicker item={item} types={unitTypes} />
+      </section>
+    );
+  }
   const s = summarizePrice(item);
   const fmtRange = (r: Range) =>
     r.min === r.max ? formatManwon(r.min) : `${formatManwon(r.min)} ~ ${formatManwon(r.max)}`;
@@ -38,6 +119,11 @@ function RentSummarySection({ item }: { item: Listing }) {
     if (s.rent) cells.push({ label: "월세", value: fmtRange(s.rent), full: !s.deposit });
   }
   if (s.areaM2) cells.push({ label: "전용면적", value: fmtAreaRange(s.areaM2), full: true });
+  if (item.rentTerms?.residence) cells.push({ label: "거주기간", value: item.rentTerms.residence, full: true });
+
+  // 보증금이 호실별 감정가로 책정되는 유형(매입임대·기숙사형 등) — 고정 가격표가 없어
+  // 공고문 확인이 필요한 "이유"로 안내. (감정가 비율 같은 메커니즘은 노출하지 않음.)
+  const perUnitPriced = Boolean(item.rentTerms?.depositBasis);
 
   const isRanged = [s.deposit, s.rent, s.supportLimit].some((r) => r && r.min < r.max);
 
@@ -71,10 +157,10 @@ function RentSummarySection({ item }: { item: Listing }) {
           계층·평형에 따라 달라요. 정확한 조건은 상세에서 확인하세요.
         </p>
       )}
-      {/* 면적 등은 있지만 가격이 없는 경우 — 어디서 확인할지 안내 */}
+      {/* 면적 등은 있지만 가격이 없는 경우 — 호실별 책정이면 그 이유와 함께 확인 경로 안내 */}
       {cells.length > 0 && !s.deposit && !s.rent && !s.supportLimit && item.type !== "sale" && item.sourceUrl && (
         <p style={{ fontSize: 12, margin: "8px 0 0" }}>
-          보증금·월세는{" "}
+          {perUnitPriced ? "보증금·월세가 호실마다 달라요. " : "보증금·월세는 "}
           <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="detail-confirm-link">공고문에서 확인 →</a>
         </p>
       )}
@@ -174,17 +260,8 @@ function ListingPhotos({ item }: { item: Listing }) {
     };
   }, [lightboxOpen]);
 
-  // 골격 통일 — 조감도가 없어도 섹션 자리는 유지하고 정제된 안내로 채운다.
-  if (!cover) {
-    return (
-      <section className="detail-section detail-photos">
-        <h3>단지 조감도</h3>
-        <div className="detail-empty-notice" style={{ marginBottom: 0 }}>
-          <div className="detail-empty-notice-sub">이 공고는 조감도 이미지가 제공되지 않았어요.</div>
-        </div>
-      </section>
-    );
-  }
+  // 조감도가 없으면 섹션 자체를 생략 (빈 안내 미표시).
+  if (!cover) return null;
   return (
     <section className="detail-section detail-photos">
       <h3>단지 조감도</h3>
@@ -250,6 +327,55 @@ export function DetailPanel({
 }) {
   // N1: 하트 = 실제 저장(localStorage). 저장 목록은 /saved 에서 모아보기.
   const { isSaved, toggle } = useSavedListings();
+
+  // 주변 초등학교 — schools.json 동적 import(코드 스플릿), 매물 변경 시 비동기 로드.
+  const [nearSchools, setNearSchools] = useState<NearSchool[]>([]);
+  useEffect(() => {
+    let alive = true;
+    nearbySchools(item?.lat, item?.lng).then((r) => { if (alive) setNearSchools(r); });
+    return () => { alive = false; };
+  }, [item?.lat, item?.lng]);
+
+  // AI 입지 분석 — 패널 열릴 때 /api/insight 호출(좌표 기반, 서버 캐시).
+  const [insight, setInsight] = useState<{
+    valueText: string | null;
+    marketText: string | null;
+    marketPerM2: number | null;
+    summary: string;
+    tags: string[];
+    groups: {
+      transit: InsightGroup;
+      life: InsightGroup | null;
+      edu: InsightGroup | null;
+      medical: InsightGroup | null;
+    };
+  } | null>(null);
+  const [insightLoading, setInsightLoading] = useState(false);
+  useEffect(() => {
+    if (!item?.lat || !item?.lng) { setInsight(null); return; }
+    let alive = true;
+    setInsight(null);
+    setInsightLoading(false);
+    const key = `${item.lat.toFixed(4)},${item.lng.toFixed(4)},${item.type ?? ""}`;
+    // 1) 사전 계산 캐시 먼저 — 있으면 즉시 표시(네트워크/LLM 호출 없음)
+    import("@/lib/insight-cache.json").then((m) => {
+      if (!alive) return;
+      const hit = (m.default as unknown as Record<string, typeof insight>)[key];
+      if (hit) { setInsight(hit); return; }
+      // 2) 캐시 미스 → 실시간 계산
+      setInsightLoading(true);
+      fetch("/api/insight", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ lat: item.lat, lng: item.lng, name: item.title, address: item.address, type: item.type }),
+      })
+        .then((r) => (r.ok ? r.json() : null))
+        .then((d) => { if (alive) { setInsight(d && !d.error ? d : null); setInsightLoading(false); } })
+        .catch(() => { if (alive) setInsightLoading(false); });
+    });
+    return () => { alive = false; };
+  }, [item?.lat, item?.lng, item?.title, item?.address, item?.type]);
+
   if (!item) return <div className={`detail-panel ${open ? "open" : ""}`} />;
   const liked = isSaved(item.id);
 
@@ -259,13 +385,21 @@ export function DetailPanel({
   const housingType = HOUSING_TYPES.find((t) => t.id === item.type);
   const applyUrl = applyUrlFor(item.type);
   const infoUrl = infoUrlFor(item.type);
-  const nearStation = nearestStation(item.lat, item.lng);
+  const nearby = nearbyStations(item.lat, item.lng);
+  // 매물 전세환산(보증금 + 월세×12÷전환율 5.5%) ÷ 전용㎡ ÷ 인근 아파트 전세 ㎡당 평균 → 시세 대비 %.
+  // 단위가 다른 상품(공공임대↔아파트)이라 추정치. 비정상치(>130%)는 표본/면적 불일치로 보고 숨김.
+  const sqm = parseFloat(item.area);
+  const rawRatio =
+    insight?.marketPerM2 && item.type !== "sale" && sqm > 0 && (item.deposit > 0 || item.rent > 0)
+      ? Math.round(((item.deposit + (item.rent > 0 ? (item.rent * 12) / 0.055 : 0)) / sqm / insight.marketPerM2) * 100)
+      : null;
+  const priceRatio = rawRatio && rawRatio > 0 && rawRatio <= 130 ? rawRatio : null;
   // 청약 신청 버튼 — raw status 대신 effStatus 기반 (sync stale 보정 반영)
   const isRecurring = isRegularRecruitment(item.deadline, item.status);
   const applyButton: { label: string; active: boolean } = isRecurring
     ? { label: "공고 확인 →", active: true }
     : effStatus === "open" || effStatus === "closing"
-      ? { label: "청약 신청하기 →", active: true }
+      ? { label: "신청하러 가기 →", active: true }
       : effStatus === "upcoming"
         ? { label: "접수 예정", active: false }
         : { label: "접수 마감", active: false };
@@ -311,9 +445,7 @@ export function DetailPanel({
               {item.agency === "SH" && item.suplyTyNm ? item.suplyTyNm : housingType.name}
             </span>
           )}
-          <span className="badge agency" style={{ fontSize: 12, padding: "4px 9px" }}>
-            {item.agency} 공급
-          </span>
+          <AgencyBadge agency={item.agency} className="detail-agency-badge" />
           <span
             className="badge"
             style={{
@@ -323,11 +455,10 @@ export function DetailPanel({
               color: status.color,
             }}
           >
-            · {status.text}
+            {status.text}
           </span>
         </div>
 
-        <TypeIntro item={item} />
 
         {isRegularRecruitment(item.deadline, item.status) ? (
           <div className="detail-empty-notice">
@@ -402,14 +533,97 @@ export function DetailPanel({
                 <dd>{item.heatMethod}</dd>
               </>
             ) : null}
-            {nearStation ? (
-              <>
-                <dt>교통</dt>
-                <dd>{nearStation.name}역 도보 {nearStation.walkMin}분</dd>
-              </>
-            ) : null}
           </dl>
         </section>
+
+        {item.lat && item.lng && (insightLoading || insight) && (
+          <section className="detail-section insight-section">
+            <h3>AI 입지 분석 <span className="detail-section-note">반경 500m 실측</span></h3>
+            {insight ? (
+              <>
+                {(priceRatio || insight.valueText) && (
+                  <div className="insight-hero">
+                    <div className="insight-hero-top">
+                      <span className="insight-hero-badge">가성비</span>
+                      <span className="insight-hero-val">
+                        {priceRatio
+                          ? `주변 아파트 전세 시세의 약 ${priceRatio}% 수준`
+                          : `공공임대 · 주변 ${insight.valueText} 수준`}
+                      </span>
+                    </div>
+                    {insight.marketText && <div className="insight-hero-mkt">📊 {insight.marketText}</div>}
+                  </div>
+                )}
+                <p className="insight-summary">{insight.summary}</p>
+                <div className="insight-grid">
+                  {INSIGHT_TILES.map(({ key, label, Icon, color, bg }) => {
+                    const g = insight.groups[key];
+                    if (!g) return null;
+                    return (
+                      <div key={key} className="insight-tile">
+                        <div className="insight-tile-top">
+                          <span className="insight-tile-ico" style={{ color, background: bg }}>
+                            <Icon />
+                          </span>
+                          <span className={`insight-lvl ${g.tone}`}>{g.level}</span>
+                        </div>
+                        <div className="insight-tile-k">{label}</div>
+                        <div className="insight-tile-v">{g.value}</div>
+                      </div>
+                    );
+                  })}
+                </div>
+                {insight.tags?.length > 0 && (
+                  <div className="insight-tags">
+                    {insight.tags.map((t, i) => (
+                      <span key={i} className="insight-tag">{t}</span>
+                    ))}
+                  </div>
+                )}
+                <p className="insight-disc">
+                  AI가 카카오맵·국토부 실거래가를 해석했어요 · 학군 배정·시세 전망 미포함
+                  {priceRatio ? " · 시세 비교는 전세환산·인근 아파트 기준 추정치" : ""}
+                </p>
+              </>
+            ) : (
+              <div className="insight-loading">주변 입지 분석 중…</div>
+            )}
+          </section>
+        )}
+
+        {nearby.length > 0 && (
+          <section className="detail-section">
+            <h3>주변 역세권</h3>
+            <ul className="subway-list">
+              {nearby.map((s, i) => (
+                <li key={i} className="subway-item">
+                  <span className="subway-ico" aria-hidden>
+                    <MdOutlineSubway />
+                  </span>
+                  <span className="subway-name">{s.name}역</span>
+                  <span className="subway-walk">도보 {s.walkMin}분 · {s.distM.toLocaleString()}m</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {nearSchools.length > 0 && (
+          <section className="detail-section">
+            <h3>주변 초등학교 <span className="detail-section-note">거리순</span></h3>
+            <ul className="subway-list">
+              {nearSchools.map((s, i) => (
+                <li key={i} className="subway-item">
+                  <span className="subway-ico" aria-hidden>
+                    <MdOutlineSchool />
+                  </span>
+                  <span className="subway-name">{s.name}</span>
+                  <span className="subway-walk">도보 {s.walkMin}분 · {s.distM.toLocaleString()}m</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         {/* 공고문 원문(PDF) 은 보조 링크로 — 1차 행동은 AI 자격확인 */}
         <a
@@ -450,7 +664,7 @@ export function DetailPanel({
           {applyButton.active ? (
             <a
               className="primary"
-              href={applyUrl}
+              href={item.sourceUrl ?? applyUrl}
               target="_blank"
               rel="noreferrer"
               style={{ textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center" }}

@@ -1,6 +1,5 @@
 import type { District, HousingTypeId, Listing, StatusId } from "./types";
 import apiListings from "./listings-api.json";
-import BLOB_COVERS from "./blob-covers.json";
 import allNotices from "./lh-notices-all.json";
 import dundeonSeoul from "./dundeon-seoul.json";
 import mappedRegional from "./mapped-regional.json";
@@ -264,16 +263,10 @@ function adaptApi(r: ApiListing, loose = false): Listing | null {
   };
 }
 
-// 매핑: filename → Vercel Blob URL.
-// 로컬 dev 에서도 Blob URL 우선 사용 (이미 업로드된 매물은 prod와 동일하게 표시).
-// 매핑 없는 매물은 localPath fallback (public/lh-covers/).
+// Vercel Blob 미사용 (스토어 폐기). 로컬 정적(/lh-covers/) 우선.
+// localPath 없는 매물만 urlFallback 사용. (추후 Supabase Storage 로 이전 예정)
 function resolveCoverPhoto(localPath: string | null, urlFallback: string | null): string | undefined {
-  if (localPath) {
-    const filename = localPath.split("/").pop() ?? "";
-    const blobUrl = (BLOB_COVERS as Record<string, string>)[filename];
-    if (blobUrl) return blobUrl;
-    return localPath;
-  }
+  if (localPath) return localPath;
   return urlFallback || undefined;
 }
 
@@ -315,6 +308,13 @@ function groupKey(title: string): string {
   return (title || "").replace(/\[[^\]]*\]/g, "").replace(/\s+/g, " ").trim();
 }
 
+// 표시용 — 머리 라벨([정정공고]/[재공고]/[재게시]/[변경공고] 등) 제거.
+// dedup 우선순위 판단(/정정/.test)이 끝난 뒤 선택된 매물 제목에만 적용.
+function stripNoticeLabel(title: string): string {
+  const out = (title || "").replace(/^\s*(?:\[[^\]]*(?:정정|재공고|재게시|변경)[^\]]*\]\s*)+/, "").trim();
+  return out || title;
+}
+
 function dedupeListings(items: Listing[]): Listing[] {
   const groups = new Map<string, Listing[]>();
   for (const it of items) {
@@ -324,7 +324,7 @@ function dedupeListings(items: Listing[]): Listing[] {
   }
   const out: Listing[] = [];
   for (const arr of groups.values()) {
-    if (arr.length === 1) { out.push(arr[0]); continue; }
+    if (arr.length === 1) { out.push({ ...arr[0], title: stripNoticeLabel(arr[0].title) }); continue; }
     arr.sort((a, b) => {
       const aRev = /정정/.test(a.title) ? 1 : 0;
       const bRev = /정정/.test(b.title) ? 1 : 0;
@@ -337,7 +337,8 @@ function dedupeListings(items: Listing[]): Listing[] {
       if (aDate !== bDate) return aDate < bDate ? 1 : -1;
       return (b.pblancId || "").localeCompare(a.pblancId || "");
     });
-    out.push(arr[0]);
+    // 정정공고 우선 판단(원제목 기준)이 끝났으니, 표시 제목에서 라벨만 제거.
+    out.push({ ...arr[0], title: stripNoticeLabel(arr[0].title) });
   }
   return out;
 }
@@ -429,7 +430,10 @@ const LH_LISTINGS_BASE: Listing[] = [
   ...dedupeListings(ALL.filter((l) => !MAPPED_REGIONAL_PIDS.has(l.pblancId ?? ""))),
   ...buildDundeonSeoulListings(),
   ...buildMappedRegionalListings(),
-].map(fillDistrictId);
+]
+  .map(fillDistrictId)
+  // dedup 을 안 거치는 경로(지오코딩 분리 매물 등)에도 표시 라벨 제거 — 멱등.
+  .map((l) => ({ ...l, title: stripNoticeLabel(l.title) }));
 
 export const LH_LISTINGS: Listing[] = [
   ...LH_LISTINGS_BASE,

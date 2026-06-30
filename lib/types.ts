@@ -83,6 +83,22 @@ export interface Listing {
   announceDate?: string;     // raw 공고일 (YYYY.MM.DD)
   // 유형별 가격 모델 구조화 데이터 — applyOverride 가 priceModel 검수값에서 채움(3-4 디테일 렌더용).
   priceDetail?: PriceDetail;
+  // 공고 공통 임대 조건(핵심만) — SH 공고문 PDF 에서 추출(extract-sh-mapped → sh-mapped.json).
+  // 보일러플레이트(전환율·재계약 할증 등)는 제외하고, 매물마다 다르고 유용한 것만 정제.
+  rentTerms?: {
+    residence?: string;    // 거주기간 (예: "최대 10년", "만 39세까지")
+    depositBasis?: string; // 보증금이 고정값이 아닐 때 산정 방식 (예: "호실별 감정평가액의 30~50%")
+    convertible?: boolean; // 보증금↔월세 상호전환 가능 여부
+  };
+  // 주택형 단위 옵션 — SH 매입임대는 주택형(32A/36A…)으로 신청(호실은 무작위 배정)이라
+  // 상세 패널에서 주택형 드롭다운으로 보여준다. extract-sh-mapped → sh-mapped.json 의 단지별 types.
+  unitTypes?: {
+    name: string;           // 주택형 (예: "32A")
+    areaM2?: number;        // 전용면적 (㎡)
+    units?: number;         // 공급 호수
+    depositManwon?: number; // 보증금 (만원) — 없으면 단지 공통값
+    rentManwon?: number;    // 월세 (만원)
+  }[];
 }
 
 export interface PriceDetail {

@@ -77,6 +77,14 @@ function mapStatus(status: string): Listing["status"] {
   return "open";
 }
 
+// PDF 추출값(extract-sh-mapped.mjs → sh-mapped.json). 접수 시작/마감·당첨자 발표일은
+// 공고 공통이라 최상위에. 기본 SH_ADMIN_LISTINGS 가 SH_PERIOD 하드코딩보다 이 값을 우선한다.
+const SH_MAPPED = shMapped as unknown as Record<
+  string,
+  { begin?: string; deadline?: string; winnerAt?: string; rentTerms?: { residence?: string; depositBasis?: string; convertible?: boolean }; points: ShMappedPoint[] }
+>;
+const SH_MAPPED_SEQS = new Set(Object.keys(SH_MAPPED));
+
 export const SH_ADMIN_LISTINGS: Listing[] = (shNotices as ShNotice[]).map((n, i) => ({
   id: `sh-${n.seq}`,
   pblancId: n.seq,
@@ -95,12 +103,15 @@ export const SH_ADMIN_LISTINGS: Listing[] = (shNotices as ShNotice[]).map((n, i)
   totalUnits: null,
   supplyUnits: null,
   status: mapStatus(n.status),
-  // SH 구조화 데이터엔 접수 시작·마감이 없어 공고문 PDF 에서 추출해 보강 (SH_PERIOD).
-  deadline: SH_PERIOD[String(n.seq)]?.deadline ?? "",
-  beginDate: SH_PERIOD[String(n.seq)]?.begin ?? "",
+  // SH 구조화 데이터엔 접수 시작·마감이 없어 공고문 PDF 에서 추출(SH_MAPPED) → 없으면 수동 SH_PERIOD.
+  deadline: SH_MAPPED[String(n.seq)]?.deadline ?? SH_PERIOD[String(n.seq)]?.deadline ?? "",
+  beginDate: SH_MAPPED[String(n.seq)]?.begin ?? SH_PERIOD[String(n.seq)]?.begin ?? "",
   // LH 와 포맷 통일 (YYYY.MM.DD) — SH 원본은 "2026-05-11" (감사 L3)
   announceDate: (n.postedAt ?? "").replace(/-/g, "."),
-  winnerAt: (n.announceAt ?? "").replace(/-/g, ".") || undefined, // 당첨자 발표일
+  // 당첨자 발표일 — 목록 발표일 컬럼 우선, 비면(-) 공고문 PDF 추출값으로 보강.
+  winnerAt: (n.announceAt ?? "").replace(/-/g, ".") || SH_MAPPED[String(n.seq)]?.winnerAt || undefined,
+  // 공고 공통 임대 조건(텍스트) — PDF 추출값(없으면 undefined).
+  rentTerms: SH_MAPPED[String(n.seq)]?.rentTerms,
   eligible: [],
   features: [],
   transit: "",
@@ -125,14 +136,21 @@ interface ShMappedPoint {
   rentManwon?: number;
   depositRange?: [number, number];
   rentRange?: [number, number];
+  areaMin?: number;
+  areaMax?: number;
+  types?: { name: string; areaM2?: number; units?: number; depositManwon?: number; rentManwon?: number }[];
 }
-const SH_MAPPED = shMapped as unknown as Record<string, { points: ShMappedPoint[] }>;
+function areaStr(p: ShMappedPoint): string | undefined {
+  if (p.areaMin == null) return undefined;
+  return p.areaMax != null && p.areaMax !== p.areaMin ? `${p.areaMin}~${p.areaMax}` : `${p.areaMin}`;
+}
 
 function buildShMappedListings(): Listing[] {
   const out: Listing[] = [];
   for (const [seq, cfg] of Object.entries(SH_MAPPED)) {
     const parent = SH_ADMIN_LISTINGS.find((l) => l.id === `sh-${seq}`);
     if (!parent || parent.status === "closed") continue;
+    const area = (p: ShMappedPoint) => areaStr(p);
     cfg.points.forEach((p, i) => {
       out.push({
         ...parent,
@@ -141,11 +159,17 @@ function buildShMappedListings(): Listing[] {
         lng: p.lng,
         district: p.address?.match(/([가-힣]{2,4}구)/)?.[1] ?? parent.district,
         ...(p.address && { address: p.address }),
-        ...(p.label && { title: p.label }),
+        // 단지명 앞 별표(*) — PDF 각주 표시가 딸려온 것이라 표시 제목에서 제거.
+        ...(p.label && { title: p.label.replace(/^\s*\*+\s*/, "") }),
         ...(p.units != null && { supplyUnits: p.units }),
         ...(p.depositManwon != null && { deposit: p.depositManwon, rent: p.rentManwon ?? 0 }),
         ...(p.depositRange && { depositRange: p.depositRange }),
         ...(p.rentRange && { rentRange: p.rentRange }),
+        ...(area(p) && { area: area(p) as string }),
+        ...(p.types && p.types.length > 0 && { unitTypes: p.types }),
+        // PDF 에서 뽑은 접수 시작/마감 (없으면 parent 값 유지)
+        ...(cfg.begin && { beginDate: cfg.begin }),
+        ...(cfg.deadline && { deadline: cfg.deadline }),
       });
     });
   }
@@ -155,6 +179,7 @@ function buildShMappedListings(): Listing[] {
 // 공개(지도) 노출용 — 좌표가 있는(제목서 지오코딩됨) SH + 다지점 분리 핀. 마감 포함
 // (개선안 1차: 전체 표시 후 필터 구분, 마감 핀은 회색). 분리 안 된 산재형은 제외.
 export const SH_PUBLIC_LISTINGS: Listing[] = [
-  ...SH_ADMIN_LISTINGS.filter((l) => l.lat !== 0 && l.lng !== 0),
+  // sh-mapped 로 단지 전개된 공고는 부모를 빼고 단지 핀만 노출(중복·부정확 좌표 제거).
+  ...SH_ADMIN_LISTINGS.filter((l) => l.lat !== 0 && l.lng !== 0 && !SH_MAPPED_SEQS.has(String(l.pblancId))),
   ...buildShMappedListings(),
 ];
