@@ -34,3 +34,34 @@ export function nearestStation(
   if (!best || bestD > maxM) return null;
   return { name: best.name, line: best.line, distM: Math.round(bestD), walkMin: Math.max(1, Math.round(bestD / 67)) };
 }
+
+// 도보 시간(분) — 직선거리에 경로 보정 ×1.3 후 67m/분(≈4km/h)으로 환산. 보수적 표기.
+function walkMinutes(distM: number): number {
+  return Math.max(1, Math.round((distM * 1.3) / 67));
+}
+
+// 주변 역세권 — 도보 maxWalkMin(기본 15분, 경로보정 반영) 이내 역들을 가까운 순으로. 같은 역명은 1회.
+export function nearbyStations(
+  lat: number | null | undefined,
+  lng: number | null | undefined,
+  maxWalkMin = 15,
+  limit = 3,
+): NearStation[] {
+  if (!lat || !lng) return [];
+  const within: { s: Station; d: number; w: number }[] = [];
+  for (const s of STATIONS) {
+    const d = haversineM(lat, lng, s.lat, s.lng);
+    const w = walkMinutes(d);
+    if (w <= maxWalkMin) within.push({ s, d, w });
+  }
+  within.sort((a, b) => a.d - b.d);
+  const seen = new Set<string>();
+  const out: NearStation[] = [];
+  for (const { s, d, w } of within) {
+    if (seen.has(s.name)) continue;
+    seen.add(s.name);
+    out.push({ name: s.name, line: s.line, distM: Math.round(d), walkMin: w });
+    if (out.length >= limit) break;
+  }
+  return out;
+}

@@ -76,9 +76,17 @@ export function summarizePrice(item: Listing): PriceSummary {
   }
   if (!areas.length) areas.push(...parseAreaString(item.area));
 
+  // 타당성 가드 — PDF 표 추출 오류로 자릿수가 합쳐진 비현실적 값(예: 보증금 47조)을
+  // 범위에서 제외. 정상값만 남겨 min~max 를 산출한다. (단위: 보증금/월세=만원, 면적=㎡)
+  const SANE_DEPOSIT_MAX = 2_000_000; // 200억
+  const SANE_RENT_MAX = 500;          // 월 500만원
+  const SANE_AREA_MAX = 660;          // 약 200평
+  const clamp = (arr: number[], max: number) =>
+    arr.filter((n) => Number.isFinite(n) && n > 0 && n <= max);
+
   return {
-    deposit: toRange(deposits),
-    rent: toRange(rents),
-    areaM2: toRange(areas),
+    deposit: toRange(clamp(deposits, SANE_DEPOSIT_MAX)),
+    rent: toRange(clamp(rents, SANE_RENT_MAX)),
+    areaM2: toRange(clamp(areas, SANE_AREA_MAX)),
   };
 }
