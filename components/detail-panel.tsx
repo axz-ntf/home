@@ -13,6 +13,7 @@ import {
   MdOutlineSchool,
   MdOutlineStorefront,
   MdOutlineLocalHospital,
+  MdErrorOutline,
 } from "react-icons/md";
 import { EligibilityDetail } from "./eligibility-detail";
 import { formatManwon } from "@/lib/format";
@@ -77,12 +78,10 @@ function UnitTypePicker({ item, types }: { item: Listing; types: NonNullable<Lis
           </div>
         ))}
       </div>
-      {item.sourceUrl && (
-        <p style={{ fontSize: 12, margin: "8px 0 0" }}>
-          보증금·월세는 주택형·호실별로 달라요.{" "}
-          <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="detail-confirm-link">공고문에서 확인 →</a>
-        </p>
-      )}
+      <p style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12, color: "var(--seed-semantic-color-ink-text-low)", margin: "10px 0 0" }}>
+        <MdErrorOutline style={{ flexShrink: 0, fontSize: 14 }} />
+        보증금·월세는 주택형·호실별로 달라요.
+      </p>
     </>
   );
 }

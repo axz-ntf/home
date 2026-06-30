@@ -165,14 +165,6 @@ export function EligibilityDetail({
               <div className="eli-empty-sub">정확한 자격은 LH 공고문을 확인해 주세요.</div>
             </>
           )}
-          {sourceUrl && (
-            <a href={sourceUrl} target="_blank" rel="noreferrer" className="eli-empty-link">
-              공고문에서 자세한 자격 확인 →
-            </a>
-          )}
-          <div className="eli-empty-foot">
-            ※ 매물별 세부 자격(완화/추가) 은 공고문이 우선합니다
-          </div>
         </div>
       </div>
     );
