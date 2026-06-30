@@ -5,6 +5,7 @@ import type { HousingTypeId } from "@/lib/types";
 import { judge, type EligibilityForm } from "@/lib/eligibility";
 import { EligibilityFields, INITIAL_FORM, canNext1, canNext2 } from "./eligibility-fields";
 import { CloseIcon } from "./icons";
+import { Button } from "./button";
 
 export function EligibilityModal({
   open,
@@ -107,33 +108,35 @@ export function EligibilityModal({
 
         <footer className="eli-footer">
           {step > 1 && (
-            <button className="eli-btn-ghost" onClick={() => setStep(step - 1)}>
+            <Button variant="outline" color="ghost" size="md" onClick={() => setStep(step - 1)}>
               이전
-            </button>
+            </Button>
           )}
           <div style={{ flex: 1 }} />
           {step === 1 && (
-            <button className="eli-btn-primary" disabled={!canNext1(form)} onClick={() => setStep(2)}>
+            <Button variant="solid" color="primary" size="md" disabled={!canNext1(form)} onClick={() => setStep(2)}>
               다음
-            </button>
+            </Button>
           )}
           {step === 2 && (
-            <button className="eli-btn-primary" disabled={!canNext2(form)} onClick={() => setStep(3)}>
+            <Button variant="solid" color="primary" size="md" disabled={!canNext2(form)} onClick={() => setStep(3)}>
               결과 보기
-            </button>
+            </Button>
           )}
           {step === 3 && result && (
             <>
-              <button className="eli-btn-ghost" onClick={() => setStep(1)}>
+              <Button variant="outline" color="ghost" size="md" onClick={() => setStep(1)}>
                 다시 입력
-              </button>
-              <button
-                className="eli-btn-primary"
+              </Button>
+              <Button
+                variant="solid"
+                color="primary"
+                size="md"
                 disabled={result.results.filter((r) => r.status === "eligible").length === 0}
                 onClick={applyToFilter}
               >
                 가능한 매물만 보기 →
-              </button>
+              </Button>
             </>
           )}
         </footer>

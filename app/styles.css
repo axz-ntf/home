@@ -2937,30 +2937,6 @@ input, select { font-family: inherit; }
   display: flex; align-items: center; gap: 8px;
   background: var(--seed-scale-color-gray-50);
 }
-.eli-btn-ghost {
-  padding: 10px 18px;
-  border-radius: 8px;
-  /* Daum Box Button · Medium(outline) hierarchy */
-  border: 1px solid var(--daum-border-10, #0000001a);
-  font-size: 13px; font-weight: 700;
-  color: var(--seed-semantic-color-ink-text);
-}
-.eli-btn-ghost:hover { background: var(--daum-bg-hover, #0000000a); }
-.eli-btn-primary {
-  padding: 10px 20px;
-  border-radius: 8px;
-  background: var(--seed-semantic-color-primary);
-  color: white;
-  font-size: 13px; font-weight: 700;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-.eli-btn-ghost { white-space: nowrap; flex-shrink: 0; }
-.eli-btn-primary:hover { background: var(--seed-semantic-color-primary-hover); }
-.eli-btn-primary:disabled {
-  background: var(--seed-scale-color-gray-300);
-  cursor: not-allowed;
-}
 
 /* 상단 CTA */
 .topbar-cta {
@@ -4218,6 +4194,12 @@ div:has(> img[src*="streetview_btn"]) {
   margin: 0 0 14px; color: var(--seed-semantic-color-ink-text-low);
 }
 .profile-err { color: var(--seed-semantic-color-accent-red, #e5443a); font-size: 13px; margin: 0 4px 14px; }
+.profile-retry {
+  margin-left: 6px; padding: 0; border: 0; background: none; cursor: pointer;
+  font-size: 13px; font-weight: 700; color: var(--seed-semantic-color-accent-red, #e5443a);
+  text-decoration: underline;
+}
+.profile-hint { color: var(--seed-semantic-color-ink-text-low); font-size: 13px; margin: 0 4px 14px; }
 /* 저장 — 하단 고정 바 (흰 배경 + 상단 그림자) */
 /* 저장 — 폼 흐름 안 풀폭 버튼(분리된 툴바 느낌 제거) */
 .profile-actions { margin: 8px 0 0; }
@@ -4488,7 +4470,7 @@ div:has(> img[src*="streetview_btn"]) {
   display: flex;
   gap: 10px;
 }
-.ob-foot .eli-btn-primary { flex: 1; }
+.ob-foot .abtn--solid-primary { flex: 1; }
 /* 온보딩 폼 atom 재정의 — 모달(.eli-modal)은 영향 없음 */
 /* 온보딩 컨트롤 — 전부 풀폭(full-width) + radius 12 로 통일 */
 .ob .eli-seg { width: 100%; flex-wrap: nowrap; gap: 8px; }
@@ -4498,8 +4480,6 @@ div:has(> img[src*="streetview_btn"]) {
 .ob .eli-input-row { display: flex; width: 100%; align-items: center; gap: 10px; }
 .ob .eli-input { flex: 1; width: 100%; padding: 14px 16px; font-size: 16px; border-radius: 12px; text-align: left; }
 .ob .eli-info-box, .ob .eli-hint, .ob .eli-warn { width: 100%; }
-.ob .eli-btn-primary, .ob .eli-btn-ghost { padding: 14px 24px; font-size: 14px; border-radius: 8px; }
-.ob .eli-btn-primary:disabled { background: var(--seed-semantic-color-primary, #1e84ff); opacity: 0.35; color: #fff; }
 @media (max-width: 767px) {
   .ob-main { padding: 16px 20px 40px; }
   .ob-mascot { width: 140px; height: 140px; }

@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { INITIAL_FORM } from "@/components/eligibility-fields";
 import { saveProfile } from "@/lib/profile";
+import { Button } from "@/components/button";
 import type { EligibilityForm } from "@/lib/eligibility";
 import type { IconType } from "react-icons";
 import {
@@ -152,9 +153,9 @@ export default function OnboardingPage() {
             <h1 className="ob-q">자격 입력 완료!</h1>
             <p className="ob-q-sub">이제 신청 가능한 공공임대만 골라서 보여드릴게요.</p>
             <div className="ob-foot">
-              <button className="eli-btn-primary" onClick={() => router.replace("/")}>
+              <Button variant="solid" color="primary" size="xl" fullWidth onClick={() => router.replace("/")}>
                 공고 보러가기
-              </button>
+              </Button>
             </div>
           </div>
         </div>
@@ -313,12 +314,12 @@ export default function OnboardingPage() {
           {err && <div className="login-err">{err}</div>}
 
           <div className="ob-foot">
-            <button className="eli-btn-ghost" onClick={back}>
+            <Button variant="outline" color="ghost" size="xl" onClick={back}>
               {i === 0 ? "나중에 하기" : "이전"}
-            </button>
-            <button className="eli-btn-primary" disabled={!step.valid(form) || busy} onClick={next}>
-              {busy ? "저장 중…" : isLast ? "완료" : "다음"}
-            </button>
+            </Button>
+            <Button variant="solid" color="primary" size="xl" loading={busy} disabled={!step.valid(form)} onClick={next}>
+              {isLast ? "완료" : "다음"}
+            </Button>
           </div>
         </div>
       </div>
