@@ -70,30 +70,35 @@ function extractTablesFrom(html) {
   let m;
   while ((m = re.exec(html))) {
     const tbl = m[1];
+    // 분양 표는 "임대보증금/월임대료" 대신 "분양가격" 컬럼 → 보증금/월세 매핑 비활성.
+    const isSale = /분양\s*가/.test(tbl) && !/임대보증금/.test(tbl);
     const rows = [...tbl.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/g)]
       .map((r) =>
         [...r[1].matchAll(/<td[^>]*>([\s\S]*?)<\/td>/g)].map((c) =>
           c[1].replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim()
         )
       )
-      .map((cells) => parseRow(cells))
+      .map((cells) => parseRow(cells, isSale))
       .filter(Boolean);
     if (rows.length) out.push(rows);
   }
   return out;
 }
 
-function parseRow(cells) {
-  if (cells.length < 5) return null;
-  const houseType = cells[0];
-  const area = Number(cells[1]);
+// LH 주택형 안내 표 데이터행 실제 컬럼:
+//   [전용면적(주택형), 세대수, 금회공급 세대수, (임대보증금|분양가)(원), 월임대료(원), 인터넷청약, 링크]
+// 주택형 라벨 컬럼과 전용면적 컬럼은 데이터행에서 한 셀로 합쳐져 cells[0] 이 곧 전용면적.
+function parseRow(cells, isSale = false) {
+  if (cells.length < 4) return null;
+  const area = Number(cells[0]);
   if (!Number.isFinite(area) || area <= 0) return null;
-  const supply = parseNum(cells[2]);
-  const supplyNow = parseNum(cells[3]);
-  const deposit = parseNum(cells[4]); // 마스킹 시 "공고문 확인" → null
-  const rent = parseNum(cells[5]);
+  const supply = parseNum(cells[1]);
+  const supplyNow = parseNum(cells[2]);
+  // 분양 표는 cells[3] 이 분양가 → 임대 보증금/월세로 쓰면 안 됨(null).
+  const deposit = isSale ? null : parseNum(cells[3]); // 마스킹 시 "공고문 확인" → null
+  const rent = isSale ? null : parseNum(cells[4]);
   return {
-    houseType,
+    houseType: cells[0],
     area,
     supplyTotal: supply,
     supplyThisRound: supplyNow,
@@ -110,11 +115,15 @@ function parseNum(s) {
 
 async function main() {
   const listings = JSON.parse(fs.readFileSync(DATA_PATH, "utf8"));
+  // --active: 모집중/예정(마감 안 지난) 공고만. 마감건은 단지표 채워도 노출 안 돼 무의미.
+  const ACTIVE = process.argv.includes("--active");
+  const TODAY = new Date().toISOString().slice(0, 10).replace(/-/g, ".");
   const targets = listings.filter(
     (l) =>
       l.scope !== "regional" &&
       l.sourceUrl &&
-      l.sourceUrl.includes("selectWrtancInfo.do")
+      l.sourceUrl.includes("selectWrtancInfo.do") &&
+      (!ACTIVE || ((l.status === "open" || l.status === "upcoming") && (l.deadline || "") >= TODAY))
   );
   console.log(`targets: ${targets.length} / total ${listings.length}`);
 
