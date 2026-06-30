@@ -1,0 +1,128 @@
+/* ──────────────────────────────────────────────────────────
+ * Figma "LH·SH 저가 부동산" 디자인 시스템 컬러 — 전역 로컬 테스트.
+ * seed scale 팔레트를 Figma 값으로 매핑 → semantic 토큰이 전부 자동 반영.
+ * :root:root 로 specificity 를 높여 tokens.css / m/tokens.css 의 :root 를
+ * load 순서와 무관하게 덮어씀.  (원복: globals.css 의 이 파일 import 제거)
+ * primary: 당근 오렌지 → Figma Blue/500
+ * ────────────────────────────────────────────────────────── */
+:root:root {
+  /* ── Gray (Daum 확정 ramp, hue 213°) ── */
+  --seed-scale-color-gray-00:  #ffffff;
+  --seed-scale-color-gray-50:  #f8f9fa;  /* Daum G1 */
+  --seed-scale-color-gray-100: #ebedf0;  /* Daum G2 */
+  --seed-scale-color-gray-200: #d3d7db;
+  --seed-scale-color-gray-300: #afb3b7;  /* Daum G3 */
+  --seed-scale-color-gray-400: #8a8f94;
+  --seed-scale-color-gray-500: #6a6f73;  /* Daum G4 */
+  --seed-scale-color-gray-600: #4d5155;
+  --seed-scale-color-gray-700: #3a3d40;
+  --seed-scale-color-gray-800: #303233;  /* Daum G5 */
+  --seed-scale-color-gray-900: #202122;  /* Daum G6 */
+
+  --seed-scale-color-gray-alpha-50:  #0000000d;
+  --seed-scale-color-gray-alpha-100: #00000014;
+  --seed-scale-color-gray-alpha-200: #00000029;
+  --seed-scale-color-gray-alpha-500: #00000080;
+
+  /* ── Primary: 당근 → Figma Blue ── */
+  --seed-scale-color-carrot-50:  #eaf3ff;
+  --seed-scale-color-carrot-100: #d2e7ff;
+  --seed-scale-color-carrot-200: #b3d6ff;
+  --seed-scale-color-carrot-300: #8cbfff;
+  --seed-scale-color-carrot-400: #66a8ff;
+  --seed-scale-color-carrot-500: #1e84ff;  /* ★ primary (Blue/500) */
+  --seed-scale-color-carrot-600: #0066db;
+  --seed-scale-color-carrot-700: #004fad;
+  --seed-scale-color-carrot-800: #00408a;
+  --seed-scale-color-carrot-900: #003366;
+  --seed-scale-color-carrot-950: #002a52;
+
+  --seed-scale-color-carrot-alpha-50:  #1e84ff14;
+  --seed-scale-color-carrot-alpha-100: #1e84ff29;
+  --seed-scale-color-carrot-alpha-200: #1e84ff3d;
+
+  /* ── Blue (accent) ── */
+  --seed-scale-color-blue-50:  #eaf3ff;
+  --seed-scale-color-blue-100: #d2e7ff;
+  --seed-scale-color-blue-200: #b3d6ff;
+  --seed-scale-color-blue-300: #8cbfff;
+  --seed-scale-color-blue-400: #66a8ff;
+  --seed-scale-color-blue-500: #1e84ff;
+  --seed-scale-color-blue-600: #0066db;
+  --seed-scale-color-blue-700: #004fad;
+  --seed-scale-color-blue-800: #00408a;
+  --seed-scale-color-blue-900: #003366;
+  --seed-scale-color-blue-950: #002a52;
+
+  /* ── Red / danger (Figma Red) ── */
+  --seed-scale-color-red-50:  #fff0ee;
+  --seed-scale-color-red-100: #ffded9;
+  --seed-scale-color-red-200: #ffc8c0;
+  --seed-scale-color-red-300: #ff9c8f;
+  --seed-scale-color-red-400: #ff8c7a;
+  --seed-scale-color-red-500: #ff4e33;
+  --seed-scale-color-red-600: #eb2f12;
+  --seed-scale-color-red-700: #bf2610;
+  --seed-scale-color-red-800: #a3210e;
+  --seed-scale-color-red-900: #851a0b;
+  --seed-scale-color-red-950: #6b150a;
+
+  /* ── Green / success (Figma Green) ── */
+  --seed-scale-color-green-50:  #e8f9ec;
+  --seed-scale-color-green-100: #c8f0d2;
+  --seed-scale-color-green-200: #97e3ab;
+  --seed-scale-color-green-300: #66d488;
+  --seed-scale-color-green-400: #4ccf6b;
+  --seed-scale-color-green-500: #18ba45;
+  --seed-scale-color-green-600: #14a23c;
+  --seed-scale-color-green-700: #0f8230;
+  --seed-scale-color-green-800: #0c6626;
+  --seed-scale-color-green-900: #084d1d;
+  --seed-scale-color-green-950: #06401a;
+
+  /* ── Yellow / warning (Figma Yellow) ── */
+  --seed-scale-color-yellow-50:  #fffae6;
+  --seed-scale-color-yellow-100: #fff3ba;
+  --seed-scale-color-yellow-200: #ffeb87;
+  --seed-scale-color-yellow-300: #ffe666;
+  --seed-scale-color-yellow-400: #ffe14d;
+  --seed-scale-color-yellow-500: #fee500;
+  --seed-scale-color-yellow-600: #e6ce00;
+  --seed-scale-color-yellow-700: #c2a00a;
+  --seed-scale-color-yellow-800: #a3850a;
+  --seed-scale-color-yellow-900: #806a0f;
+  --seed-scale-color-yellow-950: #6b5912;
+
+  /* ── 명명 시맨틱 색 (Figma variables) ── */
+  --fg-text-primary: #000000;     /* Text/Primary */
+  --fg-text-inverse: #ffffff;     /* Text/Inverse */
+  --fg-line-divider: #00000029;   /* Line/divider-16 */
+  --fg-bg-slot: #ffffff;          /* Background/bg-slot */
+
+  /* ── Typography (Figma 타이포그래피 스타일 가이드 · Pretendard) ──
+   * 모바일/PC: Regular(400)·Bold(700)만, Emphasis만 SemiBold(600). LineHeight=ratio. */
+  --fg-font-family: "Pretendard Variable", Pretendard, system-ui, sans-serif;
+
+  --fg-display-lg-size: 40px;  --fg-display-lg-weight: 700; --fg-display-lg-lh: 1.2;   /* PC 큰 대타이틀 */
+  --fg-display-md-size: 26px;  --fg-display-md-weight: 700; --fg-display-md-lh: 1.2;   /* PC 소타이틀 */
+  --fg-title-xl-size: 24px;    --fg-title-xl-weight: 700;   --fg-title-xl-lh: 1.2;     /* 앱 상단 헤더 */
+  --fg-title-lg-size: 22px;    --fg-title-lg-weight: 700;   --fg-title-lg-lh: 1.2;
+  --fg-title-md-size: 20px;    --fg-title-md-weight: 700;   --fg-title-md-lh: 1.2;     /* 콘텐츠 메뉴 타이틀 */
+  --fg-title-sm-size: 18px;    --fg-title-sm-weight: 700;   --fg-title-sm-lh: 1.2;
+
+  --fg-body-lg-size: 17px;     --fg-body-lg-weight: 400;    --fg-body-lg-lh: 1.4;      /* 본문 기본 140% */
+  --fg-body-lg-reading-lh: 1.52;                                                       /* 긴 글(기사/분석형) 152% */
+  --fg-body-md-size: 16px;     --fg-body-md-weight: 400;    --fg-body-md-lh: 1.32;
+  --fg-body-sm-size: 15px;     --fg-body-sm-weight: 400;    --fg-body-sm-lh: 1.32;     /* 1뎁스 탭/버튼 */
+  --fg-caption-size: 14px;     --fg-caption-weight: 400;    --fg-caption-lh: 1.32;     /* 부가정보 */
+  --fg-label-size: 12px;       --fg-label-weight: 400;      --fg-label-lh: 1.2;        /* 배지 */
+  --fg-emphasis-weight: 600;   --fg-strong-weight: 700;
+
+  /* ── Spacing (Figma) ── */
+  --fg-spacing-12: 12px;
+  --fg-spacing-20: 20px;
+  --fg-spacing-40: 40px;
+}
+
+/* 본문 형광펜 하이라이트 — Figma Yellow 톤 */
+.tip-post em { background: #fee50066; }
