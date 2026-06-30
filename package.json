@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sync:lh": "node --env-file=.env.local scripts/sync-lh-api.mjs && node --env-file=.env.local scripts/geocode-missing-coords.mjs"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^3.0.79",
