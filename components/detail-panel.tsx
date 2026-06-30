@@ -197,8 +197,8 @@ function ScheduleTimeline({ item }: { item: Listing }) {
   const status = effectiveStatus(item.status, item.deadline, item.beginDate);
   const statusLabel = STATUS_LABELS[status];
   const dday = status !== "closed" ? calcDday(item.deadline) : "";
-  // 진행 국면(접수중·모집예정)일 때만 현재 단계 옆에 상태 라벨을 붙인다(마감임박/마감은 칩·D-day 로).
-  const activeTag = status === "open" || status === "upcoming" ? statusLabel.text : "";
+  // 상태(접수중/모집예정)는 섹션 헤더 배지로만 표시 — 단계 옆 인라인 태그는 "공고 등록 접수중"
+  // 처럼 단계명과 붙어 헷갈려서 제거. D-day 만 접수 마감 단계에 붙인다.
 
   return (
     <section className="detail-section">
@@ -226,9 +226,6 @@ function ScheduleTimeline({ item }: { item: Listing }) {
               }}>{i + 1}</span>
               <span style={{ fontSize: 13, fontWeight: isActive ? 700 : 500, color: strong }}>
                 {s.label}
-                {isActive && activeTag && (
-                  <span style={{ marginLeft: 6, fontSize: 11, fontWeight: 800, color: "var(--seed-semantic-color-primary)" }}>{activeTag}</span>
-                )}
                 {!isActive && s.label === "접수 마감" && dday && (
                   <span style={{ marginLeft: 6, fontSize: 11, fontWeight: 800, color: "var(--seed-semantic-color-primary)" }}>{dday}</span>
                 )}
