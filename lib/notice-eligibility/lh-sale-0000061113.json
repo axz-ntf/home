@@ -1,0 +1,57 @@
+{
+  "supplyTotal": 976,
+  "tiers": [
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "혼인 중인 자로서 혼인기간이 7년 이내 또는 6세 이하 자녀를 둔 경우",
+      "income": null,
+      "asset": {
+        "total": 36100,
+        "car": null
+      },
+      "other": [
+        "무주택세대구성원",
+        "수도권 거주자",
+        "재당첨제한 10년"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "예비신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "혼인을 계획 중이며, 해당 주택의 입주 전까지 혼인사실을 증명할 수 있는 자",
+      "income": null,
+      "asset": {
+        "total": 36100,
+        "car": null
+      },
+      "other": [
+        "혼인으로 구성될 세대를 기준으로 검증",
+        "수도권 거주자",
+        "재당첨제한 10년"
+      ]
+    },
+    {
+      "id": "single",
+      "name": "한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": "6세 이하 자녀(태아 포함)를 둔 부 또는 모",
+      "income": null,
+      "asset": {
+        "total": 36100,
+        "car": null
+      },
+      "other": [
+        "무주택세대구성원",
+        "수도권 거주자",
+        "재당첨제한 10년"
+      ]
+    }
+  ],
+  "priority": []
+}

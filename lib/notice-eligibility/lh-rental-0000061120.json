@@ -1,0 +1,21 @@
+{
+  "supplyTotal": 190,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 190,
+      "age": "만19세 이상",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "원주시 거주",
+        "무주택세대구성원",
+        "10년 임대 후 분양전환",
+        "세대주 및 세대원 전원 무주택 필수"
+      ]
+    }
+  ],
+  "priority": []
+}

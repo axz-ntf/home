@@ -4975,5 +4975,471 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-sale-2015122300020254": {
+    "at": "2026-06-30T18:24:02.645Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "502동 704호 84.95A",
+          "area": "84.9500",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 36000
+        },
+        {
+          "houseType": "502동 1301호 84.95A",
+          "area": "84.9500",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 36350
+        },
+        {
+          "houseType": "502동 1803호 84.95A",
+          "area": "84.9500",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 36350
+        },
+        {
+          "houseType": "503동 505호 84.95A",
+          "area": "84.9500",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 34555
+        },
+        {
+          "houseType": "503동 804호 84.95A",
+          "area": "84.9500",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 35315
+        },
+        {
+          "houseType": "503동 1402호 75.99B",
+          "area": "75.9900",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 32495
+        },
+        {
+          "houseType": "503동 1704호 84.95A",
+          "area": "84.9500",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 35665
+        },
+        {
+          "houseType": "504동 103호 84.95A",
+          "area": "84.9500",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 31625
+        },
+        {
+          "houseType": "504동 1205호 75.84A",
+          "area": "75.8400",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 31970
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.07.20"
+      },
+      "deadline": "2026.07.14",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-sale-2015122300020237": {
+    "at": "2026-06-30T18:25:06.368Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "군포시 산본 래미안하이어스 59동112호703",
+          "area": "59.9400",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 89400
+        },
+        {
+          "houseType": "군포시 당동 삼성마을THE숲 51동601호1002",
+          "area": "51.7300",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 35950
+        },
+        {
+          "houseType": "군포시 당동 삼성마을THE숲 51동601호1401",
+          "area": "51.9700",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 35250
+        },
+        {
+          "houseType": "군포시 당동 삼성마을THE숲 51동601호1402",
+          "area": "51.7300",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 35250
+        },
+        {
+          "houseType": "군포시 당동 삼성마을THE숲 51동607호403",
+          "area": "51.9700",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 35150
+        },
+        {
+          "houseType": "군포시 당동 삼성마을THE숲 51동607호404",
+          "area": "51.9700",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 35150
+        },
+        {
+          "houseType": "군포시 당동 삼성마을THE숲 51동607호1401",
+          "area": "51.9700",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 35850
+        },
+        {
+          "houseType": "군포시 당동 삼성마을THE숲 51동607호1502",
+          "area": "51.9700",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 36300
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.07.16"
+      },
+      "deadline": "2026.07.14",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-sale-0000061110": {
+    "at": "2026-06-30T18:26:08.233Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "양주회천 회천파밀리에더퍼스트 74㎡",
+          "area": "74㎡",
+          "supplyUnits": 3,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "양주회천 회천파밀리에더퍼스트 84㎡",
+          "area": "84㎡",
+          "supplyUnits": 10,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "양주회천 회천베네스트하우스 74㎡",
+          "area": "74㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.07.16"
+      },
+      "deadline": "2026.07.15",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-sale-0000061109": {
+    "at": "2026-06-30T18:26:54.790Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "양주회천 A24블록 59형",
+          "area": "59㎡",
+          "supplyUnits": 24,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "재공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020261": {
+    "at": "2026-06-30T18:28:16.685Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.07.16"
+      },
+      "deadline": "2026.07.08",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-0000061115": {
+    "at": "2026-06-30T18:29:37.209Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "군포대야미 A-1블록 55형",
+          "area": "55㎡",
+          "supplyUnits": 52,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "군포대야미 A-1블록 59형",
+          "area": "59㎡",
+          "supplyUnits": 326,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020233": {
+    "at": "2026-06-30T18:32:39.338Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "26A",
+          "area": "26.30",
+          "supplyUnits": 414,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 258,
+              "rent": 5
+            },
+            {
+              "label": "나군",
+              "deposit": 1353,
+              "rent": 11
+            }
+          ]
+        },
+        {
+          "houseType": "26B (주거약자용)",
+          "area": "26.30",
+          "supplyUnits": 50,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 258,
+              "rent": 5
+            },
+            {
+              "label": "나군",
+              "deposit": 1353,
+              "rent": 11
+            }
+          ]
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "26A 가군",
+            "limitManwon": 300,
+            "maxDeposit": 558,
+            "minRent": 4
+          },
+          {
+            "houseType": "26A 나군",
+            "limitManwon": 1200,
+            "maxDeposit": 2553,
+            "minRent": 5
+          },
+          {
+            "houseType": "26B (주거약자용) 가군",
+            "limitManwon": 300,
+            "maxDeposit": 558,
+            "minRent": 4
+          },
+          {
+            "houseType": "26B (주거약자용) 나군",
+            "limitManwon": 1200,
+            "maxDeposit": 2553,
+            "minRent": 5
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020255": {
+    "at": "2026-06-30T18:33:29.666Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": null
+      },
+      "schedule": {
+        "winnerAt": "2026.07.24"
+      },
+      "deadline": "2026.07.21",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020241": {
+    "at": "2026-06-30T18:34:35.247Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": null
+      },
+      "schedule": {
+        "winnerAt": "2026.09.11"
+      },
+      "deadline": "2026.07.21",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020240": {
+    "at": "2026-06-30T18:36:11.292Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": 6
+      },
+      "schedule": {
+        "winnerAt": "2026.07.24"
+      },
+      "deadline": "2026.07.22",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020239": {
+    "at": "2026-06-30T18:37:34.436Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6
+      },
+      "schedule": {
+        "winnerAt": "2026.07.24"
+      },
+      "deadline": "2026.07.21",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020212": {
+    "at": "2026-06-30T18:37:58.205Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.08.28"
+      },
+      "deadline": "2026.07.20",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020217": {
+    "at": "2026-06-30T18:43:34.583Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4
+      },
+      "schedule": {
+        "winnerAt": "2026.07.16"
+      },
+      "deadline": "2026.07.10",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020215": {
+    "at": "2026-06-30T18:43:57.113Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": null
+      },
+      "schedule": {
+        "winnerAt": "2026.07.16"
+      },
+      "deadline": "2026.07.10",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }

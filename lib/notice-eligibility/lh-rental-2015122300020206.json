@@ -1,0 +1,54 @@
+{
+  "supplyTotal": 3,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생·대학원생(1순위)",
+      "units": null,
+      "age": null,
+      "marriage": "미혼",
+      "income": null,
+      "asset": null,
+      "other": [
+        "수급자 가구",
+        "지원대상 한부모가족",
+        "차상위계층 가구"
+      ]
+    },
+    {
+      "id": "student",
+      "name": "대학생·대학원생(2순위)",
+      "units": null,
+      "age": null,
+      "marriage": "미혼",
+      "income": {
+        "percent": 100,
+        "byHousehold": {
+          "1": 458,
+          "2": 645,
+          "3": 817
+        },
+        "note": "본인과 부모의 월평균소득 합산 기준"
+      },
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "youth",
+      "name": "대학생·대학원생 및 청년(3순위)",
+      "units": null,
+      "age": "19세 이상 39세 이하(1986.06.26.~2007.06.25.)",
+      "marriage": "미혼",
+      "income": {
+        "percent": 100,
+        "byHousehold": {
+          "1": 458
+        },
+        "note": "본인의 월평균소득 기준"
+      },
+      "asset": null,
+      "other": []
+    }
+  ],
+  "priority": []
+}

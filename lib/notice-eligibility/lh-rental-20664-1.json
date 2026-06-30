@@ -1,0 +1,139 @@
+{
+  "supplyTotal": 480,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": null
+      },
+      "other": [
+        "대학에 재학 중이거나 다음 학기에 입·복학 예정인 사람",
+        "자동차 미소유"
+      ]
+    },
+    {
+      "id": "student",
+      "name": "취업준비생",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "대학 또는 고등학교를 졸업(또는 중퇴)한 지 2년 이내인 사람"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "만 19세 이상 만 39세 이하 (출생일: 1986.07.01. ~ 2007.06.30.)",
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": []
+    },
+    {
+      "id": "youth",
+      "name": "사회초년생",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "소득이 있는 업무에 종사한 기간이 총 7년 이내",
+        "소득이 있는 업무에 종사하는 사람, 또는 퇴직 후 1년 미경과로 구직급여 수급자격을 인정받은 사람, 또는 예술인 복지법 제2조제2호에 따른 예술인"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "혼인기간 10년 이내 또는 만 9세 이하 자녀(태아 포함) 보유",
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "공고일 현재 혼인 중인 사람"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "예비신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "혼인 계획 중",
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "입주 전까지 혼인사실을 증명할 수 있는 사람"
+      ]
+    },
+    {
+      "id": "single",
+      "name": "한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": "한부모",
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "만 9세 이하 자녀(태아 포함) 보유"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": null,
+      "age": "만 65세 이상 (1961.06.30. 이전 출생)",
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": []
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "주거급여법 제2조제2호 및 제3호에 따른 수급권자 또는 수급자"
+      ]
+    }
+  ],
+  "priority": []
+}
