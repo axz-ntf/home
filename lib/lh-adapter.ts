@@ -3,6 +3,7 @@ import apiListings from "./listings-api.json";
 import allNotices from "./lh-notices-all.json";
 import dundeonSeoul from "./dundeon-seoul.json";
 import mappedRegional from "./mapped-regional.json";
+import blobCovers from "./blob-covers.json";
 import { applyOverride } from "./manual-overrides";
 import { effectiveStatus } from "./dday";
 import { SH_ADMIN_LISTINGS, SH_PUBLIC_LISTINGS } from "./sh-adapter";
@@ -265,8 +266,15 @@ function adaptApi(r: ApiListing, loose = false): Listing | null {
 
 // Vercel Blob 미사용 (스토어 폐기). 로컬 정적(/lh-covers/) 우선.
 // localPath 없는 매물만 urlFallback 사용. (추후 Supabase Storage 로 이전 예정)
+// 커버 이미지 해석 — 로컬(/lh-covers/*)은 591MB 라 .vercelignore 로 배포 제외됨.
+// blob-covers.json(파일명→Vercel Blob CDN URL)으로 매핑해 배포·로컬 모두에서 로드.
+// Blob 매핑 없으면 외부(LH 공고) URL 폴백.
+const BLOB_COVERS = blobCovers as Record<string, string>;
 function resolveCoverPhoto(localPath: string | null, urlFallback: string | null): string | undefined {
-  if (localPath) return localPath;
+  if (localPath) {
+    const file = localPath.split("/").pop();
+    if (file && BLOB_COVERS[file]) return BLOB_COVERS[file];
+  }
   return urlFallback || undefined;
 }
 
