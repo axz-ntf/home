@@ -48,6 +48,9 @@ export function AuthButton() {
       <div className="app-account-wrap" ref={wrapRef}>
         {open && (
           <div className="app-account-menu" role="menu">
+            <Link href="/profile" className="app-account-menu-item" role="menuitem" onClick={() => setOpen(false)}>
+              프로필 수정
+            </Link>
             <button type="button" className="app-account-menu-item" role="menuitem" onClick={logout}>
               로그아웃
             </button>

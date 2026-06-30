@@ -587,7 +587,10 @@ export function DetailPanel({
                 </p>
               </>
             ) : (
-              <div className="insight-loading">주변 입지 분석 중…</div>
+              <div className="insight-loading">
+                <span className="insight-spinner" aria-hidden />
+                <span>주변 입지 분석 중…</span>
+              </div>
             )}
           </section>
         )}

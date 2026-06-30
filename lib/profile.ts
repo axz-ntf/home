@@ -86,13 +86,28 @@ export async function loadProfile(): Promise<EligibilityForm | null> {
   return rowToForm(data as ProfileRow);
 }
 
-// 자격을 profiles 에 upsert. 미로그인이면 에러 반환.
-export async function saveProfile(form: EligibilityForm): Promise<{ error: string | null }> {
+// 닉네임만 로드 (자격 입력 전이어도 가져옴). 미로그인/없음이면 null.
+export async function loadNickname(): Promise<string | null> {
+  const supabase = createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) return null;
+  const { data } = await supabase.from("profiles").select("nickname").eq("id", user.id).maybeSingle();
+  return data?.nickname ?? null;
+}
+
+// 자격을 profiles 에 upsert. nickname 은 전달 시에만 함께 저장. 미로그인이면 에러 반환.
+export async function saveProfile(
+  form: EligibilityForm,
+  nickname?: string,
+): Promise<{ error: string | null }> {
   const supabase = createClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) return { error: "로그인이 필요해요." };
-  const { error } = await supabase
-    .from("profiles")
-    .upsert({ id: user.id, ...formToRow(form), updated_at: new Date().toISOString() });
+  const { error } = await supabase.from("profiles").upsert({
+    id: user.id,
+    ...formToRow(form),
+    ...(nickname !== undefined && { nickname: nickname.trim() || null }),
+    updated_at: new Date().toISOString(),
+  });
   return { error: error?.message ?? null };
 }

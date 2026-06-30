@@ -3933,7 +3933,19 @@ div:has(> img[src*="streetview_btn"]) {
   color: var(--seed-semantic-color-ink-text-low);
   opacity: 0.85;
 }
-.insight-loading { padding: 8px 0; font-size: 13px; color: var(--seed-semantic-color-ink-text-low); }
+.insight-loading {
+  display: flex; align-items: center; gap: 9px;
+  padding: 10px 0; font-size: 13px; color: var(--seed-semantic-color-ink-text-low);
+}
+.insight-spinner {
+  width: 15px; height: 15px; flex-shrink: 0;
+  border: 2px solid var(--seed-scale-color-gray-200, #e4e6e8);
+  border-top-color: var(--seed-semantic-color-primary, #1e84ff);
+  border-radius: 50%;
+  animation: insight-spin 0.7s linear infinite;
+}
+@keyframes insight-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .insight-spinner { animation-duration: 1.6s; } }
 
 /* ───── 메인 사이드바 레일 (매물 패널 왼쪽 고정) ───── */
 .app-sidebar {
@@ -4030,17 +4042,96 @@ div:has(> img[src*="streetview_btn"]) {
   z-index: 50;
 }
 .app-account-menu-item {
-  width: 100%; text-align: left;
+  display: block; width: 100%; text-align: left;
   padding: 9px 10px; border-radius: 7px;
   font-size: 13px; font-weight: 600;
   color: var(--seed-semantic-color-ink-text);
   background: none; border: none; cursor: pointer;
+  text-decoration: none;
 }
 .app-account-menu-item:hover { background: var(--seed-scale-color-gray-50); }
 
-/* 로그인 전용 페이지 (/login) */
-.login-page {
+/* 프로필 수정 (/profile) — 당근 계정화면형(좁은 중앙 컬럼 + 아바타·이름 + 섹션), 색상은 다음 */
+.profile-page {
   height: 100dvh;
+  overflow-y: auto;            /* 전역 body overflow:hidden 우회 — 페이지 자체 스크롤 */
+  background: #fff;
+}
+.profile-topbar {
+  position: sticky; top: 0; z-index: 2;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 22px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--seed-semantic-color-divider-2);
+}
+.profile-logo {
+  display: inline-flex; align-items: center; gap: 7px;
+  text-decoration: none; color: var(--seed-semantic-color-ink-text);
+}
+.profile-logo strong { font-size: 16px; letter-spacing: -0.02em; }
+.profile-back {
+  border: none; background: none; cursor: pointer;
+  color: var(--seed-semantic-color-ink-text-low);
+  font-size: 13px; font-weight: 600;
+}
+.profile-back:hover { color: var(--seed-semantic-color-ink-text); }
+
+.profile-content {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 36px 22px 80px;
+}
+.profile-hero { text-align: center; margin-bottom: 36px; }
+.profile-avatar {
+  width: 84px; height: 84px; margin: 0 auto 14px;
+  border-radius: 50%;
+  background: var(--seed-scale-color-gray-100, #f0f1f3);
+  color: var(--seed-scale-color-gray-400, #b6bcc4);
+  display: flex; align-items: flex-end; justify-content: center;
+  overflow: hidden;
+}
+.profile-hero-name { font-size: 20px; font-weight: 800; letter-spacing: -0.02em; }
+.profile-hero-sub { font-size: 13px; color: var(--seed-semantic-color-ink-text-low); margin-top: 4px; }
+
+.profile-loading { padding: 48px 0; text-align: center; color: var(--seed-semantic-color-ink-text-low); font-size: 14px; }
+
+.profile-section + .profile-section { margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--seed-semantic-color-divider-2); }
+.profile-section h2 {
+  font-size: 15px; font-weight: 800; letter-spacing: -0.01em;
+  margin: 0 0 16px; color: var(--seed-semantic-color-ink-text);
+}
+.profile-err { color: var(--seed-semantic-color-accent-red, #e5443a); font-size: 13px; margin: 16px 0 0; }
+.profile-actions { margin-top: 32px; }
+.profile-actions .eli-btn-primary { width: 100%; }
+
+.profile-input {
+  width: 100%; box-sizing: border-box;
+  padding: 10px 13px; border-radius: 9px;
+  border: 1px solid var(--seed-semantic-color-divider-2);
+  font-size: 14px; outline: none;
+}
+.profile-input:focus { border-color: var(--seed-semantic-color-primary, #1e84ff); }
+
+/* 좁은 컬럼에 맞춘 행 — 라벨좌/컨트롤우, 촘촘하게 (모달/온보딩 영향 없음) */
+.profile-page .eli-form { gap: 16px; }
+.profile-page .eli-field {
+  grid-template-columns: 92px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 0;
+}
+.profile-page .eli-field-label { padding-top: 0; font-size: 13.5px; font-weight: 600; }
+.profile-page .eli-seg button { padding: 6px 12px; font-size: 13px; }
+.profile-page .eli-chip { padding: 6px 11px; }
+/* 특별공급처럼 컨트롤이 여러 줄로 길어지는 칸은 라벨을 위로 정렬 */
+.profile-page .eli-field:has(.eli-chips) { align-items: start; }
+.profile-page .eli-field:has(.eli-chips) .eli-field-label { padding-top: 6px; }
+
+/* 로그인/회원가입 (/login, /signup) — 모바일: 중앙 카드 / 데스크탑: 좌우 분할 */
+.login-page {
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4054,6 +4145,104 @@ div:has(> img[src*="streetview_btn"]) {
   border-radius: 16px;
   padding: 36px 30px 30px;
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.10);
+}
+
+/* 좌측 브랜드 패널 — 모바일에선 숨김 */
+.auth-brand { display: none; }
+
+@media (min-width: 880px) {
+  .login-page {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: stretch;
+    padding: 0;
+    background: #fff;            /* 오른쪽 절반은 흰 배경 */
+  }
+  .auth-brand {
+    display: flex;
+    align-items: center;
+    padding: 56px 64px;
+    color: #fff;
+    background: linear-gradient(150deg, #1E84FF 0%, #6F5BFF 52%, #A05CFF 100%);
+  }
+  .auth-brand-inner { max-width: 420px; }
+  .auth-brand-logo {
+    display: inline-flex; align-items: center; gap: 11px; margin-bottom: 30px;
+  }
+  /* 실제(컬러) 로고를 흰 칩에 얹어 그라데이션 위에서 또렷하게 */
+  .auth-brand-logo img {
+    width: 30px; height: 30px;
+    background: #fff; padding: 6px; border-radius: 11px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    box-sizing: content-box;
+  }
+  .auth-brand-logo strong { font-size: 20px; letter-spacing: -0.02em; }
+  .auth-brand-title {
+    font-size: 32px; font-weight: 800; line-height: 1.3;
+    letter-spacing: -0.03em; margin: 0 0 16px;
+  }
+  .auth-brand-sub {
+    font-size: 15px; line-height: 1.7; margin: 0;
+    color: rgba(255, 255, 255, 0.88);
+  }
+  /* 오른쪽: 카드 테두리/그림자/배경 제거 → 흰 배경에 폼만 깔끔히 중앙 */
+  .login-page > .login-card {
+    width: 100%;
+    max-width: 380px;
+    justify-self: center;
+    align-self: center;
+    padding: 0 32px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+/* AI 챗 — 미로그인 로그인 유도 배너 */
+.chat-login-nudge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 4px 0 8px;
+  padding: 13px 14px;
+  background: var(--seed-scale-color-gray-50, #f4f5f7);
+  border: 1px solid var(--seed-semantic-color-divider-2);
+  border-radius: 12px;
+}
+.chat-login-nudge-text {
+  flex: 1;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--seed-semantic-color-ink-text-low);
+}
+.chat-login-nudge-text strong {
+  display: block;
+  font-size: 13.5px;
+  color: var(--seed-semantic-color-ink-text);
+  margin-bottom: 2px;
+}
+.chat-login-nudge-btn {
+  flex-shrink: 0;
+  padding: 8px 16px;
+  border-radius: 9px;
+  background: var(--seed-semantic-color-primary, #1e84ff);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.chat-login-nudge-btn:hover { filter: brightness(0.95); }
+
+/* 폼 하단 혜택 안내 — 허전함 줄이고 가입 이유 전달 */
+.login-foot {
+  margin: 22px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--seed-semantic-color-divider-2);
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--seed-semantic-color-ink-text-low);
+  text-align: center;
 }
 .login-brand {
   display: inline-flex; align-items: center; gap: 7px;

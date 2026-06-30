@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
+import { AuthBrandPanel } from "@/components/auth-brand-panel";
 
 export default function SignupPage() {
   const router = useRouter();
@@ -39,6 +40,7 @@ export default function SignupPage() {
 
   return (
     <div className="login-page">
+      <AuthBrandPanel />
       <div className="login-card">
         <Link href="/" className="login-brand" aria-label="홈으로">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -77,6 +79,11 @@ export default function SignupPage() {
 
             <p className="login-switch">
               이미 계정이 있으신가요? <Link href="/login">로그인</Link>
+            </p>
+
+            <p className="login-foot">
+              가입하면 저장한 자격으로 맞춤 공고를 추천받고,<br />
+              AI 자격상담도 내 조건에 맞춰 받을 수 있어요.
             </p>
           </>
         )}
