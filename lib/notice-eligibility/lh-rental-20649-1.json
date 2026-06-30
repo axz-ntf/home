@@ -1,0 +1,79 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생 계층",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "대학에 재학 중이거나 다음 학기에 입·복학 예정인 사람",
+        "취업준비생: 대학 또는 고등학교를 졸업(또는 중퇴)한 지 2년 이내인 사람"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년 계층",
+      "units": null,
+      "age": "만 19세 이상 만 39세 이하(1986.06.20.~2007.06.19. 출생)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "사회초년생: 소득이 있는 업무에 종사한 기간이 총 5년 이내",
+        "소득이 있는 업무에 종사하는 사람 또는 퇴직 후 1년 미만 구직급여 수급자 또는 예술인"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족 계층",
+      "units": null,
+      "age": null,
+      "marriage": "현재 혼인 중이며 혼인 기간 7년 이내 또는 만 6세 이하 자녀(태아포함, 2019.06.20. 이후 출생) 있는 사람",
+      "income": null,
+      "asset": null,
+      "other": [
+        "예비신혼부부: 입주 전까지 혼인사실을 증명할 수 있는 사람",
+        "한부모가족: 만 6세 이하 자녀(태아포함, 2019.06.20. 이후 출생)를 둔 한부모인 사람"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": null,
+      "age": "만 65세 이상(1961.06.19. 이전 출생)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "etc",
+      "name": "주거급여 수급자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "「주거급여법」 제2조제2호 및 제3호에 따른 수급권자 또는 수급자"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "산업단지 근로자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "대구광역시 또는 연접지역(경북 경산시, 영천시, 청도군, 고령군, 성주군, 칠곡군, 군위군)의 산업단지 입주·입주예정 기업 및 교육·연구기관 근무자"
+      ]
+    }
+  ],
+  "priority": []
+}

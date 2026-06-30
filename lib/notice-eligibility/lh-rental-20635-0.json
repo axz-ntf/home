@@ -1,0 +1,63 @@
+{
+  "supplyTotal": 3,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생·대학원생 (1순위)",
+      "units": null,
+      "age": null,
+      "marriage": "미혼",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "수급자/차상위계층/지원대상 한부모가족 자격 확인"
+      },
+      "asset": null,
+      "other": [
+        "무주택자",
+        "수급자 가구 또는 지원대상 한부모가족 또는 차상위계층 가구"
+      ]
+    },
+    {
+      "id": "student",
+      "name": "대학생·대학원생 (2순위)",
+      "units": null,
+      "age": null,
+      "marriage": "미혼",
+      "income": {
+        "percent": 100,
+        "byHousehold": {
+          "1": 458,
+          "2": 645,
+          "3": 817
+        },
+        "note": "본인과 부모의 월평균소득 (1인가구 20%p, 2인가구 10%p 가산 적용)"
+      },
+      "asset": null,
+      "other": [
+        "무주택자",
+        "도시근로자 가구당 월평균소득 기준"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년 (3순위)",
+      "units": null,
+      "age": "19세 이상 39세 이하 (1986.06.26. ~ 2007.06.25. 출생자)",
+      "marriage": "미혼",
+      "income": {
+        "percent": 100,
+        "byHousehold": {
+          "1": 458
+        },
+        "note": "본인 월평균소득 (1인가구 기준)"
+      },
+      "asset": null,
+      "other": [
+        "무주택자",
+        "도시근로자 1인가구 월평균소득 기준"
+      ]
+    }
+  ],
+  "priority": []
+}

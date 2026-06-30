@@ -1,0 +1,21 @@
+{
+  "supplyTotal": 90,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 90,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원 기준 충족",
+        "주택청약종합저축(청약저축 포함) 가입 필수",
+        "만 19세 이상(미성년자 제외, 예외 사항 있음)",
+        "불법전대자 4년 경과 금지"
+      ]
+    }
+  ],
+  "priority": []
+}

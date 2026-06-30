@@ -1,0 +1,75 @@
+{
+  "supplyTotal": 39,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생·대학원생 (1순위)",
+      "units": null,
+      "age": null,
+      "marriage": "미혼",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "수급자, 한부모가족, 차상위계층"
+      },
+      "asset": null,
+      "other": [
+        "국민기초생활보장법에 따른 생계·의료·주거급여 수급자",
+        "한부모가족 지원법에 따른 지원대상 한부모가족",
+        "국민기초생활보장법에 따른 차상위계층"
+      ]
+    },
+    {
+      "id": "student",
+      "name": "대학생·대학원생 (2순위)",
+      "units": null,
+      "age": null,
+      "marriage": "미혼",
+      "income": {
+        "percent": 100,
+        "byHousehold": {
+          "1": 458,
+          "2": 645
+        },
+        "note": "본인과 부모의 월평균소득 합산, 1인가구 20%p 가산, 2인가구 10%p 가산 적용"
+      },
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "student",
+      "name": "대학생·대학원생 (3순위)",
+      "units": null,
+      "age": null,
+      "marriage": "미혼",
+      "income": {
+        "percent": 100,
+        "byHousehold": {
+          "1": 458
+        },
+        "note": "본인 월평균소득만 산정, 1인가구 20%p 가산 적용"
+      },
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "youth",
+      "name": "청년 (19세-39세, 3순위)",
+      "units": null,
+      "age": "19세 이상 39세 이하 (1986.06.26. ~ 2007.06.25. 출생)",
+      "marriage": "미혼",
+      "income": {
+        "percent": 100,
+        "byHousehold": {
+          "1": 458
+        },
+        "note": "본인 월평균소득만 산정, 1인가구 20%p 가산 적용"
+      },
+      "asset": null,
+      "other": [
+        "대학생·대학원생 자격 불필요"
+      ]
+    }
+  ],
+  "priority": []
+}
