@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { Listing, SortKey } from "@/lib/types";
+import { AgencyBadge } from "./agency-badge";
 import { eligibilitySummaryByType, HOUSING_TYPES } from "@/lib/mock-data";
 import { dDayText, effectiveStatus } from "@/lib/dday";
 import { formatManwon } from "@/lib/format";
@@ -30,8 +31,9 @@ function priceRange(item: Listing): { dep: [number, number] | null; rent: [numbe
   }
   const rows = (item.complexes ?? []).flatMap((c) => c.rows ?? []);
   if (rows.length < 2) return null;
-  const deps = rows.map((r) => r.deposit).filter((d): d is number => d != null && d > 0).map((d) => Math.round(d / 10000));
-  const rents = rows.map((r) => r.rent).filter((r): r is number => r != null && r > 0).map((r) => Math.round(r / 10000));
+  // 타당성 가드 — 추출 오류로 자릿수 합쳐진 비현실적 값 제외 (보증금≤200억·월세≤500만, 만원 단위)
+  const deps = rows.map((r) => r.deposit).filter((d): d is number => d != null && d > 0).map((d) => Math.round(d / 10000)).filter((d) => d <= 2_000_000);
+  const rents = rows.map((r) => r.rent).filter((r): r is number => r != null && r > 0).map((r) => Math.round(r / 10000)).filter((r) => r <= 500);
   const range = (ns: number[]): [number, number] | null => {
     if (ns.length < 2) return null;
     const lo = Math.min(...ns), hi = Math.max(...ns);
@@ -120,7 +122,7 @@ export function ListingCard({
       <div className="card-body">
         <div className="card-type-row">
           {typeBadge(item.type, item)}
-          <span className="badge agency">{item.agency}</span>
+          <AgencyBadge agency={item.agency} />
         </div>
         {/* M3: 단지명 우선 — 공고명 전체는 상세에서 */}
         <div className="card-title">{item.complexName || item.title}</div>

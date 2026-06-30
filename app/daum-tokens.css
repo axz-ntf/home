@@ -1,0 +1,98 @@
+/* ──────────────────────────────────────────────────────────
+ * Daum Design Guide — 디자인 토큰 (Figma: Daum Design System / 2025)
+ * 컬러 · 타이포(Pretendard) · radius · spacing. globals.css 에서 마지막에 import.
+ * 기존 --seed-* 는 유지하고, --daum-* 로 추가(additive). 신규/리뉴얼 컴포넌트에서 사용.
+ * ────────────────────────────────────────────────────────── */
+:root {
+  /* ── Color · Primary (Blue / 키 블루) ── */
+  --daum-primary: #1e84ff;
+  --daum-primary-48: #1e84ff7a;
+  --daum-primary-16: #1e84ff29;
+  --daum-primary-12: #1e84ff1f;
+  --daum-primary-8: #1e84ff14;
+
+  /* ── Color · Gray (확정 ramp, hue 213°) ── */
+  --daum-gray-1: #f8f9fa;
+  --daum-gray-2: #ebedf0;
+  --daum-gray-3: #afb3b7;
+  --daum-gray-4: #6a6f73;
+  --daum-gray-5: #303233;
+  --daum-gray-6: #202122;
+  --daum-gray-7: #161718;
+  --daum-white: #ffffff;
+  --daum-black: #000000;
+
+  /* ── Color · Semantic (Daum semantic tokens) ── */
+  --daum-text: #000000;          /* text-100 */
+  --daum-text-strong: #000000e0; /* text-88 */
+  --daum-text-64: #000000a3;     /* text-64 */
+  --daum-text-48: #0000007a;     /* text-48 */
+  --daum-text-inverse: #ffffff;  /* text-inverse / white */
+  --daum-text-link: #004bcc;
+  --daum-bg-surface: #f2f4f7;
+  --daum-bg-slot: #ffffff;
+  --daum-bg-on-slot: #f2f4f7;
+  --daum-bg-point-blue: #1e84ff;
+  --daum-bg-btn-bluegray: #2c2e33;
+  --daum-bg-btn-neutral: #16171814; /* 중립 버튼 (black 8%) */
+  --daum-bg-hover: #0000000a;        /* hover overlay (black 4%) */
+  --daum-border-button: #0000001a;   /* 버튼 아웃라인 (black 10%) */
+  --daum-icon-88: #000000e0;
+  --daum-icon-blue: #1e84ff;
+  --daum-border-10: #0000001a;   /* line/border-10 */
+  --daum-divider: #00000029;     /* line/divider-16 */
+  --daum-black-4: #0000000a;
+
+  /* ── Icon ── 기본 24px, outline/line 스타일, stroke 2~2.6 */
+  --daum-icon-size: 24px;
+  --daum-icon-stroke: 2px;
+
+  /* ── Color · Accent ── */
+  --daum-red: #ff4e33;
+  --daum-green: #18ba45;
+  --daum-yellow: #fee500;
+  --daum-orange: #ff9429;
+  --daum-purple: #a05cff;       /* 연예 */
+  --daum-purple-link: #9557c0;  /* 링크 */
+
+  /* ── Typography · Pretendard ── */
+  --daum-font: "Pretendard Variable", Pretendard, var(--seed-semantic-font-family-base);
+  /* size / line-height 쌍 (px) */
+  --daum-display1-size: 40px;   --daum-display1-lh: 1.2;
+  --daum-display2-size: 26px;   --daum-display2-lh: 1.2;
+  --daum-header-size: 24px;     --daum-header-lh: 1.2;
+  --daum-title1-size: 22px;     --daum-title1-lh: 1.2;
+  --daum-title2-size: 20px;     --daum-title2-lh: 1.2;
+  --daum-title3-size: 18px;     --daum-title3-lh: 1.2;
+  --daum-body1-size: 17px;      --daum-body1-lh: 1.4;   /* Normal */
+  --daum-body1-reading-lh: 1.52;
+  --daum-body2-size: 16px;      --daum-body2-lh: 1.37;
+  --daum-body3-size: 15px;      --daum-body3-lh: 1.32;
+  --daum-caption-size: 14px;    --daum-caption-lh: 1.32;
+  --daum-label-size: 12px;      --daum-label-lh: 1.2;
+  /* weight */
+  --daum-w-regular: 400;
+  --daum-w-medium: 500;
+  --daum-w-bold: 700;
+
+  /* ── Radius ── */
+  --daum-radius-4: 4px;
+  --daum-radius-8: 8px;
+  --daum-radius-12: 12px;
+  --daum-radius-16: 16px;
+  --daum-radius-24: 24px;
+  --daum-radius-full: 100px;
+
+  /* ── Spacing (4px 기준, 예외 2/6/10) ── */
+  --daum-space-2: 2px;
+  --daum-space-4: 4px;
+  --daum-space-6: 6px;
+  --daum-space-8: 8px;
+  --daum-space-10: 10px;
+  --daum-space-12: 12px;
+  --daum-space-16: 16px;
+  --daum-space-20: 20px;
+  --daum-space-24: 24px;
+  --daum-space-32: 32px;
+  --daum-space-40: 40px;
+}

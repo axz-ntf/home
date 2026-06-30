@@ -223,10 +223,6 @@ function Top({
             </button>
           );
         })}
-        {/* N1: 저장한 공고 */}
-        <a href="/saved" className="m-fchip" style={{ textDecoration: "none" }}>
-          ♥ 저장
-        </a>
       </div>
       {openKey && (
         <FilterPopover

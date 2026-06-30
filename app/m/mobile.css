@@ -185,7 +185,7 @@
   position: absolute;
   left: 0; right: 0; bottom: 0;
   background: white;
-  border-radius: 18px 18px 0 0;
+  border-radius: 16px 16px 0 0;
   box-shadow: 0 -4px 20px rgba(0,0,0,.08);
   z-index: 8;
   display: flex; flex-direction: column;
@@ -423,7 +423,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   border: 1px solid var(--seed-semantic-color-divider-2);
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
   margin-bottom: 18px;
 }
@@ -492,7 +492,7 @@
   padding: 5px 9px;
   background: var(--seed-scale-color-gray-50);
   border: 1px solid var(--seed-semantic-color-divider-2);
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 11px;
 }
 
@@ -510,7 +510,7 @@
 .m-detail-actions .heart {
   width: 44px; height: 44px;
   border: 1px solid var(--seed-semantic-color-divider-2);
-  border-radius: 10px;
+  border-radius: 12px;
   display: grid; place-items: center;
   color: var(--seed-semantic-color-ink-text);
 }
@@ -518,7 +518,7 @@
   height: 44px;
   background: var(--seed-semantic-color-primary);
   color: white;
-  border-radius: 10px;
+  border-radius: 12px;
   font-size: 13px; font-weight: 700;
 }
 
@@ -588,7 +588,7 @@
 .m-bubble {
   max-width: 82%;
   padding: 9px 12px;
-  border-radius: 14px;
+  border-radius: 16px;
   font-size: 13px;
   line-height: 1.5;
   letter-spacing: -0.015em;
@@ -639,7 +639,7 @@
   padding: 10px 12px;
   background: white;
   border: 1px solid var(--seed-semantic-color-divider-2);
-  border-radius: 10px;
+  border-radius: 12px;
   font-size: 12.5px;
   color: var(--seed-semantic-color-ink-text);
   text-align: left;

@@ -11,9 +11,10 @@ import { NaverMapView } from "./kakao-map";
 import { DetailPanel } from "./detail-panel";
 import { DetailAiPanel } from "./detail-ai-panel";
 import { EligibilityModal } from "./eligibility-modal";
-import { FloatingChat } from "./floating-chat";
+import { ChatPanelBody } from "./chat-panel-body";
+import { SavedClient } from "@/app/saved/saved-client";
+import { AuthButton } from "./auth-button";
 import { TweaksPanel } from "./tweaks-panel";
-import { ChevronIcon, PinIcon } from "./icons";
 import { MobileChrome } from "./mobile-chrome";
 
 const INITIAL_FILTERS: Filters = {
@@ -22,44 +23,59 @@ const INITIAL_FILTERS: Filters = {
   agency: [],
 };
 
-const SHORT_SIDO_NAMES: Record<string, string> = {
-  "충청북도": "충북",
-  "충청남도": "충남",
-  "전라남도": "전남",
-  "경상북도": "경북",
-  "경상남도": "경남",
-};
-function shortRegionName(name: string): string {
-  if (SHORT_SIDO_NAMES[name]) return SHORT_SIDO_NAMES[name];
-  return name
-    .replace(/특별자치도$|광역시$|특별자치시$|특별시$/, "")
-    .replace(/도$/, "");
+type GuideTip = { slug: string; title: string; summary: string; cover: string; tags: string[] };
+
+// 매물 칸 자리에 표시되는 주거 가이드 목록 (페이지 이동 X — 인-플레이스 교체).
+function GuidePanel({ tips }: { tips: GuideTip[] }) {
+  return (
+    <div className="listing guide-panel">
+      <div className="listing-head">
+        <div className="listing-count">주거 가이드 <em>{tips.length}</em></div>
+      </div>
+      <div className="guide-list">
+        {tips.map((p) => (
+          <Link key={p.slug} href={`/tips/${p.slug}`} className="guide-row">
+            {p.cover && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img className="guide-thumb" src={p.cover} alt="" loading="lazy" />
+            )}
+            <div className="guide-row-body">
+              <strong className="guide-row-title">{p.title}</strong>
+              {p.summary && <p className="guide-row-desc">{p.summary}</p>}
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
 }
+
 
 export function AppShell({
   listings,
   districts,
   regionalCount = 0,
+  tips = [],
 }: {
   listings: Listing[];
   districts: District[];
   regionalCount?: number;
+  tips?: GuideTip[];
 }) {
   const router = useRouter();
+  const [activeSection, setActiveSection] = useState<"home" | "tips" | "saved" | "ai">("home");
   const [filters, setFilters] = useState<Filters>(INITIAL_FILTERS);
   const [sort, setSort] = useState<SortKey>("recent");
   const [activeDistrict, setActiveDistrict] = useState<string | null>(null);
   const [searchBounds, setSearchBounds] = useState<{
     swLat: number; swLng: number; neLat: number; neLng: number;
   } | null>(null);
-  const [regionMenuOpen, setRegionMenuOpen] = useState(false);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [detailOpen, setDetailOpen] = useState(false);
 
   const [tweaksOpen, setTweaksOpen] = useState(false);
   const [eliOpen, setEliOpen] = useState(false);
-  const [chatOpen, setChatOpen] = useState(false);
   const [density, setDensity] = useState<Density>("comfort");
   const [showLegend, setShowLegend] = useState(false);
   // 모바일 바텀시트 — 기본 hidden (지도 풀스크린).
@@ -99,7 +115,9 @@ export function AppShell({
     } else if (sort === "low-depo") {
       list.sort((a, b) => a.deposit - b.deposit);
     } else {
-      list.sort((a, b) => a.id.localeCompare(b.id));
+      // 최신순 = 공고일(announceDate) 내림차순. (이전엔 id 문자열 정렬이라 LH 뒤로 SH·청년이
+      // 전부 밀려 무한스크롤 하단에 묻혔음 — 최근 공고가 기관 무관하게 위로 오도록 날짜 정렬.)
+      list.sort((a, b) => (b.announceDate || "").localeCompare(a.announceDate || "") || a.id.localeCompare(b.id));
     }
     // 마감 공고는 어떤 정렬에서든 뒤로 — 모집중·예정이 먼저 보이게.
     // stable sort 라 각 그룹 내에선 위 정렬 순서가 유지된다.
@@ -163,11 +181,9 @@ export function AppShell({
 
   // 브랜드("부동산") 클릭 → 깨끗한 메인 홈으로 (열린 패널·필터·지역 모두 초기화).
   const goHome = useCallback(() => {
-    setChatOpen(false);
     setDetailOpen(false);
     setTweaksOpen(false);
     setEliOpen(false);
-    setRegionMenuOpen(false);
     setSelectedId(null);
     setAiFocusId(null);
     setActiveDistrict(null);
@@ -222,76 +238,73 @@ export function AppShell({
             <span className="brand-name">부동산</span>
           </button>
         </div>
-        <div className="region-wrap">
-          <button className="region-btn" onClick={() => setRegionMenuOpen((v) => !v)}>
-            <PinIcon size={13} />
-            {searchBounds
-              ? "지도 영역"
-              : activeDistrict
-                ? shortRegionName(districts.find((d) => d.id === activeDistrict)?.name ?? "전체 지역")
-                : "전체 지역"}
-            <ChevronIcon size={9} />
-          </button>
-          {regionMenuOpen && (
-            <>
-              <div className="region-menu-backdrop" onClick={() => setRegionMenuOpen(false)} />
-              <div className="region-menu" role="menu">
-                <button
-                  className={`region-menu-item ${activeDistrict === null ? "active" : ""}`}
-                  onClick={() => {
-                    handleDistrictClear();
-                    setRegionMenuOpen(false);
-                  }}
-                >
-                  전체 지역
-                </button>
-                {districts.map((d) => (
-                  <button
-                    key={d.id}
-                    className={`region-menu-item ${activeDistrict === d.id ? "active" : ""}`}
-                    onClick={() => {
-                      handleDistrictClick(d.id);
-                      setRegionMenuOpen(false);
-                    }}
-                  >
-                    {d.name}
-                  </button>
-                ))}
-              </div>
-            </>
-          )}
-        </div>
         <div className="topbar-spacer" />
-        <Link
-          href="/tips"
-          aria-label="청년 주거 팁"
-          style={{
-            display: "inline-flex", alignItems: "center", gap: 6,
-            padding: "7px 14px", borderRadius: 999,
-            background: "var(--seed-scale-color-gray-900)", color: "#fff",
-            fontSize: 13.5, fontWeight: 700, textDecoration: "none",
-            whiteSpace: "nowrap", letterSpacing: "-0.02em",
-            boxShadow: "0 2px 8px rgba(0,0,0,.16)",
-          }}
-        >
-          <span aria-hidden>💡</span>
-          청년 팁
-        </Link>
       </header>
 
       <div className={`main ${detailOpen && selectedItem ? "detail-open" : ""} ${aiFocusItem ? "ai-open" : ""}`}>
-        <ListingPanel
-          items={filtered}
-          sort={sort}
-          setSort={setSort}
-          hoveredId={hoveredId}
-          selectedId={selectedId}
-          activeDistrict={activeDistrict}
-          onHover={setHoveredId}
-          onSelect={handleSelect}
-          snap={sheetSnap}
-          setSnap={setSheetSnap}
-        />
+        <aside className="app-sidebar">
+          <nav className="app-sidebar-nav">
+            <button
+              type="button"
+              className={`app-sidebar-item ${activeSection === "home" ? "active" : ""}`}
+              onClick={() => { setActiveSection("home"); setSheetSnap("expanded"); }}
+            >
+              홈
+            </button>
+            <button
+              type="button"
+              className={`app-sidebar-item ${activeSection === "tips" ? "active" : ""}`}
+              onClick={() => { setActiveSection("tips"); setSheetSnap("expanded"); }}
+            >
+              주거
+            </button>
+            <button
+              type="button"
+              className={`app-sidebar-item ${activeSection === "saved" ? "active" : ""}`}
+              onClick={() => { setActiveSection("saved"); setSheetSnap("expanded"); }}
+            >
+              저장
+            </button>
+            <button
+              type="button"
+              className={`app-sidebar-item ${activeSection === "ai" ? "active" : ""}`}
+              onClick={() => { setActiveSection("ai"); setSheetSnap("expanded"); }}
+            >
+              AI
+            </button>
+          </nav>
+          <div className="app-sidebar-foot">
+            <AuthButton />
+          </div>
+        </aside>
+        {activeSection === "home" && (
+          <ListingPanel
+            items={filtered}
+            sort={sort}
+            setSort={setSort}
+            hoveredId={hoveredId}
+            selectedId={selectedId}
+            activeDistrict={activeDistrict}
+            onHover={setHoveredId}
+            onSelect={handleSelect}
+            snap={sheetSnap}
+            setSnap={setSheetSnap}
+          />
+        )}
+        {activeSection === "tips" && <GuidePanel tips={tips} />}
+        {activeSection === "saved" && (
+          <div className="listing section-panel">
+            <SavedClient listings={listings} />
+          </div>
+        )}
+        {activeSection === "ai" && (
+          <div className="ai-section-panel">
+            <div className="listing-head">
+              <div className="listing-count">AI 자격상담</div>
+            </div>
+            <ChatPanelBody allListings={listings} />
+          </div>
+        )}
         {/* 모바일 전용 — 시트 hidden 일 때 하단 "목록 N건" floating 버튼 (opacity 트랜지션) */}
         <button
           type="button"
@@ -334,14 +347,6 @@ export function AppShell({
         open={eliOpen}
         onClose={() => setEliOpen(false)}
         onApplyFilter={(types: HousingTypeId[]) => setFilters({ ...filters, type: types })}
-      />
-
-      <FloatingChat
-        open={chatOpen}
-        onOpenChange={setChatOpen}
-        shifted={detailOpen && Boolean(selectedItem)}
-        allListings={listings}
-        hidden={Boolean(aiFocusItem)}
       />
 
       <TweaksPanel

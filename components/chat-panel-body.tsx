@@ -8,6 +8,7 @@ import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport, type UIMessage } from "ai";
 import ReactMarkdown from "react-markdown";
 import type { Listing } from "@/lib/types";
+import { loadProfile, summarizeEligibility } from "@/lib/profile";
 import { ChatListingCarousel } from "./chat-listing-carousel";
 import { ChatSuggestionChips, type SuggestionAction } from "./chat-suggestion-chips";
 
@@ -125,12 +126,21 @@ export function ChatPanelBody({ allListings = [], focusListing }: { allListings?
   // scope 하게 한다. ref 로 최신값 추적 — transport 는 1회만 생성(재생성 시 useChat 혼란).
   const focusIdRef = useRef(focusListing?.id);
   focusIdRef.current = focusListing?.id;
+
+  // 로그인 사용자의 저장된 자격 → 요청마다 body 로 실어 AI 가 다시 묻지 않고 맞춤 상담.
+  const eligibilityRef = useRef<string | null>(null);
+  useEffect(() => {
+    loadProfile().then((form) => {
+      eligibilityRef.current = form ? summarizeEligibility(form) : null;
+    });
+  }, []);
+
   const transport = useMemo(
     () =>
       new DefaultChatTransport({
         api: "/api/chat",
         prepareSendMessagesRequest: ({ messages, id, body }) => ({
-          body: { ...body, id, messages, focusListingId: focusIdRef.current },
+          body: { ...body, id, messages, focusListingId: focusIdRef.current, eligibility: eligibilityRef.current },
         }),
       }),
     [],

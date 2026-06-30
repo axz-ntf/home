@@ -295,14 +295,21 @@ const suggestActions = tool({
 });
 
 export async function POST(req: Request) {
-  const { messages, focusListingId }: { messages: UIMessage[]; focusListingId?: string } =
-    await req.json();
+  const { messages, focusListingId, eligibility }: {
+    messages: UIMessage[];
+    focusListingId?: string;
+    eligibility?: string;
+  } = await req.json();
 
   // 상세페이지에서 온 요청이면 그 매물을 시스템 컨텍스트로 알려주고, 공고문 RAG 도 이 매물로 scope.
   const focusTitle = focusListingId ? TITLE_BY_ID.get(focusListingId) : undefined;
-  const system = focusTitle
-    ? `${SYSTEM_PROMPT}\n현재 사용자가 보고 있는 매물: "${focusTitle}" (id: ${focusListingId}). 이 매물의 공고문 디테일(자격/조건/일정/금액)을 물으면 searchNoticeContent 의 listingId 에 이 id 를 넘기세요.`
-    : SYSTEM_PROMPT;
+  let system = SYSTEM_PROMPT;
+  if (eligibility) {
+    system += `\n\n[사용자가 저장한 자격 프로필]\n${eligibility}\n위 정보는 이미 확보된 사용자 본인 정보입니다. 나이·소득·세대·무주택 여부 등을 다시 묻지 말고 바로 맞춤 상담에 활용하세요. 부족한 항목만 추가로 물으세요.`;
+  }
+  if (focusTitle) {
+    system += `\n현재 사용자가 보고 있는 매물: "${focusTitle}" (id: ${focusListingId}). 이 매물의 공고문 디테일(자격/조건/일정/금액)을 물으면 searchNoticeContent 의 listingId 에 이 id 를 넘기세요.`;
+  }
 
   const result = streamText({
     model: anthropic(MODEL_ID),

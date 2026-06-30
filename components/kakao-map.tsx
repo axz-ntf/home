@@ -72,6 +72,17 @@ function pinLabel(p: Listing): string {
   }
 }
 
+// 공급기관 마크 — 핀 앞에 붙는 작은 브랜드 칩.
+function agencyMark(p: Listing): { cls: string; label: string } {
+  switch (p.agency) {
+    case "LH": return { cls: "ag-lh", label: "LH" };
+    case "SH": return { cls: "ag-sh", label: "SH" };
+    case "GH": return { cls: "ag-gh", label: "GH" };
+    case "서울시": return { cls: "ag-seoul", label: "서울" };
+    default: return { cls: "", label: "" };
+  }
+}
+
 function makePinEl(p: Listing, memberCount = 1): HTMLElement {
   const el = document.createElement("div");
   el.className = "map-pin-wrap";
@@ -80,7 +91,9 @@ function makePinEl(p: Listing, memberCount = 1): HTMLElement {
   const isClosed = effectiveStatus(p.status, p.deadline, p.beginDate) === "closed";
   // 같은 좌표에 N개가 묶이면 배지로 표시 — 헤더 매물 수와 지도가 어긋나 보이지 않게.
   const badge = memberCount > 1 ? `<span class="map-pin-count">${memberCount}</span>` : "";
-  el.innerHTML = `<div class="${pinClass(p.type)}${isClosed ? " is-closed" : ""}">${pinLabel(p)}</div>${badge}`;
+  const ag = agencyMark(p);
+  const agMark = ag.label ? `<span class="map-pin-ag ${ag.cls}">${ag.label}</span>` : "";
+  el.innerHTML = `<div class="${pinClass(p.type)}${isClosed ? " is-closed" : ""}">${agMark}${pinLabel(p)}</div>${badge}`;
   return el;
 }
 
@@ -210,6 +223,11 @@ export function NaverMapView({
   const [hasMoved, setHasMoved] = useState(false);
   // 다음 idle 이벤트를 무시하기 위한 플래그 — 프로그래매틱 morph 후 또는 초기 로드 시
   const ignoreNextIdleRef = useRef(true);
+  // idle 핸들러(마운트 시 1회 등록)에서 최신 activeDistrict 를 읽기 위한 ref
+  const activeDistrictRef = useRef(activeDistrict);
+  activeDistrictRef.current = activeDistrict;
+  const onDistrictClearRef = useRef(onDistrictClear);
+  onDistrictClearRef.current = onDistrictClear;
 
   useEffect(() => {
     if (!CLIENT_ID) {
@@ -244,6 +262,11 @@ export function NaverMapView({
             return;
           }
           setHasMoved(true);
+          // 사용자가 직접 줌아웃(≤10)해서 멀어지면 지역 선택 해제 → 전국 지역 마커 복귀.
+          // (프로그래매틱 morph 의 idle 은 위 ignore 플래그로 걸러지므로 진입 시엔 안 터짐)
+          if (activeDistrictRef.current && map.getZoom() <= 10) {
+            onDistrictClearRef.current();
+          }
         });
         setReady(true);
       })
@@ -369,6 +392,7 @@ export function NaverMapView({
     }
     setHasMoved(false);
   }, [ready, activeDistrict, districts]);
+
 
   // Focus map on selected listing (e.g. when user clicks a card).
   // 이미 화면 안에 보이는 핀이면 카메라를 움직이지 않는다 — morph 애니메이션이 클릭마다 끼어들면서 끊겨 보이는 버벅임 방지.

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+// Figma 디자인 시스템 컬러 전역 테스트 오버라이드 (원복: 이 줄 제거)
+import "./tips/figma-theme.css";
 
 export const metadata: Metadata = {
   title: "다음부동산 · 공공임대주택 정보",
