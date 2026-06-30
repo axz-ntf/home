@@ -95,6 +95,26 @@ export async function loadNickname(): Promise<string | null> {
   return data?.nickname ?? null;
 }
 
+// 프로필 화면용 — getUser 1회 + profiles 쿼리 1회로 폼·닉네임·이메일·로그인여부를 한 번에.
+// (loadProfile + loadNickname 을 따로 부르면 getUser 가 3번 돌아 느려짐.)
+export async function loadProfileFull(): Promise<{
+  loggedIn: boolean; email: string | null; form: EligibilityForm | null; nickname: string | null;
+}> {
+  const supabase = createClient();
+  // getSession 은 로컬 스토리지에서 즉시 — getUser(네트워크 검증)보다 빠름. RLS 가 데이터 보호.
+  const { data: { session } } = await supabase.auth.getSession();
+  const user = session?.user;
+  if (!user) return { loggedIn: false, email: null, form: null, nickname: null };
+  const { data } = await supabase.from("profiles").select("*").eq("id", user.id).maybeSingle();
+  const row = data as ProfileRow & { nickname?: string | null } | null;
+  return {
+    loggedIn: true,
+    email: user.email ?? null,
+    form: row && row.age ? rowToForm(row) : null,
+    nickname: row?.nickname ?? null,
+  };
+}
+
 // 자격을 profiles 에 upsert. nickname 은 전달 시에만 함께 저장. 미로그인이면 에러 반환.
 export async function saveProfile(
   form: EligibilityForm,

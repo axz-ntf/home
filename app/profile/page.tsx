@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { createClient } from "@/lib/supabase/client";
 import { EligibilityFields, INITIAL_FORM, canNext1, canNext2 } from "@/components/eligibility-fields";
-import { loadProfile, loadNickname, saveProfile } from "@/lib/profile";
+import { loadProfileFull, saveProfile } from "@/lib/profile";
+import { Button } from "@/components/button";
 import type { EligibilityForm } from "@/lib/eligibility";
 
 // 프로필 수정 — 당근 계정화면형 레이아웃(좁은 중앙 컬럼 + 아바타·이름 + 섹션 행),
@@ -23,13 +23,12 @@ export default function ProfileEditPage() {
   useEffect(() => {
     let alive = true;
     (async () => {
-      const { data } = await createClient().auth.getUser();
-      if (!data.user) { router.replace("/login"); return; }
-      if (alive) setEmail(data.user.email ?? "");
-      const [existing, nick] = await Promise.all([loadProfile(), loadNickname()]);
+      const r = await loadProfileFull();
       if (!alive) return;
-      if (existing) setForm(existing);
-      if (nick) setNickname(nick);
+      if (!r.loggedIn) { router.replace("/login"); return; }
+      setEmail(r.email ?? "");
+      if (r.form) setForm(r.form);
+      if (r.nickname) setNickname(r.nickname);
       setLoading(false);
     })();
     return () => { alive = false; };
@@ -70,13 +69,20 @@ export default function ProfileEditPage() {
             </svg>
           </div>
           <div className="profile-hero-name">{nickname || email || "내 프로필"}</div>
-          {email && <div className="profile-hero-sub">{email}</div>}
         </div>
 
-        {loading ? (
-          <div className="profile-loading">불러오는 중…</div>
-        ) : (
-          <>
+        {/* 빈 로딩 화면 없이 폼을 즉시 렌더 — 저장한 값은 로드되면 채워짐(저장은 로드 전까지 비활성). */}
+        <>
+            {email && (
+              <section className="profile-section">
+                <h2>계정</h2>
+                <div className="profile-row">
+                  <span className="profile-row-label">이메일</span>
+                  <span className="profile-row-value">{email}</span>
+                </div>
+              </section>
+            )}
+
             <section className="profile-section">
               <h2>기본 정보</h2>
               <div className="eli-form">
@@ -105,12 +111,11 @@ export default function ProfileEditPage() {
             {err && <p className="profile-err">{err}</p>}
 
             <div className="profile-actions">
-              <button className="eli-btn-primary" disabled={!valid || busy} onClick={save}>
-                {busy ? "저장 중…" : saved ? "저장됨 ✓" : "저장하기"}
-              </button>
+              <Button variant="solid" color="primary" size="2xl" fullWidth loading={busy || loading} disabled={!valid || loading} onClick={save}>
+                {saved ? "저장됨 ✓" : "저장하기"}
+              </Button>
             </div>
-          </>
-        )}
+        </>
       </div>
     </div>
   );

@@ -77,6 +77,66 @@ input, select { font-family: inherit; }
 .topbar-account .app-sidebar-login { padding: 7px 14px; border-radius: 999px; font-size: 13px; }
 .topbar-account .app-account-email { max-width: 120px; font-size: 13px; }
 .topbar-account .app-account-caret svg { width: 13px; height: 13px; }
+
+/* ───────── Anchor Design System · Button (Button.md v0.1.1) ───────── */
+.abtn {
+  position: relative;
+  display: inline-flex; align-items: center; justify-content: center; gap: 4px;
+  border: 1px solid transparent; border-radius: 8px;
+  font-family: inherit; font-weight: 700; letter-spacing: -0.01em; line-height: 1.32;
+  white-space: nowrap; cursor: pointer; text-decoration: none; box-sizing: border-box;
+  transition: background .12s, border-color .12s, color .12s;
+}
+.abtn--full { width: 100%; }
+.abtn-ico { display: inline-flex; flex-shrink: 0; font-size: 16px; line-height: 0; }
+/* HoverLayer — 전 variant 공통 오버레이(black 4%) */
+.abtn::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit;
+  background: transparent; transition: background .12s; pointer-events: none;
+}
+.abtn:hover:not(.is-disabled):not(.is-loading)::after { background: rgba(0, 0, 0, 0.04); }
+/* Focus ring — 2px Blue, offset 2px (radius 자동 R+2) */
+.abtn:focus-visible { outline: 2px solid #1e84ff; outline-offset: 2px; }
+/* Shape */
+.abtn--rounded { border-radius: 100px; }
+/* Size */
+.abtn--sm  { min-height: 32px; padding: 6px 8px;   font-size: 14px; }
+.abtn--md  { min-height: 36px; padding: 8px 12px;  font-size: 15px; }
+.abtn--lg  { min-height: 40px; padding: 10px 16px; font-size: 15px; }
+.abtn--xl  { min-height: 44px; padding: 12px 16px; font-size: 15px; }
+.abtn--2xl { min-height: 48px; padding: 12px 16px; font-size: 16px; gap: 8px; }
+.abtn--3xl { min-height: 56px; padding: 16px 20px; font-size: 17px; gap: 8px; }
+/* Solid */
+.abtn--solid-primary   { background: #1e84ff; color: #fff; }
+.abtn--solid-secondary { background: #303233; color: #fff; }
+.abtn--solid-neutral   { background: #e4e6e8; color: rgba(0, 0, 0, 0.88); }
+.abtn--solid-inverse   { background: #fff; color: rgba(0, 0, 0, 0.88); border-color: rgba(0, 0, 0, 0.1); }
+.abtn--solid-ghost     { background: transparent; color: rgba(0, 0, 0, 0.88); }
+.abtn--solid-danger    { background: #ff4e33; color: #fff; }
+/* Outline (border 1px) */
+.abtn--outline-primary  { background: transparent; color: #1e84ff; border-color: rgba(0, 0, 0, 0.1); }
+.abtn--outline-danger   { background: transparent; color: #ff4e33; border-color: rgba(0, 0, 0, 0.1); }
+.abtn--outline-ghost    { background: transparent; color: rgba(0, 0, 0, 0.88); border-color: rgba(0, 0, 0, 0.1); }
+.abtn--outline-neutral  { background: #e4e6e8; color: rgba(0, 0, 0, 0.88); border-color: rgba(0, 0, 0, 0.1); }
+.abtn--outline-inverse  { background: #fff; color: rgba(0, 0, 0, 0.88); border-color: rgba(0, 0, 0, 0.1); }
+.abtn--outline-subtlest { background: rgba(0, 0, 0, 0.02); color: rgba(0, 0, 0, 0.88); border-color: rgba(0, 0, 0, 0.1); }
+/* Disabled */
+.abtn.is-disabled, .abtn:disabled {
+  background: #c7cbcf; color: rgba(0, 0, 0, 0.32);
+  border-color: transparent; cursor: not-allowed; pointer-events: none;
+}
+/* Loading — 라벨·아이콘 숨김 + 중앙 스피너(레이아웃 시프트 방지: 폭 유지) */
+.abtn.is-loading .abtn-ico, .abtn.is-loading .abtn-label { visibility: hidden; }
+.abtn-spinner {
+  position: absolute; width: 18px; height: 18px; border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5); border-top-color: #fff;
+  animation: abtn-spin 0.7s linear infinite;
+}
+.abtn--solid-neutral .abtn-spinner, .abtn--outline-primary .abtn-spinner,
+.abtn--outline-ghost .abtn-spinner, .abtn--outline-neutral .abtn-spinner {
+  border-color: rgba(0, 0, 0, 0.2); border-top-color: rgba(0, 0, 0, 0.6);
+}
+@keyframes abtn-spin { to { transform: rotate(360deg); } }
 .topbar-account .app-account-menu {
   bottom: auto; top: calc(100% + 6px);
   left: auto; right: 0; min-width: 150px;
@@ -4098,7 +4158,7 @@ div:has(> img[src*="streetview_btn"]) {
 .profile-page {
   height: 100dvh;
   overflow-y: auto;            /* 전역 body overflow:hidden 우회 — 페이지 자체 스크롤 */
-  background: #fff;
+  background: var(--seed-scale-color-gray-50, #f4f5f7);
 }
 .profile-topbar {
   position: sticky; top: 0; z-index: 2;
@@ -4122,55 +4182,69 @@ div:has(> img[src*="streetview_btn"]) {
 
 .profile-content {
   width: 100%;
-  max-width: 440px;
+  max-width: 480px;
   margin: 0 auto;
-  padding: 36px 22px 80px;
+  padding: 28px 18px 56px;
 }
-.profile-hero { text-align: center; margin-bottom: 36px; }
+.profile-hero { text-align: center; margin: 8px 0 24px; }
 .profile-avatar {
-  width: 84px; height: 84px; margin: 0 auto 14px;
+  width: 80px; height: 80px; margin: 0 auto 12px;
   border-radius: 50%;
-  background: var(--seed-scale-color-gray-100, #f0f1f3);
-  color: var(--seed-scale-color-gray-400, #b6bcc4);
-  display: flex; align-items: flex-end; justify-content: center;
-  overflow: hidden;
+  background: linear-gradient(150deg, #1E84FF, #6F5BFF);
+  color: rgba(255, 255, 255, 0.95);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 18px rgba(30, 132, 255, 0.28);
 }
+.profile-avatar svg { width: 44px; height: 44px; }
 .profile-hero-name { font-size: 20px; font-weight: 800; letter-spacing: -0.02em; }
 .profile-hero-sub { font-size: 13px; color: var(--seed-semantic-color-ink-text-low); margin-top: 4px; }
+/* 정보 행 (계정 등) — 라벨좌 / 값우 (당근식) */
+.profile-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.profile-row-label { font-size: 14px; font-weight: 600; color: var(--seed-semantic-color-ink-text); }
+.profile-row-value { font-size: 14px; color: var(--seed-semantic-color-ink-text-low); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 .profile-loading { padding: 48px 0; text-align: center; color: var(--seed-semantic-color-ink-text-low); font-size: 14px; }
 
-.profile-section + .profile-section { margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--seed-semantic-color-divider-2); }
-.profile-section h2 {
-  font-size: 15px; font-weight: 800; letter-spacing: -0.01em;
-  margin: 0 0 16px; color: var(--seed-semantic-color-ink-text);
+/* 섹션 = 흰 카드 (당근 설정화면식) */
+.profile-section {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px 20px 22px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 2px rgba(20, 22, 35, 0.04);
 }
-.profile-err { color: var(--seed-semantic-color-accent-red, #e5443a); font-size: 13px; margin: 16px 0 0; }
-.profile-actions { margin-top: 32px; }
-.profile-actions .eli-btn-primary { width: 100%; }
+.profile-section h2 {
+  font-size: 14px; font-weight: 800; letter-spacing: -0.01em;
+  margin: 0 0 14px; color: var(--seed-semantic-color-ink-text-low);
+}
+.profile-err { color: var(--seed-semantic-color-accent-red, #e5443a); font-size: 13px; margin: 0 4px 14px; }
+/* 저장 — 하단 고정 바 (흰 배경 + 상단 그림자) */
+/* 저장 — 폼 흐름 안 풀폭 버튼(분리된 툴바 느낌 제거) */
+.profile-actions { margin: 8px 0 0; }
 
 .profile-input {
   width: 100%; box-sizing: border-box;
-  padding: 10px 13px; border-radius: 9px;
+  padding: 11px 13px; border-radius: 10px;
   border: 1px solid var(--seed-semantic-color-divider-2);
   font-size: 14px; outline: none;
 }
 .profile-input:focus { border-color: var(--seed-semantic-color-primary, #1e84ff); }
 
-/* 좁은 컬럼에 맞춘 행 — 라벨좌/컨트롤우, 촘촘하게 (모달/온보딩 영향 없음) */
-.profile-page .eli-form { gap: 16px; }
-.profile-page .eli-field {
-  grid-template-columns: 92px 1fr;
-  gap: 14px;
-  align-items: center;
-  padding: 0;
+/* 라벨 위 / 컨트롤 아래 스택 — 좁은 폭 wrap·정렬 문제 해소, 컨트롤 풀폭 (모달/온보딩 영향 없음) */
+.profile-page .eli-form { gap: 20px; }
+.profile-page .eli-field { display: block; padding: 0; }
+.profile-page .eli-field-label {
+  padding-top: 0; margin-bottom: 9px;
+  font-size: 13.5px; font-weight: 700; color: var(--seed-semantic-color-ink-text);
 }
-.profile-page .eli-field-label { padding-top: 0; font-size: 13.5px; font-weight: 600; }
-.profile-page .eli-seg button { padding: 6px 12px; font-size: 13px; }
-.profile-page .eli-chip { padding: 6px 11px; }
-/* 특별공급처럼 컨트롤이 여러 줄로 길어지는 칸은 라벨을 위로 정렬 */
-.profile-page .eli-field:has(.eli-chips) { align-items: start; }
-.profile-page .eli-field:has(.eli-chips) .eli-field-label { padding-top: 6px; }
+.profile-page .eli-field-sub { margin-top: 2px; font-weight: 400; }
+/* 세그먼트 — 한 줄 균등폭 채움 */
+.profile-page .eli-seg { display: flex; flex-wrap: wrap; gap: 7px; }
+.profile-page .eli-seg button { flex: 1 1 0; min-width: 54px; padding: 9px 8px; font-size: 13.5px; }
+/* 입력 + 단위(세/만원) 인라인 */
+.profile-page .eli-input-row { display: flex; align-items: center; gap: 8px; }
+.profile-page .eli-input { flex: 1; width: auto; min-width: 0; }
+.profile-page .eli-chip { padding: 8px 13px; }
 
 /* 로그인/회원가입 (/login, /signup) — 모바일: 중앙 카드 / 데스크탑: 좌우 분할 */
 .login-page {
@@ -4323,6 +4397,7 @@ div:has(> img[src*="streetview_btn"]) {
   font-size: 15px; font-weight: 800;
 }
 .login-submit:disabled { opacity: 0.6; cursor: default; }
+.login-submit-btn { margin-top: 14px; }
 .login-ghost {
   margin-top: 16px; background: none; border: none; cursor: pointer;
   font-size: 13px; font-weight: 700; color: var(--seed-semantic-color-primary, #1e84ff);

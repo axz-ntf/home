@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { loadProfile } from "@/lib/profile";
 import { AuthBrandPanel } from "@/components/auth-brand-panel";
+import { Button } from "@/components/button";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -55,7 +56,7 @@ export default function LoginPage() {
 
           {err && <div className="login-err">{err}</div>}
 
-          <button type="submit" className="login-submit" disabled={busy}>{busy ? "로그인 중…" : "로그인"}</button>
+          <Button variant="solid" color="primary" size="2xl" fullWidth type="submit" loading={busy} className="login-submit-btn">로그인</Button>
         </form>
 
         <p className="login-switch">

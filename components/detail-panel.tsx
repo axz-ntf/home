@@ -26,6 +26,7 @@ import { useSavedListings } from "@/lib/use-saved";
 import { accentVars } from "./detail-type";
 import { summarizePrice, type Range } from "@/lib/price-summary";
 import { FloorplanSection } from "./floorplan-section";
+import { Button } from "./button";
 
 type InsightGroup = { value: string; level: string; tone: "rich" | "good" | "mid" | "low" };
 
@@ -646,43 +647,27 @@ export function DetailPanel({
           >
             <HeartIcon size={20} filled={liked} />
           </button>
-          {/* 공고문을 임베딩한 AI 가 이 공고 자격을 바로 상담. PC=옆 컬럼, 그 외=라우트 */}
+          {/* 좌: 자격 확인하기(보조 = Outline/Neutral) · 우: 신청하러가기(핵심 = Solid/Primary) */}
           {onAskAI ? (
-            <button
-              className="secondary ai-cta"
-              onClick={() => onAskAI(item.id)}
-              style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
-            >
+            <Button variant="outline" color="ghost" size="lg" fullWidth onClick={() => onAskAI(item.id)}>
               자격 확인하기
-            </button>
+            </Button>
           ) : (
-            <a
-              className="secondary ai-cta"
-              href={`/ai?focus=${encodeURIComponent(item.id)}`}
-              style={{ textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center" }}
-            >
+            <Button variant="outline" color="ghost" size="lg" fullWidth href={`/ai?focus=${encodeURIComponent(item.id)}`}>
               자격 확인하기
-            </a>
+            </Button>
           )}
-          {applyButton.active ? (
-            <a
-              className="primary"
-              href={item.sourceUrl ?? applyUrl}
-              target="_blank"
-              rel="noreferrer"
-              style={{ textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center" }}
-            >
-              {applyButton.label}
-            </a>
-          ) : (
-            <button
-              className="primary disabled"
-              disabled
-              style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
-            >
-              {applyButton.label}
-            </button>
-          )}
+          <Button
+            variant="solid"
+            color="primary"
+            size="lg"
+            fullWidth
+            href={applyButton.active ? (item.sourceUrl ?? applyUrl) : undefined}
+            target="_blank"
+            disabled={!applyButton.active}
+          >
+            {applyButton.label}
+          </Button>
         </div>
       </div>
     </aside>
