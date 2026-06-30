@@ -21,7 +21,7 @@ const DATA_PATH = path.join(ROOT, "lib/lh-notices-all.json");
 const OUT_DIR = path.join(ROOT, "lib/notice-texts");
 const META_PATH = path.join(OUT_DIR, "_meta.json");
 
-const UA = "doongji-app/1.0 (notice text enricher; polite)";
+const UA = "daum-public-housing-app/1.0 (notice text enricher; polite)";
 const SOLAR_API_KEY = process.env.SOLAR_API_KEY;
 if (!SOLAR_API_KEY) { console.error("ERROR: SOLAR_API_KEY env 누락"); process.exit(1); }
 

@@ -12,7 +12,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const DATA_PATH = path.join(ROOT, "lib/lh-notices-all.json");
 
-const UA = "doongji-app/1.0 (Document Parse test; polite)";
+const UA = "daum-public-housing-app/1.0 (Document Parse test; polite)";
 const SOLAR_API_KEY = process.env.SOLAR_API_KEY;
 if (!SOLAR_API_KEY) {
   console.error("ERROR: SOLAR_API_KEY 가 env 에 없음.");

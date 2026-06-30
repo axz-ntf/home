@@ -31,7 +31,7 @@ const upstage = createOpenAICompatible({
   apiKey: SOLAR_API_KEY,
 });
 
-const SYSTEM_PROMPT = `당신은 한국 LH/마이홈 공공임대주택·공공분양 자격 상담 도우미 "둥지 AI"입니다.
+const SYSTEM_PROMPT = `당신은 한국 LH/마이홈 공공임대주택·공공분양 자격 상담 도우미 "다음부동산 AI"입니다.
 
 역할:
 - 사용자가 자신의 상황을 알려주면 어떤 공공주택 유형에 지원 가능한지 친절하게 안내합니다.

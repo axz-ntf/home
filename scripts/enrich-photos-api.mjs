@@ -20,7 +20,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DATA_PATH = path.join(ROOT, "lib/listings-api.json");
 const OUT_DIR = path.join(ROOT, "public/lh-covers");
 
-const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 doongji-app/1.0";
+const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 daum-public-housing-app/1.0";
 const LH_BASE = "https://apply.lh.or.kr";
 const DELAY_MS = 400;
 const FORCE = process.env.FORCE_RECRAWL === "1";

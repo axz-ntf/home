@@ -9,7 +9,7 @@ import path from "node:path";
 import shNotices from "./sh-notices.json";
 import youthNotices from "./youth-notices.json";
 
-const UA = "doongji-app/1.0 (admin extract; polite)";
+const UA = "daum-public-housing-app/1.0 (admin extract; polite)";
 const DOC_PARSE_URL = "https://api.upstage.ai/v1/document-ai/document-parse";
 const PDF_BASE = "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=";
 const CACHE_DIR = path.join(process.cwd(), "lib", "notice-texts");

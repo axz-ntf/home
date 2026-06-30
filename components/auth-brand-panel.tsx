@@ -6,7 +6,7 @@ export function AuthBrandPanel() {
         <div className="auth-brand-logo">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/logo.svg" alt="" width={34} height={34} />
-          <strong>부동산</strong>
+          <strong>다음 공공임대주택 부동산</strong>
         </div>
         <h2 className="auth-brand-title">
           공공임대·청년주택,<br />

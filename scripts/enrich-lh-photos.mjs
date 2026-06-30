@@ -12,7 +12,7 @@ const ROOT = path.resolve(__dirname, "..");
 const DATA_PATH = path.join(ROOT, "lib/lh-data.json");
 const BASE = "https://apply.lh.or.kr";
 const HEADERS = {
-  "User-Agent": "doongji-app/1.0 (LH asset enricher; polite crawler; 1req/s)",
+  "User-Agent": "daum-public-housing-app/1.0 (LH asset enricher; polite crawler; 1req/s)",
   Accept: "text/html",
 };
 const BROWSER_HEADERS = {

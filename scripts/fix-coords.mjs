@@ -11,7 +11,7 @@ const ROOT = path.resolve(__dirname, "..");
 const DATA_PATH = path.join(ROOT, "lib/lh-data.json");
 
 const HEADERS = {
-  "User-Agent": "doongji-lh-housing-app/1.0 (one-shot geocoding)",
+  "User-Agent": "daum-public-housing-lh-app/1.0 (one-shot geocoding)",
 };
 
 function hav(a, b) {

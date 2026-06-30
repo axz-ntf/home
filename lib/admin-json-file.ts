@@ -14,7 +14,7 @@ const useGitHub = Boolean(GH_TOKEN) && Boolean(process.env.VERCEL);
 const GH_HEADERS = {
   Authorization: `Bearer ${GH_TOKEN}`,
   Accept: "application/vnd.github+json",
-  "User-Agent": "doongji-admin",
+  "User-Agent": "daum-public-housing-admin",
   "X-GitHub-Api-Version": "2022-11-28",
 };
 

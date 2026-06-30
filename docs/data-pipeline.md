@@ -77,8 +77,8 @@ jobs:
           node scripts/sync-lh-api.mjs
       - name: Commit updated data
         run: |
-          git config user.name "doongji-bot"
-          git config user.email "bot@doongji.example"
+          git config user.name "daum-public-housing-bot"
+          git config user.email "bot@daum-public-housing.example"
           git add lib/ public/lh-covers/
           git commit -m "data: daily sync $(date -u +%Y-%m-%d)" || echo "no changes"
           git push

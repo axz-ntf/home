@@ -4,6 +4,18 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: process.cwd(),
   },
+  // 구 자동도메인(doongji-liard.vercel.app)으로 들어온 요청을 새 도메인으로 영구 리다이렉트.
+  // host 조건이라 새 도메인(daum-public-housing) 요청은 매칭 안 됨 → 루프 없음.
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "doongji-liard.vercel.app" }],
+        destination: "https://daum-public-housing.vercel.app/:path*",
+        permanent: true,
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {

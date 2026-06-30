@@ -38,7 +38,7 @@ const VWORLD_API_KEY = process.env.VWORLD_API_KEY;
 if (!DATA_GO_KR_KEY) { console.error("DATA_GO_KR_KEY missing"); process.exit(1); }
 if (!VWORLD_API_KEY) console.warn("VWORLD_API_KEY missing — geocoding 건너뜀");
 
-const UA = "doongji-app/1.0 (LH API sync)";
+const UA = "daum-public-housing-app/1.0 (LH API sync)";
 const PG_SZ = 100;
 const DELAY = 250;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

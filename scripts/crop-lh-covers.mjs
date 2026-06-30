@@ -18,7 +18,7 @@ const OUT_DIR = path.join(ROOT, "public/lh-covers");
 
 const PHOTO_SAFE_EXT = /\.(jpe?g|png|webp)(?:$|\?)/i;
 const HEADERS = {
-  "User-Agent": "doongji-app/1.0 (LH cover cropper)",
+  "User-Agent": "daum-public-housing-app/1.0 (LH cover cropper)",
   Accept: "image/*",
 };
 const DELAY_MS = 250;

@@ -1,7 +1,7 @@
 "use client";
 
 // AI 챗 메시지 하단에 끼워 넣는 추천 매물 가로 캐러셀.
-// 카드 디자인: 1순위 칩 / 하트 / D-day pill / 둥지가 선택한 이유 / 상세보기 CTA.
+// 카드 디자인: 1순위 칩 / 하트 / D-day pill / 다음부동산이 선택한 이유 / 상세보기 CTA.
 // 페이지 인디케이터 도트 — 캐러셀 하단에 현재 카드 위치 표시.
 
 import { useEffect, useRef, useState } from "react";
@@ -102,7 +102,7 @@ function CarouselCard({ item: { listing: item, reasons }, rank }: { item: Carous
                   />
                 </svg>
               </span>
-              둥지가 선택한 이유
+              다음부동산이 선택한 이유
             </div>
             <div className="chat-rec-reasons-chips">
               {reasons.map((r, i) => (

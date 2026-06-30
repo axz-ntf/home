@@ -14,7 +14,7 @@ const ROOT = path.resolve(__dirname, "..");
 const DATA_PATH = path.join(ROOT, "lib/lh-notices-all.json");
 
 const HEADERS = {
-  "User-Agent": "doongji-app/1.0 (LH photo refiner; polite crawler)",
+  "User-Agent": "daum-public-housing-app/1.0 (LH photo refiner; polite crawler)",
   Accept: "text/html",
 };
 const DELAY_MS = 700;

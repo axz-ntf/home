@@ -30,7 +30,7 @@ if (!VWORLD_KEY) {
   process.exit(1);
 }
 
-const UA = "doongji-app/1.0 (LH page-coords enricher)";
+const UA = "daum-public-housing-app/1.0 (LH page-coords enricher)";
 const COORD_RE = /var\s+lat_0\s*=\s*"([\d.]+)"[\s\S]{0,200}?var\s+lng_0\s*=\s*"([\d.]+)"/;
 const ADDR_RE = /<strong>\s*소재지\s*<\/strong>\s*([^<]+?)(?:<|$)/;
 const REQ_DELAY_MS = 400; // LH 페이지 fetch 사이 폴라이트 딜레이
