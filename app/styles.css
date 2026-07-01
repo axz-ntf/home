@@ -1215,14 +1215,22 @@ input, select { font-family: inherit; }
 .map-pin-wrap.selected {
   z-index: 5;
 }
+/* 선택 = 파란 채움 pill + 흰 배지(반전) + 확대 (Figma selected) */
 .map-pin-wrap.selected .map-pin {
-  transform: scale(1.18);
+  background: #1e84ff;
+  color: #fff;
+  transform: scale(1.26);
+  filter: drop-shadow(0 6px 14px rgba(30, 132, 255, 0.42));
   animation: pinPop .26s cubic-bezier(.34, 1.56, .64, 1);
+}
+.map-pin-wrap.selected .map-pin-ag {
+  background: #fff !important;
+  color: #1e84ff !important;
 }
 @keyframes pinPop {
   0%   { transform: scale(1); }
-  60%  { transform: scale(1.28); }
-  100% { transform: scale(1.18); }
+  60%  { transform: scale(1.36); }
+  100% { transform: scale(1.26); }
 }
 
 /* 유형별 배지 색 (Figma accent) */

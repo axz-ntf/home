@@ -131,12 +131,12 @@ function makeClusterEl(name: string, listings: number, complexes: number): HTMLE
 }
 
 function gridStepForZoom(zoom: number): number {
-  if (zoom <= 9) return 0.4;
-  if (zoom <= 10) return 0.2;
-  if (zoom <= 11) return 0.1;
-  if (zoom <= 12) return 0.05;
-  if (zoom <= 13) return 0.025;
-  return 0; // 14 이상은 개별 핀
+  if (zoom <= 10) return 0.25;
+  if (zoom <= 11) return 0.12;
+  if (zoom <= 12) return 0.06;
+  if (zoom <= 13) return 0.03;
+  if (zoom <= 14) return 0.015;
+  return 0; // 15 이상은 개별 핀 (충분히 확대됐을 때만)
 }
 
 // 같은 좌표(같은 건물·주소)의 여러 매물을 지도에선 대표 1개로 묶는다.
@@ -185,7 +185,7 @@ function clusterPins(pins: Listing[], zoom: number): Array<
   }
   const out: ReturnType<typeof clusterPins> = [];
   for (const group of buckets.values()) {
-    if (group.length <= 2) {
+    if (group.length <= 1) {
       for (const pin of group) out.push({ kind: "single", pin });
       continue;
     }
@@ -347,8 +347,8 @@ export function NaverMapView({
     // zoom <= 10 그리고 시도 미선택 일 때는 district 마커만 — 핀 안 그림
     if (!activeDistrict && zoom <= 10) return;
 
-    // 시도 선택 모드에선 클러스터 없이 모두 개별 핀, 그 외엔 줌 기반 그리드 클러스터
-    const groups = clusterPins(mapPins, activeDistrict ? 99 : zoom);
+    // 줌 기반 그리드 클러스터 — 시도 선택 모드에서도 동일 적용(많을 때 카드로 묶임).
+    const groups = clusterPins(mapPins, zoom);
     for (const g of groups) {
       if (g.kind === "single") {
         const p = g.pin;
