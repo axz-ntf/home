@@ -99,17 +99,24 @@ function makePinEl(p: Listing, memberCount = 1): HTMLElement {
 }
 
 // 클러스터 대표 지역명 — 도로명주소에서 구(우선)/시·군 추출.
-function areaName(addr: string | undefined): string | null {
-  const s = addr || "";
-  const gu = s.match(/[가-힣]{2,}구(?![가-힣])/);
-  if (gu) return gu[0];
+// 광역시·특별시는 구(강남구) 단위, 도 지역은 시/군(수원시·화성시) 단위로 묶는다.
+// 도 지역에서 구를 우선하면 주소에 낀 가짜 구名(예: "화성시 만세구")을 잘못 뽑는 문제 방지.
+const METRO_DISTRICTS = new Set(["seoul", "busan", "daegu", "incheon", "gwangju", "daejeon", "ulsan"]);
+function areaName(p: Listing): string | null {
+  const s = p.address || "";
+  if (METRO_DISTRICTS.has(p.districtId)) {
+    const gu = s.match(/[가-힣]{2,}구(?![가-힣])/);
+    if (gu) return gu[0];
+  }
   const si = s.match(/[가-힣]{2,}(?:시|군)(?![가-힣])/);
-  return si ? si[0] : null;
+  if (si) return si[0];
+  const gu2 = s.match(/[가-힣]{2,}구(?![가-힣])/);
+  return gu2 ? gu2[0] : null;
 }
 function clusterName(pins: Listing[], fallback: string): string {
   const freq = new Map<string, number>();
   for (const p of pins) {
-    const n = areaName(p.address);
+    const n = areaName(p);
     if (n) freq.set(n, (freq.get(n) ?? 0) + 1);
   }
   let best: string | null = null, bestC = 0;
@@ -169,7 +176,7 @@ function clusterPins(pins: Listing[], zoom: number, expandedKey: string | null):
   const out: ReturnType<typeof clusterPins> = [];
   const buckets = new Map<string, Listing[]>();
   for (const p of pins) {
-    const area = areaName(p.address);
+    const area = areaName(p);
     // 주소가 비어 구/시를 못 정하면 시도로 묶지 않고 개별 핀 — 흩어진 매물이 시도명
     // ("경기") 카드로 묶여 엉뚱한 위치(강 한복판)에 뜨던 문제 방지.
     if (!area) { out.push({ kind: "single", pin: p }); continue; }
