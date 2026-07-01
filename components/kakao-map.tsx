@@ -14,6 +14,17 @@ const DEFAULT_ZOOM = 7;
 const DISTRICT_ZOOM = 12;
 const CLIENT_ID = process.env.NEXT_PUBLIC_NAVER_MAPS_CLIENT_ID;
 
+// fitBounds 여백 — 지도가 전체 너비라 데스크탑 좌측 리스트 패널이 지도를 덮음.
+// 리스트 폭만큼 left 패딩을 줘서 매물이 "보이는" 오른쪽 영역에 프레이밍되게 한다.
+function fitPadding(): { top: number; right: number; bottom: number; left: number } {
+  const isDesktop = typeof window !== "undefined" && window.innerWidth >= 768;
+  const panel = isDesktop
+    ? (document.querySelector(".listing, .section-panel, .ai-section-panel") as HTMLElement | null)
+    : null;
+  const left = panel ? Math.round(panel.getBoundingClientRect().right) + 20 : 48;
+  return { top: 72, right: 72, bottom: 72, left };
+}
+
 function sizeClass(count: number): string {
   if (count >= 100) return "size-lg";
   if (count >= 25) return "size-md";
@@ -400,7 +411,7 @@ export function NaverMapView({
           );
           for (const pp of gPins) bounds.extend(new naver.maps.LatLng(pp.lat, pp.lng));
           ignoreNextIdleRef.current = true;
-          map.fitBounds(bounds, { top: 90, right: 90, bottom: 90, left: 90 });
+          map.fitBounds(bounds, fitPadding());
         });
         const marker = new naver.maps.Marker({
           position: new naver.maps.LatLng(lat, lng),
@@ -447,7 +458,7 @@ export function NaverMapView({
           new naver.maps.LatLng(dp[0].lat, dp[0].lng),
         );
         for (const p of dp) b.extend(new naver.maps.LatLng(p.lat, p.lng));
-        map.fitBounds(b, { top: 80, right: 80, bottom: 80, left: 80 });
+        map.fitBounds(b, fitPadding());
       } else {
         const d = districts.find((x) => x.id === activeDistrict);
         if (d) map.morph(new naver.maps.LatLng(d.lat, d.lng), DISTRICT_ZOOM);
