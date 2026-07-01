@@ -159,9 +159,14 @@ function groupPinsByLocation(pins: Listing[]): {
   return { mapPins, repOf, membersOf };
 }
 
-function clusterPins(pins: Listing[], zoom: number): Array<
+// 구 단위 클러스터 키 — "중구"처럼 여러 시에 있는 구 이름 충돌 방지 위해 시도(districtId) 포함.
+function areaKey(p: Listing): string {
+  return `${p.districtId}|${areaName(p.address) || p.district}`;
+}
+
+function clusterPins(pins: Listing[], zoom: number, expandedKey: string | null): Array<
   | { kind: "single"; pin: Listing }
-  | { kind: "cluster"; lat: number; lng: number; pins: Listing[] }
+  | { kind: "cluster"; lat: number; lng: number; pins: Listing[]; key: string }
 > {
   // 줌 15+ = 개별 핀. 그 전까지는 행정구역(구/시·군) 단위로 묶는다
   // — 격자(grid)로 자르면 같은 구가 쪼개져 "따로따로" 보이던 문제 해결.
@@ -169,19 +174,22 @@ function clusterPins(pins: Listing[], zoom: number): Array<
   const buckets = new Map<string, Listing[]>();
   for (const p of pins) {
     // 구/시·군이 없으면 시도로 묶는다 — 1개짜리가 카드 사이에 홀로 뜨는 것 방지.
-    // 시도(districtId)+구로 키 구성 — "중구"처럼 여러 시에 있는 구 이름 충돌 방지.
-    const area = areaName(p.address) || p.district;
-    const key = `${p.districtId}|${area}`;
+    const key = areaKey(p);
     const arr = buckets.get(key);
     if (arr) arr.push(p);
     else buckets.set(key, [p]);
   }
   // 클러스터 줌에선 1개짜리 구도 카드로 통일 — 개별 핀과 섞여 "따로따로" 보이지 않게.
+  // 단, 사용자가 클릭해 "펼친" 구(expandedKey)는 개별 핀으로 — 그 구 매물이 바로 보이게.
   const out: ReturnType<typeof clusterPins> = [];
-  for (const group of buckets.values()) {
+  for (const [key, group] of buckets.entries()) {
+    if (key === expandedKey) {
+      for (const pin of group) out.push({ kind: "single", pin });
+      continue;
+    }
     const lat = group.reduce((s, p) => s + p.lat, 0) / group.length;
     const lng = group.reduce((s, p) => s + p.lng, 0) / group.length;
-    out.push({ kind: "cluster", lat, lng, pins: group });
+    out.push({ kind: "cluster", lat, lng, pins: group, key });
   }
   return out;
 }
@@ -228,6 +236,8 @@ export function NaverMapView({
   const myLocationMarkerRef = useRef<NaverMarker | null>(null);
   const [ready, setReady] = useState(false);
   const [zoom, setZoom] = useState(DEFAULT_ZOOM);
+  // 클릭해서 "펼친" 구 키 — 그 구만 개별 핀으로(매물 바로 보이게), 나머지는 카드 유지.
+  const [expandedKey, setExpandedKey] = useState<string | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [locating, setLocating] = useState(false);
   const [hasMoved, setHasMoved] = useState(false);
@@ -337,8 +347,8 @@ export function NaverMapView({
     // zoom <= 10 그리고 시도 미선택 일 때는 district 마커만 — 핀 안 그림
     if (!activeDistrict && zoom <= 10) return;
 
-    // 줌 기반 그리드 클러스터 — 시도 선택 모드에서도 동일 적용(많을 때 카드로 묶임).
-    const groups = clusterPins(mapPins, zoom);
+    // 구 단위 클러스터 — 시도 선택 모드에서도 동일 적용(많을 때 카드로 묶임). 펼친 구는 개별 핀.
+    const groups = clusterPins(mapPins, zoom, expandedKey);
     for (const g of groups) {
       if (g.kind === "single") {
         const p = g.pin;
@@ -364,11 +374,19 @@ export function NaverMapView({
         const el = makeClusterEl(name, total, complexes);
         const lat = g.lat;
         const lng = g.lng;
+        const gKey = g.key;
+        const gPins = g.pins;
         el.addEventListener("click", () => {
-          // 카드 클릭 = 그 구로 드릴다운. 개별 핀이 뜨는 줌(15+)까지 한 번에 들어가
-          // 매물이 바로 보이게 (그 전엔 계속 구 단위로 묶여 카드만 보였음).
-          const target = map.getZoom() < 15 ? 15 : Math.min(map.getZoom() + 1, 17);
-          map.morph(new naver.maps.LatLng(lat, lng), target);
+          // 카드 클릭 = 그 구를 "펼침" → 그 구만 개별 핀으로, 화면을 그 구 매물에 맞춤.
+          // (기존엔 +2 확대해도 15 미만이면 계속 묶여 매물이 바로 안 보였음)
+          setExpandedKey(gKey);
+          const bounds = new naver.maps.LatLngBounds(
+            new naver.maps.LatLng(gPins[0].lat, gPins[0].lng),
+            new naver.maps.LatLng(gPins[0].lat, gPins[0].lng),
+          );
+          for (const pp of gPins) bounds.extend(new naver.maps.LatLng(pp.lat, pp.lng));
+          ignoreNextIdleRef.current = true;
+          map.fitBounds(bounds, { top: 90, right: 90, bottom: 90, left: 90 });
         });
         const marker = new naver.maps.Marker({
           position: new naver.maps.LatLng(lat, lng),
@@ -380,7 +398,10 @@ export function NaverMapView({
         clusterMarkersRef.current.push(marker);
       }
     }
-  }, [ready, activeDistrict, mapPins, membersOf, zoom, onPinHover, onPinClick]);
+  }, [ready, activeDistrict, mapPins, membersOf, zoom, expandedKey, onPinHover, onPinClick]);
+
+  // 시도(지역) 바뀌면 펼친 구 초기화 — 다른 지역 진입 시 이전 구 펼침 상태 제거.
+  useEffect(() => { setExpandedKey(null); }, [activeDistrict]);
 
   // Sync hovered/selected visual state onto existing pin elements.
   // 멤버 매물 id 는 대표 핀 id 로 변환 — 묶인 세대 중 하나를 가리켜도 대표 핀이 하이라이트됨.
