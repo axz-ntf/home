@@ -428,20 +428,35 @@ export function NaverMapView({
     });
   }, [hoveredId, selectedId, repOf]);
 
-  // Pan/zoom to active district
+  // Pan/zoom to active district — 그 시도의 실제 매물 범위에 맞춰 확대(fitBounds).
+  // 경기처럼 넓은 지역도 매물이 실제로 있는 곳(수도권)으로 프레이밍돼 시별 클러스터가 바로 보임.
+  // 지역이 "바뀔 때"만 카메라 이동 (pins 갱신·필터 변경으로 재실행돼도 같은 지역이면 무시).
+  const lastDistrictRef = useRef<string | null>(null);
   useEffect(() => {
     if (!ready || !mapRef.current || !window.naver) return;
+    if (lastDistrictRef.current === activeDistrict) return;
+    lastDistrictRef.current = activeDistrict;
     const { naver } = window;
-    // 프로그래매틱 morph 다음에 발생할 idle 은 무시 — "지도 움직였음" 으로 잡으면 안 됨
+    const map = mapRef.current;
     ignoreNextIdleRef.current = true;
     if (activeDistrict) {
-      const d = districts.find((x) => x.id === activeDistrict);
-      if (d) mapRef.current.morph(new naver.maps.LatLng(d.lat, d.lng), DISTRICT_ZOOM);
+      const dp = pins.filter((p) => p.districtId === activeDistrict && p.lat && p.lng);
+      if (dp.length) {
+        const b = new naver.maps.LatLngBounds(
+          new naver.maps.LatLng(dp[0].lat, dp[0].lng),
+          new naver.maps.LatLng(dp[0].lat, dp[0].lng),
+        );
+        for (const p of dp) b.extend(new naver.maps.LatLng(p.lat, p.lng));
+        map.fitBounds(b, { top: 80, right: 80, bottom: 80, left: 80 });
+      } else {
+        const d = districts.find((x) => x.id === activeDistrict);
+        if (d) map.morph(new naver.maps.LatLng(d.lat, d.lng), DISTRICT_ZOOM);
+      }
     } else {
-      mapRef.current.morph(new naver.maps.LatLng(KOREA_CENTER.lat, KOREA_CENTER.lng), DEFAULT_ZOOM);
+      map.morph(new naver.maps.LatLng(KOREA_CENTER.lat, KOREA_CENTER.lng), DEFAULT_ZOOM);
     }
     setHasMoved(false);
-  }, [ready, activeDistrict, districts]);
+  }, [ready, activeDistrict, districts, pins]);
 
   // Focus map on selected listing — 매물 클릭 시 항상 그 위치로 이동+확대.
   // 단, "선택이 바뀔 때"만 카메라를 움직인다 — pins 데이터 갱신 등으로 effect 가 재실행돼도
