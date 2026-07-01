@@ -1,0 +1,158 @@
+{
+  "supplyTotal": 378,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반공급",
+      "units": 7,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 100,
+        "byHousehold": null,
+        "note": "세대 월평균소득 100% 이하 (맞벌이 200%)"
+      },
+      "asset": {
+        "total": 36200,
+        "car": null
+      },
+      "other": [
+        "무주택세대구성원",
+        "입주자저축 12개월 12회이상",
+        "지역거주 요건 있음"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 140,
+        "byHousehold": null,
+        "note": "본인 월평균소득 140% 이하"
+      },
+      "asset": {
+        "total": 27600,
+        "car": null
+      },
+      "other": [
+        "신청자 본인 무주택",
+        "입주자저축 6개월 6회이상",
+        "부모자산 103,500만원 이하"
+      ]
+    },
+    {
+      "id": "child",
+      "name": "다자녀",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 120,
+        "byHousehold": null,
+        "note": "세대 월평균소득 120% 이하 (맞벌이 200%)"
+      },
+      "asset": {
+        "total": 36200,
+        "car": null
+      },
+      "other": [
+        "무주택세대구성원",
+        "입주자저축 6개월 6회이상"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "혼인",
+      "income": {
+        "percent": 130,
+        "byHousehold": null,
+        "note": "세대 월평균소득 130% 이하 (맞벌이 200%)"
+      },
+      "asset": {
+        "total": 36200,
+        "car": null
+      },
+      "other": [
+        "무주택세대구성원",
+        "입주자저축 6개월 6회이상"
+      ]
+    },
+    {
+      "id": "student",
+      "name": "생애최초",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 130,
+        "byHousehold": null,
+        "note": "세대 월평균소득 130% 이하 (맞벌이 200%)"
+      },
+      "asset": {
+        "total": 36200,
+        "car": null
+      },
+      "other": [
+        "무주택세대구성원",
+        "입주자저축 12개월 12회이상",
+        "세대구성원 전원 과거 주택소유 사실 없어야 함"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "노부모부양",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 120,
+        "byHousehold": null,
+        "note": "세대 월평균소득 120% 이하 (맞벌이 200%)"
+      },
+      "asset": {
+        "total": 36200,
+        "car": null
+      },
+      "other": [
+        "신청자 본인 세대주",
+        "입주자저축 12개월 12회이상",
+        "무주택세대구성원"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "신생아",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 140,
+        "byHousehold": null,
+        "note": "세대 월평균소득 140% 이하 (맞벌이 200%)"
+      },
+      "asset": {
+        "total": 36200,
+        "car": null
+      },
+      "other": [
+        "무주택세대구성원",
+        "입주자저축 6개월 6회이상"
+      ]
+    }
+  ],
+  "priority": [
+    "다자녀",
+    "한부모",
+    "노부모부양",
+    "장애인",
+    "신생아",
+    "국가유공자",
+    "철거민"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "supplyTotal": 14,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 14,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택국민을 대상으로 공공분양주택 공급",
+        "주택도시기금 지원(최대 7,500만원)"
+      ]
+    }
+  ],
+  "priority": []
+}

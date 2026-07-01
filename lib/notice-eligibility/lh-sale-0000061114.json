@@ -1,0 +1,16 @@
+{
+  "supplyTotal": 1,
+  "tiers": [
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": 1,
+      "age": null,
+      "marriage": "혼인 중이며 혼인기간 7년 이내 또는 6세 이하 자녀 있음",
+      "income": null,
+      "asset": null,
+      "other": []
+    }
+  ],
+  "priority": []
+}
