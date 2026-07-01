@@ -186,15 +186,34 @@ function clusterPins(pins: Listing[], zoom: number, expandedKey: string | null):
   if (zoom >= 15) return pins.map((pin) => ({ kind: "single", pin }));
   const out: ReturnType<typeof clusterPins> = [];
   const buckets = new Map<string, Listing[]>();
+  const orphans: Listing[] = [];
   for (const p of pins) {
     const area = areaName(p);
-    // 주소가 비어 구/시를 못 정하면 시도로 묶지 않고 개별 핀 — 흩어진 매물이 시도명
-    // ("경기") 카드로 묶여 엉뚱한 위치(강 한복판)에 뜨던 문제 방지.
-    if (!area) { out.push({ kind: "single", pin: p }); continue; }
+    // 주소가 비어 구/시를 못 정하는 매물은 일단 보류(orphans) — 아래서 가장 가까운 클러스터에 흡수.
+    if (!area) { orphans.push(p); continue; }
     const key = `${p.districtId}|${area}`;
     const arr = buckets.get(key);
     if (arr) arr.push(p);
     else buckets.set(key, [p]);
+  }
+  // 주소 없는 매물 → 같은 시도에서 가장 가까운 시/구 클러스터에 흡수 (낱개로 튀지 않게).
+  // 좌표는 정확하므로 거리 기준으로 붙임. 같은 시도 클러스터가 하나도 없을 때만 개별 핀.
+  if (orphans.length) {
+    const centroids = [...buckets.entries()].map(([key, g]) => ({
+      key, districtId: g[0].districtId,
+      lat: g.reduce((s, p) => s + p.lat, 0) / g.length,
+      lng: g.reduce((s, p) => s + p.lng, 0) / g.length,
+    }));
+    for (const o of orphans) {
+      let bestKey: string | null = null, bestD = Infinity;
+      for (const c of centroids) {
+        if (c.districtId !== o.districtId) continue;
+        const d = (c.lat - o.lat) ** 2 + (c.lng - o.lng) ** 2;
+        if (d < bestD) { bestD = d; bestKey = c.key; }
+      }
+      if (bestKey) buckets.get(bestKey)!.push(o);
+      else out.push({ kind: "single", pin: o });
+    }
   }
   // 클러스터 줌에선 같은 구를 한 카드로 통일. 단, 클릭해 "펼친" 구(expandedKey)는 개별 핀으로.
   for (const [key, group] of buckets.entries()) {
