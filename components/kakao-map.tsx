@@ -52,6 +52,7 @@ function pinClass(type: Listing["type"]): string {
   if (type === "jeonse") return "map-pin jeonse";
   if (type === "fifty") return "map-pin fifty";
   if (type === "youth") return "map-pin youth";
+  if (type === "integ") return "map-pin integ";
   return "map-pin";
 }
 
@@ -97,16 +98,35 @@ function makePinEl(p: Listing, memberCount = 1): HTMLElement {
   return el;
 }
 
-function clusterSizeClass(count: number): string {
-  if (count >= 50) return "size-lg";
-  if (count >= 15) return "size-md";
-  return "size-sm";
+// 클러스터 대표 지역명 — 도로명주소에서 구(우선)/시·군 추출.
+function areaName(addr: string | undefined): string | null {
+  const s = addr || "";
+  const gu = s.match(/[가-힣]{2,}구(?![가-힣])/);
+  if (gu) return gu[0];
+  const si = s.match(/[가-힣]{2,}(?:시|군)(?![가-힣])/);
+  return si ? si[0] : null;
+}
+function clusterName(pins: Listing[], fallback: string): string {
+  const freq = new Map<string, number>();
+  for (const p of pins) {
+    const n = areaName(p.address);
+    if (n) freq.set(n, (freq.get(n) ?? 0) + 1);
+  }
+  let best: string | null = null, bestC = 0;
+  for (const [n, c] of freq) if (c > bestC) { best = n; bestC = c; }
+  return best || fallback || "이 지역";
 }
 
-function makeClusterEl(count: number): HTMLElement {
+// 동/지구 클러스터 카드 — 지역명 + 매물수 + 단지수.
+function makeClusterEl(name: string, listings: number, complexes: number): HTMLElement {
   const el = document.createElement("div");
   el.className = "map-cluster-wrap";
-  el.innerHTML = `<div class="map-cluster ${clusterSizeClass(count)}">${count}</div>`;
+  el.innerHTML =
+    `<div class="map-cluster-card">` +
+    `<div class="mc-name">${name}</div>` +
+    `<div class="mc-row"><span class="mc-label">매물</span><b class="mc-listings">${listings.toLocaleString()}</b></div>` +
+    `<div class="mc-row"><span class="mc-label">단지</span><b>${complexes.toLocaleString()}</b></div>` +
+    `</div><i class="map-cluster-tail"></i>`;
   return el;
 }
 
@@ -347,9 +367,11 @@ export function NaverMapView({
         });
         pinMarkersRef.current.set(p.id, { marker, el });
       } else {
-        // 클러스터 숫자는 묶인 매물 총수 — 헤더 매물 수와 합이 맞게.
+        // 매물수 = 묶인 매물 총수(헤더와 합 일치), 단지수 = 서로 다른 단지(좌표) 수.
         const total = g.pins.reduce((s, p) => s + (membersOf.get(p.id)?.length ?? 1), 0);
-        const el = makeClusterEl(total);
+        const complexes = new Set(g.pins.map((p) => p.complexName || p.id)).size;
+        const name = clusterName(g.pins, districtShortName(g.pins[0]?.district ?? ""));
+        const el = makeClusterEl(name, total, complexes);
         const lat = g.lat;
         const lng = g.lng;
         el.addEventListener("click", () => {
