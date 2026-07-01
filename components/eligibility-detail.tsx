@@ -114,7 +114,6 @@ function normalizeTierName(raw: string): string {
 
 export function EligibilityDetail({
   listingId,
-  sourceUrl,
   housingType,
 }: {
   listingId: string;
@@ -199,12 +198,6 @@ export function EligibilityDetail({
         </details>
       )}
 
-      {/* 소득·자산 세부는 공고마다 구조가 달라 공고문으로 위임 */}
-      {sourceUrl && (
-        <a href={sourceUrl} target="_blank" rel="noreferrer" className="eli-empty-link" style={{ marginTop: 10 }}>
-          소득·자산 등 자세한 자격조건은 공고문에서 →
-        </a>
-      )}
     </div>
   );
 }

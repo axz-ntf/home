@@ -159,11 +159,6 @@ function groupPinsByLocation(pins: Listing[]): {
   return { mapPins, repOf, membersOf };
 }
 
-// 구 단위 클러스터 키 — "중구"처럼 여러 시에 있는 구 이름 충돌 방지 위해 시도(districtId) 포함.
-function areaKey(p: Listing): string {
-  return `${p.districtId}|${areaName(p.address) || p.district}`;
-}
-
 function clusterPins(pins: Listing[], zoom: number, expandedKey: string | null): Array<
   | { kind: "single"; pin: Listing }
   | { kind: "cluster"; lat: number; lng: number; pins: Listing[]; key: string }
@@ -171,17 +166,19 @@ function clusterPins(pins: Listing[], zoom: number, expandedKey: string | null):
   // 줌 15+ = 개별 핀. 그 전까지는 행정구역(구/시·군) 단위로 묶는다
   // — 격자(grid)로 자르면 같은 구가 쪼개져 "따로따로" 보이던 문제 해결.
   if (zoom >= 15) return pins.map((pin) => ({ kind: "single", pin }));
+  const out: ReturnType<typeof clusterPins> = [];
   const buckets = new Map<string, Listing[]>();
   for (const p of pins) {
-    // 구/시·군이 없으면 시도로 묶는다 — 1개짜리가 카드 사이에 홀로 뜨는 것 방지.
-    const key = areaKey(p);
+    const area = areaName(p.address);
+    // 주소가 비어 구/시를 못 정하면 시도로 묶지 않고 개별 핀 — 흩어진 매물이 시도명
+    // ("경기") 카드로 묶여 엉뚱한 위치(강 한복판)에 뜨던 문제 방지.
+    if (!area) { out.push({ kind: "single", pin: p }); continue; }
+    const key = `${p.districtId}|${area}`;
     const arr = buckets.get(key);
     if (arr) arr.push(p);
     else buckets.set(key, [p]);
   }
-  // 클러스터 줌에선 1개짜리 구도 카드로 통일 — 개별 핀과 섞여 "따로따로" 보이지 않게.
-  // 단, 사용자가 클릭해 "펼친" 구(expandedKey)는 개별 핀으로 — 그 구 매물이 바로 보이게.
-  const out: ReturnType<typeof clusterPins> = [];
+  // 클러스터 줌에선 같은 구를 한 카드로 통일. 단, 클릭해 "펼친" 구(expandedKey)는 개별 핀으로.
   for (const [key, group] of buckets.entries()) {
     if (key === expandedKey) {
       for (const pin of group) out.push({ kind: "single", pin });
@@ -248,6 +245,11 @@ export function NaverMapView({
   activeDistrictRef.current = activeDistrict;
   const onDistrictClearRef = useRef(onDistrictClear);
   onDistrictClearRef.current = onDistrictClear;
+  // 선택/호버 최신값 ref — 핀 el 재생성 시에도 선택(파란) 상태를 유지하기 위함.
+  const selectedIdRef = useRef(selectedId);
+  selectedIdRef.current = selectedId;
+  const hoveredIdRef = useRef(hoveredId);
+  hoveredIdRef.current = hoveredId;
 
   useEffect(() => {
     if (!CLIENT_ID) {
@@ -354,6 +356,11 @@ export function NaverMapView({
         const p = g.pin;
         const members = membersOf.get(p.id) ?? [p];
         const el = makePinEl(p, members.length);
+        // 생성 시점의 선택/호버 상태 반영 — 선택 직후 이펙트 재실행으로 파란색이 사라지던 문제 방지.
+        const repSel0 = selectedIdRef.current ? (repOf.get(selectedIdRef.current) ?? selectedIdRef.current) : null;
+        const repHov0 = hoveredIdRef.current ? (repOf.get(hoveredIdRef.current) ?? hoveredIdRef.current) : null;
+        if (p.id === repSel0) el.classList.add("selected");
+        if (p.id === repHov0) el.classList.add("hovered");
         el.addEventListener("mouseenter", () => onPinHover(p.id));
         el.addEventListener("mouseleave", () => onPinHover(null));
         // 묶인 매물이 여럿이면 목록을 띄워 고르게, 하나면 바로 상세.
@@ -398,7 +405,7 @@ export function NaverMapView({
         clusterMarkersRef.current.push(marker);
       }
     }
-  }, [ready, activeDistrict, mapPins, membersOf, zoom, expandedKey, onPinHover, onPinClick]);
+  }, [ready, activeDistrict, mapPins, membersOf, repOf, zoom, expandedKey, onPinHover, onPinClick]);
 
   // 시도(지역) 바뀌면 펼친 구 초기화 — 다른 지역 진입 시 이전 구 펼침 상태 제거.
   useEffect(() => { setExpandedKey(null); }, [activeDistrict]);
