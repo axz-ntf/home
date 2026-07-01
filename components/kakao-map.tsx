@@ -130,15 +130,6 @@ function makeClusterEl(name: string, listings: number, complexes: number): HTMLE
   return el;
 }
 
-function gridStepForZoom(zoom: number): number {
-  if (zoom <= 10) return 0.25;
-  if (zoom <= 11) return 0.12;
-  if (zoom <= 12) return 0.06;
-  if (zoom <= 13) return 0.03;
-  if (zoom <= 14) return 0.015;
-  return 0; // 15 이상은 개별 핀 (충분히 확대됐을 때만)
-}
-
 // 같은 좌표(같은 건물·주소)의 여러 매물을 지도에선 대표 1개로 묶는다.
 // 든든전세처럼 한 단지 N세대가 호별 매물로 분리돼 같은 좌표에 핀 N개로 쌓이는 걸 방지.
 // 리스트/상세 데이터(전체 매물)는 그대로 — 지도 렌더에서만 압축한다.
@@ -172,13 +163,14 @@ function clusterPins(pins: Listing[], zoom: number): Array<
   | { kind: "single"; pin: Listing }
   | { kind: "cluster"; lat: number; lng: number; pins: Listing[] }
 > {
-  const step = gridStepForZoom(zoom);
-  if (step === 0) return pins.map((pin) => ({ kind: "single", pin }));
+  // 줌 15+ = 개별 핀. 그 전까지는 행정구역(구/시·군) 단위로 묶는다
+  // — 격자(grid)로 자르면 같은 구가 쪼개져 "따로따로" 보이던 문제 해결.
+  if (zoom >= 15) return pins.map((pin) => ({ kind: "single", pin }));
   const buckets = new Map<string, Listing[]>();
   for (const p of pins) {
-    const ky = Math.floor(p.lat / step);
-    const kx = Math.floor(p.lng / step);
-    const key = `${ky}|${kx}`;
+    const area = areaName(p.address);
+    // 시도(districtId)+구로 키 구성 — "중구"처럼 여러 시에 있는 구 이름 충돌 방지.
+    const key = area ? `${p.districtId}|${area}` : `solo|${p.id}`;
     const arr = buckets.get(key);
     if (arr) arr.push(p);
     else buckets.set(key, [p]);

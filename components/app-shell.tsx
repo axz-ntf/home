@@ -68,6 +68,8 @@ export function AppShell({
   const [activeSection, setActiveSection] = useState<"home" | "tips" | "saved" | "ai">("home");
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [query, setQuery] = useState("");
+  // 입력값(타이핑)과 적용된 검색어(query)를 분리 — 엔터 시에만 query 반영(라이브 필터 방지).
+  const [searchInput, setSearchInput] = useState("");
   const [filters, setFilters] = useState<Filters>(INITIAL_FILTERS);
   const [sort, setSort] = useState<SortKey>("recent");
   const [activeDistrict, setActiveDistrict] = useState<string | null>(null);
@@ -264,11 +266,14 @@ export function AppShell({
             type="text"
             className="topbar-search-input"
             placeholder="단지, 지역, 지하철, 초등학교 검색"
-            value={query}
-            onChange={(e) => { setQuery(e.target.value); setActiveSection("home"); }}
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") { setQuery(searchInput.trim()); setActiveSection("home"); }
+            }}
           />
-          {query && (
-            <button type="button" className="topbar-search-clear" onClick={() => setQuery("")} aria-label="검색어 지우기">
+          {searchInput && (
+            <button type="button" className="topbar-search-clear" onClick={() => { setSearchInput(""); setQuery(""); }} aria-label="검색어 지우기">
               <MdClose />
             </button>
           )}
