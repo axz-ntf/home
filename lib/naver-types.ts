@@ -7,6 +7,7 @@ export interface NaverBounds {
   hasLatLng(latlng: NaverLatLng): boolean;
   getSW(): NaverLatLng;
   getNE(): NaverLatLng;
+  extend(latlng: NaverLatLng): NaverBounds;
 }
 
 export interface NaverMap {
@@ -16,6 +17,7 @@ export interface NaverMap {
   getBounds(): NaverBounds;
   panTo(latlng: NaverLatLng, transitionOptions?: { duration?: number; easing?: string }): void;
   morph(latlng: NaverLatLng, zoom?: number, transitionOptions?: { duration?: number }): void;
+  fitBounds(bounds: NaverBounds, margin?: { top?: number; right?: number; bottom?: number; left?: number }): void;
   setOptions(options: {
     scaleControl?: boolean;
     logoControl?: boolean;
@@ -43,6 +45,7 @@ export interface NaverEventListener {
 export interface NaverNamespace {
   maps: {
     LatLng: new (lat: number, lng: number) => NaverLatLng;
+    LatLngBounds: new (sw: NaverLatLng, ne: NaverLatLng) => NaverBounds;
     Map: new (
       container: HTMLElement,
       options: {
