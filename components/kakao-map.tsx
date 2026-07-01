@@ -168,19 +168,17 @@ function clusterPins(pins: Listing[], zoom: number): Array<
   if (zoom >= 15) return pins.map((pin) => ({ kind: "single", pin }));
   const buckets = new Map<string, Listing[]>();
   for (const p of pins) {
-    const area = areaName(p.address);
+    // 구/시·군이 없으면 시도로 묶는다 — 1개짜리가 카드 사이에 홀로 뜨는 것 방지.
     // 시도(districtId)+구로 키 구성 — "중구"처럼 여러 시에 있는 구 이름 충돌 방지.
-    const key = area ? `${p.districtId}|${area}` : `solo|${p.id}`;
+    const area = areaName(p.address) || p.district;
+    const key = `${p.districtId}|${area}`;
     const arr = buckets.get(key);
     if (arr) arr.push(p);
     else buckets.set(key, [p]);
   }
+  // 클러스터 줌에선 1개짜리 구도 카드로 통일 — 개별 핀과 섞여 "따로따로" 보이지 않게.
   const out: ReturnType<typeof clusterPins> = [];
   for (const group of buckets.values()) {
-    if (group.length <= 1) {
-      for (const pin of group) out.push({ kind: "single", pin });
-      continue;
-    }
     const lat = group.reduce((s, p) => s + p.lat, 0) / group.length;
     const lng = group.reduce((s, p) => s + p.lng, 0) / group.length;
     out.push({ kind: "cluster", lat, lng, pins: group });

@@ -1301,7 +1301,7 @@ input, select { font-family: inherit; }
 }
 .mc-label { font-size: 12px; font-weight: 600; color: #6a6f73; }
 .mc-row b { font-size: 15px; font-weight: 800; color: #303233; letter-spacing: -0.02em; }
-.mc-listings { color: #18ba45 !important; }
+.mc-listings { color: #1e84ff !important; }
 .map-cluster-tail {
   display: block;
   width: 12px; height: 8px;
