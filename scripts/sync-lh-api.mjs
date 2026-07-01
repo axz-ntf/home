@@ -587,6 +587,21 @@ async function main() {
   } catch (e) {
     console.error("조감도 보강 실패 (목록은 저장됨):", e.message);
   }
+
+  // ── Phase 7: 좌표 없는 활성 매물 지오코딩 자동 보강 (재발 방지) ──
+  // sync 를 단독 실행(node scripts/sync-lh-api.mjs)해도 좌표 누락 없이 끝나도록 항상 실행.
+  // 과거 sync 만 돌리고 geocode 를 빼먹어 LH 가 지도에서 축소돼 보이던 문제 원천 차단.
+  console.log("\n=== Phase 7: 좌표 보강 (geocode-missing-coords) ===");
+  if (!process.env.VWORLD_API_KEY) {
+    console.warn("  VWORLD_API_KEY 없음 → 좌표 보강 스킵. `npm run sync:lh` 또는 --env-file 로 실행하세요.");
+  } else {
+    try {
+      const { execSync } = await import("node:child_process");
+      execSync(`node "${path.join(ROOT, "scripts/geocode-missing-coords.mjs")}"`, { stdio: "inherit", env: process.env });
+    } catch (e) {
+      console.error("좌표 보강 실패 (목록은 저장됨):", e.message);
+    }
+  }
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });
