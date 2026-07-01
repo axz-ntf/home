@@ -1052,7 +1052,7 @@ input, select { font-family: inherit; }
   border-radius: 50%;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18), 0 0 0 2px white;
+  box-shadow: 0 2px 8px rgba(0,0,0,.18);
   transition: transform .12s, box-shadow .12s;
   display: flex;
   flex-direction: column;
@@ -1073,7 +1073,7 @@ input, select { font-family: inherit; }
 .map-marker-wrap:hover .map-marker,
 .map-marker-wrap.highlighted .map-marker {
   transform: scale(1.08);
-  box-shadow: 0 6px 18px rgba(255,111,15,.35), 0 0 0 3px white;
+  box-shadow: 0 6px 18px rgba(255,111,15,.35);
 }
 .map-marker.active {
   background: var(--seed-scale-color-gray-900);
@@ -1266,6 +1266,7 @@ input, select { font-family: inherit; }
   height: 14px;
   border-radius: 50%;
   background: #1a73e8;
+  border: 2px solid white;
   box-shadow: 0 0 0 1px rgba(26, 115, 232, 0.4);
 }
 .map-me-ring {
