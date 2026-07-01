@@ -1287,20 +1287,20 @@ input, select { font-family: inherit; }
 }
 .map-cluster-card {
   background: #fff;
-  border-radius: 14px;
-  padding: 10px 14px;
-  min-width: 96px;
+  border-radius: 12px;
+  padding: 7px 11px;
+  min-width: 74px;
 }
 .mc-name {
-  font-size: 15px; font-weight: 800; color: #303233;
-  letter-spacing: -0.02em; margin-bottom: 5px;
+  font-size: 13px; font-weight: 800; color: #303233;
+  letter-spacing: -0.02em; margin-bottom: 3px;
 }
 .mc-row {
   display: flex; align-items: center; justify-content: space-between;
-  gap: 14px; line-height: 1.5;
+  gap: 10px; line-height: 1.4;
 }
-.mc-label { font-size: 12px; font-weight: 600; color: #6a6f73; }
-.mc-row b { font-size: 15px; font-weight: 800; color: #303233; letter-spacing: -0.02em; }
+.mc-label { font-size: 11px; font-weight: 600; color: #6a6f73; }
+.mc-row b { font-size: 13px; font-weight: 800; color: #303233; letter-spacing: -0.02em; }
 .mc-listings { color: #1e84ff !important; }
 .map-cluster-tail {
   display: block;
