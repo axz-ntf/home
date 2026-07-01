@@ -365,7 +365,10 @@ export function NaverMapView({
         const lat = g.lat;
         const lng = g.lng;
         el.addEventListener("click", () => {
-          map.morph(new naver.maps.LatLng(lat, lng), Math.min(map.getZoom() + 2, 16));
+          // 카드 클릭 = 그 구로 드릴다운. 개별 핀이 뜨는 줌(15+)까지 한 번에 들어가
+          // 매물이 바로 보이게 (그 전엔 계속 구 단위로 묶여 카드만 보였음).
+          const target = map.getZoom() < 15 ? 15 : Math.min(map.getZoom() + 1, 17);
+          map.morph(new naver.maps.LatLng(lat, lng), target);
         });
         const marker = new naver.maps.Marker({
           position: new naver.maps.LatLng(lat, lng),
