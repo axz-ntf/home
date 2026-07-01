@@ -42,6 +42,8 @@ function AiPageInner() {
           </svg>
         </button>
         <div className="ai-fullscreen-title">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/planet.svg" alt="" width={20} height={20} style={{ verticalAlign: "middle", marginRight: 6 }} />
           <span>AI 자격상담사</span>
           <span className="ai-fullscreen-beta">beta</span>
         </div>

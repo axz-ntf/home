@@ -18,6 +18,8 @@ export function DetailAiPanel({
     <aside className="detail-ai-panel">
       <header className="detail-ai-header">
         <div className="detail-ai-title">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/planet.svg" alt="" width={20} height={20} style={{ verticalAlign: "middle", marginRight: 6 }} />
           <span className="detail-ai-name">AI 자격상담사</span>
           <span className="detail-ai-beta">beta</span>
         </div>

@@ -220,9 +220,9 @@ export function ChatPanelBody({ allListings = [], focusListing }: { allListings?
       <div className="chat-body" ref={scrollRef}>
         {messages.length === 0 && (
           <div className="chat-welcome">
-            <div className="chat-welcome-logo" aria-hidden>
+            <div className="chat-welcome-logo" aria-hidden style={{ marginTop: 12 }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/ai-icon.svg" alt="" />
+              <img src="/planet.svg" alt="" />
             </div>
             {focusListing ? (
               <>
@@ -244,10 +244,6 @@ export function ChatPanelBody({ allListings = [], focusListing }: { allListings?
                       className="chat-question"
                       onClick={() => sendMessage({ text: `${focusListing.complexName || focusListing.title} — ${q}` })}
                     >
-                      <span className="chat-question-icon" aria-hidden>
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src="/ai-icon.svg" alt="" />
-                      </span>
                       <span>{q}</span>
                     </button>
                   ))}
@@ -275,10 +271,6 @@ export function ChatPanelBody({ allListings = [], focusListing }: { allListings?
                       className="chat-question"
                       onClick={() => sendMessage({ text: q })}
                     >
-                      <span className="chat-question-icon" aria-hidden>
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src="/ai-icon.svg" alt="" />
-                      </span>
                       <span>{q}</span>
                     </button>
                   ))}
