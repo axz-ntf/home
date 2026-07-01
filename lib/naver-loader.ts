@@ -25,7 +25,7 @@ export function loadNaverMaps(clientId: string): Promise<void> {
 
     const script = document.createElement("script");
     script.id = "naver-maps-sdk";
-    script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${encodeURIComponent(clientId)}&submodules=panorama`;
+    script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${encodeURIComponent(clientId)}&submodules=panorama`;
     script.async = true;
     script.onload = () => resolve();
     script.onerror = () => reject(new Error("Naver Maps SDK 로드 실패"));
