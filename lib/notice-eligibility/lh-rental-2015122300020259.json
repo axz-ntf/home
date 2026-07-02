@@ -1,0 +1,89 @@
+{
+  "supplyTotal": 476,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": 142,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": null
+      },
+      "other": [
+        "대학에 재학 중이거나 다음 학기에 입·복학 예정인 사람",
+        "취업준비생: 대학 또는 고등학교 졸업(또는 중퇴)한 지 2년 이내",
+        "자동차가액 무소유"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": 154,
+      "age": "19세 이상 39세 이하 (출생일 1986.07.03. ~ 2007.07.02.)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "사회초년생: 소득업무 종사기간 총 7년 이내"
+      },
+      "asset": null,
+      "other": [
+        "소득이 있는 업무 종사자",
+        "퇴직 후 1년 이내 구직급여 수급자",
+        "예술인복지법에 따른 예술인"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족",
+      "units": 96,
+      "age": null,
+      "marriage": "혼인 10년 이내 또는 9세 이하 자녀 보유",
+      "income": null,
+      "asset": null,
+      "other": [
+        "신혼부부: 혼인기간 10년 이내 또는 9세 이하 자녀 보유",
+        "한부모가족: 9세 이하 자녀 보유"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "산업단지근로자",
+      "units": 81,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "김포시 또는 연접지역(서울특별시, 인천광역시, 고양시, 파주시) 산업단지 입주 또는 입주 예정 기업 근무자",
+        "교육, 연구기관 근무자"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": 3,
+      "age": "65세 이상 (1961.07.02. 이전 출생)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "주거약자용 주택 공급"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": 4,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": []
+    }
+  ],
+  "priority": []
+}

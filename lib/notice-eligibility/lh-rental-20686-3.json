@@ -1,0 +1,110 @@
+{
+  "supplyTotal": 476,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": 147,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": null
+      },
+      "other": [
+        "대학 재학 중이거나 다음 학기 입·복학 예정",
+        "취업준비생: 대학 또는 고등학교 졸업(중퇴) 후 2년 이내",
+        "자동차 미소유"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": 159,
+      "age": "19세 이상 39세 이하 (1986.07.03. ~ 2007.07.02.)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득업무 종사기간 총 7년 이내 (완화조건)"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "사회초년생: 소득 있는 업무 종사 중인 자, 퇴직 후 1년 미만 구직급여 수급자, 예술인 포함"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족",
+      "units": 109,
+      "age": null,
+      "marriage": "혼인기간 10년 이내 또는 9세 이하 자녀(태아 포함) 보유 (완화조건)",
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "신혼부부: 공고일 현재 혼인 중인 자",
+        "예비신혼부부: 입주 전까지 혼인사실 증명 가능",
+        "한부모가족: 9세 이하 자녀(태아 포함) 보유"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "산업단지근로자",
+      "units": 8,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "김포시 또는 연접지역(서울, 인천, 고양시, 파주시) 산업단지 입주·예정 기업 근무",
+        "교육·연구기관 근무자 포함"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": 32,
+      "age": "65세 이상 (1961.07.02. 이전 출생)",
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "주거약자용 주택 (편의시설 설치, 3층 이하)"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": 24,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "주거급여법 제2조 제2호, 제3호 수급권자 또는 수급자"
+      ]
+    }
+  ],
+  "priority": [
+    "다자녀",
+    "한부모",
+    "노부모부양",
+    "장애인"
+  ]
+}
