@@ -153,6 +153,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
+          KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
         run: node scripts/extract-mapped-regional.mjs --active
 
       # "전국 모집"에 잘못 떨어진 단일 공고(제목에 시·군·구 명확)를 지역 단위 지도 핀으로 이동.
@@ -161,6 +162,7 @@ jobs:
         continue-on-error: true
         env:
           VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
+          KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
         run: node scripts/geocode-regional-singles.mjs --active
 
       # 분리된 다지점 단지마다 제 조감도 크롤(없으면 비움) → Blob 업로드.

@@ -14,7 +14,8 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const VKEY = process.env.VWORLD_API_KEY?.replace(/^"|"$/g, "");
-if (!VKEY) { console.error("ERROR: VWORLD_API_KEY 필요"); process.exit(1); }
+const KAKAO = process.env.KAKAO_REST_API_KEY?.replace(/^"|"$/g, ""); // VWorld 폴백(CI IP 제한 회피)
+if (!VKEY && !KAKAO) { console.error("ERROR: VWORLD_API_KEY/KAKAO_REST_API_KEY 중 하나 필요"); process.exit(1); }
 
 const args = process.argv.slice(2);
 const ACTIVE = args.includes("--active");
@@ -79,13 +80,21 @@ function regionsFromTitle(title, district) {
 // 지오코딩 + 검증: VWorld 가 "상시"→"…상시목길"처럼 퍼지 매칭하므로, 매칭된 실제 주소
 // (refined.text)의 행정구역 토큰에 요청한 시/군/구가 그대로 들어있을 때만 인정한다.
 async function geocode(addr, sigungu) {
-  for (const type of ["ROAD", "PARCEL"]) {
+  if (VKEY) for (const type of ["ROAD", "PARCEL"]) {
     const u = `https://api.vworld.kr/req/address?service=address&request=getcoord&version=2.0&crs=EPSG:4326&type=${type}&address=${encodeURIComponent(addr)}&key=${VKEY}`;
     try {
       const j = await (await fetch(u)).json();
       const p = j?.response?.result?.point;
       const refined = j?.response?.refined?.text || "";
       if (p && refined.split(/\s+/).includes(sigungu)) return { lat: +p.y, lng: +p.x };
+    } catch {}
+  }
+  if (KAKAO) for (const ep of ["address", "keyword"]) { // VWorld 실패/누락 시 Kakao 폴백 (시군구 일치 가드 유지)
+    try {
+      const j = await (await fetch(`https://dapi.kakao.com/v2/local/search/${ep}.json?query=${encodeURIComponent(addr)}&size=1`, { headers: { Authorization: "KakaoAK " + KAKAO } })).json();
+      const d = j.documents?.[0];
+      const an = d?.address_name || d?.road_address_name || "";
+      if (d && an.split(/\s+/).includes(sigungu)) return { lat: +d.y, lng: +d.x };
     } catch {}
   }
   return null;
