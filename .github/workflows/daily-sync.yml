@@ -124,6 +124,7 @@ jobs:
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
           VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
+          KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
         run: node scripts/sync-lh-api.mjs
 
       # 잔여세대·선착순·일반매각 등 좌표 못 받은 활성 공고를 address 로 지오코딩 보강
@@ -132,6 +133,7 @@ jobs:
         continue-on-error: true
         env:
           VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
+          KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
         run: node scripts/geocode-missing-coords.mjs
 
       # 최종 sync 로 listings-api 가 갱신된 뒤 신규 매물의 단지조감도 크롤(기존은 skip)

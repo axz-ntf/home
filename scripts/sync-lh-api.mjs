@@ -35,8 +35,9 @@ try {
 
 const DATA_GO_KR_KEY = process.env.DATA_GO_KR_KEY;
 const VWORLD_API_KEY = process.env.VWORLD_API_KEY;
+const KAKAO_REST_API_KEY = process.env.KAKAO_REST_API_KEY; // VWorld 폴백(헤더 인증 → CI IP 제한 없음)
 if (!DATA_GO_KR_KEY) { console.error("DATA_GO_KR_KEY missing"); process.exit(1); }
-if (!VWORLD_API_KEY) console.warn("VWORLD_API_KEY missing — geocoding 건너뜀");
+if (!VWORLD_API_KEY && !KAKAO_REST_API_KEY) console.warn("VWORLD/KAKAO 키 모두 없음 — geocoding 건너뜀");
 
 const UA = "daum-public-housing-app/1.0 (LH API sync)";
 const PG_SZ = 100;
@@ -333,9 +334,29 @@ async function scrapeAddress(dtlUrl) {
   }
 }
 
+// Kakao 로컬 API 지오코딩 (헤더 인증 → CI에서도 안정적, VWorld IP 제한 회피).
+async function kakaoGeocode(clean) {
+  if (!KAKAO_REST_API_KEY) return null;
+  for (const ep of ["address", "keyword"]) {
+    const url = `https://dapi.kakao.com/v2/local/search/${ep}.json?query=${encodeURIComponent(clean)}&size=1`;
+    try {
+      const res = await fetch(url, { headers: { Authorization: "KakaoAK " + KAKAO_REST_API_KEY } });
+      if (!res.ok) continue;
+      const j = await res.json();
+      const d = j.documents?.[0];
+      if (d) {
+        const lat = Number(d.y), lng = Number(d.x);
+        if (Number.isFinite(lat) && Number.isFinite(lng)) return { lat, lng, source: "kakao-" + ep };
+      }
+    } catch {}
+    await sleep(120);
+  }
+  return null;
+}
+
 async function vworldGeocode(addr) {
-  if (!VWORLD_API_KEY) return null;
   const clean = addr.replace(/\s+/g, " ").replace(/\s*\([^)]*\)\s*$/, "").trim();
+  if (!VWORLD_API_KEY) return await kakaoGeocode(clean);
   for (const type of ["ROAD", "PARCEL"]) {
     const url = new URL("https://api.vworld.kr/req/address");
     url.searchParams.set("service", "address");
@@ -362,7 +383,7 @@ async function vworldGeocode(addr) {
     } catch {}
     await sleep(120);
   }
-  return null;
+  return await kakaoGeocode(clean); // VWorld 실패 시 Kakao 폴백
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -469,7 +490,7 @@ async function main() {
     const hasExCoord = ex && ex.lat && ex.lng && ex.geocoded && ex.geocoded !== "sido-center";
     let lat = null, lng = null, address = "", geocoded = "none";
 
-    if (matchedComplex?.rnAdres && VWORLD_API_KEY) {
+    if (matchedComplex?.rnAdres && (VWORLD_API_KEY || KAKAO_REST_API_KEY)) {
       address = matchedComplex.rnAdres;
       const gc = await vworldGeocode(address);
       if (gc) {
@@ -496,7 +517,7 @@ async function main() {
       if (sc?.lat && sc?.lng) {
         lat = sc.lat; lng = sc.lng; address = sc.address || ""; geocoded = "page-coords";
         coordPage++;
-      } else if (sc?.address && VWORLD_API_KEY) {
+      } else if (sc?.address && (VWORLD_API_KEY || KAKAO_REST_API_KEY)) {
         const gc = await vworldGeocode(sc.address);
         if (gc) {
           lat = gc.lat; lng = gc.lng; address = sc.address; geocoded = gc.source;
