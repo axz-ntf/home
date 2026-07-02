@@ -1793,7 +1793,10 @@ input, select { font-family: inherit; }
 .detail-confirm-box a:hover { text-decoration: underline; }
 
 .detail-section {
-  margin-bottom: 24px;
+  /* 섹션 밴드 분리 — 풀블리드 회색 띠로 섹션 경계 명확화 */
+  margin: 0 -24px;
+  padding: 20px 24px 24px;
+  border-top: 10px solid #f2f4f6;
 }
 .detail-section h3 {
   font-size: 14px; font-weight: 700;
