@@ -1047,12 +1047,13 @@ input, select { font-family: inherit; }
 }
 .map-marker-wrap.highlighted { z-index: 5; }
 .map-marker {
-  background: var(--seed-semantic-color-primary);
+  /* tile/A. 원형 버블 — 세로 그라디언트 #4DA9FF→#1E84FF */
+  background: linear-gradient(180deg, #4DA9FF 0%, #1E84FF 100%);
   color: white;
   border-radius: 50%;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
+  box-shadow: 0 4px 10px rgba(0,0,0,.28);
   transition: transform .12s, box-shadow .12s;
   display: flex;
   flex-direction: column;
@@ -1066,14 +1067,15 @@ input, select { font-family: inherit; }
 .map-marker.size-lg { width: 72px; height: 72px; }
 .map-marker .count {
   display: block;
-  font-size: 13px;
+  font-size: 14px;
+  letter-spacing: -0.02em;
 }
-.map-marker.size-md .count { font-size: 15px; }
-.map-marker.size-lg .count { font-size: 17px; }
+.map-marker.size-md .count { font-size: 18px; }
+.map-marker.size-lg .count { font-size: 21px; }
 .map-marker-wrap:hover .map-marker,
 .map-marker-wrap.highlighted .map-marker {
   transform: scale(1.08);
-  box-shadow: 0 6px 18px rgba(255,111,15,.35);
+  box-shadow: 0 6px 18px rgba(30,132,255,.4);
 }
 .map-marker.active {
   background: var(--seed-scale-color-gray-900);
