@@ -50,8 +50,44 @@ async function geocode(addr) {
   return (await vworld(addr)) || (await kakao(addr));
 }
 
+// 단지명 등 키워드로 Kakao 검색 (주소 없는 단일 단지용). address_name 도 반환해 시도 검증.
+async function kakaoName(q) {
+  if (!KAKAO || !q) return null;
+  for (const ep of ["keyword", "address"]) {
+    const u = `https://dapi.kakao.com/v2/local/search/${ep}.json?query=${encodeURIComponent(q)}&size=1`;
+    try {
+      const j = await (await fetch(u, { headers: { Authorization: "KakaoAK " + KAKAO } })).json();
+      const d = j.documents?.[0];
+      if (d) { const lat = +d.y, lng = +d.x; if (inKorea(lat, lng)) return { lat, lng, addressName: d.address_name || d.road_address_name || "" }; }
+    } catch { /* 다음 ep */ }
+  }
+  return null;
+}
+const cleanTitle = (t) => (t || "").replace(/\[[^\]]*\]/g, "").replace(/\([^)]*\)/g, "")
+  .replace(/(오피스텔|아파트|행복주택|국민임대|영구임대|공공분양|통합공공임대|잔여세대|예비입주자|입주자|모집공고|모집|추가|순번추첨|동호지정|무순위|일반매각|잔여).*/, "").trim();
+// 시도 정식명 → Kakao 축약형 (Kakao address_name 은 "충남 아산시…" 처럼 축약형 사용).
+const SIDO_SHORT = { 서울특별시: "서울", 부산광역시: "부산", 대구광역시: "대구", 인천광역시: "인천", 광주광역시: "광주", 대전광역시: "대전", 울산광역시: "울산", 세종특별자치시: "세종", 경기도: "경기", 강원특별자치도: "강원", 강원도: "강원", 충청북도: "충북", 충청남도: "충남", 전북특별자치도: "전북", 전라북도: "전북", 전라남도: "전남", 경상북도: "경북", 경상남도: "경남", 제주특별자치도: "제주" };
+// 지오코딩 결과가 매물의 시도와 일치하는지 (정식·축약 양쪽 허용) — 오배치 방지.
+const matchDistrict = (addressName, district) => {
+  const full = (district || "").replace(/\s*외\s*$/, "").trim();
+  if (!full || !addressName) return false;
+  return addressName.includes(full) || (SIDO_SHORT[full] && addressName.includes(SIDO_SHORT[full]));
+};
+
+// 좌표 결정: 주소 있으면 주소로, 없으면(단일 단지) 제목 키워드로 — 결과가 같은 시도일 때만 채택(오배치 방지).
+// 광역/권역형(scope=regional: 매입임대·전세임대 등)은 단일 위치가 없으므로 제외(리스트로만 노출).
+async function resolveCoord(l) {
+  if (l.address && l.address.length > 4) return await geocode(l.address);
+  if (l.scope !== "regional" && l.title) {
+    const r = await kakaoName(cleanTitle(l.title));
+    if (r && matchDistrict(r.addressName, l.district)) return { lat: r.lat, lng: r.lng, via: "kakao-name" };
+  }
+  return null;
+}
+
 const listings = JSON.parse(await fs.readFile(FILE, "utf8"));
-let pool = listings.filter((l) => !(l.lat && l.lng) && l.address && l.address.length > 4);
+// 좌표 없는 매물: 주소가 있거나 / 단일 단지(regional 아님)로 제목 검색 가능한 건.
+let pool = listings.filter((l) => !(l.lat && l.lng) && ((l.address && l.address.length > 4) || (l.scope !== "regional" && l.title)));
 // 활성(모집중/예정)만 — status 로만 판단. deadline 형식·누락에 의존하던 필터는 활성건을 빠뜨려 제거.
 if (!ALL) pool = pool.filter((l) => l.status === "upcoming" || l.status === "open");
 if (LIMIT > 0) pool = pool.slice(0, LIMIT);
@@ -59,9 +95,9 @@ console.log(`좌표 보강 대상: ${pool.length}건 (${ALL ? "전체 좌표없�
 
 let ok = 0, fail = 0;
 for (const l of pool) {
-  const r = await geocode(l.address);
+  const r = await resolveCoord(l);
   if (r) { l.lat = r.lat; l.lng = r.lng; l.geocoded = r.via; ok++; }
-  else { fail++; console.log(`  ✗ ${(l.title || "").slice(0, 28)} | ${l.address}`); }
+  else { fail++; console.log(`  ✗ ${(l.title || "").slice(0, 28)} | ${l.address || "(주소없음·" + (l.scope || "") + ")"}`); }
   await sleep(120);
 }
 await fs.writeFile(FILE, JSON.stringify(listings, null, 2) + "\n", "utf8");
