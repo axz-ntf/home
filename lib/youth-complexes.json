@@ -1,5 +1,50 @@
 [
   {
+    "homeCode": "20000580",
+    "homeName": "왕십리역 라봄성동",
+    "gu": "성동구",
+    "address": "성동구 마장동 339-2",
+    "subway": "2,5호선 왕십리역 6번 출구 450m 도보6분",
+    "depositLowWon": 58000000,
+    "rentLowWon": 410000,
+    "totalUnits": 346,
+    "phone": "02-6459-9200",
+    "homepage": "https://labomseongdong.com",
+    "lat": 37.5634272,
+    "lng": 127.0420177,
+    "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=997b2f9c284f4707a27e798273a6d7c9&fileSn=1"
+  },
+  {
+    "homeCode": "20000571",
+    "homeName": "개봉역 세이지움 개봉",
+    "gu": "구로구",
+    "address": "구로구 개봉동 403-29",
+    "subway": "1호선 개봉역 1번출구 424m 도보 7분",
+    "depositLowWon": 42000000,
+    "rentLowWon": 220000,
+    "totalUnits": 605,
+    "phone": "02-6342-9300",
+    "homepage": "https://seizium-gb.com",
+    "lat": 37.492589,
+    "lng": 126.8556148,
+    "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=697f16eabcbd414caeed04dd6c825fb6&fileSn=16"
+  },
+  {
+    "homeCode": "20000496",
+    "homeName": "신림역 최강타워",
+    "gu": "관악구",
+    "address": "관악구 남부순환로180길 6",
+    "subway": "2호선, 신림선 신림역 1번출구 43m",
+    "depositLowWon": 37000000,
+    "rentLowWon": 340000,
+    "totalUnits": 299,
+    "phone": "02-872-8886",
+    "homepage": "https://www.최강타워.com",
+    "lat": 37.4840188,
+    "lng": 126.9308781,
+    "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=0eb4964e987a41fabdf93e1043501173&fileSn=16"
+  },
+  {
     "homeCode": "20000586",
     "homeName": "상봉역 세이지움 상봉",
     "gu": "중랑구",
@@ -73,21 +118,6 @@
     "lat": 37.6168588,
     "lng": 126.9239677,
     "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=137ff6c16185412b856b248cf08b2b25&fileSn=1"
-  },
-  {
-    "homeCode": "20000571",
-    "homeName": "개봉역 세이지움 개봉",
-    "gu": "구로구",
-    "address": "구로구 개봉동 403-29",
-    "subway": "1호선 개봉역 1번출구 424m 도보 7분",
-    "depositLowWon": 42000000,
-    "rentLowWon": 220000,
-    "totalUnits": 605,
-    "phone": "02-6342-9300",
-    "homepage": "https://seizium-gb.com",
-    "lat": 37.492589,
-    "lng": 126.8556148,
-    "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=697f16eabcbd414caeed04dd6c825fb6&fileSn=16"
   },
   {
     "homeCode": "20000419",
@@ -298,21 +328,6 @@
     "lat": 37.6224012,
     "lng": 127.0607882,
     "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=95bfc209dd7c4cb19123ac99ef4c29be&fileSn=1"
-  },
-  {
-    "homeCode": "20000580",
-    "homeName": "왕십리역 라봄성동",
-    "gu": "성동구",
-    "address": "성동구 마장동 339-2",
-    "subway": "2,5호선 왕십리역 6번 출구 450m 도보6분",
-    "depositLowWon": 58000000,
-    "rentLowWon": 410000,
-    "totalUnits": 346,
-    "phone": "02-6459-9200",
-    "homepage": "https://labomseongdong.com",
-    "lat": 37.5634272,
-    "lng": 127.0420177,
-    "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=997b2f9c284f4707a27e798273a6d7c9&fileSn=1"
   },
   {
     "homeCode": "20000412",
@@ -742,11 +757,11 @@
     "subway": "7호선 먹골역 1번출구 39m",
     "depositLowWon": 27790000,
     "rentLowWon": 250000,
-    "totalUnits": 235,
-    "phone": "02-971-1527",
-    "homepage": "https://carltonterrace2030.qshop.ai/",
-    "lat": 37.6118425,
-    "lng": 127.0782455,
+    "totalUnits": null,
+    "phone": "",
+    "homepage": "",
+    "lat": 0,
+    "lng": 0,
     "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=5dedab2401e6413aaa8561140e53210c&fileSn=17"
   },
   {
@@ -808,21 +823,6 @@
     "lat": 0,
     "lng": 0,
     "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=920c57725cbe4855b5722e87f81cbab3&fileSn=1"
-  },
-  {
-    "homeCode": "20000496",
-    "homeName": "신림역 최강타워",
-    "gu": "관악구",
-    "address": "관악구 남부순환로180길 6",
-    "subway": "2호선, 신림선 신림역 1번출구 43m",
-    "depositLowWon": 37000000,
-    "rentLowWon": 340000,
-    "totalUnits": null,
-    "phone": "",
-    "homepage": "",
-    "lat": 0,
-    "lng": 0,
-    "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=0eb4964e987a41fabdf93e1043501173&fileSn=16"
   },
   {
     "homeCode": "20000544",

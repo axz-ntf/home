@@ -1,0 +1,21 @@
+{
+  "supplyTotal": 111,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "모집권역 거주자",
+        "신생아 가구 배점(2점)",
+        "자녀 수 배점(1~3인 1~3점)"
+      ]
+    }
+  ],
+  "priority": []
+}

@@ -851,7 +851,8 @@
         "label": "경북의성",
         "address": "경북 의성군 안계면 용기2길 31",
         "depositManwon": 675,
-        "rentManwon": 16
+        "rentManwon": 16,
+        "coverPhotoLocal": "/lh-covers/lh-2015122300019988-55711997.jpg"
       }
     ]
   },
@@ -911,7 +912,8 @@
         "label": "경북의성",
         "address": "경상북도 의성군 안계면 용기2길 31",
         "depositManwon": 675,
-        "rentManwon": 16
+        "rentManwon": 16,
+        "coverPhotoLocal": "/lh-covers/lh-2015122300019946-55711997.jpg"
       }
     ]
   },
@@ -1092,7 +1094,8 @@
         "label": "의정부금오2",
         "address": "경기도 의정부시 하금로 44",
         "depositManwon": 1698,
-        "rentManwon": 22
+        "rentManwon": 22,
+        "coverPhotoLocal": "/lh-covers/lh-2015122300019899-24547380.jpg"
       },
       {
         "lat": 37.76072687326953,
@@ -1100,7 +1103,8 @@
         "label": "의정부녹양1",
         "address": "경기도 의정부시 체육로 278",
         "depositManwon": 1702,
-        "rentManwon": 21
+        "rentManwon": 21,
+        "coverPhotoLocal": "/lh-covers/lh-2015122300019899-24548436.jpg"
       },
       {
         "lat": 37.748591128575924,
@@ -1116,7 +1120,8 @@
         "label": "의정부민락8",
         "address": "경기도 의정부시 송양로 45",
         "depositManwon": 1485,
-        "rentManwon": 15
+        "rentManwon": 15,
+        "coverPhotoLocal": "/lh-covers/lh-2015122300019899-24547737.jpg"
       },
       {
         "lat": 37.75712272810445,
@@ -1124,7 +1129,8 @@
         "label": "의정부민락13",
         "address": "경기도 의정부시 용민로 429-39",
         "depositManwon": 1497,
-        "rentManwon": 17
+        "rentManwon": 17,
+        "coverPhotoLocal": "/lh-covers/lh-2015122300019899-24548215.jpg"
       },
       {
         "lat": 37.75494409968172,
@@ -1132,7 +1138,8 @@
         "label": "의정부민락16",
         "address": "경기도 의정부시 용민로 420",
         "depositManwon": 1671,
-        "rentManwon": 18
+        "rentManwon": 18,
+        "coverPhotoLocal": "/lh-covers/lh-2015122300019899-24548114.jpg"
       },
       {
         "lat": 37.918125468524536,
@@ -1148,7 +1155,8 @@
         "label": "포천신읍1",
         "address": "경기도 포천시 왕방로 118번길 7",
         "depositManwon": 1175,
-        "rentManwon": 13
+        "rentManwon": 13,
+        "coverPhotoLocal": "/lh-covers/lh-2015122300019899-24547661.jpg"
       }
     ]
   },
@@ -1161,7 +1169,8 @@
         "label": "시흥능곡2",
         "address": "경기도 시흥시 승지로 89 (능곡동 502)",
         "depositManwon": 1776,
-        "rentManwon": 15
+        "rentManwon": 15,
+        "coverPhotoLocal": "/lh-covers/lh-2015122300019878-24547532.jpg"
       },
       {
         "lat": 37.3710096333091,
@@ -1169,7 +1178,8 @@
         "label": "시흥능곡5",
         "address": "경기도 시흥시 능곡중앙로 77 (능곡동 557)",
         "depositManwon": 1536,
-        "rentManwon": 13
+        "rentManwon": 13,
+        "coverPhotoLocal": "/lh-covers/lh-2015122300019878-24547537.jpg"
       },
       {
         "lat": 37.36760627749335,
@@ -1177,7 +1187,8 @@
         "label": "시흥능곡6",
         "address": "경기도 시흥시 승지로 33 (능곡동 768)",
         "depositManwon": 1776,
-        "rentManwon": 15
+        "rentManwon": 15,
+        "coverPhotoLocal": "/lh-covers/lh-2015122300019878-24547540.jpg"
       },
       {
         "lat": 37.36744995851829,
@@ -1193,7 +1204,8 @@
         "label": "시흥능곡9",
         "address": "경기도 시흥시 능곡중앙로 34 (능곡동 787)",
         "depositManwon": 1536,
-        "rentManwon": 13
+        "rentManwon": 13,
+        "coverPhotoLocal": "/lh-covers/lh-2015122300019878-24547545.jpg"
       },
       {
         "lat": 37.363660434636756,
@@ -1201,7 +1213,8 @@
         "label": "시흥능곡13",
         "address": "경기도 시흥시 시흥대로268번길 53 (능곡동 800)",
         "depositManwon": 1776,
-        "rentManwon": 15
+        "rentManwon": 15,
+        "coverPhotoLocal": "/lh-covers/lh-2015122300019878-24547429.jpg"
       }
     ]
   },
@@ -1284,6 +1297,225 @@
         "lng": 126.77871731522882,
         "label": "원미구",
         "address": "부천시 원미구"
+      }
+    ]
+  },
+  "2015122300020230": {
+    "districtId": "incheon",
+    "points": [
+      {
+        "lat": 37.4794456373032,
+        "lng": 126.475635954708,
+        "label": "해밀톤캐슬",
+        "address": "인천광역시 중구"
+      },
+      {
+        "lat": 37.4570756444155,
+        "lng": 126.664971932721,
+        "label": "미추홀구",
+        "address": "인천광역시 미추홀구"
+      },
+      {
+        "lat": 37.4473487903569,
+        "lng": 126.73148773974,
+        "label": "렉스타운",
+        "address": "인천광역시 남동구"
+      },
+      {
+        "lat": 37.5374956682829,
+        "lng": 126.73770466472,
+        "label": "예린펠리시티",
+        "address": "인천광역시 계양구"
+      },
+      {
+        "lat": 37.6055943684634,
+        "lng": 126.665652344353,
+        "label": "서구",
+        "address": "인천광역시 서구"
+      },
+      {
+        "lat": 37.4965957109918,
+        "lng": 126.787016804225,
+        "label": "센텀시티",
+        "address": "부천시 원미구"
+      }
+    ]
+  },
+  "2015122300020226": {
+    "districtId": "incheon",
+    "points": [
+      {
+        "lat": 37.4794456373032,
+        "lng": 126.475635954708,
+        "label": "해밀톤캐슬",
+        "address": "인천광역시 중구"
+      },
+      {
+        "lat": 37.4570756444155,
+        "lng": 126.664971932721,
+        "label": "미추홀구",
+        "address": "인천광역시 미추홀구"
+      },
+      {
+        "lat": 37.4473487903569,
+        "lng": 126.73148773974,
+        "label": "렉스타운",
+        "address": "인천광역시 남동구"
+      },
+      {
+        "lat": 37.5374956682829,
+        "lng": 126.73770466472,
+        "label": "예린펠리시티",
+        "address": "인천광역시 계양구"
+      },
+      {
+        "lat": 37.6055943684634,
+        "lng": 126.665652344353,
+        "label": "서구",
+        "address": "인천광역시 서구"
+      },
+      {
+        "lat": 37.4965957109918,
+        "lng": 126.787016804225,
+        "label": "센텀시티",
+        "address": "부천시 원미구"
+      }
+    ]
+  },
+  "2015122300020090": {
+    "districtId": "gangwon",
+    "district": "강원특별자치도",
+    "points": [
+      {
+        "lat": 37.4498976008043,
+        "lng": 129.165111673939,
+        "address": "강원특별자치도 삼척시",
+        "districtId": "gangwon",
+        "district": "강원특별자치도"
+      },
+      {
+        "lat": 37.3805844996072,
+        "lng": 128.660813602081,
+        "address": "강원특별자치도 정선군",
+        "districtId": "gangwon",
+        "district": "강원특별자치도"
+      }
+    ]
+  },
+  "2015122300020267": {
+    "districtId": "chungbuk",
+    "district": "충청북도",
+    "points": [
+      {
+        "lat": 36.9403218849117,
+        "lng": 127.690480041094,
+        "address": "충청북도 음성군",
+        "districtId": "chungbuk",
+        "district": "충청북도"
+      }
+    ]
+  },
+  "2015122300020241": {
+    "districtId": "gyeonggi",
+    "district": "경기도",
+    "points": [
+      {
+        "lat": 37.3219085506384,
+        "lng": 126.830834434401,
+        "address": "경기도 안산시",
+        "districtId": "gyeonggi",
+        "district": "경기도"
+      }
+    ]
+  },
+  "2015122300020251": {
+    "districtId": "daegu",
+    "district": "대구광역시",
+    "points": [
+      {
+        "lat": 35.8713802646199,
+        "lng": 128.601805491072,
+        "address": "대구광역시 대구",
+        "districtId": "daegu",
+        "district": "대구광역시"
+      }
+    ]
+  },
+  "2015122300020250": {
+    "districtId": "daegu",
+    "district": "대구광역시",
+    "points": [
+      {
+        "lat": 35.8713802646199,
+        "lng": 128.601805491072,
+        "address": "대구광역시 대구",
+        "districtId": "daegu",
+        "district": "대구광역시"
+      }
+    ]
+  },
+  "2015122300020245": {
+    "districtId": "gyeonggi",
+    "district": "경기도",
+    "points": [
+      {
+        "lat": 37.5035117792841,
+        "lng": 126.766038450927,
+        "address": "경기도 부천시",
+        "districtId": "gyeonggi",
+        "district": "경기도"
+      }
+    ]
+  },
+  "2015122300020181": {
+    "districtId": "daegu",
+    "district": "대구광역시",
+    "points": [
+      {
+        "lat": 35.8713802646199,
+        "lng": 128.601805491072,
+        "address": "대구광역시 대구",
+        "districtId": "daegu",
+        "district": "대구광역시"
+      }
+    ]
+  },
+  "2015122300020180": {
+    "districtId": "daegu",
+    "district": "대구광역시",
+    "points": [
+      {
+        "lat": 35.8713802646199,
+        "lng": 128.601805491072,
+        "address": "대구광역시 대구",
+        "districtId": "daegu",
+        "district": "대구광역시"
+      }
+    ]
+  },
+  "2015122300020179": {
+    "districtId": "gyeongbuk",
+    "district": "경상북도",
+    "points": [
+      {
+        "lat": 35.8713802646199,
+        "lng": 128.601805491072,
+        "address": "경상북도 대구",
+        "districtId": "gyeongbuk",
+        "district": "경상북도"
+      }
+    ]
+  },
+  "2015122300020178": {
+    "districtId": "daegu",
+    "district": "대구광역시",
+    "points": [
+      {
+        "lat": 35.8713802646199,
+        "lng": 128.601805491072,
+        "address": "대구광역시 대구",
+        "districtId": "daegu",
+        "district": "대구광역시"
       }
     ]
   }

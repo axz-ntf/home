@@ -1,0 +1,35 @@
+{
+  "id": "lh-rental-2015122300020253",
+  "supplyTotal": 205,
+  "integrated": false,
+  "units": [
+    {
+      "type": "26",
+      "area": 26.94,
+      "supply": 20,
+      "deposit": 26400000,
+      "rent": 123200
+    },
+    {
+      "type": "36",
+      "area": 36.98,
+      "supply": 15,
+      "deposit": 35700000,
+      "rent": 166600
+    },
+    {
+      "type": "26 (주거약자)",
+      "area": 26.94,
+      "supply": 25,
+      "deposit": 33440000,
+      "rent": 156050
+    },
+    {
+      "type": "51 (주거약자)",
+      "area": 51.96,
+      "supply": 20,
+      "deposit": 62320000,
+      "rent": 290820
+    }
+  ]
+}
