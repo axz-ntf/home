@@ -81,6 +81,23 @@ function extractUnits(rows) {
     .map((r) => ({ addr: String(r[addrCol]).replace(/\s+/g, " ").trim(), dep: depCol ? toManwon(r[depCol]) : null, rent: rentCol ? toRentManwon(r[rentCol]) : null }));
 }
 
+// 시도명 → districtId (지도 클러스터 소속). 주소 첫 토큰으로 판정.
+const SIDO_ID = { 서울특별시: "seoul", 경기도: "gyeonggi", 인천광역시: "incheon", 부산광역시: "busan", 대구광역시: "daegu", 광주광역시: "gwangju", 대전광역시: "daejeon", 울산광역시: "ulsan", 세종특별자치시: "sejong", 강원특별자치도: "gangwon", 강원도: "gangwon", 충청북도: "chungbuk", 충청남도: "chungnam", 전북특별자치도: "jeonbuk", 전라북도: "jeonbuk", 전라남도: "jeonnam", 경상북도: "gyeongbuk", 경상남도: "gyeongnam", 제주특별자치도: "jeju" };
+function sidoOf(addr) { const s = (addr || "").split(/\s+/)[0]; return SIDO_ID[s] ? { district: s, districtId: SIDO_ID[s] } : null; }
+
+// 주소 → 시군구 키 ("충청북도 음성군", "광주광역시 광산구", "경기도 안양시 만안구")
+function sigunguKey(addr) {
+  const t = addr.split(/\s+/);
+  const sido = t[0] || "";
+  // 광역시/특별시: 시도 + 구/군, 도: 시/군 (+구 있으면 포함)
+  const gu = t.find((x) => /[가-힣]구$/.test(x));
+  const si = t.find((x) => /[가-힣](시|군)$/.test(x));
+  if (/(특별시|광역시|특별자치시)/.test(sido)) return gu ? `${sido} ${gu}` : sido;
+  if (si && gu) return `${sido} ${si} ${gu}`;
+  if (si) return `${sido} ${si}`;
+  return sido || null;
+}
+
 // 주소 → {base(도로명까지), name(건물명, 동번호 제거)}
 function splitAddr(addr) {
   // "…로 12" / "…길 37" / "…로12번길 37" / "…로14길 42" 까지 도로명+번호를 base 로, 나머지를 건물명으로.
@@ -202,23 +219,42 @@ for (const l of pool) {
     }
     if (!units.length) { stats.parseFail++; console.log(`  ✗ ${l.pblancId} 주택목록 추출 실패 (첨부 ${atts.length}개)`); continue; }
     // 주소(도로명) 기준 그룹
-    const groups = {};
+    const addrGroups = {};
     for (const u of units) {
       const { base, name } = splitAddr(u.addr);
-      if (!groups[base]) groups[base] = { name, n: 0, deps: [], rents: [] };
-      groups[base].n++;
-      if (!groups[base].name && name) groups[base].name = name;
+      if (!addrGroups[base]) addrGroups[base] = { name, n: 0, deps: [], rents: [] };
+      addrGroups[base].n++;
+      if (!addrGroups[base].name && name) addrGroups[base].name = name;
       // 현실 범위만 채택 — 원↔만원 단위 혼재/PDF 컬럼 오정렬로 튄 값 방어(보증금 10만~5억, 월세 0~300만)
-      if (u.dep && u.dep >= 10 && u.dep <= 50000) groups[base].deps.push(u.dep);
-      if (u.rent && u.rent > 0 && u.rent <= 300) groups[base].rents.push(u.rent);
+      if (u.dep && u.dep >= 10 && u.dep <= 50000) addrGroups[base].deps.push(u.dep);
+      if (u.rent && u.rent > 0 && u.rent <= 300) addrGroups[base].rents.push(u.rent);
+    }
+    // 흩어진 매입임대(빌라 수백 채)는 주소별로 쪼개면 매물 수가 폭증 → 시군구 단위로 묶음.
+    // 소수 단지(아파트 등, 12곳 이하)만 주소별 정밀 핀 유지.
+    let groups;
+    if (Object.keys(addrGroups).length > 12) {
+      groups = {};
+      for (const [addr, g] of Object.entries(addrGroups)) {
+        const sgg = sigunguKey(addr); // "충청북도 음성군" / "광주광역시 광산구"
+        const key = sgg || addr;
+        if (!groups[key]) groups[key] = { name: "", n: 0, deps: [], rents: [], sigungu: true };
+        groups[key].n += g.n;
+        groups[key].deps.push(...g.deps);
+        groups[key].rents.push(...g.rents);
+      }
+    } else {
+      groups = addrGroups;
     }
     const points = [];
-    for (const [base, g] of Object.entries(groups)) {
-      const co = await geocode(base);
+    for (const [key, g] of Object.entries(groups)) {
+      const co = await geocode(key);
       await sleep(130);
-      if (!co) { console.log(`    ✗ 지오코딩 실패: ${base}`); continue; }
-      // null 은 MappedPoint 타입(number|undefined)과 충돌 → 값 있을 때만 키 포함
-      const pt = { lat: co.lat, lng: co.lng, label: `${g.name || "매입임대 주택"} · ${g.n}호`, address: base };
+      if (!co) { console.log(`    ✗ 지오코딩 실패: ${key}`); continue; }
+      // 시군구 묶음이면 "○○구 매입임대 · N호", 단지면 "건물명 · N호"
+      const label = g.sigungu ? `${key.split(" ").pop()} 매입임대 · ${g.n}호` : `${g.name || "매입임대 주택"} · ${g.n}호`;
+      const pt = { lat: co.lat, lng: co.lng, label, address: key };
+      const sd = sidoOf(key); // 핀별 실제 시도 (모 공고의 '대구경북 외' 상속 방지)
+      if (sd) { pt.district = sd.district; pt.districtId = sd.districtId; }
       if (g.deps.length) pt.depositManwon = Math.min(...g.deps);
       if (g.rents.length) pt.rentManwon = Math.min(...g.rents);
       points.push(pt);
