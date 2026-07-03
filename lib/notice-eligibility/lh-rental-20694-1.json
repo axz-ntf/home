@@ -1,0 +1,47 @@
+{
+  "supplyTotal": 61,
+  "tiers": [
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": 37,
+      "age": null,
+      "marriage": "혼인기간 7년 이내(2019.6.29. 이후 혼인신고) 또는 6세 이하 자녀 보유(2019.6.30. 이후 출생, 태아 포함)",
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "예비신혼부부: 입주 전까지 혼인사실 증명 가능자",
+        "1세대 1주택 신청 원칙, 부부 중복신청 시 무효"
+      ]
+    },
+    {
+      "id": "single",
+      "name": "한부모가족",
+      "units": 18,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "6세 이하 자녀 보유(2019.6.30. 이후 출생, 태아 포함)",
+        "무주택세대구성원"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "신혼부부·한부모가족(주거약자용)",
+      "units": 6,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "신혼부부 또는 한부모가족 계층이면서 주거약자 요건 충족",
+        "무주택세대구성원",
+        "안전·편리한 주거생활을 위한 편의시설 설치"
+      ]
+    }
+  ],
+  "priority": []
+}

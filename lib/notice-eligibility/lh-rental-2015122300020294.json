@@ -1,0 +1,104 @@
+{
+  "supplyTotal": 476,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": 142,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": null
+      },
+      "other": [
+        "대학에 재학 중이거나 다음 학기에 입·복학 예정인 사람",
+        "자동차가액 미소유",
+        "최대거주기간 10년"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": 147,
+      "age": "19세 이상 39세 이하 (출생일 1986.07.03. ~ 2007.07.02.)",
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "사회초년생: 소득업무 종사기간 7년 이내",
+        "소득이 없는 청년은 동일 면적 대학생 계층 임대조건 적용",
+        "최대거주기간 10년"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족",
+      "units": 162,
+      "age": null,
+      "marriage": "신혼부부: 혼인기간 10년 이내 또는 9세 이하 자녀 보유 / 한부모: 9세 이하 자녀 보유",
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "예비신혼부부: 입주 전까지 혼인사실 증명 가능",
+        "자녀 없을 경우 최대거주기간 10년, 자녀 있을 경우 14년"
+      ]
+    },
+    {
+      "id": "industrial",
+      "name": "산업단지근로자",
+      "units": 8,
+      "age": null,
+      "marriage": "자녀 없을 경우 10년, 자녀 있을 경우 14년",
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "김포시 또는 연접지역(서울, 인천, 고양시, 파주시)에 소재한 산업단지 근무자",
+        "청년 계층 입주자격 충족 시 청년 임대조건 적용"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": 17,
+      "age": "65세 이상 (1961.07.02. 이전 출생)",
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "주거약자용 주택 공급 (3층 이하, 편의시설 설치)",
+        "최대거주기간 20년"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": 4,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "주거급여법 제2조제2호 및 제3호 수급권자",
+        "최대거주기간 20년"
+      ]
+    }
+  ],
+  "priority": []
+}
