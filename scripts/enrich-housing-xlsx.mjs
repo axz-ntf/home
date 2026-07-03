@@ -66,16 +66,22 @@ function extractUnits(rows) {
   });
   if (!addrCol) return [];
   const toManwon = (v) => { const n = +String(v).replace(/[^\d.]/g, ""); if (!n) return null; return n >= 1e6 ? Math.round(n / 1e4) : Math.round(n); };
+  // 월세: 원 단위(예 126,660원)면 만원으로. 1,000 미만이면 이미 만원 단위로 간주(월세 현실 범위 1~300만).
+  const toRentManwon = (v) => { const n = +String(v).replace(/[^\d.]/g, ""); if (!n) return null; return n >= 1000 ? Math.round(n / 1e4) : Math.round(n); };
   return rows.slice(headerIdx + 1)
     .filter((r) => r[addrCol] && String(r[addrCol]).trim().length > 8)
-    .map((r) => ({ addr: String(r[addrCol]).replace(/\s+/g, " ").trim(), dep: depCol ? toManwon(r[depCol]) : null, rent: rentCol ? toManwon(r[rentCol]) : null }));
+    .map((r) => ({ addr: String(r[addrCol]).replace(/\s+/g, " ").trim(), dep: depCol ? toManwon(r[depCol]) : null, rent: rentCol ? toRentManwon(r[rentCol]) : null }));
 }
 
 // 주소 → {base(도로명까지), name(건물명, 동번호 제거)}
 function splitAddr(addr) {
-  const m = addr.match(/^(.+?(?:로|길|번길)\s*[\d-]+)\s*(.*)$/);
+  // "…로 12" / "…길 37" / "…로12번길 37" / "…로14길 42" 까지 도로명+번호를 base 로, 나머지를 건물명으로.
+  const m = addr.match(/^(.+?[로길]\s*[\d-]+(?:\s*번?길\s*[\d-]+)?)\s*(.*)$/);
   const base = m ? m[1].trim() : addr.replace(/\s*\d+동\s*$/, "").trim();
   let name = (m ? m[2] : "").replace(/\s*\d+동\s*$/, "").replace(/[(){}[\]]/g, "").trim();
+  // 건물명 정리: "괴전동,안심역아이센스 괴전동 660번지" → "안심역아이센스" (콤마 뒤 채택 + 지번 꼬리 제거)
+  if (name.includes(",")) name = name.split(",").pop().trim();
+  name = name.replace(/\s*[가-힣]+\s*\d+(-\d+)?번지\s*$/, "").trim();
   return { base, name };
 }
 
