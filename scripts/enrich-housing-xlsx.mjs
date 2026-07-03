@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// 매입임대·든든전세 등 광역 공고의 "주택목록" xlsx 별첨 → 단지(주소) 단위 지도 핀 + 정확한 보증금.
-// 공고 페이지에서 *주택목록*.xlsx 첨부를 찾아 다운로드 → zip 직접 파싱(의존성 0, unzip CLI 사용)
+// 매입임대·든든전세 등 광역 공고의 "주택목록" 별첨(xlsx 우선, 없으면 PDF) → 단지 단위 지도 핀 + 실보증금.
+// 공고 첨부 중 주소 열이 있는 xlsx 를 zip 직접 파싱(의존성 0). xlsx 없으면 주택목록 PDF 를 Solar 로 파싱.
 // → 주소 그룹핑 → Kakao/VWorld 지오코딩 → lib/mapped-regional.json 병합 (어댑터가 자동 렌더).
 //
 // 사용: node --env-file=.env.local scripts/enrich-housing-xlsx.mjs [--active] [--ids pid1,pid2] [--limit N] [--force]
@@ -18,6 +18,8 @@ const PDF_BASE = "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=";
 const UA = "daum-public-housing-app/1.0 (housing-list sync)";
 const KAKAO = process.env.KAKAO_REST_API_KEY?.replace(/^"|"$/g, "");
 const VKEY = process.env.VWORLD_API_KEY?.replace(/^"|"$/g, "");
+const SOLAR = process.env.SOLAR_API_KEY?.replace(/^"|"$/g, ""); // 주택목록 PDF 파싱용(없으면 PDF 폴백 skip)
+const DOC_PARSE_URL = "https://api.upstage.ai/v1/document-ai/document-parse";
 if (!KAKAO && !VKEY) { console.error("ERROR: KAKAO_REST_API_KEY/VWORLD_API_KEY 중 하나 필요"); process.exit(1); }
 
 const args = process.argv.slice(2);
@@ -42,8 +44,11 @@ function parseXlsx(buf) {
         .replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"'));
     return [...sheet.matchAll(/<row[^>]*r="(\d+)"[^>]*>([\s\S]*?)<\/row>/g)].map((m) => {
       const cells = {};
-      for (const c of m[2].matchAll(/<c r="([A-Z]+)\d+"(?:[^>]*t="(\w+)")?[^>]*>(?:[\s\S]*?<v>([\s\S]*?)<\/v>)?/g)) {
-        cells[c[1]] = c[2] === "s" ? (strings[+c[3]] ?? "") : (c[3] ?? "");
+      // 각 셀을 </c> 또는 self-close(/>) 경계로 정확히 끊음 — 빈 셀 뒤 값 셀을 삼키는 버그 방지.
+      for (const c of m[2].matchAll(/<c r="([A-Z]+)\d+"(?:[^>]*?t="([^"]+)")?[^>]*?(?:\/>|>([\s\S]*?)<\/c>)/g)) {
+        const inner = c[3] || "";
+        const v = (inner.match(/<v>([\s\S]*?)<\/v>/) || [])[1];
+        cells[c[1]] = v == null ? "" : (c[2] === "s" ? (strings[+v] ?? "") : v);
       }
       return cells;
     });
@@ -51,6 +56,12 @@ function parseXlsx(buf) {
 }
 
 // 헤더 행에서 컬럼 위치 탐지 → 데이터 행을 {addr, dep, rent}로
+// 보증금: 원 단위(1억1520만=115200000)면 만원으로, 이미 만원 단위면 그대로.
+const toManwon = (v) => { const n = +String(v).replace(/[^\d.]/g, ""); if (!n) return null; return n >= 1e6 ? Math.round(n / 1e4) : Math.round(n); };
+// 월세: 원 단위(예 126,660원)면 만원으로. 1,000 미만이면 이미 만원 단위로 간주(월세 현실 범위 1~300만).
+const toRentManwon = (v) => { const n = +String(v).replace(/[^\d.]/g, ""); if (!n) return null; return n >= 1000 ? Math.round(n / 1e4) : Math.round(n); };
+const looksAddr = (s) => typeof s === "string" && s.length > 8 && /(특별시|광역시|특별자치|[가-힣]+(시|군|구))/.test(s) && /[로길]\s*\d/.test(s);
+
 function extractUnits(rows) {
   let addrCol = null, depCol = null, rentCol = null, headerIdx = -1;
   rows.forEach((r, i) => {
@@ -65,9 +76,6 @@ function extractUnits(rows) {
     }
   });
   if (!addrCol) return [];
-  const toManwon = (v) => { const n = +String(v).replace(/[^\d.]/g, ""); if (!n) return null; return n >= 1e6 ? Math.round(n / 1e4) : Math.round(n); };
-  // 월세: 원 단위(예 126,660원)면 만원으로. 1,000 미만이면 이미 만원 단위로 간주(월세 현실 범위 1~300만).
-  const toRentManwon = (v) => { const n = +String(v).replace(/[^\d.]/g, ""); if (!n) return null; return n >= 1000 ? Math.round(n / 1e4) : Math.round(n); };
   return rows.slice(headerIdx + 1)
     .filter((r) => r[addrCol] && String(r[addrCol]).trim().length > 8)
     .map((r) => ({ addr: String(r[addrCol]).replace(/\s+/g, " ").trim(), dep: depCol ? toManwon(r[depCol]) : null, rent: rentCol ? toRentManwon(r[rentCol]) : null }));
@@ -103,6 +111,51 @@ async function geocode(addr) {
   return null;
 }
 
+// ── 주택목록 PDF 파싱 (Solar Document Parse → 마크다운 표 → units) ──
+async function pdfToUnits(buf, filename) {
+  if (!SOLAR) return [];
+  const form = new FormData();
+  form.append("document", new Blob([buf], { type: "application/pdf" }), filename);
+  form.append("output_formats", '["markdown"]');
+  const r = await fetch(DOC_PARSE_URL, { method: "POST", headers: { Authorization: `Bearer ${SOLAR}` }, body: form });
+  if (!r.ok) throw new Error(`Solar HTTP ${r.status}`);
+  const j = await r.json();
+  const md = j.content?.markdown || j.markdown || "";
+  return mdToUnits(md);
+}
+// 마크다운 표 행에서 주소/보증금/월세 추출. 헤더에 "주소"가 없으면 주소처럼 생긴 열을 자동 선택.
+function mdToUnits(md) {
+  const rowsRaw = md.split("\n").filter((l) => /^\s*\|.*\|\s*$/.test(l) && !/^\s*\|[\s|:-]+\|\s*$/.test(l));
+  const cells = (l) => l.split("|").slice(1, -1).map((c) => c.trim());
+  const table = rowsRaw.map(cells).filter((c) => c.length >= 2);
+  if (!table.length) return [];
+  const ncol = Math.max(...table.map((c) => c.length));
+  // 헤더 기반 열 탐지
+  let addrI = -1, depI = -1, rentI = -1, headerRow = -1;
+  table.forEach((c, i) => {
+    if (addrI >= 0) return;
+    c.forEach((v, j) => { if (/주소/.test(v) && !/지분/.test(v)) { addrI = j; headerRow = i; } });
+    if (addrI >= 0) c.forEach((v, j) => { if (/보증금/.test(v)) depI = j; else if (/임대료|월세/.test(v)) rentI = j; });
+  });
+  // 헤더에 주소 없으면: 열별로 주소처럼 생긴 셀 비율이 가장 높은 열 채택
+  if (addrI < 0) {
+    let best = -1, bestScore = 0;
+    for (let j = 0; j < ncol; j++) {
+      const score = table.filter((c) => looksAddr(c[j])).length;
+      if (score > bestScore) { bestScore = score; best = j; }
+    }
+    if (bestScore < 2) return [];
+    addrI = best; headerRow = -1;
+  }
+  const out = [];
+  table.slice(headerRow + 1).forEach((c) => {
+    const addr = c[addrI] || "";
+    if (!looksAddr(addr)) return;
+    out.push({ addr: addr.replace(/\s+/g, " ").trim(), dep: depI >= 0 ? toManwon(c[depI]) : null, rent: rentI >= 0 ? toRentManwon(c[rentI]) : null });
+  });
+  return out;
+}
+
 // ── 메인 ──
 const listings = JSON.parse(await fs.readFile(API_FILE, "utf8"));
 const mapped = JSON.parse(await fs.readFile(MAPPED_FILE, "utf8"));
@@ -121,23 +174,33 @@ const stats = { done: 0, noXlsx: 0, xlsOld: 0, parseFail: 0, geoFail: 0 };
 for (const l of pool) {
   try {
     const html = await (await fetch(l.sourceUrl, { headers: { "User-Agent": UA } })).text();
-    // 모든 xlsx 첨부를 파싱해보고 "주소 열이 있는" 파일만 채택 (파일명 휴리스틱에 의존하지 않음).
-    // 주택목록이 지역별로 여러 파일에 나뉜 공고도 있어 전부 합침. 구형 .xls(바이너리)만 스킵.
-    const atts = [...html.matchAll(/fileDownLoad\(\s*'(\d+)'\s*\)\s*[^>]*>([^<]+\.(xlsx|xls))/gi)]
+    // 첨부 전체 수집(xlsx/xls/pdf). 주소 열 있는 파일만 내용으로 채택 — 파일명 휴리스틱에 의존하지 않음.
+    const atts = [...html.matchAll(/fileDownLoad\(\s*'(\d+)'\s*\)\s*[^>]*>([^<]+\.(xlsx|xls|pdf))/gi)]
       .map((m) => ({ id: m[1], name: m[2].trim(), ext: m[3].toLowerCase() }));
     if (!atts.length) { stats.noXlsx++; continue; }
     const units = [];
-    for (const att of atts.slice(0, 6)) {
-      if (att.ext === "xls") { stats.xlsOld++; console.log(`  △ ${l.pblancId} 구형 .xls 스킵 — ${att.name}`); continue; }
+    // 1순위: xlsx (정형, 무료·빠름·의존성0)
+    for (const att of atts.filter((a) => a.ext === "xlsx").slice(0, 6)) {
       try {
         const buf = Buffer.from(await (await fetch(PDF_BASE + att.id, { headers: { "User-Agent": UA } })).arrayBuffer());
-        const rows = parseXlsx(buf);
-        const got = rows ? extractUnits(rows) : [];
-        if (got.length) { units.push(...got); console.log(`    · ${att.name} → ${got.length}호`); }
+        const got = parseXlsx(buf) ? extractUnits(parseXlsx(buf)) : [];
+        if (got.length) { units.push(...got); console.log(`    · [xlsx] ${att.name} → ${got.length}호`); }
       } catch {}
       await sleep(150);
     }
-    if (!units.length) { stats.parseFail++; console.log(`  ✗ ${l.pblancId} 주소열 있는 xlsx 없음 (첨부 ${atts.length}개)`); continue; }
+    // 2순위: xlsx 로 못 얻었으면 주택목록 PDF 를 Solar 로 파싱 (공고문/QnA 제외)
+    if (!units.length && SOLAR) {
+      const pdfs = atts.filter((a) => a.ext === "pdf" && /(주택\s*목록|주택리스트|공급대상|공급주택)/.test(a.name.replace(/\s/g, "")) && !/공고문|QnA|Q&A|양식|서식/i.test(a.name));
+      for (const att of pdfs.slice(0, 4)) {
+        try {
+          const buf = Buffer.from(await (await fetch(PDF_BASE + att.id, { headers: { "User-Agent": UA } })).arrayBuffer());
+          const got = await pdfToUnits(buf, att.name);
+          if (got.length) { units.push(...got); console.log(`    · [pdf] ${att.name} → ${got.length}호`); }
+        } catch (e) { console.log(`    · [pdf] ${att.name} 파싱 실패: ${String(e.message).slice(0, 40)}`); }
+        await sleep(200);
+      }
+    }
+    if (!units.length) { stats.parseFail++; console.log(`  ✗ ${l.pblancId} 주택목록 추출 실패 (첨부 ${atts.length}개)`); continue; }
     // 주소(도로명) 기준 그룹
     const groups = {};
     for (const u of units) {
@@ -145,8 +208,9 @@ for (const l of pool) {
       if (!groups[base]) groups[base] = { name, n: 0, deps: [], rents: [] };
       groups[base].n++;
       if (!groups[base].name && name) groups[base].name = name;
-      if (u.dep) groups[base].deps.push(u.dep);
-      if (u.rent) groups[base].rents.push(u.rent);
+      // 현실 범위만 채택 — 원↔만원 단위 혼재/PDF 컬럼 오정렬로 튄 값 방어(보증금 10만~5억, 월세 0~300만)
+      if (u.dep && u.dep >= 10 && u.dep <= 50000) groups[base].deps.push(u.dep);
+      if (u.rent && u.rent > 0 && u.rent <= 300) groups[base].rents.push(u.rent);
     }
     const points = [];
     for (const [base, g] of Object.entries(groups)) {
