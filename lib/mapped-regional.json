@@ -1411,8 +1411,7 @@
     "lng": 127.538243159411,
     "label": "음성동문디이스트 · 111호",
     "address": "충청북도 음성군 대소면 성본산단3로 13",
-    "depositManwon": 11520,
-    "rentManwon": null
+    "depositManwon": 11520
    }
   ]
  },
@@ -1430,7 +1429,6 @@
   ]
  },
  "2015122300020251": {
-  "districtId": null,
   "district": "대구광역시 외",
   "points": [
    {
@@ -1438,269 +1436,235 @@
     "lng": 128.7327540201,
     "label": "신서동 신서동 478-3 · 1호",
     "address": "대구광역시 동구 동내로 7",
-    "depositManwon": 17227,
-    "rentManwon": null
+    "depositManwon": 17227
    },
    {
     "lat": 35.8715912882779,
     "lng": 128.724577190812,
     "label": "신서동 신서동 621-19 · 2호",
     "address": "대구광역시 동구 반야월로 328",
-    "depositManwon": 16000,
-    "rentManwon": null
+    "depositManwon": 16000
    },
    {
     "lat": 35.8742055682611,
     "lng": 128.691130406686,
     "label": "용계동,율하 시티프라디움 · 1호",
     "address": "대구광역시 동구 반야월로 35",
-    "depositManwon": 18748,
-    "rentManwon": null
+    "depositManwon": 18748
    },
    {
     "lat": 35.8733489885015,
     "lng": 128.715948268127,
     "label": "각산동,각산서한이다음 · 1호",
     "address": "대구광역시 동구 반야월북로 167",
-    "depositManwon": 15566,
-    "rentManwon": null
+    "depositManwon": 15566
    },
    {
     "lat": 35.86985379306825,
     "lng": 128.7329276469112,
     "label": "길 42괴전동,안심역아이센스 괴전동 660번지 · 9호",
     "address": "대구광역시 동구 안심로90",
-    "depositManwon": 17319,
-    "rentManwon": null
+    "depositManwon": 17319
    },
    {
     "lat": 35.878131020408205,
     "lng": 128.66146731539777,
     "label": "길 22방촌동 방촌역아이센스방촌동 1154번지 · 13호",
     "address": "대구광역시 동구 화랑로69",
-    "depositManwon": 16203,
-    "rentManwon": null
+    "depositManwon": 16203
    },
    {
     "lat": 35.8860394089961,
     "lng": 128.651765677038,
     "label": "검사동,태왕아너스 르네상스 · 5호",
     "address": "대구광역시 동구 동촌로 100",
-    "depositManwon": 12343,
-    "rentManwon": null
+    "depositManwon": 12343
    },
    {
     "lat": 35.878325705356,
     "lng": 128.730487022859,
     "label": "신서동 서원킹스밀오피스텔 · 8호",
     "address": "대구광역시 동구 이노밸리로 305",
-    "depositManwon": 13505,
-    "rentManwon": null
+    "depositManwon": 13505
    },
    {
     "lat": 35.871543165311046,
     "lng": 128.64549034373442,
     "label": "길 91만촌동,수성풀비체 · 4호",
     "address": "대구광역시 수성구 화랑로32",
-    "depositManwon": 24112,
-    "rentManwon": null
+    "depositManwon": 24112
    },
    {
     "lat": 35.8403882284817,
     "lng": 128.610721708839,
     "label": "길 59두산동 수성헤센더테라스 · 52호",
     "address": "대구광역시 수성구 청수로24",
-    "depositManwon": 12992,
-    "rentManwon": null
+    "depositManwon": 12992
    },
    {
     "lat": 35.8405490533454,
     "lng": 128.768626634029,
     "label": "부영사랑으로2차 · 5호",
     "address": "경상북도 경산시 압량면 압독2로 59",
-    "depositManwon": 11448,
-    "rentManwon": null
+    "depositManwon": 11448
    },
    {
     "lat": 35.8105895077408,
     "lng": 128.541716308415,
     "label": "상인동,상인역 모아엘가 파크뷰 · 3호",
     "address": "대구광역시 달서구 상화북로 162",
-    "depositManwon": 15996,
-    "rentManwon": null
+    "depositManwon": 15996
    },
    {
     "lat": 35.7987945595411,
     "lng": 128.531482976624,
     "label": "대곡동,대구대곡수목원제일풍경채 · 1호",
     "address": "대구광역시 달서구 갈밭남로 12",
-    "depositManwon": 16340,
-    "rentManwon": null
+    "depositManwon": 16340
    },
    {
     "lat": 35.8579358727336,
     "lng": 128.558890673695,
     "label": "두류동 두류역아이작큐브 · 7호",
     "address": "대구광역시 달서구 달구벌대로 1770",
-    "depositManwon": 11280,
-    "rentManwon": null
+    "depositManwon": 11280
    },
    {
     "lat": 35.655741156485,
     "lng": 128.420525822506,
     "label": "과학마을청아람 · 5호",
     "address": "대구광역시 달성군 구지면 과학마을로 70",
-    "depositManwon": 8080,
-    "rentManwon": null
+    "depositManwon": 8080
    },
    {
     "lat": 35.6576950921483,
     "lng": 128.414911069628,
     "label": "길 14대구국가산단 반도유보라 아이비파크 · 4호",
     "address": "대구광역시 달성군 구지면 과학마을로3",
-    "depositManwon": 8126,
-    "rentManwon": null
+    "depositManwon": 8126
    },
    {
     "lat": 35.7837958516936,
     "lng": 128.434046347094,
     "label": "대구옥포LH허브시티 · 1호",
     "address": "대구광역시 달성군 옥포읍 비슬로 1941",
-    "depositManwon": 7760,
-    "rentManwon": null
+    "depositManwon": 7760
    },
    {
     "lat": 35.6903116038906,
     "lng": 128.467950671203,
     "label": "대구테크노폴리스 반도유보라 아이비파크 · 1호",
     "address": "대구광역시 달성군 유가읍 테크노대로 195",
-    "depositManwon": 10800,
-    "rentManwon": null
+    "depositManwon": 10800
    },
    {
     "lat": 35.6970965584037,
     "lng": 128.4645776068654,
     "label": "길 58대구테크노 폴리스 호반베르디움 · 1호",
     "address": "대구광역시 달성군 유가읍 테크노대로5",
-    "depositManwon": 13774,
-    "rentManwon": null
+    "depositManwon": 13774
    },
    {
     "lat": 35.79042568226237,
     "lng": 128.4664620798766,
     "label": "길 56미진이지비아 · 1호",
     "address": "대구광역시 달성군 옥포읍 비슬로447",
-    "depositManwon": 10800,
-    "rentManwon": null
+    "depositManwon": 10800
    },
    {
     "lat": 35.8744209810175,
     "lng": 128.480249064776,
     "label": "북죽곡엠코타운더솔레뉴 · 2호",
     "address": "대구광역시 달성군 다사읍 세천로 160",
-    "depositManwon": 14292,
-    "rentManwon": null
+    "depositManwon": 14292
    },
    {
     "lat": 35.8721162022292,
     "lng": 128.478213127913,
     "label": "제일풍경채 프라임 · 1호",
     "address": "대구광역시 달성군 다사읍 세천남로 35",
-    "depositManwon": 12230,
-    "rentManwon": null
+    "depositManwon": 12230
    },
    {
     "lat": 35.85958209772,
     "lng": 128.467908011345,
     "label": "대실역청아람 2단지 · 1호",
     "address": "대구광역시 달성군 다사읍 대실역북로 26",
-    "depositManwon": 12969,
-    "rentManwon": null
+    "depositManwon": 12969
    },
    {
     "lat": 35.8734813311842,
     "lng": 128.480045349259,
     "label": "현대썬앤빌 · 1호",
     "address": "대구광역시 달성군 다사읍 세천로 182-10",
-    "depositManwon": 12188,
-    "rentManwon": null
+    "depositManwon": 12188
    },
    {
     "lat": 35.87275475894864,
     "lng": 128.49760502660195,
     "label": "길 29신성서 진흥더블파크 · 1호",
     "address": "대구광역시 달성군 다사읍 서재로24",
-    "depositManwon": 10800,
-    "rentManwon": null
+    "depositManwon": 10800
    },
    {
     "lat": 35.8643458983129,
     "lng": 128.460352765214,
     "label": "죽곡 삼정 그린코아 더 베스트 · 5호",
     "address": "대구광역시 달성군 다사읍 다사로 50",
-    "depositManwon": 10080,
-    "rentManwon": null
+    "depositManwon": 10080
    },
    {
     "lat": 35.8441583973923,
     "lng": 128.604765216488,
     "label": "봉덕동,강변 코오롱 하늘채 103동 103호 · 1호",
     "address": "대구광역시 남구 봉덕로 134",
-    "depositManwon": 17799,
-    "rentManwon": null
+    "depositManwon": 17799
    },
    {
     "lat": 35.8906158759599,
     "lng": 128.564490262287,
     "label": "길 40노원동3가,대구노원한신더휴 · 2호",
     "address": "대구광역시 북구 노원로10",
-    "depositManwon": 18146,
-    "rentManwon": null
+    "depositManwon": 18146
    },
    {
     "lat": 35.9020612060159,
     "lng": 128.514079389255,
     "label": "사수동,브라운스톤 강북 브라운스톤 강북 · 5호",
     "address": "대구광역시 북구 내곡로 89",
-    "depositManwon": 15607,
-    "rentManwon": null
+    "depositManwon": 15607
    },
    {
     "lat": 35.8907019094311,
     "lng": 128.593412177552,
     "label": "침산동,침산화성파크드림 · 1호",
     "address": "대구광역시 북구 성북로 70",
-    "depositManwon": 18834,
-    "rentManwon": null
+    "depositManwon": 18834
    },
    {
     "lat": 35.901041226031,
     "lng": 128.508872780981,
     "label": "사수동,이편한세상대구금호 · 2호",
     "address": "대구광역시 북구 내곡로 49",
-    "depositManwon": 17887,
-    "rentManwon": null
+    "depositManwon": 17887
    },
    {
     "lat": 35.9541254719089,
     "lng": 128.552114176717,
     "label": "읍내동,학정역 효성해링턴 플레이스 · 1호",
     "address": "대구광역시 북구 관음로 295",
-    "depositManwon": 19866,
-    "rentManwon": null
+    "depositManwon": 19866
    },
    {
     "lat": 35.9244204614154,
     "lng": 128.553795828144,
     "label": "태전동,협성휴포레강북아파트 · 2호",
     "address": "대구광역시 북구 태암남로 60",
-    "depositManwon": 20640,
-    "rentManwon": null
+    "depositManwon": 20640
    }
   ]
  },
  "2015122300020250": {
-  "districtId": null,
   "district": "대구광역시 외",
   "points": [
    {
@@ -1708,24 +1672,21 @@
     "lng": 128.595574039031,
     "label": "대봉동,대봉 서한이다음 대봉 서한이다음 · 20호",
     "address": "대구광역시 중구 명덕로 241",
-    "depositManwon": 25860,
-    "rentManwon": null
+    "depositManwon": 25860
    },
    {
     "lat": 35.8050592712773,
     "lng": 129.136395834318,
     "label": "해링턴플레이스 신경주역 · 122호",
     "address": "경상북도 경주시 건천읍 경주역세권3로 67",
-    "depositManwon": 20345,
-    "rentManwon": null
+    "depositManwon": 20345
    },
    {
     "lat": 36.1028603037145,
     "lng": 128.423531681559,
     "label": "길 26인의동,구미인동하늘채디어반2차 구미인동하늘채디어반2차 · 77호",
     "address": "경상북도 구미시 여헌로10",
-    "depositManwon": 27042,
-    "rentManwon": null
+    "depositManwon": 27042
    }
   ]
  },
@@ -1789,7 +1750,6 @@
   ]
  },
  "2015122300020180": {
-  "districtId": null,
   "district": "대구광역시 외",
   "points": [
    {
@@ -1977,7 +1937,6 @@
   ]
  },
  "2015122300020178": {
-  "districtId": null,
   "district": "대구광역시 외",
   "points": [
    {
@@ -2407,188 +2366,143 @@
   ]
  },
  "2015122300020229": {
-  "districtId": null,
   "district": "인천광역시 외",
   "points": [
    {
     "lat": 37.4654071812648,
     "lng": 126.69831809928,
     "label": "매입임대 주택 · 1호",
-    "address": "인천광역시 남동구 간석동 587",
-    "depositManwon": null,
-    "rentManwon": null
+    "address": "인천광역시 남동구 간석동 587"
    },
    {
     "lat": 37.4771307405158,
     "lng": 126.791980790334,
     "label": "매입임대 주택 · 1호",
-    "address": "경기도 부천시 소사구 소사본동 147-35",
-    "depositManwon": null,
-    "rentManwon": null
+    "address": "경기도 부천시 소사구 소사본동 147-35"
    },
    {
     "lat": 37.5297520472019,
     "lng": 126.819986643639,
     "label": "매입임대 주택 · 1호",
-    "address": "경기도 부천시 오정구 고강동 362-3",
-    "depositManwon": null,
-    "rentManwon": null
+    "address": "경기도 부천시 오정구 고강동 362-3"
    }
   ]
  },
  "2015122300020225": {
-  "districtId": null,
   "district": "인천광역시 외",
   "points": [
    {
     "lat": 37.4654071812648,
     "lng": 126.69831809928,
     "label": "매입임대 주택 · 1호",
-    "address": "인천광역시 남동구 간석동 587",
-    "depositManwon": null,
-    "rentManwon": null
+    "address": "인천광역시 남동구 간석동 587"
    },
    {
     "lat": 37.4771307405158,
     "lng": 126.791980790334,
     "label": "매입임대 주택 · 1호",
-    "address": "경기도 부천시 소사구 소사본동 147-35",
-    "depositManwon": null,
-    "rentManwon": null
+    "address": "경기도 부천시 소사구 소사본동 147-35"
    },
    {
     "lat": 37.5297520472019,
     "lng": 126.819986643639,
     "label": "매입임대 주택 · 1호",
-    "address": "경기도 부천시 오정구 고강동 362-3",
-    "depositManwon": null,
-    "rentManwon": null
+    "address": "경기도 부천시 오정구 고강동 362-3"
    }
   ]
  },
  "2015122300020222": {
-  "districtId": null,
   "district": "인천광역시 외",
   "points": [
    {
     "lat": 37.4749917560047,
     "lng": 126.616724639472,
     "label": "매입임대 주택 · 1호",
-    "address": "인천광역시 중구 선린동 56-1",
-    "depositManwon": null,
-    "rentManwon": null
+    "address": "인천광역시 중구 선린동 56-1"
    },
    {
     "lat": 37.4768857652293,
     "lng": 126.659625815132,
     "label": "매입임대 주택 · 1호",
-    "address": "인천광역시 미추홀구 도화동 985-4",
-    "depositManwon": null,
-    "rentManwon": null
+    "address": "인천광역시 미추홀구 도화동 985-4"
    },
    {
     "lat": 37.4592102555158,
     "lng": 126.643936671637,
     "label": "매입임대 주택 · 1호",
-    "address": "인천광역시 미추홀구 숭의동 331-12",
-    "depositManwon": null,
-    "rentManwon": null
+    "address": "인천광역시 미추홀구 숭의동 331-12"
    },
    {
     "lat": 37.4015600376402,
     "lng": 126.737273078456,
     "label": "매입임대 주택 · 1호",
-    "address": "인천광역시 남동구 논현동 111-7",
-    "depositManwon": null,
-    "rentManwon": null
+    "address": "인천광역시 남동구 논현동 111-7"
    },
    {
     "lat": 37.4597470446682,
     "lng": 126.717869240919,
     "label": "매입임대 주택 · 1호",
-    "address": "인천광역시 남동구 구월동 3-19",
-    "depositManwon": null,
-    "rentManwon": null
+    "address": "인천광역시 남동구 구월동 3-19"
    },
    {
     "lat": 37.4481479307961,
     "lng": 126.693464769566,
     "label": "매입임대 주택 · 1호",
-    "address": "인천광역시 남동구 구월동 1384-4",
-    "depositManwon": null,
-    "rentManwon": null
+    "address": "인천광역시 남동구 구월동 1384-4"
    },
    {
     "lat": 37.4642122511458,
     "lng": 126.707050920982,
     "label": "매입임대 주택 · 1호",
-    "address": "인천광역시 남동구 간석동 313-1",
-    "depositManwon": null,
-    "rentManwon": null
+    "address": "인천광역시 남동구 간석동 313-1"
    },
    {
     "lat": 37.4540512311823,
     "lng": 126.702371857708,
     "label": "매입임대 주택 · 1호",
-    "address": "인천광역시 남동구 구월동 1134-6",
-    "depositManwon": null,
-    "rentManwon": null
+    "address": "인천광역시 남동구 구월동 1134-6"
    },
    {
     "lat": 37.4659936598613,
     "lng": 126.709469765521,
     "label": "매입임대 주택 · 1호",
-    "address": "인천광역시 남동구 간석동 173-7",
-    "depositManwon": null,
-    "rentManwon": null
+    "address": "인천광역시 남동구 간석동 173-7"
    },
    {
     "lat": 37.5055014246122,
     "lng": 126.677932515826,
     "label": "매입임대 주택 · 1호",
-    "address": "인천광역시 서구 석남동 552-20",
-    "depositManwon": null,
-    "rentManwon": null
+    "address": "인천광역시 서구 석남동 552-20"
    },
    {
     "lat": 37.5333442003633,
     "lng": 126.639226055187,
     "label": "매입임대 주택 · 2호",
-    "address": "인천광역시 서구 청라동 152-7",
-    "depositManwon": null,
-    "rentManwon": null
+    "address": "인천광역시 서구 청라동 152-7"
    },
    {
     "lat": 37.4985657210449,
     "lng": 126.671044096872,
     "label": "매입임대 주택 · 1호",
-    "address": "인천광역시 서구 가좌동 106",
-    "depositManwon": null,
-    "rentManwon": null
+    "address": "인천광역시 서구 가좌동 106"
    },
    {
     "lat": 37.5007164998471,
     "lng": 126.788445194541,
     "label": "매입임대 주택 · 3호",
-    "address": "경기도 부천시 원미구 춘의동 204-5",
-    "depositManwon": null,
-    "rentManwon": null
+    "address": "경기도 부천시 원미구 춘의동 204-5"
    },
    {
     "lat": 37.4771549889859,
     "lng": 126.793013367427,
     "label": "매입임대 주택 · 1호",
-    "address": "경기도 부천시 소사본동 149-3",
-    "depositManwon": null,
-    "rentManwon": null
+    "address": "경기도 부천시 소사본동 149-3"
    },
    {
     "lat": 37.4780632491491,
     "lng": 126.778671247318,
     "label": "매입임대 주택 · 1호",
-    "address": "경기도 부천시 소사구 심곡본동 702",
-    "depositManwon": null,
-    "rentManwon": null
+    "address": "경기도 부천시 소사구 심곡본동 702"
    }
   ]
  },
@@ -2601,8 +2515,7 @@
     "lng": 126.51064310933343,
     "label": "길 18용담이동 호반써밋 · 56호",
     "address": "제주시 용담로7",
-    "depositManwon": 39690,
-    "rentManwon": null
+    "depositManwon": 39690
    }
   ]
  },
@@ -3137,8 +3050,7 @@
     "lng": 126.568264718724,
     "label": "동홍동 서귀포레 · 88호",
     "address": "서귀포시 동홍로 178-6",
-    "depositManwon": 18450,
-    "rentManwon": null
+    "depositManwon": 18450
    }
   ]
  },
@@ -3483,7 +3395,6 @@
   ]
  },
  "2015122300020193": {
-  "districtId": null,
   "district": "대전광역시 외",
   "points": [
    {
@@ -3553,7 +3464,6 @@
   ]
  },
  "2015122300020188": {
-  "districtId": null,
   "district": "대전광역시 외",
   "points": [
    {
@@ -6007,7 +5917,6 @@
   ]
  },
  "2015122300020205": {
-  "districtId": null,
   "district": "부산광역시 외",
   "points": [
    {

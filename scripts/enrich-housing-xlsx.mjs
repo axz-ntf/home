@@ -147,16 +147,17 @@ for (const l of pool) {
       const co = await geocode(base);
       await sleep(130);
       if (!co) { console.log(`    ✗ 지오코딩 실패: ${base}`); continue; }
-      points.push({
-        lat: co.lat, lng: co.lng,
-        label: `${g.name || "매입임대 주택"} · ${g.n}호`,
-        address: base,
-        depositManwon: g.deps.length ? Math.min(...g.deps) : null,
-        rentManwon: g.rents.length ? Math.min(...g.rents) : null,
-      });
+      // null 은 MappedPoint 타입(number|undefined)과 충돌 → 값 있을 때만 키 포함
+      const pt = { lat: co.lat, lng: co.lng, label: `${g.name || "매입임대 주택"} · ${g.n}호`, address: base };
+      if (g.deps.length) pt.depositManwon = Math.min(...g.deps);
+      if (g.rents.length) pt.rentManwon = Math.min(...g.rents);
+      points.push(pt);
     }
     if (!points.length) { stats.geoFail++; continue; }
-    mapped[l.pblancId] = { districtId: l.districtId, district: l.district, points };
+    const entry = { points };
+    if (l.districtId) entry.districtId = l.districtId; // null 이면 생략 (MappedCfg: string|undefined)
+    if (l.district) entry.district = l.district;
+    mapped[l.pblancId] = entry;
     stats.done++;
     console.log(`  ✓ ${l.pblancId} ${points.length}개 단지 핀 (호실 ${units.length}) — ${(l.title || "").slice(0, 36)}`);
   } catch (e) { stats.parseFail++; console.log(`  ✗ ${l.pblancId} 오류: ${String(e.message).slice(0, 60)}`); }
