@@ -228,7 +228,7 @@ function ScheduleTimeline({ item }: { item: Listing }) {
               <span style={{ fontSize: 13, fontWeight: isActive ? 700 : 500, color: strong }}>
                 {s.label}
                 {!isActive && s.label === "접수 마감" && dday && (
-                  <span style={{ marginLeft: 6, fontSize: 11, fontWeight: 800, color: "var(--seed-semantic-color-primary)" }}>{dday}</span>
+                  <span suppressHydrationWarning style={{ marginLeft: 6, fontSize: 11, fontWeight: 800, color: "var(--seed-semantic-color-primary)" }}>{dday}</span>
                 )}
               </span>
               <span style={{ marginLeft: "auto", fontSize: 13, fontVariantNumeric: "tabular-nums", fontWeight: isActive ? 700 : 500, color: strong }}>
@@ -472,7 +472,7 @@ export function DetailPanel({
               <div className="detail-deadline-label">모집 마감</div>
               <div className="detail-deadline-date">{item.deadline.replace(/\./g, ". ")} 18:00까지</div>
             </div>
-            <div className="detail-deadline-dday">{calcDday(item.deadline)}</div>
+            <div className="detail-deadline-dday" suppressHydrationWarning>{calcDday(item.deadline)}</div>
           </div>
         ) : (
           <div className="detail-empty-notice">

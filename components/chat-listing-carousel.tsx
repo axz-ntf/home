@@ -72,7 +72,7 @@ function CarouselCard({ item: { listing: item, reasons }, rank }: { item: Carous
             />
           </svg>
         </button>
-        {dday && <span className={`chat-rec-dday ${effStatus}`}>{dday}</span>}
+        {dday && <span className={`chat-rec-dday ${effStatus}`} suppressHydrationWarning>{dday}</span>}
       </div>
       <div className="chat-rec-body">
         <div className="chat-rec-tags">

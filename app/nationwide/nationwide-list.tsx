@@ -216,7 +216,7 @@ function NoticeRow({ r }: { r: NationwideRow }) {
           {r.deadline || "—"}
         </span>
         {dday && dday !== "마감" && (
-          <span style={{ display: "block", marginTop: 2, fontSize: 12, fontWeight: 800, color: urgent ? "var(--seed-scale-color-red-600)" : "var(--seed-scale-color-gray-500)" }}>
+          <span suppressHydrationWarning style={{ display: "block", marginTop: 2, fontSize: 12, fontWeight: 800, color: urgent ? "var(--seed-scale-color-red-600)" : "var(--seed-scale-color-gray-500)" }}>
             {dday}
           </span>
         )}

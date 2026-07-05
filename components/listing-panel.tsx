@@ -171,7 +171,7 @@ export function ListingCard({
         </div>
       </div>
       <aside className="card-side">
-        {statusLabel && <span className={`status-chip ${effStatus}`}>{statusLabel}</span>}
+        {statusLabel && <span className={`status-chip ${effStatus}`} suppressHydrationWarning>{statusLabel}</span>}
         {photo && (
           <div className="card-thumb">
             {/* next/image 가 mtime 변경된 파일을 인식 못해 옛 조감도가 캐시돼서 보이는 문제. detail 과 통일. */}

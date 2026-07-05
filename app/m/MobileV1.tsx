@@ -330,7 +330,7 @@ function DetailScreen({ item: propItem }: { item?: AnyListing }) {
             <div className="l">모집 마감</div>
             <div className="d">{item.deadline.replace(/\./g, ". ")} 18:00</div>
           </div>
-          <div className="v">{dDay(item.deadline, item.status)}</div>
+          <div className="v" suppressHydrationWarning>{dDay(item.deadline, item.status)}</div>
         </div>
         <div className="m-price-grid">
           <div className="m-price-cell"><div className="m-price-label">보증금</div><div className="m-price-value">{depositText(item) ?? "공고문 확인"}</div></div>

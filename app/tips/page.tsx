@@ -82,7 +82,7 @@ export default function TipsPage() {
                   <Link key={l.id} href={`/listings/${encodeURIComponent(l.id)}`} className="tips-listing-card">
                     <div style={{ display: "flex", justifyContent: "space-between", gap: 8 }}>
                       <strong style={{ fontSize: 14.5, letterSpacing: "-0.02em" }}>{l.title}</strong>
-                      {dday && <span style={{ fontSize: 12.5, fontWeight: 800, color: "var(--seed-scale-color-red-600, #e5484d)", whiteSpace: "nowrap" }}>{dday}</span>}
+                      {dday && <span suppressHydrationWarning style={{ fontSize: 12.5, fontWeight: 800, color: "var(--seed-scale-color-red-600, #e5484d)", whiteSpace: "nowrap" }}>{dday}</span>}
                     </div>
                     <div style={{ fontSize: 12.5, color: "var(--seed-semantic-color-ink-text-low)", marginTop: 4 }}>
                       {l.district} · {l.agency}{dep ? ` · 보 ${dep}` : ""}{rent ? ` · 월 ${rent}` : ""}
