@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { comma } from "@/lib/format";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { MdOutlineSearch, MdClose } from "react-icons/md";
@@ -87,20 +88,28 @@ export function AppShell({
   // 모바일 바텀시트 — 기본 hidden (지도 풀스크린).
   // floating "목록 보기" 버튼 or "이 지역 검색" 시 expanded.
   const [sheetSnap, setSheetSnap] = useState<"hidden" | "expanded">("hidden");
+  // 마운트 게이트 — 마감 여부(effectiveStatus)는 현재 시각 의존이라 SSR(빌드 시각)과 어긋나
+  // 목록 필터/정렬 결과가 달라짐 → hydration #418. 마운트 전엔 원본 status 로 계산해 SSR과 일치시킨다.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     void density;
   }, [density]);
 
   const filtered = useMemo(() => {
+    // 마운트 전엔 시각 무관 원본 status, 후엔 정확한 effectiveStatus (hydration 일치용).
+    const eff = mounted
+      ? (x: Listing) => effectiveStatus(x.status, x.deadline, x.beginDate)
+      : (x: Listing) => x.status;
     // 마감 공고는 기본 숨김 — 지도에 마감 핀까지 뜨면 혼란 (사용자 피드백).
     // "마감" 필터를 켜면 회색 핀/흐림 카드로 함께 표시 (개선안1차 절충).
     const showClosed = filters.status.includes("closed");
     let list = listings.slice();
-    if (!showClosed) list = list.filter((x) => effectiveStatus(x.status, x.deadline, x.beginDate) !== "closed");
+    if (!showClosed) list = list.filter((x) => eff(x) !== "closed");
     if (filters.type.length) list = list.filter((x) => filters.type.includes(x.type));
     // 마감임박(closing)은 raw status 에 없고 deadline 으로 derive 되므로 effectiveStatus 비교.
-    if (filters.status.length) list = list.filter((x) => filters.status.includes(effectiveStatus(x.status, x.deadline, x.beginDate)));
+    if (filters.status.length) list = list.filter((x) => filters.status.includes(eff(x)));
     if (filters.agency.length) list = list.filter((x) => filters.agency.includes(x.agency));
     // 지역 필터: 지도 영역 모드가 우선, 그 다음 시도 클릭 모드
     if (searchBounds) {
@@ -136,11 +145,10 @@ export function AppShell({
     // 마감 공고는 어떤 정렬에서든 뒤로 — 모집중·예정이 먼저 보이게.
     // stable sort 라 각 그룹 내에선 위 정렬 순서가 유지된다.
     list.sort((a, b) =>
-      Number(effectiveStatus(a.status, a.deadline, a.beginDate) === "closed") -
-      Number(effectiveStatus(b.status, b.deadline, b.beginDate) === "closed"),
+      Number(eff(a) === "closed") - Number(eff(b) === "closed"),
     );
     return list;
-  }, [filters, sort, activeDistrict, searchBounds, listings, query]);
+  }, [filters, sort, activeDistrict, searchBounds, listings, query, mounted]);
 
   const districtCounts = useMemo<Record<string, number>>(() => {
     const map: Record<string, number> = {};
@@ -345,7 +353,7 @@ export function AppShell({
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
             <path d="M 2 3 L 12 3 M 2 7 L 12 7 M 2 11 L 12 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
           </svg>
-          <span>목록 {filtered.length.toLocaleString()}건</span>
+          <span>목록 {comma(filtered.length)}건</span>
         </button>
 
         <NaverMapView
