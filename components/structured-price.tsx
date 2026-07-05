@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import type { PriceDetail } from "@/lib/types";
-import { formatManwon } from "@/lib/format";
+import { formatManwon, comma } from "@/lib/format";
 
 // 유형별 가격 모델 디테일 렌더 (3-4). priceDetail.model 로 분기.
 // tiered=소득계층 토글 / household=가구원수 / support=지원한도표. + 전환보증금 안내.
 
-const fmt = (m: number | null | undefined) => (m != null ? formatManwon(m) || `${m.toLocaleString()}만원` : "—");
+const fmt = (m: number | null | undefined) => (m != null ? formatManwon(m) || `${comma(m)}만원` : "—");
 const fmtRange = (v: number | [number, number] | null | undefined) =>
   Array.isArray(v) ? `${fmt(v[0])} ~ ${fmt(v[1])}` : fmt(v);
 

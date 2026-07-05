@@ -5,6 +5,7 @@
 // 디자인 시안: app/m/MobileV1.tsx — 같은 .m-* 클래스를 그대로 사용.
 
 import { useEffect, useRef, useState } from "react";
+import { comma } from "@/lib/format";
 import { createPortal } from "react-dom";
 import type { District, Filters, FilterKey } from "@/lib/types";
 import { FILTER_CONFIG } from "./filter-bar";
@@ -120,7 +121,7 @@ function RegionSheet({
                 onClick={() => onPick(d.id)}
               >
                 <span>{d.name}</span>
-                <span className="m-region-sheet-count">{count.toLocaleString()}건</span>
+                <span className="m-region-sheet-count" suppressHydrationWarning>{comma(count)}건</span>
               </button>
             );
           })}

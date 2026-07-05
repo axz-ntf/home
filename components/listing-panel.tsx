@@ -6,7 +6,7 @@ import type { Listing, SortKey } from "@/lib/types";
 import { AgencyBadge } from "./agency-badge";
 import { eligibilitySummaryByType, HOUSING_TYPES } from "@/lib/mock-data";
 import { dDayText, effectiveStatus } from "@/lib/dday";
-import { formatManwon } from "@/lib/format";
+import { formatManwon, comma } from "@/lib/format";
 
 function typeBadge(type: Listing["type"], item?: Listing) {
   const t = HOUSING_TYPES.find((x) => x.id === type);
@@ -286,7 +286,7 @@ export function ListingPanel({
       )}
       <div className="listing-head">
         <div className="listing-count">
-          총 <em>{items.length.toLocaleString()}</em>개의 공공임대 매물
+          총 <em suppressHydrationWarning>{comma(items.length)}</em>개의 공공임대 매물
         </div>
         <div className="listing-sort">
           {SORT_OPTIONS.map((opt) => (

@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { comma } from "@/lib/format";
 import Link from "next/link";
 import { depositText, rentText } from "@/lib/price-label";
 
@@ -170,8 +171,8 @@ function NoticeRow({ r }: { r: NationwideRow }) {
   const isSale = r.type === "sale";
 
   const meta: string[] = [r.district];
-  if (r.supplyUnits != null && r.supplyUnits > 1) meta.push(`${r.supplyUnits.toLocaleString()}호`);
-  if (isSale && r.salePriceManwon) meta.push(`분양 ${r.salePriceManwon.toLocaleString()}만`);
+  if (r.supplyUnits != null && r.supplyUnits > 1) meta.push(`${comma(r.supplyUnits)}호`);
+  if (isSale && r.salePriceManwon) meta.push(`분양 ${comma(r.salePriceManwon)}만`);
   else if (!isSale) {
     const dt = depositText(r), rt = rentText(r);
     if (dt && rt) meta.push(`보증 ${dt}/월 ${rt}`);

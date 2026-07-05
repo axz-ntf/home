@@ -5,6 +5,7 @@
 // 데스크탑 캔버스 모드는 default export, 모바일 viewport 용 실제 앱 모드는 MobileApp.
 
 import { useState, type CSSProperties } from "react";
+import { comma } from "@/lib/format";
 import type { Listing as RealListing, District as RealDistrict } from "@/lib/types";
 import { HOUSING_TYPES as REAL_HOUSING_TYPES, STATUS_LABELS as REAL_STATUS_LABELS, ELIGIBILITY_LABELS } from "@/lib/mock-data";
 import { depositText, rentText } from "@/lib/price-label";
@@ -409,7 +410,7 @@ function AgentScreen({ items = [] }: { items?: AnyListing[] }) {
             <div className="thumb" dangerouslySetInnerHTML={{ __html: svg }} />
             <div className="info">
               <div className="title">{matchItem.title}</div>
-              <div className="price"><strong>보 {matchItem.deposit.toLocaleString()}</strong> · 월 {matchItem.rent}만</div>
+              <div className="price"><strong>보 {comma(matchItem.deposit)}</strong> · 월 {matchItem.rent}만</div>
               <div className="meta">19.2㎡ · 청년 · 마감 D-11</div>
             </div>
           </div>

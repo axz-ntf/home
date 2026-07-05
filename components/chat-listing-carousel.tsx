@@ -5,6 +5,7 @@
 // 페이지 인디케이터 도트 — 캐러셀 하단에 현재 카드 위치 표시.
 
 import { useEffect, useRef, useState } from "react";
+import { comma } from "@/lib/format";
 import { useRouter } from "next/navigation";
 import type { Listing } from "@/lib/types";
 import { HOUSING_TYPES } from "@/lib/mock-data";
@@ -30,7 +31,7 @@ function CarouselCard({ item: { listing: item, reasons }, rank }: { item: Carous
       ? (() => {
           const eok = Math.floor(item.salePriceManwon / 10000);
           const man = item.salePriceManwon % 10000;
-          return `분양가 ${eok > 0 ? `${eok}억 ` : ""}${man > 0 ? `${man.toLocaleString()}만` : ""}`.trim();
+          return `분양가 ${eok > 0 ? `${eok}억 ` : ""}${man > 0 ? `${comma(man)}만` : ""}`.trim();
         })()
       : item.deposit > 0 || item.rent > 0
         ? [depositText(item) && `보 ${depositText(item)}`, rentText(item) && `월 ${rentText(item)}`].filter(Boolean).join(" · ")
