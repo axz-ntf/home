@@ -8,6 +8,15 @@ import { eligibilitySummaryByType, HOUSING_TYPES } from "@/lib/mock-data";
 import { dDayText, effectiveStatus } from "@/lib/dday";
 import { formatManwon, comma } from "@/lib/format";
 
+// 마운트 여부 — 시간 의존(D-day) 텍스트를 SSR/hydration 시점엔 렌더하지 않기 위함.
+// SSR HTML 은 빌드 시각으로 굳어(D-10 등), 사용자 접속 시각과 달라 hydration #418 유발.
+// 마운트 전엔 시간 무관 라벨, 마운트 후 정확한 D-day 로 교체.
+function useMounted() {
+  const [m, setM] = useState(false);
+  useEffect(() => setM(true), []);
+  return m;
+}
+
 function typeBadge(type: Listing["type"], item?: Listing) {
   const t = HOUSING_TYPES.find((x) => x.id === type);
   if (!t) return null;
@@ -103,15 +112,17 @@ export function ListingCard({
   onClick: (id: string) => void;
 }) {
   const photo = item.coverPhotoUrl;
-  const effStatus = effectiveStatus(item.status, item.deadline, item.beginDate);
+  const mounted = useMounted();
+  // 마운트 후에만 시간(현재 날짜) 기반 계산 — SSR/hydration 시점엔 원본 status 로 안정 렌더.
+  const effStatus = mounted ? effectiveStatus(item.status, item.deadline, item.beginDate) : item.status;
   // dDayText 가 raw status 기반이라 effStatus 로 보정된 매물에선 잘못된 라벨 반환 — effStatus 로 호출.
-  const dday = dDayText(item.deadline, effStatus);
+  const dday = mounted ? dDayText(item.deadline, effStatus) : "";
   // statusLabel — effStatus 우선. raw status 가 "open" 이지만 마감 지났으면 effStatus=closed → "마감".
   const statusLabel =
     effStatus === "closed" ? (dday || "마감")
     : effStatus === "closing" ? (dday || "마감임박")
     : effStatus === "upcoming" ? "모집 예정"
-    : (dday || "수시모집");
+    : (dday || "모집중");
   const tiers = tierTags(item);
   return (
     <article
