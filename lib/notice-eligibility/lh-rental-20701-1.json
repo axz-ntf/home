@@ -1,0 +1,23 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "소형·저가주택(아파트 60㎡ 이하, 1억원 이하 또는 수도권 1억 6천만원 이하)은 무주택으로 간주",
+        "아파트 외 85㎡ 이하, 3억원 이하(수도권 5억원 이하)는 무주택으로 간주",
+        "해당지역(익산시) 또는 연접지역에 주택이 없을 경우 허용"
+      ]
+    }
+  ],
+  "priority": []
+}

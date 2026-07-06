@@ -1,0 +1,24 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 150,
+        "byHousehold": null,
+        "note": "도시근로자 전년도 월평균소득의 150% 이하"
+      },
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "영구임대주택 예비입주자 모집",
+        "소득 완화모집"
+      ]
+    }
+  ],
+  "priority": []
+}
