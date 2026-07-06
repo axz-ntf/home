@@ -67,6 +67,7 @@ export interface ManualOverride {
   rent?: number | null;           // 만원
   salePriceManwon?: number | null;
   area?: string;
+  address?: string;               // 위치 정정 — LH 원본이 시군 근사일 때 실제 단지 주소
   // ── 다중 평형 (688세대 = 59㎡ 390 + 74㎡ 102 + 84㎡ 194 같은 케이스) ──
   rows?: OverrideRow[];
   // ── 유형별 가격 모델 (옵셔널 — 없으면 위 레거시 필드로 동작) ──
@@ -171,6 +172,7 @@ export function applyOverride(listing: Listing): Listing {
     ...(headlineRent !== undefined && headlineRent !== null && { rent: headlineRent }),
     ...(o.salePriceManwon !== undefined && { salePriceManwon: o.salePriceManwon }),
     ...(o.area !== undefined && { area: o.area }),
+    ...(o.address !== undefined && { address: o.address }),
     ...(o.status !== undefined && { status: o.status }),
     ...(o.noticeStatus !== undefined && { noticeStatus: o.noticeStatus }),
     ...(o.progressStatus !== undefined && { progressStatus: o.progressStatus }),

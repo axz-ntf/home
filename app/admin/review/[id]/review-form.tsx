@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { priceModelFor, type ManualOverride, type OverrideRow } from "@/lib/manual-overrides";
 import type { HousingTypeId, StatusId } from "@/lib/types";
 import { TieredEditor, HouseholdEditor, SupportEditor, type TierDraft, type HouseholdDraft, type SupportDraft } from "./model-editors";
+import { useReviewLive, type LivePreview } from "./review-live";
 
 interface Current {
   supplyUnits: number | string | null;
@@ -39,11 +40,11 @@ interface RowDraft {
   salePriceManwon: string;
 }
 
-const STATUS_OPTIONS: { value: StatusId; label: string; dot: string }[] = [
-  { value: "open",     label: "모집중",   dot: "var(--a-green)" },
-  { value: "upcoming", label: "모집예정", dot: "var(--a-yellow)" },
-  { value: "closing",  label: "마감임박", dot: "var(--a-red)" },
-  { value: "closed",   label: "마감",     dot: "var(--a-ink-4)" },
+const STATUS_OPTIONS: { value: StatusId; label: string }[] = [
+  { value: "open",     label: "모집중" },
+  { value: "upcoming", label: "모집예정" },
+  { value: "closing",  label: "마감임박" },
+  { value: "closed",   label: "마감" },
 ];
 
 const NOTICE_STATUS_OPTIONS = ["일반공고", "정정공고", "취소공고", "재공고", "발표결과"];
@@ -134,6 +135,14 @@ function fmtKst(iso: string): string {
   return `${g("year")}.${g("month")}.${g("day")} ${g("hour")}:${g("minute")}`;
 }
 
+// 대표가 = 최저 보증금 옵션 — applyOverride 의 cheapest 로직과 같은 기준 (저가 컨셉).
+function cheapestPair(pairs: { deposit: number | null; rent: number | null }[]) {
+  const priced = pairs.filter((p) => p.deposit != null);
+  if (!priced.length) return { deposit: null, rent: null };
+  const rep = priced.reduce((a, b) => (b.deposit! < a.deposit! ? b : a));
+  return { deposit: rep.deposit, rent: rep.rent };
+}
+
 // "850~1200" → [850,1200], "850" → 850, "" → null.
 function parseRange(s: string): number | [number, number] | null {
   const t = s.trim();
@@ -155,24 +164,26 @@ export default function ReviewForm({
   override,
   original,
   nextHref,
-  queueIndex,
   initialRows,
   sourceUrl,
   canAutoExtract = true,
   draft = null,
+  priceIssue = false,
+  currentAddress = "",
 }: {
   id: string;
   type: HousingTypeId;
   current: Current;
   context: Context;
   override: ManualOverride | null;
-  original?: { deposit: number | null; rent: number | null; salePriceManwon: number | null; supplyUnits: number | null };
+  original?: { deposit: number | null; rent: number | null; salePriceManwon: number | null; supplyUnits: number | null; address?: string | null };
   nextHref?: string | null;
-  queueIndex?: { current: number; total: number } | null;
   initialRows?: OverrideRow[] | null;
   sourceUrl?: string | null;
   canAutoExtract?: boolean; // SH 인데 공고문 PDF 가 없으면 false — 자동 채움 비활성 (감사 M3)
   draft?: { at: string; fields: unknown } | null; // 야간 일괄 추출 초안 (P5) — 불러오기만, 자동 적용 안함
+  priceIssue?: boolean; // 가격 이상값 감지 — 임대 조건 섹션 헤더 배지
+  currentAddress?: string; // override 반영된 현재 표시 주소 — 위치 정정 초기값
 }) {
   const router = useRouter();
   const isSale = type === "sale";
@@ -194,6 +205,7 @@ export default function ReviewForm({
   const [rent, setRent] = useState(current.rent ? String(current.rent) : "");
   const [salePrice, setSalePrice] = useState(current.salePriceManwon ? String(current.salePriceManwon) : "");
   const [area, setArea] = useState(current.area ?? "");
+  const [address, setAddress] = useState(currentAddress);
 
   // 유형별 모델 state (3-3) — tiered/household/support + 전환보증금 + 당첨발표일
   const [tiers, setTiers] = useState<TierDraft[]>(() => initTiers(override));
@@ -327,7 +339,46 @@ export default function ReviewForm({
     ? rowsList.reduce((s, r) => s + (num(r.supplyUnits) ?? 0), 0)
     : null;
 
+  // ── 미리보기 실시간 연동 (P1) — 현재 폼 state 로 대표값 derive 해 발행 ──
+  const { setLive } = useReviewLive();
+  function buildLive(): Omit<LivePreview, "dirty"> {
+    const su = num(supplyUnits);
+    const loN = (v: number | [number, number] | null) => (Array.isArray(v) ? v[0] : v);
+    if (priceModel === "tiered-by-income") {
+      const pairs = tiers.flatMap((t) => t.incomes.map((i) => ({ deposit: num(i.deposit), rent: num(i.rent) })));
+      const sum = tiers.reduce((s, t) => s + (num(t.supplyUnits) ?? 0), 0);
+      return { ...cheapestPair(pairs), salePriceManwon: null, supplyUnits: su ?? (sum || null), area: null, rows: null };
+    }
+    if (priceModel === "by-household-size") {
+      const pairs = households.map((h) => ({ deposit: loN(parseRange(h.deposit)), rent: loN(parseRange(h.rent)) }));
+      const sum = households.reduce((s, h) => s + (num(h.supplyUnits) ?? 0), 0);
+      return { ...cheapestPair(pairs), salePriceManwon: null, supplyUnits: su ?? (sum || null), area: null, rows: null };
+    }
+    if (priceModel === "support-limit") {
+      const limits = supportRows.map((r) => num(r.limit)).filter((n): n is number => n != null);
+      return { deposit: limits.length ? Math.min(...limits) : null, rent: null, salePriceManwon: null, supplyUnits: su, area: null, rows: null };
+    }
+    if (byRows) {
+      const pairs = rowsList.map((r) => ({ deposit: num(r.deposit), rent: num(r.rent) }));
+      const sales = rowsList.map((r) => num(r.salePriceManwon)).filter((n): n is number => n != null);
+      return {
+        ...(isSale ? { deposit: null, rent: null } : cheapestPair(pairs)),
+        salePriceManwon: isSale && sales.length ? Math.min(...sales) : null,
+        supplyUnits: totalSupply || null,
+        area: null,
+        rows: rowsList.map((r) => ({ houseType: r.houseType, area: r.area, depositManwon: num(r.deposit) })),
+      };
+    }
+    return { deposit: num(deposit), rent: num(rent), salePriceManwon: num(salePrice), supplyUnits: su, area, rows: null };
+  }
+  const liveKey = JSON.stringify(buildLive());
+  const initialLiveKey = useRef(liveKey); // 첫 렌더 스냅샷 — dirty(미저장 수정) 판정 기준
+  useEffect(() => {
+    setLive({ ...(JSON.parse(liveKey) as Omit<LivePreview, "dirty">), dirty: liveKey !== initialLiveKey.current });
+  }, [liveKey, setLive]);
+
   async function save(goNext: boolean) {
+    if (busy) return;
     setBusy(true);
     setMsg(null);
 
@@ -396,6 +447,11 @@ export default function ReviewForm({
       payload.area = area.trim() || undefined;
     }
 
+    // 위치 정정 — 바꿨을 때만 저장 (자동값 박제 방지)
+    if (address.trim() && address.trim() !== currentAddress.trim()) {
+      payload.address = address.trim();
+    }
+
     // 전환보증금 + 당첨발표일 (공통, 값 있을 때만)
     if (convUp.trim() || convDown.trim()) {
       payload.conversion = { rateUp: num(convUp), rateDown: num(convDown) };
@@ -414,6 +470,9 @@ export default function ReviewForm({
       return;
     }
     setMsg({ kind: "success", text: "저장됨" });
+    // 저장 성공 → 지금 값이 새 기준 — 미리보기 "수정 중" 배지 해제.
+    initialLiveKey.current = liveKey;
+    setLive({ ...(JSON.parse(liveKey) as Omit<LivePreview, "dirty">), dirty: false });
     if (goNext && nextHref) {
       router.push(nextHref);
     } else {
@@ -421,6 +480,26 @@ export default function ReviewForm({
       setBusy(false);
     }
   }
+
+  // ── 저장 단축키 (P2) — ⌘S 저장, ⌘⏎ 저장하고 다음. ref 로 최신 save 참조 (리스너 1회 등록).
+  const saveRef = useRef(save);
+  useEffect(() => {
+    saveRef.current = save;
+  });
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (!(e.metaKey || e.ctrlKey)) return;
+      if (e.key === "s" || e.key === "S") {
+        e.preventDefault();
+        saveRef.current(false);
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        saveRef.current(true);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   async function clearOverride() {
     if (!confirm("이 매물의 override를 삭제할까요? 자동 추출값으로 돌아갑니다.")) return;
@@ -438,17 +517,8 @@ export default function ReviewForm({
   }
 
   return (
-    <form onSubmit={(e) => { e.preventDefault(); save(false); }} className="a-form">
-      {queueIndex && (
-        <div style={{
-          padding: "10px 14px", background: "var(--a-bg-2)", borderRadius: 8,
-          fontSize: 12, color: "var(--a-ink-2)", fontWeight: 600,
-          display: "flex", justifyContent: "space-between", alignItems: "center",
-        }}>
-          <span>검수 큐 <strong style={{ color: "var(--a-ink)" }}>{queueIndex.current}</strong> / {queueIndex.total}</span>
-          <span style={{ color: "var(--a-ink-3)", fontWeight: 500 }}>저장하고 다음 진행 가능</span>
-        </div>
-      )}
+    <form id="review-form" onSubmit={(e) => { e.preventDefault(); save(false); }} className="a-form">
+      {/* 검수 큐 위치는 topbar(pageSub)·단축키는 상단 메타줄이 안내 — 중복 배너 제거 */}
       {override && (
         <div className="a-review-banner">
           <span>✓ 검수됨 — {override._reviewedAt}</span>
@@ -510,50 +580,22 @@ export default function ReviewForm({
         )}
       </FormSection>
 
-      <FormSection title="공고 상태" subtitle="자동 추출이 틀린 경우 수동 교정. 화면 분류 / 필터에 즉시 반영.">
-        <Field label="활성 상태" hint="대시보드 분류 기준 — 모집중 / 모집예정 / 마감임박 / 마감">
-          <SegmentedControl value={status} options={STATUS_OPTIONS} onChange={setStatus} />
-        </Field>
-
-        <Field label="공고 종류" hint="LH 원본의 공고 분류">
-          <ChipGroup value={noticeStatus} options={NOTICE_STATUS_OPTIONS} onChange={setNoticeStatus} allowEmpty />
-        </Field>
-
-        <Field label="모집 진행" hint="LH 원본의 진행 상태">
-          <ChipGroup value={progressStatus} options={PROGRESS_STATUS_OPTIONS} onChange={setProgressStatus} allowEmpty />
-        </Field>
-
-        <Field label="마감일">
-          <input value={deadline} onChange={(e) => setDeadline(e.target.value)} type="text" placeholder="YYYY.MM.DD" />
-        </Field>
-
-        <Field label="당첨자 발표일" hint="예비입주자/당첨자 발표 — 사용자 최다 질문">
-          <input value={winnerAt} onChange={(e) => setWinnerAt(e.target.value)} type="text" placeholder="YYYY.MM.DD" />
-        </Field>
-
-        {current.announceDate && (
-          <div style={{ fontSize: 11, color: "var(--a-ink-3)", fontWeight: 500 }}>
-            공고일: <strong style={{ color: "var(--a-ink-2)", fontWeight: 700 }}>{current.announceDate}</strong> (자동 추출, 수정 불가)
-          </div>
-        )}
-      </FormSection>
-
       {priceModel === "tiered-by-income" ? (
-        <FormSection title="임대 조건 — 소득계층별" subtitle="영구·통합공공임대: 같은 평형도 소득계층(가/나군)별 임대료가 다름.">
+        <FormSection title="임대 조건 — 소득계층별" badge={priceIssue ? "가격 이슈" : undefined} subtitle="영구·통합공공임대: 같은 평형도 소득계층(가/나군)별 임대료가 다름.">
           <Field label="총 공급 세대수" hint="모델과 별개로 정정 가능 — 비우면 평형별 합계 사용" orig={<OrigRef value={original?.supplyUnits} unit="세대" bad={original?.supplyUnits === 1} />}>
             <input value={supplyUnits} onChange={(e) => setSupplyUnits(e.target.value)} type="number" min="0" />
           </Field>
           <TieredEditor tiers={tiers} onChange={setTiers} />
         </FormSection>
       ) : priceModel === "by-household-size" ? (
-        <FormSection title="임대 조건 — 가구원수 유형별" subtitle="매입·집주인 임대: 가구원수 유형(1/2/3형) + 면적구간. 가격은 범위(850~1200) 가능.">
+        <FormSection title="임대 조건 — 가구원수 유형별" badge={priceIssue ? "가격 이슈" : undefined} subtitle="매입·집주인 임대: 가구원수 유형(1/2/3형) + 면적구간. 가격은 범위(850~1200) 가능.">
           <Field label="총 공급 세대수" hint="모델과 별개로 정정 가능 — 비우면 유형별 합계 사용" orig={<OrigRef value={original?.supplyUnits} unit="세대" bad={original?.supplyUnits === 1} />}>
             <input value={supplyUnits} onChange={(e) => setSupplyUnits(e.target.value)} type="number" min="0" />
           </Field>
           <HouseholdEditor rows={households} onChange={setHouseholds} />
         </FormSection>
       ) : priceModel === "support-limit" ? (
-        <FormSection title="전세 지원한도" subtitle="전세임대: 평형 없이 가구원수/지역별 전세 지원한도액.">
+        <FormSection title="전세 지원한도" badge={priceIssue ? "가격 이슈" : undefined} subtitle="전세임대: 평형 없이 가구원수/지역별 전세 지원한도액.">
           <Field label="총 공급 세대수" hint="전세임대는 한도표에 세대수가 없어 여기서 정정 (감사 H2)" orig={<OrigRef value={original?.supplyUnits} unit="세대" bad={original?.supplyUnits === 1} />}>
             <input value={supplyUnits} onChange={(e) => setSupplyUnits(e.target.value)} type="number" min="0" />
           </Field>
@@ -562,6 +604,7 @@ export default function ReviewForm({
       ) : (
         <FormSection
           title={isSale ? "분양 정보" : "임대 조건"}
+          badge={priceIssue ? "가격 이슈" : undefined}
           subtitle={byRows
             ? "평형별 행 — 한 공고에 59㎡/74㎡/84㎡ 등 여러 평형이 있을 때 행을 나눠서 입력."
             : (isSale
@@ -592,10 +635,6 @@ export default function ReviewForm({
             />
           ) : (
             <>
-              <Field label="공급 세대수" hint="LH API 가 1로 잘못 주는 경우가 많음. PDF 표 합계 확인."
-                orig={<OrigRef value={original?.supplyUnits} unit="세대" bad={original?.supplyUnits === 1} />}>
-                <input value={supplyUnits} onChange={(e) => setSupplyUnits(e.target.value)} type="number" min="0" />
-              </Field>
               {isSale ? (
                 <Field label="분양가 (만원)" hint="공급 가격 (분양 매물)"
                   orig={<OrigRef value={original?.salePriceManwon} unit="만" bad={!original?.salePriceManwon} />}>
@@ -612,13 +651,51 @@ export default function ReviewForm({
                   </Field>
                 </>
               )}
-              <Field label="면적" hint="예: 29~46㎡">
+              <Field label="전용면적" hint="예: 29~46㎡" orig={<OrigRef value={null} unit="" />}>
                 <input value={area} onChange={(e) => setArea(e.target.value)} type="text" />
+              </Field>
+              <Field label="공급 세대수" hint="LH API 가 1로 잘못 주는 경우가 많음. PDF 표 합계 확인."
+                orig={<OrigRef value={original?.supplyUnits} unit="세대" bad={original?.supplyUnits === 1} />}>
+                <input value={supplyUnits} onChange={(e) => setSupplyUnits(e.target.value)} type="number" min="0" />
               </Field>
             </>
           )}
         </FormSection>
       )}
+
+      <FormSection title="위치" subtitle="LH 원본 주소가 시군 근사이거나 틀린 경우 실제 단지 주소로 정정.">
+        <Field label="주소" orig={<OrigRefText value={original?.address ?? null} />}>
+          <input value={address} onChange={(e) => setAddress(e.target.value)} type="text" placeholder="예: 성본산단3로 13 (동문디이스트)" />
+        </Field>
+      </FormSection>
+
+      <FormSection title="공고 상태" subtitle="자동 추출이 틀린 경우 수동 교정. 화면 분류 / 필터에 즉시 반영.">
+        <Field label="활성 상태" hint="대시보드 분류 기준 — 모집중 / 모집예정 / 마감임박 / 마감">
+          <SegmentedControl value={status} options={STATUS_OPTIONS} onChange={setStatus} />
+        </Field>
+
+        <Field label="공고 종류" hint="LH 원본의 공고 분류">
+          <ChipGroup value={noticeStatus} options={NOTICE_STATUS_OPTIONS} onChange={setNoticeStatus} allowEmpty />
+        </Field>
+
+        <Field label="모집 진행" hint="LH 원본의 진행 상태">
+          <ChipGroup value={progressStatus} options={PROGRESS_STATUS_OPTIONS} onChange={setProgressStatus} allowEmpty />
+        </Field>
+
+        <Field label="마감일">
+          <input value={deadline} onChange={(e) => setDeadline(e.target.value)} type="text" placeholder="YYYY.MM.DD" />
+        </Field>
+
+        <Field label="당첨자 발표일" hint="예비입주자/당첨자 발표 — 사용자 최다 질문">
+          <input value={winnerAt} onChange={(e) => setWinnerAt(e.target.value)} type="text" placeholder="YYYY.MM.DD" />
+        </Field>
+
+        {current.announceDate && (
+          <div style={{ fontSize: 11, color: "var(--a-ink-3)", fontWeight: 500 }}>
+            공고일: <strong style={{ color: "var(--a-ink-2)", fontWeight: 700 }}>{current.announceDate}</strong> (자동 추출, 수정 불가)
+          </div>
+        )}
+      </FormSection>
 
       {!isSale && (
         <FormSection title="전환보증금 (선택)" subtitle="보증금을 더 내면 월세가 내려가는 제도 — '저가' 핵심 정보. 전환이율만 입력하면 됨.">
@@ -656,6 +733,7 @@ export default function ReviewForm({
             {busy ? "저장 중..." : "저장하고 다음 →"}
           </button>
         )}
+        <span className="a-kbd-hint"><kbd>⌘S</kbd> · <kbd>⌘⏎</kbd></span>
         {override && (
           <button type="button" onClick={clearOverride} disabled={busy} className="a-btn ghost" style={{ marginLeft: "auto" }}>
             override 전체 삭제
@@ -813,11 +891,14 @@ function RowField({ label, hint, children }: { label: string; hint?: string; chi
   );
 }
 
-function FormSection({ title, subtitle, children }: { title: string; subtitle?: string; children: React.ReactNode }) {
+function FormSection({ title, subtitle, badge, children }: { title: string; subtitle?: string; badge?: string; children: React.ReactNode }) {
   return (
     <section className="a-form-section">
       <header>
-        <h2>{title}</h2>
+        <h2>
+          {title}
+          {badge && <span className="a-badge danger">{badge}</span>}
+        </h2>
         {subtitle && <p className="section-sub">{subtitle}</p>}
       </header>
       {children}
@@ -881,45 +962,69 @@ function Row({ label, children }: { label: string; children: React.ReactNode }) 
   );
 }
 
+// orig 가 있으면 Figma 원본대조 행: 라벨 | LH 원본 | → | 입력. 없으면 기존 세로 스택.
 function Field({ label, hint, orig, children }: { label: string; hint?: string; orig?: React.ReactNode; children: React.ReactNode }) {
+  if (orig) {
+    return (
+      <div className="a-field compare">
+        <div className="c-label">
+          <label>{label}</label>
+          {hint && <span className="hint">{hint}</span>}
+        </div>
+        <div className="c-orig">{orig}</div>
+        <span className="c-arrow" aria-hidden>→</span>
+        <div className="c-input">{children}</div>
+      </div>
+    );
+  }
   return (
     <div className="a-field">
       <label>{label}</label>
       {hint && <span className="hint">{hint}</span>}
-      {orig}
       {children}
     </div>
   );
 }
 
-// LH 원본값 참조 — "LH 원본 771만 ⚠" 형태. 값 없으면 미표시.
+// LH 원본값 참조 — "LH 원본" 캡션 + 값(이상값이면 빨강 ⚠). 값 없으면 "—".
 function OrigRef({ value, unit, bad }: { value: number | null | undefined; unit: string; bad?: boolean }) {
-  if (value == null) return null;
+  const has = value != null;
   return (
-    <span className={`a-orig-ref ${bad ? "bad" : ""}`}>
-      LH 원본 <strong>{value.toLocaleString()}{unit}</strong>{bad ? " ⚠" : ""}
+    <span className={`a-orig-ref ${has && bad ? "bad" : ""}`}>
+      <span className="cap">LH 원본</span>
+      <strong>{has ? `${value.toLocaleString()}${unit}` : "—"}{has && bad ? " ⚠" : ""}</strong>
     </span>
   );
 }
 
+// 문자열 원본(주소 등) 버전.
+function OrigRefText({ value, bad }: { value: string | null; bad?: boolean }) {
+  const has = Boolean(value && value.trim());
+  return (
+    <span className={`a-orig-ref ${has && bad ? "bad" : ""}`}>
+      <span className="cap">LH 원본</span>
+      <strong>{has ? `${value}${bad ? " ⚠" : ""}` : "—"}</strong>
+    </span>
+  );
+}
+
+// Figma pill 스타일 — 활성 = 파랑 filled (chip-group 재사용).
 function SegmentedControl<T extends string>({
   value, options, onChange,
 }: {
   value: T;
-  options: { value: T; label: string; dot: string }[];
+  options: { value: T; label: string }[];
   onChange: (v: T) => void;
 }) {
   return (
-    <div className="a-segmented">
+    <div className="a-chip-group">
       {options.map((o) => (
         <button
           key={o.value}
           type="button"
           onClick={() => onChange(o.value)}
           data-active={o.value === value}
-          style={{ ["--dot" as string]: o.dot }}
         >
-          <span className="dot" />
           {o.label}
         </button>
       ))}

@@ -15,6 +15,7 @@ import extractDrafts from "@/lib/extract-drafts.json";
 import floorplanSpecs from "@/lib/floorplan-specs.json";
 import FloorplanEditor from "./floorplan-editor";
 import ReviewPreview from "./review-preview";
+import { ReviewLiveProvider } from "./review-live";
 import type { FloorPlanSpec } from "@/lib/floorplan-spec";
 
 interface RawApiListing {
@@ -122,23 +123,26 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
     : (currentIdx < 0 && queue.length > 0 ? queue[0] : null);
   const nextHref = nextInQueue ? `/admin/review/${encodeURIComponent(nextInQueue.id)}` : null;
 
-  // LH 원본 가격/세대수 (raw listings-api) — 폼 diff 표시용.
+  // LH 원본 가격/세대수/주소 (raw listings-api) — 폼 diff 표시용.
   const isSaleType = listing.type === "sale";
   const original = {
     deposit: raw?.depositManwon ?? null,
     rent: raw?.monthlyRentManwon ?? null,
     salePriceManwon: raw?.salePriceManwon ?? null,
     supplyUnits: raw?.supplyUnits ?? null,
+    address: raw?.address ?? null,
   };
 
   // 이상값 감지 — 상단 경고 바 + 미리보기 강조. 검수 필요 이유를 한눈에.
-  const anomalies: string[] = [];
+  // 가격 이슈는 따로 모아 임대 조건 섹션 헤더 배지로도 표시.
+  const priceAnomalies: string[] = [];
   const guard = DEPOSIT_GUARD[listing.type];
   if (!isSaleType && listing.deposit && guard && listing.deposit < guard * 0.2) {
-    anomalies.push(`보증금 ${listing.deposit.toLocaleString()}만원 — ${TYPE_LABEL[listing.type] ?? listing.type} 치고 비정상적으로 낮음`);
+    priceAnomalies.push(`보증금 ${listing.deposit.toLocaleString()}만원 — ${TYPE_LABEL[listing.type] ?? listing.type} 치고 비정상적으로 낮음`);
   }
-  if (!isSaleType && !listing.deposit && !listing.rent) anomalies.push("보증금·월세 정보 없음");
-  if (isSaleType && !listing.salePriceManwon) anomalies.push("분양가 정보 없음");
+  if (!isSaleType && !listing.deposit && !listing.rent) priceAnomalies.push("보증금·월세 정보 없음");
+  if (isSaleType && !listing.salePriceManwon) priceAnomalies.push("분양가 정보 없음");
+  const anomalies: string[] = [...priceAnomalies];
   if (listing.supplyUnits === 1) anomalies.push("공급 세대수 1 — LH API 오류 가능(확인 필요)");
   const hasCoord = Number.isFinite(raw?.lat) && Number.isFinite(raw?.lng);
   if (!hasCoord && (!mapped || mapped.points.length === 0)) anomalies.push("좌표 없음 — 지도에 표시되지 않음");
@@ -162,20 +166,29 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
         <AIcon.ChevronL /> 대시보드로
       </Link>
 
-      <h1 className="a-detail-title">{listing.title}</h1>
+      <div className="a-detail-titlerow">
+        <h1 className="a-detail-title">{listing.title}</h1>
+        <div className="actions">
+          {listing.sourceUrl && (
+            <a href={listing.sourceUrl} target="_blank" rel="noreferrer" className="a-btn secondary">
+              {listing.agency} 공고 열기 <AIcon.External />
+            </a>
+          )}
+          {/* 폼(id=review-form)은 클라이언트 컴포넌트 안 — form 속성으로 원격 제출 */}
+          <button type="submit" form="review-form" className="a-btn primary">저장</button>
+        </div>
+      </div>
       <div className="a-detail-meta">
         <span style={{ fontFamily: "ui-monospace, monospace" }}>{listing.pblancId}</span>
         <span className="sep">·</span>
         <span>{listing.district}</span>
         <span className="sep">·</span>
         <span>{TYPE_LABEL[listing.type] ?? listing.type}</span>
+        {!override && anomalies.length > 0 && <span className="a-badge danger">검수 필요</span>}
+        <span className="a-kbd-hint" style={{ marginLeft: "auto" }}>
+          <kbd>⌘S</kbd> 저장 · <kbd>⌘⏎</kbd> 저장하고 다음
+        </span>
       </div>
-
-      {listing.sourceUrl && (
-        <a href={listing.sourceUrl} target="_blank" rel="noreferrer" className="a-pdf-btn">
-          {listing.agency} 공고 페이지 열기 <AIcon.External />
-        </a>
-      )}
 
       {anomalies.length > 0 && (
         <div className="a-anomaly-bar">
@@ -185,6 +198,7 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
         </div>
       )}
 
+      <ReviewLiveProvider>
       <div className="a-review-layout">
         <div className="a-review-main">
       {dirRows && (
@@ -246,11 +260,12 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
         override={override}
         original={original}
         nextHref={nextHref}
-        queueIndex={currentIdx >= 0 ? { current: currentIdx + 1, total: queue.length } : null}
         initialRows={initialRows.length > 0 ? initialRows : null}
         sourceUrl={listing.sourceUrl ?? null}
         canAutoExtract={!(listing.id.startsWith("sh-") && !listing.noticePdfUrl)}
         draft={(extractDrafts as Record<string, { at: string; fields: unknown }>)[decodedId] ?? null}
+        priceIssue={priceAnomalies.length > 0}
+        currentAddress={listing.address ?? ""}
       />
 
       {mapped && (
@@ -280,6 +295,11 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
           supplyUnits={typeof listing.supplyUnits === "number" ? listing.supplyUnits : listing.supplyUnits ? Number(listing.supplyUnits) || null : null}
           area={listing.area ?? ""}
           isSale={isSaleType}
+          rows={complexRows.map((r) => ({
+            houseType: r.houseType ?? "",
+            area: r.area ? `${r.area}㎡` : "",
+            depositManwon: r.deposit != null ? Math.round(r.deposit / 10000) : null,
+          }))}
           points={(mapped?.points ?? []).map((p) => ({
             label: p.label,
             address: p.address,
@@ -288,6 +308,7 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
           }))}
         />
       </div>
+      </ReviewLiveProvider>
     </AdminShell>
   );
 }

@@ -1,6 +1,9 @@
-// 검수 상세 오른쪽 미리보기 패널 (서버 컴포넌트, 현재 저장값 기준).
-// ① 앱 매물 카드가 어떻게 노출되는지 ② 등록된 단지 목록(주택목록 xlsx / mapped points) 표.
-// 저장 전 "현재 노출" 을 보여줘 검수자가 정정 전후를 대조하도록 한다.
+"use client";
+
+// 검수 상세 오른쪽 미리보기 패널 — 폼 입력을 실시간 구독 (review-live 컨텍스트).
+// ① 앱 매물 카드가 어떻게 노출되는지 ② 주택목록 / 등록 단지 목록 표.
+// 입력 중엔 live 값을, 아니면 저장값(props)을 보여줘 정정 결과를 저장 전에 확인.
+import { useReviewLive } from "./review-live";
 
 interface PreviewPoint {
   label?: string;
@@ -8,6 +11,13 @@ interface PreviewPoint {
   depositManwon?: number;
   rentManwon?: number;
   area?: string;
+}
+
+// 주택목록(complexes rows — xlsx/검수값 파싱 결과) 표시용 행.
+interface PreviewRow {
+  houseType: string;
+  area: string;
+  depositManwon: number | null;
 }
 
 function comma(n: number): string {
@@ -35,6 +45,7 @@ export default function ReviewPreview({
   supplyUnits,
   area,
   isSale,
+  rows = [],
   points,
 }: {
   title: string;
@@ -47,20 +58,36 @@ export default function ReviewPreview({
   supplyUnits: number | null;
   area: string;
   isSale: boolean;
+  rows?: PreviewRow[];
   points: PreviewPoint[];
 }) {
-  const priceLine = isSale
-    ? (salePriceManwon ? `분양가 ${priceKo(salePriceManwon)}` : "분양가 정보 없음")
-    : (deposit
-        ? `보증금 ${priceKo(deposit)}${rent ? ` · 월세 ${comma(rent)}만원` : ""}`
-        : "가격 정보 없음");
-  const priceMissing = isSale ? !salePriceManwon : !deposit;
+  // 폼 입력 실시간 반영 — live 가 있으면(폼 마운트 후) 그 값을, 없으면 저장값.
+  const { live } = useReviewLive();
+  const v = {
+    deposit: live ? live.deposit : deposit,
+    rent: live ? live.rent : rent,
+    salePriceManwon: live ? live.salePriceManwon : salePriceManwon,
+    supplyUnits: live ? live.supplyUnits : supplyUnits,
+    area: live?.area ?? area,
+  };
+  const shownRows = live?.rows ?? rows;
+  const dirty = live?.dirty ?? false;
 
-  const metaBits = [area, district, supplyUnits ? `모집 ${comma(supplyUnits)}세대` : null].filter(Boolean);
+  const priceLine = isSale
+    ? (v.salePriceManwon ? `분양가 ${priceKo(v.salePriceManwon)}` : "분양가 정보 없음")
+    : (v.deposit
+        ? `보증금 ${priceKo(v.deposit)}${v.rent ? ` · 월세 ${comma(v.rent)}만원` : ""}`
+        : "가격 정보 없음");
+  const priceMissing = isSale ? !v.salePriceManwon : !v.deposit;
+
+  const metaBits = [v.area, district, v.supplyUnits ? `모집 ${comma(v.supplyUnits)}세대` : null].filter(Boolean);
 
   return (
     <aside className="a-review-aside">
-      <div className="a-aside-label">미리보기</div>
+      <div className="a-aside-label">
+        미리보기
+        {dirty && <span className="a-badge notice-correction">수정 중 · 미저장</span>}
+      </div>
 
       {/* 앱 매물 카드 미리보기 */}
       <div className="a-preview-card">
@@ -71,10 +98,41 @@ export default function ReviewPreview({
         <div className="a-preview-title">{title}</div>
         <div className={`a-preview-price ${priceMissing ? "missing" : ""}`}>{priceLine}</div>
         {metaBits.length > 0 && <div className="a-preview-meta">{metaBits.join(" · ")}</div>}
-        <div className="a-preview-note">저장 전 현재 앱 노출 — 왼쪽에서 정정하면 반영됩니다</div>
+        <div className="a-preview-note">
+          {dirty ? "저장 전 미리보기 — 저장하면 앱에 반영됩니다" : "앱 매물 카드에 이렇게 노출됩니다 — 왼쪽에서 정정하면 반영"}
+        </div>
       </div>
 
-      {/* 등록된 단지 목록 (주택목록 xlsx / mapped points) */}
+      {/* 주택목록 (complexes rows — xlsx 파싱/검수값, 평형별 입력 중엔 폼 실시간) */}
+      {shownRows.length > 0 && (
+        <div className="a-preview-card">
+          <div className="a-preview-cardhead">
+            <span className="a-preview-cardtitle">주택목록</span>
+            <span className="a-preview-count">
+              {v.supplyUnits ? `${comma(v.supplyUnits)}호` : `${shownRows.length}행`}
+            </span>
+          </div>
+          <div className="a-preview-tbl">
+            <div className="a-preview-tr cols3 head">
+              <span>유형</span>
+              <span className="r">면적</span>
+              <span className="r">보증금</span>
+            </div>
+            {shownRows.slice(0, 6).map((r, i) => (
+              <div className="a-preview-tr cols3" key={i}>
+                <span className="a-preview-c1">{r.houseType || `행 ${i + 1}`}</span>
+                <span className="r">{r.area || "—"}</span>
+                <span className="r">{r.depositManwon ? priceKo(r.depositManwon) : "—"}</span>
+              </div>
+            ))}
+            {shownRows.length > 6 && (
+              <div className="a-preview-more">+ {shownRows.length - 6}개 더 · 첨부에서 자동 파싱</div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* 등록된 단지 목록 (분리 핀 mapped points) */}
       {points.length > 0 && (
         <div className="a-preview-card">
           <div className="a-preview-cardhead">

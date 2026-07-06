@@ -23,6 +23,7 @@ interface OverridePayload {
   rent?: number | null;
   salePriceManwon?: number | null;
   area?: string;
+  address?: string;
   rows?: PayloadRow[];
   // 유형별 가격 모델 (3-3) — 구조는 lib/manual-overrides.ts 참고. 패스스루 저장.
   priceModel?: string;
@@ -86,6 +87,7 @@ export async function POST(req: Request) {
   if (body.rent !== undefined) entry.rent = body.rent;
   if (body.salePriceManwon !== undefined) entry.salePriceManwon = body.salePriceManwon;
   if (body.area !== undefined) entry.area = body.area;
+  if (typeof body.address === "string" && body.address.trim()) entry.address = body.address.trim();
   if (Array.isArray(body.rows) && body.rows.length > 0) {
     const cleanRows = body.rows
       .filter((r) => r && typeof r.houseType === "string" && r.houseType.trim())
