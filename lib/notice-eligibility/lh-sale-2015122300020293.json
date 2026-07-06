@@ -1,0 +1,21 @@
+{
+  "supplyTotal": 70,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 70,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "매각공고일 현재 해당 주택건설지역에 1년 이상 거주하는 성년자",
+        "법인 및 외국인 신청불가",
+        "1세대 1주택 기준으로 공급"
+      ]
+    }
+  ],
+  "priority": []
+}

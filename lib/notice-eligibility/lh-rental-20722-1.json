@@ -1,0 +1,23 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "무주택 세대구성원",
+        "소득요건 배제",
+        "총자산 요건 배제 (자동차가액 4,542만원 이하만 적용)"
+      ]
+    }
+  ],
+  "priority": []
+}

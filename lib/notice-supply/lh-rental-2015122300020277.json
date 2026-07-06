@@ -1,0 +1,28 @@
+{
+  "id": "lh-rental-2015122300020277",
+  "supplyTotal": 420,
+  "integrated": false,
+  "units": [
+    {
+      "type": "문산당동3",
+      "area": 51.93,
+      "supply": 20,
+      "deposit": 28451000,
+      "rent": 238890
+    },
+    {
+      "type": "파주운정2",
+      "area": 59.64,
+      "supply": 20,
+      "deposit": 48108000,
+      "rent": 320240
+    },
+    {
+      "type": "파주운정11",
+      "area": 59.64,
+      "supply": 30,
+      "deposit": 47663000,
+      "rent": 317290
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "lh-rental-2015122300020271",
+  "supplyTotal": 485,
+  "integrated": true,
+  "units": [
+    {
+      "type": "김포양촌1",
+      "area": 46.98,
+      "supply": 35,
+      "deposit": 25627000,
+      "rent": 208340
+    },
+    {
+      "type": "김포양곡1",
+      "area": 55.6,
+      "supply": 25,
+      "deposit": 39921000,
+      "rent": 265590
+    },
+    {
+      "type": "김포양곡2",
+      "area": 55.6,
+      "supply": 20,
+      "deposit": 41756000,
+      "rent": 277800
+    },
+    {
+      "type": "김포양곡6",
+      "area": 46.97,
+      "supply": 45,
+      "deposit": 27179000,
+      "rent": 208540
+    },
+    {
+      "type": "김포양곡8",
+      "area": 46.97,
+      "supply": 65,
+      "deposit": 27153000,
+      "rent": 208340
+    },
+    {
+      "type": "김포양곡9",
+      "area": 55.6,
+      "supply": 30,
+      "deposit": 44033000,
+      "rent": 282990
+    }
+  ]
+}
