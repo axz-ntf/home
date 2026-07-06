@@ -19,6 +19,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT_PATH = path.join(ROOT, "lib/listings-api.json");
 const COMPLEXES_PATH = path.join(ROOT, "lib/lh-complexes.json"); // API 1 결과 캐시
 const EXISTING_PATH = path.join(ROOT, "lib/lh-notices-all.json");
+const MYHOME_PATH = path.join(ROOT, "lib/myhome-all-notices.json"); // 당첨자 발표일(winnerDate) 공급원
 const ADMIN_CODES_PATH = path.join(ROOT, "lib/admin-codes.json");
 const ENV_PATH = path.join(ROOT, ".env.local");
 
@@ -464,6 +465,21 @@ async function main() {
   }
   console.log(`기존 lh-notices-all.json: ${existing.length}건 (panId 인덱싱: ${existingByPanId.size})\n`);
 
+  // 당첨자 발표일(winnerDate) — myhome API 캐시에 panId 별로 이미 수집됨. sourceUrl 의 panId 로 인덱싱.
+  // (LH 청약플러스 API 에는 발표일이 없어 그동안 비어 있었음.)
+  const winnerByPan = new Map();
+  try {
+    const myhome = JSON.parse(fs.readFileSync(MYHOME_PATH, "utf8"));
+    for (const m of myhome) {
+      const p = (m.sourceUrl || "").match(/[?&]panId=(\w+)/i)?.[1];
+      if (p && m.winnerDate && /\d{4}/.test(m.winnerDate)) {
+        winnerByPan.set(p, m.winnerDate);
+        winnerByPan.set(p.replace(/^0+/, ""), m.winnerDate); // 0패딩 무시 매칭
+      }
+    }
+    console.log(`myhome 당첨발표일 인덱스: ${winnerByPan.size}개 키\n`);
+  } catch { console.warn("myhome-all-notices.json 없음 — winnerAt 건너뜀\n"); }
+
   const listings = [];
   let supplyOk = 0, supplyFail = 0;
   let complexMatched = 0;
@@ -555,6 +571,7 @@ async function main() {
       status: resolveStatus(n.PAN_SS, ex?.details?.noticeStatus),
       deadline: n.CLSG_DT || "",
       announceDate: n.PAN_NT_ST_DT || "",
+      winnerAt: winnerByPan.get(id) || winnerByPan.get(String(id).replace(/^0+/, "")) || undefined,
       address,
       lat, lng, geocoded,
       // 가격/면적

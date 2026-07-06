@@ -63,6 +63,7 @@ interface ApiListing {
   status: string;
   deadline: string;
   announceDate: string;
+  winnerAt?: string;
   address: string;
   lat: number | null;
   lng: number | null;
@@ -243,6 +244,7 @@ function adaptApi(r: ApiListing, loose = false): Listing | null {
     status: r.status as StatusId,
     deadline: r.deadline || "",
     beginDate: r.announceDate || "",
+    winnerAt: r.winnerAt || undefined,
     // 매물별 PDF 에서 추출된 자격 키 우선 (정확). 없으면 type 기본값.
     eligible: sortEligibility(
       (Array.isArray(r.eligibilityKeys) && r.eligibilityKeys.length)
