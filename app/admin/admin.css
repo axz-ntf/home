@@ -1218,3 +1218,18 @@ body:has(.a-login-shell) { overflow: auto !important; }
 .a-preview-tr .r { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .a-preview-c1 { color: var(--a-ink-2); font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .a-preview-more { padding-top: 8px; font-size: 11.5px; color: var(--a-ink-3); font-weight: 500; }
+
+/* ── 모바일 그리드 보정 (≤560px) ──────────────────────────── */
+@media (max-width: 560px) {
+  /* KPI 카드 1열 (2열이 어긋나 보이던 문제) */
+  .a-kpi-row { grid-template-columns: 1fr; }
+  /* 데이터 지표 카드 1열 */
+  .a-data-grid { grid-template-columns: 1fr; }
+  /* 검수 2단 → 1단 (좁은 화면에서 미리보기 아래로) */
+  .a-review-layout { grid-template-columns: 1fr; }
+  .a-review-aside { position: static; }
+}
+/* 매물 테이블 — 좁은 화면에서 셀 찌그러짐 방지 (.a-table-scroll 이 이미 overflow-x:auto) */
+@media (max-width: 900px) {
+  .a-table { min-width: 720px; }
+}
