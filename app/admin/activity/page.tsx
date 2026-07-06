@@ -86,8 +86,10 @@ export default function ActivityPage() {
     >
       {activities.length === 0 ? (
         <div className="a-card" style={{ padding: "60px 40px", textAlign: "center", maxWidth: 560, margin: "40px auto" }}>
-          <div style={{ fontSize: 28, marginBottom: 8 }}>📋</div>
-          <div style={{ fontSize: 18, fontWeight: 800, marginBottom: 6, letterSpacing: "-0.025em" }}>
+          <div style={{ marginBottom: 8, color: "var(--a-ink-4)", display: "flex", justifyContent: "center" }}>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="5" y="4" width="14" height="17" rx="2" /><path d="M9 4.5V3h6v1.5M9 10h6M9 14h6M9 18h3" /></svg>
+          </div>
+          <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 6 }}>
             아직 검수 내역이 없어요
           </div>
           <div style={{ fontSize: 13, color: "var(--a-ink-3)", lineHeight: 1.6 }}>
@@ -219,7 +221,7 @@ export default function ActivityPage() {
                           borderRadius: 6, fontSize: 12, fontWeight: 500,
                           display: "flex", gap: 6,
                         }}>
-                          <span>📝</span>
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ flexShrink: 0, marginTop: 2 }}><path d="M4 20h4L19 9a2.1 2.1 0 0 0-3-3L5 17v3Z" /></svg>
                           <span>{override._note}</span>
                         </div>
                       )}

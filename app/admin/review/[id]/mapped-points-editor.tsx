@@ -191,7 +191,7 @@ export default function MappedPointsEditor({
                     <input value={d.address} placeholder="주소검색으로 입력" onChange={(e) => update(i, { address: e.target.value })} />
                     <button type="button" className="a-pins-search" onClick={() => searchAddress(i)}>주소검색</button>
                     {file === "sh" && (
-                      <button type="button" className="a-pins-search" onClick={() => setPickerRow(i)} title="지도에서 직접 좌표 찍기">📍 지도</button>
+                      <button type="button" className="a-pins-search" onClick={() => setPickerRow(i)} title="지도에서 직접 좌표 찍기">지도에서 찍기</button>
                     )}
                   </div>
                   {geoBusy === i && <span className="geo-busy">좌표 변환 중…</span>}

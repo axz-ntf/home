@@ -4,48 +4,50 @@
  * ============================================================ */
 
 :root {
-  /* 액센트 = 다음 블루(앱 본체와 통일). 변수명은 carrot 유지(참조부 안 건드림). */
+  /* 공통 Daum Design Guide 토큰 매핑. 변수명은 유지(참조부 안 건드림).
+   * 키 블루 #1E84FF · 딥 블루(링크) #004BCC · 텍스트/라인 = Black 알파 스케일
+   * bg-surface #F2F4F7 · bg-slot #FFF · Green/1 · Orange/3 · Red/1 · Radius 8 */
   --a-carrot:        #1E84FF;
-  --a-carrot-low:    #EAF3FF;
-  --a-carrot-dark:   #0A5BC4;
+  --a-carrot-low:    rgba(30, 132, 255, 0.08);
+  --a-carrot-dark:   #004BCC;
 
-  --a-ink:           #1B1E29;
-  --a-ink-2:         #4B5060;
-  --a-ink-3:         #8A8F9D;
-  --a-ink-4:         #B8BCC6;
+  --a-ink:           rgba(0, 0, 0, 0.88);
+  --a-ink-2:         rgba(0, 0, 0, 0.64);
+  --a-ink-3:         rgba(0, 0, 0, 0.48);
+  --a-ink-4:         rgba(0, 0, 0, 0.32);
 
-  --a-line:          #ECEDF1;
-  --a-line-2:        #DCDFE6;
+  --a-line:          rgba(0, 0, 0, 0.08);
+  --a-line-2:        rgba(0, 0, 0, 0.16);
 
   --a-bg:            #FFFFFF;
-  --a-bg-2:          #F7F8FB;
-  --a-bg-3:          #F1F2F5;
+  --a-bg-2:          #F2F4F7;
+  --a-bg-3:          #EBEDF0;
 
-  --a-green:         #1AA174;
-  --a-green-low:     #E8F5EE;
-  --a-yellow:        #C28714;
-  --a-yellow-low:    #FFF6E0;
-  --a-red:           #E84F3F;
-  --a-red-low:       #FFEEEC;
-  --a-blue:          #2563D9;
-  --a-blue-low:      #E8EFFB;
-  --a-purple:        #6B5BE8;
+  --a-green:         #00B56D;
+  --a-green-low:     rgba(0, 181, 109, 0.08);
+  --a-yellow:        #FF8B17;
+  --a-yellow-low:    rgba(255, 148, 41, 0.16);
+  --a-red:           #FF4E33;
+  --a-red-low:       rgba(255, 78, 51, 0.08);
+  --a-blue:          #004BCC;
+  --a-blue-low:      rgba(30, 132, 255, 0.08);
+  --a-purple:        #A05CFF;
 
   --a-sidebar-w:     224px;
 
   /* 카드 공통 — 보더만으론 밋밋해서 아주 옅은 그림자를 함께. */
-  --a-shadow-card:   0 1px 2px rgba(23, 30, 46, 0.04), 0 4px 14px -4px rgba(23, 30, 46, 0.06);
-  --a-focus-ring:    0 0 0 3px rgba(30, 132, 255, 0.15);
+  --a-shadow-card:   0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 14px -4px rgba(0, 0, 0, 0.06);
+  --a-focus-ring:    0 0 0 3px rgba(30, 132, 255, 0.2);
 }
 
 /* 글로벌 body 의 overflow:hidden 해제 + 어드민 페이지 폰트 톤 */
 body:has(.a-app-admin) {
   overflow: hidden !important;
   background: var(--a-bg-2) !important;
-  font-family: "Pretendard Variable", Pretendard, -apple-system, sans-serif;
+  font-family: Pretendard, "Pretendard Variable", -apple-system, "Apple SD Gothic Neo", sans-serif;
   font-feature-settings: "ss02", "ss03";
   color: var(--a-ink);
-  font-size: 13px;
+  font-size: 14px;
   -webkit-font-smoothing: antialiased;
 }
 body:has(.a-app-admin) #__next,
@@ -116,16 +118,16 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
 }
 .a-brand-mark {
   width: 30px; height: 30px;
-  border-radius: 9px;
+  border-radius: 8px;
   object-fit: contain;
 }
 .a-brand-name {
-  font-size: 16px; font-weight: 800;
-  letter-spacing: -0.03em;
+  font-size: 16px; font-weight: 700;
+  letter-spacing: 0;
   color: var(--a-ink);
 }
 .a-brand-tag {
-  font-size: 9px; font-weight: 800;
+  font-size: 9px; font-weight: 700;
   background: var(--a-ink);
   color: white;
   padding: 2px 5px;
@@ -136,7 +138,7 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
 .a-nav-section { padding: 0 12px 18px; }
 .a-nav-label {
   font-size: 10px;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--a-ink-3);
   letter-spacing: 0.08em;
   padding: 6px 8px 8px;
@@ -146,11 +148,11 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
   display: flex; align-items: center; gap: 10px;
   width: 100%;
   padding: 8px 10px;
-  border-radius: 7px;
+  border-radius: 8px;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--a-ink-2);
-  letter-spacing: -0.015em;
+  letter-spacing: 0;
   transition: all .12s;
   background: none;
   border: none;
@@ -170,12 +172,12 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
 .a-nav-badge {
   margin-left: auto;
   font-size: 10px;
-  font-weight: 800;
+  font-weight: 700;
   padding: 2px 6px;
   border-radius: 999px;
   background: var(--a-red);
   color: white;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   font-variant-numeric: tabular-nums;
 }
 .a-nav-badge.subtle {
@@ -205,14 +207,14 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
   background: linear-gradient(135deg, #A9D2FF, #4DA9FF);
   color: var(--a-carrot-dark);
   display: grid; place-items: center;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 12px;
 }
 .a-user-info { flex: 1; min-width: 0; text-align: left; }
 .a-user-name {
   font-size: 12.5px;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -237,15 +239,15 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
 }
 .a-page-title {
   font-size: 20px;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-weight: 700;
+  letter-spacing: 0;
   color: var(--a-ink);
 }
 .a-page-sub {
   font-size: 12px;
   color: var(--a-ink-3);
   margin-left: 8px;
-  font-weight: 500;
+  font-weight: 400;
 }
 .a-top-search {
   margin-left: auto;
@@ -294,7 +296,7 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
   font-size: 13px;
   font-weight: 700;
   display: inline-flex; align-items: center; gap: 5px;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   border: none;
   cursor: pointer;
   text-decoration: none;
@@ -322,55 +324,48 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
 }
 
 /* ──────────────── KPI Row ──────────────── */
-.a-kpi-row {
+/* 스탯 밴드 — KPI 카드 3장 대신 패널 하나 안에서 헤어라인으로 분리 (Display 2 = 26). */
+.a-stat-band {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-bottom: 20px;
-}
-@media (max-width: 1100px) {
-  .a-kpi-row { grid-template-columns: repeat(2, 1fr); }
-}
-.a-kpi-card {
-  background: white;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--a-bg);
   border: 1px solid var(--a-line);
-  border-radius: 14px;
-  padding: 18px 20px;
+  border-radius: 12px;
   box-shadow: var(--a-shadow-card);
+  margin-bottom: 16px;
 }
-.a-kpi-card.accent .a-kpi-value { color: var(--a-carrot); }
-.a-kpi-card.warn .a-kpi-value { color: var(--a-red); }
-.a-kpi-label {
+.a-stat { padding: 16px 20px; border-left: 1px solid var(--a-line); min-width: 0; }
+.a-stat:first-child { border-left: 0; }
+.a-stat-label {
   font-size: 12px;
-  font-weight: 650;
-  color: var(--a-ink-3);
-  letter-spacing: -0.01em;
-  margin-bottom: 8px;
-  display: flex; align-items: center; gap: 5px;
-}
-.a-kpi-value {
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--a-ink);
-  letter-spacing: -0.04em;
-  font-variant-numeric: tabular-nums;
-  line-height: 1.1;
-}
-.a-kpi-value small {
-  font-size: 13px;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--a-ink-2);
+  display: flex; align-items: center; gap: 6px;
+}
+.a-stat-label .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--a-red); }
+.a-stat-value {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--a-ink);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+  margin: 3px 0 1px;
+}
+.a-stat-value small {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--a-ink-3);
   margin-left: 2px;
 }
-.a-kpi-sub {
-  font-size: 12px;
-  font-weight: 500;
-  margin-top: 7px;
-  letter-spacing: -0.01em;
-  color: var(--a-ink-3);
+.a-stat-sub { font-size: 11.5px; color: var(--a-ink-3); }
+.a-stat-sub strong { font-weight: 700; color: var(--a-ink-2); font-variant-numeric: tabular-nums; }
+.a-stat.accent .a-stat-value { color: var(--a-carrot); }
+.a-stat.success .a-stat-value { color: var(--a-green); }
+@media (max-width: 900px) {
+  .a-stat-band { grid-template-columns: repeat(2, 1fr); }
+  .a-stat:nth-child(3) { border-left: 0; }
+  .a-stat:nth-child(n+3) { border-top: 1px solid var(--a-line); }
 }
-.a-kpi-sub.warn { color: var(--a-red); }
-.a-kpi-sub.success { color: var(--a-green); }
 
 /* ──────────────── Card ──────────────── */
 .a-card {
@@ -385,15 +380,15 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
 }
 .a-card-title {
   font-size: 14px;
-  font-weight: 800;
-  letter-spacing: -0.025em;
+  font-weight: 700;
+  letter-spacing: 0;
   color: var(--a-ink);
 }
 .a-card-sub {
   font-size: 11px;
   color: var(--a-ink-3);
   margin-top: 2px;
-  font-weight: 500;
+  font-weight: 400;
 }
 .a-card-actions { display: flex; gap: 6px; align-items: center; }
 .a-card-link {
@@ -413,7 +408,7 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
 .a-table-wrap {
   background: white;
   border: 1px solid var(--a-line);
-  border-radius: 14px;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: var(--a-shadow-card);
 }
@@ -456,7 +451,7 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
   border: 1px solid var(--a-line-2);
   border-radius: 999px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--a-ink-2);
   background: white;
   cursor: pointer;
@@ -489,7 +484,7 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
   text-align: left;
   padding: 9px 14px;
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--a-ink-3);
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -506,7 +501,7 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
 .a-table td .title {
   font-weight: 700;
   font-size: 13px;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   color: var(--a-ink);
   display: -webkit-box;
   -webkit-line-clamp: 1;
@@ -518,7 +513,7 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
   font-size: 11px;
   color: var(--a-ink-3);
   margin-top: 1px;
-  font-weight: 500;
+  font-weight: 400;
 }
 .a-table td.num {
   font-variant-numeric: tabular-nums;
@@ -535,18 +530,21 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
   padding: 2.5px 7px;
   border-radius: 4px;
   font-size: 10.5px;
-  font-weight: 800;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  letter-spacing: 0;
   white-space: nowrap;
 }
-.a-badge.happy    { background: var(--a-carrot-low); color: var(--a-carrot-dark); }
-.a-badge.nation   { background: var(--a-blue-low);   color: var(--a-blue); }
-.a-badge.integ    { background: var(--a-green-low);  color: var(--a-green); }
-.a-badge.perm     { background: #EFE9FB;             color: var(--a-purple); }
-.a-badge.fifty    { background: var(--a-bg-3);       color: var(--a-ink-2); }
-.a-badge.buy      { background: var(--a-bg-3);       color: var(--a-ink-2); }
-.a-badge.jeonse   { background: var(--a-bg-3);       color: var(--a-ink-2); }
-.a-badge.sale     { background: var(--a-yellow-low); color: var(--a-yellow); }
+/* 유형 배지 — 8색 → 중립 태그 하나로 통합 (색은 상태·경고에만 쓴다). */
+.a-badge.happy, .a-badge.nation, .a-badge.integ, .a-badge.perm,
+.a-badge.fifty, .a-badge.buy, .a-badge.jeonse, .a-badge.sale {
+  background: var(--a-bg-2);
+  color: var(--a-ink-2);
+  box-shadow: inset 0 0 0 1px var(--a-line);
+}
+/* 크롤러 상태 배지 */
+.a-badge.ok   { background: var(--a-green-low); color: var(--a-green); }
+.a-badge.warn { background: var(--a-yellow-low); color: var(--a-yellow); }
+.a-badge.mute { background: var(--a-bg-3); color: var(--a-ink-2); }
 .a-badge.notice-correction {
   background: var(--a-yellow-low);
   color: var(--a-yellow);
@@ -564,7 +562,7 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
   display: inline-flex; align-items: center; gap: 4px;
   font-size: 11.5px;
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 .a-status .dot {
   width: 6px; height: 6px;
@@ -574,23 +572,19 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
 .a-status.open { color: var(--a-green); }
 .a-status.open .dot { background: var(--a-green); }
 .a-status.closing { color: var(--a-red); }
-.a-status.closing .dot { background: var(--a-red); animation: blink 1.4s ease-in-out infinite; }
+.a-status.closing .dot { background: var(--a-red); }
 .a-status.upcoming { color: var(--a-yellow); }
 .a-status.upcoming .dot { background: var(--a-yellow); }
 .a-status.closed { color: var(--a-ink-3); }
 .a-status.closed .dot { background: var(--a-ink-4); }
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: .3; }
-}
 
 .a-review-chip {
   display: inline-flex; align-items: center;
   padding: 2.5px 7px;
   border-radius: 4px;
   font-size: 10.5px;
-  font-weight: 800;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  letter-spacing: 0;
   white-space: nowrap;
 }
 .a-review-chip.done {
@@ -656,7 +650,7 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
   height: 28px;
   border-radius: 6px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--a-ink-2);
   background: none;
   border: none;
@@ -671,7 +665,7 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
 .a-pagi button.on {
   background: var(--a-carrot);
   color: white;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 /* ──────────────── Empty state ──────────────── */
@@ -689,7 +683,7 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
   display: inline-flex; align-items: center; gap: 4px;
   color: var(--a-ink-3);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   margin-bottom: 10px;
   transition: color 120ms;
@@ -713,8 +707,8 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
 
 .a-detail-title {
   font-size: 20px;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-weight: 700;
+  letter-spacing: 0;
   margin: 0;
   color: var(--a-ink);
   line-height: 1.35;
@@ -725,7 +719,7 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
   color: var(--a-ink-3);
   margin-bottom: 16px;
   flex-wrap: wrap;
-  font-weight: 500;
+  font-weight: 400;
 }
 .a-detail-meta .sep { color: var(--a-ink-4); }
 
@@ -739,7 +733,7 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
   font-weight: 700;
   text-decoration: none;
   margin-bottom: 18px;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   transition: background 120ms;
 }
 .a-pdf-btn:hover { background: var(--a-ink-2); }
@@ -749,17 +743,17 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
   background: var(--a-green-low);
   border: 1px solid #C7E8D3;
   color: var(--a-green);
-  border-radius: 10px;
+  border-radius: 8px;
   font-size: 12.5px;
   font-weight: 700;
   display: flex;
   flex-direction: column;
   gap: 3px;
   margin-bottom: 14px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 .a-review-banner .note {
-  font-weight: 500;
+  font-weight: 400;
   color: #2A8A66;
 }
 
@@ -773,7 +767,7 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
 .a-form-section {
   background: white;
   border: 1px solid var(--a-line);
-  border-radius: 14px;
+  border-radius: 12px;
   padding: 16px 18px;
   display: flex;
   flex-direction: column;
@@ -788,7 +782,7 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
   display: flex; flex-direction: column; gap: 2px;
   margin-right: auto; min-width: 200px;
 }
-.a-ai-slim .row .t span { font-size: 11px; color: var(--a-ink-3); font-weight: 500; }
+.a-ai-slim .row .t span { font-size: 11px; color: var(--a-ink-3); font-weight: 400; }
 .a-ai-slim .a-btn { padding: 8px 14px; font-size: 12.5px; white-space: nowrap; }
 
 /* 2열 필드 페어 — 공고 종류|모집 진행, 마감일|당첨발표일 */
@@ -801,8 +795,8 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
 .a-form-section h2 {
   margin: 0;
   font-size: 13.5px;
-  font-weight: 800;
-  letter-spacing: -0.025em;
+  font-weight: 700;
+  letter-spacing: 0;
   color: var(--a-ink);
   display: flex;
   align-items: center;
@@ -812,7 +806,7 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
   margin: 3px 0 0;
   font-size: 11.5px;
   color: var(--a-ink-3);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .a-field { display: flex; flex-direction: column; gap: 5px; }
@@ -820,12 +814,12 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
   font-size: 12px;
   font-weight: 700;
   color: var(--a-ink);
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 .a-field .hint {
   font-size: 11px;
   color: var(--a-ink-3);
-  font-weight: 500;
+  font-weight: 400;
   margin-top: -2px;
 }
 .a-field input,
@@ -833,7 +827,7 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
   appearance: none;
   border: 1px solid var(--a-line-2);
   background: white;
-  border-radius: 7px;
+  border-radius: 8px;
   padding: 9px 12px;
   font-size: 13px;
   color: var(--a-ink);
@@ -890,7 +884,7 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
   padding: 5px 11px;
   border-radius: 999px;
   font-size: 11.5px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: all 120ms;
   font-family: inherit;
@@ -909,7 +903,7 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
 
 /* 저장 단축키 힌트 (P2) */
 .a-kbd-hint {
-  font-size: 11px; font-weight: 500; color: var(--a-ink-3);
+  font-size: 11px; font-weight: 400; color: var(--a-ink-3);
   display: inline-flex; align-items: center; gap: 4px;
 }
 .a-kbd-hint kbd {
@@ -937,7 +931,7 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   transition: all 120ms;
   font-family: inherit;
 }
@@ -985,7 +979,7 @@ body:has(.a-login-shell) { overflow: auto !important; }
   width: 380px;
   padding: 32px;
   background: white;
-  border-radius: 14px;
+  border-radius: 12px;
   box-shadow: 0 20px 40px -16px rgba(0, 0, 0, 0.12);
   display: flex;
   flex-direction: column;
@@ -997,22 +991,22 @@ body:has(.a-login-shell) { overflow: auto !important; }
 .a-login-card h1 {
   margin: 0;
   font-size: 18px;
-  font-weight: 800;
-  letter-spacing: -0.025em;
+  font-weight: 700;
+  letter-spacing: 0;
   color: var(--a-ink);
 }
 .a-login-card .sub {
   margin: 4px 0 0;
   color: var(--a-ink-3);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* ============================================================
  * PIN EDITOR — 분리 핀(주소검색/지오코딩) 편집 그리드.
  * .a-form-section 안에서 .a-table 톤을 압축해 편집 가능한 표로.
  * ============================================================ */
-.a-btn.sm { padding: 7px 12px; font-size: 12px; border-radius: 7px; }
+.a-btn.sm { padding: 7px 12px; font-size: 12px; border-radius: 8px; }
 .a-btn.secondary {
   background: white;
   color: var(--a-ink-2);
@@ -1022,7 +1016,7 @@ body:has(.a-login-shell) { overflow: auto !important; }
 
 .a-pins-wrap {
   border: 1px solid var(--a-line);
-  border-radius: 10px;
+  border-radius: 8px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -1036,7 +1030,7 @@ body:has(.a-login-shell) { overflow: auto !important; }
   text-align: left;
   padding: 8px 10px;
   font-size: 10.5px;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--a-ink-3);
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -1050,7 +1044,7 @@ body:has(.a-login-shell) { overflow: auto !important; }
 }
 .a-pins tr:last-child td { border-bottom: none; }
 .a-pins tr.current { background: var(--a-carrot-low); }
-.a-pins .idx { color: var(--a-ink-4); font-weight: 800; font-variant-numeric: tabular-nums; width: 30px; }
+.a-pins .idx { color: var(--a-ink-4); font-weight: 700; font-variant-numeric: tabular-nums; width: 30px; }
 
 .a-pins input {
   appearance: none;
@@ -1093,11 +1087,11 @@ body:has(.a-login-shell) { overflow: auto !important; }
   transition: all 120ms;
 }
 .a-pins-search:hover { border-color: var(--a-carrot); color: var(--a-carrot-dark); background: var(--a-carrot-low); }
-.a-pins .geo-busy { display: inline-block; margin-top: 3px; font-size: 11px; color: var(--a-carrot-dark); font-weight: 600; }
+.a-pins .geo-busy { display: inline-block; margin-top: 3px; font-size: 11px; color: var(--a-carrot-dark); font-weight: 700; }
 
 .a-pins-map {
   font-size: 11.5px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--a-blue);
   text-decoration: none;
 }
@@ -1120,7 +1114,7 @@ body:has(.a-login-shell) { overflow: auto !important; }
   text-align: center;
   color: var(--a-ink-3);
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* 정보 배너 — 야간 추출 초안 안내 등(녹색 검수 배너의 중립 버전). */
@@ -1129,11 +1123,11 @@ body:has(.a-login-shell) { overflow: auto !important; }
   padding: 11px 14px;
   background: var(--a-blue-low);
   border: 1px solid #CFE0F8;
-  border-radius: 9px;
+  border-radius: 8px;
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--a-ink-2);
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 .a-draft-note .t { flex: 1; min-width: 200px; }
 .a-draft-note time { font-weight: 700; color: var(--a-ink); font-variant-numeric: tabular-nums; }
@@ -1167,33 +1161,55 @@ body:has(.a-login-shell) { overflow: auto !important; }
 }
 .a-mappick-coord { font-size: 12.5px; color: var(--a-ink-2); font-variant-numeric: tabular-nums; }
 
-/* ── 소스 헬스 스트립 (마지막 sync 신선도) ─────────────────── */
-.a-sync-strip {
-  display: flex; gap: 8px; flex-wrap: wrap;
-  margin: 2px 0 14px;
-}
-.a-sync-item {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 11.5px; font-weight: 600; color: var(--a-ink-2);
+/* ── 크롤러 상태 밴드 (마지막 sync 신선도 + 일일 파이프라인) ──── */
+.a-sync-band {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   background: var(--a-bg);
   border: 1px solid var(--a-line);
-  border-radius: 999px;
-  padding: 4px 11px;
-}
-.a-sync-item .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
-.a-sync-item .meta { color: var(--a-ink-3); font-weight: 500; font-variant-numeric: tabular-nums; }
-
-/* ── 데이터 지표 (대시보드 품질·분포) ───────────────────────── */
-.a-data-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 4px 0 20px;
-}
-@media (max-width: 1100px) { .a-data-grid { grid-template-columns: 1fr; } }
-.a-data-card {
-  background: var(--a-bg); border: 1px solid var(--a-line); border-radius: 14px; padding: 18px 20px;
+  border-radius: 12px;
   box-shadow: var(--a-shadow-card);
+  margin: 2px 0 16px;
+}
+.a-sync-cell { padding: 12px 20px; border-left: 1px solid var(--a-line); min-width: 0; }
+.a-sync-cell:first-child { border-left: 0; }
+.a-sync-cell .k {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 13px; font-weight: 700; white-space: nowrap;
+}
+.a-sync-cell .k .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.a-sync-cell .k .a-badge { margin-left: auto; }
+.a-sync-cell .d {
+  font-size: 11.5px; color: var(--a-ink-3); margin-top: 3px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.a-sync-cell .d strong { font-weight: 700; color: var(--a-ink-2); }
+@media (max-width: 900px) {
+  .a-sync-band { grid-template-columns: repeat(2, 1fr); }
+  .a-sync-cell:nth-child(3) { border-left: 0; }
+  .a-sync-cell:nth-child(n+3) { border-top: 1px solid var(--a-line); }
+}
+
+/* ── 데이터 지표 (대시보드 품질·분포) — 카드 3장 → 패널 하나 안 3열 ── */
+.a-data-grid {
+  display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 0; margin: 0 0 16px;
+  background: var(--a-bg); border: 1px solid var(--a-line); border-radius: 12px;
+  box-shadow: var(--a-shadow-card);
+  overflow: hidden;
+}
+.a-data-card {
+  background: none; border: 0; border-left: 1px solid var(--a-line);
+  border-radius: 0; padding: 18px 20px; box-shadow: none;
+}
+.a-data-card:first-child { border-left: 0; }
+@media (max-width: 1100px) {
+  .a-data-grid { grid-template-columns: 1fr; }
+  .a-data-card { border-left: 0; border-top: 1px solid var(--a-line); }
+  .a-data-card:first-child { border-top: 0; }
 }
 .a-data-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px; }
-.a-data-title { font-size: 14px; font-weight: 750; color: var(--a-ink); letter-spacing: -0.01em; }
+.a-data-title { font-size: 14px; font-weight: 700; color: var(--a-ink); letter-spacing: 0; }
 .a-data-sub { font-size: 12px; color: var(--a-ink-3); font-variant-numeric: tabular-nums; }
 
 /* 품질 리스트 — 이웃 분포 카드(8행)와 높이 균형: 행 간격을 넉넉히 */
@@ -1204,10 +1220,10 @@ body:has(.a-login-shell) { overflow: auto !important; }
 .a-quality-dot.warn { background: var(--a-yellow); }
 .a-quality-dot.danger { background: var(--a-red); }
 .a-quality-dot.muted { background: var(--a-ink-4); }
-.a-quality-label { font-size: 13.5px; color: var(--a-ink-2); font-weight: 550; display: flex; align-items: baseline; gap: 7px; }
-.a-quality-label em { font-style: normal; font-size: 11.5px; color: var(--a-ink-4); font-weight: 500; }
-.a-quality-val { font-size: 15px; font-weight: 750; color: var(--a-ink); font-variant-numeric: tabular-nums; display: flex; align-items: baseline; gap: 5px; }
-.a-quality-val small { font-size: 11px; font-weight: 600; color: var(--a-ink-3); }
+.a-quality-label { font-size: 13.5px; color: var(--a-ink-2); font-weight: 400; display: flex; align-items: baseline; gap: 7px; }
+.a-quality-label em { font-style: normal; font-size: 11.5px; color: var(--a-ink-4); font-weight: 400; }
+.a-quality-val { font-size: 15px; font-weight: 700; color: var(--a-ink); font-variant-numeric: tabular-nums; display: flex; align-items: baseline; gap: 5px; }
+.a-quality-val small { font-size: 11px; font-weight: 700; color: var(--a-ink-3); }
 .a-quality-val.zero { color: var(--a-green); }
 .a-quality-val.zero small { color: var(--a-green); }
 .a-quality-val.danger { color: var(--a-red); }
@@ -1216,7 +1232,7 @@ body:has(.a-login-shell) { overflow: auto !important; }
 /* 분포 막대 */
 .a-bar-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
 .a-bar-row { display: grid; grid-template-columns: 92px 1fr 34px; align-items: center; gap: 10px; }
-.a-bar-label { font-size: 12.5px; color: var(--a-ink-2); font-weight: 550; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.a-bar-label { font-size: 12.5px; color: var(--a-ink-2); font-weight: 400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .a-bar-track { height: 6px; background: var(--a-bg-3); border-radius: 100px; overflow: hidden; }
 .a-bar-fill { display: block; height: 100%; background: var(--a-carrot); border-radius: 100px; }
 .a-bar-val { font-size: 12.5px; font-weight: 700; color: var(--a-ink); text-align: right; font-variant-numeric: tabular-nums; }
@@ -1242,17 +1258,17 @@ body:has(.a-login-shell) { overflow: auto !important; }
   padding: 11px 16px;
   background: var(--a-red-low);
   border: 1px solid #FFD2CF;
-  border-radius: 10px;
+  border-radius: 8px;
   margin-bottom: 18px;
 }
-.a-anomaly-icon { font-size: 14px; }
-.a-anomaly-title { font-size: 13px; font-weight: 800; color: var(--a-red); }
-.a-anomaly-list { font-size: 12px; font-weight: 500; color: #A5382A; }
+.a-anomaly-icon { display: inline-flex; align-items: center; }
+.a-anomaly-title { font-size: 13px; font-weight: 700; color: var(--a-red); }
+.a-anomaly-list { font-size: 12px; font-weight: 400; color: #A5382A; }
 
 /* LH 원본값 참조 — Figma 원본대조: "LH 원본" 캡션 + 값 스택 */
 .a-orig-ref {
   display: flex; flex-direction: column; gap: 1px;
-  font-weight: 500; color: var(--a-ink-3);
+  font-weight: 400; color: var(--a-ink-3);
   min-width: 0;
 }
 .a-orig-ref .cap { font-size: 10.5px; color: var(--a-ink-3); }
@@ -1278,7 +1294,7 @@ body:has(.a-login-shell) { overflow: auto !important; }
   width: 100%;
   border: 1.5px solid var(--a-carrot);
   border-radius: 8px;
-  font-weight: 600;
+  font-weight: 700;
 }
 @media (max-width: 560px) {
   .a-field.compare { grid-template-columns: 1fr; }
@@ -1292,13 +1308,13 @@ body:has(.a-login-shell) { overflow: auto !important; }
 }
 @media (max-width: 1080px) { .a-review-aside { position: static; } }
 .a-aside-label {
-  font-size: 11px; font-weight: 800; color: var(--a-ink-3);
+  font-size: 11px; font-weight: 700; color: var(--a-ink-3);
   letter-spacing: 0.06em; text-transform: uppercase;
   display: flex; align-items: center; gap: 8px;
 }
 .a-preview-card {
   background: var(--a-bg); border: 1px solid var(--a-line);
-  border-radius: 14px; padding: 18px;
+  border-radius: 12px; padding: 18px;
   display: flex; flex-direction: column; gap: 8px;
   box-shadow: var(--a-shadow-card);
 }
@@ -1308,14 +1324,14 @@ body:has(.a-login-shell) { overflow: auto !important; }
 }
 .a-preview-badge.type { background: var(--a-carrot-low); color: var(--a-carrot-dark); }
 .a-preview-badge.agency { background: var(--a-green); color: white; }
-.a-preview-title { font-size: 15px; font-weight: 800; letter-spacing: -0.02em; color: var(--a-ink); line-height: 1.4; }
-.a-preview-price { font-size: 14px; font-weight: 800; color: var(--a-carrot); }
+.a-preview-title { font-size: 15px; font-weight: 700; letter-spacing: 0; color: var(--a-ink); line-height: 1.4; }
+.a-preview-price { font-size: 14px; font-weight: 700; color: var(--a-carrot); }
 .a-preview-price.missing { color: var(--a-red); }
-.a-preview-meta { font-size: 12.5px; color: var(--a-ink-2); font-weight: 500; }
+.a-preview-meta { font-size: 12.5px; color: var(--a-ink-2); font-weight: 400; }
 .a-preview-note { font-size: 11px; color: var(--a-ink-3); margin-top: 2px; }
 
 .a-preview-cardhead { display: flex; align-items: baseline; justify-content: space-between; }
-.a-preview-cardtitle { font-size: 13.5px; font-weight: 800; color: var(--a-ink); }
+.a-preview-cardtitle { font-size: 13.5px; font-weight: 700; color: var(--a-ink); }
 .a-preview-count { font-size: 11.5px; font-weight: 700; color: var(--a-ink-3); background: var(--a-bg-3); padding: 2px 8px; border-radius: 100px; }
 .a-preview-tbl { display: flex; flex-direction: column; }
 .a-preview-tr {
@@ -1327,8 +1343,8 @@ body:has(.a-login-shell) { overflow: auto !important; }
 /* 주택목록 3컬럼 (유형 | 면적 | 보증금) */
 .a-preview-tr.cols3 { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; }
 .a-preview-tr .r { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.a-preview-c1 { color: var(--a-ink-2); font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.a-preview-more { padding-top: 8px; font-size: 11.5px; color: var(--a-ink-3); font-weight: 500; }
+.a-preview-c1 { color: var(--a-ink-2); font-weight: 400; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.a-preview-more { padding-top: 8px; font-size: 11.5px; color: var(--a-ink-3); font-weight: 400; }
 
 /* 참고 정보 dl (우측 패널) — 자동 추출 raw 메타 */
 .a-ref-dl {
@@ -1336,15 +1352,20 @@ body:has(.a-login-shell) { overflow: auto !important; }
   display: grid; grid-template-columns: 76px 1fr; gap: 7px 10px;
   font-size: 12px;
 }
-.a-ref-dl dt { color: var(--a-ink-3); font-weight: 600; }
-.a-ref-dl dd { margin: 0; color: var(--a-ink); font-weight: 500; overflow-wrap: break-word; min-width: 0; }
+.a-ref-dl dt { color: var(--a-ink-3); font-weight: 700; }
+.a-ref-dl dd { margin: 0; color: var(--a-ink); font-weight: 400; overflow-wrap: break-word; min-width: 0; }
 .a-ref-dl dd code { font-family: ui-monospace, monospace; font-size: 11px; color: var(--a-ink-3); }
 .a-ref-dl dd.chips { display: flex; flex-wrap: wrap; gap: 4px; }
 
 /* ── 모바일 그리드 보정 (≤560px) ──────────────────────────── */
 @media (max-width: 560px) {
   /* KPI 카드 1열 (2열이 어긋나 보이던 문제) */
-  .a-kpi-row { grid-template-columns: 1fr; }
+  .a-stat-band { grid-template-columns: 1fr; }
+  .a-stat { border-left: 0; }
+  .a-stat + .a-stat { border-top: 1px solid var(--a-line); }
+  .a-sync-band { grid-template-columns: 1fr; }
+  .a-sync-cell { border-left: 0; }
+  .a-sync-cell + .a-sync-cell { border-top: 1px solid var(--a-line); }
   /* 데이터 지표 카드 1열 */
   .a-data-grid { grid-template-columns: 1fr; }
   /* 검수 2단 → 1단 (좁은 화면에서 미리보기 아래로) */

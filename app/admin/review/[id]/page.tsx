@@ -193,7 +193,9 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
 
       {anomalies.length > 0 && (
         <div className="a-anomaly-bar">
-          <span className="a-anomaly-icon">⚠</span>
+          <span className="a-anomaly-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z" /></svg>
+          </span>
           <span className="a-anomaly-title">이상값 {anomalies.length}건 감지</span>
           <span className="a-anomaly-list">{anomalies.map((a) => `· ${a}`).join("  ")}</span>
         </div>

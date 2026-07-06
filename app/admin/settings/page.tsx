@@ -50,7 +50,7 @@ export default function SettingsPage() {
 
         <div className="a-card" style={{ padding: "40px", textAlign: "center" }}>
           <div style={{ fontSize: 13, color: "var(--a-ink-3)" }}>
-            ⚙️ 추가 설정 (권한 · 알림 · 환경변수) 은 다음 스프린트
+            추가 설정 (권한 · 알림 · 환경변수) 은 다음 스프린트
           </div>
         </div>
       </div>

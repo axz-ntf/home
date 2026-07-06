@@ -8,8 +8,10 @@ export default function ComplexesPage() {
   return (
     <AdminShell pageTitle="단지 관리" pageSub="단지별 사진 / 위치 / 모집공고 이력" navItems={navItems} user={getAdminUser()}>
       <div className="a-card" style={{ padding: "60px 40px", textAlign: "center", maxWidth: 560, margin: "40px auto" }}>
-        <div style={{ fontSize: 28, marginBottom: 8 }}>🏗️</div>
-        <div style={{ fontSize: 18, fontWeight: 800, marginBottom: 6, letterSpacing: "-0.025em" }}>
+        <div style={{ marginBottom: 8, color: "var(--a-ink-4)", display: "flex", justifyContent: "center" }}>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M4 21V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v16M15 9h4a1 1 0 0 1 1 1v11M4 21h17M8 8h3M8 12h3M8 16h3" /></svg>
+        </div>
+        <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 6 }}>
           준비 중
         </div>
         <div style={{ fontSize: 13, color: "var(--a-ink-3)", lineHeight: 1.6 }}>

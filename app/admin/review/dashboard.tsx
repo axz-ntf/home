@@ -74,29 +74,48 @@ function SyncHealthStrip({ meta }: { meta: Record<string, SyncEntry | undefined>
   // 마운트 시각 기준 신선도 — 렌더 중 Date.now() 호출(불순) 금지 룰 준수.
   const [now] = useState(() => Date.now());
   return (
-    <div className="a-sync-strip">
+    <div className="a-sync-band">
       {SYNC_SOURCES.map(({ key, label }) => {
         const e = meta[key];
         if (!e) {
           return (
-            <span key={key} className="a-sync-item">
-              <span className="dot" style={{ background: "var(--a-ink-4)" }} />
-              <strong>{label}</strong>
-              <span className="meta">기록 없음</span>
-            </span>
+            <div key={key} className="a-sync-cell">
+              <div className="k">
+                <span className="dot" style={{ background: "var(--a-ink-4)" }} />
+                {label} 크롤러
+                <span className="a-badge mute">기록 없음</span>
+              </div>
+              <div className="d">마지막 실행 기록이 없어요</div>
+            </div>
           );
         }
         const hours = (now - new Date(e.at).getTime()) / 3600000;
-        const tone = hours >= 48 ? "var(--a-red)" : hours >= 24 ? "var(--a-yellow)" : "var(--a-green, #1a9c5b)";
+        // <24h 정상 / ≥24h 지연 / ≥48h 실패 — 크롤러가 죽었는지 한눈에.
+        const state =
+          hours >= 48
+            ? { tone: "var(--a-red)", badge: "danger", text: "실패 의심" }
+            : hours >= 24
+              ? { tone: "var(--a-yellow)", badge: "warn", text: "지연" }
+              : { tone: "var(--a-green)", badge: "ok", text: "정상" };
         const ago = hours < 1 ? "방금" : hours < 24 ? `${Math.floor(hours)}시간 전` : `${Math.floor(hours / 24)}일 전`;
         return (
-          <span key={key} className="a-sync-item">
-            <span className="dot" style={{ background: tone }} />
-            <strong>{label}</strong>
-            <span className="meta">{ago} · {e.count}건</span>
-          </span>
+          <div key={key} className="a-sync-cell">
+            <div className="k">
+              <span className="dot" style={{ background: state.tone }} />
+              {label} 크롤러
+              <span className={`a-badge ${state.badge}`}>{state.text}</span>
+            </div>
+            <div className="d">{ago} 실행 · <strong>{e.count}건</strong> 수집{hours >= 24 ? " · 24시간 초과" : ""}</div>
+          </div>
         );
       })}
+      <div className="a-sync-cell">
+        <div className="k">
+          일일 파이프라인
+          <span className="a-badge notice-normal">다음 24:00</span>
+        </div>
+        <div className="d">GitHub Actions · 매일 KST 00:00 자동 실행</div>
+      </div>
     </div>
   );
 }
@@ -251,16 +270,31 @@ export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: 
 
       {syncMeta && <SyncHealthStrip meta={syncMeta} />}
 
-      <section className="a-kpi-row">
-        <KpiCard label="전체 공고" value={stats.total} sub={`모집중 ${stats.open}건 · 마감임박 ${stats.closing}건`} />
+      {/* 스탯 밴드 — 카드 3장 대신 패널 하나 안 4칸 (숫자가 먼저 읽히게). */}
+      <section className="a-stat-band">
+        <div className="a-stat">
+          <div className="a-stat-label">전체 공고</div>
+          <div className="a-stat-value">{stats.total.toLocaleString()}<small>건</small></div>
+          <div className="a-stat-sub">활성 <strong>{(stats.open + stats.upcoming + stats.closing).toLocaleString()}</strong> · 마감 {stats.closed.toLocaleString()}</div>
+        </div>
         {/* 공고 단위 vs 지도 핀 단위 병기 — 메가공고 1건이 PC 지도에선 단지별 N핀이라 수가 다르다 */}
-        <KpiCard
-          label="모집중 (공고)"
-          value={stats.open + stats.closing}
-          sub={activePins != null ? `PC 지도 핀 ${activePins}개 · 마감임박 ${stats.closing} 포함` : `예정 ${stats.upcoming} · 마감 ${stats.closed}`}
-          accent
-        />
-        <KpiCard label="수정됨" value={stats.reviewed} sub="직접 정정한 매물" highlight="success" />
+        <div className="a-stat accent">
+          <div className="a-stat-label">모집중</div>
+          <div className="a-stat-value">{(stats.open + stats.closing).toLocaleString()}<small>건</small></div>
+          <div className="a-stat-sub">
+            {activePins != null ? <>PC 지도 핀 <strong>{activePins.toLocaleString()}</strong>개 노출</> : <>예정 {stats.upcoming} · 마감 {stats.closed}</>}
+          </div>
+        </div>
+        <div className="a-stat">
+          <div className="a-stat-label">마감임박 <span className="dot" /></div>
+          <div className="a-stat-value">{stats.closing.toLocaleString()}<small>건</small></div>
+          <div className="a-stat-sub">7일 이내 마감 · 우선 검수</div>
+        </div>
+        <div className="a-stat success">
+          <div className="a-stat-label">수정됨</div>
+          <div className="a-stat-value">{stats.reviewed.toLocaleString()}<small>건</small></div>
+          <div className="a-stat-sub">직접 정정한 매물</div>
+        </div>
       </section>
 
       <section className="a-data-grid">
@@ -351,7 +385,9 @@ export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: 
             {paged.length === 0 && (
               <tr>
                 <td colSpan={9} className="a-empty">
-                  <div style={{ fontSize: 28, marginBottom: 6 }}>🔍</div>
+                  <div style={{ marginBottom: 6, color: "var(--a-ink-4)", display: "flex", justifyContent: "center" }}>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+                  </div>
                   <div style={{ fontSize: 14, fontWeight: 700, color: "var(--a-ink)", marginBottom: 4 }}>
                     해당하는 공고가 없어요
                   </div>
@@ -393,7 +429,7 @@ export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: 
                       {r.agency} · 공고일 {r.announceDate || "—"}
                       {r.pinCount != null && (
                         <span title={`PC 지도에선 단지별 ${r.pinCount}개 핀으로 표시 — 클릭해 핀 편집`} style={{ marginLeft: 6, fontWeight: 700, color: "var(--a-ink-2)" }}>
-                          📍{r.pinCount}
+                          핀 {r.pinCount}
                         </span>
                       )}
                     </div>
@@ -431,7 +467,7 @@ export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: 
                         <span className="a-review-chip done">✓ 검수</span>
                       ) : r.needsReview ? (
                         <span className="a-review-chip need" title={`이슈: ${r.issues.join(", ")}`}>
-                          {r.hasDraft ? "🌙 " : ""}
+                          {r.hasDraft ? "초안 · " : ""}
                           {r.issues.slice(0, 2).join("·")}
                           {r.issues.length > 2 ? ` +${r.issues.length - 2}` : ""}
                         </span>
@@ -452,7 +488,9 @@ export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: 
                             fontSize: 11,
                             cursor: "help",
                           }}
-                        >📝</span>
+                        >
+                          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 20h4L19 9a2.1 2.1 0 0 0-3-3L5 17v3Z" /></svg>
+                        </span>
                       )}
                     </div>
                   </td>
@@ -498,25 +536,6 @@ export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: 
         </div>
       </div>
     </AdminShell>
-  );
-}
-
-function KpiCard({
-  label, value, sub, accent, warn, highlight,
-}: {
-  label: string;
-  value: number;
-  sub?: string;
-  accent?: boolean;
-  warn?: boolean;
-  highlight?: "warn" | "success";
-}) {
-  return (
-    <div className={`a-kpi-card ${accent ? "accent" : ""} ${warn ? "warn" : ""}`}>
-      <div className="a-kpi-label">{label}</div>
-      <div className="a-kpi-value">{value.toLocaleString()}<small>건</small></div>
-      {sub && <div className={`a-kpi-sub ${highlight ?? ""}`}>{sub}</div>}
-    </div>
   );
 }
 
