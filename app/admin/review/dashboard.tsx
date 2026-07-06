@@ -74,13 +74,15 @@ function SyncHealthStrip({ meta }: { meta: Record<string, SyncEntry | undefined>
   // 마운트 시각 기준 신선도 — 렌더 중 Date.now() 호출(불순) 금지 룰 준수.
   const [now] = useState(() => Date.now());
   return (
-    <div style={{ display: "flex", gap: 14, flexWrap: "wrap", fontSize: 12, color: "var(--a-ink-2)", margin: "2px 0 10px" }}>
+    <div className="a-sync-strip">
       {SYNC_SOURCES.map(({ key, label }) => {
         const e = meta[key];
         if (!e) {
           return (
-            <span key={key} style={{ color: "var(--a-ink-3)" }}>
-              <strong>{label}</strong> 기록 없음 — 다음 daily sync 부터
+            <span key={key} className="a-sync-item">
+              <span className="dot" style={{ background: "var(--a-ink-4)" }} />
+              <strong>{label}</strong>
+              <span className="meta">기록 없음</span>
             </span>
           );
         }
@@ -88,9 +90,10 @@ function SyncHealthStrip({ meta }: { meta: Record<string, SyncEntry | undefined>
         const tone = hours >= 48 ? "var(--a-red)" : hours >= 24 ? "var(--a-yellow)" : "var(--a-green, #1a9c5b)";
         const ago = hours < 1 ? "방금" : hours < 24 ? `${Math.floor(hours)}시간 전` : `${Math.floor(hours / 24)}일 전`;
         return (
-          <span key={key}>
-            <span style={{ display: "inline-block", width: 7, height: 7, borderRadius: 99, background: tone, marginRight: 5, verticalAlign: "middle" }} />
-            <strong>{label}</strong> {ago} · {e.count}건
+          <span key={key} className="a-sync-item">
+            <span className="dot" style={{ background: tone }} />
+            <strong>{label}</strong>
+            <span className="meta">{ago} · {e.count}건</span>
           </span>
         );
       })}
@@ -312,7 +315,7 @@ export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: 
             <FilterChip active={source === "SH"} onClick={() => setSource("SH")} count={sourceCounts.SH}>SH</FilterChip>
             <FilterChip active={source === "youth"} onClick={() => setSource("youth")} count={sourceCounts.youth}>청년안심</FilterChip>
           </div>
-          <div className="a-table-filters" style={{ marginTop: 6 }}>
+          <div className="a-table-filters">
             <FilterChip active={filter === "all"} onClick={() => changeFilter("all")} count={stats.total}>전체</FilterChip>
             <FilterChip active={filter === "open"} onClick={() => changeFilter("open")} count={stats.open}>모집중</FilterChip>
             <FilterChip active={filter === "upcoming"} onClick={() => changeFilter("upcoming")} count={stats.upcoming}>예정</FilterChip>
@@ -325,17 +328,7 @@ export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: 
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="제목·지역 검색"
-              style={{
-                padding: "7px 12px",
-                border: "1px solid var(--a-line-2)",
-                borderRadius: 7,
-                fontSize: 12,
-                outline: "none",
-                fontFamily: "inherit",
-                color: "var(--a-ink)",
-                background: "white",
-                minWidth: 200,
-              }}
+              className="a-table-search"
             />
           </div>
         </div>
