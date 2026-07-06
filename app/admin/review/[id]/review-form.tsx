@@ -20,17 +20,6 @@ interface Current {
   announceDate: string;
 }
 
-interface Context {
-  complexName: string | null;
-  address: string;
-  pnu: string | null;
-  houseType: string | null;
-  heatMethod: string | null;
-  parkngCo: number | null;
-  coverPhotoUrl: string | null;
-  eligible: string[];
-}
-
 interface RowDraft {
   houseType: string;
   area: string;
@@ -160,7 +149,6 @@ export default function ReviewForm({
   id,
   type,
   current,
-  context,
   override,
   original,
   nextHref,
@@ -174,7 +162,6 @@ export default function ReviewForm({
   id: string;
   type: HousingTypeId;
   current: Current;
-  context: Context;
   override: ManualOverride | null;
   original?: { deposit: number | null; rent: number | null; salePriceManwon: number | null; supplyUnits: number | null; address?: string | null };
   nextHref?: string | null;
@@ -526,7 +513,37 @@ export default function ReviewForm({
         </div>
       )}
 
-      <FormSection title="AI 자동 채움" subtitle="Solar 가 공고문을 읽어 금액·세대수·평형을 채웁니다. 값은 반드시 확인 후 저장하세요.">
+      {/* AI 자동 채움 — 버튼 2개짜리라 카드 한 층 대신 슬림 툴바 (세로 길이 절약) */}
+      <section className="a-form-section a-ai-slim">
+        <div className="row">
+          <div className="t">
+            <h2>AI 자동 채움</h2>
+            <span>Solar 가 공고문을 읽어 채웁니다 — 기존 공고는 캐시, 신규는 PDF 업로드. 확인 후 저장.</span>
+          </div>
+          <button
+            type="button"
+            onClick={() => runExtract()}
+            disabled={extracting || busy || !canAutoExtract}
+            className="a-btn primary"
+            title={canAutoExtract ? undefined : "이 공고는 첨부 PDF 가 없어요 — PDF 업로드를 이용하세요"}
+          >
+            {extracting ? "추출 중…" : canAutoExtract ? "공고문에서 자동 채움" : "PDF 없음 — 업로드 필요"}
+          </button>
+          <label className="a-btn secondary" style={{ cursor: extracting ? "default" : "pointer", margin: 0 }}>
+            PDF 업로드
+            <input
+              type="file"
+              accept="application/pdf"
+              disabled={extracting || busy}
+              style={{ display: "none" }}
+              onChange={(e) => {
+                const f = e.target.files?.[0];
+                if (f) runExtract(f);
+                e.target.value = "";
+              }}
+            />
+          </label>
+        </div>
         {draft && (
           <div className="a-draft-note">
             <span className="t">
@@ -545,40 +562,12 @@ export default function ReviewForm({
             </button>
           </div>
         )}
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 10, alignItems: "center" }}>
-          <button
-            type="button"
-            onClick={() => runExtract()}
-            disabled={extracting || busy || !canAutoExtract}
-            className="a-btn primary"
-            title={canAutoExtract ? undefined : "이 공고는 첨부 PDF 가 없어요 — 아래 PDF 업로드를 이용하세요"}
-          >
-            {extracting ? "추출 중…" : canAutoExtract ? "공고문에서 자동 채움" : "PDF 없음 — 업로드 필요"}
-          </button>
-          <label className="a-btn secondary" style={{ cursor: extracting ? "default" : "pointer", margin: 0 }}>
-            PDF 업로드
-            <input
-              type="file"
-              accept="application/pdf"
-              disabled={extracting || busy}
-              style={{ display: "none" }}
-              onChange={(e) => {
-                const f = e.target.files?.[0];
-                if (f) runExtract(f);
-                e.target.value = "";
-              }}
-            />
-          </label>
-          <span style={{ fontSize: 11, color: "var(--a-ink-3)" }}>
-            기존 공고는 캐시 사용, 신규는 PDF 업로드
-          </span>
-        </div>
         {extractMsg && (
-          <div className={`a-msg ${extractMsg.kind === "info" ? "" : extractMsg.kind}`} style={{ marginTop: 10 }}>
+          <div className={`a-msg ${extractMsg.kind === "info" ? "" : extractMsg.kind}`}>
             {extractMsg.text}
           </div>
         )}
-      </FormSection>
+      </section>
 
       {priceModel === "tiered-by-income" ? (
         <FormSection title="임대 조건 — 소득계층별" badge={priceIssue ? "가격 이슈" : undefined} subtitle="영구·통합공공임대: 같은 평형도 소득계층(가/나군)별 임대료가 다름.">
@@ -674,21 +663,25 @@ export default function ReviewForm({
           <SegmentedControl value={status} options={STATUS_OPTIONS} onChange={setStatus} />
         </Field>
 
-        <Field label="공고 종류" hint="LH 원본의 공고 분류">
-          <ChipGroup value={noticeStatus} options={NOTICE_STATUS_OPTIONS} onChange={setNoticeStatus} allowEmpty />
-        </Field>
+        <div className="a-field-pair">
+          <Field label="공고 종류" hint="LH 원본의 공고 분류">
+            <ChipGroup value={noticeStatus} options={NOTICE_STATUS_OPTIONS} onChange={setNoticeStatus} allowEmpty />
+          </Field>
 
-        <Field label="모집 진행" hint="LH 원본의 진행 상태">
-          <ChipGroup value={progressStatus} options={PROGRESS_STATUS_OPTIONS} onChange={setProgressStatus} allowEmpty />
-        </Field>
+          <Field label="모집 진행" hint="LH 원본의 진행 상태">
+            <ChipGroup value={progressStatus} options={PROGRESS_STATUS_OPTIONS} onChange={setProgressStatus} allowEmpty />
+          </Field>
+        </div>
 
-        <Field label="마감일">
-          <input value={deadline} onChange={(e) => setDeadline(e.target.value)} type="text" placeholder="YYYY.MM.DD" />
-        </Field>
+        <div className="a-field-pair">
+          <Field label="마감일">
+            <input value={deadline} onChange={(e) => setDeadline(e.target.value)} type="text" placeholder="YYYY.MM.DD" />
+          </Field>
 
-        <Field label="당첨자 발표일" hint="예비입주자/당첨자 발표 — 사용자 최다 질문">
-          <input value={winnerAt} onChange={(e) => setWinnerAt(e.target.value)} type="text" placeholder="YYYY.MM.DD" />
-        </Field>
+          <Field label="당첨자 발표일" hint="예비입주자/당첨자 발표 — 사용자 최다 질문">
+            <input value={winnerAt} onChange={(e) => setWinnerAt(e.target.value)} type="text" placeholder="YYYY.MM.DD" />
+          </Field>
+        </div>
 
         {current.announceDate && (
           <div style={{ fontSize: 11, color: "var(--a-ink-3)", fontWeight: 500 }}>
@@ -709,8 +702,6 @@ export default function ReviewForm({
           </div>
         </FormSection>
       )}
-
-      <ContextSection context={context} coverUrl={context.coverPhotoUrl} />
 
       <FormSection title="검수 메모">
         <Field label="메모">
@@ -906,61 +897,6 @@ function FormSection({ title, subtitle, badge, children }: { title: string; subt
   );
 }
 
-function ContextSection({ context, coverUrl }: { context: Context; coverUrl: string | null }) {
-  const hasAny =
-    context.complexName || context.address || context.pnu ||
-    context.houseType || context.heatMethod || context.parkngCo != null ||
-    coverUrl || context.eligible.length > 0;
-  if (!hasAny) return null;
-  return (
-    <section className="a-form-section">
-      <header>
-        <h2>참고 정보</h2>
-        <p className="section-sub">자동 추출된 raw 메타 — 검수 컨텍스트용 (편집 불가)</p>
-      </header>
-
-      {coverUrl && (
-        <div style={{ marginBottom: 4 }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={coverUrl}
-            alt="공고 표지"
-            style={{ width: "100%", maxHeight: 240, objectFit: "cover", borderRadius: 8, background: "var(--a-bg-3)" }}
-          />
-        </div>
-      )}
-
-      <dl style={{ margin: 0, display: "grid", gridTemplateColumns: "120px 1fr", gap: "8px 16px", fontSize: 12.5 }}>
-        {context.complexName && <Row label="단지명">{context.complexName}</Row>}
-        {context.houseType && <Row label="주거형태">{context.houseType}</Row>}
-        {context.heatMethod && <Row label="난방방식">{context.heatMethod}</Row>}
-        {context.parkngCo != null && <Row label="총 주차대수">{context.parkngCo.toLocaleString()}대</Row>}
-        {context.address && <Row label="주소">{context.address}</Row>}
-        {context.pnu && <Row label="PNU 지번">
-          <code style={{ fontFamily: "ui-monospace, monospace", fontSize: 11, color: "var(--a-ink-3)" }}>{context.pnu}</code>
-        </Row>}
-        {context.eligible.length > 0 && (
-          <Row label="자격 조건">
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
-              {context.eligible.map((e) => (
-                <span key={e} className="a-badge notice-normal" style={{ fontSize: 10.5 }}>{e}</span>
-              ))}
-            </div>
-          </Row>
-        )}
-      </dl>
-    </section>
-  );
-}
-
-function Row({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <>
-      <dt style={{ color: "var(--a-ink-3)", fontWeight: 600 }}>{label}</dt>
-      <dd style={{ margin: 0, color: "var(--a-ink)", fontWeight: 500 }}>{children}</dd>
-    </>
-  );
-}
 
 // orig 가 있으면 Figma 원본대조 행: 라벨 | LH 원본 | → | 입력. 없으면 기존 세로 스택.
 function Field({ label, hint, orig, children }: { label: string; hint?: string; orig?: React.ReactNode; children: React.ReactNode }) {

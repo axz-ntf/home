@@ -162,6 +162,7 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
       navItems={navItems}
       user={getAdminUser()}
     >
+      <div className="a-detail-page">
       <Link href="/admin/review" className="a-detail-back">
         <AIcon.ChevronL /> 대시보드로
       </Link>
@@ -247,16 +248,6 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
           deadline: listing.deadline ?? "",
           announceDate: listing.announceDate ?? "",
         }}
-        context={{
-          complexName: raw?.complexName ?? null,
-          address: raw?.address || listing.address || "",
-          pnu: raw?.pnu ?? listing.pnu ?? null,
-          houseType: typeof raw?.houseType === "string" ? raw.houseType : (listing.suplyTyNm ?? null),
-          heatMethod: typeof raw?.heatMethod === "string" ? raw.heatMethod : (listing.heatMethod ?? null),
-          parkngCo: raw?.parkngCo ?? null,
-          coverPhotoUrl: listing.coverPhotoUrl ?? null,
-          eligible: listing.eligible ?? [],
-        }}
         override={override}
         original={original}
         nextHref={nextHref}
@@ -306,9 +297,20 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
             depositManwon: p.depositManwon,
             rentManwon: p.rentManwon,
           }))}
+          refInfo={{
+            complexName: raw?.complexName ?? null,
+            address: raw?.address || listing.address || "",
+            pnu: raw?.pnu ?? listing.pnu ?? null,
+            houseType: typeof raw?.houseType === "string" ? raw.houseType : (listing.suplyTyNm ?? null),
+            heatMethod: typeof raw?.heatMethod === "string" ? raw.heatMethod : (listing.heatMethod ?? null),
+            parkngCo: raw?.parkngCo ?? null,
+            coverPhotoUrl: listing.coverPhotoUrl ?? null,
+            eligible: listing.eligible ?? [],
+          }}
         />
       </div>
       </ReviewLiveProvider>
+      </div>
     </AdminShell>
   );
 }

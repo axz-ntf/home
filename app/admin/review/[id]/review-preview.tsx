@@ -20,6 +20,18 @@ interface PreviewRow {
   depositManwon: number | null;
 }
 
+// 자동 추출 raw 메타 (편집 불가 컨텍스트) — 폼 세로 길이 줄이려 우측 패널에 표시.
+export interface RefInfo {
+  complexName: string | null;
+  address: string;
+  pnu: string | null;
+  houseType: string | null;
+  heatMethod: string | null;
+  parkngCo: number | null;
+  coverPhotoUrl: string | null;
+  eligible: string[];
+}
+
 function comma(n: number): string {
   return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -47,6 +59,7 @@ export default function ReviewPreview({
   isSale,
   rows = [],
   points,
+  refInfo = null,
 }: {
   title: string;
   typeLabel: string;
@@ -60,7 +73,12 @@ export default function ReviewPreview({
   isSale: boolean;
   rows?: PreviewRow[];
   points: PreviewPoint[];
+  refInfo?: RefInfo | null;
 }) {
+  const hasRef = Boolean(refInfo && (
+    refInfo.complexName || refInfo.address || refInfo.pnu || refInfo.houseType ||
+    refInfo.heatMethod || refInfo.parkngCo != null || refInfo.coverPhotoUrl || refInfo.eligible.length > 0
+  ));
   // 폼 입력 실시간 반영 — live 가 있으면(폼 마운트 후) 그 값을, 없으면 저장값.
   const { live } = useReviewLive();
   const v = {
@@ -154,6 +172,39 @@ export default function ReviewPreview({
               <div className="a-preview-more">+ {points.length - 6}곳 더</div>
             )}
           </div>
+        </div>
+      )}
+
+      {/* 참고 정보 — 자동 추출 raw 메타 (편집 불가). 폼에서 옮겨와 좌측 세로 길이 절약. */}
+      {hasRef && refInfo && (
+        <div className="a-preview-card">
+          <div className="a-preview-cardhead">
+            <span className="a-preview-cardtitle">참고 정보</span>
+            <span className="a-preview-count">원본 메타</span>
+          </div>
+          {refInfo.coverPhotoUrl && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={refInfo.coverPhotoUrl}
+              alt="공고 표지"
+              style={{ width: "100%", maxHeight: 160, objectFit: "cover", borderRadius: 8, background: "var(--a-bg-3)" }}
+            />
+          )}
+          <dl className="a-ref-dl">
+            {refInfo.complexName && <><dt>단지명</dt><dd>{refInfo.complexName}</dd></>}
+            {refInfo.houseType && <><dt>주거형태</dt><dd>{refInfo.houseType}</dd></>}
+            {refInfo.heatMethod && <><dt>난방방식</dt><dd>{refInfo.heatMethod}</dd></>}
+            {refInfo.parkngCo != null && <><dt>주차대수</dt><dd>{refInfo.parkngCo.toLocaleString()}대</dd></>}
+            {refInfo.address && <><dt>주소</dt><dd>{refInfo.address}</dd></>}
+            {refInfo.pnu && <><dt>PNU</dt><dd><code>{refInfo.pnu}</code></dd></>}
+            {refInfo.eligible.length > 0 && (
+              <><dt>자격</dt><dd className="chips">
+                {refInfo.eligible.map((e) => (
+                  <span key={e} className="a-badge notice-normal">{e}</span>
+                ))}
+              </dd></>
+            )}
+          </dl>
         </div>
       )}
     </aside>
