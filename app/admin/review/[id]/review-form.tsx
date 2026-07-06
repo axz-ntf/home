@@ -719,7 +719,7 @@ export default function ReviewForm({
             onClick={() => save(true)}
             disabled={busy}
             className="a-btn primary"
-            style={{ background: "var(--a-ink)", color: "white" }}
+            style={{ background: "var(--a-btn-dark)", color: "white" }}
           >
             {busy ? "저장 중..." : "저장하고 다음 →"}
           </button>
