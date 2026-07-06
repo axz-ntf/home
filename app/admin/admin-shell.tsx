@@ -66,12 +66,13 @@ export default function AdminShell({ pageTitle, pageSub, navItems, cta, user = D
     <div className="a-app-admin">
       <div className="a-side-backdrop" data-open={sideOpen} onClick={() => setSideOpen(false)} />
       <aside className="a-side" data-open={sideOpen}>
-        <div className="a-brand">
+        {/* 로고 클릭 → 어드민 홈 (대시보드) */}
+        <Link href="/admin/review" className="a-brand">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/logo.svg" alt="다음부동산" className="a-brand-mark" />
           <div className="a-brand-name">다음부동산</div>
           <div className="a-brand-tag">ADMIN</div>
-        </div>
+        </Link>
 
         <div className="a-nav-section">
           <div className="a-nav-label">운영</div>
