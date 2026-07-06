@@ -14,6 +14,7 @@ import { youthDirectoryInfo } from "@/lib/youth-adapter";
 import extractDrafts from "@/lib/extract-drafts.json";
 import floorplanSpecs from "@/lib/floorplan-specs.json";
 import FloorplanEditor from "./floorplan-editor";
+import ReviewPreview from "./review-preview";
 import type { FloorPlanSpec } from "@/lib/floorplan-spec";
 
 interface RawApiListing {
@@ -25,7 +26,18 @@ interface RawApiListing {
   address?: string;
   pnu?: string | null;
   coverPhotoUrl?: string | null;
+  depositManwon?: number | null;
+  monthlyRentManwon?: number | null;
+  salePriceManwon?: number | null;
+  supplyUnits?: number | null;
+  lat?: number | null;
+  lng?: number | null;
 }
+
+// 유형별 정상 보증금 상한 (lh-adapter PRICE_GUARD 와 동일 기준) — 이상값 감지용.
+const DEPOSIT_GUARD: Record<string, number> = {
+  happy: 10000, nation: 15000, perm: 5000, fifty: 20000, integ: 20000, buy: 30000, jeonse: 30000,
+};
 const RAW_API_BY_PANID = new Map<string, RawApiListing>();
 for (const r of rawApiListings as RawApiListing[]) {
   if (r?.pblancId) RAW_API_BY_PANID.set(String(r.pblancId), r);
@@ -110,6 +122,27 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
     : (currentIdx < 0 && queue.length > 0 ? queue[0] : null);
   const nextHref = nextInQueue ? `/admin/review/${encodeURIComponent(nextInQueue.id)}` : null;
 
+  // LH 원본 가격/세대수 (raw listings-api) — 폼 diff 표시용.
+  const isSaleType = listing.type === "sale";
+  const original = {
+    deposit: raw?.depositManwon ?? null,
+    rent: raw?.monthlyRentManwon ?? null,
+    salePriceManwon: raw?.salePriceManwon ?? null,
+    supplyUnits: raw?.supplyUnits ?? null,
+  };
+
+  // 이상값 감지 — 상단 경고 바 + 미리보기 강조. 검수 필요 이유를 한눈에.
+  const anomalies: string[] = [];
+  const guard = DEPOSIT_GUARD[listing.type];
+  if (!isSaleType && listing.deposit && guard && listing.deposit < guard * 0.2) {
+    anomalies.push(`보증금 ${listing.deposit.toLocaleString()}만원 — ${TYPE_LABEL[listing.type] ?? listing.type} 치고 비정상적으로 낮음`);
+  }
+  if (!isSaleType && !listing.deposit && !listing.rent) anomalies.push("보증금·월세 정보 없음");
+  if (isSaleType && !listing.salePriceManwon) anomalies.push("분양가 정보 없음");
+  if (listing.supplyUnits === 1) anomalies.push("공급 세대수 1 — LH API 오류 가능(확인 필요)");
+  const hasCoord = Number.isFinite(raw?.lat) && Number.isFinite(raw?.lng);
+  if (!hasCoord && (!mapped || mapped.points.length === 0)) anomalies.push("좌표 없음 — 지도에 표시되지 않음");
+
   const navItems: NavItem[] = [
     { href: "/admin/review", label: "대시보드", icon: "dash" },
     { href: "/admin/review?filter=review", label: "검수 큐", icon: "listing", badge: needsReview, badgeKind: "danger" },
@@ -144,6 +177,16 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
         </a>
       )}
 
+      {anomalies.length > 0 && (
+        <div className="a-anomaly-bar">
+          <span className="a-anomaly-icon">⚠</span>
+          <span className="a-anomaly-title">이상값 {anomalies.length}건 감지</span>
+          <span className="a-anomaly-list">{anomalies.map((a) => `· ${a}`).join("  ")}</span>
+        </div>
+      )}
+
+      <div className="a-review-layout">
+        <div className="a-review-main">
       {dirRows && (
         <section style={{ margin: "14px 0 4px", padding: "12px 14px", border: "1px solid var(--a-line)", borderRadius: 10, background: "var(--a-bg-2)" }}>
           <div style={{ fontSize: 13, fontWeight: 800, marginBottom: 8 }}>
@@ -201,6 +244,7 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
           eligible: listing.eligible ?? [],
         }}
         override={override}
+        original={original}
         nextHref={nextHref}
         queueIndex={currentIdx >= 0 ? { current: currentIdx + 1, total: queue.length } : null}
         initialRows={initialRows.length > 0 ? initialRows : null}
@@ -223,6 +267,27 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
         listingId={decodedId}
         initialSpec={resolveFloorplanSpec(decodedId)}
       />
+        </div>
+
+        <ReviewPreview
+          title={raw?.complexName || listing.title}
+          typeLabel={TYPE_LABEL[listing.type] ?? listing.type}
+          agency={listing.agency}
+          district={listing.district}
+          deposit={listing.deposit ?? null}
+          rent={listing.rent ?? null}
+          salePriceManwon={listing.salePriceManwon ?? null}
+          supplyUnits={typeof listing.supplyUnits === "number" ? listing.supplyUnits : listing.supplyUnits ? Number(listing.supplyUnits) || null : null}
+          area={listing.area ?? ""}
+          isSale={isSaleType}
+          points={(mapped?.points ?? []).map((p) => ({
+            label: p.label,
+            address: p.address,
+            depositManwon: p.depositManwon,
+            rentManwon: p.rentManwon,
+          }))}
+        />
+      </div>
     </AdminShell>
   );
 }

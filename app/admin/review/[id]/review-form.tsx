@@ -153,6 +153,7 @@ export default function ReviewForm({
   current,
   context,
   override,
+  original,
   nextHref,
   queueIndex,
   initialRows,
@@ -165,6 +166,7 @@ export default function ReviewForm({
   current: Current;
   context: Context;
   override: ManualOverride | null;
+  original?: { deposit: number | null; rent: number | null; salePriceManwon: number | null; supplyUnits: number | null };
   nextHref?: string | null;
   queueIndex?: { current: number; total: number } | null;
   initialRows?: OverrideRow[] | null;
@@ -538,21 +540,21 @@ export default function ReviewForm({
 
       {priceModel === "tiered-by-income" ? (
         <FormSection title="임대 조건 — 소득계층별" subtitle="영구·통합공공임대: 같은 평형도 소득계층(가/나군)별 임대료가 다름.">
-          <Field label="총 공급 세대수" hint="모델과 별개로 정정 가능 — 비우면 평형별 합계 사용">
+          <Field label="총 공급 세대수" hint="모델과 별개로 정정 가능 — 비우면 평형별 합계 사용" orig={<OrigRef value={original?.supplyUnits} unit="세대" bad={original?.supplyUnits === 1} />}>
             <input value={supplyUnits} onChange={(e) => setSupplyUnits(e.target.value)} type="number" min="0" />
           </Field>
           <TieredEditor tiers={tiers} onChange={setTiers} />
         </FormSection>
       ) : priceModel === "by-household-size" ? (
         <FormSection title="임대 조건 — 가구원수 유형별" subtitle="매입·집주인 임대: 가구원수 유형(1/2/3형) + 면적구간. 가격은 범위(850~1200) 가능.">
-          <Field label="총 공급 세대수" hint="모델과 별개로 정정 가능 — 비우면 유형별 합계 사용">
+          <Field label="총 공급 세대수" hint="모델과 별개로 정정 가능 — 비우면 유형별 합계 사용" orig={<OrigRef value={original?.supplyUnits} unit="세대" bad={original?.supplyUnits === 1} />}>
             <input value={supplyUnits} onChange={(e) => setSupplyUnits(e.target.value)} type="number" min="0" />
           </Field>
           <HouseholdEditor rows={households} onChange={setHouseholds} />
         </FormSection>
       ) : priceModel === "support-limit" ? (
         <FormSection title="전세 지원한도" subtitle="전세임대: 평형 없이 가구원수/지역별 전세 지원한도액.">
-          <Field label="총 공급 세대수" hint="전세임대는 한도표에 세대수가 없어 여기서 정정 (감사 H2)">
+          <Field label="총 공급 세대수" hint="전세임대는 한도표에 세대수가 없어 여기서 정정 (감사 H2)" orig={<OrigRef value={original?.supplyUnits} unit="세대" bad={original?.supplyUnits === 1} />}>
             <input value={supplyUnits} onChange={(e) => setSupplyUnits(e.target.value)} type="number" min="0" />
           </Field>
           <SupportEditor rows={supportRows} onChange={setSupportRows} />
@@ -590,19 +592,22 @@ export default function ReviewForm({
             />
           ) : (
             <>
-              <Field label="공급 세대수" hint="LH API 가 1로 잘못 주는 경우가 많음. PDF 표 합계 확인.">
+              <Field label="공급 세대수" hint="LH API 가 1로 잘못 주는 경우가 많음. PDF 표 합계 확인."
+                orig={<OrigRef value={original?.supplyUnits} unit="세대" bad={original?.supplyUnits === 1} />}>
                 <input value={supplyUnits} onChange={(e) => setSupplyUnits(e.target.value)} type="number" min="0" />
               </Field>
               {isSale ? (
-                <Field label="분양가 (만원)" hint="공급 가격 (분양 매물)">
+                <Field label="분양가 (만원)" hint="공급 가격 (분양 매물)"
+                  orig={<OrigRef value={original?.salePriceManwon} unit="만" bad={!original?.salePriceManwon} />}>
                   <input value={salePrice} onChange={(e) => setSalePrice(e.target.value)} type="number" min="0" />
                 </Field>
               ) : (
                 <>
-                  <Field label="보증금 (만원)">
+                  <Field label="보증금 (만원)"
+                    orig={<OrigRef value={original?.deposit} unit="만" bad={!!original?.deposit && original.deposit < 1000} />}>
                     <input value={deposit} onChange={(e) => setDeposit(e.target.value)} type="number" min="0" />
                   </Field>
-                  <Field label="월세 (만원)">
+                  <Field label="월세 (만원)" orig={<OrigRef value={original?.rent} unit="만" />}>
                     <input value={rent} onChange={(e) => setRent(e.target.value)} type="number" min="0" />
                   </Field>
                 </>
@@ -876,13 +881,24 @@ function Row({ label, children }: { label: string; children: React.ReactNode }) 
   );
 }
 
-function Field({ label, hint, children }: { label: string; hint?: string; children: React.ReactNode }) {
+function Field({ label, hint, orig, children }: { label: string; hint?: string; orig?: React.ReactNode; children: React.ReactNode }) {
   return (
     <div className="a-field">
       <label>{label}</label>
       {hint && <span className="hint">{hint}</span>}
+      {orig}
       {children}
     </div>
+  );
+}
+
+// LH 원본값 참조 — "LH 원본 771만 ⚠" 형태. 값 없으면 미표시.
+function OrigRef({ value, unit, bad }: { value: number | null | undefined; unit: string; bad?: boolean }) {
+  if (value == null) return null;
+  return (
+    <span className={`a-orig-ref ${bad ? "bad" : ""}`}>
+      LH 원본 <strong>{value.toLocaleString()}{unit}</strong>{bad ? " ⚠" : ""}
+    </span>
   );
 }
 
