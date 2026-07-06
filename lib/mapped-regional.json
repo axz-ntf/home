@@ -1,1506 +1,1608 @@
 {
-  "2015122300019918": {
-    "districtId": "jeonbuk",
+ "2015122300019918": {
+  "districtId": "jeonbuk",
+  "district": "전북특별자치도",
+  "points": [
+   {
+    "lat": 35.8543,
+    "lng": 127.23016,
+    "label": "완주황운 국민임대",
+    "address": "전북특별자치도 완주군 소양면 소양로 204-43",
+    "depositManwon": 2603,
+    "rentManwon": 24,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300019918-57037564.jpg",
     "district": "전북특별자치도",
-    "points": [
-      {
-        "lat": 35.8543,
-        "lng": 127.23016,
-        "label": "완주황운 국민임대",
-        "address": "전북특별자치도 완주군 소양면 소양로 204-43",
-        "depositManwon": 2603,
-        "rentManwon": 24,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300019918-57037564.jpg",
-        "district": "전북특별자치도",
-        "districtId": "jeonbuk"
-      },
-      {
-        "lat": 35.83458,
-        "lng": 127.05404,
-        "label": "전북혁신 A10블럭 국민임대",
-        "address": "전북특별자치도 완주군 이서면 갈산1로 12",
-        "depositManwon": 849,
-        "rentManwon": 13,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300019918-29959905.jpg",
-        "district": "전북특별자치도",
-        "districtId": "jeonbuk"
-      },
-      {
-        "lat": 35.83661,
-        "lng": 127.0541,
-        "label": "전북혁신 A9블럭 국민임대",
-        "address": "전북특별자치도 완주군 이서면 갈산1로 72",
-        "depositManwon": 826,
-        "rentManwon": 15,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300019918-29959475.jpg",
-        "district": "전북특별자치도",
-        "districtId": "jeonbuk"
-      },
-      {
-        "lat": 35.92975,
-        "lng": 127.15979,
-        "label": "완주봉동 국민임대",
-        "address": "전북특별자치도 완주군 봉동읍 봉동중앙로 53-18",
-        "depositManwon": 1770,
-        "rentManwon": 12,
-        "district": "전북특별자치도",
-        "districtId": "jeonbuk"
-      },
-      {
-        "lat": 35.91906,
-        "lng": 127.08314,
-        "label": "완주삼례2 국민임대",
-        "address": "전북특별자치도 완주군 삼례읍 웃삼례길 39-6",
-        "depositManwon": 1521,
-        "rentManwon": 11,
-        "district": "전북특별자치도",
-        "districtId": "jeonbuk"
-      },
-      {
-        "lat": 36.00602,
-        "lng": 127.65302,
-        "label": "무주남대천 국민임대",
-        "address": "전북특별자치도 무주군 무주읍 장터로 26",
-        "depositManwon": 1800,
-        "rentManwon": 12,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300019918-28477678.jpg",
-        "district": "전북특별자치도",
-        "districtId": "jeonbuk"
-      },
-      {
-        "lat": 35.80816,
-        "lng": 127.09725,
-        "label": "전주효자4-1 국민임대",
-        "address": "전북특별자치도 전주시 완산구 호암로 2",
-        "depositManwon": 2870,
-        "rentManwon": 16,
-        "district": "전북특별자치도",
-        "districtId": "jeonbuk"
-      }
-    ]
-  },
-  "0000061079": {
-    "districtId": "chungbuk",
+    "districtId": "jeonbuk"
+   },
+   {
+    "lat": 35.83458,
+    "lng": 127.05404,
+    "label": "전북혁신 A10블럭 국민임대",
+    "address": "전북특별자치도 완주군 이서면 갈산1로 12",
+    "depositManwon": 849,
+    "rentManwon": 13,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300019918-29959905.jpg",
+    "district": "전북특별자치도",
+    "districtId": "jeonbuk"
+   },
+   {
+    "lat": 35.83661,
+    "lng": 127.0541,
+    "label": "전북혁신 A9블럭 국민임대",
+    "address": "전북특별자치도 완주군 이서면 갈산1로 72",
+    "depositManwon": 826,
+    "rentManwon": 15,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300019918-29959475.jpg",
+    "district": "전북특별자치도",
+    "districtId": "jeonbuk"
+   },
+   {
+    "lat": 35.92975,
+    "lng": 127.15979,
+    "label": "완주봉동 국민임대",
+    "address": "전북특별자치도 완주군 봉동읍 봉동중앙로 53-18",
+    "depositManwon": 1770,
+    "rentManwon": 12,
+    "district": "전북특별자치도",
+    "districtId": "jeonbuk"
+   },
+   {
+    "lat": 35.91906,
+    "lng": 127.08314,
+    "label": "완주삼례2 국민임대",
+    "address": "전북특별자치도 완주군 삼례읍 웃삼례길 39-6",
+    "depositManwon": 1521,
+    "rentManwon": 11,
+    "district": "전북특별자치도",
+    "districtId": "jeonbuk"
+   },
+   {
+    "lat": 36.00602,
+    "lng": 127.65302,
+    "label": "무주남대천 국민임대",
+    "address": "전북특별자치도 무주군 무주읍 장터로 26",
+    "depositManwon": 1800,
+    "rentManwon": 12,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300019918-28477678.jpg",
+    "district": "전북특별자치도",
+    "districtId": "jeonbuk"
+   },
+   {
+    "lat": 35.80816,
+    "lng": 127.09725,
+    "label": "전주효자4-1 국민임대",
+    "address": "전북특별자치도 전주시 완산구 호암로 2",
+    "depositManwon": 2870,
+    "rentManwon": 16,
+    "district": "전북특별자치도",
+    "districtId": "jeonbuk"
+   }
+  ]
+ },
+ "0000061079": {
+  "districtId": "chungbuk",
+  "district": "충청북도",
+  "points": [
+   {
+    "lat": 36.59587293181807,
+    "lng": 127.50364224257143,
+    "address": "충청북도 청주시 상당구 지북동 401번지 일원",
     "district": "충청북도",
-    "points": [
-      {
-        "lat": 36.59587293181807,
-        "lng": 127.50364224257143,
-        "address": "충청북도 청주시 상당구 지북동 401번지 일원",
-        "district": "충청북도",
-        "districtId": "chungbuk"
-      }
-    ]
-  },
-  "2015122300020006": {
-    "districtId": "busan",
-    "points": [
-      {
-        "lat": 35.33913029933954,
-        "lng": 129.1689481099096,
-        "label": "부산정관1",
-        "address": "부산광역시 기장군 정관읍 모전리 681",
-        "depositManwon": 4025,
-        "rentManwon": 24,
-        "district": "부산광역시",
-        "districtId": "busan"
-      },
-      {
-        "lat": 35.33120470110246,
-        "lng": 129.16849879950894,
-        "label": "부산정관2",
-        "address": "부산광역시 기장군 정관읍 정관3로 51",
-        "depositManwon": 3132,
-        "rentManwon": 18,
-        "district": "부산광역시",
-        "districtId": "busan"
-      },
-      {
-        "lat": 35.34070810819847,
-        "lng": 129.1622445493868,
-        "label": "부산정관7",
-        "address": "부산광역시 기장군 정관읍 정관1로 51",
-        "depositManwon": 794,
-        "rentManwon": 15,
-        "district": "부산광역시",
-        "districtId": "busan"
-      },
-      {
-        "lat": 35.18295665826862,
-        "lng": 129.1976271125011,
-        "label": "부산송정1",
-        "address": "부산광역시 해운대구 송정1로 20",
-        "depositManwon": 1581,
-        "rentManwon": 13,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300020006-26271719.jpg",
-        "district": "부산광역시",
-        "districtId": "busan"
-      },
-      {
-        "lat": 35.19036997146415,
-        "lng": 129.205076919212,
-        "label": "부산송정2",
-        "address": "부산광역시 해운대구 해운대로 1188",
-        "depositManwon": 3132,
-        "rentManwon": 26,
-        "district": "부산광역시",
-        "districtId": "busan"
-      },
-      {
-        "lat": 35.197046040168786,
-        "lng": 129.10774499689282,
-        "label": "부산안락4",
-        "address": "부산광역시 동래구 명안로10번길 64",
-        "depositManwon": 3891,
-        "rentManwon": 25,
-        "district": "부산광역시",
-        "districtId": "busan"
-      },
-      {
-        "lat": 35.150846439434865,
-        "lng": 128.83217731154653,
-        "label": "부산지사",
-        "address": "부산광역시 강서구 과학산단2로20번길 13",
-        "depositManwon": 1059,
-        "rentManwon": 9,
-        "district": "부산광역시",
-        "districtId": "busan"
-      },
-      {
-        "lat": 35.14748480922351,
-        "lng": 129.05492852942263,
-        "label": "부산범천",
-        "address": "부산광역시 부산진구 신암로 66",
-        "depositManwon": 2924,
-        "rentManwon": 33,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300020006-26809711.jpg",
-        "district": "부산광역시",
-        "districtId": "busan"
-      },
-      {
-        "lat": 35.160829137844075,
-        "lng": 128.98451141063964,
-        "label": "부산괘법",
-        "address": "부산광역시 사상구 새벽로 220",
-        "depositManwon": 4439,
-        "rentManwon": 37,
-        "district": "부산광역시",
-        "districtId": "busan"
-      },
-      {
-        "lat": 35.15691659058925,
-        "lng": 128.98366584413432,
-        "label": "부산감전",
-        "address": "부산광역시 사상구 새벽로 178",
-        "depositManwon": 3115,
-        "rentManwon": 26,
-        "district": "부산광역시",
-        "districtId": "busan"
-      },
-      {
-        "lat": 35.15778520144026,
-        "lng": 129.06954850426158,
-        "label": "부산전포",
-        "address": "부산광역시 부산진구 동성로 82",
-        "depositManwon": 2922,
-        "rentManwon": 27,
-        "district": "부산광역시",
-        "districtId": "busan"
-      }
-    ]
-  },
-  "2015122300019985": {
-    "points": [
-      {
-        "lat": 36.04368919918822,
-        "lng": 129.36917966902746,
-        "label": "포항중앙",
-        "address": "경상북도 포항시 북구 동빈로 77-9",
-        "depositManwon": 1476,
-        "rentManwon": 7,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300019985-42286893.jpg",
-        "district": "경상북도",
-        "districtId": "gyeongbuk"
-      },
-      {
-        "lat": 35.995936852994674,
-        "lng": 129.42198021689842,
-        "label": "포항일월",
-        "address": "경상북도 포항시 남구 청림로 58번길 66",
-        "depositManwon": 1812,
-        "rentManwon": 8,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300019985-43660356.jpg",
-        "district": "경상북도",
-        "districtId": "gyeongbuk"
-      }
-    ]
-  },
-  "2015122300019925": {
-    "districtId": "daegu",
-    "points": [
-      {
-        "lat": 35.802442282485885,
-        "lng": 128.62501635538334,
-        "label": "달성용계",
-        "address": "대구광역시 달성군 가창면 가창로216길 25",
-        "depositManwon": 2554,
-        "rentManwon": 22,
-        "district": "대구광역시",
-        "districtId": "daegu"
-      },
-      {
-        "lat": 35.868945656599905,
-        "lng": 128.4976565464554,
-        "label": "대구서재",
-        "address": "대구광역시 달성군 다사읍 서재로14길 2",
-        "depositManwon": 1672,
-        "rentManwon": 13,
-        "district": "대구광역시",
-        "districtId": "daegu"
-      },
-      {
-        "lat": 35.692345645870994,
-        "lng": 128.45023478694554,
-        "label": "대구테크노 2단지",
-        "address": "대구광역시 달성군 현풍읍 테크노북로2길",
-        "depositManwon": 866,
-        "rentManwon": 16,
-        "district": "대구광역시",
-        "districtId": "daegu"
-      },
-      {
-        "lat": 35.85872796239402,
-        "lng": 128.4668038617797,
-        "label": "대구죽곡",
-        "address": "대구광역시 달성군 다사읍 대실역북로 1길 6",
-        "depositManwon": 2558,
-        "rentManwon": 18,
-        "district": "대구광역시",
-        "districtId": "daegu"
-      },
-      {
-        "lat": 35.8237308123395,
-        "lng": 128.44998050507306,
-        "label": "고령다산1",
-        "address": "경상북도 고령군 다산면 상곡길 28",
-        "depositManwon": 2515,
-        "rentManwon": 11,
-        "district": "경상북도",
-        "districtId": "gyeongbuk"
-      },
-      {
-        "lat": 35.829097311901364,
-        "lng": 128.45250503439075,
-        "label": "고령다산3",
-        "address": "경상북도 고령군 다산면 평리6길 30",
-        "depositManwon": 1071,
-        "rentManwon": 8,
-        "district": "경상북도",
-        "districtId": "gyeongbuk"
-      }
-    ]
-  },
-  "2015122300019975": {
-    "districtId": "gwangju",
-    "points": [
-      {
-        "lat": 35.20727086886127,
-        "lng": 126.85807542986119,
-        "label": "광주첨단1",
-        "address": "광주광역시 북구 첨단연신로 250",
-        "depositManwon": 2805,
-        "rentManwon": 16,
-        "district": "광주광역시",
-        "districtId": "gwangju"
-      },
-      {
-        "lat": 35.20248331630129,
-        "lng": 126.87080588204387,
-        "label": "광주연제",
-        "address": "광주광역시 북구 양산제로 110",
-        "depositManwon": 1757,
-        "rentManwon": 9,
-        "district": "광주광역시",
-        "districtId": "gwangju"
-      },
-      {
-        "lat": 35.21735203136778,
-        "lng": 126.87517721262554,
-        "label": "광주용두2",
-        "address": "광주광역시 북구 하서로483번길 22",
-        "depositManwon": 2724,
-        "rentManwon": 15,
-        "district": "광주광역시",
-        "districtId": "gwangju"
-      },
-      {
-        "lat": 35.18705584333724,
-        "lng": 126.89551528994281,
-        "label": "광주용봉",
-        "address": "광주광역시 북구 매곡로 20",
-        "depositManwon": 2137,
-        "rentManwon": 16,
-        "district": "광주광역시",
-        "districtId": "gwangju"
-      },
-      {
-        "lat": 35.177143554691455,
-        "lng": 126.86463884012596,
-        "label": "광주죽림",
-        "address": "광주광역시 북구 유림로 160번길 5",
-        "district": "광주광역시",
-        "districtId": "gwangju"
-      },
-      {
-        "lat": 35.192587126793114,
-        "lng": 126.90235381138677,
-        "label": "오치청암",
-        "address": "광주광역시 북구 우치로 311번길 20",
-        "district": "광주광역시",
-        "districtId": "gwangju"
-      },
-      {
-        "lat": 35.14764502485795,
-        "lng": 126.77922953307257,
-        "label": "광주선운1",
-        "address": "광주광역시 광산구 선운중앙로 68",
-        "coverPhotoLocal": "/lh-covers/lh-2015122300019975-24548538.jpg",
-        "district": "광주광역시",
-        "districtId": "gwangju"
-      },
-      {
-        "lat": 35.20089153390134,
-        "lng": 126.81155850972326,
-        "label": "광주수완7",
-        "address": "광주광역시 광산구 풍영로329번길 50",
-        "coverPhotoLocal": "/lh-covers/lh-2015122300019975-24547514.jpg",
-        "district": "광주광역시",
-        "districtId": "gwangju"
-      },
-      {
-        "lat": 35.13028483329178,
-        "lng": 126.79588013710855,
-        "label": "금강2차",
-        "address": "광주광역시 광산구 송도로182번길 15-12",
-        "district": "광주광역시",
-        "districtId": "gwangju"
-      },
-      {
-        "lat": 35.11025237688219,
-        "lng": 126.89984662017599,
-        "label": "광주송화1",
-        "address": "광주광역시 남구 효우로 60번길 50",
-        "district": "광주광역시",
-        "districtId": "gwangju"
-      },
-      {
-        "lat": 35.10809226667452,
-        "lng": 126.90039620788428,
-        "label": "광주송화2",
-        "address": "광주광역시 남구 효우로 60번길 37",
-        "district": "광주광역시",
-        "districtId": "gwangju"
-      },
-      {
-        "lat": 35.107986601566566,
-        "lng": 126.90376100584096,
-        "label": "광주송화4",
-        "address": "광주광역시 남구 효우로 60번길 9",
-        "district": "광주광역시",
-        "districtId": "gwangju"
-      },
-      {
-        "lat": 35.10709613660064,
-        "lng": 126.86372365438237,
-        "label": "광주효천1",
-        "address": "광주광역시 남구 효천로 176",
-        "district": "광주광역시",
-        "districtId": "gwangju"
-      },
-      {
-        "lat": 35.10351257964542,
-        "lng": 126.88764608122237,
-        "label": "광주효천2지구 1단지",
-        "address": "광주광역시 남구 효우로 262",
-        "district": "광주광역시",
-        "districtId": "gwangju"
-      },
-      {
-        "lat": 35.184841488691376,
-        "lng": 126.83158763608674,
-        "label": "광주신가",
-        "address": "광주광역시 광산구 수등로 204",
-        "district": "광주광역시",
-        "districtId": "gwangju"
-      },
-      {
-        "lat": 35.185609118072094,
-        "lng": 126.82368036779538,
-        "label": "광주아름마을1",
-        "address": "광주광역시 광산구 수등로123번길 70",
-        "district": "광주광역시",
-        "districtId": "gwangju"
-      }
-    ]
-  },
-  "2015122300019959": {
-    "districtId": "chungbuk",
-    "points": [
-      {
-        "lat": 36.86097324417392,
-        "lng": 127.43798401480507,
-        "label": "진천벽암",
-        "address": "충북 진천군 문화로 237-19",
-        "depositManwon": 1257,
-        "rentManwon": 11,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300019959-47900570.jpg"
-      },
-      {
-        "lat": 36.912460110615356,
-        "lng": 127.51017611633554,
-        "label": "진천덕산",
-        "address": "충북 진천군 용몽1길 11",
-        "depositManwon": 1055,
-        "rentManwon": 9
-      },
-      {
-        "lat": 36.851858116506286,
-        "lng": 127.44735064932473,
-        "label": "진천신정",
-        "address": "충북 진천군 진천읍 문화2길 14",
-        "depositManwon": 1300,
-        "rentManwon": 9
-      }
-    ]
-  },
-  "2015122300019916": {
-    "points": [
-      {
-        "lat": 36.52761801546975,
-        "lng": 129.40410066562526,
-        "label": "영덕영해 고령자복지주택",
-        "address": "경상북도 영덕군 동해대로 6560",
-        "depositManwon": 236,
-        "rentManwon": 5,
-        "district": "경상북도",
-        "districtId": "gyeongbuk"
-      },
-      {
-        "lat": 35.991236145899464,
-        "lng": 129.21168957334925,
-        "label": "경주안강 고령자복지주택",
-        "address": "경상북도 경주시 안강읍 화전길 61-2",
-        "depositManwon": 238,
-        "rentManwon": 5,
-        "district": "경상북도",
-        "districtId": "gyeongbuk"
-      }
-    ]
-  },
-  "2015122300019978": {
-    "districtId": "busan",
-    "points": [
-      {
-        "lat": 35.33913029933954,
-        "lng": 129.1689481099096,
-        "label": "부산정관1",
-        "address": "부산광역시 기장군 정관읍 모전리 681",
-        "depositManwon": 4025,
-        "rentManwon": 24,
-        "district": "부산광역시",
-        "districtId": "busan"
-      },
-      {
-        "lat": 35.33120470110246,
-        "lng": 129.16849879950894,
-        "label": "부산정관2",
-        "address": "부산광역시 기장군 정관읍 정관3로 51",
-        "depositManwon": 3132,
-        "rentManwon": 18,
-        "district": "부산광역시",
-        "districtId": "busan"
-      },
-      {
-        "lat": 35.34070810819847,
-        "lng": 129.1622445493868,
-        "label": "부산정관7",
-        "address": "부산광역시 기장군 정관읍 정관1로 51",
-        "depositManwon": 794,
-        "rentManwon": 15,
-        "district": "부산광역시",
-        "districtId": "busan"
-      },
-      {
-        "lat": 35.18295665826862,
-        "lng": 129.1976271125011,
-        "label": "부산송정1",
-        "address": "부산광역시 해운대구 송정1로 20",
-        "depositManwon": 1581,
-        "rentManwon": 13,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300019978-26271719.jpg",
-        "district": "부산광역시",
-        "districtId": "busan"
-      },
-      {
-        "lat": 35.19036997146415,
-        "lng": 129.205076919212,
-        "label": "부산송정2",
-        "address": "부산광역시 해운대구 해운대로 1188",
-        "depositManwon": 3132,
-        "rentManwon": 26,
-        "district": "부산광역시",
-        "districtId": "busan"
-      },
-      {
-        "lat": 35.197046040168786,
-        "lng": 129.10774499689282,
-        "label": "부산안락4",
-        "address": "부산광역시 동래구 명안로10번길 64",
-        "depositManwon": 3891,
-        "rentManwon": 25,
-        "district": "부산광역시",
-        "districtId": "busan"
-      },
-      {
-        "lat": 35.150846439434865,
-        "lng": 128.83217731154653,
-        "label": "부산지사",
-        "address": "부산광역시 강서구 과학산단2로20번길 13",
-        "depositManwon": 1059,
-        "rentManwon": 9,
-        "district": "부산광역시",
-        "districtId": "busan"
-      },
-      {
-        "lat": 35.14748480922351,
-        "lng": 129.05492852942263,
-        "label": "부산범천",
-        "address": "부산광역시 부산진구 신암로 66",
-        "depositManwon": 2924,
-        "rentManwon": 33,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300019978-26809711.jpg",
-        "district": "부산광역시",
-        "districtId": "busan"
-      },
-      {
-        "lat": 35.160829137844075,
-        "lng": 128.98451141063964,
-        "label": "부산괘법",
-        "address": "부산광역시 사상구 새벽로 220",
-        "depositManwon": 4439,
-        "rentManwon": 37,
-        "district": "부산광역시",
-        "districtId": "busan"
-      },
-      {
-        "lat": 35.15691659058925,
-        "lng": 128.98366584413432,
-        "label": "부산감전",
-        "address": "부산광역시 사상구 새벽로 178",
-        "depositManwon": 3115,
-        "rentManwon": 26,
-        "district": "부산광역시",
-        "districtId": "busan"
-      },
-      {
-        "lat": 35.15778520144026,
-        "lng": 129.06954850426158,
-        "label": "부산전포",
-        "address": "부산광역시 부산진구 동성로 82",
-        "depositManwon": 2922,
-        "rentManwon": 27,
-        "district": "부산광역시",
-        "districtId": "busan"
-      }
-    ]
-  },
-  "2015122300020182": {
-    "points": [
-      {
-        "lat": 36.12243129910932,
-        "lng": 128.11368378035576,
-        "label": "김천평화",
-        "address": "경상북도 김천시 평화길 134",
-        "depositManwon": 1435,
-        "rentManwon": 7,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300020182-42301744.jpg",
-        "district": "경상북도",
-        "districtId": "gyeongbuk"
-      },
-      {
-        "lat": 36.12058349157452,
-        "lng": 128.34980198326636,
-        "label": "구미송정포레",
-        "address": "경상북도 구미시 박정희로 491",
-        "depositManwon": 1924,
-        "rentManwon": 9,
-        "district": "경상북도",
-        "districtId": "gyeongbuk"
-      },
-      {
-        "lat": 36.38570008969308,
-        "lng": 128.44094787179245,
-        "label": "경북의성",
-        "address": "경상북도 의성군 안계면 서부로 1677",
-        "depositManwon": 1676,
-        "rentManwon": 8,
-        "district": "경상북도",
-        "districtId": "gyeongbuk"
-      }
-    ]
-  },
-  "2015122300020093": {
-    "points": [
-      {
-        "lat": 36.12243129910932,
-        "lng": 128.11368378035576,
-        "label": "김천평화",
-        "address": "경상북도 김천시 평화길 134",
-        "depositManwon": 1435,
-        "rentManwon": 7,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300020093-42301744.jpg",
-        "district": "경상북도",
-        "districtId": "gyeongbuk"
-      },
-      {
-        "lat": 36.12058349157452,
-        "lng": 128.34980198326636,
-        "label": "구미송정포레",
-        "address": "경상북도 구미시 박정희로 491",
-        "depositManwon": 1924,
-        "rentManwon": 9,
-        "district": "경상북도",
-        "districtId": "gyeongbuk"
-      },
-      {
-        "lat": 36.38570008969308,
-        "lng": 128.44094787179245,
-        "label": "경북의성",
-        "address": "경상북도 의성군 안계면 서부로 1677",
-        "depositManwon": 1676,
-        "rentManwon": 8,
-        "district": "경상북도",
-        "districtId": "gyeongbuk"
-      }
-    ]
-  },
-  "2015122300020036": {
-    "districtId": "jeonbuk",
-    "points": [
-      {
-        "lat": 35.95752787337415,
-        "lng": 126.98511787579159,
-        "label": "익산 부송 1",
-        "address": "전북특별자치도 익산시 무왕로22길 12",
-        "depositManwon": 247,
-        "rentManwon": 5,
-        "district": "전북특별자치도",
-        "districtId": "jeonbuk"
-      },
-      {
-        "lat": 35.93208280672823,
-        "lng": 126.97075744606002,
-        "label": "익산 동산",
-        "address": "전북특별자치도 익산시 동천로7길 26-5",
-        "depositManwon": 247,
-        "rentManwon": 5,
-        "district": "전북특별자치도",
-        "districtId": "jeonbuk"
-      }
-    ]
-  },
-  "2015122300020001": {
-    "districtId": "chungnam",
-    "points": [
-      {
-        "lat": 36.15098419947198,
-        "lng": 127.02271139975913,
-        "label": "논산금강빌리지",
-        "address": "충남 논산시 강경읍 동안로 96",
-        "depositManwon": 992,
-        "rentManwon": 6
-      },
-      {
-        "lat": 36.142013400764625,
-        "lng": 127.10328016462779,
-        "label": "논산월야",
-        "address": "충남 논산시 연무읍 안심로 250",
-        "depositManwon": 990,
-        "rentManwon": 8
-      },
-      {
-        "lat": 36.15223869571197,
-        "lng": 127.01256694245811,
-        "label": "논산조흥",
-        "address": "충남 논산시 강경읍 대흥로 5번길 37",
-        "depositManwon": 1063,
-        "rentManwon": 6
-      }
-    ]
-  },
-  "2015122300019988": {
-    "districtId": "gyeongbuk",
-    "points": [
-      {
-        "lat": 36.0903306805222,
-        "lng": 128.44691156956642,
-        "label": "구미구평",
-        "address": "경북 구미시 인동54길 25",
-        "depositManwon": 1825,
-        "rentManwon": 13
-      },
-      {
-        "lat": 36.14235013437014,
-        "lng": 128.42466816192297,
-        "label": "구미옥계2",
-        "address": "경북 구미시 옥계북로 43-52",
-        "depositManwon": 1463,
-        "rentManwon": 10
-      },
-      {
-        "lat": 36.23182222216403,
-        "lng": 128.5681260706179,
-        "label": "군위서부",
-        "address": "대구광역시 군위군 군위읍 동산새길 50",
-        "depositManwon": 1192,
-        "rentManwon": 10,
-        "district": "대구광역시",
-        "districtId": "daegu"
-      },
-      {
-        "lat": 36.11305886824353,
-        "lng": 128.15683301591736,
-        "label": "김천덕곡",
-        "address": "경북 김천시 무실7길 38",
-        "depositManwon": 1920,
-        "rentManwon": 14
-      },
-      {
-        "lat": 36.12094614441303,
-        "lng": 128.1738909734295,
-        "label": "김천혁신4",
-        "address": "경북 김천시 해오름1로 17",
-        "depositManwon": 857,
-        "rentManwon": 15
-      },
-      {
-        "lat": 36.34958980775065,
-        "lng": 128.7084862642492,
-        "label": "의성상리",
-        "address": "경북 의성군 의성읍 동서1길 114",
-        "depositManwon": 1046,
-        "rentManwon": 9
-      },
-      {
-        "lat": 36.3857162021047,
-        "lng": 128.4393110164214,
-        "label": "경북의성",
-        "address": "경북 의성군 안계면 용기2길 31",
-        "depositManwon": 675,
-        "rentManwon": 16,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300019988-55711997.jpg"
-      }
-    ]
-  },
-  "2015122300019946": {
-    "points": [
-      {
-        "lat": 36.0903306805222,
-        "lng": 128.44691156956642,
-        "label": "구미구평",
-        "address": "경상북도 구미시 인동54길 25",
-        "depositManwon": 1825,
-        "rentManwon": 13,
-        "district": "경상북도",
-        "districtId": "gyeongbuk"
-      },
-      {
-        "lat": 36.14235013437014,
-        "lng": 128.42466816192297,
-        "label": "구미옥계2",
-        "address": "경상북도 구미시 옥계북로 43-52",
-        "depositManwon": 1463,
-        "rentManwon": 10,
-        "district": "경상북도",
-        "districtId": "gyeongbuk"
-      },
-      {
-        "lat": 36.23182222216403,
-        "lng": 128.5681260706179,
-        "label": "군위서부",
-        "address": "대구광역시 군위군 군위읍 동산새길 50",
-        "depositManwon": 1192,
-        "rentManwon": 10,
-        "district": "대구광역시",
-        "districtId": "daegu"
-      },
-      {
-        "lat": 36.11305886824353,
-        "lng": 128.15683301591736,
-        "label": "김천덕곡",
-        "address": "경상북도 김천시 무실7길 38",
-        "depositManwon": 1920,
-        "rentManwon": 14,
-        "district": "경상북도",
-        "districtId": "gyeongbuk"
-      },
-      {
-        "lat": 36.12094614441303,
-        "lng": 128.1738909734295,
-        "label": "김천혁신4",
-        "address": "경상북도 김천시 해오름1로 17",
-        "depositManwon": 857,
-        "rentManwon": 15,
-        "district": "경상북도",
-        "districtId": "gyeongbuk"
-      },
-      {
-        "lat": 36.34958980775065,
-        "lng": 128.7084862642492,
-        "label": "의성상리",
-        "address": "경상북도 의성군 의성읍 동서1길 114",
-        "depositManwon": 1046,
-        "rentManwon": 9,
-        "district": "경상북도",
-        "districtId": "gyeongbuk"
-      },
-      {
-        "lat": 36.3857162021047,
-        "lng": 128.4393110164214,
-        "label": "경북의성",
-        "address": "경상북도 의성군 안계면 용기2길 31",
-        "depositManwon": 675,
-        "rentManwon": 16,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300019946-55711997.jpg",
-        "district": "경상북도",
-        "districtId": "gyeongbuk"
-      }
-    ]
-  },
-  "2015122300019937": {
-    "points": [
-      {
-        "lat": 36.574485888426295,
-        "lng": 128.68778465373737,
-        "label": "안동송현3",
-        "address": "경상북도 안동시 송현길 16",
-        "depositManwon": 1206,
-        "rentManwon": 12,
-        "district": "경상북도",
-        "districtId": "gyeongbuk"
-      },
-      {
-        "lat": 36.56295724355222,
-        "lng": 128.69623171476758,
-        "label": "안동옥동6",
-        "address": "경상북도 안동시 옥서1길 46",
-        "depositManwon": 1677,
-        "rentManwon": 14,
-        "district": "경상북도",
-        "districtId": "gyeongbuk"
-      },
-      {
-        "lat": 36.423474458356345,
-        "lng": 128.15513165691902,
-        "label": "상주무양7",
-        "address": "경상북도 상주시 동수4길 55",
-        "depositManwon": 965,
-        "rentManwon": 14,
-        "district": "경상북도",
-        "districtId": "gyeongbuk"
-      },
-      {
-        "lat": 36.572114186396696,
-        "lng": 128.18266156560233,
-        "label": "상주함창1",
-        "address": "경상북도 상주시 함창읍 함령길 138",
-        "depositManwon": 856,
-        "rentManwon": 17,
-        "district": "경상북도",
-        "districtId": "gyeongbuk"
-      }
-    ]
-  },
-  "2015122300019964": {
-    "districtId": "gwangju",
-    "points": [
-      {
-        "lat": 35.12887306815128,
-        "lng": 126.78973166770226,
-        "label": "도산청암",
-        "address": "광주광역시 광산구 남동길30번길 28",
-        "depositManwon": 1018,
-        "rentManwon": 9,
-        "district": "광주광역시",
-        "districtId": "gwangju"
-      },
-      {
-        "lat": 35.12856936853069,
-        "lng": 126.7883653736336,
-        "label": "삼라미주",
-        "address": "광주광역시 광산구 남동길 15",
-        "depositManwon": 980,
-        "rentManwon": 7,
-        "district": "광주광역시",
-        "districtId": "gwangju"
-      }
-    ]
-  },
-  "2015122300019955": {
-    "districtId": "chungnam",
-    "points": [
-      {
-        "lat": 36.15098419947198,
-        "lng": 127.02271139975913,
-        "label": "논산금강빌리지",
-        "address": "충남 논산시 강경읍 동안로 96",
-        "depositManwon": 992,
-        "rentManwon": 6
-      },
-      {
-        "lat": 36.142013400764625,
-        "lng": 127.10328016462779,
-        "label": "논산월야",
-        "address": "충남 논산시 연무읍 안심로 250",
-        "depositManwon": 990,
-        "rentManwon": 8
-      },
-      {
-        "lat": 36.15223869571197,
-        "lng": 127.01256694245811,
-        "label": "논산조흥",
-        "address": "충남 논산시 강경읍 대흥로 5번길 37",
-        "depositManwon": 1063,
-        "rentManwon": 6
-      }
-    ]
-  },
-  "2015122300019936": {
-    "districtId": "ulsan",
-    "points": [
-      {
-        "lat": 35.64381762635725,
-        "lng": 129.35165134662395,
-        "label": "울산매곡",
-        "address": "울산광역시 북구 신천로 60",
-        "depositManwon": 3149,
-        "rentManwon": 26,
-        "district": "울산광역시",
-        "districtId": "ulsan"
-      },
-      {
-        "lat": 35.48970637048677,
-        "lng": 129.42937114520188,
-        "label": "울산방어",
-        "address": "울산광역시 동구 등대4길 25",
-        "depositManwon": 3232,
-        "rentManwon": 23,
-        "district": "울산광역시",
-        "districtId": "ulsan"
-      },
-      {
-        "lat": 35.457050685092625,
-        "lng": 129.1928308149745,
-        "label": "울산웅촌",
-        "address": "울산광역시 울주군 웅촌면 곡천검단로 159",
-        "depositManwon": 756,
-        "rentManwon": 13,
-        "district": "울산광역시",
-        "districtId": "ulsan"
-      },
-      {
-        "lat": 35.5596115303416,
-        "lng": 129.11262953667,
-        "label": "울산교동",
-        "address": "울산광역시 울주군 삼남읍 교동리 봉화마을길9",
-        "depositManwon": 1220,
-        "rentManwon": 8,
-        "district": "울산광역시",
-        "districtId": "ulsan"
-      },
-      {
-        "lat": 35.631156702073596,
-        "lng": 129.3572922561837,
-        "label": "울산호계1",
-        "address": "울산광역시 북구 동대12길 30",
-        "depositManwon": 2664,
-        "rentManwon": 26,
-        "district": "울산광역시",
-        "districtId": "ulsan"
-      },
-      {
-        "lat": 35.63083636527205,
-        "lng": 129.3566144472277,
-        "label": "울산호계2",
-        "address": "울산광역시 북구 동대11길 36",
-        "depositManwon": 1506,
-        "rentManwon": 13,
-        "district": "울산광역시",
-        "districtId": "ulsan"
-      }
-    ]
-  },
-  "2015122300019908": {
-    "districtId": "incheon",
-    "points": [
-      {
-        "lat": 37.409167037365556,
-        "lng": 126.73360045142428,
-        "label": "인천논현12",
-        "address": "인천광역시 남동구 청능대로 715번길 59",
-        "depositManwon": 2028,
-        "rentManwon": 23,
-        "district": "인천광역시",
-        "districtId": "incheon"
-      },
-      {
-        "lat": 37.40768531145237,
-        "lng": 126.73686875027815,
-        "label": "인천논현14",
-        "address": "인천광역시 남동구 청능대로 715번길 22",
-        "depositManwon": 1973,
-        "rentManwon": 22,
-        "district": "인천광역시",
-        "districtId": "incheon"
-      },
-      {
-        "lat": 37.4304247475065,
-        "lng": 126.7438369964678,
-        "label": "인천서창1",
-        "address": "인천광역시 남동구 서창남순환로 124-14",
-        "depositManwon": 1416,
-        "rentManwon": 14,
-        "district": "인천광역시",
-        "districtId": "incheon"
-      }
-    ]
-  },
-  "2015122300019899": {
-    "districtId": "gyeonggi",
-    "points": [
-      {
-        "lat": 37.75382205135372,
-        "lng": 127.06043211250997,
-        "label": "의정부금오2",
-        "address": "경기도 의정부시 하금로 44",
-        "depositManwon": 1698,
-        "rentManwon": 22,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300019899-24547380.jpg",
-        "district": "경기도",
-        "districtId": "gyeonggi"
-      },
-      {
-        "lat": 37.76072687326953,
-        "lng": 127.03928890548805,
-        "label": "의정부녹양1",
-        "address": "경기도 의정부시 체육로 278",
-        "depositManwon": 1702,
-        "rentManwon": 21,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300019899-24548436.jpg",
-        "district": "경기도",
-        "districtId": "gyeonggi"
-      },
-      {
-        "lat": 37.748591128575924,
-        "lng": 127.09989820345899,
-        "label": "의정부민락3",
-        "address": "경기도 의정부시 오목로 251",
-        "depositManwon": 1807,
-        "rentManwon": 18,
-        "district": "경기도",
-        "districtId": "gyeonggi"
-      },
-      {
-        "lat": 37.75365522214334,
-        "lng": 127.11199347227489,
-        "label": "의정부민락8",
-        "address": "경기도 의정부시 송양로 45",
-        "depositManwon": 1485,
-        "rentManwon": 15,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300019899-24547737.jpg",
-        "district": "경기도",
-        "districtId": "gyeonggi"
-      },
-      {
-        "lat": 37.75712272810445,
-        "lng": 127.11686323237893,
-        "label": "의정부민락13",
-        "address": "경기도 의정부시 용민로 429-39",
-        "depositManwon": 1497,
-        "rentManwon": 17,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300019899-24548215.jpg",
-        "district": "경기도",
-        "districtId": "gyeonggi"
-      },
-      {
-        "lat": 37.75494409968172,
-        "lng": 127.11520176577244,
-        "label": "의정부민락16",
-        "address": "경기도 의정부시 용민로 420",
-        "depositManwon": 1671,
-        "rentManwon": 18,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300019899-24548114.jpg",
-        "district": "경기도",
-        "districtId": "gyeonggi"
-      },
-      {
-        "lat": 37.918125468524536,
-        "lng": 127.22335241838869,
-        "label": "포천산호",
-        "address": "경기도 포천시 신북면 호국로 1886-27",
-        "depositManwon": 997,
-        "rentManwon": 8,
-        "district": "경기도",
-        "districtId": "gyeonggi"
-      },
-      {
-        "lat": 37.894408147389086,
-        "lng": 127.19220937779944,
-        "label": "포천신읍1",
-        "address": "경기도 포천시 왕방로 118번길 7",
-        "depositManwon": 1175,
-        "rentManwon": 13,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300019899-24547661.jpg",
-        "district": "경기도",
-        "districtId": "gyeonggi"
-      }
-    ]
-  },
-  "2015122300019878": {
-    "districtId": "gyeonggi",
-    "points": [
-      {
-        "lat": 37.372084878189156,
-        "lng": 126.81030502467647,
-        "label": "시흥능곡2",
-        "address": "경기도 시흥시 승지로 89 (능곡동 502)",
-        "depositManwon": 1776,
-        "rentManwon": 15,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300019878-24547532.jpg",
-        "district": "경기도",
-        "districtId": "gyeonggi"
-      },
-      {
-        "lat": 37.3710096333091,
-        "lng": 126.81305905351513,
-        "label": "시흥능곡5",
-        "address": "경기도 시흥시 능곡중앙로 77 (능곡동 557)",
-        "depositManwon": 1536,
-        "rentManwon": 13,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300019878-24547537.jpg",
-        "district": "경기도",
-        "districtId": "gyeonggi"
-      },
-      {
-        "lat": 37.36760627749335,
-        "lng": 126.80923757285635,
-        "label": "시흥능곡6",
-        "address": "경기도 시흥시 승지로 33 (능곡동 768)",
-        "depositManwon": 1776,
-        "rentManwon": 15,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300019878-24547540.jpg",
-        "district": "경기도",
-        "districtId": "gyeonggi"
-      },
-      {
-        "lat": 37.36744995851829,
-        "lng": 126.80993952582719,
-        "label": "시흥능곡7",
-        "address": "경기도 시흥시 승지로 34 (능곡동 772)",
-        "depositManwon": 1776,
-        "rentManwon": 15,
-        "district": "경기도",
-        "districtId": "gyeonggi"
-      },
-      {
-        "lat": 37.366972032727475,
-        "lng": 126.81266860297937,
-        "label": "시흥능곡9",
-        "address": "경기도 시흥시 능곡중앙로 34 (능곡동 787)",
-        "depositManwon": 1536,
-        "rentManwon": 13,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300019878-24547545.jpg",
-        "district": "경기도",
-        "districtId": "gyeonggi"
-      },
-      {
-        "lat": 37.363660434636756,
-        "lng": 126.81330853208539,
-        "label": "시흥능곡13",
-        "address": "경기도 시흥시 시흥대로268번길 53 (능곡동 800)",
-        "depositManwon": 1776,
-        "rentManwon": 15,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300019878-24547429.jpg",
-        "district": "경기도",
-        "districtId": "gyeonggi"
-      }
-    ]
-  },
-  "2015122300019866": {
-    "districtId": "incheon",
-    "points": [
-      {
-        "lat": 37.409167037365556,
-        "lng": 126.73360045142428,
-        "label": "인천논현12",
-        "address": "인천광역시 남동구 청능대로 715번길 59",
-        "depositManwon": 2028,
-        "rentManwon": 23,
-        "district": "인천광역시",
-        "districtId": "incheon"
-      },
-      {
-        "lat": 37.40768531145237,
-        "lng": 126.73686875027815,
-        "label": "인천논현14",
-        "address": "인천광역시 남동구 청능대로 715번길 22",
-        "depositManwon": 1973,
-        "rentManwon": 22,
-        "district": "인천광역시",
-        "districtId": "incheon"
-      },
-      {
-        "lat": 37.4304247475065,
-        "lng": 126.7438369964678,
-        "label": "인천서창1",
-        "address": "인천광역시 남동구 서창남순환로 124-14",
-        "depositManwon": 1416,
-        "rentManwon": 14,
-        "district": "인천광역시",
-        "districtId": "incheon"
-      }
-    ]
-  },
-  "2015122300020230": {
-    "districtId": "incheon",
-    "points": [
-      {
-        "lat": 37.4794456373032,
-        "lng": 126.475635954708,
-        "label": "해밀톤캐슬",
-        "address": "인천광역시 중구"
-      },
-      {
-        "lat": 37.4570756444155,
-        "lng": 126.664971932721,
-        "label": "미추홀구",
-        "address": "인천광역시 미추홀구"
-      },
-      {
-        "lat": 37.4473487903569,
-        "lng": 126.73148773974,
-        "label": "렉스타운",
-        "address": "인천광역시 남동구"
-      },
-      {
-        "lat": 37.5374956682829,
-        "lng": 126.73770466472,
-        "label": "예린펠리시티",
-        "address": "인천광역시 계양구"
-      },
-      {
-        "lat": 37.6055943684634,
-        "lng": 126.665652344353,
-        "label": "서구",
-        "address": "인천광역시 서구"
-      },
-      {
-        "lat": 37.4965957109918,
-        "lng": 126.787016804225,
-        "label": "센텀시티",
-        "address": "부천시 원미구"
-      }
-    ]
-  },
-  "2015122300020226": {
-    "districtId": "incheon",
-    "points": [
-      {
-        "lat": 37.4794456373032,
-        "lng": 126.475635954708,
-        "label": "해밀톤캐슬",
-        "address": "인천광역시 중구"
-      },
-      {
-        "lat": 37.4570756444155,
-        "lng": 126.664971932721,
-        "label": "미추홀구",
-        "address": "인천광역시 미추홀구"
-      },
-      {
-        "lat": 37.4473487903569,
-        "lng": 126.73148773974,
-        "label": "렉스타운",
-        "address": "인천광역시 남동구"
-      },
-      {
-        "lat": 37.5374956682829,
-        "lng": 126.73770466472,
-        "label": "예린펠리시티",
-        "address": "인천광역시 계양구"
-      },
-      {
-        "lat": 37.6055943684634,
-        "lng": 126.665652344353,
-        "label": "서구",
-        "address": "인천광역시 서구"
-      },
-      {
-        "lat": 37.4965957109918,
-        "lng": 126.787016804225,
-        "label": "센텀시티",
-        "address": "부천시 원미구"
-      }
-    ]
-  },
-  "2015122300020090": {
-    "districtId": "gangwon",
-    "district": "강원특별자치도",
-    "points": [
-      {
-        "lat": 37.4498976008043,
-        "lng": 129.165111673939,
-        "address": "강원특별자치도 삼척시",
-        "districtId": "gangwon",
-        "district": "강원특별자치도"
-      },
-      {
-        "lat": 37.3805844996072,
-        "lng": 128.660813602081,
-        "address": "강원특별자치도 정선군",
-        "districtId": "gangwon",
-        "district": "강원특별자치도"
-      }
-    ]
-  },
-  "2015122300020267": {
-    "districtId": "chungbuk",
-    "district": "충청북도",
-    "points": [
-      {
-        "lat": 36.9403218849117,
-        "lng": 127.690480041094,
-        "address": "충청북도 음성군",
-        "districtId": "chungbuk",
-        "district": "충청북도"
-      }
-    ]
-  },
-  "2015122300020241": {
-    "districtId": "gyeonggi",
-    "district": "경기도",
-    "points": [
-      {
-        "lat": 37.3219085506384,
-        "lng": 126.830834434401,
-        "address": "경기도 안산시",
-        "districtId": "gyeonggi",
-        "district": "경기도"
-      }
-    ]
-  },
-  "2015122300020251": {
-    "districtId": "daegu",
-    "district": "대구광역시",
-    "points": [
-      {
-        "lat": 35.8713802646199,
-        "lng": 128.601805491072,
-        "address": "대구광역시 대구",
-        "districtId": "daegu",
-        "district": "대구광역시"
-      }
-    ]
-  },
-  "2015122300020250": {
-    "districtId": "daegu",
-    "district": "대구광역시",
-    "points": [
-      {
-        "lat": 35.8713802646199,
-        "lng": 128.601805491072,
-        "address": "대구광역시 대구",
-        "districtId": "daegu",
-        "district": "대구광역시"
-      }
-    ]
-  },
-  "2015122300020245": {
-    "districtId": "gyeonggi",
-    "district": "경기도",
-    "points": [
-      {
-        "lat": 37.5035117792841,
-        "lng": 126.766038450927,
-        "address": "경기도 부천시",
-        "districtId": "gyeonggi",
-        "district": "경기도"
-      }
-    ]
-  },
-  "2015122300020181": {
-    "districtId": "daegu",
-    "district": "대구광역시",
-    "points": [
-      {
-        "lat": 35.8713802646199,
-        "lng": 128.601805491072,
-        "address": "대구광역시 대구",
-        "districtId": "daegu",
-        "district": "대구광역시"
-      }
-    ]
-  },
-  "2015122300020180": {
-    "districtId": "daegu",
-    "district": "대구광역시",
-    "points": [
-      {
-        "lat": 35.8713802646199,
-        "lng": 128.601805491072,
-        "address": "대구광역시 대구",
-        "districtId": "daegu",
-        "district": "대구광역시"
-      }
-    ]
-  },
-  "2015122300020179": {
-    "districtId": "gyeongbuk",
+    "districtId": "chungbuk"
+   }
+  ]
+ },
+ "2015122300020006": {
+  "districtId": "busan",
+  "points": [
+   {
+    "lat": 35.33913029933954,
+    "lng": 129.1689481099096,
+    "label": "부산정관1",
+    "address": "부산광역시 기장군 정관읍 모전리 681",
+    "depositManwon": 4025,
+    "rentManwon": 24,
+    "district": "부산광역시",
+    "districtId": "busan"
+   },
+   {
+    "lat": 35.33120470110246,
+    "lng": 129.16849879950894,
+    "label": "부산정관2",
+    "address": "부산광역시 기장군 정관읍 정관3로 51",
+    "depositManwon": 3132,
+    "rentManwon": 18,
+    "district": "부산광역시",
+    "districtId": "busan"
+   },
+   {
+    "lat": 35.34070810819847,
+    "lng": 129.1622445493868,
+    "label": "부산정관7",
+    "address": "부산광역시 기장군 정관읍 정관1로 51",
+    "depositManwon": 794,
+    "rentManwon": 15,
+    "district": "부산광역시",
+    "districtId": "busan"
+   },
+   {
+    "lat": 35.18295665826862,
+    "lng": 129.1976271125011,
+    "label": "부산송정1",
+    "address": "부산광역시 해운대구 송정1로 20",
+    "depositManwon": 1581,
+    "rentManwon": 13,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300020006-26271719.jpg",
+    "district": "부산광역시",
+    "districtId": "busan"
+   },
+   {
+    "lat": 35.19036997146415,
+    "lng": 129.205076919212,
+    "label": "부산송정2",
+    "address": "부산광역시 해운대구 해운대로 1188",
+    "depositManwon": 3132,
+    "rentManwon": 26,
+    "district": "부산광역시",
+    "districtId": "busan"
+   },
+   {
+    "lat": 35.197046040168786,
+    "lng": 129.10774499689282,
+    "label": "부산안락4",
+    "address": "부산광역시 동래구 명안로10번길 64",
+    "depositManwon": 3891,
+    "rentManwon": 25,
+    "district": "부산광역시",
+    "districtId": "busan"
+   },
+   {
+    "lat": 35.150846439434865,
+    "lng": 128.83217731154653,
+    "label": "부산지사",
+    "address": "부산광역시 강서구 과학산단2로20번길 13",
+    "depositManwon": 1059,
+    "rentManwon": 9,
+    "district": "부산광역시",
+    "districtId": "busan"
+   },
+   {
+    "lat": 35.14748480922351,
+    "lng": 129.05492852942263,
+    "label": "부산범천",
+    "address": "부산광역시 부산진구 신암로 66",
+    "depositManwon": 2924,
+    "rentManwon": 33,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300020006-26809711.jpg",
+    "district": "부산광역시",
+    "districtId": "busan"
+   },
+   {
+    "lat": 35.160829137844075,
+    "lng": 128.98451141063964,
+    "label": "부산괘법",
+    "address": "부산광역시 사상구 새벽로 220",
+    "depositManwon": 4439,
+    "rentManwon": 37,
+    "district": "부산광역시",
+    "districtId": "busan"
+   },
+   {
+    "lat": 35.15691659058925,
+    "lng": 128.98366584413432,
+    "label": "부산감전",
+    "address": "부산광역시 사상구 새벽로 178",
+    "depositManwon": 3115,
+    "rentManwon": 26,
+    "district": "부산광역시",
+    "districtId": "busan"
+   },
+   {
+    "lat": 35.15778520144026,
+    "lng": 129.06954850426158,
+    "label": "부산전포",
+    "address": "부산광역시 부산진구 동성로 82",
+    "depositManwon": 2922,
+    "rentManwon": 27,
+    "district": "부산광역시",
+    "districtId": "busan"
+   }
+  ]
+ },
+ "2015122300019985": {
+  "points": [
+   {
+    "lat": 36.04368919918822,
+    "lng": 129.36917966902746,
+    "label": "포항중앙",
+    "address": "경상북도 포항시 북구 동빈로 77-9",
+    "depositManwon": 1476,
+    "rentManwon": 7,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300019985-42286893.jpg",
     "district": "경상북도",
-    "points": [
-      {
-        "lat": 35.8713802646199,
-        "lng": 128.601805491072,
-        "address": "경상북도 대구",
-        "districtId": "gyeongbuk",
-        "district": "경상북도"
-      }
-    ]
-  },
-  "2015122300020178": {
-    "districtId": "daegu",
+    "districtId": "gyeongbuk"
+   },
+   {
+    "lat": 35.995936852994674,
+    "lng": 129.42198021689842,
+    "label": "포항일월",
+    "address": "경상북도 포항시 남구 청림로 58번길 66",
+    "depositManwon": 1812,
+    "rentManwon": 8,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300019985-43660356.jpg",
+    "district": "경상북도",
+    "districtId": "gyeongbuk"
+   }
+  ]
+ },
+ "2015122300019925": {
+  "districtId": "daegu",
+  "points": [
+   {
+    "lat": 35.802442282485885,
+    "lng": 128.62501635538334,
+    "label": "달성용계",
+    "address": "대구광역시 달성군 가창면 가창로216길 25",
+    "depositManwon": 2554,
+    "rentManwon": 22,
     "district": "대구광역시",
-    "points": [
-      {
-        "lat": 35.8713802646199,
-        "lng": 128.601805491072,
-        "address": "대구광역시 대구",
-        "districtId": "daegu",
-        "district": "대구광역시"
-      }
-    ]
-  },
-  "2015122300020237": {
-    "districtId": "gyeonggi",
+    "districtId": "daegu"
+   },
+   {
+    "lat": 35.868945656599905,
+    "lng": 128.4976565464554,
+    "label": "대구서재",
+    "address": "대구광역시 달성군 다사읍 서재로14길 2",
+    "depositManwon": 1672,
+    "rentManwon": 13,
+    "district": "대구광역시",
+    "districtId": "daegu"
+   },
+   {
+    "lat": 35.692345645870994,
+    "lng": 128.45023478694554,
+    "label": "대구테크노 2단지",
+    "address": "대구광역시 달성군 현풍읍 테크노북로2길",
+    "depositManwon": 866,
+    "rentManwon": 16,
+    "district": "대구광역시",
+    "districtId": "daegu"
+   },
+   {
+    "lat": 35.85872796239402,
+    "lng": 128.4668038617797,
+    "label": "대구죽곡",
+    "address": "대구광역시 달성군 다사읍 대실역북로 1길 6",
+    "depositManwon": 2558,
+    "rentManwon": 18,
+    "district": "대구광역시",
+    "districtId": "daegu"
+   },
+   {
+    "lat": 35.8237308123395,
+    "lng": 128.44998050507306,
+    "label": "고령다산1",
+    "address": "경상북도 고령군 다산면 상곡길 28",
+    "depositManwon": 2515,
+    "rentManwon": 11,
+    "district": "경상북도",
+    "districtId": "gyeongbuk"
+   },
+   {
+    "lat": 35.829097311901364,
+    "lng": 128.45250503439075,
+    "label": "고령다산3",
+    "address": "경상북도 고령군 다산면 평리6길 30",
+    "depositManwon": 1071,
+    "rentManwon": 8,
+    "district": "경상북도",
+    "districtId": "gyeongbuk"
+   }
+  ]
+ },
+ "2015122300019975": {
+  "districtId": "gwangju",
+  "points": [
+   {
+    "lat": 35.20727086886127,
+    "lng": 126.85807542986119,
+    "label": "광주첨단1",
+    "address": "광주광역시 북구 첨단연신로 250",
+    "depositManwon": 2805,
+    "rentManwon": 16,
+    "district": "광주광역시",
+    "districtId": "gwangju"
+   },
+   {
+    "lat": 35.20248331630129,
+    "lng": 126.87080588204387,
+    "label": "광주연제",
+    "address": "광주광역시 북구 양산제로 110",
+    "depositManwon": 1757,
+    "rentManwon": 9,
+    "district": "광주광역시",
+    "districtId": "gwangju"
+   },
+   {
+    "lat": 35.21735203136778,
+    "lng": 126.87517721262554,
+    "label": "광주용두2",
+    "address": "광주광역시 북구 하서로483번길 22",
+    "depositManwon": 2724,
+    "rentManwon": 15,
+    "district": "광주광역시",
+    "districtId": "gwangju"
+   },
+   {
+    "lat": 35.18705584333724,
+    "lng": 126.89551528994281,
+    "label": "광주용봉",
+    "address": "광주광역시 북구 매곡로 20",
+    "depositManwon": 2137,
+    "rentManwon": 16,
+    "district": "광주광역시",
+    "districtId": "gwangju"
+   },
+   {
+    "lat": 35.177143554691455,
+    "lng": 126.86463884012596,
+    "label": "광주죽림",
+    "address": "광주광역시 북구 유림로 160번길 5",
+    "district": "광주광역시",
+    "districtId": "gwangju"
+   },
+   {
+    "lat": 35.192587126793114,
+    "lng": 126.90235381138677,
+    "label": "오치청암",
+    "address": "광주광역시 북구 우치로 311번길 20",
+    "district": "광주광역시",
+    "districtId": "gwangju"
+   },
+   {
+    "lat": 35.14764502485795,
+    "lng": 126.77922953307257,
+    "label": "광주선운1",
+    "address": "광주광역시 광산구 선운중앙로 68",
+    "coverPhotoLocal": "/lh-covers/lh-2015122300019975-24548538.jpg",
+    "district": "광주광역시",
+    "districtId": "gwangju"
+   },
+   {
+    "lat": 35.20089153390134,
+    "lng": 126.81155850972326,
+    "label": "광주수완7",
+    "address": "광주광역시 광산구 풍영로329번길 50",
+    "coverPhotoLocal": "/lh-covers/lh-2015122300019975-24547514.jpg",
+    "district": "광주광역시",
+    "districtId": "gwangju"
+   },
+   {
+    "lat": 35.13028483329178,
+    "lng": 126.79588013710855,
+    "label": "금강2차",
+    "address": "광주광역시 광산구 송도로182번길 15-12",
+    "district": "광주광역시",
+    "districtId": "gwangju"
+   },
+   {
+    "lat": 35.11025237688219,
+    "lng": 126.89984662017599,
+    "label": "광주송화1",
+    "address": "광주광역시 남구 효우로 60번길 50",
+    "district": "광주광역시",
+    "districtId": "gwangju"
+   },
+   {
+    "lat": 35.10809226667452,
+    "lng": 126.90039620788428,
+    "label": "광주송화2",
+    "address": "광주광역시 남구 효우로 60번길 37",
+    "district": "광주광역시",
+    "districtId": "gwangju"
+   },
+   {
+    "lat": 35.107986601566566,
+    "lng": 126.90376100584096,
+    "label": "광주송화4",
+    "address": "광주광역시 남구 효우로 60번길 9",
+    "district": "광주광역시",
+    "districtId": "gwangju"
+   },
+   {
+    "lat": 35.10709613660064,
+    "lng": 126.86372365438237,
+    "label": "광주효천1",
+    "address": "광주광역시 남구 효천로 176",
+    "district": "광주광역시",
+    "districtId": "gwangju"
+   },
+   {
+    "lat": 35.10351257964542,
+    "lng": 126.88764608122237,
+    "label": "광주효천2지구 1단지",
+    "address": "광주광역시 남구 효우로 262",
+    "district": "광주광역시",
+    "districtId": "gwangju"
+   },
+   {
+    "lat": 35.184841488691376,
+    "lng": 126.83158763608674,
+    "label": "광주신가",
+    "address": "광주광역시 광산구 수등로 204",
+    "district": "광주광역시",
+    "districtId": "gwangju"
+   },
+   {
+    "lat": 35.185609118072094,
+    "lng": 126.82368036779538,
+    "label": "광주아름마을1",
+    "address": "광주광역시 광산구 수등로123번길 70",
+    "district": "광주광역시",
+    "districtId": "gwangju"
+   }
+  ]
+ },
+ "2015122300019959": {
+  "districtId": "chungbuk",
+  "points": [
+   {
+    "lat": 36.86097324417392,
+    "lng": 127.43798401480507,
+    "label": "진천벽암",
+    "address": "충북 진천군 문화로 237-19",
+    "depositManwon": 1257,
+    "rentManwon": 11,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300019959-47900570.jpg"
+   },
+   {
+    "lat": 36.912460110615356,
+    "lng": 127.51017611633554,
+    "label": "진천덕산",
+    "address": "충북 진천군 용몽1길 11",
+    "depositManwon": 1055,
+    "rentManwon": 9
+   },
+   {
+    "lat": 36.851858116506286,
+    "lng": 127.44735064932473,
+    "label": "진천신정",
+    "address": "충북 진천군 진천읍 문화2길 14",
+    "depositManwon": 1300,
+    "rentManwon": 9
+   }
+  ]
+ },
+ "2015122300019916": {
+  "points": [
+   {
+    "lat": 36.52761801546975,
+    "lng": 129.40410066562526,
+    "label": "영덕영해 고령자복지주택",
+    "address": "경상북도 영덕군 동해대로 6560",
+    "depositManwon": 236,
+    "rentManwon": 5,
+    "district": "경상북도",
+    "districtId": "gyeongbuk"
+   },
+   {
+    "lat": 35.991236145899464,
+    "lng": 129.21168957334925,
+    "label": "경주안강 고령자복지주택",
+    "address": "경상북도 경주시 안강읍 화전길 61-2",
+    "depositManwon": 238,
+    "rentManwon": 5,
+    "district": "경상북도",
+    "districtId": "gyeongbuk"
+   }
+  ]
+ },
+ "2015122300019978": {
+  "districtId": "busan",
+  "points": [
+   {
+    "lat": 35.33913029933954,
+    "lng": 129.1689481099096,
+    "label": "부산정관1",
+    "address": "부산광역시 기장군 정관읍 모전리 681",
+    "depositManwon": 4025,
+    "rentManwon": 24,
+    "district": "부산광역시",
+    "districtId": "busan"
+   },
+   {
+    "lat": 35.33120470110246,
+    "lng": 129.16849879950894,
+    "label": "부산정관2",
+    "address": "부산광역시 기장군 정관읍 정관3로 51",
+    "depositManwon": 3132,
+    "rentManwon": 18,
+    "district": "부산광역시",
+    "districtId": "busan"
+   },
+   {
+    "lat": 35.34070810819847,
+    "lng": 129.1622445493868,
+    "label": "부산정관7",
+    "address": "부산광역시 기장군 정관읍 정관1로 51",
+    "depositManwon": 794,
+    "rentManwon": 15,
+    "district": "부산광역시",
+    "districtId": "busan"
+   },
+   {
+    "lat": 35.18295665826862,
+    "lng": 129.1976271125011,
+    "label": "부산송정1",
+    "address": "부산광역시 해운대구 송정1로 20",
+    "depositManwon": 1581,
+    "rentManwon": 13,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300019978-26271719.jpg",
+    "district": "부산광역시",
+    "districtId": "busan"
+   },
+   {
+    "lat": 35.19036997146415,
+    "lng": 129.205076919212,
+    "label": "부산송정2",
+    "address": "부산광역시 해운대구 해운대로 1188",
+    "depositManwon": 3132,
+    "rentManwon": 26,
+    "district": "부산광역시",
+    "districtId": "busan"
+   },
+   {
+    "lat": 35.197046040168786,
+    "lng": 129.10774499689282,
+    "label": "부산안락4",
+    "address": "부산광역시 동래구 명안로10번길 64",
+    "depositManwon": 3891,
+    "rentManwon": 25,
+    "district": "부산광역시",
+    "districtId": "busan"
+   },
+   {
+    "lat": 35.150846439434865,
+    "lng": 128.83217731154653,
+    "label": "부산지사",
+    "address": "부산광역시 강서구 과학산단2로20번길 13",
+    "depositManwon": 1059,
+    "rentManwon": 9,
+    "district": "부산광역시",
+    "districtId": "busan"
+   },
+   {
+    "lat": 35.14748480922351,
+    "lng": 129.05492852942263,
+    "label": "부산범천",
+    "address": "부산광역시 부산진구 신암로 66",
+    "depositManwon": 2924,
+    "rentManwon": 33,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300019978-26809711.jpg",
+    "district": "부산광역시",
+    "districtId": "busan"
+   },
+   {
+    "lat": 35.160829137844075,
+    "lng": 128.98451141063964,
+    "label": "부산괘법",
+    "address": "부산광역시 사상구 새벽로 220",
+    "depositManwon": 4439,
+    "rentManwon": 37,
+    "district": "부산광역시",
+    "districtId": "busan"
+   },
+   {
+    "lat": 35.15691659058925,
+    "lng": 128.98366584413432,
+    "label": "부산감전",
+    "address": "부산광역시 사상구 새벽로 178",
+    "depositManwon": 3115,
+    "rentManwon": 26,
+    "district": "부산광역시",
+    "districtId": "busan"
+   },
+   {
+    "lat": 35.15778520144026,
+    "lng": 129.06954850426158,
+    "label": "부산전포",
+    "address": "부산광역시 부산진구 동성로 82",
+    "depositManwon": 2922,
+    "rentManwon": 27,
+    "district": "부산광역시",
+    "districtId": "busan"
+   }
+  ]
+ },
+ "2015122300020182": {
+  "points": [
+   {
+    "lat": 36.12243129910932,
+    "lng": 128.11368378035576,
+    "label": "김천평화",
+    "address": "경상북도 김천시 평화길 134",
+    "depositManwon": 1435,
+    "rentManwon": 7,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300020182-42301744.jpg",
+    "district": "경상북도",
+    "districtId": "gyeongbuk"
+   },
+   {
+    "lat": 36.12058349157452,
+    "lng": 128.34980198326636,
+    "label": "구미송정포레",
+    "address": "경상북도 구미시 박정희로 491",
+    "depositManwon": 1924,
+    "rentManwon": 9,
+    "district": "경상북도",
+    "districtId": "gyeongbuk"
+   },
+   {
+    "lat": 36.38570008969308,
+    "lng": 128.44094787179245,
+    "label": "경북의성",
+    "address": "경상북도 의성군 안계면 서부로 1677",
+    "depositManwon": 1676,
+    "rentManwon": 8,
+    "district": "경상북도",
+    "districtId": "gyeongbuk"
+   }
+  ]
+ },
+ "2015122300020093": {
+  "points": [
+   {
+    "lat": 36.12243129910932,
+    "lng": 128.11368378035576,
+    "label": "김천평화",
+    "address": "경상북도 김천시 평화길 134",
+    "depositManwon": 1435,
+    "rentManwon": 7,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300020093-42301744.jpg",
+    "district": "경상북도",
+    "districtId": "gyeongbuk"
+   },
+   {
+    "lat": 36.12058349157452,
+    "lng": 128.34980198326636,
+    "label": "구미송정포레",
+    "address": "경상북도 구미시 박정희로 491",
+    "depositManwon": 1924,
+    "rentManwon": 9,
+    "district": "경상북도",
+    "districtId": "gyeongbuk"
+   },
+   {
+    "lat": 36.38570008969308,
+    "lng": 128.44094787179245,
+    "label": "경북의성",
+    "address": "경상북도 의성군 안계면 서부로 1677",
+    "depositManwon": 1676,
+    "rentManwon": 8,
+    "district": "경상북도",
+    "districtId": "gyeongbuk"
+   }
+  ]
+ },
+ "2015122300020036": {
+  "districtId": "jeonbuk",
+  "points": [
+   {
+    "lat": 35.95752787337415,
+    "lng": 126.98511787579159,
+    "label": "익산 부송 1",
+    "address": "전북특별자치도 익산시 무왕로22길 12",
+    "depositManwon": 247,
+    "rentManwon": 5,
+    "district": "전북특별자치도",
+    "districtId": "jeonbuk"
+   },
+   {
+    "lat": 35.93208280672823,
+    "lng": 126.97075744606002,
+    "label": "익산 동산",
+    "address": "전북특별자치도 익산시 동천로7길 26-5",
+    "depositManwon": 247,
+    "rentManwon": 5,
+    "district": "전북특별자치도",
+    "districtId": "jeonbuk"
+   }
+  ]
+ },
+ "2015122300020001": {
+  "districtId": "chungnam",
+  "points": [
+   {
+    "lat": 36.15098419947198,
+    "lng": 127.02271139975913,
+    "label": "논산금강빌리지",
+    "address": "충남 논산시 강경읍 동안로 96",
+    "depositManwon": 992,
+    "rentManwon": 6
+   },
+   {
+    "lat": 36.142013400764625,
+    "lng": 127.10328016462779,
+    "label": "논산월야",
+    "address": "충남 논산시 연무읍 안심로 250",
+    "depositManwon": 990,
+    "rentManwon": 8
+   },
+   {
+    "lat": 36.15223869571197,
+    "lng": 127.01256694245811,
+    "label": "논산조흥",
+    "address": "충남 논산시 강경읍 대흥로 5번길 37",
+    "depositManwon": 1063,
+    "rentManwon": 6
+   }
+  ]
+ },
+ "2015122300019988": {
+  "districtId": "gyeongbuk",
+  "points": [
+   {
+    "lat": 36.0903306805222,
+    "lng": 128.44691156956642,
+    "label": "구미구평",
+    "address": "경북 구미시 인동54길 25",
+    "depositManwon": 1825,
+    "rentManwon": 13
+   },
+   {
+    "lat": 36.14235013437014,
+    "lng": 128.42466816192297,
+    "label": "구미옥계2",
+    "address": "경북 구미시 옥계북로 43-52",
+    "depositManwon": 1463,
+    "rentManwon": 10
+   },
+   {
+    "lat": 36.23182222216403,
+    "lng": 128.5681260706179,
+    "label": "군위서부",
+    "address": "대구광역시 군위군 군위읍 동산새길 50",
+    "depositManwon": 1192,
+    "rentManwon": 10,
+    "district": "대구광역시",
+    "districtId": "daegu"
+   },
+   {
+    "lat": 36.11305886824353,
+    "lng": 128.15683301591736,
+    "label": "김천덕곡",
+    "address": "경북 김천시 무실7길 38",
+    "depositManwon": 1920,
+    "rentManwon": 14
+   },
+   {
+    "lat": 36.12094614441303,
+    "lng": 128.1738909734295,
+    "label": "김천혁신4",
+    "address": "경북 김천시 해오름1로 17",
+    "depositManwon": 857,
+    "rentManwon": 15
+   },
+   {
+    "lat": 36.34958980775065,
+    "lng": 128.7084862642492,
+    "label": "의성상리",
+    "address": "경북 의성군 의성읍 동서1길 114",
+    "depositManwon": 1046,
+    "rentManwon": 9
+   },
+   {
+    "lat": 36.3857162021047,
+    "lng": 128.4393110164214,
+    "label": "경북의성",
+    "address": "경북 의성군 안계면 용기2길 31",
+    "depositManwon": 675,
+    "rentManwon": 16,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300019988-55711997.jpg"
+   }
+  ]
+ },
+ "2015122300019946": {
+  "points": [
+   {
+    "lat": 36.0903306805222,
+    "lng": 128.44691156956642,
+    "label": "구미구평",
+    "address": "경상북도 구미시 인동54길 25",
+    "depositManwon": 1825,
+    "rentManwon": 13,
+    "district": "경상북도",
+    "districtId": "gyeongbuk"
+   },
+   {
+    "lat": 36.14235013437014,
+    "lng": 128.42466816192297,
+    "label": "구미옥계2",
+    "address": "경상북도 구미시 옥계북로 43-52",
+    "depositManwon": 1463,
+    "rentManwon": 10,
+    "district": "경상북도",
+    "districtId": "gyeongbuk"
+   },
+   {
+    "lat": 36.23182222216403,
+    "lng": 128.5681260706179,
+    "label": "군위서부",
+    "address": "대구광역시 군위군 군위읍 동산새길 50",
+    "depositManwon": 1192,
+    "rentManwon": 10,
+    "district": "대구광역시",
+    "districtId": "daegu"
+   },
+   {
+    "lat": 36.11305886824353,
+    "lng": 128.15683301591736,
+    "label": "김천덕곡",
+    "address": "경상북도 김천시 무실7길 38",
+    "depositManwon": 1920,
+    "rentManwon": 14,
+    "district": "경상북도",
+    "districtId": "gyeongbuk"
+   },
+   {
+    "lat": 36.12094614441303,
+    "lng": 128.1738909734295,
+    "label": "김천혁신4",
+    "address": "경상북도 김천시 해오름1로 17",
+    "depositManwon": 857,
+    "rentManwon": 15,
+    "district": "경상북도",
+    "districtId": "gyeongbuk"
+   },
+   {
+    "lat": 36.34958980775065,
+    "lng": 128.7084862642492,
+    "label": "의성상리",
+    "address": "경상북도 의성군 의성읍 동서1길 114",
+    "depositManwon": 1046,
+    "rentManwon": 9,
+    "district": "경상북도",
+    "districtId": "gyeongbuk"
+   },
+   {
+    "lat": 36.3857162021047,
+    "lng": 128.4393110164214,
+    "label": "경북의성",
+    "address": "경상북도 의성군 안계면 용기2길 31",
+    "depositManwon": 675,
+    "rentManwon": 16,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300019946-55711997.jpg",
+    "district": "경상북도",
+    "districtId": "gyeongbuk"
+   }
+  ]
+ },
+ "2015122300019937": {
+  "points": [
+   {
+    "lat": 36.574485888426295,
+    "lng": 128.68778465373737,
+    "label": "안동송현3",
+    "address": "경상북도 안동시 송현길 16",
+    "depositManwon": 1206,
+    "rentManwon": 12,
+    "district": "경상북도",
+    "districtId": "gyeongbuk"
+   },
+   {
+    "lat": 36.56295724355222,
+    "lng": 128.69623171476758,
+    "label": "안동옥동6",
+    "address": "경상북도 안동시 옥서1길 46",
+    "depositManwon": 1677,
+    "rentManwon": 14,
+    "district": "경상북도",
+    "districtId": "gyeongbuk"
+   },
+   {
+    "lat": 36.423474458356345,
+    "lng": 128.15513165691902,
+    "label": "상주무양7",
+    "address": "경상북도 상주시 동수4길 55",
+    "depositManwon": 965,
+    "rentManwon": 14,
+    "district": "경상북도",
+    "districtId": "gyeongbuk"
+   },
+   {
+    "lat": 36.572114186396696,
+    "lng": 128.18266156560233,
+    "label": "상주함창1",
+    "address": "경상북도 상주시 함창읍 함령길 138",
+    "depositManwon": 856,
+    "rentManwon": 17,
+    "district": "경상북도",
+    "districtId": "gyeongbuk"
+   }
+  ]
+ },
+ "2015122300019964": {
+  "districtId": "gwangju",
+  "points": [
+   {
+    "lat": 35.12887306815128,
+    "lng": 126.78973166770226,
+    "label": "도산청암",
+    "address": "광주광역시 광산구 남동길30번길 28",
+    "depositManwon": 1018,
+    "rentManwon": 9,
+    "district": "광주광역시",
+    "districtId": "gwangju"
+   },
+   {
+    "lat": 35.12856936853069,
+    "lng": 126.7883653736336,
+    "label": "삼라미주",
+    "address": "광주광역시 광산구 남동길 15",
+    "depositManwon": 980,
+    "rentManwon": 7,
+    "district": "광주광역시",
+    "districtId": "gwangju"
+   }
+  ]
+ },
+ "2015122300019955": {
+  "districtId": "chungnam",
+  "points": [
+   {
+    "lat": 36.15098419947198,
+    "lng": 127.02271139975913,
+    "label": "논산금강빌리지",
+    "address": "충남 논산시 강경읍 동안로 96",
+    "depositManwon": 992,
+    "rentManwon": 6
+   },
+   {
+    "lat": 36.142013400764625,
+    "lng": 127.10328016462779,
+    "label": "논산월야",
+    "address": "충남 논산시 연무읍 안심로 250",
+    "depositManwon": 990,
+    "rentManwon": 8
+   },
+   {
+    "lat": 36.15223869571197,
+    "lng": 127.01256694245811,
+    "label": "논산조흥",
+    "address": "충남 논산시 강경읍 대흥로 5번길 37",
+    "depositManwon": 1063,
+    "rentManwon": 6
+   }
+  ]
+ },
+ "2015122300019936": {
+  "districtId": "ulsan",
+  "points": [
+   {
+    "lat": 35.64381762635725,
+    "lng": 129.35165134662395,
+    "label": "울산매곡",
+    "address": "울산광역시 북구 신천로 60",
+    "depositManwon": 3149,
+    "rentManwon": 26,
+    "district": "울산광역시",
+    "districtId": "ulsan"
+   },
+   {
+    "lat": 35.48970637048677,
+    "lng": 129.42937114520188,
+    "label": "울산방어",
+    "address": "울산광역시 동구 등대4길 25",
+    "depositManwon": 3232,
+    "rentManwon": 23,
+    "district": "울산광역시",
+    "districtId": "ulsan"
+   },
+   {
+    "lat": 35.457050685092625,
+    "lng": 129.1928308149745,
+    "label": "울산웅촌",
+    "address": "울산광역시 울주군 웅촌면 곡천검단로 159",
+    "depositManwon": 756,
+    "rentManwon": 13,
+    "district": "울산광역시",
+    "districtId": "ulsan"
+   },
+   {
+    "lat": 35.5596115303416,
+    "lng": 129.11262953667,
+    "label": "울산교동",
+    "address": "울산광역시 울주군 삼남읍 교동리 봉화마을길9",
+    "depositManwon": 1220,
+    "rentManwon": 8,
+    "district": "울산광역시",
+    "districtId": "ulsan"
+   },
+   {
+    "lat": 35.631156702073596,
+    "lng": 129.3572922561837,
+    "label": "울산호계1",
+    "address": "울산광역시 북구 동대12길 30",
+    "depositManwon": 2664,
+    "rentManwon": 26,
+    "district": "울산광역시",
+    "districtId": "ulsan"
+   },
+   {
+    "lat": 35.63083636527205,
+    "lng": 129.3566144472277,
+    "label": "울산호계2",
+    "address": "울산광역시 북구 동대11길 36",
+    "depositManwon": 1506,
+    "rentManwon": 13,
+    "district": "울산광역시",
+    "districtId": "ulsan"
+   }
+  ]
+ },
+ "2015122300019908": {
+  "districtId": "incheon",
+  "points": [
+   {
+    "lat": 37.409167037365556,
+    "lng": 126.73360045142428,
+    "label": "인천논현12",
+    "address": "인천광역시 남동구 청능대로 715번길 59",
+    "depositManwon": 2028,
+    "rentManwon": 23,
+    "district": "인천광역시",
+    "districtId": "incheon"
+   },
+   {
+    "lat": 37.40768531145237,
+    "lng": 126.73686875027815,
+    "label": "인천논현14",
+    "address": "인천광역시 남동구 청능대로 715번길 22",
+    "depositManwon": 1973,
+    "rentManwon": 22,
+    "district": "인천광역시",
+    "districtId": "incheon"
+   },
+   {
+    "lat": 37.4304247475065,
+    "lng": 126.7438369964678,
+    "label": "인천서창1",
+    "address": "인천광역시 남동구 서창남순환로 124-14",
+    "depositManwon": 1416,
+    "rentManwon": 14,
+    "district": "인천광역시",
+    "districtId": "incheon"
+   }
+  ]
+ },
+ "2015122300019899": {
+  "districtId": "gyeonggi",
+  "points": [
+   {
+    "lat": 37.75382205135372,
+    "lng": 127.06043211250997,
+    "label": "의정부금오2",
+    "address": "경기도 의정부시 하금로 44",
+    "depositManwon": 1698,
+    "rentManwon": 22,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300019899-24547380.jpg",
     "district": "경기도",
-    "points": [
-      {
-        "lat": 37.3616318289593,
-        "lng": 126.935205932727,
-        "address": "경기도 군포시",
-        "districtId": "gyeonggi",
-        "district": "경기도"
-      }
-    ]
-  }
+    "districtId": "gyeonggi"
+   },
+   {
+    "lat": 37.76072687326953,
+    "lng": 127.03928890548805,
+    "label": "의정부녹양1",
+    "address": "경기도 의정부시 체육로 278",
+    "depositManwon": 1702,
+    "rentManwon": 21,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300019899-24548436.jpg",
+    "district": "경기도",
+    "districtId": "gyeonggi"
+   },
+   {
+    "lat": 37.748591128575924,
+    "lng": 127.09989820345899,
+    "label": "의정부민락3",
+    "address": "경기도 의정부시 오목로 251",
+    "depositManwon": 1807,
+    "rentManwon": 18,
+    "district": "경기도",
+    "districtId": "gyeonggi"
+   },
+   {
+    "lat": 37.75365522214334,
+    "lng": 127.11199347227489,
+    "label": "의정부민락8",
+    "address": "경기도 의정부시 송양로 45",
+    "depositManwon": 1485,
+    "rentManwon": 15,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300019899-24547737.jpg",
+    "district": "경기도",
+    "districtId": "gyeonggi"
+   },
+   {
+    "lat": 37.75712272810445,
+    "lng": 127.11686323237893,
+    "label": "의정부민락13",
+    "address": "경기도 의정부시 용민로 429-39",
+    "depositManwon": 1497,
+    "rentManwon": 17,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300019899-24548215.jpg",
+    "district": "경기도",
+    "districtId": "gyeonggi"
+   },
+   {
+    "lat": 37.75494409968172,
+    "lng": 127.11520176577244,
+    "label": "의정부민락16",
+    "address": "경기도 의정부시 용민로 420",
+    "depositManwon": 1671,
+    "rentManwon": 18,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300019899-24548114.jpg",
+    "district": "경기도",
+    "districtId": "gyeonggi"
+   },
+   {
+    "lat": 37.918125468524536,
+    "lng": 127.22335241838869,
+    "label": "포천산호",
+    "address": "경기도 포천시 신북면 호국로 1886-27",
+    "depositManwon": 997,
+    "rentManwon": 8,
+    "district": "경기도",
+    "districtId": "gyeonggi"
+   },
+   {
+    "lat": 37.894408147389086,
+    "lng": 127.19220937779944,
+    "label": "포천신읍1",
+    "address": "경기도 포천시 왕방로 118번길 7",
+    "depositManwon": 1175,
+    "rentManwon": 13,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300019899-24547661.jpg",
+    "district": "경기도",
+    "districtId": "gyeonggi"
+   }
+  ]
+ },
+ "2015122300019878": {
+  "districtId": "gyeonggi",
+  "points": [
+   {
+    "lat": 37.372084878189156,
+    "lng": 126.81030502467647,
+    "label": "시흥능곡2",
+    "address": "경기도 시흥시 승지로 89 (능곡동 502)",
+    "depositManwon": 1776,
+    "rentManwon": 15,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300019878-24547532.jpg",
+    "district": "경기도",
+    "districtId": "gyeonggi"
+   },
+   {
+    "lat": 37.3710096333091,
+    "lng": 126.81305905351513,
+    "label": "시흥능곡5",
+    "address": "경기도 시흥시 능곡중앙로 77 (능곡동 557)",
+    "depositManwon": 1536,
+    "rentManwon": 13,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300019878-24547537.jpg",
+    "district": "경기도",
+    "districtId": "gyeonggi"
+   },
+   {
+    "lat": 37.36760627749335,
+    "lng": 126.80923757285635,
+    "label": "시흥능곡6",
+    "address": "경기도 시흥시 승지로 33 (능곡동 768)",
+    "depositManwon": 1776,
+    "rentManwon": 15,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300019878-24547540.jpg",
+    "district": "경기도",
+    "districtId": "gyeonggi"
+   },
+   {
+    "lat": 37.36744995851829,
+    "lng": 126.80993952582719,
+    "label": "시흥능곡7",
+    "address": "경기도 시흥시 승지로 34 (능곡동 772)",
+    "depositManwon": 1776,
+    "rentManwon": 15,
+    "district": "경기도",
+    "districtId": "gyeonggi"
+   },
+   {
+    "lat": 37.366972032727475,
+    "lng": 126.81266860297937,
+    "label": "시흥능곡9",
+    "address": "경기도 시흥시 능곡중앙로 34 (능곡동 787)",
+    "depositManwon": 1536,
+    "rentManwon": 13,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300019878-24547545.jpg",
+    "district": "경기도",
+    "districtId": "gyeonggi"
+   },
+   {
+    "lat": 37.363660434636756,
+    "lng": 126.81330853208539,
+    "label": "시흥능곡13",
+    "address": "경기도 시흥시 시흥대로268번길 53 (능곡동 800)",
+    "depositManwon": 1776,
+    "rentManwon": 15,
+    "coverPhotoLocal": "/lh-covers/lh-2015122300019878-24547429.jpg",
+    "district": "경기도",
+    "districtId": "gyeonggi"
+   }
+  ]
+ },
+ "2015122300019866": {
+  "districtId": "incheon",
+  "points": [
+   {
+    "lat": 37.409167037365556,
+    "lng": 126.73360045142428,
+    "label": "인천논현12",
+    "address": "인천광역시 남동구 청능대로 715번길 59",
+    "depositManwon": 2028,
+    "rentManwon": 23,
+    "district": "인천광역시",
+    "districtId": "incheon"
+   },
+   {
+    "lat": 37.40768531145237,
+    "lng": 126.73686875027815,
+    "label": "인천논현14",
+    "address": "인천광역시 남동구 청능대로 715번길 22",
+    "depositManwon": 1973,
+    "rentManwon": 22,
+    "district": "인천광역시",
+    "districtId": "incheon"
+   },
+   {
+    "lat": 37.4304247475065,
+    "lng": 126.7438369964678,
+    "label": "인천서창1",
+    "address": "인천광역시 남동구 서창남순환로 124-14",
+    "depositManwon": 1416,
+    "rentManwon": 14,
+    "district": "인천광역시",
+    "districtId": "incheon"
+   }
+  ]
+ },
+ "2015122300020230": {
+  "districtId": "incheon",
+  "points": [
+   {
+    "lat": 37.4794456373032,
+    "lng": 126.475635954708,
+    "label": "해밀톤캐슬",
+    "address": "인천광역시 중구"
+   },
+   {
+    "lat": 37.4570756444155,
+    "lng": 126.664971932721,
+    "label": "미추홀구",
+    "address": "인천광역시 미추홀구"
+   },
+   {
+    "lat": 37.4473487903569,
+    "lng": 126.73148773974,
+    "label": "렉스타운",
+    "address": "인천광역시 남동구"
+   },
+   {
+    "lat": 37.5374956682829,
+    "lng": 126.73770466472,
+    "label": "예린펠리시티",
+    "address": "인천광역시 계양구"
+   },
+   {
+    "lat": 37.6055943684634,
+    "lng": 126.665652344353,
+    "label": "서구",
+    "address": "인천광역시 서구"
+   },
+   {
+    "lat": 37.4965957109918,
+    "lng": 126.787016804225,
+    "label": "센텀시티",
+    "address": "부천시 원미구"
+   }
+  ]
+ },
+ "2015122300020226": {
+  "districtId": "incheon",
+  "points": [
+   {
+    "lat": 37.4794456373032,
+    "lng": 126.475635954708,
+    "label": "해밀톤캐슬",
+    "address": "인천광역시 중구"
+   },
+   {
+    "lat": 37.4570756444155,
+    "lng": 126.664971932721,
+    "label": "미추홀구",
+    "address": "인천광역시 미추홀구"
+   },
+   {
+    "lat": 37.4473487903569,
+    "lng": 126.73148773974,
+    "label": "렉스타운",
+    "address": "인천광역시 남동구"
+   },
+   {
+    "lat": 37.5374956682829,
+    "lng": 126.73770466472,
+    "label": "예린펠리시티",
+    "address": "인천광역시 계양구"
+   },
+   {
+    "lat": 37.6055943684634,
+    "lng": 126.665652344353,
+    "label": "서구",
+    "address": "인천광역시 서구"
+   },
+   {
+    "lat": 37.4965957109918,
+    "lng": 126.787016804225,
+    "label": "센텀시티",
+    "address": "부천시 원미구"
+   }
+  ]
+ },
+ "2015122300020090": {
+  "districtId": "gangwon",
+  "district": "강원특별자치도",
+  "points": [
+   {
+    "lat": 37.4498976008043,
+    "lng": 129.165111673939,
+    "address": "강원특별자치도 삼척시",
+    "districtId": "gangwon",
+    "district": "강원특별자치도"
+   },
+   {
+    "lat": 37.3805844996072,
+    "lng": 128.660813602081,
+    "address": "강원특별자치도 정선군",
+    "districtId": "gangwon",
+    "district": "강원특별자치도"
+   }
+  ]
+ },
+ "2015122300020267": {
+  "points": [
+   {
+    "lat": 36.9749059363107,
+    "lng": 127.538243159411,
+    "label": "음성동문디이스트 · 111호",
+    "address": "충청북도 음성군 대소면 성본산단3로 13",
+    "district": "충청북도",
+    "districtId": "chungbuk",
+    "depositManwon": 11520
+   }
+  ],
+  "districtId": "chungbuk",
+  "district": "충청북도"
+ },
+ "2015122300020241": {
+  "districtId": "gyeonggi",
+  "district": "경기도",
+  "points": [
+   {
+    "lat": 37.3219085506384,
+    "lng": 126.830834434401,
+    "address": "경기도 안산시",
+    "districtId": "gyeonggi",
+    "district": "경기도"
+   }
+  ]
+ },
+ "2015122300020251": {
+  "points": [
+   {
+    "lat": 35.8866236166116,
+    "lng": 128.635524099685,
+    "label": "동구 든든전세 · 40호",
+    "address": "대구광역시 동구",
+    "district": "대구광역시",
+    "districtId": "daegu",
+    "depositManwon": 12343
+   },
+   {
+    "lat": 35.8581745018635,
+    "lng": 128.630635463648,
+    "label": "수성구 든든전세 · 56호",
+    "address": "대구광역시 수성구",
+    "district": "대구광역시",
+    "districtId": "daegu",
+    "depositManwon": 12992
+   },
+   {
+    "lat": 35.8250815854688,
+    "lng": 128.741316589035,
+    "label": "경산시 든든전세 · 5호",
+    "address": "경상북도 경산시",
+    "district": "경상북도",
+    "districtId": "gyeongbuk",
+    "depositManwon": 11448
+   },
+   {
+    "lat": 35.8299152394915,
+    "lng": 128.532836540567,
+    "label": "달서구 든든전세 · 11호",
+    "address": "대구광역시 달서구",
+    "district": "대구광역시",
+    "districtId": "daegu",
+    "depositManwon": 11280
+   },
+   {
+    "lat": 35.8713802646199,
+    "lng": 128.601805491072,
+    "label": "대구광역시 든든전세 · 24호",
+    "address": "대구광역시",
+    "district": "대구광역시",
+    "districtId": "daegu",
+    "depositManwon": 7760
+   },
+   {
+    "lat": 35.8460409913892,
+    "lng": 128.597678619113,
+    "label": "남구 든든전세 · 1호",
+    "address": "대구광역시 남구",
+    "district": "대구광역시",
+    "districtId": "daegu",
+    "depositManwon": 17799
+   },
+   {
+    "lat": 35.8856831131871,
+    "lng": 128.582781134786,
+    "label": "북구 든든전세 · 13호",
+    "address": "대구광역시 북구",
+    "district": "대구광역시",
+    "districtId": "daegu",
+    "depositManwon": 15607
+   }
+  ],
+  "district": "대구광역시 외"
+ },
+ "2015122300020250": {
+  "points": [
+   {
+    "lat": 35.8572658733471,
+    "lng": 128.595574039031,
+    "label": "대봉 서한이다음 대봉 서한이다음 · 20호",
+    "address": "대구광역시 중구 명덕로 241",
+    "district": "대구광역시",
+    "districtId": "daegu",
+    "depositManwon": 25860
+   },
+   {
+    "lat": 35.8050592712773,
+    "lng": 129.136395834318,
+    "label": "해링턴플레이스 신경주역 · 122호",
+    "address": "경상북도 경주시 건천읍 경주역세권3로 67",
+    "district": "경상북도",
+    "districtId": "gyeongbuk",
+    "depositManwon": 20345
+   },
+   {
+    "lat": 36.1062821896559,
+    "lng": 128.430738813145,
+    "label": "구미인동하늘채디어반2차 구미인동하늘채디어반2차 · 77호",
+    "address": "경상북도 구미시 여헌로10길 26",
+    "district": "경상북도",
+    "districtId": "gyeongbuk",
+    "depositManwon": 27042
+   }
+  ],
+  "district": "대구광역시 외"
+ },
+ "2015122300020245": {
+  "districtId": "gyeonggi",
+  "district": "경기도",
+  "points": [
+   {
+    "lat": 37.5035117792841,
+    "lng": 126.766038450927,
+    "address": "경기도 부천시",
+    "districtId": "gyeonggi",
+    "district": "경기도"
+   }
+  ]
+ },
+ "2015122300020181": {
+  "districtId": "daegu",
+  "district": "대구광역시",
+  "points": [
+   {
+    "lat": 35.8713802646199,
+    "lng": 128.601805491072,
+    "address": "대구광역시 대구",
+    "districtId": "daegu",
+    "district": "대구광역시"
+   }
+  ]
+ },
+ "2015122300020180": {
+  "districtId": "daegu",
+  "district": "대구광역시",
+  "points": [
+   {
+    "lat": 35.8713802646199,
+    "lng": 128.601805491072,
+    "address": "대구광역시 대구",
+    "districtId": "daegu",
+    "district": "대구광역시"
+   }
+  ]
+ },
+ "2015122300020179": {
+  "districtId": "gyeongbuk",
+  "district": "경상북도",
+  "points": [
+   {
+    "lat": 35.8713802646199,
+    "lng": 128.601805491072,
+    "address": "경상북도 대구",
+    "districtId": "gyeongbuk",
+    "district": "경상북도"
+   }
+  ]
+ },
+ "2015122300020178": {
+  "districtId": "daegu",
+  "district": "대구광역시",
+  "points": [
+   {
+    "lat": 35.8713802646199,
+    "lng": 128.601805491072,
+    "address": "대구광역시 대구",
+    "districtId": "daegu",
+    "district": "대구광역시"
+   }
+  ]
+ },
+ "2015122300020237": {
+  "districtId": "gyeonggi",
+  "district": "경기도",
+  "points": [
+   {
+    "lat": 37.3616318289593,
+    "lng": 126.935205932727,
+    "address": "경기도 군포시",
+    "districtId": "gyeonggi",
+    "district": "경기도"
+   }
+  ]
+ },
+ "2015122300020219": {
+  "points": [
+   {
+    "lat": 33.514466561644,
+    "lng": 126.511245200112,
+    "label": "용담이동 호반써밋 · 56호",
+    "address": "제주시 용담로7길 18",
+    "depositManwon": 39690
+   }
+  ],
+  "districtId": "jeju",
+  "district": "제주특별자치도"
+ },
+ "2015122300020212": {
+  "points": [
+   {
+    "lat": 33.2641425327911,
+    "lng": 126.568264718724,
+    "label": "동홍동 서귀포레 · 88호",
+    "address": "서귀포시 동홍로 178-6",
+    "depositManwon": 18450
+   }
+  ],
+  "districtId": "jeju",
+  "district": "제주특별자치도"
+ }
 }

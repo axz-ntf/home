@@ -245,13 +245,17 @@ for (const l of pool) {
     } else {
       groups = addrGroups;
     }
+    // 공고 유형별 라벨 접미어 (제목 기반).
+    const kind = /든든전세/.test(l.title || "") ? "든든전세"
+      : /기숙사/.test(l.title || "") ? "기숙사"
+      : "매입임대";
     const points = [];
     for (const [key, g] of Object.entries(groups)) {
       const co = await geocode(key);
       await sleep(130);
       if (!co) { console.log(`    ✗ 지오코딩 실패: ${key}`); continue; }
-      // 시군구 묶음이면 "○○구 매입임대 · N호", 단지면 "건물명 · N호"
-      const label = g.sigungu ? `${key.split(" ").pop()} 매입임대 · ${g.n}호` : `${g.name || "매입임대 주택"} · ${g.n}호`;
+      // 시군구 묶음이면 "○○구 든든전세 · N호", 단지면 "건물명 · N호"
+      const label = g.sigungu ? `${key.split(" ").pop()} ${kind} · ${g.n}호` : `${g.name || kind + " 주택"} · ${g.n}호`;
       const pt = { lat: co.lat, lng: co.lng, label, address: key };
       const sd = sidoOf(key); // 핀별 실제 시도 (모 공고의 '대구경북 외' 상속 방지)
       if (sd) { pt.district = sd.district; pt.districtId = sd.districtId; }
