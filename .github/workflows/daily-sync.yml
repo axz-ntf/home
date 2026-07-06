@@ -4,13 +4,21 @@ name: Daily LH Sync
 # 신규 공고만 incremental 처리 — 이미 캐시된 매물은 모든 단계에서 skip.
 on:
   schedule:
+    # 하루 2회(KST 00:00, 12:00) — 스케줄 크론이 간헐 누락돼도 다음 회차가 커버(신뢰성 이중화).
     - cron: "0 15 * * *"  # UTC 15:00 = KST 00:00
+    - cron: "0 3 * * *"   # UTC 03:00 = KST 12:00
   workflow_dispatch:
+
+# 중복 실행 방지 — 실행이 늘어져 다음 회차와 겹치면 이전 것을 취소하고 최신만 유지.
+# (겹쳐 돌면 LH API 레이트리밋·커밋 충돌로 되레 느려지던 문제 해결.)
+concurrency:
+  group: daily-lh-sync
+  cancel-in-progress: true
 
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 350   # GitHub Actions max 360. 첫 캐시 부트스트랩 후엔 ~20분.
+    timeout-minutes: 180   # 실측 20분~2시간. 이 이상이면 어딘가 걸린 것이니 잘라 다음 회차에 맡김.
 
     permissions:
       contents: write       # 변경된 데이터 자동 commit + push
