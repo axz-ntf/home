@@ -25,6 +25,8 @@ export interface DashboardRow {
   deposit: number;
   rent: number;
   salePriceManwon: number | null;
+  hasCoord: boolean;
+  winnerAt: string;
   sourceUrl: string;
   reviewed: boolean;
   issues: string[];
@@ -145,6 +147,37 @@ export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: 
     return s;
   }, [sourceRows]);
 
+  // 데이터 품질 — 활성(모집중·예정·마감임박) 매물 기준 결측/오류 집계.
+  const quality = useMemo(() => {
+    const active = sourceRows.filter((r) => r.status !== "closed");
+    const n = active.length || 1;
+    const noCoord = active.filter((r) => !r.hasCoord).length;
+    const noDeposit = active.filter((r) => (!r.deposit || r.deposit <= 0) && !r.salePriceManwon).length;
+    const noWinner = active.filter((r) => !r.winnerAt).length;
+    const issues = active.filter((r) => r.needsReview && !r.reviewed).length;
+    return { activeTotal: active.length, noCoord, noDeposit, noWinner, issues, n };
+  }, [sourceRows]);
+
+  // 유형·지역 분포 (활성 기준, 상위 항목).
+  const distribution = useMemo(() => {
+    // 공급유형 코드 → 한글 라벨 (영문 코드 노출 방지).
+    const TYPE_KO: Record<string, string> = {
+      happy: "행복주택", nation: "국민임대", perm: "영구임대", buy: "매입임대",
+      integ: "통합공공임대", fifty: "50년임대", sale: "공공분양", jeonse: "전세임대", youth: "청년안심",
+    };
+    const active = sourceRows.filter((r) => r.status !== "closed");
+    const byType: Record<string, number> = {};
+    const byRegion: Record<string, number> = {};
+    for (const r of active) {
+      const t = TYPE_KO[r.type] || r.type || "기타";
+      byType[t] = (byType[t] || 0) + 1;
+      byRegion[r.district || "기타"] = (byRegion[r.district || "기타"] || 0) + 1;
+    }
+    const top = (o: Record<string, number>, k: number) =>
+      Object.entries(o).sort((a, b) => b[1] - a[1]).slice(0, k);
+    return { types: top(byType, 6), regions: top(byRegion, 8), total: active.length };
+  }, [sourceRows]);
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return sourceRows.filter((r) => {
@@ -225,6 +258,48 @@ export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: 
           accent
         />
         <KpiCard label="수정됨" value={stats.reviewed} sub="직접 정정한 매물" highlight="success" />
+      </section>
+
+      <section className="a-data-grid">
+        {/* 데이터 품질 — 활성 매물의 결측/오류를 한눈에. 클릭 시 해당 필터로 이동 가능하게 확장 여지. */}
+        <div className="a-data-card">
+          <div className="a-data-head">
+            <span className="a-data-title">데이터 품질</span>
+            <span className="a-data-sub">활성 {quality.activeTotal}건 기준</span>
+          </div>
+          <ul className="a-quality-list">
+            <QualityRow label="좌표 없음" value={quality.noCoord} total={quality.n} tone="warn" hint="지도에 안 뜸" />
+            <QualityRow label="보증금·분양가 없음" value={quality.noDeposit} total={quality.n} tone="warn" hint="가격 결측" />
+            <QualityRow label="당첨발표 없음" value={quality.noWinner} total={quality.n} tone="muted" hint="선착순·미수집" />
+            <QualityRow label="검수 필요" value={quality.issues} total={quality.n} tone="danger" hint="가격·세대수 이슈" />
+          </ul>
+        </div>
+
+        {/* 유형 분포 */}
+        <div className="a-data-card">
+          <div className="a-data-head">
+            <span className="a-data-title">공급 유형</span>
+            <span className="a-data-sub">활성 {distribution.total}건</span>
+          </div>
+          <ul className="a-bar-list">
+            {distribution.types.map(([k, v]) => (
+              <BarRow key={k} label={k} value={v} max={distribution.types[0]?.[1] || 1} />
+            ))}
+          </ul>
+        </div>
+
+        {/* 지역 분포 */}
+        <div className="a-data-card">
+          <div className="a-data-head">
+            <span className="a-data-title">지역 분포</span>
+            <span className="a-data-sub">상위 8개 시·도</span>
+          </div>
+          <ul className="a-bar-list">
+            {distribution.regions.map(([k, v]) => (
+              <BarRow key={k} label={k} value={v} max={distribution.regions[0]?.[1] || 1} />
+            ))}
+          </ul>
+        </div>
       </section>
 
       <div className="a-table-wrap">
@@ -449,6 +524,30 @@ function KpiCard({
       <div className="a-kpi-value">{value.toLocaleString()}<small>건</small></div>
       {sub && <div className={`a-kpi-sub ${highlight ?? ""}`}>{sub}</div>}
     </div>
+  );
+}
+
+function QualityRow({ label, value, total, tone, hint }: {
+  label: string; value: number; total: number; tone: "warn" | "danger" | "muted"; hint?: string;
+}) {
+  const pct = total > 0 ? Math.round((value / total) * 100) : 0;
+  return (
+    <li className="a-quality-row">
+      <span className={`a-quality-dot ${tone}`} />
+      <span className="a-quality-label">{label}{hint && <em>{hint}</em>}</span>
+      <span className={`a-quality-val ${value === 0 ? "zero" : tone}`}>{value.toLocaleString()}<small>{pct}%</small></span>
+    </li>
+  );
+}
+
+function BarRow({ label, value, max }: { label: string; value: number; max: number }) {
+  const w = max > 0 ? Math.max(6, Math.round((value / max) * 100)) : 6;
+  return (
+    <li className="a-bar-row">
+      <span className="a-bar-label">{label}</span>
+      <span className="a-bar-track"><span className="a-bar-fill" style={{ width: `${w}%` }} /></span>
+      <span className="a-bar-val">{value.toLocaleString()}</span>
+    </li>
   );
 }
 

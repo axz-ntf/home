@@ -34,6 +34,8 @@ export default function AdminDashboardPage() {
       deposit: l.deposit ?? 0,
       rent: l.rent ?? 0,
       salePriceManwon: l.salePriceManwon ?? null,
+      hasCoord: Number.isFinite(l.lat) && Number.isFinite(l.lng),
+      winnerAt: l.winnerAt ?? "",
       sourceUrl: l.sourceUrl ?? "",
       reviewed: l.id in OVERRIDES,
       issues: listingIssues(l),
