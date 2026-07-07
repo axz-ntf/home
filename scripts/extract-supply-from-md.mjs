@@ -3,7 +3,6 @@
 // LH 50년임대·국민임대 표는 컬럼 구조가 표준. LLM 환각 회피 위해 결정론적 추출.
 //
 // 산출:
-//   - lib/notice-supply/{id}.json — 주택형별 상세 (면적·보증금·월세)
 //   - lib/listings-api.json 의 supplyUnits / deposit / rent / area 보강
 //
 // 사용:
@@ -16,7 +15,6 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const TEXTS_DIR = path.join(ROOT, "lib/notice-texts");
-const SUPPLY_DIR = path.join(ROOT, "lib/notice-supply");
 const LISTINGS_PATH = path.join(ROOT, "lib/listings-api.json");
 
 const args = process.argv.slice(2);
@@ -216,7 +214,6 @@ function parseRentTable(md) {
 }
 
 async function main() {
-  await fs.mkdir(SUPPLY_DIR, { recursive: true });
   const listings = JSON.parse(await fs.readFile(LISTINGS_PATH, "utf8"));
 
   // active 한 매물만 (closed 도 데이터 보강 의미 있지만 우선 active)
@@ -254,16 +251,6 @@ async function main() {
       for (const u of supply.units) byType[u.type] = { type: u.type, area: u.area, supply: u.supply };
       for (const r of rents) byType[r.type] = { ...(byType[r.type] || { type: r.type }), deposit: r.deposit, rent: r.rent };
       const units = Object.values(byType);
-
-      const detail = {
-        id: l.id,
-        supplyTotal: supply.supplyTotal,
-        integrated: supply.integrated,
-        units,
-      };
-
-      const outPath = path.join(SUPPLY_DIR, `${l.id}.json`);
-      await fs.writeFile(outPath, JSON.stringify(detail, null, 2) + "\n", "utf8");
 
       // 최소 평형 기준 대표값 — LH 공고문 표시 관례 (가장 작은 평수의 임대조건이 기준선).
       // 타당성 가드: 병합셀·면적 숫자를 가격으로 오인한 비정상값(예: 월세 678조원) 차단.

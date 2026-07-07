@@ -2,8 +2,8 @@
 // LH 공고만 추출 + 정규화
 // 입력: lib/myhome-all-notices.json  (sync-myhome-all.mjs 결과)
 // 출력:
-//   lib/lh-notices-all.json   — 정규화된 LH 공고 전체
-//   lib/lh-notices-index.json — 카테고리/지역/상태별 인덱스
+//   lib/lh-notices-all.json — 정규화된 LH 공고 전체
+//   (인덱스는 콘솔 요약으로만 출력 — lh-notices-index.json 은 reader 가 없어 제거)
 
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -13,7 +13,6 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const IN_PATH = path.join(ROOT, "lib/myhome-all-notices.json");
 const OUT_NOTICES = path.join(ROOT, "lib/lh-notices-all.json");
-const OUT_INDEX = path.join(ROOT, "lib/lh-notices-index.json");
 
 const HOUSING_CATEGORY = {
   공공분양: "분양",
@@ -183,9 +182,6 @@ async function main() {
   );
 
   const index = buildIndex(normalized);
-  await fs.writeFile(OUT_INDEX, JSON.stringify(index, null, 2) + "\n", "utf8");
-  console.log(`저장: ${path.relative(ROOT, OUT_INDEX)}`);
-
   console.log("\n=== 정규화 결과 요약 ===");
   console.log(`총 LH 공고: ${index.total}`);
   console.log("\n카테고리:");
