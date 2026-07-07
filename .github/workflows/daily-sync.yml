@@ -228,6 +228,17 @@ jobs:
           SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
         run: npx tsx scripts/batch-extract.ts --limit 15
 
+      # 주변입지 분석 사전 계산 — 신규 좌표만 Claude 로 계산해 insight-cache.json 증분 갱신.
+      # 커밋 → 재배포되면 /api/insight 가 시드 캐시로 즉시 응답 (사용자 대기 0초).
+      # MOLIT_API_KEY 없으면 인근 시세 텍스트만 빠진 채 저장됨 (graceful).
+      - name: Phase 9.5 — 주변입지 분석 캐시 warm (신규 좌표만)
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
+          MOLIT_API_KEY: ${{ secrets.MOLIT_API_KEY }}
+        run: npx tsx scripts/warm-insight.ts --limit 200
+
       - name: Save lh-complexes cache (즉시)
         if: always()
         uses: actions/cache/save@v4
