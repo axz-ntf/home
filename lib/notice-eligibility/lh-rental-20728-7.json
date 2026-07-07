@@ -1,0 +1,25 @@
+{
+  "supplyTotal": 883,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 883,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "무주택세대구성원",
+        "소득 및 총자산 요건 적용 배제(완화모집)",
+        "자동차가액 4,542만원 이하",
+        "분양권·입주권 소유 불가",
+        "불법양도·전대 금지"
+      ]
+    }
+  ],
+  "priority": []
+}

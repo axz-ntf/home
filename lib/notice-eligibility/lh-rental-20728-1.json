@@ -1,0 +1,25 @@
+{
+  "supplyTotal": 883,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 883,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "무주택세대구성원",
+        "소득 및 총자산요건 적용 배제(완화모집)",
+        "성년자(만19세 이상) 또는 특정 미성년 세대주",
+        "세대구성원 전원 무주택 유지 필수",
+        "분양권·입주권 소유자는 주택소유자로 간주"
+      ]
+    }
+  ],
+  "priority": []
+}

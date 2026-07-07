@@ -1,0 +1,20 @@
+{
+  "supplyTotal": 313,
+  "tiers": [
+    {
+      "id": "etc",
+      "name": "영구임대주택 적격자",
+      "units": 313,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "성남시 거주 무주택세대구성원",
+        "주민등록표상 등재자",
+        "영구임대주택 입주 적격자"
+      ]
+    }
+  ],
+  "priority": []
+}
