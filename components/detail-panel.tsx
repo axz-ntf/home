@@ -627,17 +627,24 @@ export function DetailPanel({
           </section>
         )}
 
-        {/* 공고문 원문(PDF) 은 보조 버튼으로 — 1차 행동은 AI 자격확인 */}
-        <a
-          className="detail-notice-btn"
-          href={item.noticePdfUrl ?? item.sourceUrl ?? infoUrl}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <MdOutlinePictureAsPdf className="detail-notice-btn-ico" />
-          <span>{item.noticePdfUrl ? "공고문 PDF 원문 보기" : "공고문 원문 보기"}</span>
-          <MdArrowOutward className="detail-notice-btn-arrow" />
-        </a>
+        {/* 공고문 원문(PDF) — 지하철·학교 행과 같은 리스트 행 언어로 (1차 행동은 AI 자격확인) */}
+        <section className="detail-section">
+          <h3>공고문 원문</h3>
+          <a
+            className="subway-item detail-notice-row"
+            href={item.noticePdfUrl ?? item.sourceUrl ?? infoUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span className="subway-ico" aria-hidden>
+              <MdOutlinePictureAsPdf />
+            </span>
+            <span className="subway-name">{item.noticePdfUrl ? "공고문 PDF" : "공고 페이지"}</span>
+            <span className="subway-walk">
+              새 창에서 열기 <MdArrowOutward />
+            </span>
+          </a>
+        </section>
 
         <div className="detail-actions">
           <button

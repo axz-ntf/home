@@ -2432,32 +2432,18 @@ input, select { font-family: inherit; }
 /* 도킹 컬럼 안에선 ChatPanelBody 가 컬럼 높이를 꽉 채우게 */
 .detail-ai-panel .chat-body { flex: 1; min-height: 0; }
 
-/* 공고문 원문(PDF) 보조 링크 — 액션바 위에 작게 */
-/* 공고문 PDF 원문 — 떠 보이던 텍스트 링크를 테두리 있는 풀폭 보조 버튼으로. */
-.detail-notice-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: 100%;
-  margin-top: 16px;
-  padding: 13px 16px;
-  font-size: 13.5px;
-  font-weight: 700;
-  color: var(--seed-semantic-color-ink-text-low);
-  background: var(--seed-scale-color-gray-50, #f8f9fa);
-  border: 1px solid var(--seed-semantic-color-divider-2);
-  border-radius: 12px;
+/* 공고문 원문 — 지하철·학교와 같은 리스트 행 언어 (subway-item 재사용 + 링크 보정) */
+.detail-notice-row {
   text-decoration: none;
-  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  transition: background 0.15s;
 }
-.detail-notice-btn:hover {
-  background: var(--seed-scale-color-gray-100, #f4f5f7);
-  color: var(--seed-semantic-color-ink-text);
-  border-color: var(--seed-scale-color-gray-300, #d1d5db);
+.detail-notice-row:hover { background: var(--seed-scale-color-gray-100, #f4f5f7); }
+.detail-notice-row .subway-walk {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
 }
-.detail-notice-btn-ico { font-size: 18px; flex-shrink: 0; color: #d64f3a; }
-.detail-notice-btn span { flex: 1; }
-.detail-notice-btn-arrow { font-size: 16px; flex-shrink: 0; opacity: 0.6; }
+.detail-notice-row .subway-walk svg { font-size: 13px; }
 
 .detail-actions {
   display: grid;
