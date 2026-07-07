@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import floorplanSpecs from "@/lib/floorplan-specs.json";
 import type { FloorPlanSpec } from "@/lib/floorplan-spec";
 
 // 평면도 3D 섹션 (디테일) — 검수 저장된 스펙이 있는 매물만 노출.
-// three.js(수백 KB)는 사용자가 "보기"를 눌렀을 때만 동적 로드 — 모바일 성능 보호.
+// three.js(수백 KB)는 섹션이 뷰포트에 들어올 때 자동 로드 — 탭 없이 바로 보이면서도
+// 스크롤로 여기까지 안 온 사용자에겐 로드하지 않는다 (모바일 성능 보호).
 // 조감도와 달리 보편 제공 데이터가 아니라, 미보유 매물에선 섹션 자체를 생략한다.
 const FloorPlan3D = dynamic(() => import("./floor-plan-3d"), {
   ssr: false,
@@ -22,7 +23,26 @@ export function FloorplanSection({ listingId }: { listingId: string }) {
   const specs = floorplanSpecs as Record<string, FloorPlanSpec | string>;
   const raw = specs[listingId];
   const spec = typeof raw === "string" ? (specs[raw] as FloorPlanSpec | undefined) : raw;
-  const [open, setOpen] = useState(false);
+  const hostRef = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+
+  // 섹션이 뷰포트 근처(200px 전)에 오면 3D 뷰어 마운트 — 한 번 로드되면 유지.
+  useEffect(() => {
+    const el = hostRef.current;
+    if (!el || inView) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "200px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [inView]);
+
   if (!spec) return null;
 
   const dims = `${spec.meta.widthMm.toLocaleString()}×${spec.meta.depthMm.toLocaleString()}mm`;
@@ -31,30 +51,29 @@ export function FloorplanSection({ listingId }: { listingId: string }) {
       <h3>
         평면도 3D{" "}
         <span style={{ fontWeight: 500, fontSize: 12, color: "var(--ink-3, #888)" }}>
-          {spec.meta.label} · {dims}
+          {spec.meta.label} · {dims} · 마우스·터치로 돌려볼 수 있어요
         </span>
       </h3>
-      {open ? (
-        <FloorPlan3D spec={spec} height={380} />
-      ) : (
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          style={{
-            width: "100%",
-            padding: "18px 14px",
-            border: "1px dashed var(--line, #ddd)",
-            borderRadius: 12,
-            background: "var(--bg-2, #fafafa)",
-            cursor: "pointer",
-            fontSize: 13.5,
-            fontWeight: 700,
-            color: "var(--ink-2, #555)",
-          }}
-        >
-          🧊 평면도 3D 보기 — 마우스·터치로 돌려볼 수 있어요
-        </button>
-      )}
+      <div ref={hostRef} style={{ minHeight: 380 }}>
+        {inView ? (
+          <FloorPlan3D spec={spec} height={380} />
+        ) : (
+          <div
+            style={{
+              height: 380,
+              display: "grid",
+              placeItems: "center",
+              border: "1px dashed var(--line, #ddd)",
+              borderRadius: 12,
+              background: "var(--bg-2, #fafafa)",
+              color: "var(--ink-3, #999)",
+              fontSize: 13,
+            }}
+          >
+            평면도 준비 중…
+          </div>
+        )}
+      </div>
     </section>
   );
 }
