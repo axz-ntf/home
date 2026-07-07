@@ -120,7 +120,7 @@ function SyncHealthStrip({ meta }: { meta: Record<string, SyncEntry | undefined>
   );
 }
 
-export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: DashboardRow[]; user?: { name: string; role: string; initial: string }; syncMeta?: Record<string, SyncEntry | undefined>; activePins?: number }) {
+export default function Dashboard({ rows, user, syncMeta, activePins, overridesTotal }: { rows: DashboardRow[]; user?: { name: string; role: string; initial: string }; syncMeta?: Record<string, SyncEntry | undefined>; activePins?: number; overridesTotal?: number }) {
   const router = useRouter();
   const params = useSearchParams();
   const urlFilter = (params.get("filter") || "all") as FilterKey;
@@ -254,7 +254,7 @@ export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: 
 
   const navItems: NavItem[] = [
     { href: "/admin/review", label: "대시보드", icon: "dash" },
-    { href: "/admin/activity", label: "수정 내역", icon: "history", badge: stats.reviewed, badgeKind: "subtle" },
+    { href: "/admin/activity", label: "수정 내역", icon: "history", badge: overridesTotal ?? stats.reviewed, badgeKind: "subtle" },
     { href: "/admin/complexes", label: "단지 관리", icon: "building" },
     { href: "/admin/settings", label: "설정", icon: "settings" },
   ];

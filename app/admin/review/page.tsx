@@ -65,5 +65,7 @@ export default function AdminDashboardPage() {
     ["open", "closing"].includes(effectiveStatus(l.status, l.deadline ?? "", l.beginDate)),
   ).length;
 
-  return <Dashboard rows={rows} user={getAdminUser()} syncMeta={syncMeta} activePins={activePins} />;
+  // 사이드바 "수정 내역" 배지 — 목적지(수정 내역 페이지)와 같은 기준: 전체 override 수.
+  // (stats.reviewed 는 현재 대시보드에 남은 매물만 세서 페이지 이동 시 숫자가 바뀌어 보였음.)
+  return <Dashboard rows={rows} user={getAdminUser()} syncMeta={syncMeta} activePins={activePins} overridesTotal={Object.keys(OVERRIDES).length} />;
 }

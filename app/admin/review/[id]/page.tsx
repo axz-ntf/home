@@ -150,7 +150,7 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
   const navItems: NavItem[] = [
     { href: "/admin/review", label: "대시보드", icon: "dash" },
     { href: "/admin/review?filter=review", label: "검수 큐", icon: "listing", badge: needsReview, badgeKind: "danger" },
-    { href: "/admin/activity", label: "검수 내역", icon: "history", badge: Object.keys(OVERRIDES).length, badgeKind: "subtle" },
+    { href: "/admin/activity", label: "수정 내역", icon: "history", badge: Object.keys(OVERRIDES).length, badgeKind: "subtle" },
     { href: "/admin/complexes", label: "단지 관리", icon: "building" },
     { href: "/admin/settings", label: "설정", icon: "settings" },
   ];
