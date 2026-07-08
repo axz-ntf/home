@@ -7,6 +7,7 @@ import "@/lib/naver-types";
 import type { NaverMarker, NaverMap } from "@/lib/naver-types";
 import { LocateIcon } from "./icons";
 import { effectiveStatus } from "@/lib/dday";
+import { isNewListing } from "@/lib/new-listings";
 
 // 진입 기본 뷰 = 전국. 한반도 남부 중앙 + 전 시도 마커가 보이는 줌.
 const KOREA_CENTER = { lat: 36.3, lng: 127.8 };
@@ -105,7 +106,9 @@ function makePinEl(p: Listing, memberCount = 1): HTMLElement {
   const badge = memberCount > 1 ? `<span class="map-pin-count">${memberCount}</span>` : "";
   const ag = agencyMark(p);
   const agMark = ag.label ? `<span class="map-pin-ag ${ag.cls}">${ag.label}</span>` : "";
-  el.innerHTML = `<div class="${pinClass(p.type)}${isClosed ? " is-closed" : ""}">${agMark}${pinLabel(p)}</div>${badge}`;
+  // 신규 공고(7일 이내) — 핀 모서리에 펄스 점. 마커는 클라이언트에서만 생성돼 hydration 무관.
+  const newDot = !isClosed && isNewListing(p) ? `<span class="map-pin-new"></span>` : "";
+  el.innerHTML = `<div class="${pinClass(p.type)}${isClosed ? " is-closed" : ""}">${agMark}${pinLabel(p)}${newDot}</div>${badge}`;
   return el;
 }
 

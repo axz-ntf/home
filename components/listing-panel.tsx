@@ -226,6 +226,10 @@ export function ListingPanel({
   setSnap,
   query = "",
   onQueryChange,
+  newCount = 0,
+  onNewClick,
+  heading,
+  onBack,
 }: {
   items: Listing[];
   sort: SortKey;
@@ -239,6 +243,10 @@ export function ListingPanel({
   setSnap?: (s: SheetSnap) => void;
   query?: string;
   onQueryChange?: (q: string) => void;
+  newCount?: number;
+  onNewClick?: () => void;
+  heading?: string;
+  onBack?: () => void;
 }) {
   const [loadedCount, setLoadedCount] = useState(20);
   const itemsRef = useRef<HTMLDivElement>(null);
@@ -296,9 +304,16 @@ export function ListingPanel({
         </div>
       )}
       <div className="listing-head">
-        <div className="listing-count">
-          총 <em suppressHydrationWarning>{comma(items.length)}</em>개의 공공임대 매물
-        </div>
+        {onBack ? (
+          <div className="listing-count listing-count--sub">
+            <button type="button" className="listing-back" onClick={onBack} aria-label="전체 목록으로 돌아가기">‹</button>
+            {heading} <em suppressHydrationWarning>{comma(items.length)}</em>건
+          </div>
+        ) : (
+          <div className="listing-count">
+            총 <em suppressHydrationWarning>{comma(items.length)}</em>개의 공공임대 매물
+          </div>
+        )}
         <div className="listing-sort">
           {SORT_OPTIONS.map((opt) => (
             <button
@@ -312,6 +327,15 @@ export function ListingPanel({
         </div>
       </div>
       <div className="listing-items" ref={itemsRef}>
+        {/* 신규 공고 배너 — 카드별 표시 대신 상단 한 줄. 클릭 시 신규 공고 뷰로 이동 */}
+        {newCount > 0 && onNewClick && (
+          <button type="button" className="list-new-banner" onClick={onNewClick}>
+            <span className="list-new-banner-text">
+              이번 주 새 공고 <em>{comma(newCount)}건</em>이 올라왔어요
+            </span>
+            <span className="list-new-banner-arr">신규만 보기 ›</span>
+          </button>
+        )}
         {visible.length === 0 && (
           <div style={{ padding: "40px 16px", textAlign: "center", color: "var(--seed-semantic-color-ink-text-low)" }}>
             <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 4 }}>조건에 맞는 매물이 없어요</div>

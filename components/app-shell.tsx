@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { MdOutlineSearch, MdClose } from "react-icons/md";
 import { NewsHomeIcon, GuideBookIcon, SaveBookmarkIcon, SparklesIcon, HandleIcon } from "./icons";
+import { isNewListing } from "@/lib/new-listings";
 import type { Density, District, Filters, HousingTypeId, Listing, SortKey } from "@/lib/types";
 import { effectiveStatus } from "@/lib/dday";
 import { FilterBar } from "./filter-bar";
@@ -66,7 +67,8 @@ export function AppShell({
   tips?: GuideTip[];
 }) {
   const router = useRouter();
-  const [activeSection, setActiveSection] = useState<"home" | "tips" | "saved" | "ai">("home");
+  // "new" 는 홈의 드릴인 뷰 (사이드바 탭 없음) — 배너 클릭으로 진입, 뒤로가기로 홈 복귀.
+  const [activeSection, setActiveSection] = useState<"home" | "new" | "tips" | "saved" | "ai">("home");
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [query, setQuery] = useState("");
   // 입력값(타이핑)과 적용된 검색어(query)를 분리 — 엔터 시에만 query 반영(라이브 필터 방지).
@@ -167,6 +169,14 @@ export function AppShell({
     });
     return map;
   }, [filters, listings, districts]);
+
+  // 신규 뷰 — 현재 필터·검색·정렬을 물려받고 공고일 7일 이내만.
+  const newItems = useMemo(() => {
+    if (!mounted) return [];
+    return filtered.filter((x) => isNewListing(x));
+  }, [filtered, mounted]);
+  // 신규 뷰에선 목록·지도 핀 모두 신규만.
+  const visibleItems = activeSection === "new" ? newItems : filtered;
 
   const resetFilters = () => setFilters(INITIAL_FILTERS);
 
@@ -304,7 +314,7 @@ export function AppShell({
               <button
                 key={id}
                 type="button"
-                className={`app-sidebar-item ${activeSection === id ? "active" : ""}`}
+                className={`app-sidebar-item ${activeSection === id || (id === "home" && activeSection === "new") ? "active" : ""}`}
                 onClick={() => { setActiveSection(id as typeof activeSection); setSheetSnap("expanded"); }}
                 title={label}
               >
@@ -326,6 +336,24 @@ export function AppShell({
             onSelect={handleSelect}
             snap={sheetSnap}
             setSnap={setSheetSnap}
+            newCount={newItems.length}
+            onNewClick={() => setActiveSection("new")}
+          />
+        )}
+        {activeSection === "new" && (
+          <ListingPanel
+            items={newItems}
+            sort={sort}
+            setSort={setSort}
+            hoveredId={hoveredId}
+            selectedId={selectedId}
+            activeDistrict={activeDistrict}
+            onHover={setHoveredId}
+            onSelect={handleSelect}
+            snap={sheetSnap}
+            setSnap={setSheetSnap}
+            heading="이번 주 새 공고"
+            onBack={() => setActiveSection("home")}
           />
         )}
         {activeSection === "tips" && <GuidePanel tips={tips} />}
@@ -353,7 +381,7 @@ export function AppShell({
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
             <path d="M 2 3 L 12 3 M 2 7 L 12 7 M 2 11 L 12 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
           </svg>
-          <span>목록 {comma(filtered.length)}건</span>
+          <span>목록 {comma(visibleItems.length)}건</span>
         </button>
 
         <NaverMapView
@@ -363,7 +391,7 @@ export function AppShell({
           onDistrictClick={handleDistrictClick}
           onDistrictClear={handleDistrictClear}
           onSearchHere={handleSearchHere}
-          pins={filtered}
+          pins={visibleItems}
           hoveredId={hoveredId}
           selectedId={selectedId}
           onPinHover={setHoveredId}
