@@ -280,6 +280,8 @@ export function NaverMapView({
   const [hasMoved, setHasMoved] = useState(false);
   // 다음 idle 이벤트를 무시하기 위한 플래그 — 프로그래매틱 morph 후 또는 초기 로드 시
   const ignoreNextIdleRef = useRef(true);
+  // 프로그래매틱 프레이밍(지역 fitBounds 등) 직후의 줌 — 이보다 더 줌아웃할 때만 지역 해제.
+  const framedZoomRef = useRef(DEFAULT_ZOOM);
   // idle 핸들러(마운트 시 1회 등록)에서 최신 activeDistrict 를 읽기 위한 ref
   const activeDistrictRef = useRef(activeDistrict);
   activeDistrictRef.current = activeDistrict;
@@ -321,12 +323,14 @@ export function NaverMapView({
         naver.maps.Event.addListener(map, "idle", () => {
           if (ignoreNextIdleRef.current) {
             ignoreNextIdleRef.current = false;
+            framedZoomRef.current = map.getZoom(); // 프레이밍 직후 줌 기록
             return;
           }
           setHasMoved(true);
-          // 사용자가 직접 줌아웃(≤10)해서 멀어지면 지역 선택 해제 → 전국 지역 마커 복귀.
-          // (프로그래매틱 morph 의 idle 은 위 ignore 플래그로 걸러지므로 진입 시엔 안 터짐)
-          if (activeDistrictRef.current && map.getZoom() <= 10) {
+          // 지역 해제는 "프레이밍보다 더 줌아웃" 했을 때만 → 전국 지역 마커 복귀.
+          // 경기처럼 넓은 도는 프레이밍 자체가 zoom≤10 이라, 단순 pan(줌 불변)으로
+          // 해제되어 전국(zoom 7)으로 튕기던 버그 방지. pan 은 줌이 안 변하므로 미해제.
+          if (activeDistrictRef.current && map.getZoom() <= 10 && map.getZoom() < framedZoomRef.current) {
             onDistrictClearRef.current();
           }
         });
