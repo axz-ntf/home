@@ -1,0 +1,26 @@
+{
+  "supplyTotal": 219,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반공급",
+      "units": 29,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "etc",
+      "name": "우선공급",
+      "units": 190,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": []
+    }
+  ],
+  "priority": []
+}

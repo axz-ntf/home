@@ -1,0 +1,36 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반공급",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 100,
+        "byHousehold": null,
+        "note": "세대 월평균소득 100% 이하 (맞벌이 200%)"
+      },
+      "asset": {
+        "total": 36200,
+        "car": null
+      },
+      "other": [
+        "무주택세대구성원",
+        "수도권(서울, 인천, 경기도) 거주",
+        "1세대 1주택 기준",
+        "입주자저축 12개월 12회 이상 (1순위자)",
+        "입주자저축 가입자 (2순위자)"
+      ]
+    }
+  ],
+  "priority": [
+    "다자녀",
+    "한부모",
+    "노부모부양",
+    "장애인",
+    "국가유공자",
+    "철거민"
+  ]
+}

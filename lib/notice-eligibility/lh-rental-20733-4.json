@@ -1,0 +1,161 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "1순위: 1인 120% 이하, 2인 110% 이하, 3인 이상 100% 이하 / 2순위: 1인 140% 이하, 2인 130% 이하, 3인 이상 120% 이하 / 3순위: 150% 이하"
+      },
+      "asset": null,
+      "other": [
+        "대학 재학 중 또는 다음 학기 입·복학 예정자"
+      ]
+    },
+    {
+      "id": "student",
+      "name": "취업준비생",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "1순위: 1인 120% 이하, 2인 110% 이하, 3인 이상 100% 이하 / 2순위: 1인 140% 이하, 2인 130% 이하, 3인 이상 120% 이하 / 3순위: 150% 이하"
+      },
+      "asset": null,
+      "other": [
+        "대학 또는 고등학교 졸업(또는 중퇴)한 지 2년 이내"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "19세 이상 39세 이하 (출생일 1986.07.09 ~ 2007.07.08)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "1순위: 1인 120% 이하, 2인 110% 이하, 3인 이상 100% 이하 / 2순위: 1인 140% 이하, 2인 130% 이하, 3인 이상 120% 이하 / 3순위: 150% 이하"
+      },
+      "asset": null,
+      "other": [
+        "소득이 있는 업무 종사 기간 1순위 5년 이내, 2순위 7년 이내"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "사회초년생",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "1순위: 1인 120% 이하, 2인 110% 이하, 3인 이상 100% 이하 / 2순위: 1인 140% 이하, 2인 130% 이하, 3인 이상 120% 이하 / 3순위: 150% 이하"
+      },
+      "asset": null,
+      "other": [
+        "소득이 있는 업무 종사 기간 1순위 5년 이내(완화 7년 이내)",
+        "소득이 있는 업무에 종사 중이거나 퇴직 후 1년 미만으로 구직급여 수급자 또는 예술인"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "혼인 중이며 혼인기간 1순위 7년 이내 또는 2순위 10년 이내",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "일반: 1순위: 1인 120% 이하, 2인 110% 이하, 3인 이상 100% 이하 / 2순위: 1인 140% 이하, 2인 130% 이하, 3인 이상 120% 이하 / 3순위: 150% 이하 / 맞벌이: 1순위: 2인 130% 이하, 3인 이상 120% 이하 / 2순위: 2인 140% 이하, 3인 이상 130% 이하"
+      },
+      "asset": null,
+      "other": [
+        "1순위 자녀 만 6세 이하, 2순위 자녀 만 9세 이하 (태아 포함)"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "예비신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "1순위: 1인 120% 이하, 2인 110% 이하, 3인 이상 100% 이하 / 2순위: 1인 140% 이하, 2인 130% 이하, 3인 이상 120% 이하 / 3순위: 150% 이하"
+      },
+      "asset": null,
+      "other": [
+        "입주 전까지 혼인사실을 증명할 수 있는 사람"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": "한부모",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "1순위: 1인 120% 이하, 2인 110% 이하, 3인 이상 100% 이하 / 2순위: 1인 140% 이하, 2인 130% 이하, 3인 이상 120% 이하 / 3순위: 150% 이하"
+      },
+      "asset": null,
+      "other": [
+        "1순위 자녀 만 6세 이하, 2순위 자녀 만 9세 이하 (태아 포함)"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": null,
+      "age": "65세 이상 (출생일 1961.07.08 이전)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "1순위: 1인 120% 이하, 2인 110% 이하, 3인 이상 100% 이하 / 2순위: 1인 140% 이하, 2인 130% 이하, 3인 이상 120% 이하 / 3순위: 150% 이하"
+      },
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "general",
+      "name": "주거급여수급자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "1순위: 1인 120% 이하, 2인 110% 이하, 3인 이상 100% 이하 / 2순위: 1인 140% 이하, 2인 130% 이하, 3인 이상 120% 이하 / 3순위: 150% 이하"
+      },
+      "asset": null,
+      "other": [
+        "주거급여법 제2조 제2호 및 제3호에 따른 수급권자 또는 수급자"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "산업단지근로자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "정읍시 또는 연접지역(김제시, 완주군, 임실군, 순창군, 고창군, 부안군, 장성군) 소재 산업단지 입주 또는 입주 예정 기업 및 교육·연구기관 재직 중인 자 (정읍첨단 행복주택만 해당)"
+      ]
+    }
+  ],
+  "priority": []
+}

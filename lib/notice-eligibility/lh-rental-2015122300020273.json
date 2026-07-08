@@ -1,0 +1,39 @@
+{
+  "supplyTotal": 219,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반공급",
+      "units": 29,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "입주자 모집공고일(2026.07.08) 현재 기준"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "우선공급",
+      "units": 190,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "입주자 모집공고일(2026.07.08) 현재 기준"
+      ]
+    }
+  ],
+  "priority": [
+    "철거민",
+    "국가유공자",
+    "장기복무 제대군인",
+    "해외거주 재외동포",
+    "비닐간이공작물거주자",
+    "무허가건축물등세입자"
+  ]
+}
