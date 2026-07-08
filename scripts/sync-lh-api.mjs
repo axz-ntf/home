@@ -14,6 +14,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { recordSync } from "./sync-meta.mjs";
+import { buildComplexIndex, findMatchingComplex } from "./lib/lh-complex-match.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT_PATH = path.join(ROOT, "lib/listings-api.json");
@@ -214,87 +215,7 @@ async function fetchAllComplexes() {
   return all;
 }
 
-// 블록번호 추출 — "A-24BL", "A24블록", "A8BL", "A-2블" 등 다양한 표기 정규화.
-// 같은 사업지구의 다른 블록이 잘못 매칭되는 문제 해결용.
-//   "남양주왕숙2 A-3BL" → "A3"
-//   "양주옥정 A-25BL"   → "A25"
-//   "A8블록"           → "A8"
-function extractBlock(s) {
-  if (!s) return null;
-  const m = String(s).match(/([A-Z]+)[-\s]?(\d+)\s*(?:BL[OoKk]*|블[록]?)/i);
-  if (!m) return null;
-  return (m[1] + m[2]).toUpperCase();
-}
-
-function buildComplexIndex(complexes) {
-  // 시군구 단위 그룹 + 단지명/주소 키워드별 인덱스
-  const byKey = new Map(); // "brtc-signgu" -> Complex[]
-  for (const c of complexes) {
-    const k = `${c.brtcCode}-${c.signguCode}`;
-    if (!byKey.has(k)) byKey.set(k, []);
-    byKey.get(k).push(c);
-  }
-  return { byKey };
-}
-
-// 공고 PAN_NM 에서 단지명 후보 추출
-function noticeKeywords(panNm) {
-  if (!panNm) return [];
-  // 1) 대괄호 안 내용 제거 (정정공고/긴급 등)
-  // 2) "공고", "모집공고", "입주자모집" 등 보일러플레이트 제거
-  // 3) 남은 토큰 중 길이 2자+ 한글/숫자 조합 추출
-  const cleaned = panNm
-    .replace(/\[[^\]]*\]/g, " ")
-    .replace(/공공분양주택|공공주택|입주자모집공고|입주자모집|예비입주자|모집공고|모집|공고/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-  return cleaned.split(/\s+/).filter((s) => s.length >= 2);
-}
-
-// 공고 → 단지 매칭 (시도 일치 + 키워드 substring + 블록번호 검증)
-// 블록 미일치는 명백한 거짓매칭이라 제외. 한쪽만 블록 없으면 키워드만으로 fallback 허용.
-function findMatchingComplex(notice, complexesByKey, sidoCode) {
-  if (!sidoCode) return null;
-  const keywords = noticeKeywords(notice.PAN_NM);
-  if (!keywords.length) return null;
-  const noticeBlock = extractBlock(notice.PAN_NM);
-
-  const candidates = [];
-  for (const [key, list] of complexesByKey.entries()) {
-    if (key.startsWith(sidoCode + "-")) candidates.push(...list);
-  }
-  if (!candidates.length) return null;
-
-  // Pass 1: 키워드 매칭 + 블록 둘 다 존재하면 일치 강제
-  for (const kw of keywords) {
-    if (kw.length < 3) continue;
-    for (const c of candidates) {
-      const blob = `${c.hsmpNm || ""} ${c.rnAdres || ""}`;
-      if (!blob.includes(kw)) continue;
-      const cBlock = extractBlock(c.hsmpNm);
-      if (noticeBlock && cBlock) {
-        if (noticeBlock === cBlock) return c;
-        continue;
-      }
-      // 한쪽만 블록 있는 경우는 Pass 2 에서 fallback
-    }
-  }
-
-  // Pass 2: 블록이 한쪽만 있거나 둘 다 없으면 키워드 매칭 첫 후보
-  for (const kw of keywords) {
-    if (kw.length < 3) continue;
-    for (const c of candidates) {
-      const blob = `${c.hsmpNm || ""} ${c.rnAdres || ""}`;
-      if (!blob.includes(kw)) continue;
-      const cBlock = extractBlock(c.hsmpNm);
-      // 둘 다 블록 있는데 다른 케이스는 이미 Pass 1 에서 거른 상태
-      if (noticeBlock && cBlock && noticeBlock !== cBlock) continue;
-      return c;
-    }
-  }
-
-  return null;
-}
+// 공고→단지 매칭 순수 함수는 scripts/lib/lh-complex-match.mjs 로 분리 (테스트 공유·오매칭 수정).
 
 // 시도명 → 시도코드
 const SIDO_NAME_TO_CODE = {

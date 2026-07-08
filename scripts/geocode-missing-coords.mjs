@@ -7,9 +7,11 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { sigunguQuery } from "./lib/lh-region.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const FILE = path.join(ROOT, "lib/listings-api.json");
+const ADMIN = JSON.parse(await fs.readFile(path.join(ROOT, "lib/admin-codes.json"), "utf8"));
 const KEY = process.env.VWORLD_API_KEY;
 const KAKAO = process.env.KAKAO_REST_API_KEY; // VWorld 폴백(헤더 인증 → CI IP 제한 없음)
 if (!KEY && !KAKAO) { console.error("ERROR: VWORLD_API_KEY / KAKAO_REST_API_KEY 둘 다 없음"); process.exit(1); }
@@ -77,10 +79,20 @@ const matchDistrict = (addressName, district) => {
 // 좌표 결정: 주소 있으면 주소로, 없으면(단일 단지) 제목 키워드로 — 결과가 같은 시도일 때만 채택(오배치 방지).
 // 광역/권역형(scope=regional: 매입임대·전세임대 등)은 단일 위치가 없으므로 제외(리스트로만 노출).
 async function resolveCoord(l) {
-  if (l.address && l.address.length > 4) return await geocode(l.address);
+  if (l.address && l.address.length > 4) {
+    const g = await geocode(l.address);
+    if (g) return g;
+  }
   if (l.scope !== "regional" && l.title) {
     const r = await kakaoName(cleanTitle(l.title));
     if (r && matchDistrict(r.addressName, l.district)) return { lat: r.lat, lng: r.lng, via: "kakao-name" };
+  }
+  // 최후: 제목에서 시군구 추출 → 시군구 중심 좌표.
+  // 단일 단지 위치가 없는 지역광역 예비공고(화성서부권·남양주시지역 등)를 지도에 올림.
+  const sgq = sigunguQuery(l.title, l.district, ADMIN);
+  if (sgq) {
+    const r = await geocode(sgq);
+    if (r && matchDistrict(r.addressName || sgq, l.district)) return { lat: r.lat, lng: r.lng, via: "sigungu-center" };
   }
   return null;
 }
