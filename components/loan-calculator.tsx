@@ -75,6 +75,10 @@ export function LoanCalculator({ item }: { item: Listing }) {
   const typeName = HOUSING_TYPES.find((t) => t.id === item.type)?.name;
   const mismatch = profile != null && !qualifies(product, profile);
 
+  const snapAmount = () => {
+    setAmount((a) => (a >= limit - 50 ? limit : Math.round(a / 100) * 100));
+  };
+
   const selectProduct = (id: LoanProduct["id"]) => {
     setProductId(id);
     const p = products.find((x) => x.id === id)!;
@@ -129,11 +133,11 @@ export function LoanCalculator({ item }: { item: Listing }) {
         max={limit}
         step={1}
         value={Math.min(amount, limit)}
-        // 100만 단위 스냅 — 단, 끝까지 밀면 정확히 한도(100만 배수가 아닐 수 있음)로
-        onChange={(e) => {
-          const raw = Number(e.target.value);
-          setAmount(raw >= limit - 50 ? limit : Math.round(raw / 100) * 100);
-        }}
+        // 드래그 중엔 원시값 그대로 (반올림하면 엄지가 포인터와 어긋나 튕김) —
+        // 놓는 순간에만 100만 단위 스냅, 한도 근처는 정확히 한도로.
+        onChange={(e) => setAmount(Number(e.target.value))}
+        onPointerUp={snapAmount}
+        onBlur={snapAmount}
         aria-label="대출 금액"
         style={{ "--pct": `${limit > 0 ? (Math.min(amount, limit) / limit) * 100 : 0}%` } as React.CSSProperties}
       />
