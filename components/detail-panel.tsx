@@ -26,6 +26,7 @@ import { useSavedListings } from "@/lib/use-saved";
 import { accentVars } from "./detail-type";
 import { summarizePrice, type Range } from "@/lib/price-summary";
 import { FloorplanSection } from "./floorplan-section";
+import { LoanCalculator } from "./loan-calculator";
 import { Button } from "./button";
 
 type InsightGroup = { value: string; level: string; tone: "rich" | "good" | "mid" | "low" };
@@ -489,6 +490,8 @@ export function DetailPanel({
         <FloorplanSection listingId={item.id} />
         {/* 임대 조건 — 모든 매물 공통 골격: 범위 요약 1차 노출, 모델별 상세 표는 접기 */}
         <RentSummarySection item={item} />
+        {/* 대출 계산기 — 기금 전월세 대출 시뮬레이션 (분양·보증금 없는 매물은 내부에서 미표시) */}
+        <LoanCalculator item={item} />
 
         <section className="detail-section">
           <EligibilityDetail listingId={item.id} sourceUrl={item.sourceUrl} housingType={item.type} />
