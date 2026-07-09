@@ -1,0 +1,67 @@
+{
+  "supplyTotal": 140,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "1순위 우선",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "수급자(생계/의료/주거/교육급여), 차상위계층, 지원대상 한부모가족"
+      },
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "general",
+      "name": "1순위 일반",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 70,
+        "byHousehold": {
+          "1": 343,
+          "2": 469,
+          "3": 572,
+          "4": 616,
+          "5": 653,
+          "6": 693,
+          "7": 734
+        },
+        "note": "월평균소득 70% 이하 장애인"
+      },
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "general",
+      "name": "2순위",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 100,
+        "byHousehold": {
+          "1": 458,
+          "2": 645,
+          "3": 817,
+          "4": 880,
+          "5": 933,
+          "6": 991,
+          "7": 1049
+        },
+        "note": "월평균소득 100% 이하"
+      },
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "입주자격 판단기준일: 2026.7.9."
+      ]
+    }
+  ],
+  "priority": []
+}

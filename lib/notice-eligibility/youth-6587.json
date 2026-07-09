@@ -1,0 +1,20 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "19세 이상 39세 이하",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택요건 충족 필수",
+        "자동차(이륜차 포함) 소유 가능(세대당 1대만 등록 사용 가능)",
+        "공공주택 입주자 자산기준 준용"
+      ]
+    }
+  ],
+  "priority": []
+}

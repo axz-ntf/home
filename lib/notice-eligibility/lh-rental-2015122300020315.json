@@ -1,0 +1,20 @@
+{
+  "supplyTotal": 120,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 120,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "충청북도 거주 무주택세대구성원",
+        "성년자(만19세 이상)",
+        "청약통장 가입자"
+      ]
+    }
+  ],
+  "priority": []
+}
