@@ -1,0 +1,173 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반공급",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 100,
+        "byHousehold": null,
+        "note": "세대 월평균소득 100% 이하 (맞벌이 200%)"
+      },
+      "asset": {
+        "total": 36200,
+        "car": null
+      },
+      "other": [
+        "1순위자: 입주자저축 12개월 12회이상",
+        "2순위자: 입주자저축 가입자",
+        "무주택세대구성원",
+        "수도권 거주 (서울, 인천, 경기)",
+        "6년 분양전환공공임대주택"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년 특별공급",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 140,
+        "byHousehold": null,
+        "note": "신청자 본인 월평균소득 140% 이하"
+      },
+      "asset": {
+        "total": 27600,
+        "car": null
+      },
+      "other": [
+        "신청자 본인 기준",
+        "입주자저축 6개월 6회이상",
+        "과거 주택소유이력 검증"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부 특별공급",
+      "units": null,
+      "age": null,
+      "marriage": "혼인",
+      "income": {
+        "percent": 130,
+        "byHousehold": null,
+        "note": "세대 월평균소득 130% 이하 (맞벌이 200%)"
+      },
+      "asset": {
+        "total": 36200,
+        "car": null
+      },
+      "other": [
+        "입주자저축 6개월 6회이상",
+        "예비신혼부부 포함",
+        "무주택세대구성원"
+      ]
+    },
+    {
+      "id": "child",
+      "name": "다자녀 특별공급",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 120,
+        "byHousehold": null,
+        "note": "세대 월평균소득 120% 이하 (맞벌이 200%)"
+      },
+      "asset": {
+        "total": 36200,
+        "car": null
+      },
+      "other": [
+        "입주자저축 6개월 6회이상",
+        "무주택세대구성원"
+      ]
+    },
+    {
+      "id": "single",
+      "name": "생애최초 특별공급",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 130,
+        "byHousehold": null,
+        "note": "세대 월평균소득 130% 이하 (맞벌이 200%)"
+      },
+      "asset": {
+        "total": 36200,
+        "car": null
+      },
+      "other": [
+        "입주자저축 12개월 12회이상, 선납금 포함 600만원 이상",
+        "세대구성원 전원 과거 주택소유사실 없어야 함",
+        "무주택세대구성원"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "노부모부양 특별공급",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 120,
+        "byHousehold": null,
+        "note": "세대 월평균소득 120% 이하 (맞벌이 200%)"
+      },
+      "asset": {
+        "total": 36200,
+        "car": null
+      },
+      "other": [
+        "신청자 본인 세대주",
+        "입주자저축 12개월 12회이상",
+        "무주택세대구성원"
+      ]
+    },
+    {
+      "id": "student",
+      "name": "신생아 특별공급",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 140,
+        "byHousehold": null,
+        "note": "세대 월평균소득 140% 이하 (맞벌이 200%)"
+      },
+      "asset": {
+        "total": 36200,
+        "car": null
+      },
+      "other": [
+        "입주자저축 6개월 6회이상",
+        "무주택세대구성원",
+        "신생아우선공급: 세대 월평균소득 100% 이하"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "기관추천 특별공급",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "입주자저축 6개월 6회이상",
+        "국가유공자, 장애인, 철거민 등 불필요"
+      ]
+    }
+  ],
+  "priority": [
+    "다자녀",
+    "한부모",
+    "노부모부양",
+    "장애인",
+    "신생아"
+  ]
+}
