@@ -17,6 +17,10 @@ import {
   toBrief,
 } from "@/lib/loan-products";
 
+// 버팀목 전월세대출이 실제 의미있는 유형만 — 세입자가 목돈 보증금을 직접 마련하는 경우.
+// 영구임대(실버)는 보증금이 극소(중앙값 254만), 전세임대는 제도가 대출을 대체, 매입/분양은 대상 외.
+const LOAN_TYPES = ["happy", "nation", "integ"];
+
 // 슬라이더 초기값 — 한도를 1,000만 단위로 내림 (한도가 그보다 작으면 한도 그대로)
 function defaultAmount(limit: number): number {
   return Math.floor(limit / 1000) * 1000 || limit;
@@ -56,7 +60,7 @@ export function LoanCalculator({ item }: { item: Listing }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (item.type === "sale" || deposit <= 0) return null;
+  if (!LOAN_TYPES.includes(item.type) || deposit <= 0) return null;
 
   // 월세 없는 매물은 월세대출 제외 → 프로필이 있으면 요건 충족 상품만.
   // 충족 상품이 하나도 없으면 전체를 보여주고 경고로 안내.
