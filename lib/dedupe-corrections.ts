@@ -12,6 +12,12 @@ const keyOf = (l: Listing) =>
     .replace(/\s+/g, "")
     .trim();
 
+// 위치 기준 정정공고 우선 처리용 느슨한 키: 괄호 안 부가정보((17형)·(입주자격완화,선게약) 등)까지 제거.
+// 정정본에 흔한 괄호 안 오타·잔여물량 표기 때문에 keyOf 로는 원본과 어긋나는 경우를 흡수한다.
+const looseKeyOf = (l: Listing) => keyOf(l).replace(/\([^)]*\)/g, "");
+const coordKey = (l: Listing) =>
+  l.lat && l.lng ? `${l.lat.toFixed(4)},${l.lng.toFixed(4)}` : null;
+
 export function dedupeCorrections(listings: Listing[]): Listing[] {
   const groups = new Map<string, Listing[]>();
   for (const l of listings) {
@@ -35,5 +41,22 @@ export function dedupeCorrections(listings: Listing[]): Listing[] {
       out.push(l);
     }
   }
-  return out;
+
+  // 2차(위치 기준): 같은 좌표에 정정공고가 있으면, looseKey 가 같은 일반 공고는 숨긴다.
+  // keyOf 가 괄호 안 오타/부가표기로 어긋나 1차에서 못 지운 원본을 흡수. looseKey 가 다르면
+  // (주택유형·단지 다름) 좌표가 같아도 유지 — 서로 다른 공고는 합치지 않는다.
+  const corrLooseByCoord = new Map<string, Set<string>>();
+  for (const l of out) {
+    const ck = coordKey(l);
+    if (!ck || !isCorrection(l)) continue;
+    let s = corrLooseByCoord.get(ck);
+    if (!s) corrLooseByCoord.set(ck, (s = new Set()));
+    s.add(looseKeyOf(l));
+  }
+  return out.filter((l) => {
+    if (isCorrection(l)) return true;
+    const ck = coordKey(l);
+    if (!ck) return true;
+    return !corrLooseByCoord.get(ck)?.has(looseKeyOf(l));
+  });
 }
