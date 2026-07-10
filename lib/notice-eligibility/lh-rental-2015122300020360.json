@@ -1,0 +1,26 @@
+{
+  "supplyTotal": 438,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 29,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "소득 및 자산 보유 기준 충족 필요"
+      ]
+    }
+  ],
+  "priority": [
+    "철거민",
+    "국가유공자",
+    "장기복무제대군인",
+    "해외거주재외동포",
+    "비닐간이공작물거주자",
+    "무허가건축물등세입자"
+  ]
+}

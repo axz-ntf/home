@@ -1,0 +1,197 @@
+{
+  "supplyTotal": 1024,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반공급",
+      "units": 55,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 100,
+        "byHousehold": null,
+        "note": "전용면적 60㎡ 이하만 적용, 맞벌이 200%"
+      },
+      "asset": {
+        "total": 21550,
+        "car": 4542
+      },
+      "other": [
+        "무주택세대구성원",
+        "수도권(서울, 인천, 경기) 거주",
+        "전매제한 3년",
+        "거주의무 3년",
+        "재당첨제한 10년"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "다자녀",
+      "units": 18,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 120,
+        "byHousehold": null,
+        "note": "세대 월평균소득, 맞벌이 200%"
+      },
+      "asset": {
+        "total": 21550,
+        "car": 4542
+      },
+      "other": [
+        "무주택세대구성원",
+        "입주자저축 6개월 6회 이상"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "신혼부부",
+      "units": 22,
+      "age": null,
+      "marriage": "혼인으로 구성될 세대",
+      "income": {
+        "percent": 130,
+        "byHousehold": null,
+        "note": "세대 월평균소득, 맞벌이 200%"
+      },
+      "asset": {
+        "total": 21550,
+        "car": 4542
+      },
+      "other": [
+        "무주택세대구성원",
+        "입주자저축 6개월 6회 이상",
+        "예비신혼부부 포함"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "생애최초",
+      "units": 21,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 130,
+        "byHousehold": null,
+        "note": "세대 월평균소득, 맞벌이 200%"
+      },
+      "asset": {
+        "total": 21550,
+        "car": 4542
+      },
+      "other": [
+        "무주택세대구성원",
+        "과거 주택소유 없음",
+        "입주자저축 12개월 12회 이상",
+        "저축액 600만원 이상"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "노부모부양",
+      "units": 34,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 120,
+        "byHousehold": null,
+        "note": "세대 월평균소득, 맞벌이 200%"
+      },
+      "asset": {
+        "total": 21550,
+        "car": 4542
+      },
+      "other": [
+        "무주택세대구성원",
+        "입주자저축 12개월 12회 이상"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "신생아",
+      "units": 10,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 140,
+        "byHousehold": null,
+        "note": "세대 월평균소득, 맞벌이 200%"
+      },
+      "asset": {
+        "total": 21550,
+        "car": 4542
+      },
+      "other": [
+        "무주택세대구성원",
+        "입주자저축 6개월 6회 이상"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "신생아 우선공급",
+      "units": 45,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 100,
+        "byHousehold": null,
+        "note": "전용면적 60㎡ 이하만 적용, 맞벌이 200%"
+      },
+      "asset": {
+        "total": 21550,
+        "car": 4542
+      },
+      "other": [
+        "무주택세대구성원",
+        "입주자저축 12개월 12회 이상"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "우선공급(1순위자)",
+      "units": 10,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 100,
+        "byHousehold": null,
+        "note": "전용면적 60㎡ 이하만 적용, 맞벌이 200%"
+      },
+      "asset": {
+        "total": 21550,
+        "car": 4542
+      },
+      "other": [
+        "무주택세대구성원",
+        "입주자저축 12개월 12회 이상"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "추첨공급",
+      "units": 9,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 100,
+        "byHousehold": null,
+        "note": "전용면적 60㎡ 이하만 적용, 맞벌이 200%"
+      },
+      "asset": {
+        "total": 21550,
+        "car": 4542
+      },
+      "other": [
+        "무주택세대구성원",
+        "입주자저축 12개월 12회 이상"
+      ]
+    }
+  ],
+  "priority": [
+    "다자녀",
+    "신혼부부",
+    "노부모부양",
+    "신생아"
+  ]
+}
