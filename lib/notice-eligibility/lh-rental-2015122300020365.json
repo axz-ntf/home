@@ -1,0 +1,19 @@
+{
+  "supplyTotal": 313,
+  "tiers": [
+    {
+      "id": "etc",
+      "name": "영구임대주택 입주 적격자",
+      "units": 313,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "성남시 거주 무주택세대구성원",
+        "만65세 이상 고령자복지주택 신청자는 해당 자격만 신청가능"
+      ]
+    }
+  ],
+  "priority": []
+}

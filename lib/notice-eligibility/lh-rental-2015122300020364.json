@@ -1,0 +1,63 @@
+{
+  "supplyTotal": 16,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생·대학원생 (1순위)",
+      "units": null,
+      "age": null,
+      "marriage": "미혼",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "수급자/차상위계층/지원대상 한부모가족 자격 확인"
+      },
+      "asset": null,
+      "other": [
+        "재학증명서 또는 입학증명서 필수",
+        "본인이 수급자/차상위/한부모가족에 해당해야 함"
+      ]
+    },
+    {
+      "id": "student",
+      "name": "대학생·대학원생 (2순위)",
+      "units": null,
+      "age": null,
+      "marriage": "미혼",
+      "income": {
+        "percent": 100,
+        "byHousehold": {
+          "1": 458,
+          "2": 645,
+          "3": 817
+        },
+        "note": "본인과 부모의 월평균소득 합산 기준 (1인 20%p, 2인 10%p 가산 적용)"
+      },
+      "asset": null,
+      "other": [
+        "본인 및 부모의 소득기준 충족 필요",
+        "부모 인적사항 필수 기입"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년 (19세-39세, 3순위)",
+      "units": null,
+      "age": "19세 이상 39세 이하 (1986.7.1. ~ 2007.6.30. 출생)",
+      "marriage": "미혼",
+      "income": {
+        "percent": 100,
+        "byHousehold": {
+          "1": 458
+        },
+        "note": "본인 월평균소득만 기준 (1인 20%p 가산 적용)"
+      },
+      "asset": null,
+      "other": [
+        "대학생·대학원생 외 일반 청년도 신청 가능",
+        "3순위에 한하여 신청 가능"
+      ]
+    }
+  ],
+  "priority": []
+}

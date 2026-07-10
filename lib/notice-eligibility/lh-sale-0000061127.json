@@ -1,0 +1,22 @@
+{
+  "supplyTotal": 10,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 10,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "만 19세 이상 성인",
+        "대한민국 거주자 (법인도 가능)",
+        "주택소유여부, 입주자저축 가입여부, 과거당첨사실여부, 소득 및 자산요건 불문",
+        "1세대 2주택 이상도 가능",
+        "선착순 동호지정 방식"
+      ]
+    }
+  ],
+  "priority": []
+}

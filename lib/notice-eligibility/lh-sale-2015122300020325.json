@@ -1,0 +1,20 @@
+{
+  "supplyTotal": 45,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 45,
+      "age": "만 19세 이상",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "주택소유 여부, 소득 및 자산요건, 입주자저축 가입 여부, 과거 당첨사실 여부에 관계없이 신청 가능",
+        "국내 거주자",
+        "1인 1주택 기준"
+      ]
+    }
+  ],
+  "priority": []
+}
