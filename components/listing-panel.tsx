@@ -126,6 +126,7 @@ export function ListingCard({
   const tiers = tierTags(item);
   return (
     <article
+      data-id={item.id}
       className={`card ${hovered ? "hovered" : ""} ${selected ? "selected" : ""} ${effStatus === "closed" ? "is-closed" : ""}`}
       onMouseEnter={() => onHover(item.id)}
       onMouseLeave={() => onHover(null)}
@@ -258,6 +259,22 @@ export function ListingPanel({
     setLoadedCount(20);
     if (itemsRef.current) itemsRef.current.scrollTop = 0;
   }, [items.length, activeDistrict]);
+
+  // 지도 핀 클릭 등으로 선택이 바뀌면 목록을 해당 카드로 스크롤.
+  // 무한스크롤로 아직 안 그려진 카드면 그 위치까지 로드 확장 후(재실행) 스크롤.
+  const lastScrolledRef = useRef<string | null>(null);
+  useEffect(() => {
+    if (!selectedId || !itemsRef.current) return;
+    if (lastScrolledRef.current === selectedId) return;
+    const idx = items.findIndex((x) => x.id === selectedId);
+    if (idx < 0) return;
+    if (idx >= loadedCount) { setLoadedCount(idx + 10); return; }
+    const el = itemsRef.current.querySelector(`[data-id="${CSS.escape(selectedId)}"]`);
+    if (el) {
+      el.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      lastScrolledRef.current = selectedId;
+    }
+  }, [selectedId, items, loadedCount]);
 
   // 무한스크롤 — 센티넬이 (300px 안에) 보이면 자동으로 다음 배치 로드.
   // 스크롤 이벤트 의존 X → 화면을 안 넘쳐도 안 멈춤. 로드는 클라이언트 slice 라 즉시.
