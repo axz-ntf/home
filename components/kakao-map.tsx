@@ -404,6 +404,9 @@ export function NaverMapView({
         const repSel0 = selectedIdRef.current ? (repOf.get(selectedIdRef.current) ?? selectedIdRef.current) : null;
         const repHov0 = hoveredIdRef.current ? (repOf.get(hoveredIdRef.current) ?? hoveredIdRef.current) : null;
         if (p.id === repSel0) el.classList.add("selected");
+        // 같은 공고가 여러 지점 핀으로 분리된 경우(-m 전개) — 선택 핀의 형제도 파란 표시.
+        const selPbl0 = selectedIdRef.current ? pins.find((x) => x.id === selectedIdRef.current)?.pblancId : null;
+        if (selPbl0 && p.id !== repSel0 && members.some((m) => m.pblancId === selPbl0)) el.classList.add("selected-sib");
         if (p.id === repHov0) el.classList.add("hovered");
         el.addEventListener("mouseenter", () => onPinHover(p.id));
         el.addEventListener("mouseleave", () => onPinHover(null));
@@ -449,7 +452,7 @@ export function NaverMapView({
         clusterMarkersRef.current.push(marker);
       }
     }
-  }, [ready, activeDistrict, mapPins, membersOf, repOf, zoom, expandedKey, onPinHover, onPinClick]);
+  }, [ready, activeDistrict, pins, mapPins, membersOf, repOf, zoom, expandedKey, onPinHover, onPinClick]);
 
   // 시도(지역) 바뀌면 펼친 구 초기화 — 다른 지역 진입 시 이전 구 펼침 상태 제거.
   useEffect(() => { setExpandedKey(null); }, [activeDistrict]);
@@ -459,11 +462,16 @@ export function NaverMapView({
   useEffect(() => {
     const repHovered = hoveredId ? repOf.get(hoveredId) ?? hoveredId : null;
     const repSelected = selectedId ? repOf.get(selectedId) ?? selectedId : null;
+    // 같은 공고의 형제 핀(-m 전개)도 함께 파란 표시 — pblancId 로 판별.
+    const selPbl = selectedId ? pins.find((x) => x.id === selectedId)?.pblancId : null;
+    const byId = new Map(mapPins.map((p) => [p.id, p]));
     pinMarkersRef.current.forEach(({ el }, id) => {
       el.classList.toggle("hovered", id === repHovered);
       el.classList.toggle("selected", id === repSelected);
+      const members = membersOf.get(id) ?? (byId.has(id) ? [byId.get(id)!] : []);
+      el.classList.toggle("selected-sib", !!selPbl && id !== repSelected && members.some((m) => m.pblancId === selPbl));
     });
-  }, [hoveredId, selectedId, repOf]);
+  }, [hoveredId, selectedId, repOf, pins, mapPins, membersOf]);
 
   // Pan/zoom to active district — 그 시도의 실제 매물 범위에 맞춰 확대(fitBounds).
   // 경기처럼 넓은 지역도 매물이 실제로 있는 곳(수도권)으로 프레이밍돼 시별 클러스터가 바로 보임.

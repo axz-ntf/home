@@ -1027,6 +1027,10 @@ input, select { font-family: inherit; }
   background: var(--seed-scale-color-gray-100);
   color: var(--seed-scale-color-gray-700);
 }
+.badge.youth {
+  background: var(--seed-scale-color-green-50);
+  color: var(--seed-scale-color-green-700);
+}
 .badge.agency {
   background: var(--seed-scale-color-gray-100);
   color: var(--seed-scale-color-gray-700);
@@ -1300,6 +1304,17 @@ input, select { font-family: inherit; }
   animation: pinPop .26s cubic-bezier(.34, 1.56, .64, 1);
 }
 .map-pin-wrap.selected .map-pin-ag {
+  background: #fff !important;
+  color: #1e84ff !important;
+}
+/* 같은 공고의 형제 핀(-m 전개) — 선택 핀과 함께 파란 표시(확대 없음) */
+.map-pin-wrap.selected-sib { z-index: 4; }
+.map-pin-wrap.selected-sib .map-pin {
+  background: #1e84ff;
+  color: #fff;
+  filter: drop-shadow(0 4px 10px rgba(30, 132, 255, 0.35));
+}
+.map-pin-wrap.selected-sib .map-pin-ag {
   background: #fff !important;
   color: #1e84ff !important;
 }
