@@ -1,0 +1,156 @@
+{
+  "supplyTotal": 180,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "생계·의료급여 수급자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "생계급여 또는 의료급여 수급자"
+      },
+      "asset": {
+        "total": 24500,
+        "car": 4542
+      },
+      "other": []
+    },
+    {
+      "id": "general",
+      "name": "지원대상 한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": "한부모가족",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "한부모가족지원법 시행규칙 제3조 기준"
+      },
+      "asset": {
+        "total": 24500,
+        "car": 4542
+      },
+      "other": []
+    },
+    {
+      "id": "general",
+      "name": "주거지원 시급가구",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "최저주거기준 미달 또는 소득 대비 임차료 30% 이상"
+      },
+      "asset": {
+        "total": 24500,
+        "car": 4542
+      },
+      "other": []
+    },
+    {
+      "id": "senior",
+      "name": "저소득 고령자",
+      "units": null,
+      "age": "65세 이상",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "국민기초생활보장법 제2조제1호 또는 제10호 해당자"
+      },
+      "asset": {
+        "total": 24500,
+        "car": 4542
+      },
+      "other": []
+    },
+    {
+      "id": "general",
+      "name": "장애인(소득 70% 이하)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 70,
+        "byHousehold": {
+          "1": 343,
+          "2": 469,
+          "3": 572,
+          "4": 616,
+          "5": 653,
+          "6": 693,
+          "7": 734
+        },
+        "note": "장애인등록증 소유자, 지적장애인·정신장애인·심한 뇌병변장애인은 배우자 포함"
+      },
+      "asset": {
+        "total": 24500,
+        "car": 4542
+      },
+      "other": []
+    },
+    {
+      "id": "general",
+      "name": "월평균소득 50% 이하",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 50,
+        "byHousehold": {
+          "1": 267,
+          "2": 352,
+          "3": 408,
+          "4": 440,
+          "5": 466,
+          "6": 495,
+          "7": 524
+        },
+        "note": null
+      },
+      "asset": {
+        "total": 24500,
+        "car": 4542
+      },
+      "other": []
+    },
+    {
+      "id": "general",
+      "name": "장애인(소득 100% 이하)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 100,
+        "byHousehold": {
+          "1": 458,
+          "2": 645,
+          "3": 817,
+          "4": 880,
+          "5": 933,
+          "6": 991,
+          "7": 1049
+        },
+        "note": "장애인등록증 소유자, 지적장애인·정신장애인·심한 뇌병변장애인은 배우자 포함"
+      },
+      "asset": {
+        "total": 24500,
+        "car": 4542
+      },
+      "other": []
+    }
+  ],
+  "priority": [
+    "다자녀(미성년 자녀 1명 이상)",
+    "65세 이상 직계존속 부양",
+    "중증장애인",
+    "청약저축 가입자",
+    "주거취약계층 주거지원 대상자",
+    "소득 대비 임차료 비율 높음"
+  ]
+}

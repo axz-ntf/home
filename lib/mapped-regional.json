@@ -1799,5 +1799,31 @@
         "district": "경기도"
       }
     ]
+  },
+  "2015122300020347": {
+    "districtId": "gyeongnam",
+    "district": "경상남도",
+    "points": [
+      {
+        "lat": 35.0036771766929,
+        "lng": 128.064212593324,
+        "address": "경상남도 사천시",
+        "districtId": "gyeongnam",
+        "district": "경상남도"
+      }
+    ]
+  },
+  "2015122300020346": {
+    "districtId": "gyeongnam",
+    "district": "경상남도",
+    "points": [
+      {
+        "lat": 35.3222352197812,
+        "lng": 128.261686482096,
+        "address": "경상남도 의령군",
+        "districtId": "gyeongnam",
+        "district": "경상남도"
+      }
+    ]
   }
 }
