@@ -1,0 +1,21 @@
+{
+  "supplyTotal": 25,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 25,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "제천시·충청북도 거주",
+        "성년자(만19세 이상) 또는 자녀가 있는 미성년 세대주",
+        "불법양도·전대 행위로 적발된 후 4년 미경과자 제외"
+      ]
+    }
+  ],
+  "priority": []
+}
