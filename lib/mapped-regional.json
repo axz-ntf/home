@@ -1825,5 +1825,112 @@
         "district": "경상남도"
       }
     ]
+  },
+  "2015122300020372": {
+    "districtId": "jeonnam",
+    "points": [
+      {
+        "lat": 35.129056375651,
+        "lng": 126.789674607077,
+        "label": "도산청암",
+        "address": "전남광주통합특별시 광산구 남동길30번길 28",
+        "depositManwon": 1028,
+        "rentManwon": 9
+      },
+      {
+        "lat": 35.1283988032829,
+        "lng": 126.788054167014,
+        "label": "삼라미주",
+        "address": "전남광주통합특별시 광산구 남동길 15",
+        "depositManwon": 980,
+        "rentManwon": 7
+      }
+    ]
+  },
+  "2015122300020400": {
+    "points": [
+      {
+        "lat": 35.2539878206795,
+        "lng": 128.670629942278,
+        "label": "창원봉림1",
+        "address": "경상남도 창원시 의창구 소봉로 50",
+        "depositManwon": 1297,
+        "rentManwon": 16
+      },
+      {
+        "lat": 35.2514094216386,
+        "lng": 128.666534117493,
+        "label": "창원봉림2",
+        "address": "경상남도 창원시 의창구 대봉로 25",
+        "depositManwon": 1297,
+        "rentManwon": 16
+      },
+      {
+        "lat": 35.1558062247932,
+        "lng": 128.715108646567,
+        "label": "창원자은3LH천년나무",
+        "address": "경상남도 창원시 진해구 냉천로 192",
+        "depositManwon": 1063,
+        "rentManwon": 14
+      }
+    ]
+  },
+  "2015122300020338": {
+    "districtId": "busan",
+    "points": [
+      {
+        "lat": 35.3251374383525,
+        "lng": 129.167504647566,
+        "label": "부산정관1",
+        "address": "부산광역시 기장군 정관읍 정관4로 23",
+        "depositManwon": 3054,
+        "rentManwon": 17
+      },
+      {
+        "lat": 35.3325667795984,
+        "lng": 129.163135942024,
+        "label": "부산정관2",
+        "address": "부산광역시 기장군 정관읍 정관2로 24",
+        "depositManwon": 3132,
+        "rentManwon": 18
+      }
+    ]
+  },
+  "2015122300020358": {
+    "districtId": "chungbuk",
+    "points": [
+      {
+        "lat": 36.6735096100523,
+        "lng": 127.492455296181,
+        "label": "청주율량2",
+        "address": "충북 청주시 청원구 율량로 47",
+        "depositManwon": 1309,
+        "rentManwon": 12
+      },
+      {
+        "lat": 36.6612553235411,
+        "lng": 127.509318936228,
+        "label": "청주율량9",
+        "address": "충북 청주시 청원구 율중로7번길 77",
+        "depositManwon": 1294,
+        "rentManwon": 12
+      },
+      {
+        "lat": 36.7229921580434,
+        "lng": 127.534652914325,
+        "label": "청원내수",
+        "address": "충북 청주시 청원구 내수읍 청암로35",
+        "depositManwon": 1079,
+        "rentManwon": 9
+      },
+      {
+        "lat": 36.6220641444337,
+        "lng": 127.431438290888,
+        "label": "청주가로수마을",
+        "address": "충북 청주시 흥덕구 서현중로32번길 23",
+        "depositManwon": 3255,
+        "rentManwon": 23
+      }
+    ]
   }
 }
