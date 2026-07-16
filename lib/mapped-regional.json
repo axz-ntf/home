@@ -1932,5 +1932,220 @@
         "rentManwon": 23
       }
     ]
+  },
+  "2015122300020398": {
+    "districtId": "jeju",
+    "points": [
+      {
+        "lat": 33.488413580963,
+        "lng": 126.596285044732,
+        "label": "제주봉개",
+        "address": "제주특별자치도 제주시 번영로 528(봉개동)",
+        "depositManwon": 990,
+        "rentManwon": 15
+      },
+      {
+        "lat": 33.4842255062859,
+        "lng": 126.428465691231,
+        "label": "아름마을",
+        "address": "제주특별자치도 제주시 우정로18길 25(외도일동)",
+        "depositManwon": 1433,
+        "rentManwon": 12
+      },
+      {
+        "lat": 33.5328379794611,
+        "lng": 126.674146634673,
+        "label": "함덕진우",
+        "address": "제주특별자치도 제주시 조천읍 함덕남12길 19-6",
+        "depositManwon": 1036,
+        "rentManwon": 6
+      }
+    ]
+  },
+  "2015122300020351": {
+    "points": [
+      {
+        "lat": 36.9328627481896,
+        "lng": 128.913598124272,
+        "label": "봉화춘양",
+        "address": "경상북도 봉화군 춘양면 의양로 109",
+        "depositManwon": 383,
+        "rentManwon": 8
+      },
+      {
+        "lat": 36.6629661339296,
+        "lng": 129.124171580234,
+        "label": "영양동부",
+        "address": "경상북도 영양군 영양읍 영양창수로 93",
+        "depositManwon": 860,
+        "rentManwon": 7,
+        "coverPhotoLocal": "/lh-covers/lh-2015122300020351-33264322.jpg"
+      },
+      {
+        "lat": 36.6626923409281,
+        "lng": 129.11231225153,
+        "label": "영양서부",
+        "address": "경상북도 영양군 영양읍 동서대로 34",
+        "depositManwon": 508,
+        "rentManwon": 12,
+        "coverPhotoLocal": "/lh-covers/lh-2015122300020351-41442238.jpg"
+      },
+      {
+        "lat": 36.8274140367788,
+        "lng": 128.609839094164,
+        "label": "영주가흥4",
+        "address": "경상북도 영주시 가흥로 345-27",
+        "depositManwon": 784,
+        "rentManwon": 11
+      },
+      {
+        "lat": 36.6533134531198,
+        "lng": 128.442075909552,
+        "label": "예천대심",
+        "address": "경상북도 예천군 예천읍 봉덕로 52",
+        "depositManwon": 1723,
+        "rentManwon": 12
+      },
+      {
+        "lat": 36.9911916214868,
+        "lng": 129.395619649947,
+        "label": "울진읍내",
+        "address": "경상북도 울진군 울진읍 월변2길 56-21",
+        "depositManwon": 1659,
+        "rentManwon": 11,
+        "coverPhotoLocal": "/lh-covers/lh-2015122300020351-35314307.jpg"
+      },
+      {
+        "lat": 36.5311620685007,
+        "lng": 129.051511394851,
+        "label": "청송각산",
+        "address": "경상북도 청송군 진보면 체육공원로 52-11",
+        "depositManwon": 459,
+        "rentManwon": 9
+      }
+    ]
+  },
+  "2015122300020367": {
+    "points": [
+      {
+        "lat": 36.0903274064506,
+        "lng": 128.446914273824,
+        "label": "구미구평",
+        "address": "경상북도 구미시 인동54길 25",
+        "depositManwon": 1825,
+        "rentManwon": 13
+      },
+      {
+        "lat": 36.1423789449124,
+        "lng": 128.424686952034,
+        "label": "구미옥계2",
+        "address": "경상북도 구미시 옥계북로 43-52",
+        "depositManwon": 1463,
+        "rentManwon": 10
+      },
+      {
+        "lat": 36.113058868306,
+        "lng": 128.156833032238,
+        "label": "김천덕곡",
+        "address": "경상북도 김천시 무실7길 38",
+        "depositManwon": 2251,
+        "rentManwon": 17
+      },
+      {
+        "lat": 36.1220160858297,
+        "lng": 128.173594729604,
+        "label": "김천혁신4",
+        "address": "경상북도 김천시 해오름1로 17",
+        "depositManwon": 857,
+        "rentManwon": 15
+      },
+      {
+        "lat": 36.3860175348845,
+        "lng": 128.43960879631,
+        "label": "경북의성",
+        "address": "경상북도 의성군 안계면 용기2길 31",
+        "depositManwon": 675,
+        "rentManwon": 16,
+        "coverPhotoLocal": "/lh-covers/lh-2015122300020367-55711997.jpg"
+      }
+    ]
+  },
+  "2015122300020342": {
+    "districtId": "jeonbuk",
+    "points": [
+      {
+        "lat": 35.8074839431544,
+        "lng": 127.096134717342,
+        "label": "전주효자1",
+        "address": "전북 전주시 완산구 호암로 2",
+        "depositManwon": 1924,
+        "rentManwon": 11
+      },
+      {
+        "lat": 35.8076672337754,
+        "lng": 127.10175142307,
+        "label": "전주효자3",
+        "address": "전북 전주시 완산구 용호로 20",
+        "depositManwon": 1924,
+        "rentManwon": 11
+      },
+      {
+        "lat": 35.9305779806976,
+        "lng": 127.159266211714,
+        "label": "완주봉동1,2",
+        "address": "전북 완주군 봉동읍 봉동중앙로 53-18",
+        "depositManwon": 1611,
+        "rentManwon": 11
+      },
+      {
+        "lat": 35.919489920096,
+        "lng": 127.082785541168,
+        "label": "완주삼례2",
+        "address": "전북특별자치도 완주군 삼례읍 웃삼례길 39-6",
+        "depositManwon": 1196,
+        "rentManwon": 8
+      },
+      {
+        "lat": 35.8092427905872,
+        "lng": 127.103580267505,
+        "label": "전주효자5",
+        "address": "전북 전주시 완산구 호암로 87",
+        "depositManwon": 1634,
+        "rentManwon": 10
+      },
+      {
+        "lat": 35.8078302578128,
+        "lng": 127.102722067898,
+        "label": "전주효자6",
+        "address": "전북 전주시 완산구 호암로 88",
+        "depositManwon": 1634,
+        "rentManwon": 10
+      },
+      {
+        "lat": 35.9233305597694,
+        "lng": 127.116009370135,
+        "label": "완주삼봉1",
+        "address": "전북 완주군 삼례읍 삼봉5로 60",
+        "depositManwon": 1759,
+        "rentManwon": 22
+      },
+      {
+        "lat": 35.8540921204002,
+        "lng": 127.230749713653,
+        "label": "완주황운",
+        "address": "전북 완주군 소양면 소양로 204-43",
+        "depositManwon": 999,
+        "rentManwon": 14,
+        "coverPhotoLocal": "/lh-covers/lh-2015122300020342-57037564.jpg"
+      },
+      {
+        "lat": 35.9237415361636,
+        "lng": 127.171921680392,
+        "label": "완주덕천하이트",
+        "address": "전북 완주군 용진읍 가목길 21",
+        "depositManwon": 1144,
+        "rentManwon": 10
+      }
+    ]
   }
 }
