@@ -1,0 +1,23 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "19세 이상 39세 이하",
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "무주택요건 충족",
+        "자동차(이륜차 포함) 소유·운행 가능 (세대당 1대만 등록)",
+        "청약자·계약자·입주자 동일인"
+      ]
+    }
+  ],
+  "priority": []
+}

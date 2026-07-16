@@ -1,0 +1,23 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": null,
+      "age": "만 19세 이상",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "국내 거주 성년자 및 법인",
+        "외국인 신청 불가",
+        "주택소유여부, 거주지역, 소득 및 자산요건 제한 없음",
+        "재당첨제한 미적용",
+        "1세대 1주택 제한 없음",
+        "미성년자는 형제자매 또는 자녀를 부양하는 세대주만 신청 가능"
+      ]
+    }
+  ],
+  "priority": []
+}

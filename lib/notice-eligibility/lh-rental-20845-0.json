@@ -1,0 +1,58 @@
+{
+  "supplyTotal": 9,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생·대학원생 (1순위)",
+      "units": null,
+      "age": null,
+      "marriage": "미혼",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "수급자/차상위계층/지원대상 한부모가족"
+      },
+      "asset": null,
+      "other": [
+        "본인 또는 부모가 해당 자격 충족"
+      ]
+    },
+    {
+      "id": "student",
+      "name": "대학생·대학원생 (2순위)",
+      "units": null,
+      "age": null,
+      "marriage": "미혼",
+      "income": {
+        "percent": 100,
+        "byHousehold": {
+          "1": 458,
+          "2": 645,
+          "3": 817
+        },
+        "note": "본인과 부모의 월평균소득"
+      },
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "student",
+      "name": "대학생·대학원생 및 청년 (3순위)",
+      "units": null,
+      "age": "19~39세 (1986.07.17~2007.07.16 출생)",
+      "marriage": "미혼",
+      "income": {
+        "percent": 100,
+        "byHousehold": {
+          "1": 458
+        },
+        "note": "본인의 월평균소득 (1인가구 기준)"
+      },
+      "asset": null,
+      "other": [
+        "부모가 주택 소유해도 신청 가능"
+      ]
+    }
+  ],
+  "priority": []
+}

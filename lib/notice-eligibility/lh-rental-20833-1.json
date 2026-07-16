@@ -1,0 +1,21 @@
+{
+  "supplyTotal": 80,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 80,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "주택건설지역(광주광역시) 거주",
+        "청약저축 6개월 이상 가입 또는 청약통장 가입자",
+        "성년자(만 19세 이상) 또는 특정 미성년자"
+      ]
+    }
+  ],
+  "priority": []
+}

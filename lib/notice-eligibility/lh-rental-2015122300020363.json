@@ -1,0 +1,20 @@
+{
+  "supplyTotal": 65,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 65,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "대구광역시 및 경상북도 거주",
+        "주택청약종합저축(청약저축 포함) 가입 필수"
+      ]
+    }
+  ],
+  "priority": []
+}
