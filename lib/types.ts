@@ -63,6 +63,8 @@ export interface Listing {
   features: string[];
   transit: string;
   competition: number | null;
+  // 경쟁률 출처 구분 — "own": 이 공고 자체의 접수결과, "previous": 같은 단지 과거 회차 (참고용)
+  competitionKind?: "own" | "previous";
   thumbSeed: number;
   suplyTyNm?: string;
   pblancNm?: string;

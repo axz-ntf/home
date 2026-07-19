@@ -80,7 +80,7 @@ function CarouselCard({ item: { listing: item, reasons }, rank }: { item: Carous
           {housing && <span className={`badge ${housing.badge}`}>{housing.name}</span>}
           <span className="badge agency">{item.agency}</span>
           {item.competition != null && (
-            <span className="chat-rec-competition">경쟁률 {item.competition}:1</span>
+            <span className="chat-rec-competition">{item.competitionKind === "previous" ? "지난 회차 " : ""}경쟁률 {item.competition}:1</span>
           )}
         </div>
         <div className="chat-rec-title">{item.title}</div>

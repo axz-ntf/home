@@ -177,7 +177,7 @@ export function ListingCard({
           {item.competition != null && (
             <>
               <span style={{ color: "var(--seed-scale-color-gray-400)" }}>·</span>
-              <span>전년 경쟁률 {item.competition}:1</span>
+              <span>{item.competitionKind === "previous" ? "지난 회차 경쟁률" : "경쟁률"} {item.competition}:1</span>
             </>
           )}
         </div>

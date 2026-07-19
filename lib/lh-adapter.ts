@@ -9,6 +9,52 @@ import { effectiveStatus } from "./dday";
 import { SH_ADMIN_LISTINGS, SH_PUBLIC_LISTINGS } from "./sh-adapter";
 import { YOUTH_ADMIN_LISTINGS, YOUTH_PUBLIC_LISTINGS } from "./youth-adapter";
 import noticeTextMeta from "./notice-texts/_meta.json";
+import competitionMap from "./competition.json";
+import competitionHistory from "./competition-history.json";
+
+// 공고별 경쟁률 — scripts/sync-competition.mjs 출력 (pblancId → { competition, ... })
+const COMPETITION = competitionMap as Record<string, { competition: number }>;
+
+// 단지별 과거 회차 경쟁률 이력 — 본인 결과(COMPETITION)가 없는 매물에 "지난 회차 경쟁률" 참조용.
+// 매칭은 보수적으로: 단지명 core(블록/단지 suffix 제거, 4자 이상)가 제목·단지명에 그대로 포함 + 유형 일치.
+type CompetitionHistoryEntry = {
+  name: string; type: string; competition: number; noticeDate: string;
+};
+const HISTORY_TYPE_TO_ID: Record<string, string[]> = {
+  "행복주택": ["happy"], "국민임대": ["nation"], "영구임대": ["perm"],
+  "통합공공임대": ["integ"], "매입임대": ["buy"], "전세임대": ["jeonse"],
+  "분양주택": ["sale"], "신혼희망타운": ["sale"], "공공분양(신혼희망)": ["sale"], "공공임대": ["fifty"],
+};
+// 공백/구두점 제거 + 블록 표기 통일 ("1단지"→"1", "S-1블록"→"S1", "2BL"→"2")
+// → "고양창릉 S-4블록" 매물이 "고양창릉 S-1블록" 이력과 오매칭되지 않게 블록 식별자 보존.
+const normCompText = (s: string) =>
+  s.replace(/[\s()[\]·,._\-]/g, "").replace(/(\d|[A-Z])(단지|블록|BL)/g, "$1");
+const TYPE_SUFFIX_RE =
+  /(행복주택|국민임대주택|국민임대|통합공공임대주택|통합공공임대|공공임대주택|공공임대|영구임대|신혼희망타운|매입임대주택|매입임대|아파트)+$/;
+const BLOCK_SUFFIX_RE = /(LH\d*|[A-Z]\d+|\d+|단지|블록|BL|지구)+$/;
+const stripLoop = (s: string, re: RegExp) => {
+  for (let prev = ""; prev !== s; ) { prev = s; s = s.replace(re, ""); }
+  return s;
+};
+// noticeDate 내림차순 정렬돼 있음(sync-competition) → 첫 hit 이 최신 회차.
+// nameCore: 유형어+블록 제거 (철원갈말행복주택→철원갈말) / nameWithBlock: 유형어만 제거 (고양창릉S1)
+const HISTORY_ENTRIES = (competitionHistory as CompetitionHistoryEntry[])
+  .map((h) => {
+    const nameWithBlock = stripLoop(normCompText(h.name), TYPE_SUFFIX_RE);
+    return { ...h, nameWithBlock, nameCore: stripLoop(nameWithBlock, BLOCK_SUFFIX_RE) };
+  })
+  .filter((h) => h.nameCore.length >= 4 && Number.isFinite(h.competition));
+function findPrevCompetition(type: string, title: string, complexName?: string | null): number | null {
+  const blob = normCompText(title + (complexName || ""));
+  for (const h of HISTORY_ENTRIES) {
+    if (!(HISTORY_TYPE_TO_ID[h.type] || []).includes(type)) continue;
+    // 이력에 블록 표기가 있으면 블록까지 정확히 일치해야 함 (S-1 이력 ≠ S-4 매물).
+    // 블록 없는 단지 단위 이력은 core 포함으로 매칭 (철원갈말 ↔ 철원갈말2 행복주택).
+    const key = h.nameWithBlock !== h.nameCore ? h.nameWithBlock : h.nameCore;
+    if (blob.includes(key)) return h.competition;
+  }
+  return null;
+}
 
 // 공고문 PDF 직접 열기(M2) — enrich 가 기록한 pdfFileid 로 LH 파일서버 URL 구성.
 // 키는 base id(lh-rental-{panId}) — listing id 의 -c0 등 suffix 제거 후 조회.
@@ -215,6 +261,9 @@ function adaptApi(r: ApiListing, loose = false): Listing | null {
   }
   const [deposit, rent] = guardPrice(r.type, r.depositManwon || 0, r.monthlyRentManwon || 0);
   const raw = RAW_BY_PANID.get(r.pblancId);
+  // 경쟁률: 본인 접수결과(own) 우선, 없으면 같은 단지 과거 회차(previous) 참조
+  const ownCompetition = COMPETITION[r.pblancId]?.competition ?? null;
+  const prevCompetition = ownCompetition == null ? findPrevCompetition(r.type, r.title, r.complexName) : null;
   return {
     id: r.id,
     pblancId: r.pblancId,
@@ -253,7 +302,9 @@ function adaptApi(r: ApiListing, loose = false): Listing | null {
     ),
     features: [],
     transit: "",
-    competition: null,
+    // sync-competition.mjs 가 접수결과 공지 PDF 에서 추출한 경쟁률 (신청자수/모집호수)
+    competition: ownCompetition ?? prevCompetition,
+    competitionKind: ownCompetition != null ? "own" : prevCompetition != null ? "previous" : undefined,
     thumbSeed: r.thumbSeed,
     suplyTyNm: safeString(r.houseType) || undefined,
     complexName: cleanComplexName(r.complexName),
