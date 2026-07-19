@@ -1,4 +1,6 @@
+import Anthropic from "@anthropic-ai/sdk";
 import { EXAMPLE_SPEC } from "./floorplan-spec";
+import { timelyApiKey, timelyBaseUrl } from "./ai-provider";
 
 // 평면도 이미지 → FloorPlanSpec 변환 프롬프트 + 검증.
 // 어드민 단건 추출(app/api/admin/floorplan)과 일괄 추출(scripts/extract-floorplans.ts)이 공유 —
@@ -55,4 +57,60 @@ export function sliceJson(text: string): string {
   const fence = text.match(/```(?:json)?\s*\n([\s\S]*?)\n```/);
   const body = fence ? fence[1] : text;
   return body.slice(body.indexOf("{"), body.lastIndexOf("}") + 1);
+}
+
+// 평면도 이미지 → 모델 응답 텍스트. 타임리라우터(OpenAI 호환) 우선, 키 없으면 Anthropic 직접.
+// Anthropic 경로는 adaptive thinking 유지 (라우터의 OpenAI 규격엔 thinking 파라미터가 없음).
+export const FLOORPLAN_USER_TEXT = "이 평면도를 FloorPlanSpec JSON 으로 변환하라. JSON만.";
+const FLOORPLAN_MODEL = "claude-opus-4-8";
+
+export async function extractFloorplanRaw(
+  base64: string,
+  mediaType: string,
+): Promise<{ text: string } | { refusal: true }> {
+  const key = timelyApiKey();
+  if (key) {
+    const res = await fetch(`${timelyBaseUrl()}/chat/completions`, {
+      method: "POST",
+      headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: FLOORPLAN_MODEL,
+        max_completion_tokens: 16000,
+        messages: [
+          { role: "system", content: FLOORPLAN_SYSTEM },
+          {
+            role: "user",
+            content: [
+              { type: "image_url", image_url: { url: `data:${mediaType};base64,${base64}` } },
+              { type: "text", text: FLOORPLAN_USER_TEXT },
+            ],
+          },
+        ],
+      }),
+    });
+    const j = await res.json().catch(() => null);
+    if (!res.ok) throw new Error(`타임리라우터 HTTP ${res.status}: ${JSON.stringify(j)?.slice(0, 200)}`);
+    return { text: j?.choices?.[0]?.message?.content ?? "" };
+  }
+
+  const client = new Anthropic();
+  const response = await client.messages.create({
+    model: FLOORPLAN_MODEL,
+    max_tokens: 16000,
+    thinking: { type: "adaptive" },
+    system: FLOORPLAN_SYSTEM,
+    messages: [
+      {
+        role: "user",
+        content: [
+          { type: "image", source: { type: "base64", media_type: mediaType as "image/png", data: base64 } },
+          { type: "text", text: FLOORPLAN_USER_TEXT },
+        ],
+      },
+    ],
+  });
+  if (response.stop_reason === "refusal") return { refusal: true };
+  let text = "";
+  for (const block of response.content) if (block.type === "text") text += block.text;
+  return { text };
 }

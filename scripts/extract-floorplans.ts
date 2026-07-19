@@ -11,10 +11,10 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import os from "node:os";
 import { execFileSync } from "node:child_process";
-import Anthropic from "@anthropic-ai/sdk";
 import { LH_LISTINGS } from "../lib/lh-adapter";
 import { effectiveStatus } from "../lib/dday";
-import { FLOORPLAN_SYSTEM, validateSpec, sliceJson } from "../lib/floorplan-extract";
+import { validateSpec, sliceJson, extractFloorplanRaw } from "../lib/floorplan-extract";
+import { hasAiKey } from "../lib/ai-provider";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SPECS_PATH = path.join(ROOT, "lib/floorplan-specs.json");
@@ -28,17 +28,17 @@ const CONCURRENCY = Number(process.env.CONCURRENCY ?? 3);
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 // 스크립트는 .env.local 을 자동 로드하지 않는다 — 직접 읽어 주입.
-if (!process.env.ANTHROPIC_API_KEY) {
+if (!process.env.TIMELY_ROUTER_API_KEY && !process.env.ANTHROPIC_API_KEY) {
   const envPath = path.join(ROOT, ".env.local");
   if (fs.existsSync(envPath)) {
     for (const line of fs.readFileSync(envPath, "utf8").split("\n")) {
-      const m = line.match(/^ANTHROPIC_API_KEY=(.+)$/);
-      if (m) process.env.ANTHROPIC_API_KEY = m[1].trim().replace(/^["']|["']$/g, "");
+      const m = line.match(/^(TIMELY_ROUTER_API_KEY|ANTHROPIC_API_KEY)=(.+)$/);
+      if (m) process.env[m[1]] = m[2].trim().replace(/^["']|["']$/g, "");
     }
   }
 }
-if (!process.env.ANTHROPIC_API_KEY) {
-  console.error("ANTHROPIC_API_KEY 없음 (.env.local 확인)");
+if (!hasAiKey()) {
+  console.error("TIMELY_ROUTER_API_KEY / ANTHROPIC_API_KEY 없음 (.env.local 확인)");
   process.exit(1);
 }
 
@@ -133,28 +133,10 @@ function mediaTypeOf(buf: Buffer, name: string): "image/png" | "image/jpeg" | "i
 }
 
 // ── Claude 추출 ──
-const client = new Anthropic();
-
 async function extractSpec(buf: Buffer, mediaType: "image/png" | "image/jpeg" | "image/webp") {
-  const response = await client.messages.create({
-    model: "claude-opus-4-8",
-    max_tokens: 16000,
-    thinking: { type: "adaptive" },
-    system: FLOORPLAN_SYSTEM,
-    messages: [
-      {
-        role: "user",
-        content: [
-          { type: "image", source: { type: "base64", media_type: mediaType, data: buf.toString("base64") } },
-          { type: "text", text: "이 평면도를 FloorPlanSpec JSON 으로 변환하라. JSON만." },
-        ],
-      },
-    ],
-  });
-  if (response.stop_reason === "refusal") return { error: "refusal" as const };
-  let text = "";
-  for (const block of response.content) if (block.type === "text") text += block.text;
-  const spec = JSON.parse(sliceJson(text));
+  const result = await extractFloorplanRaw(buf.toString("base64"), mediaType);
+  if ("refusal" in result) return { error: "refusal" as const };
+  const spec = JSON.parse(sliceJson(result.text));
   if (spec?.error === "no_floorplan") return { error: "no_floorplan" as const };
   const invalid = validateSpec(spec);
   if (invalid) return { error: invalid };

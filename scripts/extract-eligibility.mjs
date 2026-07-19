@@ -10,7 +10,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { generateText } from "ai";
-import { createAnthropic } from "@ai-sdk/anthropic";
+import { aiModel, hasAiKey } from "./lib/ai-provider.mjs";
 import { z } from "zod";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -18,10 +18,8 @@ const ROOT = path.resolve(__dirname, "..");
 const TEXTS_DIR = path.join(ROOT, "lib/notice-texts");
 const OUT_DIR = path.join(ROOT, "lib/notice-eligibility");
 
-const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
-if (!ANTHROPIC_API_KEY) { console.error("ERROR: ANTHROPIC_API_KEY 누락"); process.exit(1); }
+if (!hasAiKey()) { console.error("ERROR: TIMELY_ROUTER_API_KEY 또는 ANTHROPIC_API_KEY 누락"); process.exit(1); }
 
-const anthropic = createAnthropic({ apiKey: ANTHROPIC_API_KEY.trim() });
 // Haiku 4.5: $1/M in, $5/M out (Sonnet 대비 5배↓). 자격 추출은 비교적 단순 → 품질 충분.
 const MODEL = process.env.EXTRACT_MODEL ?? "claude-haiku-4-5";
 
@@ -173,7 +171,7 @@ async function extractOne(id) {
   const eligibilityRegion = extractEligibilityRegion(md);
 
   const result = await generateText({
-    model: anthropic(MODEL),
+    model: aiModel(MODEL),
     system: SYSTEM_PROMPT + SCHEMA_HINT,
     prompt:
       `다음은 LH 공고문의 자격 관련 섹션입니다. 자격 정보를 추출해 위 schema 의 JSON 만 출력하세요. 설명/주석/마크다운 헤더 금지, 오직 JSON 한 덩어리.\n\n` +

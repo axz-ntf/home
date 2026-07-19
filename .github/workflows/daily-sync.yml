@@ -111,6 +111,7 @@ jobs:
       - name: Phase 5 — 자격 정보 구조화 추출 (Claude)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TIMELY_ROUTER_API_KEY: ${{ secrets.TIMELY_ROUTER_API_KEY }}
         run: node scripts/extract-eligibility.mjs --limit 9999
 
       - name: Phase 6a — cover 사진 Blob 업로드
@@ -160,6 +161,7 @@ jobs:
         continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TIMELY_ROUTER_API_KEY: ${{ secrets.TIMELY_ROUTER_API_KEY }}
           VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
           KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
         run: node scripts/extract-mapped-regional.mjs --active
@@ -197,6 +199,7 @@ jobs:
         continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TIMELY_ROUTER_API_KEY: ${{ secrets.TIMELY_ROUTER_API_KEY }}
         run: npx tsx scripts/extract-floorplans.ts
 
       # SH(서울주거포털)·청년안심주택(soco) 공고 sync — 어드민 검수 큐 공급원.
@@ -216,6 +219,7 @@ jobs:
         continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TIMELY_ROUTER_API_KEY: ${{ secrets.TIMELY_ROUTER_API_KEY }}
           VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
           SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
         run: node scripts/extract-sh-mapped.mjs
@@ -235,6 +239,7 @@ jobs:
         continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TIMELY_ROUTER_API_KEY: ${{ secrets.TIMELY_ROUTER_API_KEY }}
           KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
           MOLIT_API_KEY: ${{ secrets.MOLIT_API_KEY }}
         run: npx tsx scripts/warm-insight.ts --limit 200

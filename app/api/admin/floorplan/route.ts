@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import Anthropic from "@anthropic-ai/sdk";
 import { mutateJsonFile, persistMode } from "@/lib/admin-json-file";
-import { FLOORPLAN_SYSTEM, validateSpec, sliceJson } from "@/lib/floorplan-extract";
+import { validateSpec, sliceJson, extractFloorplanRaw } from "@/lib/floorplan-extract";
+import { hasAiKey } from "@/lib/ai-provider";
 
 // 평면도 3D Phase 2 — 평면도 이미지 → Claude 비전 → FloorPlanSpec(JSON).
 // AI 는 스펙만 생성하고 렌더는 고정 제너레이터(floor-plan-3d)가 한다 — 검수자가
@@ -25,34 +25,17 @@ export async function POST(req: Request) {
   if (!mediaType) {
     return NextResponse.json({ error: `지원하지 않는 이미지 형식 (${file.type || "unknown"})` }, { status: 400 });
   }
-  if (!(process.env.ANTHROPIC_API_KEY ?? "").trim()) {
-    return NextResponse.json({ error: "ANTHROPIC_API_KEY 가 설정되지 않았습니다" }, { status: 500 });
+  if (!hasAiKey()) {
+    return NextResponse.json({ error: "TIMELY_ROUTER_API_KEY 또는 ANTHROPIC_API_KEY 가 설정되지 않았습니다" }, { status: 500 });
   }
 
   try {
-    const client = new Anthropic();
     const data = Buffer.from(await file.arrayBuffer()).toString("base64");
-    const response = await client.messages.create({
-      model: "claude-opus-4-8",
-      max_tokens: 16000,
-      thinking: { type: "adaptive" },
-      system: FLOORPLAN_SYSTEM,
-      messages: [
-        {
-          role: "user",
-          content: [
-            { type: "image", source: { type: "base64", media_type: mediaType, data } },
-            { type: "text", text: "이 평면도를 FloorPlanSpec JSON 으로 변환하라. JSON만." },
-          ],
-        },
-      ],
-    });
-    if (response.stop_reason === "refusal") {
+    const result = await extractFloorplanRaw(data, mediaType);
+    if ("refusal" in result) {
       return NextResponse.json({ error: "모델이 이미지를 처리할 수 없다고 응답했습니다" }, { status: 422 });
     }
-    let text = "";
-    for (const block of response.content) if (block.type === "text") text += block.text;
-    const spec = JSON.parse(sliceJson(text));
+    const spec = JSON.parse(sliceJson(result.text));
     if (spec?.error === "no_floorplan") {
       return NextResponse.json({ error: "이미지에서 평면도를 찾지 못했습니다 (위치도/조감도 아님?)" }, { status: 422 });
     }

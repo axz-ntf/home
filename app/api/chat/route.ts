@@ -1,5 +1,5 @@
-import { createAnthropic } from "@ai-sdk/anthropic";
 import { convertToModelMessages, stepCountIs, streamText, tool, type UIMessage } from "ai";
+import { aiModel } from "@/lib/ai-provider";
 import { z } from "zod";
 import { LH_LISTINGS } from "@/lib/lh-adapter";
 import { SH_ADMIN_LISTINGS } from "@/lib/sh-adapter";
@@ -16,10 +16,7 @@ for (const l of [...LH_LISTINGS, ...SH_ADMIN_LISTINGS, ...YOUTH_ADMIN_LISTINGS])
   TITLE_BY_ID.set(l.id, l.pblancNm || l.title);
 }
 
-// Anthropic Claude (직접 API). 이전엔 BizRouter 프록시 사용했으나 중단되어 직접 호출로 전환.
-const anthropic = createAnthropic({
-  apiKey: (process.env.ANTHROPIC_API_KEY ?? "").trim(),
-});
+// 타임리라우터 우선, 키 없으면 Anthropic 직접 호출 (lib/ai-provider 스위치).
 const MODEL_ID = process.env.ANTHROPIC_MODEL ?? "claude-sonnet-4-6";
 
 const SYSTEM_PROMPT = `당신은 한국 LH/마이홈 공공임대주택·공공분양 자격 상담 도우미 "다음부동산 AI"입니다.
@@ -312,7 +309,7 @@ export async function POST(req: Request) {
   }
 
   const result = streamText({
-    model: anthropic(MODEL_ID),
+    model: aiModel(MODEL_ID),
     system,
     messages: await convertToModelMessages(messages),
     tools: { recommendListings, suggestActions, searchNoticeContent: buildSearchNoticeContent(focusListingId) },

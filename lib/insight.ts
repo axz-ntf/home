@@ -1,7 +1,7 @@
 // AI 입지 분석 코어 — /api/insight 와 야간 warm 스크립트가 공유.
 // (route 에 있던 로직을 그대로 분리 — 서버 없이도 CI 에서 직접 호출 가능하게.)
-import { createAnthropic } from "@ai-sdk/anthropic";
 import { generateObject } from "ai";
+import { aiModel } from "./ai-provider";
 import { z } from "zod";
 import { localCounts, type LocalCounts } from "./kakao-local";
 import { marketRent, type MarketRent } from "./molit-rent";
@@ -9,7 +9,6 @@ import { nearbyStations } from "./subway";
 import { nearbySchools } from "./schools";
 import type { HousingTypeId } from "./types";
 
-const anthropic = createAnthropic({ apiKey: (process.env.ANTHROPIC_API_KEY ?? "").trim() });
 const MODEL_ID = process.env.ANTHROPIC_MODEL ?? "claude-sonnet-4-6";
 export const RADIUS = 500;
 
@@ -174,7 +173,7 @@ export async function computeInsight(
   const marketText = buildMarketText(market);
 
   const { object } = await generateObject({
-    model: anthropic(MODEL_ID),
+    model: aiModel(MODEL_ID),
     schema,
     system: SYSTEM,
     prompt: buildPrompt(name, address, valueText, marketText, counts, stations, schools),

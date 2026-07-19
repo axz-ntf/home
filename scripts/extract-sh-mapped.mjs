@@ -10,12 +10,13 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { streamText } from "ai";
+import { aiModel, hasAiKey } from "./lib/ai-provider.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const AKEY = process.env.ANTHROPIC_API_KEY?.trim();
 const VKEY = process.env.VWORLD_API_KEY;
 const SKEY = (process.env.SOLAR_API_KEY ?? "").trim();
-if (!AKEY || !VKEY || !SKEY) { console.error("ERROR: ANTHROPIC_API_KEY / VWORLD_API_KEY / SOLAR_API_KEY 필요"); process.exit(1); }
+if (!hasAiKey() || !VKEY || !SKEY) { console.error("ERROR: (TIMELY_ROUTER_API_KEY|ANTHROPIC_API_KEY) / VWORLD_API_KEY / SOLAR_API_KEY 필요"); process.exit(1); }
 
 const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/120 Safari/537.36";
 const DOC_PARSE_URL = "https://api.upstage.ai/v1/document-ai/document-parse";
@@ -77,48 +78,21 @@ types 각 항목: name(주택형 코드 그대로, 예 "25B" — 표의 '주택�
 - 단지가 매우 많으면 전부 나열 (생략 금지).
 JSON만: {"applyBegin":"YYYY.MM.DD|null","applyEnd":"YYYY.MM.DD|null","winnerAt":"YYYY.MM.DD|null","rentTerms":{"residence":"…|null","depositBasis":"…|null","convertible":true|false},"complexes":[{"name":"단지명","address":"주소","units":<정수|null>,"depositMinWon":<원|null>,"depositMaxWon":<원|null>,"rentMinWon":<원|null>,"rentMaxWon":<원|null>,"areaMinM2":<수|null>,"areaMaxM2":<수|null>,"types":[{"name":"주택형","areaM2":<수|null>,"units":<정수|null>,"depositWon":<원|null>,"rentWon":<원|null>}]}]}`;
 
-// 대형 공고(수백 단지)는 출력 JSON 이 수만 토큰이라 생성에 수 분 걸려 비스트리밍 fetch 는
-// HTTP body 타임아웃(~300s)에 걸려 "fetch failed" 로 끊긴다 → 스트리밍(SSE)으로 소켓을 유지.
+// 대형 공고(수백 단지)는 출력 JSON 이 수만 토큰이라 생성에 수 분 걸려 비스트리밍은
+// HTTP body 타임아웃(~300s)에 걸려 끊긴다 → streamText 로 소켓을 유지하고 전체 텍스트만 수집.
 // 3회까지 재시도(백오프), 4xx 등 영구 오류는 즉시 중단. 누적 텍스트를 반환.
-async function anthropicText(body) {
+async function aiText({ model, maxTokens, system, prompt }) {
   let lastErr;
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
-      const r = await fetch("https://api.anthropic.com/v1/messages", {
-        method: "POST",
-        headers: { "x-api-key": AKEY, "anthropic-version": "2023-06-01", "content-type": "application/json" },
-        body: JSON.stringify({ ...body, stream: true }),
-      });
-      if (!r.ok) {
-        if (r.status >= 400 && r.status < 500 && r.status !== 429) throw new Error(`AI HTTP ${r.status}`);
-        throw new Error(`AI HTTP ${r.status} (재시도)`);
-      }
-      const reader = r.body.getReader();
-      const dec = new TextDecoder();
-      let buf = "", text = "";
-      for (;;) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        buf += dec.decode(value, { stream: true });
-        let nl;
-        while ((nl = buf.indexOf("\n")) >= 0) {
-          const line = buf.slice(0, nl).trim();
-          buf = buf.slice(nl + 1);
-          if (!line.startsWith("data:")) continue;
-          const data = line.slice(5).trim();
-          if (!data || data === "[DONE]") continue;
-          try {
-            const ev = JSON.parse(data);
-            if (ev.type === "content_block_delta" && ev.delta?.type === "text_delta") text += ev.delta.text;
-            else if (ev.type === "error") throw new Error(`AI stream error: ${ev.error?.message ?? "?"}`);
-          } catch (e) { if (/stream error/.test(e.message)) throw e; }
-        }
-      }
+      const result = streamText({ model: aiModel(model), system, prompt, maxOutputTokens: maxTokens });
+      const text = await result.text;
       if (!text) throw new Error("AI 빈 응답 (재시도)");
       return text;
     } catch (e) {
       lastErr = e;
-      if (/HTTP 4\d\d$/.test(e.message)) throw e; // 영구 오류는 즉시 중단
+      const status = e?.statusCode ?? e?.status;
+      if (status >= 400 && status < 500 && status !== 429) throw e; // 영구 오류는 즉시 중단
       if (attempt < 3) await sleep(2000 * attempt);
     }
   }
@@ -126,11 +100,11 @@ async function anthropicText(body) {
 }
 
 async function aiComplexes(md) {
-  let t = await anthropicText({
+  let t = await aiText({
     model: "claude-sonnet-4-6",
-    max_tokens: 48000, // 단지 수십~수백개 공고는 JSON 이 길어 16k 로는 잘림 → 확장
+    maxTokens: 48000, // 단지 수십~수백개 공고는 JSON 이 길어 16k 로는 잘림 → 확장
     system: SYSTEM,
-    messages: [{ role: "user", content: `공급 단지 목록 추출, JSON만:\n\n${md.slice(0, 120000)}` }],
+    prompt: `공급 단지 목록 추출, JSON만:\n\n${md.slice(0, 120000)}`,
   });
   const f = t.match(/```(?:json)?\s*\n([\s\S]*?)\n```/);
   if (f) t = f[1];

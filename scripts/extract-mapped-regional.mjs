@@ -6,12 +6,13 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { generateText } from "ai";
+import { aiModel, hasAiKey } from "./lib/ai-provider.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const KEY = process.env.ANTHROPIC_API_KEY?.trim();
 const VKEY = process.env.VWORLD_API_KEY;
 const KAKAO = process.env.KAKAO_REST_API_KEY; // VWorld 폴백(헤더 인증 → CI IP 제한 회피)
-if (!KEY || (!VKEY && !KAKAO)) { console.error("ERROR: ANTHROPIC_API_KEY 및 VWORLD_API_KEY/KAKAO_REST_API_KEY 중 하나 필요"); process.exit(1); }
+if (!hasAiKey() || (!VKEY && !KAKAO)) { console.error("ERROR: (TIMELY_ROUTER_API_KEY|ANTHROPIC_API_KEY) 및 VWORLD_API_KEY/KAKAO_REST_API_KEY 중 하나 필요"); process.exit(1); }
 
 const args = process.argv.slice(2);
 const idArg = (args.find((a) => a.startsWith("--ids=")) || "").split("=")[1];
@@ -51,14 +52,13 @@ JSON만: {"complexes":[{"name":"단지명","address":"전체 도로명주소","d
 
 async function aiComplexes(md) {
   const region = md.slice(0, 14000);
-  const r = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: { "x-api-key": KEY, "anthropic-version": "2023-06-01", "content-type": "application/json" },
-    body: JSON.stringify({ model: "claude-haiku-4-5", max_tokens: 1500, system: SYSTEM, messages: [{ role: "user", content: `공급 단지 목록 추출, JSON만:\n\n${region}` }] }),
+  const result = await generateText({
+    model: aiModel("claude-haiku-4-5"),
+    system: SYSTEM,
+    prompt: `공급 단지 목록 추출, JSON만:\n\n${region}`,
+    maxOutputTokens: 1500,
   });
-  const j = await r.json();
-  if (!r.ok) throw new Error(`AI HTTP ${r.status}`);
-  let t = j.content.map((c) => c.text || "").join("");
+  let t = result.text ?? "";
   const f = t.match(/```(?:json)?\s*\n([\s\S]*?)\n```/); if (f) t = f[1];
   const o = JSON.parse(t.slice(t.indexOf("{"), t.lastIndexOf("}") + 1));
   return Array.isArray(o.complexes) ? o.complexes : [];
