@@ -11370,5 +11370,44 @@
       }
     ],
     "matches": []
+  },
+  "9102835513": {
+    "title": "[신청현황게시] 부천원종 C1블록(원종휴튼3단지) 행복주택 입주자 추가모집(`26.07.02. 공고) 청약접수 결과",
+    "date": "2026.07.16",
+    "linkUrl": "http://apply.lh.or.kr/lhapply/apply/noti/an/view.do?mi=1079&ccrCnntSysDsCd=03&bbsSn=9102835513",
+    "attachment": "(게시)부천원종C1블록행복주택(일자리연계형)접수결과('26.07.02.공고).pdf",
+    "aisType": "행복주택",
+    "status": "no-match",
+    "complexes": [
+      {
+        "name": "부천원종 C1블록(원종휴튼3단지)",
+        "unitsRecruit": 258,
+        "applicants": 436
+      }
+    ],
+    "matches": []
+  },
+  "9102431993": {
+    "title": "양산사송5단지 영구임대 예비입주자 신청현황 게시(2026.6.29공고)",
+    "date": "2026.07.16",
+    "linkUrl": "http://apply.lh.or.kr/lhapply/apply/noti/an/view.do?mi=1079&ccrCnntSysDsCd=02&bbsSn=9102431993",
+    "attachment": "양산사송5영구임대예비입주자신청현황게시(26.06.29공고).pdf",
+    "aisType": "영구임대",
+    "status": "matched",
+    "complexes": [
+      {
+        "name": "사송5",
+        "unitsRecruit": 130,
+        "applicants": 93
+      }
+    ],
+    "matches": [
+      {
+        "pblancId": "2015122300020233",
+        "complexNames": [
+          "사송5"
+        ]
+      }
+    ]
   }
 }
