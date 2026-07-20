@@ -1,0 +1,19 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "etc",
+      "name": "영구임대",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "현재 임대주택 거주자는 기존 임대주택 명도 필수"
+      ]
+    }
+  ],
+  "priority": []
+}
