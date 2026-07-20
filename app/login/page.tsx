@@ -2,13 +2,15 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { loadProfile } from "@/lib/profile";
 import { AuthBrandPanel } from "@/components/auth-brand-panel";
 import { Button } from "@/components/button";
 
 export default function LoginPage() {
+  // 로그인 기능 임시 숨김 (개인정보 처리 위험 검토 전까지) — 진입 UI 제거 + 직접 접근 차단
+  redirect("/");
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [pw, setPw] = useState("");

@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { EligibilityFields, INITIAL_FORM, canNext1, canNext2 } from "@/components/eligibility-fields";
 import { loadProfileFull, saveProfile } from "@/lib/profile";
 import { Button } from "@/components/button";
@@ -30,6 +30,8 @@ const snapshot = (form: EligibilityForm, nickname: string) => JSON.stringify({ f
 // 프로필 수정 — 당근 계정화면형 레이아웃(좁은 중앙 컬럼 + 아바타·이름 + 섹션 행),
 // 색상은 다음 스타일. 공유 EligibilityFields(step 1·2) 재사용, 미로그인이면 /login.
 export default function ProfileEditPage() {
+  // 로그인 기능 임시 숨김 (개인정보 처리 위험 검토 전까지) — 진입 UI 제거 + 직접 접근 차단
+  redirect("/");
   const router = useRouter();
   const [form, setForm] = useState<EligibilityForm>(INITIAL_FORM);
   const [nickname, setNickname] = useState("");

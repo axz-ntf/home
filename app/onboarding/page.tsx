@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { INITIAL_FORM } from "@/components/eligibility-fields";
 import { saveProfile } from "@/lib/profile";
@@ -94,6 +94,8 @@ const SPECIAL_OPTIONS = [
 ];
 
 export default function OnboardingPage() {
+  // 로그인 기능 임시 숨김 (개인정보 처리 위험 검토 전까지) — 진입 UI 제거 + 직접 접근 차단
+  redirect("/");
   const router = useRouter();
   const [ready, setReady] = useState(false);
   const [i, setI] = useState(0);

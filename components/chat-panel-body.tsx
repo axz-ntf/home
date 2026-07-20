@@ -7,9 +7,7 @@ import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport, type UIMessage } from "ai";
 import ReactMarkdown from "react-markdown";
-import Link from "next/link";
 import type { Listing } from "@/lib/types";
-import { createClient } from "@/lib/supabase/client";
 import { loadProfile, summarizeEligibility } from "@/lib/profile";
 import { ChatListingCarousel } from "./chat-listing-carousel";
 import { ChatSuggestionChips, type SuggestionAction } from "./chat-suggestion-chips";
@@ -129,12 +127,9 @@ export function ChatPanelBody({ allListings = [], focusListing }: { allListings?
   const focusIdRef = useRef(focusListing?.id);
   focusIdRef.current = focusListing?.id;
 
-  // 로그인 사용자의 저장된 자격 → 요청마다 body 로 실어 AI 가 다시 묻지 않고 맞춤 상담.
-  // isAuthed 기본 true → 로딩 중 로그인 유도 깜빡임 방지.
+  // 저장된 자격 → 요청마다 body 로 실어 AI 가 다시 묻지 않고 맞춤 상담.
   const eligibilityRef = useRef<string | null>(null);
-  const [isAuthed, setIsAuthed] = useState(true);
   useEffect(() => {
-    createClient().auth.getUser().then(({ data }) => setIsAuthed(!!data.user));
     loadProfile().then((form) => {
       eligibilityRef.current = form ? summarizeEligibility(form) : null;
     });
@@ -311,16 +306,7 @@ export function ChatPanelBody({ allListings = [], focusListing }: { allListings?
             </div>
           </div>
         )}
-        {/* 미로그인 + 질문한 적 있음 → 로그인 유도 (자격 저장 시 맞춤 상담). */}
-        {!isAuthed && messages.length > 0 && status === "ready" && (
-          <div className="chat-login-nudge">
-            <div className="chat-login-nudge-text">
-              <strong>로그인하면 더 정확해져요</strong>
-              내 자격을 저장해두면 매번 입력하지 않아도 조건에 맞춰 상담해 드려요.
-            </div>
-            <Link href="/login" className="chat-login-nudge-btn">로그인</Link>
-          </div>
-        )}
+        {/* 로그인 유도 배너 제거됨 — 로그인 기능 임시 숨김 (개인정보 처리 위험 검토 전까지) */}
       </div>
       <form className="chat-input-row" onSubmit={handleSubmit}>
         <div className="chat-input-wrap">

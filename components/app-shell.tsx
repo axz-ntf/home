@@ -17,7 +17,6 @@ import { DetailAiPanel } from "./detail-ai-panel";
 import { EligibilityModal } from "./eligibility-modal";
 import { ChatPanelBody } from "./chat-panel-body";
 import { SavedClient } from "@/app/saved/saved-client";
-import { AuthButton } from "./auth-button";
 import { TweaksPanel } from "./tweaks-panel";
 import { MobileChrome } from "./mobile-chrome";
 
@@ -297,9 +296,7 @@ export function AppShell({
           )}
         </div>
         <div className="topbar-spacer" />
-        <div className="topbar-account">
-          <AuthButton />
-        </div>
+        {/* 로그인 기능 임시 숨김 (개인정보 처리 위험 검토 전까지) — AuthButton + /login·/signup·/onboarding·/profile 비활성 */}
       </header>
 
       <div className={`main ${detailOpen && selectedItem ? "detail-open" : ""} ${aiFocusItem ? "ai-open" : ""}`}>
