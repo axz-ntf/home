@@ -1,0 +1,19 @@
+{
+  "supplyTotal": 925,
+  "tiers": [
+    {
+      "id": "etc",
+      "name": "영구임대",
+      "units": 925,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "현장접수만 가능(인터넷 신청 불가)",
+        "기존 임대주택 거주자는 입주 전 명도 필요"
+      ]
+    }
+  ],
+  "priority": []
+}

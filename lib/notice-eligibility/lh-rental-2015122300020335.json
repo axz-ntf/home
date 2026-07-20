@@ -1,0 +1,19 @@
+{
+  "supplyTotal": 925,
+  "tiers": [
+    {
+      "id": "etc",
+      "name": "영구임대",
+      "units": 925,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "현재 임대주택에 거주하고 있는 자는 입주 전 기존 임대주택을 명도해야 함",
+        "무주택세대구성원 전원 1주택 신청을 원칙으로 함"
+      ]
+    }
+  ],
+  "priority": []
+}
