@@ -62,7 +62,6 @@ const nextConfig: NextConfig = {
       "lib/myhome-all-notices.json",
       "lib/myhome-sale-notices.json",
       "lib/notice-embeddings/vectors.bin",
-      "_prototype/**/*",
     ],
   },
 };
