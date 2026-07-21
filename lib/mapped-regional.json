@@ -2147,5 +2147,31 @@
         "rentManwon": 10
       }
     ]
+  },
+  "2015122300020378": {
+    "districtId": "gangwon",
+    "district": "강원특별자치도",
+    "points": [
+      {
+        "lat": 37.5247415047897,
+        "lng": 129.114299292996,
+        "address": "강원특별자치도 동해시",
+        "districtId": "gangwon",
+        "district": "강원특별자치도"
+      }
+    ]
+  },
+  "2015122300020376": {
+    "districtId": "gangwon",
+    "district": "강원특별자치도",
+    "points": [
+      {
+        "lat": 37.7521116823526,
+        "lng": 128.875906235799,
+        "address": "강원특별자치도 강릉시",
+        "districtId": "gangwon",
+        "district": "강원특별자치도"
+      }
+    ]
   }
 }
