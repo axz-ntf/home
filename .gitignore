@@ -65,3 +65,10 @@ lib/myhome-all-notices.json
 lib/myhome-rental-notices.json
 lib/myhome-sale-notices.json
 _prototype/
+
+# ntf meta layer (lives at project root, outside code git)
+docs/
+CLAUDE.md
+DEPLOY.md
+tik
+.tik/
