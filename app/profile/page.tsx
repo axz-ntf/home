@@ -113,8 +113,6 @@ export default function ProfileEditPage() {
     <div className="profile-page">
       <div className="profile-topbar">
         <Link href="/" className="profile-logo" aria-label="홈으로">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.svg" alt="" width={24} height={24} />
           <strong>부동산</strong>
         </Link>
         <button type="button" className="profile-back" onClick={goBack}>← 뒤로</button>

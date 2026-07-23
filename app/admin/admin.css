@@ -118,11 +118,6 @@ body:has(.a-app-admin) html { height: 100% !important; overflow: hidden !importa
   padding: 22px 18px 24px;
   text-decoration: none;
 }
-.a-brand-mark {
-  width: 30px; height: 30px;
-  border-radius: 8px;
-  object-fit: contain;
-}
 .a-brand-name {
   font-size: 16px; font-weight: 700;
   letter-spacing: 0;

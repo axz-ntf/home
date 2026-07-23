@@ -35,8 +35,6 @@ export default async function TipPostPage({ params }: { params: Promise<{ slug: 
       <div className="post-page">
         <header className="post-nav">
           <Link href="/tips" style={{ display: "inline-flex", alignItems: "center", gap: 6, textDecoration: "none", color: "inherit" }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.svg" alt="다음" width={24} height={24} />
             <strong style={{ fontSize: 16, letterSpacing: "-0.02em" }}>주거 가이드</strong>
           </Link>
         </header>

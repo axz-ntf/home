@@ -272,8 +272,6 @@ export function AppShell({
             aria-label="홈으로"
             style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "none", border: "none", padding: 0, cursor: "pointer", font: "inherit" }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.svg" alt="다음" className="brand-logo" />
             <span className="brand-name">부동산</span>
           </button>
         </div>

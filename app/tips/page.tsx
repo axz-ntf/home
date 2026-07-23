@@ -32,8 +32,6 @@ export default function TipsPage() {
       <div className="tips-hub">
         <header className="tips-gnb">
           <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: 6, textDecoration: "none", color: "inherit" }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.svg" alt="다음" width={24} height={24} />
             <strong style={{ fontSize: 16, letterSpacing: "-0.02em" }}>부동산</strong>
           </Link>
         </header>

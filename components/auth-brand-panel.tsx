@@ -4,8 +4,6 @@ export function AuthBrandPanel() {
     <aside className="auth-brand" aria-hidden>
       <div className="auth-brand-inner">
         <div className="auth-brand-logo">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.svg" alt="" width={34} height={34} />
           <strong>다음 공공임대주택 부동산</strong>
         </div>
         <h2 className="auth-brand-title">

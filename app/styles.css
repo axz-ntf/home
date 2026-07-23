@@ -231,11 +231,6 @@ input, select { font-family: inherit; }
   line-height: 1;
   margin: 0 0 0 5px; /* Daum GNB 로고-서비스명 간격 */
 }
-.brand-logo {
-  width: 24px;
-  height: 24px;
-  display: block;
-}
 .brand-ai-cta {
   display: inline-flex;
   align-items: center;
@@ -4355,13 +4350,6 @@ div:has(> img[src*="streetview_btn"]) {
   .auth-brand-inner { max-width: 420px; }
   .auth-brand-logo {
     display: inline-flex; align-items: center; gap: 11px; margin-bottom: 30px;
-  }
-  /* 실제(컬러) 로고를 흰 칩에 얹어 그라데이션 위에서 또렷하게 */
-  .auth-brand-logo img {
-    width: 30px; height: 30px;
-    background: #fff; padding: 6px; border-radius: 11px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
-    box-sizing: content-box;
   }
   .auth-brand-logo strong { font-size: 20px; letter-spacing: -0.02em; }
   .auth-brand-title {

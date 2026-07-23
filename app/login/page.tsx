@@ -39,8 +39,6 @@ export default function LoginPage() {
       <AuthBrandPanel />
       <div className="login-card">
         <Link href="/" className="login-brand" aria-label="홈으로">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.svg" alt="다음" width={28} height={28} />
           <strong>부동산</strong>
         </Link>
 

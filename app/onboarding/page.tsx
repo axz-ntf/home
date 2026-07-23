@@ -169,8 +169,6 @@ export default function OnboardingPage() {
     <div className="ob">
       <header className="ob-top">
         <Link href="/" className="ob-brand" aria-label="홈으로">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.svg" alt="다음" width={26} height={26} />
           <strong>부동산</strong>
         </Link>
         <div className="ob-progress" aria-label={`${i + 1} / ${STEPS.length} 단계`}>
