@@ -174,7 +174,17 @@ async function fetchComplexPage(brtcCode, signguCode, pageNo, numOfRows = 1000) 
   url.searchParams.set("signguCode", signguCode);
   url.searchParams.set("numOfRows", String(numOfRows));
   url.searchParams.set("pageNo", String(pageNo));
-  const res = await fetch(url, { headers: { "User-Agent": UA } });
+  let res;
+  for (let attempt = 1; ; attempt++) {
+    try {
+      res = await fetch(url, { headers: { "User-Agent": UA } });
+      break;
+    } catch (e) {
+      if (attempt >= 3) throw e;
+      console.log(`  API1 재시도 ${attempt}/2 (${e.message ?? e}) — ${attempt}초 대기`);
+      await sleep(attempt * 1000);
+    }
+  }
   if (!res.ok) return { items: [], totalCount: 0 };
   const json = await res.json();
   if (json?.code !== "000") return { items: [], totalCount: 0 };
@@ -193,22 +203,29 @@ async function fetchAllComplexes() {
 
   const admin = JSON.parse(fs.readFileSync(ADMIN_CODES_PATH, "utf8"));
   const all = [];
-  for (const [sidoCode, sido] of Object.entries(admin)) {
-    let sidoTotal = 0;
-    for (const sg of sido.sigungu) {
-      let page = 1;
-      while (true) {
-        const { items, totalCount } = await fetchComplexPage(sidoCode, sg.code, page);
-        if (!items.length) break;
-        all.push(...items);
-        sidoTotal += items.length;
-        if (all.length >= page * 1000 || items.length < 1000 || all.length >= totalCount) break;
-        page++;
+  try {
+    for (const [sidoCode, sido] of Object.entries(admin)) {
+      let sidoTotal = 0;
+      for (const sg of sido.sigungu) {
+        let page = 1;
+        while (true) {
+          const { items, totalCount } = await fetchComplexPage(sidoCode, sg.code, page);
+          if (!items.length) break;
+          all.push(...items);
+          sidoTotal += items.length;
+          if (all.length >= page * 1000 || items.length < 1000 || all.length >= totalCount) break;
+          page++;
+          await sleep(DELAY);
+        }
         await sleep(DELAY);
       }
-      await sleep(DELAY);
+      console.log(`  API1 ${sidoCode} ${sido.name}: ${sidoTotal}건`);
     }
-    console.log(`  API1 ${sidoCode} ${sido.name}: ${sidoTotal}건`);
+  } catch (e) {
+    // data.myhome.go.kr 이 GH 러너(해외 IP)에서 간헐 불통 — 단지정보 없이도 sync 는 계속.
+    // (좌표는 Phase 7.1 지오코딩이 보강. 성공 run 이 캐시를 만들면 이후엔 API 호출 자체를 안 함.)
+    console.log(`⚠️ 단지정보 수집 실패 — 확보분 ${all.length}건으로 계속: ${e.message ?? e}`);
+    return all;
   }
   fs.writeFileSync(COMPLEXES_PATH, JSON.stringify(all, null, 2));
   console.log(`  단지정보 저장: ${COMPLEXES_PATH} (${all.length}건)`);
