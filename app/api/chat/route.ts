@@ -291,12 +291,22 @@ const suggestActions = tool({
   execute: async ({ actions }) => ({ actions }),
 });
 
+// 주민등록번호 패턴 마스킹 — 외부 LLM 으로 나가기 전 서버에서 차단 (개인정보 최소화).
+// 생년월일 6자리 + 구분자(옵션) + 성별코드(1~8)로 시작하는 7자리.
+const maskRRN = (s: string) => s.replace(/\d{6}[-\s]?[1-8]\d{6}/g, "[주민등록번호 삭제됨]");
+
 export async function POST(req: Request) {
-  const { messages, focusListingId, eligibility }: {
+  const { messages: rawMessages, focusListingId, eligibility: rawEligibility }: {
     messages: UIMessage[];
     focusListingId?: string;
     eligibility?: string;
   } = await req.json();
+
+  const messages = rawMessages.map((m) => ({
+    ...m,
+    parts: m.parts.map((p) => (p.type === "text" ? { ...p, text: maskRRN(p.text) } : p)),
+  })) as UIMessage[];
+  const eligibility = rawEligibility ? maskRRN(rawEligibility) : rawEligibility;
 
   // 상세페이지에서 온 요청이면 그 매물을 시스템 컨텍스트로 알려주고, 공고문 RAG 도 이 매물로 scope.
   const focusTitle = focusListingId ? TITLE_BY_ID.get(focusListingId) : undefined;
