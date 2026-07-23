@@ -378,6 +378,9 @@ export function NaverMapView({
   const { mapPins, repOf, membersOf } = useMemo(() => groupPinsByLocation(pins), [pins]);
   // 같은 좌표에 여러 매물이 묶인 핀 클릭 시 띄울 목록.
   const [stack, setStack] = useState<Listing[] | null>(null);
+  // 팝업이 뜬 채로 사이드 목록 등 외부에서 다른 매물을 선택하면 닫는다 —
+  // 지도는 새 매물로 이동하는데 이전 위치의 목록이 남아 있던 문제.
+  useEffect(() => { setStack(null); }, [selectedId]);
 
   // Individual listing pin markers + clustering
   useEffect(() => {
