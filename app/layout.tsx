@@ -4,7 +4,7 @@ import "./globals.css";
 import "./tips/figma-theme.css";
 
 export const metadata: Metadata = {
-  title: "다음 공공임대주택 부동산",
+  title: "공공임대주택 부동산",
   description: "행복주택·국민임대·통합공공임대 공고를 한눈에",
 };
 
