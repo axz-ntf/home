@@ -50,8 +50,21 @@ const normalize = (s: string) => s.replace(/[\s()[\]]/g, "");
 // 괄호 부가표기 제거 — "힐데스하임(U-삼진랜드)" → "힐데스하임", "종암경찰서역(예정)" → "종암경찰서역".
 const stripParen = (s: string) => s.replace(/\([^)]*\)/g, "");
 
+// 포털(maplist) 좌표가 실제 단지와 어긋난 단지의 수동 정정 — sync-youth 가
+// youth-complexes.json 을 매일 재생성하므로 데이터가 아닌 여기서 교정한다. key = homeCode.
+// 포레나당산: 포털 xpos 가 경도만 ~130m 서쪽(영등포유통상가 블록)으로 밀려 있음 —
+// 실제 단지는 당산동2가 165 (카카오 지오코딩 대조로 확인).
+const COORD_FIX: Record<string, { lat: number; lng: number }> = {
+  "20000475": { lat: 37.5224056, lng: 126.8954231 }, // 영등포구청역 포레나당산
+};
+
+function fixCoords(c: YouthComplex): YouthComplex {
+  const fix = COORD_FIX[c.homeCode];
+  return fix ? { ...c, ...fix } : c;
+}
+
 function matchComplex(title: string): YouthComplex | undefined {
-  const complexes = youthComplexes as YouthComplex[];
+  const complexes = (youthComplexes as YouthComplex[]).map(fixCoords);
   const t = normalize(title);
   // 1차: 괄호 내용 보존 매칭 — "길동생활(B동)"처럼 괄호가 동 구분일 때 A/B 혼동 방지.
   const exact = complexes.find((c) => {
