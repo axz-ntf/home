@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 // Figma 디자인 시스템 컬러 전역 테스트 오버라이드 (원복: 이 줄 제거)
 import "./tips/figma-theme.css";
@@ -27,6 +28,7 @@ export default function RootLayout({
         />
       </head>
       <body>{children}</body>
+      <GoogleAnalytics gaId="G-X690DWC31H" />
     </html>
   );
 }
