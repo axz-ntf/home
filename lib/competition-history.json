@@ -1,5 +1,415 @@
 [
   {
+    "name": "남양뉴타운 B-10블록(20단지)",
+    "type": "국민임대",
+    "competition": 3.7,
+    "applicants": 367,
+    "unitsRecruit": 100,
+    "noticeDate": "2026.07.22",
+    "noticeTitle": "[접수결과] 화성서부권 국민임대주택 예비입주자 모집('26.07.06.공고)",
+    "noticeSn": "9102432030"
+  },
+  {
+    "name": "화성향남 7단지",
+    "type": "국민임대",
+    "competition": 3.7,
+    "applicants": 337,
+    "unitsRecruit": 90,
+    "noticeDate": "2026.07.22",
+    "noticeTitle": "[접수결과] 화성서부권 국민임대주택 예비입주자 모집('26.07.06.공고)",
+    "noticeSn": "9102432030"
+  },
+  {
+    "name": "화성향남 6단지",
+    "type": "국민임대",
+    "competition": 3,
+    "applicants": 443,
+    "unitsRecruit": 150,
+    "noticeDate": "2026.07.22",
+    "noticeTitle": "[접수결과] 화성서부권 국민임대주택 예비입주자 모집('26.07.06.공고)",
+    "noticeSn": "9102432030"
+  },
+  {
+    "name": "화성향남 5단지",
+    "type": "국민임대",
+    "competition": 3.2,
+    "applicants": 427,
+    "unitsRecruit": 135,
+    "noticeDate": "2026.07.22",
+    "noticeTitle": "[접수결과] 화성서부권 국민임대주택 예비입주자 모집('26.07.06.공고)",
+    "noticeSn": "9102432030"
+  },
+  {
+    "name": "화성봉담2 A-3블록(3단지)",
+    "type": "국민임대",
+    "competition": 5.3,
+    "applicants": 687,
+    "unitsRecruit": 130,
+    "noticeDate": "2026.07.22",
+    "noticeTitle": "[접수결과] 화성서부권 국민임대주택 예비입주자 모집('26.07.06.공고)",
+    "noticeSn": "9102432030"
+  },
+  {
+    "name": "화성봉담2 A-4블록(2단지)",
+    "type": "국민임대",
+    "competition": 3.3,
+    "applicants": 650,
+    "unitsRecruit": 198,
+    "noticeDate": "2026.07.22",
+    "noticeTitle": "[접수결과] 화성서부권 국민임대주택 예비입주자 모집('26.07.06.공고)",
+    "noticeSn": "9102432030"
+  },
+  {
+    "name": "화성매송 1단지",
+    "type": "국민임대",
+    "competition": 7.4,
+    "applicants": 591,
+    "unitsRecruit": 80,
+    "noticeDate": "2026.07.22",
+    "noticeTitle": "[접수결과] 화성서부권 국민임대주택 예비입주자 모집('26.07.06.공고)",
+    "noticeSn": "9102432030"
+  },
+  {
+    "name": "별사랑2-9",
+    "type": "국민임대",
+    "competition": 11.3,
+    "applicants": 169,
+    "unitsRecruit": 15,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "[접수마감게시]남양주시지역국민임대주택예비입주자모집 1순위 접수현황(26.7.6공고)",
+    "noticeSn": "9102432022"
+  },
+  {
+    "name": "별사랑2-7",
+    "type": "국민임대",
+    "competition": 5.9,
+    "applicants": 88,
+    "unitsRecruit": 15,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "[접수마감게시]남양주시지역국민임대주택예비입주자모집 1순위 접수현황(26.7.6공고)",
+    "noticeSn": "9102432022"
+  },
+  {
+    "name": "별사랑2-5",
+    "type": "국민임대",
+    "competition": 1.8,
+    "applicants": 18,
+    "unitsRecruit": 10,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "[접수마감게시]남양주시지역국민임대주택예비입주자모집 1순위 접수현황(26.7.6공고)",
+    "noticeSn": "9102432022"
+  },
+  {
+    "name": "별사랑2-2",
+    "type": "국민임대",
+    "competition": 7.3,
+    "applicants": 73,
+    "unitsRecruit": 10,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "[접수마감게시]남양주시지역국민임대주택예비입주자모집 1순위 접수현황(26.7.6공고)",
+    "noticeSn": "9102432022"
+  },
+  {
+    "name": "미리내4-3",
+    "type": "국민임대",
+    "competition": 2.4,
+    "applicants": 48,
+    "unitsRecruit": 20,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "[접수마감게시]남양주시지역국민임대주택예비입주자모집 1순위 접수현황(26.7.6공고)",
+    "noticeSn": "9102432022"
+  },
+  {
+    "name": "미리내4-2",
+    "type": "국민임대",
+    "competition": 5.3,
+    "applicants": 210,
+    "unitsRecruit": 40,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "[접수마감게시]남양주시지역국민임대주택예비입주자모집 1순위 접수현황(26.7.6공고)",
+    "noticeSn": "9102432022"
+  },
+  {
+    "name": "별빛3-6",
+    "type": "국민임대",
+    "competition": 21.3,
+    "applicants": 533,
+    "unitsRecruit": 25,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "[접수마감게시]남양주시지역국민임대주택예비입주자모집 1순위 접수현황(26.7.6공고)",
+    "noticeSn": "9102432022"
+  },
+  {
+    "name": "별빛3-5",
+    "type": "국민임대",
+    "competition": 7.5,
+    "applicants": 113,
+    "unitsRecruit": 15,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "[접수마감게시]남양주시지역국민임대주택예비입주자모집 1순위 접수현황(26.7.6공고)",
+    "noticeSn": "9102432022"
+  },
+  {
+    "name": "별가람1-3",
+    "type": "국민임대",
+    "competition": 33.8,
+    "applicants": 845,
+    "unitsRecruit": 25,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "[접수마감게시]남양주시지역국민임대주택예비입주자모집 1순위 접수현황(26.7.6공고)",
+    "noticeSn": "9102432022"
+  },
+  {
+    "name": "호평20",
+    "type": "국민임대",
+    "competition": 55.3,
+    "applicants": 553,
+    "unitsRecruit": 10,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "[접수마감게시]남양주시지역국민임대주택예비입주자모집 1순위 접수현황(26.7.6공고)",
+    "noticeSn": "9102432022"
+  },
+  {
+    "name": "호평6",
+    "type": "국민임대",
+    "competition": 21.3,
+    "applicants": 213,
+    "unitsRecruit": 10,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "[접수마감게시]남양주시지역국민임대주택예비입주자모집 1순위 접수현황(26.7.6공고)",
+    "noticeSn": "9102432022"
+  },
+  {
+    "name": "호평1",
+    "type": "국민임대",
+    "competition": 5.1,
+    "applicants": 51,
+    "unitsRecruit": 10,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "[접수마감게시]남양주시지역국민임대주택예비입주자모집 1순위 접수현황(26.7.6공고)",
+    "noticeSn": "9102432022"
+  },
+  {
+    "name": "84D",
+    "type": "분양주택",
+    "competition": 0,
+    "applicants": 0,
+    "unitsRecruit": 56,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "대전대동2 1블록 공공분양 추가 입주자모집 청약접수결과 안내(26.06.25 공고)",
+    "noticeSn": "9102432015"
+  },
+  {
+    "name": "84C",
+    "type": "분양주택",
+    "competition": 0,
+    "applicants": 0,
+    "unitsRecruit": 141,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "대전대동2 1블록 공공분양 추가 입주자모집 청약접수결과 안내(26.06.25 공고)",
+    "noticeSn": "9102432015"
+  },
+  {
+    "name": "84B",
+    "type": "분양주택",
+    "competition": 0,
+    "applicants": 0,
+    "unitsRecruit": 152,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "대전대동2 1블록 공공분양 추가 입주자모집 청약접수결과 안내(26.06.25 공고)",
+    "noticeSn": "9102432015"
+  },
+  {
+    "name": "84A",
+    "type": "분양주택",
+    "competition": 0,
+    "applicants": 0,
+    "unitsRecruit": 310,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "대전대동2 1블록 공공분양 추가 입주자모집 청약접수결과 안내(26.06.25 공고)",
+    "noticeSn": "9102432015"
+  },
+  {
+    "name": "59D",
+    "type": "분양주택",
+    "competition": 0,
+    "applicants": 0,
+    "unitsRecruit": 50,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "대전대동2 1블록 공공분양 추가 입주자모집 청약접수결과 안내(26.06.25 공고)",
+    "noticeSn": "9102432015"
+  },
+  {
+    "name": "59C",
+    "type": "분양주택",
+    "competition": 0,
+    "applicants": 0,
+    "unitsRecruit": 39,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "대전대동2 1블록 공공분양 추가 입주자모집 청약접수결과 안내(26.06.25 공고)",
+    "noticeSn": "9102432015"
+  },
+  {
+    "name": "59B",
+    "type": "분양주택",
+    "competition": 0,
+    "applicants": 0,
+    "unitsRecruit": 165,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "대전대동2 1블록 공공분양 추가 입주자모집 청약접수결과 안내(26.06.25 공고)",
+    "noticeSn": "9102432015"
+  },
+  {
+    "name": "59A",
+    "type": "분양주택",
+    "competition": 0,
+    "applicants": 0,
+    "unitsRecruit": 110,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "대전대동2 1블록 공공분양 추가 입주자모집 청약접수결과 안내(26.06.25 공고)",
+    "noticeSn": "9102432015"
+  },
+  {
+    "name": "남양뉴타운 B-10블록(20단지)",
+    "type": "국민임대",
+    "competition": 3.1,
+    "applicants": 309,
+    "unitsRecruit": 100,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "[2순위 접수결과] 화성서부권 국민임대주택 예비입주자 모집('26.07.06.공고)",
+    "noticeSn": "9102432014"
+  },
+  {
+    "name": "화성향남 7단지",
+    "type": "국민임대",
+    "competition": 3,
+    "applicants": 266,
+    "unitsRecruit": 90,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "[2순위 접수결과] 화성서부권 국민임대주택 예비입주자 모집('26.07.06.공고)",
+    "noticeSn": "9102432014"
+  },
+  {
+    "name": "화성향남 6단지",
+    "type": "국민임대",
+    "competition": 2.9,
+    "applicants": 429,
+    "unitsRecruit": 150,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "[2순위 접수결과] 화성서부권 국민임대주택 예비입주자 모집('26.07.06.공고)",
+    "noticeSn": "9102432014"
+  },
+  {
+    "name": "화성향남 5단지",
+    "type": "국민임대",
+    "competition": 2.5,
+    "applicants": 341,
+    "unitsRecruit": 135,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "[2순위 접수결과] 화성서부권 국민임대주택 예비입주자 모집('26.07.06.공고)",
+    "noticeSn": "9102432014"
+  },
+  {
+    "name": "화성봉담2 A-3블록(3단지)",
+    "type": "국민임대",
+    "competition": 4.8,
+    "applicants": 619,
+    "unitsRecruit": 130,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "[2순위 접수결과] 화성서부권 국민임대주택 예비입주자 모집('26.07.06.공고)",
+    "noticeSn": "9102432014"
+  },
+  {
+    "name": "화성봉담2 A-4블록(2단지)",
+    "type": "국민임대",
+    "competition": 2.9,
+    "applicants": 579,
+    "unitsRecruit": 198,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "[2순위 접수결과] 화성서부권 국민임대주택 예비입주자 모집('26.07.06.공고)",
+    "noticeSn": "9102432014"
+  },
+  {
+    "name": "화성매송 1단지",
+    "type": "국민임대",
+    "competition": 5.8,
+    "applicants": 461,
+    "unitsRecruit": 80,
+    "noticeDate": "2026.07.21",
+    "noticeTitle": "[2순위 접수결과] 화성서부권 국민임대주택 예비입주자 모집('26.07.06.공고)",
+    "noticeSn": "9102432014"
+  },
+  {
+    "name": "남양뉴타운 B-10블록(20단지)",
+    "type": "국민임대",
+    "competition": 2.8,
+    "applicants": 278,
+    "unitsRecruit": 100,
+    "noticeDate": "2026.07.20",
+    "noticeTitle": "[1순위 접수결과] 화성서부권 국민임대주택 예비입주자 모집('26.07.06.공고)",
+    "noticeSn": "9102432004"
+  },
+  {
+    "name": "화성향남 7단지",
+    "type": "국민임대",
+    "competition": 1.8,
+    "applicants": 158,
+    "unitsRecruit": 90,
+    "noticeDate": "2026.07.20",
+    "noticeTitle": "[1순위 접수결과] 화성서부권 국민임대주택 예비입주자 모집('26.07.06.공고)",
+    "noticeSn": "9102432004"
+  },
+  {
+    "name": "화성향남 6단지",
+    "type": "국민임대",
+    "competition": 2.5,
+    "applicants": 374,
+    "unitsRecruit": 150,
+    "noticeDate": "2026.07.20",
+    "noticeTitle": "[1순위 접수결과] 화성서부권 국민임대주택 예비입주자 모집('26.07.06.공고)",
+    "noticeSn": "9102432004"
+  },
+  {
+    "name": "화성향남 5단지",
+    "type": "국민임대",
+    "competition": 2,
+    "applicants": 265,
+    "unitsRecruit": 135,
+    "noticeDate": "2026.07.20",
+    "noticeTitle": "[1순위 접수결과] 화성서부권 국민임대주택 예비입주자 모집('26.07.06.공고)",
+    "noticeSn": "9102432004"
+  },
+  {
+    "name": "화성봉담2 A-3블록(3단지)",
+    "type": "국민임대",
+    "competition": 2.3,
+    "applicants": 304,
+    "unitsRecruit": 130,
+    "noticeDate": "2026.07.20",
+    "noticeTitle": "[1순위 접수결과] 화성서부권 국민임대주택 예비입주자 모집('26.07.06.공고)",
+    "noticeSn": "9102432004"
+  },
+  {
+    "name": "화성봉담2 A-4블록(2단지)",
+    "type": "국민임대",
+    "competition": 2.5,
+    "applicants": 496,
+    "unitsRecruit": 198,
+    "noticeDate": "2026.07.20",
+    "noticeTitle": "[1순위 접수결과] 화성서부권 국민임대주택 예비입주자 모집('26.07.06.공고)",
+    "noticeSn": "9102432004"
+  },
+  {
+    "name": "화성매송 1단지",
+    "type": "국민임대",
+    "competition": 4.6,
+    "applicants": 277,
+    "unitsRecruit": 60,
+    "noticeDate": "2026.07.20",
+    "noticeTitle": "[1순위 접수결과] 화성서부권 국민임대주택 예비입주자 모집('26.07.06.공고)",
+    "noticeSn": "9102432004"
+  },
+  {
     "name": "사송5",
     "type": "영구임대",
     "competition": 0.7,

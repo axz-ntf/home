@@ -1,0 +1,21 @@
+{
+  "supplyTotal": 680,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 680,
+      "age": "만19세 이상",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "대구광역시 또는 경상북도 거주(주민등록표등본 기준)",
+        "무주택세대구성원",
+        "1세대 1주택 기준",
+        "청약저축 가입여부 및 소득/자산기준 무관"
+      ]
+    }
+  ],
+  "priority": []
+}

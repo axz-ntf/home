@@ -1,0 +1,20 @@
+{
+  "supplyTotal": 69,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 69,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "매각공고일 현재 해당 주택건설지역에 1년 이상 거주하는 성년자",
+        "1세대 1주택 기준(1세대당 1명이 공고된 단지 중 1개 단지의 1개 주택유형만 선택 신청)"
+      ]
+    }
+  ],
+  "priority": []
+}

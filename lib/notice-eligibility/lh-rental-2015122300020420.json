@@ -1,0 +1,55 @@
+{
+  "supplyTotal": 210,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": 70,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": null
+      },
+      "other": [
+        "대학에 재학 중이거나 다음 학기에 입·복학 예정",
+        "취업준비생: 대학 또는 고등학교 졸업(또는 중퇴)한 지 2년 이내",
+        "자동차 소유 불가"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년(소득 無)",
+      "units": 70,
+      "age": "만19세 이상 만39세 이하 (1986.7.2. ~ 2007.7.1)",
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "소득 없는 청년",
+        "대학생 계층 임대조건 적용"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년(소득 有)",
+      "units": 70,
+      "age": "만19세 이상 만39세 이하 (1986.7.2. ~ 2007.7.1)",
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "소득이 있는 업무 종사자 또는 퇴직 후 1년 미만 구직급여 수급자 또는 예술인",
+        "사회초년생: 소득 업무 종사기간 총 7년 이내"
+      ]
+    }
+  ],
+  "priority": []
+}

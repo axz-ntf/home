@@ -1,0 +1,19 @@
+{
+  "supplyTotal": 468,
+  "tiers": [
+    {
+      "id": "etc",
+      "name": "영구임대",
+      "units": 468,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "1세대 1주택 신청 원칙"
+      ]
+    }
+  ],
+  "priority": []
+}
