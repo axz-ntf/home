@@ -28,6 +28,7 @@ import { summarizePrice, type Range } from "@/lib/price-summary";
 import { FloorplanSection } from "./floorplan-section";
 import { LoanCalculator } from "./loan-calculator";
 import { Button } from "./button";
+import { sendGAEvent } from "@next/third-parties/google";
 
 type InsightGroup = { value: string; level: string; tone: "rich" | "good" | "mid" | "low" };
 
@@ -652,18 +653,25 @@ export function DetailPanel({
         <div className="detail-actions">
           <button
             className={`icon-btn ${liked ? "active" : ""}`}
-            onClick={() => toggle(item.id)}
+            onClick={() => {
+              toggle(item.id);
+              sendGAEvent("event", "toggle_like", { listing_id: item.id, liked: String(!liked) });
+            }}
             aria-label="관심 목록"
           >
             <HeartIcon size={20} filled={liked} />
           </button>
           {/* 좌: 자격 확인하기(보조 = Outline/Neutral) · 우: 신청하러가기(핵심 = Solid/Primary) */}
           {onAskAI ? (
-            <Button variant="outline" color="ghost" size="lg" fullWidth onClick={() => onAskAI(item.id)}>
+            <Button variant="outline" color="ghost" size="lg" fullWidth onClick={() => {
+              sendGAEvent("event", "click_eligibility", { listing_id: item.id });
+              onAskAI(item.id);
+            }}>
               자격 확인하기
             </Button>
           ) : (
-            <Button variant="outline" color="ghost" size="lg" fullWidth href={`/ai?focus=${encodeURIComponent(item.id)}`}>
+            <Button variant="outline" color="ghost" size="lg" fullWidth href={`/ai?focus=${encodeURIComponent(item.id)}`}
+              onClick={() => sendGAEvent("event", "click_eligibility", { listing_id: item.id })}>
               자격 확인하기
             </Button>
           )}
@@ -675,6 +683,7 @@ export function DetailPanel({
             href={applyButton.active ? (item.sourceUrl ?? applyUrl) : undefined}
             target="_blank"
             disabled={!applyButton.active}
+            onClick={applyButton.active ? () => sendGAEvent("event", "click_apply", { listing_id: item.id, listing_title: item.title.slice(0, 90) }) : undefined}
           >
             {applyButton.label}
           </Button>

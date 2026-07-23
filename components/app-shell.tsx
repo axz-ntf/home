@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { comma } from "@/lib/format";
 import { useRouter } from "next/navigation";
+import { sendGAEvent } from "@next/third-parties/google";
 import Link from "next/link";
 import { MdOutlineSearch, MdClose } from "react-icons/md";
 import { NewsHomeIcon, GuideBookIcon, SaveBookmarkIcon, SparklesIcon, HandleIcon } from "./icons";
@@ -182,6 +183,7 @@ export function AppShell({
   const selectedItem = filtered.find((x) => x.id === selectedId) ?? listings.find((x) => x.id === selectedId);
 
   const handleSelect = useCallback((id: string) => {
+    sendGAEvent("event", "select_listing", { listing_id: id });
     // 모바일 viewport: 풀스크린 라우트로 이동 (overlay 대신 별도 페이지)
     if (typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches) {
       router.push(`/listings/${id}`);
