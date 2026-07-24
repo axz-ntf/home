@@ -12,4 +12,6 @@ export const langfuseSpanProcessor = (g.__langfuseSpanProcessor ??= new Langfuse
   publicKey: process.env.LANGFUSE_PUBLIC_KEY,
   secretKey: process.env.LANGFUSE_SECRET_KEY,
   baseUrl: process.env.LANGFUSE_BASE_URL,
+  // 서버리스는 응답 후 프로세스가 얼어 배치 flush 가 안 나감 — 스팬 즉시 내보내기(공식 권장).
+  exportMode: process.env.VERCEL ? "immediate" : "batched",
 }));
