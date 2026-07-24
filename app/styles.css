@@ -5129,11 +5129,6 @@ div:has(> img[src*="streetview_btn"]) {
   font-size: 12px; color: var(--seed-semantic-color-ink-text-low);
   line-height: 1.7; margin: 0 0 14px;
 }
-.pv-footnote {
-  font-size: 12px; color: var(--seed-semantic-color-ink-text-low);
-  line-height: 1.7;
-  padding: 4px 6px 0;
-}
 .pv-page {
   max-width: 720px;
   margin: 0 auto;

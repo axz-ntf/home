@@ -18,7 +18,7 @@ function Card({ n, title, children }: { n: number; title: string; children: Reac
 }
 
 const ShieldIcon = (
-  <svg viewBox="0 0 24 24" aria-hidden>
+  <svg viewBox="0 0 24 24" width={16} height={16} aria-hidden>
     <path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3z" />
     <path d="M9 12l2 2 4-4" />
   </svg>
@@ -43,7 +43,7 @@ export default function PrivacyPage() {
 
         <div className="pv-summary" aria-label="개인정보 처리 핵심 요약">
           <div className="pv-summary-tile">
-            <div className="pv-ico"><svg viewBox="0 0 24 24" aria-hidden><path d="M20 4 8 16m4-12H4v16h16v-8" /></svg></div>
+            <div className="pv-ico"><svg viewBox="0 0 24 24" width={17} height={17} aria-hidden><path d="M20 4 8 16m4-12H4v16h16v-8" /></svg></div>
             <strong>최소 수집</strong>
             <small>회원가입 없이 이용 가능, 필요한 정보만 처리해요</small>
           </div>
@@ -53,12 +53,12 @@ export default function PrivacyPage() {
             <small>고유식별정보는 받지 않고, 입력돼도 자동 삭제돼요</small>
           </div>
           <div className="pv-summary-tile">
-            <div className="pv-ico"><svg viewBox="0 0 24 24" aria-hidden><path d="M21 12a8 8 0 1 1-4-6.9" /><path d="M8 12h.01M12 12h.01M16 12h.01" /></svg></div>
+            <div className="pv-ico"><svg viewBox="0 0 24 24" width={17} height={17} aria-hidden><path d="M21 12a8 8 0 1 1-4-6.9" /><path d="M8 12h.01M12 12h.01M16 12h.01" /></svg></div>
             <strong>AI 대화 미저장</strong>
             <small>상담 내용은 답변 생성 후 서버에 남지 않아요</small>
           </div>
           <div className="pv-summary-tile">
-            <div className="pv-ico"><svg viewBox="0 0 24 24" aria-hidden><circle cx="12" cy="12" r="9" /><path d="M5.6 5.6l12.8 12.8" /></svg></div>
+            <div className="pv-ico"><svg viewBox="0 0 24 24" width={17} height={17} aria-hidden><circle cx="12" cy="12" r="9" /><path d="M5.6 5.6l12.8 12.8" /></svg></div>
             <strong>광고 추적 없음</strong>
             <small>통계 분석만 하고 맞춤형 광고에 쓰지 않아요</small>
           </div>
@@ -116,7 +116,7 @@ export default function PrivacyPage() {
           <Card n={5} title="문의">
             <p>개인정보 관련 문의나 권리 행사 요청은 아래로 보내주세요. 지체 없이 처리합니다.</p>
             <a className="pv-mail" href="mailto:newappservice@axzcorp.com">
-              <svg viewBox="0 0 24 24" aria-hidden><rect x="3" y="5" width="18" height="14" rx="2.5" /><path d="M3.5 7l8.5 6 8.5-6" /></svg>
+              <svg viewBox="0 0 24 24" width={15} height={15} aria-hidden><rect x="3" y="5" width="18" height="14" rx="2.5" /><path d="M3.5 7l8.5 6 8.5-6" /></svg>
               newappservice@axzcorp.com
             </a>
             <p className="pv-contact-meta">
@@ -126,11 +126,6 @@ export default function PrivacyPage() {
           </Card>
         </article>
 
-        <p className="pv-footnote">
-          통계 분석(Google)과 AI 답변 생성(Anthropic 등) 과정에서 입력 정보가 해외(미국) 서버에서
-          처리됩니다. 원하지 않는 경우 해당 기능을 사용하지 않거나 문의 연락처로 중단을 요구할 수
-          있습니다. 방침이 변경되면 시행 7일 전 본 페이지에서 알립니다.
-        </p>
 
         <Link href="/" className="pv-home">홈으로 돌아가기 →</Link>
       </div>
