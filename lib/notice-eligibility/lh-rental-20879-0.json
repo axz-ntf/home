@@ -1,0 +1,23 @@
+{
+  "supplyTotal": 94,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "1순위",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "생계급여 수급자",
+        "의료급여 수급자",
+        "주거급여 수급자",
+        "교육급여 수급자",
+        "차상위계층",
+        "지원대상 한부모가족"
+      ]
+    }
+  ],
+  "priority": []
+}

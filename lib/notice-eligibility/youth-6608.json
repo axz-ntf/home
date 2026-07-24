@@ -1,0 +1,59 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "19세 이상 39세 이하",
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "무주택요건 충족 필수",
+        "자동차(이륜차 포함) 소유 시 기준가액 4,542만원 이하만 청약가능",
+        "세대당 1대만 등록하여 사용 가능"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "혼인관계",
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "무주택요건 충족 필수",
+        "자동차(이륜차 포함) 소유 시 기준가액 4,542만원 이하만 청약가능",
+        "세대당 1대만 등록하여 사용 가능",
+        "공동명의 계약 불가"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "예비신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "예비신혼",
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "무주택요건 충족 필수",
+        "자동차(이륜차 포함) 소유 시 기준가액 4,542만원 이하만 청약가능",
+        "세대당 1대만 등록하여 사용 가능",
+        "입주 전 혼인신고 및 혼인관계증명서 제출 필수"
+      ]
+    }
+  ],
+  "priority": []
+}

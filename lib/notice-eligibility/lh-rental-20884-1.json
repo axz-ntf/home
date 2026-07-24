@@ -1,0 +1,229 @@
+{
+  "supplyTotal": 40,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 14,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준중위소득 30~200% (소득구간별 상이)"
+      },
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "세대구성원 전원 자산·소득 기준 충족 필요",
+        "청년, 신혼부부·한부모가족, 고령자 포함"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": 2,
+      "age": "18세 이상 39세 이하",
+      "marriage": "미혼",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준중위소득 30~200% (소득구간별 상이)"
+      },
+      "asset": null,
+      "other": [
+        "미혼인 아동복지시설 퇴소자 포함",
+        "미혼인 청소년복지시설 퇴소자 포함"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": 3,
+      "age": null,
+      "marriage": "혼인기간 7년 이내 또는 예비신혼부부",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준중위소득 30~200% (소득구간별 상이)"
+      },
+      "asset": null,
+      "other": [
+        "6세 이하 자녀 있는 경우 포함",
+        "한부모가족 포함(6세 이하 자녀)"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": 3,
+      "age": "65세 이상",
+      "marriage": "혼인 중이 아닌 경우 단독세대주",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준중위소득 30~200% (소득구간별 상이)"
+      },
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "etc",
+      "name": "우선공급 (철거민 등)",
+      "units": 1,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": null
+      },
+      "asset": null,
+      "other": [
+        "지자체 등 관련기관 요청에 의해 별도 접수"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "우선공급 (국가유공자 등)",
+      "units": 2,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": null
+      },
+      "asset": null,
+      "other": [
+        "국가유공자, 보훈보상대상자, 5·18민주유공자, 특수임무유공자 등",
+        "지자체 등 관련기관 요청에 의해 별도 접수"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "우선공급 (장기복무제대군인·북한이탈주민 등)",
+      "units": 1,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": null
+      },
+      "asset": null,
+      "other": [
+        "북한이탈주민, 납북피해자, 중소기업근로자, 비정규직근로자 등",
+        "지자체 등 관련기관 요청에 의해 별도 접수"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "우선공급 (다자녀가구 등)",
+      "units": 4,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": null
+      },
+      "asset": null,
+      "other": [
+        "미성년자녀 2명 이상 가구(조손가정 포함)",
+        "65세 이상 직계존속 부양자",
+        "한부모가족"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "우선공급 (장애인)",
+      "units": 2,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": null
+      },
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "etc",
+      "name": "우선공급 (비주택거주자 등)",
+      "units": 2,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": null
+      },
+      "asset": null,
+      "other": [
+        "비닐간이공작물 거주자, 비주택거주자",
+        "최저주거기준 미달 거주자, 무허가건축물 세입자",
+        "지자체 등 관련기관 요청에 의해 별도 접수"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "우선공급 (급여수급자 등)",
+      "units": 4,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "생계·의료·주거급여 수급자"
+      },
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "etc",
+      "name": "주거약자용 주택",
+      "units": 2,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": null
+      },
+      "asset": null,
+      "other": [
+        "주거약자 요건 충족자만 신청 가능",
+        "36B형(2층), 편의시설 설치"
+      ]
+    }
+  ],
+  "priority": [
+    "다자녀가구",
+    "한부모가족",
+    "장애인",
+    "국가유공자",
+    "장기복무제대군인",
+    "북한이탈주민",
+    "납북피해자",
+    "중소기업근로자",
+    "비정규직근로자",
+    "가정폭력피해자",
+    "성폭력피해자",
+    "아동위탁가정",
+    "범죄피해자",
+    "탄광근로자",
+    "파독근로자",
+    "일본군위안부피해자",
+    "소년소녀가정",
+    "해외거주재외동포",
+    "등록포로",
+    "비주택거주자",
+    "최저주거기준미달거주자",
+    "생계급여수급자",
+    "의료급여수급자",
+    "주거급여수급자",
+    "철거민"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "supplyTotal": 40,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반(나군)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 50,
+        "byHousehold": null,
+        "note": "월평균 소득 50% 이하"
+      },
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "etc",
+      "name": "특별자격(가군)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "생계·의료급여 수급자, 국가유공자 등, 위안부 피해자, 지원대상 한부모가족, 또는 생계·의료급여 수급자선정 기준의 소득 인정액 이하인 자"
+      },
+      "asset": null,
+      "other": [
+        "태안군 주민등록 필수",
+        "무주택세대구성원"
+      ]
+    }
+  ],
+  "priority": [
+    "다자녀",
+    "한부모",
+    "65세이상부양",
+    "장애인"
+  ]
+}
