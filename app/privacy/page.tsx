@@ -28,10 +28,10 @@ const ShieldIcon = (
 export default function PrivacyPage() {
   return (
     <div style={{ height: "100dvh", overflowY: "auto" }}>
-      <div className="post-page">
-        <header className="post-nav">
-          <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: 6, textDecoration: "none", color: "inherit" }}>
-            <strong style={{ fontSize: 16, letterSpacing: "-0.02em" }}>공공임대주택 부동산</strong>
+      <div className="pv-page">
+        <header className="pv-gnb">
+          <Link href="/">
+            <strong>공공임대주택 부동산</strong>
           </Link>
         </header>
 
@@ -129,7 +129,7 @@ export default function PrivacyPage() {
           있습니다. 방침이 변경되면 시행 7일 전 본 페이지에서 알립니다.
         </p>
 
-        <Link href="/" className="post-home">홈으로 돌아가기</Link>
+        <Link href="/" className="pv-home">홈으로 돌아가기 →</Link>
       </div>
     </div>
   );

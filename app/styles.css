@@ -5125,3 +5125,21 @@ div:has(> img[src*="streetview_btn"]) {
   line-height: 1.7;
   padding: 4px 6px 0;
 }
+.pv-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px 20px 60px;
+}
+.pv-gnb {
+  display: flex; align-items: center;
+  padding: 14px 2px 20px;
+}
+.pv-gnb a { display: inline-flex; align-items: center; gap: 6px; text-decoration: none; color: inherit; }
+.pv-gnb strong { font-size: 15.5px; letter-spacing: -0.02em; }
+.pv-home {
+  display: inline-block;
+  margin-top: 22px;
+  color: var(--seed-semantic-color-primary, #1e84ff);
+  font-weight: 600; font-size: 13px;
+  text-decoration: none;
+}
