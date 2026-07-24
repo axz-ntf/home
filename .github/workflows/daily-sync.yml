@@ -276,13 +276,26 @@ jobs:
           fi
           git commit -m "data: daily sync $(date -u +%Y-%m-%dT%H:%MZ)"
           # workflow 도는 동안 다른 push 가 있을 수 있어 rebase 후 retry.
+          # rebase 충돌 시: extract-drafts.json 은 키 단위 병합(양쪽 추가 모두 보존),
+          # 그 외 데이터 파일은 이 run 이 방금 재생성한 값(rebase 의 theirs)이 최신이라 그쪽 우선.
           for i in 1 2 3; do
             if git push; then
               echo "push success (attempt $i)"
               exit 0
             fi
             echo "push rejected, fetching + rebasing (attempt $i)"
-            git pull --rebase origin main
+            if ! git pull --rebase origin main; then
+              if git status --porcelain | grep -q "^UU lib/extract-drafts.json"; then
+                node scripts/merge-drafts.mjs
+                git add lib/extract-drafts.json
+              fi
+              conflicted=$(git status --porcelain | awk '$1=="UU"{print $2}')
+              if [ -n "$conflicted" ]; then
+                echo "$conflicted" | xargs git checkout --theirs --
+                echo "$conflicted" | xargs git add --
+              fi
+              GIT_EDITOR=true git rebase --continue || git rebase --skip || git rebase --abort
+            fi
           done
           echo "push failed after 3 retries"
           exit 1
