@@ -95,7 +95,7 @@ export interface ManualOverride {
 // 새 가격 모델(tiers/householdTypes/supportLimit) → 레거시 rows/headline 으로 정규화.
 // 카드·리스트·지도는 대표가만 쓰므로 "가장 싼 옵션"(저가 컨셉)을 대표로. 구조화 데이터는
 // OVERRIDES[id] 로 디테일 페이지가 직접 읽는다(3-4). priceModel 없으면 {} → 레거시 무손상.
-function deriveFromModel(o: ManualOverride): { rows?: OverrideRow[]; deposit?: number; rent?: number } {
+function deriveFromModel(o: ManualOverride): { rows?: OverrideRow[]; deposit?: number; rent?: number; salePriceManwon?: number } {
   const lo = (v: number | [number, number] | null | undefined): number | null =>
     Array.isArray(v) ? v[0] : v ?? null;
   // 대표 행 = 보증금 최소(가장 싼 옵션). 그 행의 deposit·rent 를 headline 으로.
@@ -124,6 +124,13 @@ function deriveFromModel(o: ManualOverride): { rows?: OverrideRow[]; deposit?: n
   if (o.priceModel === "support-limit" && o.supportLimit?.byHousehold?.length) {
     const limits = o.supportLimit.byHousehold.map((b) => b.limitManwon).filter((n) => Number.isFinite(n));
     return { deposit: limits.length ? Math.min(...limits) : undefined };
+  }
+  // 동·호별 분양가 — 대표가 = 최저 분양가 (카드는 "분양가 N억~" 컨셉).
+  if (o.priceModel === "per-unit-sale" && o.rows?.length) {
+    const priced = o.rows
+      .map((r) => r.salePriceManwon)
+      .filter((n): n is number => typeof n === "number" && n > 0);
+    return { rows: o.rows, salePriceManwon: priced.length ? Math.min(...priced) : undefined };
   }
   return {};
 }
@@ -196,7 +203,9 @@ export function applyOverride(listing: Listing): Listing {
     ...(o.supplyUnits !== undefined && o.supplyUnits !== null && { supplyUnits: o.supplyUnits, totalUnits: o.supplyUnits }),
     ...(headlineDeposit !== undefined && headlineDeposit !== null && { deposit: headlineDeposit }),
     ...(headlineRent !== undefined && headlineRent !== null && { rent: headlineRent }),
-    ...(o.salePriceManwon !== undefined && { salePriceManwon: o.salePriceManwon }),
+    ...(derived.salePriceManwon !== undefined
+      ? { salePriceManwon: derived.salePriceManwon }
+      : o.salePriceManwon !== undefined && { salePriceManwon: o.salePriceManwon }),
     ...(o.area !== undefined && { area: o.area }),
     ...(o.address !== undefined && { address: o.address }),
     ...(o.status !== undefined && { status: o.status }),
