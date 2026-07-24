@@ -1,12 +1,13 @@
-// Langfuse 트레이싱 — AI SDK 의 OTel span 을 Langfuse 로 내보낸다.
-// instrumentation.ts 가 NodeSDK 에 등록하고, 서버리스에서는 각 라우트가
-// after(() => forceFlush()) 로 응답 후 강제 플러시한다 (미플러시 시 trace 유실).
+// Langfuse 트레이싱 — AI SDK 호출에 tracer 를 직접 주입한다 (experimental_telemetry.tracer).
+// 전역 OTel 레지스트리를 쓰지 않는 이유: Next 번들과 외부화 모듈이 @opentelemetry/api 를
+// 복사본으로 나눠 갖면 전역 등록이 서로 안 보여 프로덕션에서 스팬이 통째로 유실된다.
 import { LangfuseSpanProcessor } from "@langfuse/otel";
+import { NodeTracerProvider } from "@opentelemetry/sdk-trace-node";
 
-// globalThis 싱글턴 — instrumentation 번들과 라우트 번들이 이 모듈을 각자 복제해도
-// 프로세서 인스턴스는 하나만 쓰게 한다. (인스턴스가 갈리면 라우트의 forceFlush 가
-// 스팬이 쌓인 쪽이 아닌 빈 프로세서를 플러시해 trace 가 유실된다.)
-const g = globalThis as { __langfuseSpanProcessor?: LangfuseSpanProcessor };
+const g = globalThis as {
+  __langfuseSpanProcessor?: LangfuseSpanProcessor;
+  __aiTracerProvider?: NodeTracerProvider;
+};
 
 export const langfuseSpanProcessor = (g.__langfuseSpanProcessor ??= new LangfuseSpanProcessor({
   publicKey: process.env.LANGFUSE_PUBLIC_KEY,
@@ -15,3 +16,10 @@ export const langfuseSpanProcessor = (g.__langfuseSpanProcessor ??= new Langfuse
   // 서버리스는 응답 후 프로세스가 얼어 배치 flush 가 안 나감 — 스팬 즉시 내보내기(공식 권장).
   exportMode: process.env.VERCEL ? "immediate" : "batched",
 }));
+
+const tracerProvider = (g.__aiTracerProvider ??= new NodeTracerProvider({
+  spanProcessors: [langfuseSpanProcessor],
+}));
+
+// streamText/generateText 의 experimental_telemetry.tracer 로 전달.
+export const aiTracer = tracerProvider.getTracer("ai");

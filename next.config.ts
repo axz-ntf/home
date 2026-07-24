@@ -4,8 +4,6 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: process.cwd(),
   },
-  // OTel/Langfuse 는 번들하지 않고 Node 런타임에서 직접 로드 — 번들 시 trace 유실.
-  serverExternalPackages: ["@opentelemetry/sdk-node", "@langfuse/otel"],
   // 구 자동도메인(doongji-liard.vercel.app)으로 들어온 요청을 새 도메인으로 영구 리다이렉트.
   // host 조건이라 새 도메인(daum-public-housing) 요청은 매칭 안 됨 → 루프 없음.
   async redirects() {
