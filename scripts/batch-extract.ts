@@ -27,9 +27,12 @@ async function main() {
   for (const id of Object.keys(drafts)) if (id in OVERRIDES) delete drafts[id];
 
   // 큐: 미검수 + 품질 이슈 — 대시보드 검수 큐와 같은 기준. 이미 초안 있으면 skip.
+  // 최신 공고 우선 — 사용자가 실제로 보는 신규 매물의 가격이 먼저 채워지게.
   const queue = LH_ADMIN_LISTINGS.filter(
     (l) => !(l.id in OVERRIDES) && !(l.id in drafts) && listingIssues(l).length > 0,
-  ).slice(0, LIMIT);
+  )
+    .sort((a, b) => (b.announceDate ?? "").localeCompare(a.announceDate ?? ""))
+    .slice(0, LIMIT);
 
   console.log(`일괄 추출 대상: ${queue.length}건 (캡 ${LIMIT}) | 기존 초안 ${Object.keys(drafts).length}건`);
   let ok = 0, fail = 0;

@@ -5985,5 +5985,2206 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집예정"
     }
+  },
+  "lh-sale-2015122300020325": {
+    "at": "2026-07-24T04:58:48.771Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "부산진구 연지자이 2 차 39 형 213 동 203 호",
+          "area": "39.9857",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 21050
+        },
+        {
+          "houseType": "부산진구 연지자이 2 차 39 형 213 동 204 호",
+          "area": "39.9857",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 21050
+        },
+        {
+          "houseType": "부산진구 연지자이 2 차 39 형 213 동 303 호",
+          "area": "39.9857",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 21550
+        },
+        {
+          "houseType": "부산진구 연지자이 2 차 39 형 213 동 503 호",
+          "area": "39.9857",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 22000
+        },
+        {
+          "houseType": "부산진구 연지자이 2 차 39 형 213 동 703 호",
+          "area": "39.9857",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 22000
+        },
+        {
+          "houseType": "부산진구 연지자이 2 차 39 형 213 동 704 호",
+          "area": "39.9857",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 22000
+        },
+        {
+          "houseType": "부산진구 연지자이 2 차 39 형 213 동 904 호",
+          "area": "39.9857",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 22250
+        },
+        {
+          "houseType": "부산진구 연지자이 2 차 39 형 213 동 1004 호",
+          "area": "39.9857",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 22250
+        },
+        {
+          "houseType": "부산진구 연지자이 2 차 39 형 213 동 1103 호",
+          "area": "39.9857",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 22250
+        },
+        {
+          "houseType": "부산진구 연지자이 2 차 39 형 213 동 1203 호",
+          "area": "39.9857",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 22250
+        },
+        {
+          "houseType": "부산진구 연지자이 2 차 39 형 213 동 1204 호",
+          "area": "39.9857",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 22250
+        }
+      ],
+      "deadline": "2026.12.23",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020421": {
+    "at": "2026-07-24T05:00:20.746Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "청주동남5 16A1/A2",
+          "area": "16.64",
+          "supplyUnits": 150,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.11.02"
+      },
+      "deadline": "2026.08.04",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020445": {
+    "at": "2026-07-24T05:03:57.926Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "태안군 태안평천 3 단지 24A",
+          "area": "24.69㎡",
+          "supplyUnits": 40,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 230,
+              "rent": 5
+            },
+            {
+              "label": "나군",
+              "deposit": 1296,
+              "rent": 10
+            }
+          ]
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "태안군 태안평천 3 단지 24A 가군",
+            "limitManwon": 200,
+            "maxDeposit": 430,
+            "minRent": 4
+          },
+          {
+            "houseType": "태안군 태안평천 3 단지 24A 나군",
+            "limitManwon": 1100,
+            "maxDeposit": 2396,
+            "minRent": 5
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.11.11"
+      },
+      "deadline": "2026.08.12",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020417": {
+    "at": "2026-07-24T05:05:57.890Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "통영시 통영도남 26 형",
+          "area": "26.37㎡",
+          "supplyUnits": 100,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 240,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 336,
+              "rent": 7
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020440": {
+    "at": "2026-07-24T05:07:03.289Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "청주산남2-2 26.37",
+          "area": "26.37",
+          "supplyUnits": 776,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 266,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 452,
+              "rent": 8
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020434": {
+    "at": "2026-07-24T05:08:44.260Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.11.19"
+      },
+      "deadline": "2026.08.06",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020409": {
+    "at": "2026-07-24T05:11:59.672Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "하남감일 8단지 22A",
+          "area": "22.60㎡",
+          "supplyUnits": null,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 226,
+              "rent": 4
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 1553,
+              "rent": 10
+            }
+          ]
+        },
+        {
+          "houseType": "하남감일 8단지 22B",
+          "area": "22.69㎡",
+          "supplyUnits": null,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 226,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 1560,
+              "rent": 10
+            }
+          ]
+        },
+        {
+          "houseType": "하남감일 8단지 22A1 (주거약자용)",
+          "area": "22.60㎡",
+          "supplyUnits": null,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 226,
+              "rent": 4
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 1553,
+              "rent": 10
+            }
+          ]
+        },
+        {
+          "houseType": "하남감일 8단지 22B1 (주거약자용)",
+          "area": "22.69㎡",
+          "supplyUnits": null,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 226,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 1560,
+              "rent": 10
+            }
+          ]
+        },
+        {
+          "houseType": "하남미사 13단지 21형",
+          "area": "21.98㎡",
+          "supplyUnits": 100,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 227,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 1684,
+              "rent": 11
+            }
+          ]
+        },
+        {
+          "houseType": "하남미사 13단지 26형",
+          "area": "26.96㎡",
+          "supplyUnits": 100,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 279,
+              "rent": 6
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 2066,
+              "rent": 13
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020335": {
+    "at": "2026-07-24T05:13:48.368Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "정읍시 수성1 26.37",
+          "area": "26.37",
+          "supplyUnits": 200,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 247,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 766,
+              "rent": 12
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020418": {
+    "at": "2026-07-24T05:15:39.645Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "군산내흥3 29A",
+          "area": "29.01",
+          "supplyUnits": 80,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "군산내흥3 46A",
+          "area": "46.05",
+          "supplyUnits": 100,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "군산내흥7 33",
+          "area": "33.6",
+          "supplyUnits": 100,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "군산내흥7 33A",
+          "area": "33.6",
+          "supplyUnits": 5,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "군산내흥7 46",
+          "area": "46.28",
+          "supplyUnits": 100,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "군산내흥7 46A",
+          "area": "46.28",
+          "supplyUnits": 5,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "군산수송동영 39",
+          "area": "39.5",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "군산옥산대상 36",
+          "area": "36.67",
+          "supplyUnits": 10,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "군산미룡1 51A",
+          "area": "51.88",
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "군산미룡1 51B",
+          "area": "51.98",
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "군산미룡1 51C",
+          "area": "51.97",
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020419": {
+    "at": "2026-07-24T05:17:00.092Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.11.19"
+      },
+      "deadline": "2026.08.06",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020416": {
+    "at": "2026-07-24T05:18:18.339Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020363": {
+    "at": "2026-07-24T05:20:08.706Z",
+    "type": "fifty",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "달서구 대구한실들1단지 42형",
+          "area": "42.9",
+          "supplyUnits": 40,
+          "deposit": 1637,
+          "rent": 20,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "달서구 대구한실들1단지 49형",
+          "area": "49.44",
+          "supplyUnits": 25,
+          "deposit": 1886,
+          "rent": 23,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "달서구 대구한실들1단지 42형",
+            "limitManwon": 2300,
+            "maxDeposit": 3937,
+            "minRent": 9
+          },
+          {
+            "houseType": "달서구 대구한실들1단지 49형",
+            "limitManwon": 2600,
+            "maxDeposit": 4486,
+            "minRent": 10
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020377": {
+    "at": "2026-07-24T05:21:36.279Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020299": {
+    "at": "2026-07-24T05:31:48.231Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "공주시 공주신관6 41 형",
+          "area": "41.55",
+          "supplyUnits": 50,
+          "deposit": 2197,
+          "rent": 14,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "공주시 공주신관6 41 형",
+            "limitManwon": 1500,
+            "maxDeposit": 3697,
+            "minRent": 7
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020373": {
+    "at": "2026-07-24T05:34:06.920Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "밀양내이 36형",
+          "area": "36.88",
+          "supplyUnits": 110,
+          "deposit": 1256,
+          "rent": 11,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "밀양내이 46형",
+          "area": "46.98",
+          "supplyUnits": 30,
+          "deposit": 2233,
+          "rent": 16,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "밀양내이 51형",
+          "area": "51.69",
+          "supplyUnits": 30,
+          "deposit": 2585,
+          "rent": 20,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "밀양부북2 46형",
+          "area": "46.11",
+          "supplyUnits": 20,
+          "deposit": 2440,
+          "rent": 27,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "밀양내이 36형",
+            "limitManwon": 900,
+            "maxDeposit": 2156,
+            "minRent": 6
+          },
+          {
+            "houseType": "밀양내이 46형",
+            "limitManwon": 1800,
+            "maxDeposit": 4033,
+            "minRent": 7
+          },
+          {
+            "houseType": "밀양내이 51형",
+            "limitManwon": 2300,
+            "maxDeposit": 4885,
+            "minRent": 8
+          },
+          {
+            "houseType": "밀양부북2 46형",
+            "limitManwon": 3100,
+            "maxDeposit": 5540,
+            "minRent": 11
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020353": {
+    "at": "2026-07-24T05:36:14.870Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "익산시 익산동산여울3 51B",
+          "area": "51.99",
+          "supplyUnits": 10,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "익산시 익산송백마을 46",
+          "area": "46.73",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "익산시 익산송백마을 46",
+          "area": "46.18",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "익산시 익산장신1 36",
+          "area": "36.55",
+          "supplyUnits": 40,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "익산시 익산장신2 36",
+          "area": "36.55",
+          "supplyUnits": 40,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "익산시 익산장신2 36",
+          "area": "36.62",
+          "supplyUnits": 40,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "익산시 익산함열금호 59A (101동)",
+          "area": "59.82",
+          "supplyUnits": 15,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "익산시 익산함열금호 59B (102동)",
+          "area": "59.34",
+          "supplyUnits": 6,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020405": {
+    "at": "2026-07-24T05:38:53.973Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": null,
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020401": {
+    "at": "2026-07-24T05:50:20.633Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "보은군 보은이평 36형",
+          "area": "36.65",
+          "supplyUnits": 15,
+          "deposit": 901,
+          "rent": 9,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "보은군 보은이평 36형",
+          "area": "36.89",
+          "supplyUnits": 15,
+          "deposit": 901,
+          "rent": 9,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "보은군 보은이평 36형",
+            "limitManwon": 500,
+            "maxDeposit": 1401,
+            "minRent": 6
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020397": {
+    "at": "2026-07-24T05:51:39.866Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020396": {
+    "at": "2026-07-24T05:53:25.568Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "보령시 보령명천1 27A",
+          "area": "27.71",
+          "supplyUnits": 80,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "보령시 보령명천1 27B",
+          "area": "27.71",
+          "supplyUnits": 80,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "보령시 보령명천1 27C",
+          "area": "27.71",
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "보령시 보령명천1 37A",
+          "area": "37.75",
+          "supplyUnits": 80,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "보령시 보령명천1 37B",
+          "area": "37.75",
+          "supplyUnits": 80,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "보령시 보령명천1 37C",
+          "area": "37.75",
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "보령시 보령명천1 46A",
+          "area": "46.81",
+          "supplyUnits": 80,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "보령시 보령명천1 46B",
+          "area": "46.81",
+          "supplyUnits": 80,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "보령시 보령명천1 46C",
+          "area": "46.89",
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020394": {
+    "at": "2026-07-24T05:55:56.467Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "부여군 부여규암 29형",
+          "area": "29.91",
+          "supplyUnits": 100,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "부여군 부여규암 29(주거약자)형",
+          "area": "29.91",
+          "supplyUnits": 5,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "부여군 부여규암 36형",
+          "area": "36.7",
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "부여군 부여규암 36(주거약자)형",
+          "area": "36.7",
+          "supplyUnits": 5,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "부여군 부여규암 46형",
+          "area": "46.94",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "부여군 부여무지개 49형",
+          "area": "49.5388",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "부여군 부여무지개 59형",
+          "area": "59.9598",
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020392": {
+    "at": "2026-07-24T05:57:35.581Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "청양군 청양교월1단지 29A",
+          "area": "29.86",
+          "supplyUnits": 25,
+          "deposit": 1111,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "청양군 청양교월1단지 29A-1 (주거약자)",
+          "area": "29.86",
+          "supplyUnits": 10,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "청양군 청양교월1단지 46A",
+          "area": "46.63",
+          "supplyUnits": 15,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020375": {
+    "at": "2026-07-24T05:59:30.468Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "양양군 양양물치 29A",
+          "area": "29.92",
+          "supplyUnits": 40,
+          "deposit": 864,
+          "rent": 15,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "양양군 양양물치 37",
+          "area": "37.29",
+          "supplyUnits": 10,
+          "deposit": 1482,
+          "rent": 19,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "태백시 태백장성 29",
+          "area": "29.37",
+          "supplyUnits": 20,
+          "deposit": 1470,
+          "rent": 13,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "태백시 태백장성 37",
+          "area": "36.56",
+          "supplyUnits": 30,
+          "deposit": 1238,
+          "rent": 23,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4,
+        "perHouseType": [
+          {
+            "houseType": "양양군 양양물치 29A",
+            "limitManwon": 1600,
+            "maxDeposit": 2464,
+            "minRent": 7
+          },
+          {
+            "houseType": "양양군 양양물치 37",
+            "limitManwon": 2200,
+            "maxDeposit": 3682,
+            "minRent": 8
+          },
+          {
+            "houseType": "태백시 태백장성 29",
+            "limitManwon": 1400,
+            "maxDeposit": 2870,
+            "minRent": 6
+          },
+          {
+            "houseType": "태백시 태백장성 37",
+            "limitManwon": 2700,
+            "maxDeposit": 3938,
+            "minRent": 9
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020391": {
+    "at": "2026-07-24T06:00:41.691Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020406": {
+    "at": "2026-07-24T06:05:19.958Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "춘천만천 39",
+          "area": "39.72",
+          "supplyUnits": 60,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "춘천퇴계9 51",
+          "area": "51.86",
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "춘천퇴계9 59",
+          "area": "59.57",
+          "supplyUnits": 20,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "춘천우두1 26",
+          "area": "26.91",
+          "supplyUnits": 25,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "춘천우두1 36",
+          "area": "36.96",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "춘천우두3 29B",
+          "area": "29.53",
+          "supplyUnits": 20,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "춘천장학 26",
+          "area": "26.99",
+          "supplyUnits": 20,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "춘천신아3 39.99",
+          "area": "39.99",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "춘천신아3 59.87",
+          "area": "59.87",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "인제신아 29.13",
+          "area": "29.13",
+          "supplyUnits": 3,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "화천신아 37.63",
+          "area": "37.637",
+          "supplyUnits": 20,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강원양구 마을정비형 29A",
+          "area": "29.26",
+          "supplyUnits": 10,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020336": {
+    "at": "2026-07-24T06:07:14.086Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.11.30"
+      },
+      "deadline": "2026.07.31",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020371": {
+    "at": "2026-07-24T06:09:46.522Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "흥덕구 청주가경1 51A",
+          "area": "51.95",
+          "supplyUnits": 60,
+          "deposit": 2066,
+          "rent": 17,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4,
+        "perHouseType": [
+          {
+            "houseType": "흥덕구 청주가경1 51A",
+            "limitManwon": 2000,
+            "maxDeposit": 4066,
+            "minRent": 7
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020366": {
+    "at": "2026-07-24T06:13:05.291Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "김천시 김천대신 36 (일반)",
+          "area": "36.62",
+          "supplyUnits": 25,
+          "deposit": 1361,
+          "rent": 11,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "김천시 김천대신 36 (수급자)",
+          "area": "36.62",
+          "supplyUnits": 25,
+          "deposit": 1139,
+          "rent": 10,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "김천시 김천대신 36 (일반)",
+            "limitManwon": 1000,
+            "maxDeposit": 2361,
+            "minRent": 6
+          },
+          {
+            "houseType": "김천시 김천대신 36 (수급자)",
+            "limitManwon": 600,
+            "maxDeposit": 1739,
+            "minRent": 7
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020356": {
+    "at": "2026-07-24T06:15:42.967Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "구미도산 39A",
+          "area": "39.48",
+          "supplyUnits": 25,
+          "deposit": 1526,
+          "rent": 13,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "구미도산 39B",
+          "area": "39.72",
+          "supplyUnits": 25,
+          "deposit": 1526,
+          "rent": 13,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "구미도산 46",
+          "area": "46.9",
+          "supplyUnits": 15,
+          "deposit": 2092,
+          "rent": 17,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "구미도산 39",
+            "limitManwon": 1200,
+            "maxDeposit": 2726,
+            "minRent": 7
+          },
+          {
+            "houseType": "구미도산 46",
+            "limitManwon": 2000,
+            "maxDeposit": 4092,
+            "minRent": 7
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020352": {
+    "at": "2026-07-24T06:18:03.196Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "원주시 원주봉화산 46형",
+          "area": "46.91",
+          "supplyUnits": 50,
+          "deposit": 1906,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "원주시 원주푸른숨10 29형",
+          "area": "29.91",
+          "supplyUnits": 60,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "원주시 원주흥업2 29형",
+          "area": "29.75",
+          "supplyUnits": 80,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "원주시 원주흥업2 46형",
+          "area": "46.72",
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "원주시 흥업경동 32형",
+          "area": "32.43",
+          "supplyUnits": 5,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020386": {
+    "at": "2026-07-24T06:20:30.284Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "괴산군 괴산동부 행복마을 29형",
+          "area": "29.39",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "괴산군 괴산동부 행복마을 29 (주거약자)형",
+          "area": "29.39",
+          "supplyUnits": 10,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "괴산군 괴산동부 행복마을 43형",
+          "area": "43.33",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020384": {
+    "at": "2026-07-24T06:22:28.201Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "증평군 증평송산1 33형",
+          "area": "33.39",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "증평군 증평송산1 39형",
+          "area": "39.57",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "증평군 증평송산1 46형",
+          "area": "46.9",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "증평군 증평송산2 33형",
+          "area": "33.95",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "증평군 증평송산2 39형",
+          "area": "39.8",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "증평군 증평송산2 46형",
+          "area": "46.99",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "증평군 증평송산3 29형",
+          "area": "29.99",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "증평군 증평송산3 36형",
+          "area": "36.84",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "증평군 증평송산3 46형",
+          "area": "46.76",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "증평군 증평송산5 29형",
+          "area": "29.39",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "증평군 증평송산5 29 (주거약자)형",
+          "area": "29.39",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020383": {
+    "at": "2026-07-24T06:27:09.539Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "서원구 청주성화1 51 형",
+          "area": "51.93",
+          "supplyUnits": 50,
+          "deposit": 3092,
+          "rent": 22,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "서원구 청주성화1 51 형",
+            "limitManwon": 2500,
+            "maxDeposit": 5592,
+            "minRent": 9
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020399": {
+    "at": "2026-07-24T06:31:53.230Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "부평구 인천산곡A1 16형 (소득無)",
+          "area": "16.99",
+          "supplyUnits": 251,
+          "deposit": 2856,
+          "rent": 13,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "부평구 인천산곡A1 16형 (소득有)",
+          "area": "16.99",
+          "supplyUnits": 251,
+          "deposit": 3024,
+          "rent": 13,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "부평구 인천산곡A1 26A-1형",
+          "area": "26.8",
+          "supplyUnits": 33,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "부평구 인천산곡A1 16형 (소득無)",
+            "limitManwon": 1100,
+            "maxDeposit": 3956,
+            "minRent": 7
+          },
+          {
+            "houseType": "부평구 인천산곡A1 16형 (소득有)",
+            "limitManwon": 1200,
+            "maxDeposit": 4224,
+            "minRent": 7
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.11.26"
+      },
+      "deadline": "2026.07.30",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020337": {
+    "at": "2026-07-24T06:34:28.078Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "대전 중구 대흥 21E",
+          "area": "21.48",
+          "supplyUnits": 5,
+          "deposit": 2244,
+          "rent": 12,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "대전 중구 대흥 21E",
+            "limitManwon": 300,
+            "maxDeposit": 2544,
+            "minRent": 10
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.12.07"
+      },
+      "deadline": "2026.07.29",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020357": {
+    "at": "2026-07-24T06:40:41.454Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "철원군 갈말2 26A 주거급여",
+          "area": "26.88",
+          "supplyUnits": 6,
+          "deposit": 1710,
+          "rent": 9,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "철원군 갈말2 26A (대상미상)",
+          "area": "26.88",
+          "supplyUnits": 19,
+          "deposit": 1938,
+          "rent": 9,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "철원군 갈말2 26A 대학생",
+          "area": "26.88",
+          "supplyUnits": 16,
+          "deposit": 1938,
+          "rent": 10,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "철원군 갈말2 26A 청년",
+          "area": "26.88",
+          "supplyUnits": 29,
+          "deposit": 2052,
+          "rent": 10,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "철원군 갈말2 26A (대상미상)",
+            "limitManwon": 410,
+            "maxDeposit": null,
+            "minRent": null
+          },
+          {
+            "houseType": "철원군 갈말2 26A 대학생",
+            "limitManwon": 1500,
+            "maxDeposit": null,
+            "minRent": null
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.12.04"
+      },
+      "deadline": "2026.07.31",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020315": {
+    "at": "2026-07-24T06:43:14.856Z",
+    "type": "fifty",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "제천하소3 39",
+          "area": "39.6",
+          "supplyUnits": 60,
+          "deposit": 1084,
+          "rent": 15,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "제천하소3 39",
+            "limitManwon": 1800,
+            "maxDeposit": 2884,
+            "minRent": 6
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020312": {
+    "at": "2026-07-24T06:46:34.694Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "파주시 문산당동3 46형",
+          "area": "46.9",
+          "supplyUnits": 20,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "파주시 문산당동3 51형",
+          "area": "51.93",
+          "supplyUnits": 20,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "파주시 파주운정2 39형",
+          "area": "39.55",
+          "supplyUnits": 60,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "파주시 파주운정2 45형",
+          "area": "45.87",
+          "supplyUnits": 60,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "파주시 파주운정2 51형",
+          "area": "51.96",
+          "supplyUnits": 20,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "파주시 파주운정2 59형",
+          "area": "59.64",
+          "supplyUnits": 20,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "파주시 파주운정11 39형",
+          "area": "39.55",
+          "supplyUnits": 80,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "파주시 파주운정11 45형",
+          "area": "45.87",
+          "supplyUnits": 80,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "파주시 파주운정11 51형",
+          "area": "51.96",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "파주시 파주운정11 59형",
+          "area": "59.64",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020270": {
+    "at": "2026-07-24T06:47:22.579Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": "2026.07.24",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020090-m0": {
+    "at": "2026-07-24T06:52:31.869Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020090-m1": {
+    "at": "2026-07-24T06:53:34.410Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020262": {
+    "at": "2026-07-24T06:55:54.575Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "다자녀 가구 (2인 이상 미성년 자녀)",
+          "areaRange": "84㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6
+      },
+      "deadline": "2026.07.24",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020347": {
+    "at": "2026-07-24T06:58:14.617Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "2인 가구(1형)",
+          "areaRange": "50㎡ 이하",
+          "supplyUnits": 120,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "3～4인 가구(2형)",
+          "areaRange": null,
+          "supplyUnits": 60,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "5인이상 가구(3형)",
+          "areaRange": null,
+          "supplyUnits": 0,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020346": {
+    "at": "2026-07-24T07:01:09.413Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "다자녀 가구 (2인 이상 미성년 자녀)",
+          "areaRange": "84㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4
+      },
+      "deadline": "2026.07.31",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020378": {
+    "at": "2026-07-24T07:03:15.143Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "동해시 2인 가구(1형)",
+          "areaRange": "50㎡ 이하",
+          "supplyUnits": 0,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "동해시 3～4인 가구(2형)",
+          "areaRange": "50㎡ 초과 ～ 85㎡ 이하",
+          "supplyUnits": 100,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "동해시 5인이상 가구(3형)",
+          "areaRange": "85㎡ 초과",
+          "supplyUnits": 0,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020376": {
+    "at": "2026-07-24T07:05:13.651Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "3～4인 가구(2형)",
+          "areaRange": "50㎡ 초과 ～ 85㎡ 이하",
+          "supplyUnits": 100,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020402-m0": {
+    "at": "2026-07-24T07:07:02.267Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "1형(2인 이하 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "2형(2인 이상 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020437": {
+    "at": "2026-07-24T07:11:03.127Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "2인 가구(1형)",
+          "areaRange": "40㎡ 이하",
+          "supplyUnits": 150,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "3～4인 가구(2형)",
+          "areaRange": "40㎡ 초과 ～ 60㎡ 이하",
+          "supplyUnits": 90,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "5인이상 가구(3형)",
+          "areaRange": "60㎡ 초과",
+          "supplyUnits": 105,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020436": {
+    "at": "2026-07-24T07:12:43.501Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "2인 가구(1형)",
+          "areaRange": "40㎡ 이하",
+          "supplyUnits": 160,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "3～4인 가구(2형)",
+          "areaRange": "40㎡ 초과 ～ 60㎡ 이하",
+          "supplyUnits": 105,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "5인이상 가구(3형)",
+          "areaRange": "60㎡ 초과",
+          "supplyUnits": 35,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020435": {
+    "at": "2026-07-24T07:14:32.622Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020388": {
+    "at": "2026-07-24T07:16:17.509Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "1·2인 가구(1형)",
+          "areaRange": null,
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020432": {
+    "at": "2026-07-24T07:24:50.587Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "광주 용산 26B",
+          "area": "26.9",
+          "supplyUnits": 8,
+          "deposit": 2383,
+          "rent": 12,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "광주 용산 26B",
+            "limitManwon": 1100,
+            "maxDeposit": 3483,
+            "minRent": 6
+          },
+          {
+            "houseType": "광주 용산 26B",
+            "limitManwon": 1900,
+            "maxDeposit": 483,
+            "minRent": 17
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.11.24"
+      },
+      "deadline": "2026.08.10",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020431": {
+    "at": "2026-07-24T07:26:32.483Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.11.25"
+      },
+      "deadline": "2026.08.10",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
   }
 }
