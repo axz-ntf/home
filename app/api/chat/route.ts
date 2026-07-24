@@ -338,7 +338,6 @@ export async function POST(req: Request) {
   after(async () => {
     try {
       await langfuseSpanProcessor.forceFlush();
-      console.log("[otel] flush 완료");
     } catch (e) {
       console.error("[otel] flush 실패", e);
     }
