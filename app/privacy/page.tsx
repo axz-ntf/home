@@ -28,12 +28,13 @@ export default function PrivacyPage() {
           </Link>
         </header>
 
-        <div className="post-head">
-          <h1 className="post-title">개인정보처리방침</h1>
-        </div>
-
-        <div className="pv-dates">
-          <span>시행일자 2026. 7. 24.</span>
+        <div className="pv-hero">
+          <h1>개인정보처리방침</h1>
+          <p>
+            꼭 필요한 정보만, 꼭 필요한 만큼만. 이 서비스가 이용자의 정보를 어떻게 다루는지
+            투명하게 알려드립니다.
+          </p>
+          <span className="pv-hero-date">시행일 2026. 7. 24.</span>
         </div>
 
         {/* 한눈에 보기 — 핵심 원칙 4가지 */}
