@@ -7,5 +7,6 @@ export async function register() {
     const { langfuseSpanProcessor } = await import("./lib/telemetry");
     const sdk = new NodeSDK({ spanProcessors: [langfuseSpanProcessor] });
     sdk.start();
+    console.log("[otel] Langfuse 트레이싱 등록 완료 — key:", !!process.env.LANGFUSE_SECRET_KEY);
   }
 }

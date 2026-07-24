@@ -336,7 +336,12 @@ export async function POST(req: Request) {
 
   // 서버리스에서 응답 후 trace 를 Langfuse 로 강제 플러시 (안 하면 유실).
   after(async () => {
-    await langfuseSpanProcessor.forceFlush();
+    try {
+      await langfuseSpanProcessor.forceFlush();
+      console.log("[otel] flush 완료");
+    } catch (e) {
+      console.error("[otel] flush 실패", e);
+    }
   });
 
   return result.toUIMessageStreamResponse();
