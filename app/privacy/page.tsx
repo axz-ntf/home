@@ -6,8 +6,7 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
-// 개인정보 보호법 §30 · 보호위원회 표준 작성지침의 필수 조항 구성을 따른다.
-// 실제 수집 현황(GA4·AI 상담·위치·자격 프로필) 기준 — 하지 않는 처리는 "하지 않음"으로 명시.
+// 개인정보 보호법 필수 고지 사항만 간결하게. 위탁·국외이전(§26·§28-8)은 법정 필수라 유지.
 // [운영자명]·[문의 이메일] 은 게시 전 실제 값으로 치환할 것.
 
 function Card({ n, title, children }: { n: number; title: string; children: React.ReactNode }) {
@@ -34,7 +33,6 @@ export default function PrivacyPage() {
         </div>
 
         <div className="pv-dates">
-          <span>공고일자 2026. 7. 24.</span>
           <span>시행일자 2026. 7. 24.</span>
         </div>
 
@@ -58,194 +56,102 @@ export default function PrivacyPage() {
           <div className="pv-summary-tile">
             <span className="pv-ico" aria-hidden>🚫</span>
             <strong>광고 추적 없음</strong>
-            <span>통계 목적 분석만 하고 맞춤형 광고에 쓰지 않아요</span>
+            <span>통계 분석만 하고 맞춤형 광고에 쓰지 않아요</span>
           </div>
         </div>
 
         <article>
-          <section className="pv-card">
-            <p style={{ marginBottom: 0 }}>
-              [운영자명](이하 &ldquo;운영자&rdquo;)은 공공임대주택 정보 서비스(이하 &ldquo;서비스&rdquo;)를
-              운영하면서 「개인정보 보호법」 등 관련 법령을 준수하며, 정보주체의 개인정보를 적법하게
-              처리하고 안전하게 관리하기 위해 다음과 같이 개인정보처리방침을 수립·공개합니다.
-            </p>
-            <div style={{ height: 14 }} />
-          </section>
-
-          <Card n={1} title="개인정보의 처리 목적">
+          <Card n={1} title="수집하는 정보와 목적">
             <ul>
-              <li><strong>서비스 제공</strong> — 공공임대·분양 공고 탐색, AI 자격 상담, 관심 공고 저장 등 핵심 기능 제공</li>
-              <li><strong>서비스 개선</strong> — 방문·이용 통계 분석을 통한 기능 개선 및 오류 파악</li>
+              <li><strong>이용 통계</strong> — 쿠키·방문 기록 (Google Analytics, 서비스 개선 목적)</li>
+              <li><strong>AI 상담 입력 내용</strong> — 나이·소득 구간 등 이용자가 대화에 직접 쓴 정보 (답변 생성 목적)</li>
+              <li><strong>위치</strong> — &ldquo;내 위치&rdquo; 사용 시 지도 이동에만 일시 사용, 서버로 보내지 않음</li>
+              <li><strong>자격 프로필</strong> — 저장을 선택한 경우만 (맞춤 상담 목적)</li>
             </ul>
-          </Card>
-
-          <Card n={2} title="처리하는 개인정보 항목">
-            <div className="pv-table-wrap">
-              <table className="pv-table">
-                <thead>
-                  <tr><th>구분</th><th>항목</th><th>수집 방법</th></tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>자동 수집</td>
-                    <td>쿠키, 방문·클릭 기록, 브라우저·기기 정보, 접속 로그</td>
-                    <td>Google Analytics</td>
-                  </tr>
-                  <tr>
-                    <td>AI 상담</td>
-                    <td>대화에 입력한 정보 (나이·가구 구성·소득 구간·희망 지역 등)</td>
-                    <td>이용자 직접 입력</td>
-                  </tr>
-                  <tr>
-                    <td>위치정보</td>
-                    <td>브라우저 좌표 — 지도 이동에 일시 사용, 서버 미전송</td>
-                    <td>&ldquo;내 위치&rdquo; 사용 시</td>
-                  </tr>
-                  <tr>
-                    <td>자격 프로필 <em>(선택)</em></td>
-                    <td>연령대, 가구원 수, 소득 구간 등</td>
-                    <td>이용자가 저장 선택 시</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
             <p className="pv-note">
-              주민등록번호 등 고유식별정보·민감정보는 수집하지 않으며 입력을 요구하지 않습니다.
-              AI 상담에 주민등록번호 형식이 입력되면 외부 전송 전에 시스템이 자동 삭제(마스킹)합니다.
+              주민등록번호 등 고유식별정보는 수집하지 않으며, AI 상담에 입력돼도 전송 전에 자동
+              삭제됩니다.
             </p>
           </Card>
 
-          <Card n={3} title="개인정보의 처리 및 보유 기간">
+          <Card n={2} title="보유 기간과 파기">
             <ul>
-              <li><strong>AI 상담 대화 내용</strong> — 답변 생성 즉시 목적 달성. 운영자 서버(DB)에 저장하지 않습니다.</li>
-              <li><strong>Google Analytics 수집 데이터</strong> — 수집일로부터 최대 14개월 후 자동 파기.</li>
-              <li><strong>자격 프로필</strong> — 이용자가 삭제하거나 서비스 이용 종료를 요청한 때 지체 없이 파기.</li>
-              <li>관계 법령에 따라 보존이 필요한 경우 해당 법령에서 정한 기간 동안 보관할 수 있습니다.</li>
+              <li>AI 상담 대화 — 답변 생성 즉시 폐기, 서버에 저장하지 않음</li>
+              <li>이용 통계 — 최대 14개월 후 자동 삭제</li>
+              <li>자격 프로필 — 이용자가 삭제를 요청하면 지체 없이 파기</li>
             </ul>
           </Card>
 
-          <Card n={4} title="개인정보의 제3자 제공">
-            <p>
-              운영자는 이용자의 개인정보를 제3자에게 제공하지 않습니다. 다만 이용자가 별도로 동의하거나
-              법령에 특별한 규정이 있는 경우는 예외로 합니다.
-            </p>
+          <Card n={3} title="제3자 제공">
+            <p>이용자의 개인정보를 제3자에게 제공하지 않습니다. (별도 동의 또는 법령상 의무가 있는 경우 제외)</p>
           </Card>
 
-          <Card n={5} title="개인정보 처리의 위탁 및 국외 이전">
+          <Card n={4} title="처리 위탁 및 국외 이전">
             <p>
-              안정적인 서비스 제공을 위해 아래와 같이 처리를 위탁하며, 수탁자의 서버는 국외에 위치하여
-              개인정보가 국외로 이전됩니다. 이전은 서비스 이용 시점에 네트워크를 통해 수시로 이루어집니다.
+              아래 업체가 서비스 기능을 대신 처리하며, 서버가 국외(미국)에 있어 해당 정보가 국외로
+              이전됩니다. 이 고지는 개인정보 보호법상 필수 항목입니다.
             </p>
             <div className="pv-table-wrap">
               <table className="pv-table">
                 <thead>
-                  <tr><th>수탁자 (국가)</th><th>위탁 업무</th><th>이전 항목</th><th>보유 기간</th></tr>
+                  <tr><th>수탁자 (국가)</th><th>업무</th><th>이전되는 정보</th><th>보유</th></tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>Google LLC (미국)</td>
-                    <td>방문 통계 분석 (Google Analytics)</td>
+                    <td>방문 통계 분석</td>
                     <td>쿠키, 이용기록</td>
                     <td>최대 14개월</td>
                   </tr>
                   <tr>
-                    <td>Vercel Inc. (미국)</td>
-                    <td>서비스 호스팅·로그 처리</td>
-                    <td>접속 기록</td>
-                    <td>위탁 계약 기간</td>
+                    <td>Anthropic PBC 등 AI 업체 (미국)</td>
+                    <td>AI 상담 답변 생성</td>
+                    <td>상담 입력 내용</td>
+                    <td>미보관 · 학습에 사용 안 함</td>
                   </tr>
                   <tr>
                     <td>Supabase Inc. (미국)</td>
                     <td>데이터 저장</td>
                     <td>자격 프로필 (저장 선택 시)</td>
-                    <td>삭제·탈퇴 시까지</td>
-                  </tr>
-                  <tr>
-                    <td>Anthropic PBC 등 AI 처리업체 (미국)</td>
-                    <td>AI 상담 답변 생성</td>
-                    <td>상담 입력 내용</td>
-                    <td>답변 생성 후 미보관 (모델 학습에 사용되지 않음)</td>
+                    <td>삭제 요청 시까지</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <p>
-              국외 이전을 원하지 않는 경우 해당 기능(AI 상담, 프로필 저장)의 이용을 중단하거나 아래
-              연락처로 이전 중단을 요구할 수 있습니다. 이 경우 서비스의 일부 이용이 제한될 수 있습니다.
+              국외 이전을 원하지 않으면 해당 기능(AI 상담·프로필 저장)을 사용하지 않거나 아래
+              연락처로 중단을 요구할 수 있습니다.
             </p>
           </Card>
 
-          <Card n={6} title="개인정보의 파기 절차 및 방법">
+          <Card n={5} title="이용자의 권리">
             <p>
-              보유 기간이 경과하거나 처리 목적이 달성된 개인정보는 지체 없이 파기합니다. 전자적 파일
-              형태의 정보는 복구할 수 없는 방법으로 영구 삭제하며, 파기 사유가 발생한 정보는 개인정보
-              보호책임자의 승인을 거쳐 파기합니다.
+              언제든지 자신의 개인정보에 대한 열람·정정·삭제·처리정지를 아래 연락처로 요구할 수
+              있으며, 지체 없이 처리합니다.
             </p>
           </Card>
 
-          <Card n={7} title="정보주체와 법정대리인의 권리·의무 및 행사 방법">
-            <ul>
-              <li>이용자는 언제든지 자신의 개인정보에 대한 <strong>열람·정정·삭제·처리정지</strong>를 요구할 수 있습니다.</li>
-              <li>권리 행사는 아래 문의 연락처(이메일)를 통해 할 수 있으며, 운영자는 지체 없이 조치합니다.</li>
-              <li>만 14세 미만 아동의 법정대리인은 아동의 개인정보에 대한 권리를 행사할 수 있습니다.</li>
-              <li>권리 행사는 대리인을 통해서도 가능하며, 이 경우 적법한 위임장을 제출해야 합니다.</li>
-            </ul>
-          </Card>
-
-          <Card n={8} title="개인정보의 안전성 확보 조치">
-            <ul>
-              <li><strong>기술적 조치</strong> — 전 구간 통신 암호화(HTTPS), 저장 데이터 암호화, 접근 권한 관리</li>
-              <li><strong>관리적 조치</strong> — 개인정보 취급 인원 최소화, 접근 키·비밀정보의 분리 보관</li>
-              <li><strong>자동 보호 조치</strong> — AI 상담 입력의 주민등록번호 자동 마스킹, 수집 항목 최소화 설계</li>
-            </ul>
-          </Card>
-
-          <Card n={9} title="쿠키 등 자동 수집 장치의 설치·운영 및 거부">
+          <Card n={6} title="쿠키와 안전 조치">
             <p>
-              서비스는 이용 통계 분석을 위해 쿠키를 사용합니다. 브라우저 설정에서 쿠키 저장을
-              거부하거나 삭제할 수 있으며, 거부하더라도 서비스 이용에 제한이 없습니다.
+              쿠키는 브라우저 설정에서 거부·삭제할 수 있고, 거부해도 이용에 제한이 없습니다.
+              모든 통신은 암호화(HTTPS)되며, 수집 항목 최소화와 주민등록번호 자동 마스킹을
+              적용하고 있습니다.
             </p>
           </Card>
 
-          <Card n={10} title="행태정보의 수집·이용">
-            <p>
-              Google Analytics를 통해 방문·클릭 등 행태정보를 수집하며, 서비스 개선을 위한 통계
-              목적으로만 사용합니다. 온라인 맞춤형 광고를 위한 행태정보 수집·제공은 하지 않습니다.
-            </p>
-          </Card>
-
-          <Card n={11} title="개인정보 보호책임자">
+          <Card n={7} title="문의 및 보호책임자">
             <ul>
               <li>개인정보 보호책임자: [운영자명]</li>
               <li>문의: [문의 이메일]</li>
             </ul>
             <p>
-              개인정보 처리에 관한 문의, 불만 처리, 피해 구제 요청은 위 연락처로 접수할 수 있으며,
-              지체 없이 답변·처리합니다.
+              별도 구제가 필요한 경우 개인정보분쟁조정위원회(1833-6972) 또는
+              개인정보침해신고센터(118)에 문의할 수 있습니다.
             </p>
           </Card>
 
-          <Card n={12} title="권익침해에 대한 구제 방법">
-            <div className="pv-table-wrap">
-              <table className="pv-table">
-                <thead>
-                  <tr><th>기관</th><th>연락처</th><th>홈페이지</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>개인정보분쟁조정위원회</td><td>(국번없이) 1833-6972</td><td>kopico.go.kr</td></tr>
-                  <tr><td>개인정보침해신고센터 (KISA)</td><td>(국번없이) 118</td><td>privacy.kisa.or.kr</td></tr>
-                  <tr><td>대검찰청 사이버수사과</td><td>(국번없이) 1301</td><td>spo.go.kr</td></tr>
-                  <tr><td>경찰청 사이버수사국</td><td>(국번없이) 182</td><td>ecrm.police.go.kr</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </Card>
-
-          <Card n={13} title="개인정보처리방침의 변경">
-            <p>
-              본 방침의 내용이 추가·삭제·수정되는 경우 시행 최소 7일 전(중대한 변경은 30일 전)부터
-              본 페이지를 통해 고지합니다.
-            </p>
+          <Card n={8} title="방침의 변경">
+            <p>내용이 바뀌는 경우 시행 7일 전부터 본 페이지를 통해 알립니다.</p>
           </Card>
         </article>
 
