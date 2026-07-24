@@ -114,11 +114,15 @@ export default function PrivacyPage() {
           </Card>
 
           <Card n={5} title="문의">
-            <div className="pv-contact">
-              <span className="pv-chip">보호책임자 <span>서비스 운영자</span></span>
-              <span className="pv-chip">이메일 <span>parksangwon0223@gmail.com</span></span>
-              <span className="pv-chip">분쟁조정 <span>1833-6972 · KISA 118</span></span>
-            </div>
+            <p>개인정보 관련 문의나 권리 행사 요청은 아래로 보내주세요. 지체 없이 처리합니다.</p>
+            <a className="pv-mail" href="mailto:newappservice@axzcorp.com">
+              <svg viewBox="0 0 24 24" aria-hidden><rect x="3" y="5" width="18" height="14" rx="2.5" /><path d="M3.5 7l8.5 6 8.5-6" /></svg>
+              newappservice@axzcorp.com
+            </a>
+            <p className="pv-contact-meta">
+              개인정보 보호책임자: 서비스 운영자 · 외부 구제: 개인정보분쟁조정위원회 1833-6972 ·
+              개인정보침해신고센터(KISA) 118
+            </p>
           </Card>
         </article>
 
