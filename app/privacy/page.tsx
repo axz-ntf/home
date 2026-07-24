@@ -7,7 +7,6 @@ export const metadata: Metadata = {
 };
 
 // 확정 목업(claude artifact debe177f) 기준. 국외 이전 고지는 하단 각주로 최소화(운영자 결정).
-// [운영자명]·[문의 이메일] 은 게시 전 실제 값으로 치환할 것.
 
 function Card({ n, title, children }: { n: number; title: string; children: React.ReactNode }) {
   return (
@@ -116,8 +115,8 @@ export default function PrivacyPage() {
 
           <Card n={5} title="문의">
             <div className="pv-contact">
-              <span className="pv-chip">보호책임자 <span>[운영자명]</span></span>
-              <span className="pv-chip">이메일 <span>[문의 이메일]</span></span>
+              <span className="pv-chip">보호책임자 <span>서비스 운영자</span></span>
+              <span className="pv-chip">이메일 <span>parksangwon0223@gmail.com</span></span>
               <span className="pv-chip">분쟁조정 <span>1833-6972 · KISA 118</span></span>
             </div>
           </Card>
