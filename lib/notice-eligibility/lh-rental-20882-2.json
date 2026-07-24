@@ -1,0 +1,69 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": null
+      },
+      "other": [
+        "대학에 재학 중이거나 다음 학기에 입·복학 예정",
+        "자동차 미소유 필수",
+        "취업준비생: 대학 또는 고등학교 졸업(중퇴) 후 2년 이내"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "만 19세 이상 만 39세 이하",
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "사회초년생: 소득이 있는 업무에 종사한 기간 7년 이내(완화조건)",
+        "소득이 있는 업무에 종사하는 자",
+        "예술인",
+        "퇴직 후 1년 미만이며 구직급여 수급 자격 인정자"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": null,
+      "age": "만 65세 이상",
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": []
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "주거급여법 제2조 제2호 및 제3호에 따른 수급권자 또는 수급자"
+      ]
+    }
+  ],
+  "priority": []
+}

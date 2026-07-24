@@ -1,0 +1,19 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "민법상 미성년자(19세 미만)는 신청 불가 (단, 자녀가 있는 미성년 세대주, 형제자매 부양 미성년 세대주, 외국인 한부모 미성년 자녀 세대주는 신청 가능)"
+      ]
+    }
+  ],
+  "priority": []
+}

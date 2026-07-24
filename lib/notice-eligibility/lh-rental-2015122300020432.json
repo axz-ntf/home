@@ -1,0 +1,22 @@
+{
+  "supplyTotal": 8,
+  "tiers": [
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": 8,
+      "age": "65세 이상(1961.07.23. 이전 출생자)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "주거약자용 주택(3층 이하)",
+        "편의시설 설치",
+        "2세 미만 자녀 있는 자는 모집호수 30% 범위 내 우선배정"
+      ]
+    }
+  ],
+  "priority": [
+    "2세 미만 자녀 보유"
+  ]
+}
