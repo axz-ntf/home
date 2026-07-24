@@ -1,6 +1,6 @@
 import { convertToModelMessages, stepCountIs, streamText, tool, type UIMessage } from "ai";
 import { after } from "next/server";
-import { langfuseSpanProcessor } from "@/lib/telemetry";
+import { aiTracer, langfuseSpanProcessor } from "@/lib/telemetry";
 import { aiModel } from "@/lib/ai-provider";
 import { z } from "zod";
 import { LH_LISTINGS } from "@/lib/lh-adapter";
@@ -318,7 +318,7 @@ export async function POST(req: Request) {
     // 멀티스텝 — tool 호출 후 AI 가 결과를 보고 follow-up 코멘트를 쓰게 함.
     // 없으면 "찾아볼게요!" 만 출력하고 끝나버려 사용자는 0건/N건 알 길 없음.
     stopWhen: stepCountIs(4),
-    experimental_telemetry: { isEnabled: true, functionId: "chat" },
+    experimental_telemetry: { isEnabled: true, functionId: "chat", tracer: aiTracer },
     onError: ({ error }) => {
       console.error("[chat] streamText error", error);
     },

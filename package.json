@@ -16,7 +16,7 @@
     "@anthropic-ai/sdk": "^0.104.1",
     "@langfuse/otel": "^5.9.1",
     "@next/third-parties": "^16.2.4",
-    "@opentelemetry/sdk-node": "^0.221.0",
+    "@opentelemetry/sdk-trace-node": "^2.10.0",
     "@supabase/ssr": "^0.12.0",
     "@supabase/supabase-js": "^2.108.2",
     "@vercel/blob": "^2.4.0",
