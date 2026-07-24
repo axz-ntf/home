@@ -5147,3 +5147,15 @@ div:has(> img[src*="streetview_btn"]) {
   font-weight: 600; font-size: 13px;
   text-decoration: none;
 }
+/* 검수 전 AI 추출 가격 배지 — 카드 가격 옆 */
+.price-unverified {
+  display: inline-flex; align-items: center;
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 100px;
+  background: var(--seed-semantic-color-primary-low, #eef5ff);
+  color: var(--seed-semantic-color-primary, #1e84ff);
+  font-size: 10px; font-weight: 700;
+  vertical-align: 1px;
+  cursor: help;
+}

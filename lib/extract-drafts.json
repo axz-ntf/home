@@ -5877,5 +5877,113 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-sale-2015122300020447": {
+    "at": "2026-07-24T04:51:39.077Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "충남 아산시 아산 엘크루 84.6814 형",
+          "area": "84.6814",
+          "supplyUnits": 87,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "충남 아산시 아산 친오애 84.6814 형",
+          "area": "84.6814",
+          "supplyUnits": 51,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "충남 천안시 천안 청광플러스원 84.9721 형",
+          "area": "84.9721",
+          "supplyUnits": 8,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "충남 보령시 보령 부경파크빌",
+          "area": null,
+          "supplyUnits": 13,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "충남 공주시 공주 영우마을 차2",
+          "area": null,
+          "supplyUnits": 4,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-sale-0000061145": {
+    "at": "2026-07-24T04:53:26.682Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "상당구 청주지북 B1 블록 55㎡",
+          "area": "55㎡",
+          "supplyUnits": 278,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "상당구 청주지북 B1 블록 59㎡",
+          "area": "59㎡",
+          "supplyUnits": 370,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-sale-0000061141": {
+    "at": "2026-07-24T04:55:44.097Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "부산진구 부산범천2 1BL 서면서한이다음 59 형",
+          "area": "59㎡",
+          "supplyUnits": 2,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "부산진구 부산범천2 1BL 서면서한이다음 74 형",
+          "area": "74㎡",
+          "supplyUnits": 4,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
   }
 }

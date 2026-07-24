@@ -161,6 +161,11 @@ function RentSummarySection({ item }: { item: Listing }) {
           계층·평형에 따라 달라요. 정확한 조건은 상세에서 확인하세요.
         </p>
       )}
+      {item.priceUnverified && cells.length > 0 && (
+        <p style={{ fontSize: 11.5, color: "var(--seed-semantic-color-ink-text-low)", margin: "8px 0 0" }}>
+          공고문에서 자동 추출한 값이에요(검수 전) — 신청 전 공고문 원문으로 확인하세요.
+        </p>
+      )}
       {/* 면적 등은 있지만 가격이 없는 경우 — 안내만(링크 제거, 공고문은 하단 PDF 버튼으로). */}
       {cells.length > 0 && !s.deposit && !s.rent && !s.supportLimit && item.type !== "sale" && (
         <p style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12, color: "var(--seed-semantic-color-ink-text-low)", margin: "10px 0 0" }}>

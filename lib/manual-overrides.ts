@@ -5,6 +5,7 @@
 // 값 = 정정할 필드만 부분적으로. 빠진 필드는 자동값 유지.
 import type { HousingTypeId, Listing, StatusId } from "./types";
 import overridesRaw from "./manual-overrides.json";
+import draftsRaw from "./extract-drafts.json";
 
 // ── 가격 모델 (유형별 어드민 구조, 설계: docs/type-aware-admin-design.md) ──
 // 유형마다 가격 구조가 달라 단일 rows 로 표현 불가 → 6개 모델로 수렴.
@@ -131,9 +132,33 @@ export type OverridesMap = Record<string, ManualOverride>;
 
 export const OVERRIDES: OverridesMap = overridesRaw as OverridesMap;
 
+// 검수 전 AI 초안(extract-drafts) — 검수값이 없을 때 가격 관련 필드만 폴백으로 쓴다.
+// 상태·마감일 등은 오추출 위험이 커서 초안에서 가져오지 않는다 (가격은 "미검수" 배지로 표시).
+const DRAFT_PRICE_KEYS = [
+  "priceModel", "rows", "tiers", "householdTypes", "supportLimit", "conversion",
+  "deposit", "rent", "salePriceManwon", "area", "supplyUnits",
+] as const;
+
+function draftAsOverride(id: string): ManualOverride | null {
+  const d = (draftsRaw as unknown as Record<string, { fields?: Partial<ManualOverride> }>)[id]?.fields;
+  if (!d) return null;
+  const o: Partial<ManualOverride> = {};
+  for (const k of DRAFT_PRICE_KEYS) {
+    if (d[k] !== undefined && d[k] !== null) (o as Record<string, unknown>)[k] = d[k];
+  }
+  if (Object.keys(o).length === 0) return null;
+  return { ...o, _reviewedAt: "" } as ManualOverride;
+}
+
 export function applyOverride(listing: Listing): Listing {
-  const o = OVERRIDES[listing.id];
-  if (!o) return listing;
+  let unverified = false;
+  let o = OVERRIDES[listing.id];
+  if (!o) {
+    const draft = draftAsOverride(listing.id);
+    if (!draft) return listing;
+    o = draft;
+    unverified = true;
+  }
 
   // 새 가격 모델이면 레거시 rows/headline 으로 정규화 (없으면 derived={} → 기존 경로 무손상).
   const derived = deriveFromModel(o);
@@ -165,6 +190,7 @@ export function applyOverride(listing: Listing): Listing {
 
   return {
     ...listing,
+    ...(unverified && { priceUnverified: true }),
     // derived(평형 합계) 먼저, 명시적 검수값(o.supplyUnits)이 있으면 그것이 우선 (감사 H2).
     ...(derivedSupply !== undefined && { supplyUnits: derivedSupply, totalUnits: derivedSupply }),
     ...(o.supplyUnits !== undefined && o.supplyUnits !== null && { supplyUnits: o.supplyUnits, totalUnits: o.supplyUnits }),

@@ -50,6 +50,8 @@ export interface Listing {
   // 유형별 보증금/월세 min~max (만원). 단일이면 없음 — 카드·상세에서 범위 표시용.
   depositRange?: [number, number] | null;
   rentRange?: [number, number] | null;
+  // 가격이 검수 전 AI 추출값(extract-drafts)일 때 true — UI 에서 "미검수" 배지 표시.
+  priceUnverified?: boolean;
   area: string;
   layout: string;
   totalUnits?: number | string | null;

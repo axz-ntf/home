@@ -8,7 +8,8 @@ import { priceModelFor, type PriceModel } from "./manual-overrides";
 
 const BASE = (process.env.SOLAR_BASE_URL ?? "https://api.upstage.ai/v1").replace(/\/$/, "");
 const KEY = (process.env.SOLAR_API_KEY ?? "").trim();
-const MODEL = (process.env.SOLAR_EXTRACT_MODEL ?? "solar-open2-260528").trim();
+// 날짜 스냅샷(-260528)은 '26.07 폐기됨 — 최신 추적 별칭 사용 (404 시 여기부터 확인).
+const MODEL = (process.env.SOLAR_EXTRACT_MODEL ?? "solar-open2").trim();
 
 export interface ExtractedRow {
   houseType: string;
