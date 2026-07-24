@@ -68,7 +68,7 @@ export default function AdminShell({ pageTitle, pageSub, navItems, cta, user = D
       <aside className="a-side" data-open={sideOpen}>
         {/* 로고 클릭 → 어드민 홈 (대시보드) */}
         <Link href="/admin/review" className="a-brand">
-          <div className="a-brand-name">다음부동산</div>
+          <div className="a-brand-name">부동산</div>
           <div className="a-brand-tag">ADMIN</div>
         </Link>
 

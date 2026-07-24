@@ -249,7 +249,7 @@ export function ChatPanelBody({ allListings = [], focusListing }: { allListings?
                 <div className="chat-welcome-lines">
                   <div>안녕하세요!</div>
                   <div>
-                    <strong>다음부동산 AI 상담사</strong>예요 ☺️
+                    <strong>부동산 AI 상담사</strong>예요 ☺️
                   </div>
                   <div>공공임대·분양 자격이 고민이라면</div>
                   <div>조건에 맞춰 추천해드릴게요.</div>
