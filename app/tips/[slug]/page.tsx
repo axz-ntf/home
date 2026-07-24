@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = getTip(slug);
   if (!post) return {};
   return {
-    title: `${post.title} — 주거 가이드 | 다음부동산`,
+    title: `${post.title} — 주거 가이드 | 공공임대주택 부동산`,
     description: post.summary,
   };
 }

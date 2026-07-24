@@ -4,7 +4,7 @@ export function AuthBrandPanel() {
     <aside className="auth-brand" aria-hidden>
       <div className="auth-brand-inner">
         <div className="auth-brand-logo">
-          <strong>다음 공공임대주택 부동산</strong>
+          <strong>공공임대주택 부동산</strong>
         </div>
         <h2 className="auth-brand-title">
           공공임대·청년주택,<br />

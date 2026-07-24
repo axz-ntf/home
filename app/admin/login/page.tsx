@@ -35,7 +35,7 @@ export default function AdminLoginPage() {
       <form onSubmit={submit} className="a-login-card">
         <div className="a-login-brand">
           <div>
-            <h1>다음부동산 어드민</h1>
+            <h1>부동산 어드민</h1>
             <p className="sub">LH 공고 검수 — 내부 도구</p>
           </div>
         </div>
