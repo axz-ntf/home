@@ -1,0 +1,19 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": null,
+      "age": "만 19세 이상",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "성년인 자",
+        "외국인·법인 신청 불가"
+      ]
+    }
+  ],
+  "priority": []
+}

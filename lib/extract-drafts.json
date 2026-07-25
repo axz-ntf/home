@@ -9665,5 +9665,973 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-sale-0000061149": {
+    "at": "2026-07-25T02:34:29.608Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "영천시 영천문외 센트럴타운 84㎡형",
+          "area": "84",
+          "supplyUnits": 13,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": "2026.12.24",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-0000061108": {
+    "at": "2026-07-25T02:35:37.100Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020446-m0": {
+    "at": "2026-07-25T02:37:25.614Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "인천 26-3 연수구 (모던하우스) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 26-3 남동구 (가온시티) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 2,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 26-3 남동구 (청울림) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 26-3 남동구 (청울림) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 2,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 26-3 서해구 (드림팰리스) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 4,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 26-3 서해구 (청라월드메르디앙) 60～70㎡",
+          "areaRange": "60～70㎡",
+          "supplyUnits": 3,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 26-3 서해구 (청라월드메르디앙) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 26-3 서해구 (더라포레) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 4,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 26-3 서해구 (코오롱하늘채) 60～70㎡",
+          "areaRange": "60～70㎡",
+          "supplyUnits": 9,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 26-3 부천소사구 (채움가동) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 26-3 부천원미구 (엘리하임) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 7,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 26-3 부천오정구 (원종아이원시티) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 4,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 26-3 부천오정구 (여월늘해랑) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 26-3 부천오정구 (여월늘해랑) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 26-3 부천원미구 (더포레스트) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 5,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.09.21"
+      },
+      "deadline": "2026.08.06",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020446-m1": {
+    "at": "2026-07-25T02:39:26.088Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "인천 26-3 연수구 (모던하우스) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 26-3 남동구 (가온시티) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 2,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 26-3 남동구 (청울림) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 26-3 남동구 (청울림) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 2,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 26-3 서해구 (드림팰리스) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 4,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 26-3 서해구 (청라월드메르디앙) 60～70㎡",
+          "areaRange": "60～70㎡",
+          "supplyUnits": 3,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 26-3 서해구 (청라월드메르디앙) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 26-3 서해구 (더라포레) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 4,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 26-3 서해구 (코오롱하늘채) 60～70㎡",
+          "areaRange": "60～70㎡",
+          "supplyUnits": 9,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 26-3 부천소사구 (채움가동) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 26-3 부천원미구 (엘리하임) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 7,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 26-3 부천오정구 (원종아이원시티) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 4,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 26-3 부천오정구 (여월늘해랑) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 26-3 부천오정구 (여월늘해랑) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 26-3 부천원미구 (더포레스트) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 5,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.09.21"
+      },
+      "deadline": "2026.08.06",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020446-m2": {
+    "at": "2026-07-25T02:40:52.322Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "인천 연수구 (모던하우스) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 남동구 (가온시티) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 2,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 남동구 (청울림) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 남동구 (청울림) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 2,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 서해구 (드림팰리스) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 4,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 서해구 (청라월드메르디앙) 60～70㎡",
+          "areaRange": "60～70㎡",
+          "supplyUnits": 3,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 서해구 (청라월드메르디앙) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 서해구 (더라포레) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 4,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 서해구 (코오롱하늘채) 60～70㎡",
+          "areaRange": "60～70㎡",
+          "supplyUnits": 9,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 부천소사구 (채움가동) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 부천원미구 (엘리하임) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 7,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 부천오정구 (원종아이원시티) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 4,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 부천오정구 (여월늘해랑) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 부천오정구 (여월늘해랑) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 부천원미구 (더포레스트) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 5,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.09.21"
+      },
+      "deadline": "2026.08.06",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020446-m3": {
+    "at": "2026-07-25T02:42:29.108Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "인천 26-3 연수구 (모던하우스) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 26-3 남동구 (가온시티) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 2,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 26-3 남동구 (청울림) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 26-3 남동구 (청울림) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 2,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 26-3 서해구 (드림팰리스) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 4,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 26-3 서해구 (청라월드메르디앙) 60～70㎡",
+          "areaRange": "60～70㎡",
+          "supplyUnits": 3,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 26-3 서해구 (청라월드메르디앙) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 26-3 서해구 (더라포레) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 4,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 26-3 서해구 (코오롱하늘채) 60～70㎡",
+          "areaRange": "60～70㎡",
+          "supplyUnits": 9,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 26-3 부천소사구 (채움가동) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 26-3 부천원미구 (엘리하임) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 7,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 26-3 부천오정구 (원종아이원시티) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 4,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 26-3 부천오정구 (여월늘해랑) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 26-3 부천오정구 (여월늘해랑) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 26-3 부천원미구 (더포레스트) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 5,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.09.21"
+      },
+      "deadline": "2026.08.06",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020446-m4": {
+    "at": "2026-07-25T02:44:33.023Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "인천 연수구 (모던하우스) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 남동구 (가온시티) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 2,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 남동구 (청울림) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 남동구 (청울림) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 2,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 서해구 (드림팰리스) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 4,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 서해구 (청라월드메르디앙) 60～70㎡",
+          "areaRange": "60～70㎡",
+          "supplyUnits": 3,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 서해구 (청라월드메르디앙) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 서해구 (더라포레) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 4,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 서해구 (코오롱하늘채) 60～70㎡",
+          "areaRange": "60～70㎡",
+          "supplyUnits": 9,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 부천소사구 (채움가동) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 부천원미구 (엘리하임) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 7,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 부천오정구 (원종아이원시티) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 4,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 부천오정구 (여월늘해랑) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 부천오정구 (여월늘해랑) 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 부천원미구 (더포레스트) 70～80㎡",
+          "areaRange": "70～80㎡",
+          "supplyUnits": 5,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.09.21"
+      },
+      "deadline": "2026.08.06",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020446-m5": {
+    "at": "2026-07-25T02:46:09.993Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "인천 연수구 모던하우스 70~80㎡",
+          "areaRange": "70~80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 남동구 가온시티 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 2,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 남동구 청울림 70~80㎡",
+          "areaRange": "70~80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 남동구 청울림 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 2,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 서해구 드림팰리스 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 4,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 서해구 청라월드메르디앙 60~70㎡",
+          "areaRange": "60~70㎡",
+          "supplyUnits": 3,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 서해구 청라월드메르디앙 70~80㎡",
+          "areaRange": "70~80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 서해구 더라포레 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 4,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 서해구 코오롱하늘채 60~70㎡",
+          "areaRange": "60~70㎡",
+          "supplyUnits": 9,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 부천소사구 채움가동 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 부천원미구 엘리하임 70~80㎡",
+          "areaRange": "70~80㎡",
+          "supplyUnits": 7,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 부천오정구 원종아이원시티 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 4,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 부천오정구 여월늘해랑 70~80㎡",
+          "areaRange": "70~80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 부천오정구 여월늘해랑 80㎡ 이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천 부천원미구 더포레스트 70~80㎡",
+          "areaRange": "70~80㎡",
+          "supplyUnits": 5,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.09.21"
+      },
+      "deadline": "2026.08.06",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020422": {
+    "at": "2026-07-25T02:48:01.927Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "북구 다옴빌 1형",
+          "area": "14.21",
+          "supplyUnits": 13,
+          "deposit": 204,
+          "rent": 29,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "북구 한울채 1형",
+          "area": "18.39",
+          "supplyUnits": 7,
+          "deposit": 161,
+          "rent": 27,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "북구 한울채 2형",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020326": {
+    "at": "2026-07-25T02:50:22.793Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "관악구 관악봉천 H1 17B",
+          "area": "17.41",
+          "supplyUnits": 10,
+          "deposit": 4386,
+          "rent": 18,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "관악구 관악봉천 H1 17C",
+          "area": "17.41",
+          "supplyUnits": 50,
+          "deposit": 4386,
+          "rent": 18,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "관악구 관악봉천 H1 19B",
+          "area": "19.9",
+          "supplyUnits": 6,
+          "deposit": 5032,
+          "rent": 20,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "관악구 관악봉천 H1 17B",
+            "limitManwon": 2100,
+            "maxDeposit": 6486,
+            "minRent": 7
+          },
+          {
+            "houseType": "관악구 관악봉천 H1 17C",
+            "limitManwon": 2100,
+            "maxDeposit": 6486,
+            "minRent": 7
+          },
+          {
+            "houseType": "관악구 관악봉천 H1 19B",
+            "limitManwon": 2400,
+            "maxDeposit": 7180,
+            "minRent": 8
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.11.12"
+      },
+      "deadline": "2026.07.28",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020407": {
+    "at": "2026-07-25T02:52:11.662Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "양산대석 39㎡",
+          "area": "39.43",
+          "supplyUnits": 60,
+          "deposit": 1247,
+          "rent": 10,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "양산대석 39㎡",
+          "area": "39.72",
+          "supplyUnits": 60,
+          "deposit": 1247,
+          "rent": 10,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "양산대석 39㎡",
+          "area": "39.82",
+          "supplyUnits": 60,
+          "deposit": 1247,
+          "rent": 10,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "양산대석 46㎡",
+          "area": "46.9",
+          "supplyUnits": 60,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "양산대석 51㎡",
+          "area": "51.93",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "양산대석 39㎡",
+            "limitManwon": 800,
+            "maxDeposit": 2047,
+            "minRent": 6
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020408": {
+    "at": "2026-07-25T02:54:01.257Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "옥천군 옥천장야2 51.49형",
+          "area": "51.49",
+          "supplyUnits": 20,
+          "deposit": 1520,
+          "rent": 14,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "옥천군 옥천장야2 51.95형",
+          "area": "51.95",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "옥천군 옥천장야2 59.64형",
+          "area": "59.64",
+          "supplyUnits": 20,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "옥천군 옥천장야2 51.49형",
+            "limitManwon": 1500,
+            "maxDeposit": 3020,
+            "minRent": 7
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
   }
 }

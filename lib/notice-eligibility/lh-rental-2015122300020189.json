@@ -1,0 +1,54 @@
+{
+  "supplyTotal": 40,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 14,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준 중위소득 대비 100~200% 범위 내 여러 소득구간 적용"
+      },
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "청년 및 신혼부부·한부모가족·고령자 포함",
+        "소득연계형 임대료 체계 적용(35~90%)"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거약자",
+      "units": 2,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "기준 중위소득 대비 100~200% 범위 내 여러 소득구간 적용"
+      },
+      "asset": null,
+      "other": [
+        "36B형(2층) 편의시설 설치",
+        "무주택세대구성원",
+        "주거약자 요건 충족 필수"
+      ]
+    }
+  ],
+  "priority": [
+    "철거민 등",
+    "국가유공자 등",
+    "장기복무제대군인",
+    "북한이탈주민 등",
+    "다자녀가구 등",
+    "장애인",
+    "비주택거주자 등",
+    "생계급여·주거급여·의료급여 수급자 등",
+    "청년",
+    "신혼부부 등",
+    "고령자"
+  ]
+}
