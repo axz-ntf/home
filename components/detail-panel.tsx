@@ -161,6 +161,26 @@ function RentSummarySection({ item }: { item: Listing }) {
           계층·평형에 따라 달라요. 정확한 조건은 상세에서 확인하세요.
         </p>
       )}
+      {/* 광역 공고(든든전세·매입임대) — 첨부 주택목록에서 뽑은 단지별 실보증금 */}
+      {(item.housingGroups?.length ?? 0) > 0 && (
+        <div className="detail-hg">
+          <div className="detail-hg-title">공급 주택 ({item.housingGroups!.reduce((s, g) => s + g.units, 0)}호)</div>
+          {item.housingGroups!.map((g) => (
+            <div key={g.label} className="detail-hg-row">
+              <span className="detail-hg-name">{g.label}</span>
+              <span className="detail-hg-units">{g.units}호</span>
+              <span className="detail-hg-price">
+                {g.depMin
+                  ? g.depMin === g.depMax
+                    ? `보증금 ${formatManwon(g.depMin)}`
+                    : `보증금 ${formatManwon(g.depMin)}~${formatManwon(g.depMax!)}`
+                  : "공고문 확인"}
+                {g.rentMin ? ` · 월 ${g.rentMin === g.rentMax ? g.rentMin : `${g.rentMin}~${g.rentMax}`}만` : ""}
+              </span>
+            </div>
+          ))}
+        </div>
+      )}
       {/* 면적 등은 있지만 가격이 없는 경우 — 안내만(링크 제거, 공고문은 하단 PDF 버튼으로). */}
       {cells.length > 0 && !s.deposit && !s.rent && !s.supportLimit && item.type !== "sale" && (
         <p style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12, color: "var(--seed-semantic-color-ink-text-low)", margin: "10px 0 0" }}>

@@ -52,6 +52,15 @@ export interface Listing {
   rentRange?: [number, number] | null;
   // 가격이 검수 전 AI 추출값(extract-drafts)일 때 true — UI 에서 "미검수" 배지 표시.
   priceUnverified?: boolean;
+  // 광역 공고(든든전세·매입임대)의 첨부 주택목록 집계 — 상세 "공급 주택" 표.
+  housingGroups?: {
+    label: string;
+    units: number;
+    depMin: number | null;
+    depMax: number | null;
+    rentMin: number | null;
+    rentMax: number | null;
+  }[];
   area: string;
   layout: string;
   totalUnits?: number | string | null;

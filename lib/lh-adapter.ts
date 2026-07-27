@@ -3,6 +3,7 @@ import apiListings from "./listings-api.json";
 import allNotices from "./lh-notices-all.json";
 import dundeonSeoul from "./dundeon-seoul.json";
 import mappedRegional from "./mapped-regional.json";
+import housingGroupsRaw from "./housing-groups.json";
 import blobCovers from "./blob-covers.json";
 import { applyOverride } from "./manual-overrides";
 import { effectiveStatus } from "./dday";
@@ -260,6 +261,12 @@ function adaptApi(r: ApiListing, loose = false): Listing | null {
     if (!r.districtId) return null;
   }
   const [deposit, rent] = guardPrice(r.type, r.depositManwon || 0, r.monthlyRentManwon || 0);
+  // 첨부 주택목록 집계(든든전세·매입임대) — 상세 "공급 주택" 표 + 가격 없을 때 보증금 범위 폴백.
+  const hg = (housingGroupsRaw as Record<string, { groups: NonNullable<Listing["housingGroups"]> }>)[
+    r.pblancId
+  ]?.groups?.filter((g) => g.units > 0);
+  const hgDeps = (hg ?? []).flatMap((g) => (g.depMin ? [g.depMin, g.depMax ?? g.depMin] : []));
+  const hgRents = (hg ?? []).flatMap((g) => (g.rentMin ? [g.rentMin, g.rentMax ?? g.rentMin] : []));
   const raw = RAW_BY_PANID.get(r.pblancId);
   // 경쟁률: 본인 접수결과(own) 우선, 없으면 같은 단지 과거 회차(previous) 참조
   const ownCompetition = COMPETITION[r.pblancId]?.competition ?? null;
@@ -282,8 +289,14 @@ function adaptApi(r: ApiListing, loose = false): Listing | null {
     deposit,
     rent,
     // 유형별 보증금/월세 범위 — 단일값이 guard 통과(>0)일 때만 노출.
-    depositRange: deposit > 0 ? (r.depositRange ?? null) : null,
-    rentRange: rent > 0 ? (r.rentRange ?? null) : null,
+    // 가격이 아예 없으면 주택목록 집계(실보증금) 범위로 폴백.
+    depositRange: deposit > 0
+      ? (r.depositRange ?? null)
+      : hgDeps.length ? [Math.min(...hgDeps), Math.max(...hgDeps)] as [number, number] : null,
+    rentRange: rent > 0
+      ? (r.rentRange ?? null)
+      : hgRents.length ? [Math.min(...hgRents), Math.max(...hgRents)] as [number, number] : null,
+    ...(hg?.length ? { housingGroups: hg } : {}),
     area: formatArea(r.area || ""),
     layout: "",
     totalUnits: r.supplyUnits ?? null,

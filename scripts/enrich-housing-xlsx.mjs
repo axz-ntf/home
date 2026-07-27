@@ -20,11 +20,14 @@ const KAKAO = process.env.KAKAO_REST_API_KEY?.replace(/^"|"$/g, "");
 const VKEY = process.env.VWORLD_API_KEY?.replace(/^"|"$/g, "");
 const SOLAR = process.env.SOLAR_API_KEY?.replace(/^"|"$/g, ""); // 주택목록 PDF 파싱용(없으면 PDF 폴백 skip)
 const DOC_PARSE_URL = "https://api.upstage.ai/v1/document-ai/document-parse";
-if (!KAKAO && !VKEY) { console.error("ERROR: KAKAO_REST_API_KEY/VWORLD_API_KEY 중 하나 필요"); process.exit(1); }
+if (!process.argv.includes("--data-only") && !KAKAO && !VKEY) { console.error("ERROR: KAKAO_REST_API_KEY/VWORLD_API_KEY 중 하나 필요"); process.exit(1); }
 
 const args = process.argv.slice(2);
 const ACTIVE = args.includes("--active");
 const FORCE = args.includes("--force");
+// --data-only: 지오코딩·지도 핀 생성 없이 주택목록 집계(housing-groups.json)만 갱신.
+// 상세 패널 "공급 주택" 표시용 — 지도 매물 수에 영향 없음 (T-004 1단계).
+const DATA_ONLY = args.includes("--data-only");
 const LIMIT = Number(args.includes("--limit") ? args[args.indexOf("--limit") + 1] : 0);
 const IDS = args.includes("--ids") ? new Set(args[args.indexOf("--ids") + 1].split(",")) : null;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -69,13 +72,17 @@ function extractUnits(rows) {
     for (const [col, v] of Object.entries(r)) {
       if (typeof v === "string" && /주소/.test(v) && !/주소지분/.test(v)) { addrCol = col; headerIdx = i; }
     }
-    if (addrCol) for (const [col, v] of Object.entries(r)) {
-      if (typeof v !== "string") continue;
-      if (/보증금/.test(v)) depCol = col;
-      else if (/임대료|월세/.test(v)) rentCol = col;
-    }
   });
   if (!addrCol) return [];
+  // 보증금/월세 헤더는 병합 셀 때문에 주소 헤더와 다른 행에 있을 수 있음
+  // (예: 든든전세 주택목록 — 1행 "임대보증금", 2행 "주소") → 헤더 영역 전체에서 탐지.
+  for (const r of rows.slice(0, headerIdx + 2)) {
+    for (const [col, v] of Object.entries(r)) {
+      if (typeof v !== "string") continue;
+      if (!depCol && /보증금/.test(v)) depCol = col;
+      else if (!rentCol && /임대료|월세/.test(v)) rentCol = col;
+    }
+  }
   return rows.slice(headerIdx + 1)
     .filter((r) => r[addrCol] && String(r[addrCol]).trim().length > 8)
     .map((r) => ({ addr: String(r[addrCol]).replace(/\s+/g, " ").trim(), dep: depCol ? toManwon(r[depCol]) : null, rent: rentCol ? toRentManwon(r[rentCol]) : null }));
@@ -174,16 +181,23 @@ function mdToUnits(md) {
 }
 
 // ── 메인 ──
+const HOUSING_FILE = path.join(ROOT, "lib/housing-groups.json");
 const listings = JSON.parse(await fs.readFile(API_FILE, "utf8"));
 const mapped = JSON.parse(await fs.readFile(MAPPED_FILE, "utf8"));
+let housing = {};
+try { housing = JSON.parse(await fs.readFile(HOUSING_FILE, "utf8")); } catch {}
 let pool = listings.filter((l) => l.scope === "regional" && l.sourceUrl?.includes("selectWrtancInfo.do"));
 if (ACTIVE) pool = pool.filter((l) => ["open", "upcoming", "closing"].includes(l.status));
 if (IDS) pool = pool.filter((l) => IDS.has(l.pblancId));
-// 이미 "단지 수준" 핀(label 보유)이 있으면 스킵. 시군 중심 근사 핀(label 없음)뿐이면 업그레이드 대상.
-if (!FORCE) pool = pool.filter((l) => {
-  const ex = mapped[l.pblancId];
-  return !ex || !(ex.points || []).some((p) => p.label);
-});
+if (!FORCE) {
+  pool = DATA_ONLY
+    ? pool.filter((l) => !(l.pblancId in housing)) // 집계 이미 있으면 스킵 (증분)
+    : pool.filter((l) => {
+        // 이미 "단지 수준" 핀(label 보유)이 있으면 스킵. 시군 중심 근사 핀(label 없음)뿐이면 업그레이드 대상.
+        const ex = mapped[l.pblancId];
+        return !ex || !(ex.points || []).some((p) => p.label);
+      });
+}
 if (LIMIT > 0) pool = pool.slice(0, LIMIT);
 console.log(`대상 공고: ${pool.length}건`);
 
@@ -249,6 +263,24 @@ for (const l of pool) {
     const kind = /든든전세/.test(l.title || "") ? "든든전세"
       : /기숙사/.test(l.title || "") ? "기숙사"
       : "매입임대";
+    // 주택목록 집계 저장 — 상세 패널 "공급 주택" 표 + 카드 보증금 범위용 (지도와 무관).
+    housing[l.pblancId] = {
+      kind,
+      unitsTotal: units.length,
+      groups: Object.entries(groups).map(([key, g]) => ({
+        label: g.sigungu ? key : (g.name || key),
+        units: g.n,
+        depMin: g.deps.length ? Math.min(...g.deps) : null,
+        depMax: g.deps.length ? Math.max(...g.deps) : null,
+        rentMin: g.rents.length ? Math.min(...g.rents) : null,
+        rentMax: g.rents.length ? Math.max(...g.rents) : null,
+      })),
+    };
+    if (DATA_ONLY) {
+      stats.done++;
+      console.log(`  ✓ ${l.pblancId} 집계 ${Object.keys(groups).length}그룹 (호실 ${units.length}) — ${(l.title || "").slice(0, 36)}`);
+      continue;
+    }
     const points = [];
     for (const [key, g] of Object.entries(groups)) {
       const co = await geocode(key);
@@ -273,6 +305,10 @@ for (const l of pool) {
   } catch (e) { stats.parseFail++; console.log(`  ✗ ${l.pblancId} 오류: ${String(e.message).slice(0, 60)}`); }
   await sleep(200);
 }
-await fs.writeFile(MAPPED_FILE, JSON.stringify(mapped, null, 1) + "\n", "utf8");
-console.log(`\n완료 — 핀 생성 ${stats.done} / 주택목록 없음 ${stats.noXlsx} / 구형xls ${stats.xlsOld} / 파싱실패 ${stats.parseFail} / 지오코딩실패 ${stats.geoFail}`);
-console.log(`mapped-regional.json: ${Object.keys(mapped).length} entries`);
+await fs.writeFile(HOUSING_FILE, JSON.stringify(housing, null, 1) + "\n", "utf8");
+console.log(`housing-groups.json: ${Object.keys(housing).length} entries`);
+if (!DATA_ONLY) {
+  await fs.writeFile(MAPPED_FILE, JSON.stringify(mapped, null, 1) + "\n", "utf8");
+  console.log(`mapped-regional.json: ${Object.keys(mapped).length} entries`);
+}
+console.log(`\n완료 — 처리 ${stats.done} / 주택목록 없음 ${stats.noXlsx} / 구형xls ${stats.xlsOld} / 파싱실패 ${stats.parseFail} / 지오코딩실패 ${stats.geoFail}`);

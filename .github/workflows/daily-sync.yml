@@ -175,14 +175,13 @@ jobs:
           KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
         run: node scripts/geocode-regional-singles.mjs --active
 
-      # (비활성 2026-07-03) 매입임대·든든전세는 흩어진 개별 유닛이라 지도 매물수를 폭증시켜 제외.
-      # 필요 시 아래 단계 재활성 (scripts/enrich-housing-xlsx.mjs 는 유지).
-      # - name: Phase 7.6c — 주택목록 xlsx → 매입임대 단지 핀
-      #   continue-on-error: true
-      #   env:
-      #     VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
-      #     KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
-      #   run: node scripts/enrich-housing-xlsx.mjs --active
+      # (비활성 2026-07-03) 매입임대·든든전세 "지도 핀 분리"는 매물수 폭증으로 제외 (T-004 2단계에서 재검토).
+      # 대신 data-only 모드로 주택목록 집계만 — 상세 "공급 주택" 표 + 카드 보증금 범위 (T-004 1단계).
+      - name: Phase 7.6c — 광역 공고 주택목록 집계 (data-only)
+        continue-on-error: true
+        env:
+          SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
+        run: node scripts/enrich-housing-xlsx.mjs --data-only --active
 
       # 분리된 다지점 단지마다 제 조감도 크롤(없으면 비움) → Blob 업로드.
       - name: Phase 7.7 — 다지점 단지별 조감도 크롤 + Blob 업로드
