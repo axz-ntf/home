@@ -139,12 +139,7 @@ export function ListingCard({
         </div>
         {/* M3: 단지명 우선 — 공고명 전체는 상세에서 */}
         <div className="card-title">{item.complexName || item.title}</div>
-        <div className="card-price">
-          {priceText(item)}
-          {item.priceUnverified && (item.deposit > 0 || (item.salePriceManwon ?? 0) > 0) && (
-            <span className="price-unverified" title="공고문에서 자동 추출한 값이에요 — 검수 전이니 공고문으로 확인하세요">미검수</span>
-          )}
-        </div>
+        <div className="card-price">{priceText(item)}</div>
         <div className="card-meta">
           {item.area && (
             <>
