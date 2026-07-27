@@ -465,7 +465,8 @@ export function DetailPanel({
         )}
         {item.coordApprox && (
           <p className="detail-approx-note">
-            지도의 핀은 지역 대표 위치예요 — 실제 주택은 입주 안내 시 확정되니 공고문을 확인하세요.
+            이 공고는 대기자 모집이에요. 실제 주택은 빈집이 나오면 순번대로 안내되며, 지도의 핀은
+            지역 대표 위치입니다.
           </p>
         )}
 
