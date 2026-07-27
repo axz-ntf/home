@@ -368,5 +368,133 @@
     "rentMax": 21
    }
   ]
+ },
+ "2015122300020107": {
+  "kind": "매입임대",
+  "unitsTotal": 1,
+  "groups": [
+   {
+    "label": "강원특별자치도 동해시 해맞이길 215",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
+ },
+ "2015122300020090": {
+  "kind": "매입임대",
+  "unitsTotal": 1,
+  "groups": [
+   {
+    "label": "강원특별자치도 삼척시 엑스포로 174",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
+ },
+ "2015122300020074": {
+  "kind": "매입임대",
+  "unitsTotal": 1,
+  "groups": [
+   {
+    "label": "강원특별자치도 동해시 해맞이길 215",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
+ },
+ "2015122300020460": {
+  "kind": "매입임대",
+  "unitsTotal": 93,
+  "groups": [
+   {
+    "label": "인천광역시 미추홀구",
+    "units": 11,
+    "depMin": 260,
+    "depMax": 1062,
+    "rentMin": 3,
+    "rentMax": 32
+   },
+   {
+    "label": "인천광역시 연수구",
+    "units": 11,
+    "depMin": 203,
+    "depMax": 352,
+    "rentMin": 3,
+    "rentMax": 9
+   },
+   {
+    "label": "인천광역시 남동구",
+    "units": 19,
+    "depMin": 225,
+    "depMax": 930,
+    "rentMin": 2,
+    "rentMax": 29
+   },
+   {
+    "label": "인천광역시 부평구",
+    "units": 2,
+    "depMin": 400,
+    "depMax": 723,
+    "rentMin": 7,
+    "rentMax": 25
+   },
+   {
+    "label": "인천광역시 계양구",
+    "units": 18,
+    "depMin": 738,
+    "depMax": 2127,
+    "rentMin": 7,
+    "rentMax": 27
+   },
+   {
+    "label": "인천광역시 서해구",
+    "units": 2,
+    "depMin": 214,
+    "depMax": 683,
+    "rentMin": 3,
+    "rentMax": 19
+   },
+   {
+    "label": "인천광역시 검단구",
+    "units": 2,
+    "depMin": 481,
+    "depMax": 743,
+    "rentMin": 14,
+    "rentMax": 23
+   },
+   {
+    "label": "경기도 부천시 소사구",
+    "units": 11,
+    "depMin": 283,
+    "depMax": 1237,
+    "rentMin": 6,
+    "rentMax": 35
+   },
+   {
+    "label": "경기도 부천시 오정구",
+    "units": 9,
+    "depMin": 174,
+    "depMax": 938,
+    "rentMin": 4,
+    "rentMax": 33
+   },
+   {
+    "label": "경기도 부천시 원미구",
+    "units": 8,
+    "depMin": 298,
+    "depMax": 1162,
+    "rentMin": 8,
+    "rentMax": 37
+   }
+  ]
  }
 }
