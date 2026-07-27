@@ -203,7 +203,7 @@ function MCard({ item, onClick }: { item: AnyListing; onClick?: (item: AnyListin
         </div>
         <div className="m-card-title">{item.title}</div>
         <div className="m-card-price">
-          {item.deposit > 0 ? <><strong>보 {depositText(item)}</strong>{rentText(item) && <><span className="sep">·</span>월 {rentText(item)}</>}{item.priceUnverified && <span className="price-unverified">미검수</span>}</> : <span style={{ color: "var(--seed-semantic-color-ink-text-low)" }}>임대조건 공고문 확인</span>}
+          {item.deposit > 0 ? <><strong>보 {depositText(item)}</strong>{rentText(item) && <><span className="sep">·</span>월 {rentText(item)}</>}</> : <span style={{ color: "var(--seed-semantic-color-ink-text-low)" }}>임대조건 공고문 확인</span>}
         </div>
         <div className="m-card-meta">
           {item.layout && <>{item.layout}<span className="dot">·</span></>}
