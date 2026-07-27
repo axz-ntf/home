@@ -220,16 +220,25 @@ for (const l of pool) {
       await sleep(150);
     }
     // 2순위: xlsx 로 못 얻었으면 주택목록 PDF 를 Solar 로 파싱 (공고문/QnA 제외)
-    if (!units.length && SOLAR) {
-      const pdfs = atts.filter((a) => a.ext === "pdf" && /(주택\s*목록|주택리스트|공급대상|공급주택)/.test(a.name.replace(/\s/g, "")) && !/공고문|QnA|Q&A|양식|서식/i.test(a.name));
-      for (const att of pdfs.slice(0, 4)) {
+    const tryPdfs = async (cands, tag) => {
+      for (const att of cands) {
         try {
           const buf = Buffer.from(await (await fetch(PDF_BASE + att.id, { headers: { "User-Agent": UA } })).arrayBuffer());
           const got = await pdfToUnits(buf, att.name);
-          if (got.length) { units.push(...got); console.log(`    · [pdf] ${att.name} → ${got.length}호`); }
-        } catch (e) { console.log(`    · [pdf] ${att.name} 파싱 실패: ${String(e.message).slice(0, 40)}`); }
+          if (got.length) { units.push(...got); console.log(`    · [${tag}] ${att.name} → ${got.length}호`); }
+        } catch (e) { console.log(`    · [${tag}] ${att.name} 파싱 실패: ${String(e.message).slice(0, 40)}`); }
         await sleep(200);
       }
+    };
+    if (!units.length && SOLAR) {
+      const pdfs = atts.filter((a) => a.ext === "pdf" && /(주택\s*목록|주택리스트|공급대상|공급주택)/.test(a.name.replace(/\s/g, "")) && !/공고문|QnA|Q&A|양식|서식/i.test(a.name));
+      await tryPdfs(pdfs.slice(0, 4), "pdf");
+    }
+    // 3순위(최후): 별도 주택목록 첨부가 없는 공고(매입임대 예비입주자 등)는 공고문 PDF
+    // 본문에 주택목록 표가 들어 있음 → 공고문 자체를 파싱 (팜플렛·양식류 제외).
+    if (!units.length && SOLAR) {
+      const rest = atts.filter((a) => a.ext === "pdf" && !/팜플렛|양식|서식|동의|안내문|QnA|Q&A|체크리스트/i.test(a.name));
+      await tryPdfs(rest.slice(0, 2), "공고문");
     }
     if (!units.length) { stats.parseFail++; console.log(`  ✗ ${l.pblancId} 주택목록 추출 실패 (첨부 ${atts.length}개)`); continue; }
     // 주소(도로명) 기준 그룹

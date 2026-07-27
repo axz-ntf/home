@@ -498,6 +498,15 @@ function buildMappedRegionalListings(): Listing[] {
   return out.map(applyOverride);
 }
 
+// 주소가 "강원특별자치도 삼척시", "경상남도 의령군 화정면"처럼 시군구(±읍면) 수준뿐이고
+// 도로명·번지가 없으면 좌표는 지오코딩된 지역 중심(시청·도청급) 근사값이다.
+function isApproxAddress(addr: string | undefined): boolean {
+  if (!addr) return false;
+  const s = addr.trim();
+  if (/\d/.test(s)) return false; // 번지·건물번호가 있으면 실주소
+  return /^[가-힣]+(특별자치도|특별자치시|광역시|특별시|도)(\s+[가-힣]+(시|군|구))?(\s+[가-힣]+(시|군|구|읍|면))?$/.test(s);
+}
+
 // LH 전용 공개 매물(SH 제외) — 어드민/공개 양쪽의 공통 베이스.
 const LH_LISTINGS_BASE: Listing[] = [
   // 지오코딩으로 분리한 매물의 원본(단일 핀)은 제외 — 분리 핀과 중복 방지.
@@ -507,7 +516,9 @@ const LH_LISTINGS_BASE: Listing[] = [
 ]
   .map(fillDistrictId)
   // dedup 을 안 거치는 경로(지오코딩 분리 매물 등)에도 표시 라벨 제거 — 멱등.
-  .map((l) => ({ ...l, title: stripNoticeLabel(l.title) }));
+  .map((l) => ({ ...l, title: stripNoticeLabel(l.title) }))
+  // 주소가 시군구(±읍면) 수준뿐이면 좌표는 지역 중심 근사값 — "대표 위치" 표시 대상.
+  .map((l) => (isApproxAddress(l.address) ? { ...l, coordApprox: true } : l));
 
 export const LH_LISTINGS: Listing[] = [
   ...LH_LISTINGS_BASE,

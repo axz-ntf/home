@@ -52,6 +52,9 @@ export interface Listing {
   rentRange?: [number, number] | null;
   // 가격이 검수 전 AI 추출값(extract-drafts)일 때 true — UI 에서 "미검수" 배지 표시.
   priceUnverified?: boolean;
+  // 좌표가 시군구 중심(시청·도청급) 근사값일 때 true — 예비입주자류 광역 공고 등
+  // 실주택 위치가 공고에 없는 경우. UI 에서 "대표 위치" 표시 + 핀 스타일 구분.
+  coordApprox?: boolean;
   // 광역 공고(든든전세·매입임대)의 첨부 주택목록 집계 — 상세 "공급 주택" 표.
   housingGroups?: {
     label: string;

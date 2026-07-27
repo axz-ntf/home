@@ -457,7 +457,17 @@ export function DetailPanel({
             {item.title}
           </div>
         )}
-        {item.address && <div className="detail-address">{item.address}</div>}
+        {item.address && (
+          <div className="detail-address">
+            {item.address}
+            {item.coordApprox && <span className="detail-approx-chip">대표 위치</span>}
+          </div>
+        )}
+        {item.coordApprox && (
+          <p className="detail-approx-note">
+            지도의 핀은 지역 대표 위치예요 — 실제 주택은 입주 안내 시 확정되니 공고문을 확인하세요.
+          </p>
+        )}
 
         <div style={{ display: "flex", gap: 6, marginBottom: 16 }}>
           {housingType && (

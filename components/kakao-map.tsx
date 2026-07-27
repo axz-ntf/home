@@ -108,7 +108,9 @@ function makePinEl(p: Listing, memberCount = 1): HTMLElement {
   const agMark = ag.label ? `<span class="map-pin-ag ${ag.cls}">${ag.label}</span>` : "";
   // 신규 공고(7일 이내) — 핀 모서리에 펄스 점. 마커는 클라이언트에서만 생성돼 hydration 무관.
   const newDot = !isClosed && isNewListing(p) ? `<span class="map-pin-new"></span>` : "";
-  el.innerHTML = `<div class="${pinClass(p.type)}${isClosed ? " is-closed" : ""}">${agMark}${pinLabel(p)}${newDot}</div>${badge}`;
+  // 지역 대표 위치(시군구 중심 근사) 핀 — 점선 테두리로 실주소 핀과 구분.
+  const approx = p.coordApprox ? " is-approx" : "";
+  el.innerHTML = `<div class="${pinClass(p.type)}${isClosed ? " is-closed" : ""}${approx}">${agMark}${pinLabel(p)}${newDot}</div>${badge}`;
   return el;
 }
 

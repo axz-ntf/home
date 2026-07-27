@@ -5160,3 +5160,23 @@ div:has(> img[src*="streetview_btn"]) {
 .detail-hg-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .detail-hg-units { flex: none; color: var(--seed-semantic-color-ink-text-low); }
 .detail-hg-price { flex: none; font-weight: 600; }
+/* 지역 대표 위치(근사 좌표) 표시 */
+.map-pin.is-approx {
+  border: 1.5px dashed rgba(48, 50, 51, 0.45);
+  box-shadow: none;
+  opacity: 0.92;
+}
+.detail-approx-chip {
+  display: inline-flex; align-items: center;
+  margin-left: 6px; padding: 1px 7px;
+  border-radius: 100px;
+  background: var(--seed-scale-color-gray-100, #f2f4f7);
+  color: var(--seed-semantic-color-ink-text-low);
+  font-size: 10.5px; font-weight: 600;
+  vertical-align: 1px;
+}
+.detail-approx-note {
+  font-size: 11.5px;
+  color: var(--seed-semantic-color-ink-text-low);
+  margin: 6px 0 0;
+}
