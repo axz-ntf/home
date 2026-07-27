@@ -1,0 +1,21 @@
+{
+  "supplyTotal": 70,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 70,
+      "age": "만19세 이상",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "부산광역시, 울산광역시, 경상남도 거주",
+        "1세대 1주택 기준",
+        "10년 임대 후 분양전환"
+      ]
+    }
+  ],
+  "priority": []
+}
