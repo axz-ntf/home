@@ -11676,5 +11676,95 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020459": {
+    "at": "2026-07-27T18:06:05.150Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": "2026.08.12",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020458": {
+    "at": "2026-07-27T18:07:39.606Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "2인 가구(1형)",
+          "areaRange": "40㎡ 이하",
+          "supplyUnits": 150,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "3～4인 가구(2형)",
+          "areaRange": "40㎡ 초과 ～ 60㎡ 이하",
+          "supplyUnits": 90,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "5인이상 가구(3형)",
+          "areaRange": "60㎡ 초과",
+          "supplyUnits": 105,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020457": {
+    "at": "2026-07-27T18:08:57.809Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020456": {
+    "at": "2026-07-27T18:10:22.392Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "2인 가구(1형)",
+          "areaRange": "40㎡ 이하",
+          "supplyUnits": 160,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "3～4인 가구(2형)",
+          "areaRange": "40㎡ 초과 ～ 60㎡ 이하",
+          "supplyUnits": 105,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "5인이상 가구(3형)",
+          "areaRange": "60㎡ 초과",
+          "supplyUnits": 35,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
