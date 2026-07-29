@@ -11920,5 +11920,124 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집예정"
     }
+  },
+  "lh-rental-2015122300020451": {
+    "at": "2026-07-29T17:20:48.832Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "남동구 인천시청역 힐스테이트 39형",
+          "area": "39.96",
+          "supplyUnits": 19,
+          "deposit": 8040,
+          "rent": 37,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "남동구 인천시청역 힐스테이트 39형",
+            "limitManwon": 4400,
+            "maxDeposit": 12440,
+            "minRent": 15
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.12.22"
+      },
+      "deadline": "2026.08.13",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020450": {
+    "at": "2026-07-29T17:23:36.307Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.11.26"
+      },
+      "deadline": "2026.08.12",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020465": {
+    "at": "2026-07-29T17:26:49.500Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "26A",
+          "area": "26.71",
+          "supplyUnits": 100,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 276,
+              "rent": 5
+            },
+            {
+              "label": "나군",
+              "deposit": 1548,
+              "rent": 11
+            }
+          ]
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "26A (가군)",
+            "limitManwon": 400,
+            "maxDeposit": 676,
+            "minRent": 3
+          },
+          {
+            "houseType": "26A (나군)",
+            "limitManwon": 1200,
+            "maxDeposit": 2748,
+            "minRent": 5
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020475": {
+    "at": "2026-07-29T17:30:13.028Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": "2026.08.04",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6612": {
+    "at": "2026-07-29T17:31:55.132Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
