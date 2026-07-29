@@ -11766,5 +11766,159 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020468": {
+    "at": "2026-07-29T07:20:44.160Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "천안시 동남구 천안신부 A1BL 29A 대학생",
+          "area": "29.76",
+          "supplyUnits": 90,
+          "deposit": 2890,
+          "rent": 15,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "천안시 동남구 천안신부 A1BL 29A 청년(소득無)",
+          "area": "29.76",
+          "supplyUnits": 116,
+          "deposit": 2890,
+          "rent": 15,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "천안시 동남구 천안신부 A1BL 29A 청년(소득有)",
+          "area": "29.76",
+          "supplyUnits": 116,
+          "deposit": 3060,
+          "rent": 16,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "천안시 동남구 천안신부 A1BL 29A 대학생",
+            "limitManwon": 1600,
+            "maxDeposit": 4490,
+            "minRent": 7
+          },
+          {
+            "houseType": "천안시 동남구 천안신부 A1BL 29A 청년(소득無)",
+            "limitManwon": 1600,
+            "maxDeposit": 4490,
+            "minRent": 7
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.11.25"
+      },
+      "deadline": "2026.08.19",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020438": {
+    "at": "2026-07-29T07:23:49.563Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.08.21"
+      },
+      "deadline": "2026.08.13",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020462": {
+    "at": "2026-07-29T07:26:27.756Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "수원 1형 (1~2인 가구)",
+          "areaRange": "50㎡ 이하",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "안산 1형 (1~2인 가구)",
+          "areaRange": "50㎡ 이하",
+          "supplyUnits": 20,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "안산 2형 (2~4인 가구)",
+          "areaRange": "50㎡ 초과 ～ 85㎡ 이하",
+          "supplyUnits": 5,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "안성 1형 (1~2인 가구)",
+          "areaRange": "50㎡ 이하",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "오산 2형 (2~4인 가구)",
+          "areaRange": "50㎡ 초과 ～ 85㎡ 이하",
+          "supplyUnits": 20,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "용인 1형 (1~2인 가구)",
+          "areaRange": "50㎡ 이하",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6613": {
+    "at": "2026-07-29T07:29:03.365Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.08.20"
+      },
+      "deadline": "2026.08.07",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6611": {
+    "at": "2026-07-29T07:37:09.913Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.08.12"
+      },
+      "deadline": "2026.08.06",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
   }
 }
