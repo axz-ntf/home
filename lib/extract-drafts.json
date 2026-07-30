@@ -12039,5 +12039,478 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020455": {
+    "at": "2026-07-30T07:09:43.269Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "26A",
+          "area": "26.4",
+          "supplyUnits": 70,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 269200,
+              "rent": 5358
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 1069900,
+              "rent": 11513
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020454": {
+    "at": "2026-07-30T07:13:15.791Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "통영안정 26A",
+          "area": "26.88",
+          "supplyUnits": 70,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 250500,
+              "rent": 4983
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 1361900,
+              "rent": 9712
+            }
+          ]
+        },
+        {
+          "houseType": "통영안정 26B",
+          "area": "26.83",
+          "supplyUnits": 40,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 250500,
+              "rent": 4983
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 1361900,
+              "rent": 9712
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020472": {
+    "at": "2026-07-30T07:15:29.307Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "청주시 영우예인촌 30 형",
+          "area": "30.31",
+          "supplyUnits": 5,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "진천군 진천대승산내들 45 형",
+          "area": "45",
+          "supplyUnits": 90,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "진천군 진천대승산내들 47 형",
+          "area": "47.88",
+          "supplyUnits": 10,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020466": {
+    "at": "2026-07-30T07:18:23.267Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "인천광역시 남동구(호방사랑채)",
+          "areaRange": null,
+          "supplyUnits": 8,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천광역시 남동구(미래타운3차)",
+          "areaRange": null,
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천광역시 남동구(미래타운4차)",
+          "areaRange": null,
+          "supplyUnits": 44,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "경기도 부천시",
+          "areaRange": null,
+          "supplyUnits": 3,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020452": {
+    "at": "2026-07-30T07:25:36.013Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.08.21"
+      },
+      "deadline": "2026.08.14",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6623": {
+    "at": "2026-07-30T07:28:08.619Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "은평구 연신내역 루체스테이션 청년일반 17.05타입",
+          "area": "17.05",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "은평구 연신내역 루체스테이션 청년/신혼부부 35.60타입",
+          "area": "35.60",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6622": {
+    "at": "2026-07-30T07:30:25.753Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "관악구 BX201 15 형",
+          "area": null,
+          "supplyUnits": 2,
+          "deposit": 6000,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": "2026.08.14",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6621": {
+    "at": "2026-07-30T07:31:05.472Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "구로구 세이지움개봉 1310호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 19100,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.08.07"
+      },
+      "deadline": "2026.08.05",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6620": {
+    "at": "2026-07-30T07:32:57.773Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "동대문구 퀸즈W청량리역 특별공급 51B",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 17000,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 퀸즈W청량리역 특별공급 53A",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 17000,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 퀸즈W청량리역 특별공급 53B",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 17000,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 퀸즈W청량리역 특별공급 61B",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 17000,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 퀸즈W청량리역 일반공급 52A",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 20200,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 퀸즈W청량리역 일반공급 51B",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 20200,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 퀸즈W청량리역 일반공급 53A",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 20200,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 퀸즈W청량리역 일반공급 53B",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 20200,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 퀸즈W청량리역 일반공급 61B",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 20200,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6619": {
+    "at": "2026-07-30T07:35:53.455Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "성북구 라온프라이빗 종암 일반공급",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 8900,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.08.14"
+      },
+      "deadline": "2026.08.04",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "youth-6618": {
+    "at": "2026-07-30T07:37:03.880Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "성북구 성북펠릭스 713호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 11000,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.08.07"
+      },
+      "deadline": "2026.08.05",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6617": {
+    "at": "2026-07-30T07:39:12.409Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.08.12"
+      },
+      "deadline": "2026.08.07",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6616": {
+    "at": "2026-07-30T07:42:43.164Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "은평구 루미노816 1608 호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 5700,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "은평구 루미노816 614 호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 7800,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "은평구 루미노816 1615 호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 7800,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.08.05"
+      },
+      "deadline": "2026.08.04",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6615": {
+    "at": "2026-07-30T07:45:40.262Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "중랑구 세이지움 상봉 29 타입",
+          "area": "23.98m2",
+          "supplyUnits": 500,
+          "deposit": 4700,
+          "rent": 74,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "중랑구 세이지움 상봉 29 타입",
+          "area": "23.98m2",
+          "supplyUnits": 500,
+          "deposit": 7100,
+          "rent": 65,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "중랑구 세이지움 상봉 29 타입",
+          "area": "23.98m2",
+          "supplyUnits": 500,
+          "deposit": 9500,
+          "rent": 55,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "중랑구 세이지움 상봉 29 타입",
+            "limitManwon": 9500,
+            "maxDeposit": 9500,
+            "minRent": 55
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.08.04"
+      },
+      "deadline": "2026.08.03",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }

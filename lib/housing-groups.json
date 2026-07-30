@@ -572,5 +572,135 @@
     "rentMax": null
    }
   ]
+ },
+ "2015122300020466": {
+  "kind": "매입임대",
+  "unitsTotal": 56,
+  "groups": [
+   {
+    "label": "간석동 간석호방사랑채",
+    "units": 8,
+    "depMin": 989,
+    "depMax": 989,
+    "rentMin": 22,
+    "rentMax": 24
+   },
+   {
+    "label": "간석동 미래타운 3차",
+    "units": 1,
+    "depMin": 1109,
+    "depMax": 1109,
+    "rentMin": 23,
+    "rentMax": 23
+   },
+   {
+    "label": "간석동 미래타운4차",
+    "units": 44,
+    "depMin": 1162,
+    "depMax": 1232,
+    "rentMin": 31,
+    "rentMax": 34
+   },
+   {
+    "label": "메종드라르떼 메종드라르떼",
+    "units": 1,
+    "depMin": 881,
+    "depMax": 881,
+    "rentMin": 41,
+    "rentMax": 41
+   },
+   {
+    "label": "드림파크",
+    "units": 2,
+    "depMin": 1032,
+    "depMax": 1032,
+    "rentMin": 34,
+    "rentMax": 34
+   }
+  ]
+ },
+ "2015122300020461": {
+  "kind": "매입임대",
+  "unitsTotal": 3,
+  "groups": [
+   {
+    "label": "가길 44",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "바길 11-8",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 은평구 연서로4길 7-3",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
+ },
+ "2015122300020452": {
+  "kind": "든든전세",
+  "unitsTotal": 16,
+  "groups": [
+   {
+    "label": "소태동 소태아이윌2차",
+    "units": 8,
+    "depMin": 16719,
+    "depMax": 17832,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "효천남 해오네뜨1단지",
+    "units": 1,
+    "depMin": 20412,
+    "depMax": 20412,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "송화레 이크힐",
+    "units": 1,
+    "depMin": 17974,
+    "depMax": 17974,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "매곡동 이멘스캐슬",
+    "units": 4,
+    "depMin": 22343,
+    "depMax": 22769,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "운 암동 롯데캐슬",
+    "units": 1,
+    "depMin": 16764,
+    "depMax": 16764,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "하남2 지구 다사로움 2단지 아파트",
+    "units": 1,
+    "depMin": 15693,
+    "depMax": 15693,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
  }
 }
