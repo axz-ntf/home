@@ -702,5 +702,325 @@
     "rentMax": null
    }
   ]
+ },
+ "2015122300020469": {
+  "kind": "매입임대",
+  "unitsTotal": 52,
+  "groups": [
+   {
+    "label": "인천광역시 제물포구",
+    "units": 2,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 17,
+    "rentMax": 17
+   },
+   {
+    "label": "인천광역시 미추홀구",
+    "units": 18,
+    "depMin": 10,
+    "depMax": 20,
+    "rentMin": 13,
+    "rentMax": 28
+   },
+   {
+    "label": "인천광역시 연수구",
+    "units": 1,
+    "depMin": 21,
+    "depMax": 21,
+    "rentMin": 31,
+    "rentMax": 31
+   },
+   {
+    "label": "인천광역시 남동구",
+    "units": 8,
+    "depMin": 22,
+    "depMax": 29,
+    "rentMin": 11,
+    "rentMax": 25
+   },
+   {
+    "label": "인천광역시 부평구",
+    "units": 1,
+    "depMin": 30,
+    "depMax": 30,
+    "rentMin": 19,
+    "rentMax": 19
+   },
+   {
+    "label": "인천광역시 서해구",
+    "units": 6,
+    "depMin": 31,
+    "depMax": 36,
+    "rentMin": 18,
+    "rentMax": 26
+   },
+   {
+    "label": "경기도 부천시 오정구",
+    "units": 5,
+    "depMin": 37,
+    "depMax": 41,
+    "rentMin": 17,
+    "rentMax": 43
+   },
+   {
+    "label": "경기도 부천시 소사구",
+    "units": 5,
+    "depMin": 42,
+    "depMax": 46,
+    "rentMin": 15,
+    "rentMax": 33
+   },
+   {
+    "label": "경기도 부천시 원미구",
+    "units": 6,
+    "depMin": 47,
+    "depMax": 52,
+    "rentMin": 24,
+    "rentMax": 48
+   }
+  ]
+ },
+ "2015122300020488": {
+  "kind": "매입임대",
+  "unitsTotal": 93,
+  "groups": [
+   {
+    "label": "인천광역시 미추홀구",
+    "units": 11,
+    "depMin": 260,
+    "depMax": 1062,
+    "rentMin": 3,
+    "rentMax": 32
+   },
+   {
+    "label": "인천광역시 연수구",
+    "units": 11,
+    "depMin": 203,
+    "depMax": 352,
+    "rentMin": 3,
+    "rentMax": 9
+   },
+   {
+    "label": "인천광역시 남동구",
+    "units": 19,
+    "depMin": 225,
+    "depMax": 930,
+    "rentMin": 2,
+    "rentMax": 29
+   },
+   {
+    "label": "인천광역시 부평구",
+    "units": 2,
+    "depMin": 400,
+    "depMax": 723,
+    "rentMin": 7,
+    "rentMax": 25
+   },
+   {
+    "label": "인천광역시 계양구",
+    "units": 18,
+    "depMin": 738,
+    "depMax": 2127,
+    "rentMin": 7,
+    "rentMax": 27
+   },
+   {
+    "label": "인천광역시 서해구",
+    "units": 2,
+    "depMin": 214,
+    "depMax": 683,
+    "rentMin": 3,
+    "rentMax": 19
+   },
+   {
+    "label": "인천광역시 검단구",
+    "units": 2,
+    "depMin": 481,
+    "depMax": 743,
+    "rentMin": 14,
+    "rentMax": 23
+   },
+   {
+    "label": "경기도 부천시 소사구",
+    "units": 11,
+    "depMin": 283,
+    "depMax": 1237,
+    "rentMin": 6,
+    "rentMax": 35
+   },
+   {
+    "label": "경기도 부천시 오정구",
+    "units": 9,
+    "depMin": 174,
+    "depMax": 938,
+    "rentMin": 4,
+    "rentMax": 33
+   },
+   {
+    "label": "경기도 부천시 원미구",
+    "units": 8,
+    "depMin": 298,
+    "depMax": 1162,
+    "rentMin": 8,
+    "rentMax": 37
+   }
+  ]
+ },
+ "2015122300020484": {
+  "kind": "매입임대",
+  "unitsTotal": 81,
+  "groups": [
+   {
+    "label": "인천광역시 제물포구",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 8,
+    "rentMax": 8
+   },
+   {
+    "label": "인천광역시 검단구",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 16,
+    "rentMax": 16
+   },
+   {
+    "label": "인천광역시 계양구",
+    "units": 4,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 12,
+    "rentMax": 17
+   },
+   {
+    "label": "인천광역시 미추홀구",
+    "units": 11,
+    "depMin": 10,
+    "depMax": 17,
+    "rentMin": 7,
+    "rentMax": 25
+   },
+   {
+    "label": "인천광역시 부평구",
+    "units": 8,
+    "depMin": 18,
+    "depMax": 25,
+    "rentMin": 10,
+    "rentMax": 14
+   },
+   {
+    "label": "인천광역시 남동구",
+    "units": 1,
+    "depMin": 26,
+    "depMax": 26,
+    "rentMin": 17,
+    "rentMax": 17
+   },
+   {
+    "label": "인천광역시 서해구",
+    "units": 23,
+    "depMin": 27,
+    "depMax": 49,
+    "rentMin": 10,
+    "rentMax": 17
+   },
+   {
+    "label": "경기도 부천시 소사구",
+    "units": 12,
+    "depMin": 50,
+    "depMax": 61,
+    "rentMin": 18,
+    "rentMax": 22
+   },
+   {
+    "label": "경기도 부천시 원미구",
+    "units": 20,
+    "depMin": 62,
+    "depMax": 81,
+    "rentMin": 14,
+    "rentMax": 25
+   }
+  ]
+ },
+ "2015122300020483": {
+  "kind": "매입임대",
+  "unitsTotal": 88,
+  "groups": [
+   {
+    "label": "인천광역시",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 19,
+    "rentMax": 19
+   },
+   {
+    "label": "인천광역시 검단구",
+    "units": 2,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 17,
+    "rentMax": 35
+   },
+   {
+    "label": "인천광역시 남동구",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 30,
+    "rentMax": 30
+   },
+   {
+    "label": "인천광역시 미추홀구",
+    "units": 27,
+    "depMin": 10,
+    "depMax": 31,
+    "rentMin": 13,
+    "rentMax": 32
+   },
+   {
+    "label": "인천광역시 부평구",
+    "units": 17,
+    "depMin": 32,
+    "depMax": 48,
+    "rentMin": 20,
+    "rentMax": 35
+   },
+   {
+    "label": "인천광역시 서해구",
+    "units": 3,
+    "depMin": 49,
+    "depMax": 51,
+    "rentMin": 19,
+    "rentMax": 28
+   },
+   {
+    "label": "경기도 부천시 소사구",
+    "units": 20,
+    "depMin": 52,
+    "depMax": 71,
+    "rentMin": 21,
+    "rentMax": 40
+   },
+   {
+    "label": "경기도 부천시 오정구",
+    "units": 9,
+    "depMin": 72,
+    "depMax": 80,
+    "rentMin": 26,
+    "rentMax": 38
+   },
+   {
+    "label": "경기도 부천시 원미구",
+    "units": 8,
+    "depMin": 81,
+    "depMax": 88,
+    "rentMin": 30,
+    "rentMax": 36
+   }
+  ]
  }
 }

@@ -12512,5 +12512,377 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020424": {
+    "at": "2026-07-30T17:37:05.547Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "서구 인천검단 AA9블록 14 A·B",
+          "area": "14.68/14.78",
+          "supplyUnits": 320,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.29"
+      },
+      "deadline": "2026.08.13",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020453": {
+    "at": "2026-07-30T17:37:52.373Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020469": {
+    "at": "2026-07-30T17:40:04.503Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": null
+      },
+      "schedule": {
+        "winnerAt": "2026.10.14"
+      },
+      "deadline": "2026.08.13",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020488": {
+    "at": "2026-07-30T17:42:32.175Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "1 형 (2 인 이하 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "2 형 (2~4 인 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "3 형 (5 인 이상 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020484": {
+    "at": "2026-07-30T17:44:27.296Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": null
+      },
+      "schedule": {
+        "winnerAt": "2026.10.15"
+      },
+      "deadline": "2026.08.13",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020483": {
+    "at": "2026-07-30T17:47:32.340Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "인천광역시 26-5 강화군",
+          "areaRange": null,
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천광역시 26-5 미추홀구",
+          "areaRange": null,
+          "supplyUnits": 16,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천광역시 26-5 미추홀구 (주안동)",
+          "areaRange": null,
+          "supplyUnits": 11,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천광역시 26-5 남동구",
+          "areaRange": null,
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천광역시 26-5 부평구",
+          "areaRange": null,
+          "supplyUnits": 17,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천광역시 26-5 검단구",
+          "areaRange": null,
+          "supplyUnits": 2,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천광역시 26-5 서해구",
+          "areaRange": null,
+          "supplyUnits": 3,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천시 26-5 소사구",
+          "areaRange": null,
+          "supplyUnits": 20,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천시 26-5 오정구",
+          "areaRange": null,
+          "supplyUnits": 9,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "부천시 26-5 원미구",
+          "areaRange": null,
+          "supplyUnits": 8,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4
+      },
+      "schedule": {
+        "winnerAt": "2026.08.21"
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020461": {
+    "at": "2026-07-30T17:49:48.008Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "노원구 월계로 44 가길 101-202",
+          "areaRange": "46.61㎡",
+          "supplyUnits": 1,
+          "deposit": 543,
+          "rent": 10
+        },
+        {
+          "label": "노원구 동일로 237 바길 101-201",
+          "areaRange": "82.20㎡",
+          "supplyUnits": 1,
+          "deposit": 890,
+          "rent": 27
+        },
+        {
+          "label": "은평구 연서로 4 길 102-501",
+          "areaRange": "18.69㎡",
+          "supplyUnits": 1,
+          "deposit": 281,
+          "rent": 14
+        }
+      ],
+      "deadline": "2026.08.18",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-307771": {
+    "at": "2026-07-30T17:51:59.050Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.12.30"
+      },
+      "deadline": "2026.08.14",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "sh-307625": {
+    "at": "2026-07-30T17:54:06.574Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "공동생활가정 (15호)",
+          "areaRange": null,
+          "supplyUnits": 15,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 3,
+        "rateDown": 7
+      },
+      "deadline": "2026.08.18",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6614": {
+    "at": "2026-07-30T17:55:01.374Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "동작구 더클래식 동작 613호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 4480,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동작구 더클래식 동작 801호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 8581,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동작구 더클래식 동작 901호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 11442,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동작구 더클래식 동작 1116호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 5318,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동작구 더클래식 동작 1508호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 5318,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.08.04"
+      },
+      "deadline": "2026.08.03",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020477": {
+    "at": "2026-07-30T17:57:18.953Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "영천시 영천야사 4 39.75",
+          "area": "26.37",
+          "supplyUnits": 50,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 252,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 764,
+              "rent": 13
+            }
+          ]
+        },
+        {
+          "houseType": "영천시 영천야사 4 45.17",
+          "area": "31.32",
+          "supplyUnits": 100,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 299,
+              "rent": 6
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 870,
+              "rent": 14
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
