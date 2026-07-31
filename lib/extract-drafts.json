@@ -12983,5 +12983,287 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020476": {
+    "at": "2026-07-31T17:47:15.988Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "sh-307835": {
+    "at": "2026-07-31T17:49:44.648Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "동작구 스타팰리스 이수 18.08(25)형",
+          "area": "18.08",
+          "supplyUnits": 17,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동작구 스타팰리스 이수 19.53(26)형",
+          "area": "19.53",
+          "supplyUnits": 9,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동작구 스타팰리스 이수 36.00(47)형",
+          "area": "36",
+          "supplyUnits": 7,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동작구 스타팰리스 이수 36.07(50)형",
+          "area": "36.07",
+          "supplyUnits": 8,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "중랑구 에이트플레이스 18형",
+          "area": "18.29",
+          "supplyUnits": 76,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "중랑구 에이트플레이스 20형",
+          "area": "20.46",
+          "supplyUnits": 81,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "중랑구 에이트플레이스 39A형",
+          "area": "39.76",
+          "supplyUnits": 53,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "중랑구 에이트플레이스 39B형",
+          "area": "39.18",
+          "supplyUnits": 8,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "중랑구 에이트플레이스 39C형",
+          "area": "39.91",
+          "supplyUnits": 7,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "중랑구 에이트플레이스 39D형",
+          "area": "39.76",
+          "supplyUnits": 4,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "중랑구 에이트플레이스 39S (셰어형,팀형)형",
+          "area": "39.51",
+          "supplyUnits": 14,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "서초구 호반써밋 양재 23형",
+          "area": "23.57",
+          "supplyUnits": 47,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "서초구 호반써밋 양재 40형",
+          "area": "40.93",
+          "supplyUnits": 6,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "성북구 펠릭스 16.46형",
+          "area": "16.46",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "성북구 성북 펠릭스 20.03형",
+          "area": "20.03",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "구로구 세이지움 개봉 18.88형",
+          "area": "18.88",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강서구 센터스퀘어 발산 19.96형",
+          "area": "19.96",
+          "supplyUnits": 3,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강서구 센터스퀘어 발산 22.16형",
+          "area": "22.16",
+          "supplyUnits": 2,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강서구 센터스퀘어 발산 48.00형",
+          "area": "48",
+          "supplyUnits": 2,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "관악구 센터스퀘어 서울대점 44.62형",
+          "area": "44.62",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "광진구 센텀힐스 한강 30.33형",
+          "area": "30.33",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "서대문구 스타타워 30.97형",
+          "area": "30.97",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강서구 아임2030 15A형",
+          "area": "15.17",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "서대문구 어바니엘 위드 더 스타일 충정로 35A형",
+          "area": "35.37",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "구로구 에드가 개봉 16.48형",
+          "area": "16.48",
+          "supplyUnits": 7,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "구로구 에드가 개봉 18.14형",
+          "area": "18.14",
+          "supplyUnits": 3,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "노원구 에드가 상계 16.48형",
+          "area": "16.48",
+          "supplyUnits": 6,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "노원구 에드가 상계 33.70형",
+          "area": "33.7",
+          "supplyUnits": 10,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "노원구 에드가 상계 36.45형",
+          "area": "36.45",
+          "supplyUnits": 2,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "은평구 연신내역 루체스테이션 17.051형",
+          "area": "17.051",
+          "supplyUnits": 3,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "은평구 연신내역 루체스테이션 35.432형",
+          "area": "35.432",
+          "supplyUnits": 2,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "노원구 와이엔타워 16.3형",
+          "area": "16.3",
+          "supplyUnits": 6,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.12.11"
+      },
+      "deadline": "2026.08.13",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
   }
 }
