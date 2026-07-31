@@ -12884,5 +12884,104 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-sale-2015122300020471": {
+    "at": "2026-07-31T07:49:26.081Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "과천시 과천지식정보타운 S-3 55A 형",
+          "area": "55.87",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "과천시 과천지식정보타운 S-3 55A3 형",
+          "area": "55.85",
+          "supplyUnits": 10,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "과천시 과천지식정보타운 S-3 55B 형",
+          "area": "55.9",
+          "supplyUnits": 20,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "과천시 과천지식정보타운 S-3 59A 형",
+          "area": "59.88",
+          "supplyUnits": 3,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "과천시 과천지식정보타운 S-7 55A 형",
+          "area": "55.96",
+          "supplyUnits": 25,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "과천시 과천지식정보타운 S-8 46A 형",
+          "area": "46.45",
+          "supplyUnits": 20,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "과천시 과천지식정보타운 S-8 55B 형",
+          "area": "55.94",
+          "supplyUnits": 20,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.11.13"
+      },
+      "deadline": "2026.08.12",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020470": {
+    "at": "2026-07-31T07:50:52.004Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.09.07"
+      },
+      "deadline": "2026.08.12",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-sale-2015122300020314": {
+    "at": "2026-07-31T07:52:42.917Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.12.08."
+      },
+      "deadline": "2026.08.12.",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
