@@ -1258,5 +1258,27 @@
     "rentMax": null
    }
   ]
+ },
+ "2015122300020516": {
+  "kind": "매입임대",
+  "unitsTotal": 131,
+  "groups": [
+   {
+    "label": "김천시 김천시",
+    "units": 15,
+    "depMin": 159,
+    "depMax": 494,
+    "rentMin": 4,
+    "rentMax": 16
+   },
+   {
+    "label": "구미시 구미시",
+    "units": 116,
+    "depMin": 133,
+    "depMax": 1069,
+    "rentMin": 1,
+    "rentMax": 28
+   }
+  ]
  }
 }

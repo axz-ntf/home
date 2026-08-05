@@ -13708,5 +13708,714 @@
       "noticeStatus": "일반공고",
       "progressStatus": null
     }
+  },
+  "lh-rental-2015122300020411": {
+    "at": "2026-08-05T17:30:52.511Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.12.24"
+      },
+      "deadline": "2026.08.25",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020492": {
+    "at": "2026-08-05T17:32:06.128Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": "2026.09.02",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020515": {
+    "at": "2026-08-05T17:34:18.204Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "화성시 동탄2 A6 23A",
+          "area": "23.9",
+          "supplyUnits": 30,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 249,
+              "rent": 5
+            }
+          ]
+        },
+        {
+          "houseType": "화성시 동탄2 A6 23B (주거약자)",
+          "area": "23.9",
+          "supplyUnits": 30,
+          "incomes": [
+            {
+              "label": "나군",
+              "deposit": 1677,
+              "rent": 11
+            }
+          ]
+        }
+      ],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "화성시 동탄2 A6 23A",
+            "limitManwon": 300,
+            "maxDeposit": 549,
+            "minRent": 3
+          },
+          {
+            "houseType": "화성시 동탄2 A6 23B (주거약자)",
+            "limitManwon": 1300,
+            "maxDeposit": 2977,
+            "minRent": 5
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020511": {
+    "at": "2026-08-05T17:35:36.595Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.11.12"
+      },
+      "deadline": "2026.08.28",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020516": {
+    "at": "2026-08-05T17:36:48.025Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "경상북도 다가구 1 형 (2 인 이하 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "경상북도 다가구 2 형 (2 인 이상 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-308123": {
+    "at": "2026-08-05T17:38:25.407Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "강서구 방화동원룸 (유니트로) 13㎡",
+          "area": "13.98",
+          "supplyUnits": 14,
+          "deposit": 1649,
+          "rent": 16,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강서구 방화동원룸 (유니트로) 17㎡",
+          "area": "17.55",
+          "supplyUnits": 3,
+          "deposit": 2059,
+          "rent": 20,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강서구 방화동원룸 (유니트로) 19㎡",
+          "area": "19.69",
+          "supplyUnits": 1,
+          "deposit": 2320,
+          "rent": 22,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강서구 방화동원룸 (유니트로) 22㎡",
+          "area": "22.77",
+          "supplyUnits": 1,
+          "deposit": 2667,
+          "rent": 26,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강서구 방화동원룸 (유니트로) 23㎡",
+          "area": "23.87",
+          "supplyUnits": 1,
+          "deposit": 2806,
+          "rent": 27,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "송파구 문정동원룸 14㎡",
+          "area": "14.44",
+          "supplyUnits": 16,
+          "deposit": 2459,
+          "rent": 16,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강남구 역삼동원룸 12㎡",
+          "area": "12.37",
+          "supplyUnits": 6,
+          "deposit": 2173,
+          "rent": 13,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강동구 강일2준주거2 (리엔타운) 19㎡",
+          "area": "19.08",
+          "supplyUnits": 4,
+          "deposit": 1026,
+          "rent": 13,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강동구 강일2준주거2 (리엔타운) 30㎡",
+          "area": "30.43",
+          "supplyUnits": 1,
+          "deposit": 1645,
+          "rent": 18,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강동구 강일2준주거2 (리엔타운) 33㎡",
+          "area": "33.83",
+          "supplyUnits": 1,
+          "deposit": 1820,
+          "rent": 20,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강남구 율현리엔파크 29㎡",
+          "area": "29.45",
+          "supplyUnits": 4,
+          "deposit": 1706,
+          "rent": 17,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강남구 율현리엔파크 29㎡",
+          "area": "29.59",
+          "supplyUnits": 4,
+          "deposit": 1706,
+          "rent": 17,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "구로구 천왕여성안심주택 14㎡",
+          "area": "14.08",
+          "supplyUnits": 13,
+          "deposit": 802,
+          "rent": 14,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 7,
+        "rateDown": 3
+      },
+      "schedule": {
+        "winnerAt": "2026.11.20"
+      },
+      "deadline": "2026.08.20",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020514-m0": {
+    "at": "2026-08-05T17:39:31.138Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "1형(2인 이하 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "2형(2~4인 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "3형(5인 이상 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020463": {
+    "at": "2026-08-05T17:40:19.802Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "해운대구 센텀롯데3차 59㎡",
+          "areaRange": "59㎡",
+          "supplyUnits": null,
+          "deposit": [
+            13550,
+            14025
+          ],
+          "rent": [
+            14,
+            17
+          ]
+        },
+        {
+          "label": "동래구 온천장SK허브올리브 49㎡",
+          "areaRange": "49㎡",
+          "supplyUnits": null,
+          "deposit": 9975,
+          "rent": 19
+        },
+        {
+          "label": "강서구 협성휴포레 54㎡",
+          "areaRange": "54㎡",
+          "supplyUnits": null,
+          "deposit": 13138,
+          "rent": 6
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.09.01"
+      },
+      "deadline": "2026.08.14",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020494": {
+    "at": "2026-08-05T17:41:22.518Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "강원 춘천 근화동 신성미소지움 59형",
+          "areaRange": "59㎡",
+          "supplyUnits": 13,
+          "deposit": [
+            9733,
+            9975
+          ],
+          "rent": [
+            19,
+            22
+          ]
+        },
+        {
+          "label": "강원 원주 우산동 한라비발디2차 59형",
+          "areaRange": "59㎡",
+          "supplyUnits": 20,
+          "deposit": [
+            9922,
+            9950
+          ],
+          "rent": 12
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.09.01"
+      },
+      "deadline": "2026.08.14",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020493": {
+    "at": "2026-08-05T17:42:53.610Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "창원마린푸르지오 59㎡",
+          "areaRange": "59㎡",
+          "supplyUnits": 2,
+          "deposit": [
+            11700,
+            11925
+          ],
+          "rent": 11
+        },
+        {
+          "label": "진해장천대동다숲 59㎡",
+          "areaRange": "59㎡",
+          "supplyUnits": 4,
+          "deposit": [
+            9525,
+            11000
+          ],
+          "rent": [
+            8,
+            10
+          ]
+        },
+        {
+          "label": "양산 동원로얄듀크 차2 59㎡",
+          "areaRange": "59㎡",
+          "supplyUnits": 1,
+          "deposit": 9883,
+          "rent": 16
+        },
+        {
+          "label": "양산 우미린아파트 59㎡",
+          "areaRange": "59㎡",
+          "supplyUnits": 2,
+          "deposit": [
+            10950,
+            11750
+          ],
+          "rent": [
+            17,
+            18
+          ]
+        },
+        {
+          "label": "양산 대방노블랜드 차5 59㎡",
+          "areaRange": "59㎡",
+          "supplyUnits": 1,
+          "deposit": 12350,
+          "rent": 13
+        },
+        {
+          "label": "양산 평산삼한사랑채 차2 50㎡",
+          "areaRange": "50㎡",
+          "supplyUnits": 1,
+          "deposit": 7450,
+          "rent": 15
+        },
+        {
+          "label": "양산 평산삼한사랑채 차2 59㎡",
+          "areaRange": "59㎡",
+          "supplyUnits": 1,
+          "deposit": 8350,
+          "rent": 19
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.09.01"
+      },
+      "deadline": "2026.08.14",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020489": {
+    "at": "2026-08-05T17:44:22.953Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "대전 서구 괴정동 리베라아이누리 40",
+          "areaRange": "40",
+          "supplyUnits": 6,
+          "deposit": [
+            4776,
+            5000
+          ],
+          "rent": [
+            8,
+            11
+          ]
+        },
+        {
+          "label": "대전 서구 괴정동 리베라아이누리 47",
+          "areaRange": "47",
+          "supplyUnits": 6,
+          "deposit": [
+            5500,
+            5885
+          ],
+          "rent": [
+            7,
+            9
+          ]
+        },
+        {
+          "label": "대전 유성구 봉명동 에이스타운4차 20/22/25",
+          "areaRange": "20/22/25",
+          "supplyUnits": 9,
+          "deposit": 5447,
+          "rent": 7
+        },
+        {
+          "label": "대전 유성구 지족동 노은 새미래숲2차 51",
+          "areaRange": "51",
+          "supplyUnits": 2,
+          "deposit": [
+            9336,
+            9573
+          ],
+          "rent": 22
+        },
+        {
+          "label": "대전 유성구 지족동 노은 새미래숲2차 59",
+          "areaRange": "59",
+          "supplyUnits": 3,
+          "deposit": 10420,
+          "rent": 24
+        },
+        {
+          "label": "대전 유성구 지족동 해랑숲마을 5차 59",
+          "areaRange": "59",
+          "supplyUnits": 3,
+          "deposit": [
+            10609,
+            10800
+          ],
+          "rent": [
+            23,
+            24
+          ]
+        },
+        {
+          "label": "충남 천안시 불당동 한성필하우스 59",
+          "areaRange": "59",
+          "supplyUnits": 1,
+          "deposit": 10415,
+          "rent": 16
+        },
+        {
+          "label": "충남 천안시 다가동 아트빌 39",
+          "areaRange": "39",
+          "supplyUnits": 8,
+          "deposit": [
+            2975,
+            3035
+          ],
+          "rent": [
+            2,
+            3
+          ]
+        },
+        {
+          "label": "충남 아산시 신창면 아산신창양우내안애 59",
+          "areaRange": "59",
+          "supplyUnits": 3,
+          "deposit": 5715,
+          "rent": 9
+        },
+        {
+          "label": "충남 당진시 시곡동 우민늘사랑 54",
+          "areaRange": "54",
+          "supplyUnits": 5,
+          "deposit": 4283,
+          "rent": 5
+        },
+        {
+          "label": "충남 당진시 시곡동 우민늘사랑 59",
+          "areaRange": "59",
+          "supplyUnits": 9,
+          "deposit": 4904,
+          "rent": 6
+        },
+        {
+          "label": "충남 당진시 원당동 원당마을아파트 51",
+          "areaRange": "51",
+          "supplyUnits": 9,
+          "deposit": 7895,
+          "rent": 21
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.23"
+      },
+      "deadline": "2026.08.14",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020487": {
+    "at": "2026-08-05T17:45:26.735Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "경기도 남양주시 호평파라곤 59형",
+          "areaRange": "59㎡",
+          "supplyUnits": 5,
+          "deposit": [
+            14200,
+            14650
+          ],
+          "rent": [
+            28,
+            34
+          ]
+        },
+        {
+          "label": "경기도 남양주시 신명스카이뷰그린 59형",
+          "areaRange": "59㎡",
+          "supplyUnits": 5,
+          "deposit": 11213,
+          "rent": 17
+        },
+        {
+          "label": "경기도 남양주시 한라비발디 59형",
+          "areaRange": "59㎡",
+          "supplyUnits": 3,
+          "deposit": 12525,
+          "rent": 30
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.23"
+      },
+      "deadline": "2026.08.14",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020486": {
+    "at": "2026-08-05T17:46:25.138Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "인천 영종구 하늘도시우미린 1 단지 59.96㎡",
+          "areaRange": "59.96㎡",
+          "supplyUnits": 17,
+          "deposit": 11608,
+          "rent": 7
+        },
+        {
+          "label": "인천 미추홀구 주안더월드스테이트 59.99㎡",
+          "areaRange": "59.99㎡",
+          "supplyUnits": 17,
+          "deposit": 14910,
+          "rent": 27
+        },
+        {
+          "label": "인천 남동구 포레시안 46.89㎡",
+          "areaRange": "46.89㎡",
+          "supplyUnits": 10,
+          "deposit": 10875,
+          "rent": 20
+        },
+        {
+          "label": "인천 동구 동산휴먼시아 1 단지 46.87㎡",
+          "areaRange": "46.87㎡",
+          "supplyUnits": 1,
+          "deposit": 8900,
+          "rent": 19
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.12"
+      },
+      "deadline": "2026.08.21",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020485": {
+    "at": "2026-08-05T17:47:10.068Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "deadline": "2026.08.20",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020481": {
+    "at": "2026-08-05T17:48:27.514Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "군산 나운동 수송코아루 59㎡",
+          "areaRange": "59㎡",
+          "supplyUnits": 2,
+          "deposit": [
+            8250,
+            8700
+          ],
+          "rent": [
+            19,
+            20
+          ]
+        },
+        {
+          "label": "군산 지곡동 엠코타운 59㎡",
+          "areaRange": "59㎡",
+          "supplyUnits": 1,
+          "deposit": 8175,
+          "rent": 16
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.23"
+      },
+      "deadline": "2026.08.14",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
