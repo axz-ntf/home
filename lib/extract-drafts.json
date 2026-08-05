@@ -13265,5 +13265,448 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집예정"
     }
+  },
+  "lh-rental-2015122300020521": {
+    "at": "2026-08-05T06:53:11.713Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.11.20"
+      },
+      "deadline": "2026.08.20",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020519": {
+    "at": "2026-08-05T06:55:03.714Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "구리 수택 16A",
+          "area": "16.84",
+          "supplyUnits": 20,
+          "deposit": 3515,
+          "rent": 14,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "구리 수택 16A",
+          "area": "16.84",
+          "supplyUnits": 20,
+          "deposit": 3339,
+          "rent": 14,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "구리 수택 16A",
+          "area": "16.84",
+          "supplyUnits": 20,
+          "deposit": 3722,
+          "rent": 15,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "구리 수택 26B",
+          "area": "26.71",
+          "supplyUnits": 10,
+          "deposit": 6110,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "구리 수택 16A",
+            "limitManwon": 1700,
+            "maxDeposit": 5215,
+            "minRent": 6
+          },
+          {
+            "houseType": "구리 수택 16A",
+            "limitManwon": 2900,
+            "maxDeposit": 615,
+            "minRent": 23
+          },
+          {
+            "houseType": "구리 수택 16A",
+            "limitManwon": 1800,
+            "maxDeposit": 5522,
+            "minRent": 6
+          },
+          {
+            "houseType": "구리 수택 16A",
+            "limitManwon": 3100,
+            "maxDeposit": 622,
+            "minRent": 24
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.11.20"
+      },
+      "deadline": "2026.08.20",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020520": {
+    "at": "2026-08-05T06:55:57.362Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": "2026.08.21",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020467": {
+    "at": "2026-08-05T06:57:46.665Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "군산오룡 고령자복지주택 26A",
+          "area": "26.99㎡",
+          "supplyUnits": 150,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 252,
+              "rent": 5
+            },
+            {
+              "label": "나군",
+              "deposit": 1152,
+              "rent": 13
+            }
+          ]
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "군산오룡 고령자복지주택 26A",
+            "limitManwon": 1400,
+            "maxDeposit": 2552,
+            "minRent": 5
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.11.10"
+      },
+      "deadline": "2026.08.20",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020508": {
+    "at": "2026-08-05T06:59:29.277Z",
+    "type": "fifty",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "완산구 전주삼천6 39.51 (17-A)",
+          "area": "39.51",
+          "supplyUnits": 30,
+          "deposit": 1507,
+          "rent": 21,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "완산구 전주삼천6 39.63 (17-B)",
+          "area": "39.63",
+          "supplyUnits": 10,
+          "deposit": 1512,
+          "rent": 21,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "완산구 전주삼천6 39.77 (17-C)",
+          "area": "39.77",
+          "supplyUnits": 25,
+          "deposit": 1517,
+          "rent": 21,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "완산구 전주삼천6 39.51 (17-A)",
+            "limitManwon": 2500,
+            "maxDeposit": 4007,
+            "minRent": 8
+          },
+          {
+            "houseType": "완산구 전주삼천6 39.63 (17-B)",
+            "limitManwon": 2500,
+            "maxDeposit": 4012,
+            "minRent": 9
+          },
+          {
+            "houseType": "완산구 전주삼천6 39.77 (17-C)",
+            "limitManwon": 2500,
+            "maxDeposit": 4017,
+            "minRent": 9
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020514-m1": {
+    "at": "2026-08-05T07:05:34.745Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "1형(2인 이하 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "2형(2~4인 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "3형(5인 이상 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "youth-6625": {
+    "at": "2026-08-05T07:06:02.193Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.08.19"
+      },
+      "deadline": "2026.08.17",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020495": {
+    "at": "2026-08-05T07:11:18.591Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "29A",
+          "area": "29.21",
+          "supplyUnits": 100,
+          "deposit": 1040,
+          "rent": 17,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4,
+        "perHouseType": [
+          {
+            "houseType": "29A",
+            "limitManwon": 2000,
+            "maxDeposit": 3040,
+            "minRent": 7
+          }
+        ]
+      },
+      "deadline": "2026.10.29",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020510": {
+    "at": "2026-08-05T07:13:06.962Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "통영안정 26A",
+          "area": "26.88",
+          "supplyUnits": 70,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 250500,
+              "rent": 4983
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 1361900,
+              "rent": 9712
+            }
+          ]
+        },
+        {
+          "houseType": "통영안정 26B",
+          "area": "26.83",
+          "supplyUnits": 40,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 250500,
+              "rent": 4983
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 1361900,
+              "rent": 9712
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020509": {
+    "at": "2026-08-05T07:14:24.104Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "진주시 평거 26A",
+          "area": "26.4",
+          "supplyUnits": 70,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 269200,
+              "rent": 5358
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 1069900,
+              "rent": 11513
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020501": {
+    "at": "2026-08-05T07:15:48.367Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": "2026.08.12",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020491": {
+    "at": "2026-08-05T07:16:52.989Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": null,
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020426": {
+    "at": "2026-08-05T07:21:39.749Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "1 형 (2 인 이하 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "2 형 (2~4 인 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "3 형 (5 인 이상 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020502": {
+    "at": "2026-08-05T07:22:53.642Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
   }
 }
