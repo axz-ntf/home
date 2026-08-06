@@ -1280,5 +1280,35 @@
     "rentMax": 28
    }
   ]
+ },
+ "2015122300020444": {
+  "kind": "든든전세",
+  "unitsTotal": 159,
+  "groups": [
+   {
+    "label": "경상남도 통영시 광도면 남해안대로 1038",
+    "units": 81,
+    "depMin": 18445,
+    "depMax": 22780,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경상남도 양산시 상북면 석계리 일반번지 1176",
+    "units": 53,
+    "depMin": 13440,
+    "depMax": 16160,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경상남도 양산시 중부동 일반번지 402",
+    "units": 25,
+    "depMin": 23440,
+    "depMax": 24640,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
  }
 }

@@ -14417,5 +14417,356 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020525": {
+    "at": "2026-08-06T06:54:59.102Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "김포시 김포한강1 16A",
+          "area": "16.69",
+          "supplyUnits": 148,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "김포시 김포한강1 26A",
+          "area": "26.8",
+          "supplyUnits": 48,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "김포시 김포한강1 26B",
+          "area": "26.8",
+          "supplyUnits": 48,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "김포시 김포한강1 37A",
+          "area": "37.84",
+          "supplyUnits": 127,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "김포시 김포한강1 44A",
+          "area": "44.68",
+          "supplyUnits": 72,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "김포시 김포장기11 16A",
+          "area": "16.8",
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "김포시 김포장기11 26A",
+          "area": "26.55",
+          "supplyUnits": 26,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "김포시 김포장기11 26B",
+          "area": "26.61",
+          "supplyUnits": 12,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "김포시 김포장기11 36A",
+          "area": "36.32",
+          "supplyUnits": 94,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "김포시 김포한강한가람2 21A",
+          "area": "21.41",
+          "supplyUnits": 384,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "김포시 김포한강한가람2 21B",
+          "area": "21.41",
+          "supplyUnits": 60,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "김포시 김포한강한가람2 26A",
+          "area": "26.08",
+          "supplyUnits": 380,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "김포시 김포한강한가람2 26B",
+          "area": "26.08",
+          "supplyUnits": 84,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.12.02."
+      },
+      "deadline": "2026.08.20.",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020500": {
+    "at": "2026-08-06T06:56:21.488Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "김해구산1 26 형",
+          "area": "26.34㎡",
+          "supplyUnits": 360,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 252,
+              "rent": 5
+            },
+            {
+              "label": "나군",
+              "deposit": 352,
+              "rent": 8
+            }
+          ]
+        },
+        {
+          "houseType": "김해구산1 30 형",
+          "area": "30.48㎡",
+          "supplyUnits": 120,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 291,
+              "rent": 6
+            },
+            {
+              "label": "나군",
+              "deposit": 407,
+              "rent": 9
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020527": {
+    "at": "2026-08-06T06:57:56.751Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "김제하동 34",
+          "area": "34.28",
+          "supplyUnits": 2,
+          "deposit": 1787,
+          "rent": 12,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "김제하동 42",
+          "area": "42.87",
+          "supplyUnits": 5,
+          "deposit": 2492,
+          "rent": 15,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": "2026.08.21",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020473": {
+    "at": "2026-08-06T06:59:23.148Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "익산부송1단지 주거복지동 19A",
+          "area": "19.95",
+          "supplyUnits": 84,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 182,
+              "rent": 4
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 254,
+              "rent": 6
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020444": {
+    "at": "2026-08-06T06:59:58.571Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.10.15"
+      },
+      "deadline": "2026.08.24",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020480": {
+    "at": "2026-08-06T07:00:59.214Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "청년신혼부부",
+          "areaRange": "59㎡",
+          "supplyUnits": 5,
+          "deposit": [
+            11900,
+            12175
+          ],
+          "rent": [
+            29,
+            31
+          ]
+        },
+        {
+          "label": "청년신혼부부",
+          "areaRange": "59㎡",
+          "supplyUnits": 10,
+          "deposit": 14300,
+          "rent": 29
+        },
+        {
+          "label": "청년신혼부부",
+          "areaRange": "59㎡",
+          "supplyUnits": 3,
+          "deposit": 12750,
+          "rent": 10
+        },
+        {
+          "label": "청년신혼부부",
+          "areaRange": "59㎡",
+          "supplyUnits": 10,
+          "deposit": [
+            13142,
+            13383
+          ],
+          "rent": [
+            12,
+            13
+          ]
+        },
+        {
+          "label": "청년신혼부부",
+          "areaRange": "59㎡",
+          "supplyUnits": 10,
+          "deposit": [
+            11750,
+            12700
+          ],
+          "rent": [
+            10,
+            17
+          ]
+        },
+        {
+          "label": "청년신혼부부",
+          "areaRange": "59㎡",
+          "supplyUnits": 10,
+          "deposit": 11700,
+          "rent": 4
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.23"
+      },
+      "deadline": "2026.08.20",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020478": {
+    "at": "2026-08-06T07:01:54.597Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "광주광역시 북구 운암동 벽산블루밍 58형",
+          "areaRange": "58㎡",
+          "supplyUnits": 1,
+          "deposit": 11275,
+          "rent": 20
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.09.01"
+      },
+      "deadline": "2026.08.14",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-307961": {
+    "at": "2026-08-06T07:03:28.631Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026. 12. 30."
+      },
+      "deadline": "2026. 8. 14.",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
