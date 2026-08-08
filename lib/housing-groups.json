@@ -1310,5 +1310,63 @@
     "rentMax": null
    }
   ]
+ },
+ "2015122300020503": {
+  "kind": "든든전세",
+  "unitsTotal": 33,
+  "groups": [
+   {
+    "label": "오지오아파트",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "어반스테이9",
+    "units": 2,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "우아동3가 더포르테",
+    "units": 30,
+    "depMin": 10,
+    "depMax": 33,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
+ },
+ "2015122300020499": {
+  "kind": "든든전세",
+  "unitsTotal": 6,
+  "groups": [
+   {
+    "label": "상모사곡화성파크드림 101동 101호",
+    "units": 6,
+    "depMin": 15200,
+    "depMax": 16160,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
+ },
+ "2015122300020538": {
+  "kind": "매입임대",
+  "unitsTotal": 2,
+  "groups": [
+   {
+    "label": "충주 신한강변관리소 우편27479",
+    "units": 2,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
  }
 }

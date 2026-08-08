@@ -14768,5 +14768,355 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-sale-0000061154": {
+    "at": "2026-08-08T05:13:25.839Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "영천시 영천문외 센트럴타운 84㎡형",
+          "area": "84",
+          "supplyUnits": 13,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": "2026.12.24",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020537": {
+    "at": "2026-08-08T05:14:49.868Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": "2026.08.20",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020536": {
+    "at": "2026-08-08T05:16:39.434Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "구리 수택 16A 청년(소득무)",
+          "area": "16.84",
+          "supplyUnits": 20,
+          "deposit": 3516,
+          "rent": 15,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "구리 수택 16A",
+          "area": "16.84",
+          "supplyUnits": 20,
+          "deposit": 3722,
+          "rent": 15,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "구리 수택 16A 청년(소득유)",
+          "area": "16.84",
+          "supplyUnits": 20,
+          "deposit": 3722,
+          "rent": 16,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "구리 수택 26B 고령자(주거약자용)",
+          "area": "26.71",
+          "supplyUnits": 10,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "구리 수택 16A 청년(소득무)",
+            "limitManwon": 1700,
+            "maxDeposit": 5216,
+            "minRent": 6
+          },
+          {
+            "houseType": "구리 수택 16A",
+            "limitManwon": 2900,
+            "maxDeposit": 616,
+            "minRent": 23
+          },
+          {
+            "houseType": "구리 수택 16A 청년(소득유)",
+            "limitManwon": 1800,
+            "maxDeposit": 5522,
+            "minRent": 7
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.11.20"
+      },
+      "deadline": "2026.08.20",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020512": {
+    "at": "2026-08-08T05:17:53.755Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.11.30"
+      },
+      "deadline": "2026.08.19",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020503": {
+    "at": "2026-08-08T05:18:21.777Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.10.15"
+      },
+      "deadline": "2026.08.21",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020499": {
+    "at": "2026-08-08T05:19:35.648Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "구미시 박정희로 236-8 80㎡이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": 6,
+          "deposit": [
+            15200,
+            16160
+          ],
+          "rent": 0
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.01"
+      },
+      "deadline": "2026.08.20",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-308167": {
+    "at": "2026-08-08T05:21:23.339Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "강서구 방화동원룸 (유니트로) 13㎡",
+          "area": "13.98",
+          "supplyUnits": 14,
+          "deposit": 1649,
+          "rent": 16,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강서구 방화동원룸 (유니트로) 17㎡",
+          "area": "17.55",
+          "supplyUnits": 3,
+          "deposit": 2059,
+          "rent": 20,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강서구 방화동원룸 (유니트로) 19㎡",
+          "area": "19.69",
+          "supplyUnits": 1,
+          "deposit": 2320,
+          "rent": 22,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강서구 방화동원룸 (유니트로) 22㎡",
+          "area": "22.77",
+          "supplyUnits": 1,
+          "deposit": 2667,
+          "rent": 26,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강서구 방화동원룸 (유니트로) 23㎡",
+          "area": "23.87",
+          "supplyUnits": 1,
+          "deposit": 2806,
+          "rent": 27,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "송파구 문정동원룸 14㎡",
+          "area": "14.44",
+          "supplyUnits": 16,
+          "deposit": 2459,
+          "rent": 16,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강남구 역삼동원룸 12㎡",
+          "area": "12.37",
+          "supplyUnits": 6,
+          "deposit": 2173,
+          "rent": 13,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강동구 강일2준주거2 (리엔타운) 19㎡",
+          "area": "19.08",
+          "supplyUnits": 4,
+          "deposit": 1026,
+          "rent": 13,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강동구 강일2준주거2 (리엔타운) 30㎡",
+          "area": "30.43",
+          "supplyUnits": 1,
+          "deposit": 1645,
+          "rent": 18,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강동구 강일2준주거2 (리엔타운) 33㎡",
+          "area": "33.83",
+          "supplyUnits": 1,
+          "deposit": 1820,
+          "rent": 20,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강남구 율현리엔파크 29㎡",
+          "area": "29.45",
+          "supplyUnits": 4,
+          "deposit": 1706,
+          "rent": 17,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강남구 율현리엔파크 29㎡",
+          "area": "29.59",
+          "supplyUnits": 4,
+          "deposit": 1706,
+          "rent": 17,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "구로구 천왕여성안심주택 14㎡",
+          "area": "14.08",
+          "supplyUnits": 13,
+          "deposit": 802,
+          "rent": 14,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 3,
+        "rateDown": 7
+      },
+      "schedule": {
+        "winnerAt": "2026.11.20"
+      },
+      "deadline": "2026.08.20",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6629": {
+    "at": "2026-08-08T05:22:18.451Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "성북구 라온프라이빗 종암 청년 일반공급",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 10900,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.08.11"
+      },
+      "deadline": "2026.08.10",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "youth-6628": {
+    "at": "2026-08-08T05:23:22.632Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.08.11"
+      },
+      "deadline": "2026.08.10",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6627": {
+    "at": "2026-08-08T05:24:09.139Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "—",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 10000,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.08.11"
+      },
+      "deadline": "2026.08.10",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020538": {
+    "at": "2026-08-08T05:26:16.540Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "deadline": "2026.08.20",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
   }
 }
