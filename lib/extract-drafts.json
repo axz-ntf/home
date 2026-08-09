@@ -15118,5 +15118,41 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집예정"
     }
+  },
+  "youth-6626": {
+    "at": "2026-08-09T05:20:57.319Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "광진구 백악관타워 601호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 8600,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "광진구 백악관타워 819호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 20800,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "광진구 백악관타워 901호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 8600,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": "2026.08.10",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
