@@ -1368,5 +1368,41 @@
     "rentMax": null
    }
   ]
+ },
+ "2015122300020529": {
+  "kind": "매입임대",
+  "unitsTotal": 2,
+  "groups": [
+   {
+    "label": "단지내상가 106호",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "단지내상가 106호에서 안내 예정",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
+ },
+ "2015122300020541": {
+  "kind": "매입임대",
+  "unitsTotal": 2,
+  "groups": [
+   {
+    "label": "6층",
+    "units": 2,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
  }
 }
