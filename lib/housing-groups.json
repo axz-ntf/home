@@ -1404,5 +1404,27 @@
     "rentMax": null
    }
   ]
+ },
+ "2015122300020539": {
+  "kind": "매입임대",
+  "unitsTotal": 2,
+  "groups": [
+   {
+    "label": "사회복지법인 프리웰",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "유선전화는 평일 10-17시까지 운영기관 홈페이지 : https://thehome.freewel.org",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
  }
 }
