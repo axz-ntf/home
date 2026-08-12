@@ -2458,5 +2458,25 @@
         "district": "경기도"
       }
     ]
+  },
+  "2015122300020533": {
+    "districtId": "daegu",
+    "district": "대구광역시",
+    "points": [
+      {
+        "lat": 35.8866236166116,
+        "lng": 128.635524099685,
+        "address": "대구광역시 동구",
+        "districtId": "daegu",
+        "district": "대구광역시"
+      },
+      {
+        "lat": 35.8581745018635,
+        "lng": 128.630635463648,
+        "address": "대구광역시 수성구",
+        "districtId": "daegu",
+        "district": "대구광역시"
+      }
+    ]
   }
 }

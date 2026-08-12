@@ -1426,5 +1426,35 @@
     "rentMax": null
    }
   ]
+ },
+ "2015122300020533": {
+  "kind": "매입임대",
+  "unitsTotal": 133,
+  "groups": [
+   {
+    "label": "대구광역시 동구",
+    "units": 33,
+    "depMin": 100,
+    "depMax": 100,
+    "rentMin": 12,
+    "rentMax": 28
+   },
+   {
+    "label": "대구광역시 수성구",
+    "units": 47,
+    "depMin": 100,
+    "depMax": 100,
+    "rentMin": 9,
+    "rentMax": 46
+   },
+   {
+    "label": "경상북도 경산시",
+    "units": 53,
+    "depMin": 100,
+    "depMax": 100,
+    "rentMin": 11,
+    "rentMax": 31
+   }
+  ]
  }
 }
