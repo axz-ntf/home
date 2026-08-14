@@ -111,7 +111,7 @@ jobs:
       - name: Phase 5 — 자격 정보 구조화 추출 (Claude)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          TIMELY_ROUTER_API_KEY: ${{ secrets.TIMELY_ROUTER_API_KEY }}
+          SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
         run: node scripts/extract-eligibility.mjs --limit 9999
 
       - name: Phase 6a — cover 사진 Blob 업로드
@@ -161,7 +161,7 @@ jobs:
         continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          TIMELY_ROUTER_API_KEY: ${{ secrets.TIMELY_ROUTER_API_KEY }}
+          SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
           VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
           KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
         run: node scripts/extract-mapped-regional.mjs --active
@@ -198,7 +198,6 @@ jobs:
         continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          TIMELY_ROUTER_API_KEY: ${{ secrets.TIMELY_ROUTER_API_KEY }}
         run: npx tsx scripts/extract-floorplans.ts
 
       # LH 접수결과/신청현황 공지 첨부 PDF → 공고별 경쟁률 (lib/competition.json).
@@ -207,10 +206,9 @@ jobs:
       - name: Phase 7.9 — 접수결과 공지 → 경쟁률 추출
         continue-on-error: true
         env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
           SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          TIMELY_ROUTER_API_KEY: ${{ secrets.TIMELY_ROUTER_API_KEY }}
         run: node scripts/sync-competition.mjs --days 30 --limit 20
 
       # SH(서울주거포털)·청년안심주택(soco) 공고 sync — 어드민 검수 큐 공급원.
@@ -230,7 +228,6 @@ jobs:
         continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          TIMELY_ROUTER_API_KEY: ${{ secrets.TIMELY_ROUTER_API_KEY }}
           VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
           SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
         run: node scripts/extract-sh-mapped.mjs
@@ -243,14 +240,14 @@ jobs:
           SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
         run: npx tsx scripts/batch-extract.ts --limit 15
 
-      # 주변입지 분석 사전 계산 — 신규 좌표만 Claude 로 계산해 insight-cache.json 증분 갱신.
+      # 주변입지 분석 사전 계산 — 신규 좌표만 Solar 로 계산해 insight-cache.json 증분 갱신.
       # 커밋 → 재배포되면 /api/insight 가 시드 캐시로 즉시 응답 (사용자 대기 0초).
       # MOLIT_API_KEY 없으면 인근 시세 텍스트만 빠진 채 저장됨 (graceful).
       - name: Phase 9.5 — 주변입지 분석 캐시 warm (신규 좌표만)
         continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          TIMELY_ROUTER_API_KEY: ${{ secrets.TIMELY_ROUTER_API_KEY }}
+          SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
           KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
           MOLIT_API_KEY: ${{ secrets.MOLIT_API_KEY }}
         run: npx tsx scripts/warm-insight.ts --limit 200

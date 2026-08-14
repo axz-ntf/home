@@ -12,7 +12,8 @@ import { aiModel, hasAiKey } from "./lib/ai-provider.mjs";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const VKEY = process.env.VWORLD_API_KEY;
 const KAKAO = process.env.KAKAO_REST_API_KEY; // VWorld 폴백(헤더 인증 → CI IP 제한 회피)
-if (!hasAiKey() || (!VKEY && !KAKAO)) { console.error("ERROR: (TIMELY_ROUTER_API_KEY|ANTHROPIC_API_KEY) 및 VWORLD_API_KEY/KAKAO_REST_API_KEY 중 하나 필요"); process.exit(1); }
+const MODEL = process.env.EXTRACT_MODEL ?? "claude-sonnet-5";
+if (!hasAiKey(MODEL) || (!VKEY && !KAKAO)) { console.error("ERROR: SOLAR_API_KEY 및 VWORLD_API_KEY/KAKAO_REST_API_KEY 중 하나 필요"); process.exit(1); }
 
 const args = process.argv.slice(2);
 const idArg = (args.find((a) => a.startsWith("--ids=")) || "").split("=")[1];
@@ -53,7 +54,7 @@ JSON만: {"complexes":[{"name":"단지명","address":"전체 도로명주소","d
 async function aiComplexes(md) {
   const region = md.slice(0, 14000);
   const result = await generateText({
-    model: aiModel("claude-haiku-4-5"),
+    model: aiModel(MODEL),
     system: SYSTEM,
     prompt: `공급 단지 목록 추출, JSON만:\n\n${region}`,
     maxOutputTokens: 1500,

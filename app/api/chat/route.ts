@@ -18,8 +18,8 @@ for (const l of [...LH_LISTINGS, ...SH_ADMIN_LISTINGS, ...YOUTH_ADMIN_LISTINGS])
   TITLE_BY_ID.set(l.id, l.pblancNm || l.title);
 }
 
-// 타임리라우터 우선, 키 없으면 Anthropic 직접 호출 (lib/ai-provider 스위치).
-const MODEL_ID = process.env.ANTHROPIC_MODEL ?? "claude-sonnet-4-6";
+// Upstage Solar (lib/ai-provider).
+const MODEL_ID = process.env.SOLAR_CHAT_MODEL ?? "solar-pro4";
 
 const SYSTEM_PROMPT = `당신은 한국 LH/마이홈 공공임대주택·공공분양 자격 상담 도우미 "부동산 AI"입니다.
 

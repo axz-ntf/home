@@ -14,7 +14,6 @@ import { execFileSync } from "node:child_process";
 import { LH_LISTINGS } from "../lib/lh-adapter";
 import { effectiveStatus } from "../lib/dday";
 import { validateSpec, sliceJson, extractFloorplanRaw } from "../lib/floorplan-extract";
-import { hasAiKey } from "../lib/ai-provider";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SPECS_PATH = path.join(ROOT, "lib/floorplan-specs.json");
@@ -28,17 +27,17 @@ const CONCURRENCY = Number(process.env.CONCURRENCY ?? 3);
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 // 스크립트는 .env.local 을 자동 로드하지 않는다 — 직접 읽어 주입.
-if (!process.env.TIMELY_ROUTER_API_KEY && !process.env.ANTHROPIC_API_KEY) {
+if (!process.env.ANTHROPIC_API_KEY) {
   const envPath = path.join(ROOT, ".env.local");
   if (fs.existsSync(envPath)) {
     for (const line of fs.readFileSync(envPath, "utf8").split("\n")) {
-      const m = line.match(/^(TIMELY_ROUTER_API_KEY|ANTHROPIC_API_KEY)=(.+)$/);
+      const m = line.match(/^(ANTHROPIC_API_KEY)=(.+)$/);
       if (m) process.env[m[1]] = m[2].trim().replace(/^["']|["']$/g, "");
     }
   }
 }
-if (!hasAiKey()) {
-  console.error("TIMELY_ROUTER_API_KEY / ANTHROPIC_API_KEY 없음 (.env.local 확인)");
+if (!process.env.ANTHROPIC_API_KEY?.trim()) {
+  console.error("ANTHROPIC_API_KEY 없음 (.env.local 확인)");
   process.exit(1);
 }
 

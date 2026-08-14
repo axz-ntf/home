@@ -8,7 +8,7 @@
 //   1. lhNoticeInfo1 — 제목검색(접수결과/신청현황/경쟁률)으로 공지 수집
 //   2. lhNoticeDtlInfo1 — 공지별 첨부 PDF URL
 //   3. Solar Document Parse — PDF → markdown (enrich-notice-text 와 동일 패턴)
-//   4. Claude Haiku — 표에서 단지×형별 모집/신청 추출 + 후보 매물 pblancId 매칭
+//   4. Claude Sonnet 5 — 표에서 단지×형별 모집/신청 추출 + 후보 매물 pblancId 매칭
 //   5. lib/competition.json — pblancId → { competition, applicants, unitsRecruit, ... }
 //
 // 캐시: lib/competition-notices.json (BBS_SN 별 처리 결과 — 재실행 시 skip)
@@ -39,12 +39,11 @@ try {
 
 const DATA_GO_KR_KEY = process.env.DATA_GO_KR_KEY;
 const SOLAR_API_KEY = process.env.SOLAR_API_KEY;
-if (!DATA_GO_KR_KEY || !SOLAR_API_KEY || !hasAiKey()) {
-  console.error("DATA_GO_KR_KEY / SOLAR_API_KEY / (TIMELY_ROUTER_API_KEY|ANTHROPIC_API_KEY) 필요");
+const MODEL = process.env.EXTRACT_MODEL ?? "claude-sonnet-5";
+if (!DATA_GO_KR_KEY || !SOLAR_API_KEY || !hasAiKey(MODEL)) {
+  console.error(`DATA_GO_KR_KEY / SOLAR_API_KEY / ${MODEL} 용 API 키 필요`);
   process.exit(1);
 }
-
-const MODEL = process.env.EXTRACT_MODEL ?? "claude-haiku-4-5";
 const UA = "daum-public-housing-app/1.0 (LH competition sync)";
 const DOC_PARSE_URL = "https://api.upstage.ai/v1/document-ai/document-parse";
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

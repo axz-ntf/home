@@ -1,26 +1,32 @@
-// AI provider 스위치 — 타임리라우터(사내 통합 라우터, OpenAI Chat Completions 호환) 우선,
-// TIMELY_ROUTER_API_KEY 없으면 기존 Anthropic 직접 호출로 폴백.
-// 회사 방침: bizrouter → 타임리라우터 전환 ('26.06 ai-coding-tips 공지). 키는 타임리 stage 콘솔에서 발급.
-// 모델 id 는 양쪽 동일 표기 (claude-sonnet-4-6, claude-haiku-4-5, claude-opus-4-8 등).
+// AI provider — 모델 id 로 프로바이더를 고른다.
+//   claude-*  → Anthropic 직접 호출 (배치 추출·인사이트·평면도)
+//   그 외      → Upstage Solar, OpenAI 호환 (챗)
+// 타임리라우터에서 전환 ('26.08). 라우터 stg 가 내려가면 AI 기능 전체가 멈추는 구조였다.
+// Solar 는 임베딩·문서파싱에 이미 쓰던 경로라 키가 모든 환경에 있고,
+// Solar 계열은 이미지 입력을 못 받아 평면도는 Anthropic 으로 남는다.
 import { createAnthropic } from "@ai-sdk/anthropic";
 import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
 
-export const timelyBaseUrl = () =>
-  process.env.TIMELY_ROUTER_BASE_URL ?? "https://router.stg.timelyai.io/v1";
-export const timelyApiKey = () => (process.env.TIMELY_ROUTER_API_KEY ?? "").trim();
-export const hasAiKey = () =>
-  !!(timelyApiKey() || (process.env.ANTHROPIC_API_KEY ?? "").trim());
+export const solarBaseUrl = () =>
+  process.env.SOLAR_BASE_URL ?? "https://api.upstage.ai/v1";
+export const solarApiKey = () => (process.env.SOLAR_API_KEY ?? "").trim();
+export const anthropicApiKey = () => (process.env.ANTHROPIC_API_KEY ?? "").trim();
+
+export const isClaude = (modelId: string) => modelId.startsWith("claude-");
+
+// 해당 모델을 부를 키가 있는지 — 스크립트 진입 가드용.
+export const hasAiKey = (modelId: string) =>
+  isClaude(modelId) ? !!anthropicApiKey() : !!solarApiKey();
 
 export function aiModel(modelId: string) {
-  const key = timelyApiKey();
-  if (key) {
-    // supportsStructuredOutputs: 라우터는 response_format 을 json_schema 타입으로만 받음 (generateObject 경로).
-    return createOpenAICompatible({
-      name: "timely",
-      baseURL: timelyBaseUrl(),
-      apiKey: key,
-      supportsStructuredOutputs: true,
-    })(modelId);
+  if (isClaude(modelId)) {
+    return createAnthropic({ apiKey: anthropicApiKey() })(modelId);
   }
-  return createAnthropic({ apiKey: (process.env.ANTHROPIC_API_KEY ?? "").trim() })(modelId);
+  // supportsStructuredOutputs: response_format 을 json_schema 타입으로 보낸다 (generateObject 경로).
+  return createOpenAICompatible({
+    name: "solar",
+    baseURL: solarBaseUrl(),
+    apiKey: solarApiKey(),
+    supportsStructuredOutputs: true,
+  })(modelId);
 }
