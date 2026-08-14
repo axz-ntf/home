@@ -57,7 +57,7 @@ async function aiComplexes(md) {
     model: aiModel(MODEL),
     system: SYSTEM,
     prompt: `공급 단지 목록 추출, JSON만:\n\n${region}`,
-    maxOutputTokens: 1500,
+    maxOutputTokens: 8000, // thinking 이 예산을 나눠 써 1500 으로는 단지 많은 공고에서 잘림
   });
   let t = result.text ?? "";
   const f = t.match(/```(?:json)?\s*\n([\s\S]*?)\n```/); if (f) t = f[1];

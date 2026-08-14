@@ -216,6 +216,9 @@ async function extractAndMatch(notice, bodyText, tableMd, candidates) {
     .join("\n");
   const result = await generateText({
     model: aiModel(MODEL),
+    // adaptive thinking 이 켜진 모델은 출력 예산을 thinking 과 나눠 쓴다 —
+    // 상한을 안 잡으면 표가 긴 공지에서 JSON 이 중간에 잘린다.
+    maxOutputTokens: 8000,
     system: SYSTEM + SCHEMA_HINT,
     prompt:
       `[공지 제목] ${notice.BBS_TL}\n[공지 게시일] ${notice.BBS_WOU_DTTM}\n[공지 본문]\n${(bodyText || "").slice(0, 2000)}\n\n` +

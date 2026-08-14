@@ -170,6 +170,7 @@ async function extractOne(id) {
 
   const result = await generateText({
     model: aiModel(MODEL),
+    maxOutputTokens: 8000,
     system: SYSTEM_PROMPT + SCHEMA_HINT,
     prompt:
       `다음은 LH 공고문의 자격 관련 섹션입니다. 자격 정보를 추출해 위 schema 의 JSON 만 출력하세요. 설명/주석/마크다운 헤더 금지, 오직 JSON 한 덩어리.\n\n` +

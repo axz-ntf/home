@@ -176,6 +176,7 @@ export async function computeInsight(
 
   const { object } = await generateObject({
     model: aiModel(MODEL_ID),
+    maxOutputTokens: 4000,
     schema,
     system: SYSTEM,
     prompt: buildPrompt(name, address, valueText, marketText, counts, stations, schools),
