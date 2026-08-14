@@ -1,0 +1,80 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생·청년(소득無)",
+      "units": null,
+      "age": "19세 이상 39세 이하(1986.08.06.~2007.08.05)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득 없는 청년은 대학생 계층 임대조건 적용"
+      },
+      "asset": null,
+      "other": [
+        "대학생 또는 청년으로 소득이 없는 자"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년(소득有)",
+      "units": null,
+      "age": "19세 이상 39세 이하(1986.08.06.~2007.08.05)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "사회초년생: 소득 있는 업무 종사기간 총 5년 이내"
+      },
+      "asset": null,
+      "other": [
+        "소득이 있는 업무에 종사하는 사람",
+        "퇴직 후 1년 이내 구직급여 수급자격 인정받은 사람",
+        "예술인"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": "혼인기간 7년 이내 또는 6세 이하 자녀를 둔 사람, 예비신혼부부(입주 전 혼인사실 증명 가능자), 한부모가족(6세 이하 자녀)",
+      "income": null,
+      "asset": null,
+      "other": [
+        "우선배정 대상",
+        "2세미만 자녀(태아포함) 세대구성원 30% 우선배정"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": null,
+      "age": "65세 이상(1961.08.05 이전 출생)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "36B/16B/29형은 주거약자형"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "주거급여법 제2조제2호 및 제3호에 따른 수급권자 또는 수급자",
+        "최대 거주기간 20년"
+      ]
+    }
+  ],
+  "priority": [
+    "2세미만 자녀(태아포함) 세대구성원"
+  ]
+}

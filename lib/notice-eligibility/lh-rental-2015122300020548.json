@@ -1,0 +1,111 @@
+{
+  "supplyTotal": 260,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": 60,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": 0
+      },
+      "other": [
+        "대학에 재학 중이거나 다음 학기 입·복학 예정인 사람",
+        "취업준비생: 대학 또는 고등학교 졸업(또는 중퇴) 후 2년 이내인 사람",
+        "자동차가액 산출대상 자동차를 소유하고 있지 않아야 함",
+        "36형은 대학생·청년 통합 추첨(120호 포함)"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": 60,
+      "age": "만19세 이상 만39세 이하 (1986.08.11~2007.08.10 출생)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제이나 임대조건 부과유형 결정을 위해 소득 조회 시행"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "사회초년생: 소득 있는 업무 종사기간 총 7년 이내",
+        "퇴직 후 1년 이내 구직급여 수급자격자 또는 예술인 포함",
+        "36형은 대학생·청년 통합 추첨(120호 포함)"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": 170,
+      "age": "만 65세 이상 (1961.08.10 이전 출생)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "26㎡ 및 36㎡ 형 공급",
+        "26㎡ 주거약자용 주택은 3층 이하 편의시설 설치"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": 30,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "「주거급여법」제2조제2호 및 제3호에 따른 수급권자 또는 수급자"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족",
+      "units": 120,
+      "age": null,
+      "marriage": "혼인기간 10년 이내이거나 만 9세 이하 자녀를 둔 사람 (예비신혼부부·한부모가족 포함)",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "예비신혼부부: 입주 전까지 혼인사실 증명 가능한 자",
+        "한부모가족: 만9세 이하 자녀를 둔 한부모",
+        "무자녀 최대거주 10년, 유자녀 최대거주 14년"
+      ]
+    }
+  ],
+  "priority": [
+    "2세미만 자녀(태아포함) 우선배정"
+  ]
+}

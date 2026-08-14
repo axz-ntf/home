@@ -1,0 +1,54 @@
+{
+  "supplyTotal": 280,
+  "tiers": [
+    {
+      "id": "etc",
+      "name": "2순위 장애인(월평균소득 100% 이하)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 100,
+        "byHousehold": null,
+        "note": "가구원수별 가산비율(1인 20%p, 2인 10%p) 및 출생자녀별 가산비율(1명 10%p, 2명 이상 20%p) 동시 적용 가능"
+      },
+      "asset": null,
+      "other": [
+        "공공주택 특별법 시행규칙 별표3 타목 해당자"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "국가유공자등·북한이탈주민·1순위장애인·아동복지시설퇴소자(월평균소득 70% 이하)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 70,
+        "byHousehold": null,
+        "note": "가구원수별 가산비율(1인 20%p, 2인 10%p) 및 출생자녀별 가산비율(1명 10%p, 2명 이상 20%p) 동시 적용 가능"
+      },
+      "asset": null,
+      "other": [
+        "공공주택 특별법 시행규칙 별표3 나목·마목·바목·아목 해당자"
+      ]
+    },
+    {
+      "id": "general",
+      "name": "일반입주자(월평균소득 50% 이하)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 50,
+        "byHousehold": null,
+        "note": "가구원수별 가산비율(1인 20%p, 2인 10%p) 및 출생자녀별 가산비율(1명 10%p, 2명 이상 20%p) 동시 적용 가능"
+      },
+      "asset": null,
+      "other": [
+        "공공주택 특별법 시행규칙 별표3 차목 해당자"
+      ]
+    }
+  ],
+  "priority": []
+}

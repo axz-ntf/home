@@ -1,0 +1,20 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "etc",
+      "name": "주거약자용 영구임대",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "공고일 현재 익산시에 거주 중인 자",
+        "세대원 전원 무주택자",
+        "주거약자용 주택 입주자 선정자격을 충족하는 자"
+      ]
+    }
+  ],
+  "priority": []
+}

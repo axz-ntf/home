@@ -1,0 +1,58 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "youth",
+      "name": "청년(대학생·청년) 계층",
+      "units": null,
+      "age": "19세 이상 39세 이하 (1986.08.06.~2007.08.05)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "사회초년생: 소득 있는 업무 종사기간 총 5년 이내이며 재직자, 퇴직 1년 이내 구직급여 수급자격 인정자, 예술인 중 하나에 해당",
+        "대학생 계층은 신청자격상 청년과 동일 그룹으로 공급(대학생·청년)",
+        "소득이 없는 청년 계층 신청자는 동일 면적의 대학생 계층 임대조건 적용"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": "신혼부부: 혼인기간 7년 이내 또는 6세 이하 자녀 있는 사람 / 예비신혼부부: 입주 전까지 혼인사실 증명 가능한 사람 / 한부모가족: 6세 이하 자녀를 둔 한부모",
+      "income": null,
+      "asset": null,
+      "other": [
+        "우선배정 대상(신혼부부·한부모가족)"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": null,
+      "age": "65세 이상 (1961.08.05 이전 출생)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "일부 세대는 주거약자형(36B, 16B)으로 공급"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "「주거급여법」 제2조제2호 및 제3호에 따른 수급권자 또는 수급자"
+      ]
+    }
+  ],
+  "priority": [
+    "2세미만 자녀(태아포함) 우선배정"
+  ]
+}

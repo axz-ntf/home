@@ -15,8 +15,10 @@ import { aiModel, hasAiKey } from "./lib/ai-provider.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const VKEY = process.env.VWORLD_API_KEY;
-const SKEY = (process.env.SOLAR_API_KEY ?? "").trim();
-if (!hasAiKey() || !VKEY || !SKEY) { console.error("ERROR: (TIMELY_ROUTER_API_KEY|ANTHROPIC_API_KEY) / VWORLD_API_KEY / SOLAR_API_KEY 필요"); process.exit(1); }
+const SKEY = (process.env.SOLAR_API_KEY ?? "").trim();  // 문서파싱(Upstage document-parse)용 — 추출 모델과 별개
+// 최난도 경로: 입력 12만자 · 출력 48k 토큰 · 수백 단지 → Opus.
+const MODEL = process.env.EXTRACT_MODEL ?? "claude-opus-5";
+if (!hasAiKey(MODEL) || !VKEY || !SKEY) { console.error(`ERROR: SOLAR_API_KEY(문서파싱) / VWORLD_API_KEY / ${MODEL} 용 API 키 필요`); process.exit(1); }
 
 const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/120 Safari/537.36";
 const DOC_PARSE_URL = "https://api.upstage.ai/v1/document-ai/document-parse";
@@ -101,7 +103,7 @@ async function aiText({ model, maxTokens, system, prompt }) {
 
 async function aiComplexes(md) {
   let t = await aiText({
-    model: "claude-sonnet-4-6",
+    model: MODEL,
     maxTokens: 48000, // 단지 수십~수백개 공고는 JSON 이 길어 16k 로는 잘림 → 확장
     system: SYSTEM,
     prompt: `공급 단지 목록 추출, JSON만:\n\n${md.slice(0, 120000)}`,

@@ -1,0 +1,34 @@
+{
+  "supplyTotal": 300,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반(26A형)",
+      "units": 250,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원(청년 및 혼인 중이 아닌 단독세대주로 입주하려는 고령자는 무주택자) 대상",
+        "1세대 1주택 기준 공급",
+        "과거 공공임대주택 불법양도·전대 적발 후 4년 미경과자는 선정 불가",
+        "일반공급 주택은 신청자 간 경쟁 시 추첨방식으로 선정"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거약자용(26AS형)",
+      "units": 50,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "주거약자 요건을 갖춘 자만 신청 가능",
+        "주거약자용 주택은 신청자 간 경쟁 시 배점방식(동점 시 추첨)으로 선정"
+      ]
+    }
+  ],
+  "priority": []
+}

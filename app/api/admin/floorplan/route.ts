@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { mutateJsonFile, persistMode } from "@/lib/admin-json-file";
 import { validateSpec, sliceJson, extractFloorplanRaw } from "@/lib/floorplan-extract";
-import { hasAiKey } from "@/lib/ai-provider";
 
 // 평면도 3D Phase 2 — 평면도 이미지 → Claude 비전 → FloorPlanSpec(JSON).
 // AI 는 스펙만 생성하고 렌더는 고정 제너레이터(floor-plan-3d)가 한다 — 검수자가
@@ -25,8 +24,8 @@ export async function POST(req: Request) {
   if (!mediaType) {
     return NextResponse.json({ error: `지원하지 않는 이미지 형식 (${file.type || "unknown"})` }, { status: 400 });
   }
-  if (!hasAiKey()) {
-    return NextResponse.json({ error: "TIMELY_ROUTER_API_KEY 또는 ANTHROPIC_API_KEY 가 설정되지 않았습니다" }, { status: 500 });
+  if (!process.env.ANTHROPIC_API_KEY?.trim()) {
+    return NextResponse.json({ error: "ANTHROPIC_API_KEY 가 설정되지 않았습니다" }, { status: 500 });
   }
 
   try {

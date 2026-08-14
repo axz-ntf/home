@@ -1,0 +1,72 @@
+{
+  "supplyTotal": 840,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "대학에 재학 중이거나 다음 학기 입·복학 예정인 사람",
+        "취업준비생: 대학 또는 고등학교 졸업(중퇴) 후 2년 이내인 사람"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "19세 이상 39세 이하(1986.08.07.~2007.08.06. 출생)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "사회초년생: 소득 있는 업무 종사기간 총 5년 이내(완화조건 7년 이내)",
+        "퇴직 후 1년 이내로 구직급여 수급자격 인정받은 사람 포함",
+        "예술인복지법 제2조제2호에 따른 예술인 포함",
+        "소득이 없는 청년은 동일 면적 대학생 계층 임대조건 적용"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": "혼인기간 7년 이내(완화조건 10년 이내) 또는 6세 이하(완화조건 9세 이하) 자녀(태아 포함)를 둔 경우",
+      "income": null,
+      "asset": null,
+      "other": [
+        "예비신혼부부: 입주 전까지 혼인사실을 증명할 수 있는 사람",
+        "한부모가족: 6세 이하(완화조건 9세 이하) 자녀(태아 포함)를 둔 한부모인 사람"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": null,
+      "age": "65세 이상(1961.08.06. 이전 출생)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "주거약자용 주택은 편의시설 설치, 3층 이하 공급",
+        "인터넷 접수 어려운 경우 현장대행접수 가능"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "주거급여법 제2조제2호 및 제3호에 따른 수급권자 또는 수급자"
+      ]
+    }
+  ],
+  "priority": []
+}

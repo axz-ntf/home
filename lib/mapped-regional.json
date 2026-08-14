@@ -2478,5 +2478,31 @@
         "district": "대구광역시"
       }
     ]
+  },
+  "2015122300020560": {
+    "districtId": "gyeonggi",
+    "district": "경기도",
+    "points": [
+      {
+        "lat": 37.25238815953351,
+        "lng": 126.97642388588103,
+        "address": "경기도 수원시",
+        "districtId": "gyeonggi",
+        "district": "경기도"
+      }
+    ]
+  },
+  "2015122300020547": {
+    "districtId": "gyeongnam",
+    "district": "경상남도",
+    "points": [
+      {
+        "lat": 35.476664630576906,
+        "lng": 128.76565056678672,
+        "address": "경상남도 밀양시",
+        "districtId": "gyeongnam",
+        "district": "경상남도"
+      }
+    ]
   }
 }

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // 공고문 markdown → 구조화 자격 정보 JSON 추출.
-// Claude Sonnet 4.6 (bizrouter) — Solar 가 표준 카테고리 임의 채워 넣는 환각 이슈로 교체.
+// Claude Sonnet 5 (Anthropic 직접) — Solar 가 표준 카테고리 임의 채워 넣는 환각 이슈로 교체.
 // 결과: lib/notice-eligibility/{id}.json
 //
 // 사용:
@@ -18,10 +18,8 @@ const ROOT = path.resolve(__dirname, "..");
 const TEXTS_DIR = path.join(ROOT, "lib/notice-texts");
 const OUT_DIR = path.join(ROOT, "lib/notice-eligibility");
 
-if (!hasAiKey()) { console.error("ERROR: TIMELY_ROUTER_API_KEY 또는 ANTHROPIC_API_KEY 누락"); process.exit(1); }
-
-// Haiku 4.5: $1/M in, $5/M out (Sonnet 대비 5배↓). 자격 추출은 비교적 단순 → 품질 충분.
-const MODEL = process.env.EXTRACT_MODEL ?? "claude-haiku-4-5";
+const MODEL = process.env.EXTRACT_MODEL ?? "claude-sonnet-5";
+if (!hasAiKey(MODEL)) { console.error(`ERROR: ${MODEL} 용 API 키 누락`); process.exit(1); }
 
 // 자격 정보 schema — LLM 이 생성할 구조.
 // 모든 숫자는 만원 단위 (소득/자산), percent 는 도시근로자 % (예: 70, 100, 150).
@@ -172,6 +170,7 @@ async function extractOne(id) {
 
   const result = await generateText({
     model: aiModel(MODEL),
+    maxOutputTokens: 8000,
     system: SYSTEM_PROMPT + SCHEMA_HINT,
     prompt:
       `다음은 LH 공고문의 자격 관련 섹션입니다. 자격 정보를 추출해 위 schema 의 JSON 만 출력하세요. 설명/주석/마크다운 헤더 금지, 오직 JSON 한 덩어리.\n\n` +

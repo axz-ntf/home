@@ -1,0 +1,57 @@
+{
+  "supplyTotal": 849,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": null,
+      "age": null,
+      "marriage": "미혼(현재 혼인 상태가 아님)",
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택자(본인)",
+        "서울특별시 소재 대학에 재학(입주지정기간만료일 직후 최초 도래 학기 복학 및 입학예정자 포함) 중인 자"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "취업준비생",
+      "units": null,
+      "age": null,
+      "marriage": "미혼(현재 혼인 상태가 아님)",
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택자(본인)",
+        "대학 또는 고등·고등기술학교를 졸업(졸업유예자 포함)하거나 중퇴한 후 2년 이내인 사람으로서 직장에 재직 중이지 않은 자"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "만 19세 이상 ~ 만 39세 이하",
+      "marriage": "미혼(현재 혼인 상태가 아님)",
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택자(본인)"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "이공계 인재",
+      "units": null,
+      "age": "만 19세 이상 ~ 만 39세 이하",
+      "marriage": "미혼(현재 혼인 상태가 아님)",
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택자(본인)",
+        "서울특별시 소재 대학에서 연구 수행중인 이공계열 전일제 대학원생 또는 박사 후 연구원"
+      ]
+    }
+  ],
+  "priority": []
+}

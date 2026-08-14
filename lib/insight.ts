@@ -9,7 +9,9 @@ import { nearbyStations } from "./subway";
 import { nearbySchools } from "./schools";
 import type { HousingTypeId } from "./types";
 
-const MODEL_ID = process.env.ANTHROPIC_MODEL ?? "claude-sonnet-4-6";
+// 야간 배치(warm-insight)가 대부분 생성해 insight-cache.json 에 커밋 → 결과가 오래 서빙된다.
+// 실시간 볼륨은 캐시 미스뿐이라 품질 우선.
+const MODEL_ID = process.env.INSIGHT_MODEL ?? "claude-sonnet-5";
 export const RADIUS = 500;
 
 // 유형별 시세 대비 임대료 수준(제도 기준). 확신 있는 유형만, 나머지는 일반 문구.
@@ -174,6 +176,7 @@ export async function computeInsight(
 
   const { object } = await generateObject({
     model: aiModel(MODEL_ID),
+    maxOutputTokens: 4000,
     schema,
     system: SYSTEM,
     prompt: buildPrompt(name, address, valueText, marketText, counts, stations, schools),

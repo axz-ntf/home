@@ -1,0 +1,110 @@
+{
+  "supplyTotal": 919,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생 계층",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": 0
+      },
+      "other": [
+        "대학생: 대학에 재학 중이거나 다음 학기에 입·복학 예정인 사람",
+        "취업준비생: 대학 또는 고등학교를 졸업(또는 중퇴)한 지 2년 이내인 사람",
+        "자동차가액 산출대상 자동차를 소유하고 있지 않아야 함",
+        "무주택요건: 소형·저가주택 허용 및 해당지역/연접지역 무주택 시 허용(2호 이상 소유자는 제외)"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년 계층",
+      "units": null,
+      "age": "만 19세 이상 만 39세 이하 (1986.08.01.~2007.07.31. 출생)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제, 단 임대조건 부과유형 결정을 위해 소득 조회 시행"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "사회초년생: 소득 있는 업무 종사(또는 퇴직 1년 이내 구직급여 수급자, 예술인) 및 종사기간 총 7년 이내",
+        "무주택요건: 소형·저가주택 허용 및 해당지역/연접지역 무주택 시 허용(2호 이상 소유자는 제외)",
+        "소득 없는 청년은 동일 면적 대학생계층 임대조건 적용"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족 계층",
+      "units": null,
+      "age": null,
+      "marriage": "혼인기간 10년 이내이거나 만 9세 이하 자녀(태아 포함)를 둔 경우",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "예비신혼부부: 혼인을 계획중이며 입주 전까지 혼인사실을 증명할 수 있는 사람",
+        "한부모가족: 만 9세 이하 자녀(태아 포함)를 둔 한부모",
+        "무주택요건: 소형·저가주택 허용 및 해당지역/연접지역 무주택 시 허용(2호 이상 소유자는 제외)"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자 계층",
+      "units": null,
+      "age": "만 65세 이상 (1961.07.31. 이전 출생)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "주거약자용 주택은 만 65세 이상 고령자 신청 대상이며 3층 이하 배정",
+        "무주택요건: 소형·저가주택 허용 및 해당지역/연접지역 무주택 시 허용(2호 이상 소유자는 제외)"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여 수급자 계층",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득·자산 요건 완화 제외 대상(원 기준 적용)"
+      },
+      "asset": {
+        "total": null,
+        "car": null
+      },
+      "other": [
+        "「주거급여법」 제2조제2호 및 제3호에 따른 수급권자 또는 수급자",
+        "소득·자산 요건 완화 대상에서 제외됨"
+      ]
+    }
+  ],
+  "priority": []
+}

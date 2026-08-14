@@ -1,0 +1,67 @@
+{
+  "supplyTotal": 1884,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": null,
+      "age": null,
+      "marriage": "혼인 중이 아닐 것",
+      "income": null,
+      "asset": null,
+      "other": [
+        "대학생 계층 신청자는 혼인 중이 아니어야 함"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": null,
+      "marriage": "혼인 중이 아닐 것",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득있음/소득없음 구분에 따라 임대조건 상이"
+      },
+      "asset": null,
+      "other": [
+        "청년 계층 신청자는 혼인 중이 아니어야 함",
+        "소득있음/소득없음 구분 공급"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": []
+    }
+  ],
+  "priority": [
+    "2세 미만 자녀"
+  ]
+}

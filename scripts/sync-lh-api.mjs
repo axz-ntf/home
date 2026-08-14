@@ -46,6 +46,26 @@ const PG_SZ = 100;
 const DELAY = 250;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// 공공데이터 서버는 간헐적 connect timeout(UND_ERR_CONNECT_TIMEOUT)·5xx 가 잦다.
+// 재시도가 없으면 블립 한 번에 전체 sync 가 죽는다 (야간 파이프라인 연속 실패 원인).
+// sync-myhome-all.mjs 의 fetchWithRetry 와 동일 규약 — 네트워크 throw / 5xx 는 지수
+// 백오프 재시도, 4xx 는 호출 측 .ok 처리에 맡기고 그대로 반환.
+async function fetchWithRetry(url, init, label) {
+  const MAX = 4;
+  for (let attempt = 1; ; attempt++) {
+    try {
+      const response = await fetch(url, init);
+      if (response.status >= 500 && attempt < MAX) throw new Error(`HTTP ${response.status}`);
+      return response;
+    } catch (error) {
+      if (attempt >= MAX) throw new Error(`${label}: ${attempt}회 시도 실패 — ${error.message}`);
+      const wait = 1000 * 2 ** (attempt - 1); // 1s → 2s → 4s
+      console.log(`  ${label} 재시도 ${attempt}/${MAX} (${error.message}) — ${wait}ms 대기`);
+      await sleep(wait);
+    }
+  }
+}
+
 // 우리가 다루는 공고유형코드
 //   05 분양주택, 06 임대주택, 13 주거복지 (매입/전세 등), 39 신혼희망타운
 const NOTICE_TYPES = ["05", "06", "13", "39"];
@@ -71,7 +91,7 @@ async function fetchNoticePage(uppAisTpCd, page) {
   url.searchParams.set("PG_SZ", String(PG_SZ));
   url.searchParams.set("PAGE", String(page));
   url.searchParams.set("UPP_AIS_TP_CD", uppAisTpCd);
-  const res = await fetch(url, { headers: { "User-Agent": UA } });
+  const res = await fetchWithRetry(url, { headers: { "User-Agent": UA } }, `API3 ${uppAisTpCd} ${page}p`);
   if (!res.ok) throw new Error(`API3 HTTP ${res.status}`);
   const json = JSON.parse(await res.text());
   if (!Array.isArray(json)) return [];
@@ -114,7 +134,14 @@ async function fetchSupply(notice) {
   url.searchParams.set("PAN_ID", notice.PAN_ID || "");
   url.searchParams.set("UPP_AIS_TP_CD", notice.UPP_AIS_TP_CD || "");
   if (notice.AIS_TP_CD) url.searchParams.set("AIS_TP_CD", notice.AIS_TP_CD);
-  const res = await fetch(url, { headers: { "User-Agent": UA } });
+  // 공고 1건당 1회 호출 — 400건 넘게 도니 블립 확률이 높다. 실패해도 sync 전체는 살린다.
+  let res;
+  try {
+    res = await fetchWithRetry(url, { headers: { "User-Agent": UA } }, `API2 ${notice.PAN_ID ?? ""}`);
+  } catch (e) {
+    console.log(`  API2 포기 (${e.message}) — 이 공고 공급정보 없이 진행`);
+    return null;
+  }
   if (!res.ok) return null;
   const text = await res.text();
   let json;

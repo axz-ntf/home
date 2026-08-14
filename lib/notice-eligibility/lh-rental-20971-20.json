@@ -1,0 +1,107 @@
+{
+  "supplyTotal": 529,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": null,
+      "age": "대학 재학중이거나 다음 학기 입·복학 예정, 또는 대학/고등학교 졸업(중퇴) 후 2년 이내 취업준비생",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": null
+      },
+      "other": [
+        "총자산요건 배제",
+        "가액 산출대상 차량 미소유(자동차 미소유 요건)"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "19세 이상 39세 이하(출생일 1986.08.06~2007.08.05), 사회초년생은 소득업무 종사기간 7년 이내(완화)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "총자산요건 배제",
+        "사회초년생: 소득업무 종사자, 퇴직 1년 이내 구직급여 수급자격자, 예술인 포함"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족",
+      "units": null,
+      "age": "자녀 9세 이하(완화)",
+      "marriage": "혼인기간 10년 이내(완화) 또는 예비신혼부부(입주 전 혼인사실 증명 가능자)",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "총자산요건 배제",
+        "재혼 시 이전 혼인기간 포함",
+        "한부모가족은 9세 이하 자녀를 둔 경우 해당"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": null,
+      "age": "65세 이상(출생일 1961.08.05 이전)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "총자산요건 배제"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "주거급여법 제2조제2호·제3호에 따른 수급권자 또는 수급자"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "총자산요건 배제"
+      ]
+    }
+  ],
+  "priority": [
+    "신혼부부·한부모가족"
+  ]
+}
