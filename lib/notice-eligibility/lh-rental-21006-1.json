@@ -1,0 +1,51 @@
+{
+  "supplyTotal": 187,
+  "tiers": [
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "공고일 현재 혼인 중인 자로서 혼인기간 7년 이내(재혼 시 이전 혼인기간 포함) 또는 6세 이하 자녀를 둔 사람",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "가구원수 및 출산자녀 수에 따라 소득기준 가산 적용(1인 20%, 2인 10%, 출산자녀 1인 10%, 2인 이상 20%)"
+      },
+      "asset": {
+        "total": null,
+        "car": null
+      },
+      "other": [
+        "출산자녀 수에 따라 자산기준 가산 적용(1인 10%, 2인 이상 20%)"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "예비신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "입주 전까지 혼인사실을 증명할 수 있는 사람",
+      "income": null,
+      "asset": null,
+      "other": [
+        "성년자가 아니어도 신청 가능",
+        "주택 소유여부는 혼인으로 구성될 세대의 세대구성원 모두를 대상으로 검증"
+      ]
+    },
+    {
+      "id": "child",
+      "name": "한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "6세 이하 자녀를 둔 한부모인 사람",
+        "성년자가 아니어도 신청 가능"
+      ]
+    }
+  ],
+  "priority": []
+}

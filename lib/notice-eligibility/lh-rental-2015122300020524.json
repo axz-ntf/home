@@ -1,0 +1,20 @@
+{
+  "supplyTotal": 1878,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "영구임대 일반",
+      "units": 1878,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원 대상",
+        "1세대 1주택 신청 원칙",
+        "인터넷 신청 불가, 현장접수(행정복지센터)만 가능"
+      ]
+    }
+  ],
+  "priority": []
+}

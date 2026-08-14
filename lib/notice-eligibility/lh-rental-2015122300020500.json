@@ -1,0 +1,67 @@
+{
+  "supplyTotal": 480,
+  "tiers": [
+    {
+      "id": "etc",
+      "name": "생계·의료급여수급자 등(가군, 가~라목)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "생계·의료급여 수급자 선정기준의 소득인정액 이하"
+      },
+      "asset": null,
+      "other": [
+        "생계·의료급여수급자, 국가유공자 등(소득인정액 기준 해당), 위안부 피해자, 지원대상 한부모가족 및 기타 영구임대 입주가능자 중 생계·의료급여수급자 소득인정액 이하인 자",
+        "임대보증금·월임대료 「가」군 조건 적용"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "1순위 장애인·국가유공자·북한이탈주민·아동복지시설퇴소자(나·마·바·아목)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 70,
+        "byHousehold": null,
+        "note": "1인가구 90%, 2인가구 80% 이하 적용"
+      },
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "etc",
+      "name": "2순위 장애인(타목)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 100,
+        "byHousehold": null,
+        "note": "1인가구 120%, 2인가구 110% 이하 적용"
+      },
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "general",
+      "name": "일반입주자(차목)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 50,
+        "byHousehold": null,
+        "note": "1인가구 70%, 2인가구 60% 이하 적용"
+      },
+      "asset": null,
+      "other": [
+        "임대보증금·월임대료 「나」군 조건 적용"
+      ]
+    }
+  ],
+  "priority": []
+}

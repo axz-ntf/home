@@ -1,0 +1,44 @@
+{
+  "supplyTotal": 187,
+  "tiers": [
+    {
+      "id": "newlywed",
+      "name": "신�혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "공고일 현재 혼인 중인 자로서 혼인기간이 7년 이내인 자(재혼 시 이전 혼인기간 포함) 또는 6세 이하 자녀를 둔 자",
+      "income": null,
+      "asset": null,
+      "other": [
+        "55A~55F, 55AS~55CS 주택형에 신혼부부·한부모가족이 함께 공급됨",
+        "주거약자용(55AS,55BS,55CS)은 주거약자 요건을 갖춘 신혼부부·한부모가족만 신청 가능"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "예비신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "입주 전까지 혼인사실을 증명할 수 있는 자",
+      "income": null,
+      "asset": null,
+      "other": [
+        "성년자가 아니어도 신청 가능",
+        "혼인으로 구성될 세대의 세대구성원 모두 주택소유 여부 검증"
+      ]
+    },
+    {
+      "id": "child",
+      "name": "한부모가족",
+      "units": null,
+      "age": "6세 이하 자녀를 둔 한부모",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "성년자가 아니어도 신청 가능"
+      ]
+    }
+  ],
+  "priority": []
+}

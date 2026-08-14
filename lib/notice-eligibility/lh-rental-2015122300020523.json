@@ -1,0 +1,22 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "etc",
+      "name": "영구임대 일반",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원 대상",
+        "1세대 1주택 신청 원칙, 중복 신청 시 전부 무효처리",
+        "동일 유형 예비입주자 중복선정 불가",
+        "현장접수만 가능 (인터넷 신청 불가)",
+        "기존 임대주택 거주자는 입주 전 명도 필요"
+      ]
+    }
+  ],
+  "priority": []
+}

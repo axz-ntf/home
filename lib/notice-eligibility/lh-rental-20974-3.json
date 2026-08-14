@@ -1,0 +1,103 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제(완화 적용)"
+      },
+      "asset": {
+        "total": null,
+        "car": null
+      },
+      "other": [
+        "대학생: 대학에 재학 중이거나 다음 학기에 입·복학 예정인 사람",
+        "취업준비생: 대학 또는 고등학교를 졸업(또는 중퇴)한 지 2년 이내인 사람",
+        "자동차가액 산출대상 자동차를 소유하고 있지 않아야 함"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년(청년/사회초년생)",
+      "units": null,
+      "age": "19세 이상 39세 이하 (1986.08.06.~2007.08.05 출생)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제(완화 적용), 단 임대조건 부과유형 결정 위해 소득 조회 시행"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "사회초년생: 소득이 있는 업무에 종사한 기간 총 7년 이내(완화전 5년 이내)",
+        "퇴직 후 1년 이내 구직급여 수급자격 인정자 또는 예술인 포함"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": "혼인기간 10년 이내(완화전 7년 이내) 또는 만 9세 이하 자녀를 둔 사람(완화전 만6세 이하)",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제(완화 적용)"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "예비신혼부부: 입주 전까지 혼인사실을 증명할 수 있는 사람",
+        "한부모가족: 만 9세 이하 자녀를 둔 한부모"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": null,
+      "age": "만 65세 이상(1961.08.05. 이전 출생)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제(완화 적용)"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": []
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제(완화 적용)"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "「주거급여법」 제2조제2호 및 제3호에 따른 수급권자 또는 수급자"
+      ]
+    }
+  ],
+  "priority": []
+}

@@ -1,0 +1,130 @@
+{
+  "supplyTotal": 13,
+  "tiers": [
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "공고일 현재 혼인 7년 이내(혼인신고일 2019.8.4.~2026.8.3.)",
+      "income": {
+        "percent": 100,
+        "byHousehold": {
+          "1": 457,
+          "2": 645,
+          "3": 816,
+          "4": 880,
+          "5": 932,
+          "6": 990,
+          "7": 1048,
+          "8": 1106
+        },
+        "note": "본인 및 배우자 모두 소득 있는 경우(맞벌이) 120% 이하 적용, 맞벌이 소득기준 별도표 참조"
+      },
+      "asset": {
+        "total": 21550,
+        "car": 4542
+      },
+      "other": [
+        "1순위",
+        "무주택세대구성원",
+        "예비신혼부부: 혼인 예정으로 입주일 전일까지 혼인신고 하는 사람"
+      ]
+    },
+    {
+      "id": "child",
+      "name": "한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 100,
+        "byHousehold": null,
+        "note": "신혼부부와 동일 소득기준 적용"
+      },
+      "asset": {
+        "total": 21550,
+        "car": 4542
+      },
+      "other": [
+        "1순위",
+        "만 6세 이하 자녀를 둔 모자가족 또는 부자가족(2019.8.4. 이후 출생 자녀 및 태아)"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "만 19세 이상 39세 이하(출생일 1986.8.4.~2007.8.3.)",
+      "marriage": null,
+      "income": {
+        "percent": 100,
+        "byHousehold": {
+          "1": 457,
+          "2": 645,
+          "3": 816,
+          "4": 880,
+          "5": 932,
+          "6": 990,
+          "7": 1048,
+          "8": 1106
+        },
+        "note": null
+      },
+      "asset": {
+        "total": 21550,
+        "car": 4542
+      },
+      "other": [
+        "2순위"
+      ]
+    },
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 100,
+        "byHousehold": null,
+        "note": "청년 및 신혼부부와 동일 소득기준 적용"
+      },
+      "asset": {
+        "total": 21550,
+        "car": 4542
+      },
+      "other": [
+        "2순위",
+        "대학 또는 고등·고등기술학교 졸업(중퇴 후 2년 이내) 및 졸업유예자 포함, 직장 재직 중이지 않은 사람"
+      ]
+    },
+    {
+      "id": "general",
+      "name": "일반인(6세 이하 자녀 있는 혼인가구)",
+      "units": null,
+      "age": null,
+      "marriage": "혼인 가구",
+      "income": {
+        "percent": 100,
+        "byHousehold": null,
+        "note": null
+      },
+      "asset": {
+        "total": 21550,
+        "car": 4542
+      },
+      "other": [
+        "3순위",
+        "제1·2순위에 해당하지 않는 사람 중 6세 이하 자녀가 있는 혼인 가구"
+      ]
+    }
+  ],
+  "priority": [
+    "수급자",
+    "차상위계층",
+    "다자녀",
+    "장애인",
+    "노부모부양"
+  ]
+}

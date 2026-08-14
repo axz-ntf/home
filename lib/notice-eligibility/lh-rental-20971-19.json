@@ -1,0 +1,111 @@
+{
+  "supplyTotal": 529,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": null
+      },
+      "other": [
+        "대학에 재학 중이거나 다음 학기에 입·복학 예정인 사람",
+        "취업준비생: 대학 또는 고등학교 졸업(중퇴) 후 2년 이내인 사람",
+        "가액 산출대상 차량 미소유(자동차 미소유 요건 유지)",
+        "총자산요건 배제"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년(사회초년생 포함)",
+      "units": null,
+      "age": "19세 이상 39세 이하 (1986.08.06.~2007.08.05. 출생)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "사회초년생: 소득업무 종사기간 7년 이내(완화조건, 기존 5년)",
+        "퇴직 후 1년 이내 구직급여 수급자격 인정자 또는 예술인 포함",
+        "총자산요건 배제, 자동차가액 기준 4,542만원 이하 적용"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": "혼인기간 10년 이내(완화조건, 기존 7년) 또는 예비신혼부부",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "9세 이하 자녀를 둔 경우 포함(완화조건, 기존 6세 이하)",
+        "한부모가족: 9세 이하 자녀를 둔 한부모(완화조건)",
+        "예비신혼부부: 입주 전까지 혼인사실 증명 가능한 자",
+        "전 배우자와 재혼 시 이전 혼인기간 포함",
+        "총자산요건 배제, 자동차가액 기준 4,542만원 이하 적용",
+        "44A1·44A2형은 신혼부부·한부모가족에게 당첨 우선순위 부여"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": null,
+      "age": "65세 이상 (1961.08.05. 이전 출생)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "총자산요건 배제, 자동차가액 기준 4,542만원 이하 적용"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "「주거급여법」 제2조제2호·제3호에 따른 수급권자 또는 수급자"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "총자산요건 배제, 자동차가액 기준 4,542만원 이하 적용"
+      ]
+    }
+  ],
+  "priority": []
+}

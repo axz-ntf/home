@@ -1,0 +1,108 @@
+{
+  "supplyTotal": 919,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생계층",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": 0
+      },
+      "other": [
+        "대학에 재학 중이거나 다음 학기에 입·복학 예정인 사람",
+        "대학 또는 고등학교를 졸업(중퇴)한 지 2년 이내인 취업준비생",
+        "자동차가액 산출대상 자동차를 소유하고 있지 않아야 함",
+        "소형·저가주택 허용 및 해당지역/연접지역 무주택 시 무주택요건 완화"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년계층",
+      "units": null,
+      "age": "만 19세 이상 만 39세 이하 (1986.08.01.~2007.07.31. 출생)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제, 단 임대조건 부과유형 결정을 위해 소득 조회 시행"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "사회초년생: 소득업무 종사기간 총 7년 이내(퇴직 후 1년 이내 구직급여 수급자 또는 예술인 포함)",
+        "소형·저가주택 허용 및 해당지역/연접지역 무주택 시 무주택요건 완화"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족계층",
+      "units": null,
+      "age": null,
+      "marriage": "혼인기간 10년 이내이거나 만 9세 이하 자녀(태아 포함)를 둔 경우",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "예비신혼부부: 혼인 계획 중이며 입주 전까지 혼인사실 증명 가능한 사람",
+        "한부모가족: 만 9세 이하 자녀(태아 포함)를 둔 한부모",
+        "소형·저가주택 허용 및 해당지역/연접지역 무주택 시 무주택요건 완화"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자계층",
+      "units": null,
+      "age": "만 65세 이상 (1961.07.31. 이전 출생)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "주거약자용 주택은 3층 이하에 공급",
+        "소형·저가주택 허용 및 해당지역/연접지역 무주택 시 무주택요건 완화"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자계층",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "주거급여법 제2조 제2호·제3호에 따른 수급권자 또는 수급자로서, 소득·자산 요건 완화 대상에서 제외됨"
+      },
+      "asset": {
+        "total": null,
+        "car": null
+      },
+      "other": [
+        "소득·자산 요건 완화 미적용(수급자격 자체로 판단)"
+      ]
+    }
+  ],
+  "priority": []
+}

@@ -1,0 +1,20 @@
+{
+  "supplyTotal": 20,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "영구임대주택 입주자",
+      "units": 20,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원 중 영구임대주택 입주 적격자에 한함",
+        "1세대(무주택세대구성원 전원) 1주택 신청 원칙",
+        "현장접수만 가능(인터넷 신청 불가)"
+      ]
+    }
+  ],
+  "priority": []
+}

@@ -1,0 +1,19 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반(무주택세대구성원)",
+      "units": null,
+      "age": "만 19세 이상(예외 있음)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "입주자모집공고일 현재 무주택세대구성원",
+        "미성년자는 원칙적으로 신청 불가하나 예외 조건 해당 시 가능"
+      ]
+    }
+  ],
+  "priority": []
+}

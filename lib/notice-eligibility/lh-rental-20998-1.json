@@ -1,0 +1,112 @@
+{
+  "supplyTotal": 260,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": 180,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": 0
+      },
+      "other": [
+        "대학에 재학 중이거나 다음 학기에 입·복학 예정인 사람",
+        "취업준비생: 대학 또는 고등학교를 졸업(또는 중퇴)한 지 2년 이내인 사람",
+        "자동차가액 산출대상 자동차를 소유하고 있지 않아야 함",
+        "청년계층과 형별 순위에 따라 통합하여 추첨"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": 180,
+      "age": "만19세 이상 만39세 이하 (1986.08.11~2007.08.10 출생)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제, 단 임대조건(부과유형) 결정을 위해 소득 조회 시행"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "사회초년생: 소득 있는 업무 종사기간 총 7년 이내",
+        "퇴직 후 1년 이내 구직급여 수급자격 인정자 또는 예술인 포함",
+        "소득이 없는 청년은 대학생 계층과 동일 임대조건 적용",
+        "대학생계층과 형별 순위에 따라 통합하여 추첨"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족",
+      "units": 120,
+      "age": null,
+      "marriage": "혼인기간 10년 이내 또는 만9세 이하 자녀를 둔 사람",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "예비신혼부부: 입주 전까지 혼인사실을 증명할 수 있는 사람",
+        "한부모가족: 만9세 이하 자녀를 둔 한부모",
+        "무자녀 최대거주 10년, 유자녀 최대거주 14년"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": 170,
+      "age": "만65세 이상 (1961.08.10 이전 출생)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "26형 주거약자용 주택은 3층 이하 편의시설 설치 주택으로 별도 공급",
+        "최대거주기간 20년"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": 30,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "「주거급여법」 제2조제2호 및 제3호에 따른 수급권자 또는 수급자"
+      ]
+    }
+  ],
+  "priority": [
+    "2세 미만 자녀(태아포함) 가구 우선배정(모집호수의 30% 범위)"
+  ]
+}

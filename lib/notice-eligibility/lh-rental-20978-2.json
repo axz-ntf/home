@@ -1,0 +1,81 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "성년자가 아니어도 신청 가능",
+        "청년 계층과 동일 유형 내 결합 공급(대학생·청년)"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "19세 이상 39세 이하 (1986.08.06.~2007.08.05)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득 유무에 따라 임대조건 상이(소득 無 시 대학생 계층 임대조건 적용); 1인가구 20%, 2인가구 10% 소득기준 가산"
+      },
+      "asset": null,
+      "other": [
+        "사회초년생: 소득 있는 업무 종사기간 총 5년 이내",
+        "퇴직 후 1년 이내 구직급여 수급자격 인정자 또는 예술인 포함",
+        "성년자가 아니어도 신청 가능"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": "혼인 중 혼인기간 7년 이내 또는 6세 이하 자녀를 둔 사람, 예비신혼부부(입주 전 혼인사실 증명 가능자), 한부모가족(6세 이하 자녀를 둔 한부모)",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "출산자녀 2인 이상 20%, 1인 10% 소득기준 가산"
+      },
+      "asset": null,
+      "other": [
+        "예비신혼부부는 2인 1주택 신청 원칙",
+        "성년자가 아니어도 신청 가능",
+        "2세 미만 자녀(태아 포함) 있는 경우 30% 범위 내 우선배정"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": null,
+      "age": "65세 이상 (1961.08.05 이전 출생)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "주거약자형 세대 별도 공급"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "「주거급여법」 제2조제2호 및 제3호에 따른 수급권자 또는 수급자"
+      ]
+    }
+  ],
+  "priority": [
+    "2세 미만 자녀(출산가구, 태아포함) 우선배정"
+  ]
+}

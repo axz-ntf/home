@@ -1,0 +1,59 @@
+{
+  "supplyTotal": 360,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생 계층",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "대학생: 대학에 재학 중이거나 다음 학기에 입·복학 예정인 사람",
+        "취업준비생: 대학 또는 고등학교를 졸업(또는 중퇴)한 지 2년 이내인 사람"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년 계층",
+      "units": null,
+      "age": "19세 이상 39세 이하 (1986.08.06.~2007.08.05)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "사회초년생: 소득이 있는 업무에 종사한 기간이 총 5년 이내",
+        "소득이 있는 업무 종사자, 퇴직 후 1년 이내 구직급여 수급자격 인정자, 예술인 포함"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족 계층",
+      "units": null,
+      "age": null,
+      "marriage": "혼인기간 7년 이내(재혼 시 이전 혼인기간 포함) 또는 6세 이하 자녀를 둔 사람",
+      "income": null,
+      "asset": null,
+      "other": [
+        "예비신혼부부: 입주 전까지 혼인사실을 증명할 수 있는 사람",
+        "한부모가족: 6세 이하 자녀를 둔 한부모인 사람"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자 계층",
+      "units": null,
+      "age": "65세 이상(1961.08.05. 이전 출생)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "주거약자용 주택은 3층 이하에 공급되며 65세 이상 고령자가 신청 대상"
+      ]
+    }
+  ],
+  "priority": [
+    "2세미만 자녀(태아포함)"
+  ]
+}
