@@ -1,0 +1,28 @@
+{
+  "supplyTotal": 105,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "국민임대(소득·자산 배제) 일반",
+      "units": 105,
+      "age": "19세 이상(예외 있음)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "무주택세대구성원",
+        "자산요건 배제",
+        "차량기준가액 4,542만원 이하",
+        "소득·자산요건 완화 입주자는 재계약 1회 한해 허용(요건 충족 시 추가 1회 가능)"
+      ]
+    }
+  ],
+  "priority": []
+}

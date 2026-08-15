@@ -1,0 +1,42 @@
+{
+  "supplyTotal": 93,
+  "tiers": [
+    {
+      "id": "etc",
+      "name": "수급자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "국민기초생활보장법 제7조제1항제1호~제4호에 따른 생계·주거·의료·교육급여 수급자(보장시설 수급자 포함)"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "차상위계층",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "국민기초생활보장법 제2조제10호에 해당하는 차상위계층"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "지원대상 한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "한부모가족지원법 시행규칙 제3조에 따라 여성가족부장관이 정하는 기준에 해당하는 한부모가족"
+      ]
+    }
+  ],
+  "priority": []
+}

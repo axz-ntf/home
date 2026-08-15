@@ -1,0 +1,44 @@
+{
+  "supplyTotal": 362,
+  "tiers": [
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "혼인 중인 자로서 혼인기간이 7년 이내 또는 6세 이하 자녀를 둔 경우",
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원 요건 충족 필요"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "예비신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "혼인을 계획 중이며 입주 전까지 혼인사실을 증명할 수 있는 자",
+      "income": null,
+      "asset": null,
+      "other": [
+        "계약일로부터 6개월 이내 입주 완료하고 입주 전 혼인관계증명서 제출(혼인신고접수증 불가)",
+        "입주 전 해당 주택을 전매하려는 경우 전매 전에 혼인사실을 증명해야 함",
+        "혼인으로 구성될 세대 기준으로 무주택 여부 검증"
+      ]
+    },
+    {
+      "id": "single",
+      "name": "한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": "6세 이하 자녀를 둔 부 또는 모",
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원 요건 충족 필요"
+      ]
+    }
+  ],
+  "priority": []
+}

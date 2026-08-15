@@ -1456,5 +1456,27 @@
     "rentMax": 31
    }
   ]
+ },
+ "2015122300020540": {
+  "kind": "든든전세",
+  "unitsTotal": 56,
+  "groups": [
+   {
+    "label": "서면 가화만사성 더 테라스 서면가화만사성 더 테라스",
+    "units": 36,
+    "depMin": 22160,
+    "depMax": 25360,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "보해 썬시티 리버파크 보해썬시티리버파크",
+    "units": 20,
+    "depMin": 24640,
+    "depMax": 27840,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
  }
 }

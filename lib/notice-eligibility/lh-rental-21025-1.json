@@ -1,0 +1,25 @@
+{
+  "supplyTotal": 565,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "무순위 일반공급",
+      "units": null,
+      "age": "만19세 이상",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "청약저축 가입여부, 소득기준 및 자산기준 등에 관계없이 신청가능"
+      },
+      "asset": null,
+      "other": [
+        "입주자모집공고일 현재 대구광역시 및 경상북도 거주 무주택세대구성원",
+        "외국인은 신청불가",
+        "1세대 1주택 기준으로 공급",
+        "자녀가 있는 세대주인 미성년자 등 특정 미성년자도 신청 가능"
+      ]
+    }
+  ],
+  "priority": []
+}

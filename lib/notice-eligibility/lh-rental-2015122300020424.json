@@ -1,0 +1,44 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": 0
+      },
+      "other": [
+        "자동차를 소유하고 있지 않을 것"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년(사회초년생)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제, 단 임대조건 부과유형 결정 등을 위해 소득 조회 시행"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "소득종사기간 7년 이내면 가능"
+      ]
+    }
+  ],
+  "priority": []
+}

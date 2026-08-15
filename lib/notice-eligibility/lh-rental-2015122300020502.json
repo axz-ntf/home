@@ -1,0 +1,96 @@
+{
+  "supplyTotal": 26,
+  "tiers": [
+    {
+      "id": "etc",
+      "name": "수급자(생계·의료·주거·교육급여)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "1순위 우선 대상",
+        "보장시설 수급자 포함",
+        "국민기초생활보장법 제7조제1항제1호~제4호 해당자"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "차상위계층",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "1순위 우선 대상",
+        "국민기초생활보장법 제2조제10호 해당자"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "지원대상 한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "1순위 우선 대상",
+        "한부모가족지원법 시행규칙 제3조 기준 해당자"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "장애인(월평균소득 70% 이하)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 70,
+        "byHousehold": {
+          "1": 343,
+          "2": 469,
+          "3": 572,
+          "4": 616,
+          "5": 653,
+          "6": 693,
+          "7": 734
+        },
+        "note": "전년도 도시근로자 가구원수별 가구당 월평균소득 70% 이하"
+      },
+      "asset": null,
+      "other": [
+        "1순위 일반 대상",
+        "장애인복지법 제32조제1항에 따른 장애인등록증 교부자",
+        "지적장애인·정신장애인·장애정도가 심한 뇌병변장애인은 배우자 포함"
+      ]
+    },
+    {
+      "id": "general",
+      "name": "2순위(월평균소득 100% 이하)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 100,
+        "byHousehold": {
+          "1": 458,
+          "2": 645,
+          "3": 817,
+          "4": 880,
+          "5": 933,
+          "6": 991,
+          "7": 1049
+        },
+        "note": "전년도 도시근로자 가구원수별 가구당 월평균소득 100% 이하"
+      },
+      "asset": null,
+      "other": [
+        "2순위 대상"
+      ]
+    }
+  ],
+  "priority": []
+}

@@ -1,0 +1,19 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": null,
+      "age": "만65세 이상(1961.07.27. 이전 출생)",
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "고령자복지주택은 만65세 이상인 사람만 신청 가능",
+        "1세대 1주택 신청 원칙, 중복 신청시 전부 무효 처리"
+      ]
+    }
+  ],
+  "priority": []
+}

@@ -1,0 +1,27 @@
+{
+  "supplyTotal": 105,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "국민임대(소득·자산요건 완화)",
+      "units": 105,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 배제"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "무주택세대구성원 대상",
+        "자산요건(총자산) 배제",
+        "차량기준가액 4,542만원 이하 적용"
+      ]
+    }
+  ],
+  "priority": []
+}

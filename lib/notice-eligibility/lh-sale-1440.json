@@ -1,0 +1,44 @@
+{
+  "supplyTotal": 96,
+  "tiers": [
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "혼인 중인 자로서 혼인기간이 7년 이내 또는 6세 이하 자녀를 둔 경우",
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원",
+        "19세 이상 성년자"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "예비신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "혼인을 계획 중이며 입주지정기간 내 입주 시 혼인사실을 증명할 수 있는 자",
+      "income": null,
+      "asset": null,
+      "other": [
+        "혼인으로 구성될 세대 기준 자격 검증",
+        "입주 전 전매 시 전매 전 혼인사실 증명 필요"
+      ]
+    },
+    {
+      "id": "child",
+      "name": "한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": "6세 이하 자녀를 둔 부 또는 모",
+      "income": null,
+      "asset": null,
+      "other": [
+        "무주택세대구성원"
+      ]
+    }
+  ],
+  "priority": []
+}

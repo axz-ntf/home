@@ -1,0 +1,38 @@
+{
+  "supplyTotal": 436,
+  "tiers": [
+    {
+      "id": "newlywed",
+      "name": "신�혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "공고일 현재 혼인 중인 사람으로서 혼인기간이 7년 이내(재혼 시 이전 혼인기간 포함) 또는 6세 이하 자녀를 둔 사람",
+      "income": null,
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "etc",
+      "name": "예비신혼부부",
+      "units": null,
+      "age": null,
+      "marriage": "입주 전까지 혼인사실을 증명할 수 있는 사람",
+      "income": null,
+      "asset": null,
+      "other": [
+        "2인 1주택 신청 가능"
+      ]
+    },
+    {
+      "id": "single",
+      "name": "한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": "6세 이하 자녀를 둔 한부모인 사람",
+      "income": null,
+      "asset": null,
+      "other": []
+    }
+  ],
+  "priority": []
+}

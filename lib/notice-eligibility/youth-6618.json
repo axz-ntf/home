@@ -1,0 +1,54 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "19세 이상 39세 이하",
+      "marriage": "미혼",
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "무주택요건 충족 필요",
+        "혼인관계증명서 제출 필수(본인)"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": null,
+      "age": "19세 이상 39세 이하",
+      "marriage": "혼인 중인 부부",
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "청약자 단독 명의로 계약 체결(공동명의 불가)",
+        "배우자 신분증 및 세대원 서류 추가 제출"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "예비신혼부부",
+      "units": null,
+      "age": "19세 이상 39세 이하",
+      "marriage": "예비신혼부부(입주 전 혼인신고 및 혼인관계증명서 제출 필수)",
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "예비신혼부부 신청 확인서 제출",
+        "예비신혼부부 2인 모두 서류 제출"
+      ]
+    }
+  ],
+  "priority": []
+}

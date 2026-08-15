@@ -1,0 +1,54 @@
+{
+  "supplyTotal": null,
+  "tiers": [
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "19세 이상 39세 이하 (모집공고일 기준)",
+      "marriage": "미혼",
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "무주택 요건 충족 필요",
+        "자동차(이륜차 포함) 세대 당 1대만 등록 사용 가능"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부",
+      "units": null,
+      "age": "19세 이상 39세 이하 (모집공고일 기준)",
+      "marriage": "혼인 중",
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "세대원 전원 무주택 요건 충족 필요",
+        "자동차(이륜차 포함) 세대 당 1대만 등록 사용 가능"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "예비신혼부부",
+      "units": null,
+      "age": "19세 이상 39세 이하 (모집공고일 기준)",
+      "marriage": "혼인 예정(예비신혼부부 2인)",
+      "income": null,
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "예비신혼부부 2인 모두 무주택 요건 충족 필요",
+        "자동차(이륜차 포함) 세대 당 1대만 등록 사용 가능"
+      ]
+    }
+  ],
+  "priority": []
+}

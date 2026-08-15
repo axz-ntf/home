@@ -1,0 +1,110 @@
+{
+  "supplyTotal": 867,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 적용 배제(선계약 후검증 한시적용)"
+      },
+      "asset": {
+        "total": null,
+        "car": 0
+      },
+      "other": [
+        "대학생: 대학에 재학 중이거나 다음 학기에 입·복학 예정인 사람",
+        "취업준비생: 대학 또는 고등학교를 졸업(또는 중퇴)한 지 2년 이내인 사람",
+        "대학생계층은 자동차가액 산출대상 자동차를 소유하고 있지 않아야 함(자동차 요건은 완화하지 않음)"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년",
+      "units": null,
+      "age": "19세 이상 39세 이하(출생일 1986.07.31.~2007.07.30.)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 적용 배제(단, 청년계층은 임대조건 부과유형 결정을 위해 소득 및 자산 조회 시행)"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "사회초년생: 소득이 있는 업무에 종사한 기간이 총 7년 이내(완화전 5년 이내)이며 아래 중 하나에 해당하는 사람",
+        "1) 소득이 있는 업무에 종사하는 사람",
+        "2) 퇴직 후 1년이 지나지 않고 구직급여 수급자격을 인정받은 사람",
+        "3) 예술인"
+      ]
+    },
+    {
+      "id": "newlywed",
+      "name": "신혼부부·한부모가족",
+      "units": null,
+      "age": null,
+      "marriage": "혼인 중(혼인기간 10년 이내, 완화전 7년 이내) 또는 만 9세 이하 자녀(완화전 만 6세 이하)를 둔 사람",
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 적용 배제(선계약 후검증 한시적용)"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "예비신혼부부: 입주 전까지 혼인사실을 증명할 수 있는 사람(2인 1주택 신청)",
+        "한부모가족: 만 9세 이하 자녀(완화전 만 6세 이하)를 둔 한부모인 사람"
+      ]
+    },
+    {
+      "id": "senior",
+      "name": "고령자",
+      "units": null,
+      "age": "65세 이상(출생일 1961.07.30. 이전 출생)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 적용 배제(선계약 후검증 한시적용)"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "주거약자용 주택은 65세 이상 고령자 신청대상",
+        "65세 이상 고령자는 현장대행접수 가능"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "주거급여수급자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득요건 적용 배제(선계약 후검증 한시적용)"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "「주거급여법」 제2조제2호 및 제3호에 따른 수급권자 또는 수급자"
+      ]
+    }
+  ],
+  "priority": [
+    "지역전략산업종사자"
+  ]
+}
