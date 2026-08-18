@@ -1,5 +1,35 @@
 [
   {
+    "homeCode": "20000608",
+    "homeName": "노량진역 한강더퍼스트타워",
+    "gu": "동작구",
+    "address": "동작구 노량진동 39-20",
+    "subway": "1,9호선 노량진역 6번출구 180m, 도보 2분",
+    "depositLowWon": 61000000,
+    "rentLowWon": 470000,
+    "totalUnits": 260,
+    "phone": "02-823-3920",
+    "homepage": "https://thefirsttower.imweb.me",
+    "lat": 37.5126214,
+    "lng": 126.9381278,
+    "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=4b9086d3e4fa4227868d83b47f0b1d24&fileSn=5"
+  },
+  {
+    "homeCode": "20000601",
+    "homeName": "신독산역 센트레빌 웨스트온",
+    "gu": "금천구",
+    "address": "금천구 시흥대로 377",
+    "subway": "신안산선 신독산역(예정) 도보 1분",
+    "depositLowWon": 50000000,
+    "rentLowWon": 410000,
+    "totalUnits": 589,
+    "phone": "02-806-0883",
+    "homepage": "https://www.cvweston.com",
+    "lat": 37.4670534,
+    "lng": 126.8972987,
+    "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=f9be00754b284d5cb0db9883e80c86ec&fileSn=1"
+  },
+  {
     "homeCode": "20000506",
     "homeName": "선릉역 삼성동 마에스트로",
     "gu": "강남구",
@@ -495,21 +525,6 @@
     "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=0949f5b6d5464cdf8b99e539f9204b5c&fileSn=1"
   },
   {
-    "homeCode": "20000601",
-    "homeName": "신독산역 센트레빌 웨스트온",
-    "gu": "금천구",
-    "address": "금천구 시흥대로 377",
-    "subway": "신안산선 신독산역(예정) 도보 1분",
-    "depositLowWon": 50000000,
-    "rentLowWon": 410000,
-    "totalUnits": 589,
-    "phone": "02-806-0883",
-    "homepage": "https://www.cvweston.com",
-    "lat": 37.4670534,
-    "lng": 126.8972987,
-    "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=f9be00754b284d5cb0db9883e80c86ec&fileSn=1"
-  },
-  {
     "homeCode": "20000602",
     "homeName": "왕십리역 청아진 청년주택",
     "gu": "성동구",
@@ -742,11 +757,11 @@
     "subway": "1호선, 경의중앙선, 경춘선, 회기역 2번출구 112m",
     "depositLowWon": 54000000,
     "rentLowWon": 120000,
-    "totalUnits": 582,
-    "phone": "02-2249-9783",
-    "homepage": "https://www.doojin2030.co.kr/",
-    "lat": 37.5886592,
-    "lng": 127.0585367,
+    "totalUnits": null,
+    "phone": "",
+    "homepage": "",
+    "lat": 0,
+    "lng": 0,
     "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=f094cf836bc846dcbc2b8ecb2c69ad37&fileSn=20"
   },
   {

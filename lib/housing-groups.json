@@ -1478,5 +1478,27 @@
     "rentMax": null
    }
   ]
+ },
+ "2015122300020571": {
+  "kind": "든든전세",
+  "unitsTotal": 5,
+  "groups": [
+   {
+    "label": "푸르지오캐슬5단지",
+    "units": 1,
+    "depMin": 22032,
+    "depMax": 22032,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "용암동",
+    "units": 4,
+    "depMin": 16047,
+    "depMax": 17268,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
  }
 }
