@@ -1500,5 +1500,35 @@
     "rentMax": null
    }
   ]
+ },
+ "2015122300020597": {
+  "kind": "든든전세",
+  "unitsTotal": 16,
+  "groups": [
+   {
+    "label": "힐스테이트 월산 힐스테이트월산 광주힐스테이트월산",
+    "units": 13,
+    "depMin": 2633,
+    "depMax": 2832,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "힐스테이트",
+    "units": 2,
+    "depMin": 2662,
+    "depMax": 2662,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "번길 힐스테이트월산",
+    "units": 1,
+    "depMin": 2690,
+    "depMax": 2690,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
  }
 }
