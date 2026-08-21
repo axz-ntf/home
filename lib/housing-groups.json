@@ -1530,5 +1530,83 @@
     "rentMax": null
    }
   ]
+ },
+ "2015122300020553": {
+  "kind": "든든전세",
+  "unitsTotal": 134,
+  "groups": [
+   {
+    "label": "대화동 계림웨스트벨리",
+    "units": 9,
+    "depMin": 27663,
+    "depMax": 28860,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "주교동 우분투포레스트",
+    "units": 1,
+    "depMin": 11466,
+    "depMax": 11466,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "수택동 미세움",
+    "units": 1,
+    "depMin": 28001,
+    "depMax": 28001,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "구래동 김포한강트루엘",
+    "units": 4,
+    "depMin": 14461,
+    "depMax": 14767,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "한강 힐스테이트",
+    "units": 1,
+    "depMin": 16856,
+    "depMax": 16856,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "해동마을 한양수자인",
+    "units": 1,
+    "depMin": 14758,
+    "depMax": 14758,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "와동동 운정서영더엘",
+    "units": 16,
+    "depMin": 18786,
+    "depMax": 22303,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "그린나래 신장동 92-2",
+    "units": 5,
+    "depMin": 28394,
+    "depMax": 29361,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "신장동 하남 쁘띠린",
+    "units": 96,
+    "depMin": 29570,
+    "depMax": 31902,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
  }
 }
