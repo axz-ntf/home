@@ -9,7 +9,8 @@ import { priceModelFor, type PriceModel } from "./manual-overrides";
 const BASE = (process.env.SOLAR_BASE_URL ?? "https://api.upstage.ai/v1").replace(/\/$/, "");
 const KEY = (process.env.SOLAR_API_KEY ?? "").trim();
 // 날짜 스냅샷(-260528)은 '26.07 폐기됨 — 최신 추적 별칭 사용 (404 시 여기부터 확인).
-const MODEL = (process.env.SOLAR_EXTRACT_MODEL ?? "solar-open2").trim();
+// solar-open 계열은 '26.08 Upstage 목록에서 사라짐(400 invalid model) → solar-pro4 로 교체.
+const MODEL = (process.env.SOLAR_EXTRACT_MODEL ?? "solar-pro4").trim();
 
 export interface ExtractedRow {
   houseType: string;
@@ -166,6 +167,9 @@ export async function extractFromMarkdown(md: string, opts: ExtractOpts = {}): P
     body: JSON.stringify({
       model: opts.model ?? MODEL,
       temperature: 0,
+      // pro 계열은 추론을 끄면 "(원) → ÷10000" 규칙을 못 지킨다 (425,000원 → 43 이 아니라 425).
+      // low 만 켜도 단위가 정확해지고, 건당 소요는 open2 시절(86~218s)과 같은 수준.
+      reasoning_effort: "low",
       response_format: { type: "json_object" },
       messages: [{ role: "user", content: buildPrompt(doc, model) }],
     }),
