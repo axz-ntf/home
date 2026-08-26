@@ -322,6 +322,12 @@ export async function POST(req: Request) {
 
   const result = streamText({
     model: aiModel(MODEL_ID),
+    // Solar 는 reasoning_effort 미지정이면 추론 없이 즉답한다 (reasoning_tokens=0).
+    // 자격 판단·유형 비교처럼 다단계 추론이 필요한 질문이 많아 medium 부여.
+    // 키가 solar 네임스페이스라 SOLAR_CHAT_MODEL 을 claude-* 로 바꿔도 무시된다.
+    providerOptions: { solar: { reasoningEffort: "medium" } },
+    // 추론이 출력 예산을 나눠 쓰므로 상한을 명시 — 없으면 본문이 잘릴 수 있다.
+    maxOutputTokens: 4000,
     system,
     messages: await convertToModelMessages(messages),
     tools: { recommendListings, suggestActions, searchNoticeContent: buildSearchNoticeContent(focusListingId) },
