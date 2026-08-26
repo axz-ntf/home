@@ -91,11 +91,24 @@ async function fetchNoticePage(uppAisTpCd, page) {
   url.searchParams.set("PG_SZ", String(PG_SZ));
   url.searchParams.set("PAGE", String(page));
   url.searchParams.set("UPP_AIS_TP_CD", uppAisTpCd);
-  const res = await fetchWithRetry(url, { headers: { "User-Agent": UA } }, `API3 ${uppAisTpCd} ${page}p`);
-  if (!res.ok) throw new Error(`API3 HTTP ${res.status}`);
-  const json = JSON.parse(await res.text());
-  if (!Array.isArray(json)) return [];
-  return json[1]?.dsList || [];
+  const label = `API3 ${uppAisTpCd} ${page}p`;
+  // 공공데이터 게이트웨이가 점검·과부하 때 200 + HTML 에러 페이지를 주는 경우가 있어
+  // (2026-08-22 run 전체 사망 원인) JSON 파싱 실패도 재시도 대상.
+  for (let attempt = 1; ; attempt++) {
+    const res = await fetchWithRetry(url, { headers: { "User-Agent": UA } }, label);
+    if (!res.ok) throw new Error(`API3 HTTP ${res.status}`);
+    const text = await res.text();
+    try {
+      const json = JSON.parse(text);
+      if (!Array.isArray(json)) return [];
+      return json[1]?.dsList || [];
+    } catch {
+      if (attempt >= 3) throw new Error(`${label}: 3회 모두 non-JSON 응답 — ${text.slice(0, 80)}`);
+      const wait = 2000 * attempt;
+      console.log(`  ${label} non-JSON 응답 재시도 ${attempt}/3 — ${wait}ms 대기`);
+      await sleep(wait);
+    }
+  }
 }
 
 async function fetchAllNotices() {

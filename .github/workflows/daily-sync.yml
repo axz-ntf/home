@@ -4,9 +4,9 @@ name: Daily LH Sync
 # 신규 공고만 incremental 처리 — 이미 캐시된 매물은 모든 단계에서 skip.
 on:
   schedule:
-    # 하루 2회(KST 00:00, 12:00) — 스케줄 크론이 간헐 누락돼도 다음 회차가 커버(신뢰성 이중화).
+    # 하루 1회(KST 00:00). 2회 돌리던 것을 축소 — 월 사용량이 Actions 무료 한도(2,000분)를
+    # 넘어 2026-08-22부터 잔여 기간 전체가 결제 차단으로 멈췄던 문제 대응.
     - cron: "0 15 * * *"  # UTC 15:00 = KST 00:00
-    - cron: "0 3 * * *"   # UTC 03:00 = KST 12:00
   workflow_dispatch:
 
 # 중복 실행 방지 — 실행이 늘어져 다음 회차와 겹치면 이전 것을 취소하고 최신만 유지.
@@ -122,6 +122,8 @@ jobs:
       # 임베딩 인덱스를 Supabase Postgres(pgvector)로 적재. (이전: Vercel Blob — vectors.bin 이
       # 1GB Hobby 한도를 넘어 매일 업로드 실패했음.) DB 적재는 대량 마이그레이션이라 DIRECT_URL
       # (세션 풀러 5432) 사용. 실패해도 데이터 commit 은 계속(다음 run 재시도).
+      # 증분 적재 — 변경된 공고만 delete+insert (이전 전량 재적재 16분/일이 무료 한도 초과 주범).
+      # 청킹 로직을 바꾼 리빌드 뒤에는 로컬에서 --full 로 1회 전량 재적재할 것.
       - name: Phase 6b — 임베딩 인덱스 Supabase(pgvector) 적재 (실패 허용)
         continue-on-error: true
         env:
