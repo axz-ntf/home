@@ -15154,5 +15154,358 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020635": {
+    "at": "2026-08-31T03:55:07.709Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": "2026.09.22",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020615": {
+    "at": "2026-08-31T03:55:56.968Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "고령디오팰리스 59형",
+          "area": "59.845",
+          "supplyUnits": 50,
+          "deposit": 2702,
+          "rent": 15,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "고령디오팰리스 59형",
+            "limitManwon": 1700,
+            "maxDeposit": 4402,
+            "minRent": 6
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020639": {
+    "at": "2026-08-31T03:57:07.315Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "26.37형",
+          "area": "26.37㎡",
+          "supplyUnits": 200,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 252,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 766,
+              "rent": 12
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020627": {
+    "at": "2026-08-31T03:58:21.549Z",
+    "type": "integ",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2027.02.19"
+      },
+      "deadline": "2026.09.23",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020565": {
+    "at": "2026-08-31T03:59:03.953Z",
+    "type": "integ",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2027.02.19"
+      },
+      "deadline": "2026.09.23",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020625": {
+    "at": "2026-08-31T04:00:30.822Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "청주산남2-1 26.37형",
+          "area": "26.37㎡",
+          "supplyUnits": 970,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 265,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 451,
+              "rent": 8
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020624": {
+    "at": "2026-08-31T04:01:33.908Z",
+    "type": "fifty",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "익산부송3 39형",
+          "area": "39.87",
+          "supplyUnits": 80,
+          "deposit": 1164,
+          "rent": 17,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "익산부송3 39형",
+            "limitManwon": 1900,
+            "maxDeposit": 3064,
+            "minRent": 8
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020601": {
+    "at": "2026-08-31T04:02:56.657Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "sh-309403": {
+    "at": "2026-08-31T04:04:06.756Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.12.28"
+      },
+      "deadline": "2026.09.30",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "sh-309337": {
+    "at": "2026-08-31T04:05:08.272Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2027.01.29"
+      },
+      "deadline": "2026.09.11",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020603": {
+    "at": "2026-08-31T04:06:18.277Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "익산부송1 26.37",
+          "area": "26.37㎡",
+          "supplyUnits": 300,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 252,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 352,
+              "rent": 8
+            }
+          ]
+        },
+        {
+          "houseType": "익산동산 26.37",
+          "area": "26.37㎡",
+          "supplyUnits": 150,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 252,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 352,
+              "rent": 8
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020573": {
+    "at": "2026-08-31T04:07:19.228Z",
+    "type": "fifty",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "달서구 대구가람1 39.99㎡",
+          "area": "39.99",
+          "supplyUnits": 30,
+          "deposit": 1382,
+          "rent": 24,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "달서구 대구가람1 49.97㎡",
+          "area": "49.97",
+          "supplyUnits": 30,
+          "deposit": 1734,
+          "rent": 28,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "달서구 대구가람1 39.99㎡",
+            "limitManwon": 2800,
+            "maxDeposit": 4182,
+            "minRent": 10
+          },
+          {
+            "houseType": "달서구 대구가람1 49.97㎡",
+            "limitManwon": 3200,
+            "maxDeposit": 4934,
+            "minRent": 12
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020618": {
+    "at": "2026-08-31T04:08:19.164Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": 6
+      },
+      "schedule": {
+        "winnerAt": "2026.10.29"
+      },
+      "deadline": "2026.09.11",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020630": {
+    "at": "2026-08-31T04:09:23.093Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": 6
+      },
+      "schedule": {
+        "winnerAt": "2026.11.11"
+      },
+      "deadline": "2026.9.11",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020634": {
+    "at": "2026-08-31T04:10:16.566Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4
+      },
+      "schedule": {
+        "winnerAt": "2026.09.17"
+      },
+      "deadline": "2026.09.11",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
