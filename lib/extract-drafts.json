@@ -15507,5 +15507,333 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020650": {
+    "at": "2026-09-01T09:19:22.089Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "26형",
+          "area": "26.37㎡",
+          "supplyUnits": 485,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 260,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 443,
+              "rent": 8
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020657": {
+    "at": "2026-09-01T09:22:03.215Z",
+    "type": "fifty",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "서산석림3단지 37",
+          "area": "37.67",
+          "supplyUnits": 80,
+          "deposit": 1321,
+          "rent": 18,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "서산석림3단지 37",
+            "limitManwon": 2000,
+            "maxDeposit": 3321,
+            "minRent": 8
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020661": {
+    "at": "2026-09-01T09:24:53.036Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": null
+      },
+      "schedule": {
+        "winnerAt": "2026.09.17"
+      },
+      "deadline": "2026.09.11",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020647": {
+    "at": "2026-09-01T09:32:05.676Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "청주산단1 26A",
+          "area": "26.95",
+          "supplyUnits": 30,
+          "deposit": 3318,
+          "rent": 18,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "청주산단1 26A",
+          "area": "26.95",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "청주산단1 26A",
+          "area": "26.95",
+          "supplyUnits": 80,
+          "deposit": 3318,
+          "rent": 18,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "청주산단1 26B",
+          "area": "26.95",
+          "supplyUnits": 40,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "청주산단2 26A",
+          "area": "26.95",
+          "supplyUnits": 15,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "청주산단2 26A",
+          "area": "26.95",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "청주산단2 26A",
+          "area": "26.95",
+          "supplyUnits": 15,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "청주산단2 26B",
+          "area": "26.95",
+          "supplyUnits": 5,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "청주산단2 36",
+          "area": "36.78",
+          "supplyUnits": 5,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "청주산단2 36",
+          "area": "36.78",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "청주산단2 36",
+          "area": "36.78",
+          "supplyUnits": 15,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "청주산단1 26A",
+            "limitManwon": 2100,
+            "maxDeposit": 5418,
+            "minRent": 7
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.12.17"
+      },
+      "deadline": "2026.09.09",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020646": {
+    "at": "2026-09-01T09:33:22.474Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.12.17"
+      },
+      "deadline": "2026.09.09",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020654": {
+    "at": "2026-09-01T09:39:57.356Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "1형(2인 이하 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "2형(2~4인 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "3형(5인 이상 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-309467": {
+    "at": "2026-09-01T09:42:00.297Z",
+    "type": "jeonse",
+    "fields": {
+      "priceModel": "support-limit",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2027.03.17"
+      },
+      "deadline": "2027.03.05",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020656": {
+    "at": "2026-09-01T09:46:34.854Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "59m2",
+          "area": "59.845",
+          "supplyUnits": 180,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": null,
+      "progressStatus": null
+    }
+  },
+  "sh-308446": {
+    "at": "2026-09-01T09:47:37.987Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020629": {
+    "at": "2026-09-01T09:48:26.894Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": null
+      },
+      "schedule": {
+        "winnerAt": "2026.09.17"
+      },
+      "deadline": "2026.09.11",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020621": {
+    "at": "2026-09-01T09:54:15.400Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": null
+      },
+      "schedule": {
+        "winnerAt": "2026.09.16"
+      },
+      "deadline": "2026.09.11",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
