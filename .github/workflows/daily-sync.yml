@@ -35,6 +35,16 @@ jobs:
 
       - run: npm ci
 
+      # 정부 서버(마이홈·VWorld 등)가 해외 IP 를 차단해 GH 러너에서 직접 fetch 불가 —
+      # Vercel icn1(서울) 프록시(/api/govproxy)로 우회. NODE_OPTIONS --import 프리로드라
+      # 이후 모든 node 스크립트에 자동 적용 (스크립트 수정 불필요). scripts/lib/proxy-fetch.mjs 참고.
+      - name: 정부 API 프록시 활성화 (해외 IP 차단 우회)
+        run: |
+          echo "NODE_OPTIONS=--import $PWD/scripts/lib/proxy-fetch.mjs" >> "$GITHUB_ENV"
+          echo "GOV_PROXY_URL=https://public-housing-map.vercel.app/api/govproxy" >> "$GITHUB_ENV"
+          echo "GOV_PROXY_SECRET=${{ secrets.GOV_PROXY_SECRET }}" >> "$GITHUB_ENV"
+          echo "GOV_PROXY_HOSTS=apis.data.go.kr,www.myhome.go.kr,data.myhome.go.kr,api.vworld.kr" >> "$GITHUB_ENV"
+
       # actions/cache 의 post-step save 는 job 성공 시에만 실행 → cancelled/timeout
       # 시 영원히 cache 안 됨. 해결: restore/save 분리 + Phase 끝나자마자 즉시 save.
       - name: Restore notice-texts cache
