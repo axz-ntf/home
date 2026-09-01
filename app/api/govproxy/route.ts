@@ -20,8 +20,9 @@ const ALLOWED_HOSTS = new Set([
 const FORWARD_REQ_HEADERS = ["accept", "content-type", "user-agent", "referer", "cookie"];
 
 async function proxy(req: Request): Promise<Response> {
-  const secret = process.env.GOV_PROXY_SECRET;
-  if (!secret || req.headers.get("x-proxy-key") !== secret) {
+  // env 등록 시 파일 끝 개행이 값에 섞여 들어올 수 있어 trim 후 비교.
+  const secret = process.env.GOV_PROXY_SECRET?.trim();
+  if (!secret || req.headers.get("x-proxy-key")?.trim() !== secret) {
     return Response.json({ error: "unauthorized" }, { status: 401 });
   }
 

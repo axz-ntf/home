@@ -5,7 +5,8 @@
 //           GOV_PROXY_SECRET, GOV_PROXY_HOSTS (쉼표 구분, 미설정 시 기본 차단 목록)
 
 const PROXY_URL = process.env.GOV_PROXY_URL;
-const PROXY_SECRET = process.env.GOV_PROXY_SECRET;
+// 등록 시 섞인 개행은 제거 — HTTP 헤더에 개행이 있으면 undici 가 throw 한다.
+const PROXY_SECRET = process.env.GOV_PROXY_SECRET?.trim();
 const HOSTS = new Set(
   (process.env.GOV_PROXY_HOSTS ||
     "apis.data.go.kr,www.myhome.go.kr,data.myhome.go.kr,api.vworld.kr")
