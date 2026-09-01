@@ -36,11 +36,11 @@ jobs:
       - run: npm ci
 
       # 정부 서버(마이홈·VWorld 등)가 해외 IP 를 차단해 GH 러너에서 직접 fetch 불가 —
-      # Vercel icn1(서울) 프록시(/api/govproxy)로 우회. NODE_OPTIONS --import 프리로드라
-      # 이후 모든 node 스크립트에 자동 적용 (스크립트 수정 불필요). scripts/lib/proxy-fetch.mjs 참고.
+      # Vercel icn1(서울) 프록시(/api/govproxy)로 우회 (scripts/lib/proxy-fetch.mjs).
+      # NODE_OPTIONS 는 러너가 GITHUB_ENV 로 설정을 금지(스크립트 인젝션 방지)하므로
+      # 차단 호스트를 치는 단계마다 step env 로 직접 지정한다 (NODE_OPTIONS --import ...).
       - name: 정부 API 프록시 활성화 (해외 IP 차단 우회)
         run: |
-          echo "NODE_OPTIONS=--import $PWD/scripts/lib/proxy-fetch.mjs" >> "$GITHUB_ENV"
           echo "GOV_PROXY_URL=https://public-housing-map.vercel.app/api/govproxy" >> "$GITHUB_ENV"
           echo "GOV_PROXY_SECRET=${{ secrets.GOV_PROXY_SECRET }}" >> "$GITHUB_ENV"
           echo "GOV_PROXY_HOSTS=apis.data.go.kr,www.myhome.go.kr,data.myhome.go.kr,api.vworld.kr" >> "$GITHUB_ENV"
@@ -71,6 +71,7 @@ jobs:
 
       - name: Phase 1 — LH 공고 list sync (data.go.kr)
         env:
+          NODE_OPTIONS: --import ./scripts/lib/proxy-fetch.mjs
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
         run: |
           node scripts/sync-myhome-all.mjs
@@ -143,6 +144,7 @@ jobs:
 
       - name: Phase 7 — 최종 sync (LH 공공데이터 API + 좌표 보강)
         env:
+          NODE_OPTIONS: --import ./scripts/lib/proxy-fetch.mjs
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
           VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
           KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
@@ -153,6 +155,7 @@ jobs:
       - name: Phase 7.1 — 좌표 없는 활성 매물 지오코딩 보강
         continue-on-error: true
         env:
+          NODE_OPTIONS: --import ./scripts/lib/proxy-fetch.mjs
           VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
           KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
         run: node scripts/geocode-missing-coords.mjs
@@ -172,6 +175,7 @@ jobs:
       - name: Phase 7.6 — 다지점 공고 지도 분리 (AI + 지오코딩)
         continue-on-error: true
         env:
+          NODE_OPTIONS: --import ./scripts/lib/proxy-fetch.mjs
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
           VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
@@ -183,6 +187,7 @@ jobs:
       - name: Phase 7.6b — 단일 지역 공고 지오코딩 → 지도 이동
         continue-on-error: true
         env:
+          NODE_OPTIONS: --import ./scripts/lib/proxy-fetch.mjs
           VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
           KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
         run: node scripts/geocode-regional-singles.mjs --active
@@ -218,6 +223,7 @@ jobs:
       - name: Phase 7.9 — 접수결과 공지 → 경쟁률 추출
         continue-on-error: true
         env:
+          NODE_OPTIONS: --import ./scripts/lib/proxy-fetch.mjs
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
           SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
@@ -229,6 +235,7 @@ jobs:
       - name: Phase 8 — SH·청년안심 공고 sync
         continue-on-error: true
         env:
+          NODE_OPTIONS: --import ./scripts/lib/proxy-fetch.mjs
           VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
         run: |
           node scripts/sync-sh.mjs
@@ -239,6 +246,7 @@ jobs:
       - name: Phase 8.5 — SH 다지점 공고 단지 분리 (AI + 지오코딩)
         continue-on-error: true
         env:
+          NODE_OPTIONS: --import ./scripts/lib/proxy-fetch.mjs
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
           SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
@@ -258,6 +266,7 @@ jobs:
       - name: Phase 9.5 — 주변입지 분석 캐시 warm (신규 좌표만)
         continue-on-error: true
         env:
+          NODE_OPTIONS: --import ./scripts/lib/proxy-fetch.mjs
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
           KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
