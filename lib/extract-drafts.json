@@ -15835,5 +15835,440 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020651": {
+    "at": "2026-09-01T18:51:10.616Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "31.32",
+          "area": "31.32㎡",
+          "supplyUnits": 50,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 315,
+              "rent": 6
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 537,
+              "rent": 10
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6645": {
+    "at": "2026-09-01T18:52:21.085Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.09.15"
+      },
+      "deadline": "2026.09.14",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-sale-0000061153": {
+    "at": "2026-09-01T18:52:58.530Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "055.0000O",
+          "area": "55",
+          "supplyUnits": 5,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020628": {
+    "at": "2026-09-01T18:53:39.787Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4
+      },
+      "schedule": {
+        "winnerAt": "2026.09.17"
+      },
+      "deadline": "2026.09.11",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020622": {
+    "at": "2026-09-01T18:54:13.364Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4
+      },
+      "schedule": {
+        "winnerAt": "2026.11.26"
+      },
+      "deadline": "2026.09.18",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020620": {
+    "at": "2026-09-01T18:55:29.351Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "대전 서구 용문동 용문센트럴뷰 80㎡이상",
+          "areaRange": "80㎡이상",
+          "supplyUnits": 65,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "대전 서구 도안동 지음 70~80㎡",
+          "areaRange": "70~80㎡",
+          "supplyUnits": 2,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "대전 서구 도안동 드리머도안 80㎡이상",
+          "areaRange": "80㎡이상",
+          "supplyUnits": 2,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "대전 대덕구 읍내동 한양수자인 80㎡이상",
+          "areaRange": "80㎡이상",
+          "supplyUnits": 264,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "대전 유성구 지족동 탑하우스 80㎡이상",
+          "areaRange": "80㎡이상",
+          "supplyUnits": 21,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "대전 유성구 봉명동 미소랑 70~80㎡",
+          "areaRange": "70~80㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "대전 유성구 지족동 포유하우스 80㎡이상",
+          "areaRange": "80㎡이상",
+          "supplyUnits": 2,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "충남 아산시 권곡동 70~80㎡",
+          "areaRange": "70~80㎡",
+          "supplyUnits": 13,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "충남 아산시 권곡동 80㎡이상",
+          "areaRange": "80㎡이상",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.11.12"
+      },
+      "deadline": "2026.09.09",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020616": {
+    "at": "2026-09-01T18:55:56.131Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "2인이하 가구(1형)",
+          "areaRange": "60㎡ 이하",
+          "supplyUnits": 500,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "3～4인 가구(2형)",
+          "areaRange": "60㎡ 초과 ~ 85㎡ 이하",
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "5인이상 가구(3형)",
+          "areaRange": "85㎡ 초과",
+          "supplyUnits": 0,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020581": {
+    "at": "2026-09-01T18:57:15.763Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": null,
+      "progressStatus": null
+    }
+  },
+  "lh-sale-2015122300020425": {
+    "at": "2026-09-01T18:57:42.533Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "광주전남혁신 빛가람 LH3단지 301-204",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 18630
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH3단지 301-604",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 19625
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH3단지 301-1704",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 19930
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH3단지 302-2004",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 19925
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH3단지 303-203",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 19005
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH3단지 303-1003",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 20330
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH3단지 303-1805",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 20130
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH3단지 304-103",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 18600
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH3단지 304-203",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 19005
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH3단지 304-803",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 19005
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020612": {
+    "at": "2026-09-01T18:58:51.019Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "26.37형",
+          "area": "26.37㎡",
+          "supplyUnits": 100,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 252,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 352,
+              "rent": 8
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020611": {
+    "at": "2026-09-01T18:59:22.994Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2027.02.19"
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020584": {
+    "at": "2026-09-01T19:02:16.204Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "43.96형",
+          "area": "31.32㎡",
+          "supplyUnits": 100,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 299,
+              "rent": 6
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 418,
+              "rent": 9
+            }
+          ]
+        },
+        {
+          "houseType": "45.34형",
+          "area": "31.32㎡",
+          "supplyUnits": 100,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 299,
+              "rent": 6
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 418,
+              "rent": 9
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-308971": {
+    "at": "2026-09-01T19:03:12.954Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.11.23"
+      },
+      "deadline": "2026.09.04",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020607": {
+    "at": "2026-09-01T19:03:40.667Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2027.03.23"
+      },
+      "deadline": "2026.09.02",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
