@@ -16270,5 +16270,559 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020676": {
+    "at": "2026-09-02T19:01:56.870Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.12.17"
+      },
+      "deadline": "2026.09.09",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020671": {
+    "at": "2026-09-02T19:03:57.899Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "청주산단1 26A 청년 소득有",
+          "area": "26.950",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "청주산단1 26A 청년 대학생·소득無",
+          "area": "26.950",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "청주산단1 26A 산업단지근로자",
+          "area": "26.950",
+          "supplyUnits": 80,
+          "deposit": 3318,
+          "rent": 18,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "청주산단1 26B 고령자(주거약자)",
+          "area": "26.950",
+          "supplyUnits": 40,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "청주산단2 26A 청년 소득有",
+          "area": "26.950",
+          "supplyUnits": 15,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "청주산단2 26A 청년 대학생·소득無",
+          "area": "26.950",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "청주산단2 26A 산업단지근로자",
+          "area": "26.950",
+          "supplyUnits": 15,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "청주산단2 26B 고령자(주거약자)",
+          "area": "26.950",
+          "supplyUnits": 5,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "청주산단2 36 청년 소득有",
+          "area": "36.780",
+          "supplyUnits": 5,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "청주산단2 36 청년 대학생·소득無",
+          "area": "36.780",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "청주산단2 36 산업단지근로자",
+          "area": "36.780",
+          "supplyUnits": 15,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "청주산단1 26A 산업단지근로자",
+            "limitManwon": 2100,
+            "maxDeposit": 5418,
+            "minRent": 7
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.12.17"
+      },
+      "deadline": "2026.09.09",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020666": {
+    "at": "2026-09-02T19:06:03.613Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "26.37형",
+          "area": "26.37㎡",
+          "supplyUnits": 200,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 252,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 766,
+              "rent": 12
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020614": {
+    "at": "2026-09-02T19:07:15.388Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "영암남풍 26형",
+          "area": "26.99㎡",
+          "supplyUnits": 30,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 251,
+              "rent": 5
+            },
+            {
+              "label": "나군",
+              "deposit": 981,
+              "rent": 10
+            }
+          ]
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "영암남풍 26형 (가군)",
+            "limitManwon": 300,
+            "maxDeposit": 551,
+            "minRent": 3
+          },
+          {
+            "houseType": "영암남풍 26형 (나군)",
+            "limitManwon": 900,
+            "maxDeposit": 1881,
+            "minRent": 4
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.12.11"
+      },
+      "deadline": "2026.09.10",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020553": {
+    "at": "2026-09-02T19:07:29.090Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.10.22"
+      },
+      "deadline": "2026.09.03",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-309073": {
+    "at": "2026-09-02T19:08:24.023Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "1인 가구",
+          "areaRange": "20.75㎡ ~ 26.39㎡",
+          "supplyUnits": 6,
+          "deposit": [
+            1079,
+            2388
+          ],
+          "rent": [
+            14,
+            31
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-308944": {
+    "at": "2026-09-02T19:10:11.301Z",
+    "type": "jeonse",
+    "fields": {
+      "priceModel": "support-limit",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2027. 2. 24"
+      },
+      "deadline": "2026. 9. 9",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "sh-308887": {
+    "at": "2026-09-02T19:10:58.599Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "1인 가구형",
+          "areaRange": "50㎡ 이하",
+          "supplyUnits": 5,
+          "deposit": 109,
+          "rent": [
+            9,
+            16
+          ]
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.28"
+      },
+      "deadline": "2026.09.11",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-308340": {
+    "at": "2026-09-02T19:12:37.776Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2027.02.15"
+      },
+      "deadline": "2026.09.03",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-sale-2015122300020518": {
+    "at": "2026-09-02T19:12:57.033Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "울산 북구 중산 디아채 103동 101호",
+          "area": "84.9921",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 20600
+        },
+        {
+          "houseType": "울산 북구 중산 디아채 103동 302호",
+          "area": "84.9921",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 22350
+        },
+        {
+          "houseType": "울산 북구 중산 디아채 106동 301호",
+          "area": "84.9921",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 22350
+        },
+        {
+          "houseType": "울산 북구 중산 디아채 202동 104호",
+          "area": "84.9805",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 20100
+        },
+        {
+          "houseType": "울산 북구 중산 디아채 205동 104호",
+          "area": "84.9805",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 20100
+        },
+        {
+          "houseType": "울산 북구 중산 디아채 205동 302호",
+          "area": "84.9921",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 22450
+        },
+        {
+          "houseType": "울산 북구 중산 디아채 206동 201호",
+          "area": "84.9921",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 21950
+        },
+        {
+          "houseType": "울산 북구 중산 디아채 206동 301호",
+          "area": "84.9921",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 22350
+        }
+      ],
+      "deadline": "2026.12.23",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020580": {
+    "at": "2026-09-02T19:13:03.452Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020576": {
+    "at": "2026-09-02T19:14:17.430Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "목포용해5(법원) 16형",
+          "area": "16.66",
+          "supplyUnits": 40,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.30"
+      },
+      "deadline": "2026.09.10",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-308799": {
+    "at": "2026-09-02T19:16:35.549Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "1인 가구",
+          "areaRange": "26.84~39.85㎡",
+          "supplyUnits": 12,
+          "deposit": [
+            1064,
+            3076
+          ],
+          "rent": [
+            14,
+            40
+          ]
+        }
+      ],
+      "conversion": {
+        "rateUp": 3,
+        "rateDown": 7
+      },
+      "deadline": "2026.09.17",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020582": {
+    "at": "2026-09-02T19:19:10.428Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "서귀포시 서귀포혁신LH3 36A,B",
+          "area": "36.65",
+          "supplyUnits": 20,
+          "deposit": 4400,
+          "rent": 19,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "서귀포시 서귀포서홍 36A",
+          "area": "36.72",
+          "supplyUnits": 20,
+          "deposit": 4480,
+          "rent": 20,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "서귀포시 서귀포혁신LH3 36A,B",
+            "limitManwon": 3600,
+            "maxDeposit": 6700,
+            "minRent": 8
+          },
+          {
+            "houseType": "서귀포시 서귀포서홍 36A",
+            "limitManwon": 3700,
+            "maxDeposit": 6780,
+            "minRent": 8
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.11.18"
+      },
+      "deadline": "2026.09.07",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020542": {
+    "at": "2026-09-02T19:19:57.923Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "강릉시 강릉교동 26 (A,A1) 고령자",
+          "area": "26.95",
+          "supplyUnits": 10,
+          "deposit": 2899,
+          "rent": 15,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강릉시 강릉교동 26 (A,A1) 주거급여수급자",
+          "area": "26.95",
+          "supplyUnits": 10,
+          "deposit": 2289,
+          "rent": 12,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "강릉시 강릉교동 26 (A,A1) 고령자",
+            "limitManwon": 1900,
+            "maxDeposit": 4799,
+            "minRent": 6
+          },
+          {
+            "houseType": "강릉시 강릉교동 26 (A,A1) 고령자",
+            "limitManwon": 2300,
+            "maxDeposit": 599,
+            "minRent": 22
+          },
+          {
+            "houseType": "강릉시 강릉교동 26 (A,A1) 주거급여수급자",
+            "limitManwon": 1300,
+            "maxDeposit": 3589,
+            "minRent": 6
+          },
+          {
+            "houseType": "강릉시 강릉교동 26 (A,A1) 주거급여수급자",
+            "limitManwon": 1800,
+            "maxDeposit": 489,
+            "minRent": 17
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.12.17"
+      },
+      "deadline": "2026.09.03",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
