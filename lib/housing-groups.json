@@ -2574,5 +2574,109 @@
     "rentMax": 37
    }
   ]
+ },
+ "2015122300020682": {
+  "kind": "매입임대",
+  "unitsTotal": 11,
+  "groups": [
+   {
+    "label": "명진빌딩 4층 LH대구동부권주거복지지사",
+    "units": 2,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "명진빌딩 4층",
+    "units": 9,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
+ },
+ "2015122300020679": {
+  "kind": "매입임대",
+  "unitsTotal": 49,
+  "groups": [
+   {
+    "label": "강원특별자치도 춘천시",
+    "units": 31,
+    "depMin": 3531,
+    "depMax": 9547,
+    "rentMin": 5,
+    "rentMax": 13
+   },
+   {
+    "label": "강원특별자치도 강릉시",
+    "units": 18,
+    "depMin": 4006,
+    "depMax": 9051,
+    "rentMin": 9,
+    "rentMax": 13
+   }
+  ]
+ },
+ "2015122300020675": {
+  "kind": "매입임대",
+  "unitsTotal": 6,
+  "groups": [
+   {
+    "label": "강원특별자치도 춘천시 동내면 향군길 28",
+    "units": 1,
+    "depMin": 501,
+    "depMax": 501,
+    "rentMin": 11,
+    "rentMax": 11
+   },
+   {
+    "label": "강원특별자치도 춘천시 동면 만천로143번길 32-1",
+    "units": 2,
+    "depMin": 511,
+    "depMax": 569,
+    "rentMin": 12,
+    "rentMax": 13
+   },
+   {
+    "label": "강원특별자치도 춘천시 동면 도일길 3-5",
+    "units": 2,
+    "depMin": 815,
+    "depMax": 844,
+    "rentMin": 18,
+    "rentMax": 19
+   },
+   {
+    "label": "우두동",
+    "units": 1,
+    "depMin": 973,
+    "depMax": 973,
+    "rentMin": 15,
+    "rentMax": 15
+   }
+  ]
+ },
+ "2015122300020673": {
+  "kind": "매입임대",
+  "unitsTotal": 43,
+  "groups": [
+   {
+    "label": "강원특별자치도 춘천시",
+    "units": 41,
+    "depMin": 100,
+    "depMax": 100,
+    "rentMin": 9,
+    "rentMax": 30
+   },
+   {
+    "label": "강원특별자치도 강릉시",
+    "units": 2,
+    "depMin": 100,
+    "depMax": 100,
+    "rentMin": 20,
+    "rentMax": 20
+   }
+  ]
  }
 }
