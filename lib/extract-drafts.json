@@ -17353,5 +17353,335 @@
       "noticeStatus": "일반공고",
       "progressStatus": null
     }
+  },
+  "lh-rental-2015122300020678": {
+    "at": "2026-09-04T18:43:46.550Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "부천시 중동한라1 26형",
+          "area": "26.37㎡",
+          "supplyUnits": 150,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 280,
+              "rent": 6
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 1137,
+              "rent": 16
+            }
+          ]
+        },
+        {
+          "houseType": "부천시 중동덕유1 26형",
+          "area": "26.37㎡",
+          "supplyUnits": 200,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 280,
+              "rent": 6
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 1115,
+              "rent": 15
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020694": {
+    "at": "2026-09-04T18:44:41.701Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": "2026.09.23",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020691": {
+    "at": "2026-09-04T18:45:21.246Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020689": {
+    "at": "2026-09-04T18:46:44.345Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": 6
+      },
+      "schedule": {
+        "winnerAt": "2026.09.16"
+      },
+      "deadline": "2026.09.11",
+      "noticeStatus": "정정공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-sale-2015122300020606": {
+    "at": "2026-09-04T18:48:44.029Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "202동 2003호 84B",
+          "area": "84.51",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 25400
+        },
+        {
+          "houseType": "204동 801호 84C",
+          "area": "84.92",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 18400
+        },
+        {
+          "houseType": "205동 201호 84A",
+          "area": "84.85",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 18000
+        },
+        {
+          "houseType": "205동 1403호 84A",
+          "area": "84.85",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 19500
+        },
+        {
+          "houseType": "206동 1002호 74",
+          "area": "74.54",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 16400
+        },
+        {
+          "houseType": "208동 1103호 84A",
+          "area": "84.85",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 19600
+        },
+        {
+          "houseType": "208동 1603호 84A",
+          "area": "84.85",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 20300
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020687": {
+    "at": "2026-09-04T18:50:16.822Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4
+      },
+      "schedule": {
+        "winnerAt": "2026.09.17"
+      },
+      "deadline": "2026.09.11",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020688": {
+    "at": "2026-09-04T18:51:33.077Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": 6
+      },
+      "schedule": {
+        "winnerAt": "2026.09.16"
+      },
+      "deadline": "2026.09.11",
+      "noticeStatus": "정정공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020693": {
+    "at": "2026-09-04T18:53:09.852Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": 6
+      },
+      "schedule": {
+        "winnerAt": "2026.11.12"
+      },
+      "deadline": "2026.09.11",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020557": {
+    "at": "2026-09-04T18:53:51.060Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "목포상동1 26.34형",
+          "area": "26.34㎡",
+          "supplyUnits": 480,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 245,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 342,
+              "rent": 8
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020549": {
+    "at": "2026-09-04T18:55:03.911Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "목포상동3 26.37",
+          "area": "26.37",
+          "supplyUnits": 90,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 2452,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 3425,
+              "rent": 8
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "sh-308644": {
+    "at": "2026-09-04T18:55:59.267Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2027.01.07"
+      },
+      "deadline": "2026.09.14",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-sale-0000061155": {
+    "at": "2026-09-04T18:56:42.090Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "익산평화 익산역 하늘채 더 퍼스트 84형",
+          "area": "84",
+          "supplyUnits": 382,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020529": {
+    "at": "2026-09-04T18:57:10.668Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "49형",
+          "areaRange": "49㎡",
+          "supplyUnits": 18,
+          "deposit": 4789,
+          "rent": 3
+        },
+        {
+          "label": "59형",
+          "areaRange": "59㎡",
+          "supplyUnits": 18,
+          "deposit": 5662,
+          "rent": 5
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }

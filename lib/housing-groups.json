@@ -2678,5 +2678,443 @@
     "rentMax": 20
    }
   ]
+ },
+ "2015122300020691": {
+  "kind": "매입임대",
+  "unitsTotal": 8,
+  "groups": [
+   {
+    "label": "서호동",
+    "units": 8,
+    "depMin": 965,
+    "depMax": 965,
+    "rentMin": 32,
+    "rentMax": 36
+   }
+  ]
+ },
+ "2015122300020687": {
+  "kind": "매입임대",
+  "unitsTotal": 631,
+  "groups": [
+   {
+    "label": "경기도 광명시",
+    "units": 3,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 22,
+    "rentMax": 22
+   },
+   {
+    "label": "경기도 광주시",
+    "units": 13,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 29,
+    "rentMax": 42
+   },
+   {
+    "label": "경기도 군포시",
+    "units": 5,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 25,
+    "rentMax": 50
+   },
+   {
+    "label": "경기도 성남시 중원구",
+    "units": 6,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 24,
+    "rentMax": 49
+   },
+   {
+    "label": "경기도 안성시",
+    "units": 2,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 14,
+    "rentMax": 20
+   },
+   {
+    "label": "경기도 여주시",
+    "units": 5,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 20,
+    "rentMax": 30
+   },
+   {
+    "label": "경기도 오산시",
+    "units": 4,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 20,
+    "rentMax": 25
+   },
+   {
+    "label": "경기도 이천시",
+    "units": 20,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 18,
+    "rentMax": 32
+   },
+   {
+    "label": "경기도 평택시",
+    "units": 10,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 15,
+    "rentMax": 34
+   },
+   {
+    "label": "경기도 수원시 권선구",
+    "units": 75,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 21,
+    "rentMax": 43
+   },
+   {
+    "label": "경기도 수원시 영통구",
+    "units": 3,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 40,
+    "rentMax": 56
+   },
+   {
+    "label": "경기도 수원시 장안구",
+    "units": 3,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 28,
+    "rentMax": 37
+   },
+   {
+    "label": "경기도 시흥시",
+    "units": 25,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 24,
+    "rentMax": 36
+   },
+   {
+    "label": "경기도 안산시 단원구",
+    "units": 221,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 15,
+    "rentMax": 32
+   },
+   {
+    "label": "경기도 안산시 상록구",
+    "units": 58,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 15,
+    "rentMax": 37
+   },
+   {
+    "label": "경기도 안양시 만안구",
+    "units": 4,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 29,
+    "rentMax": 46
+   },
+   {
+    "label": "경기도 안양시 동안구",
+    "units": 2,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 34,
+    "rentMax": 42
+   },
+   {
+    "label": "경기도 용인시 기흥구",
+    "units": 18,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 18,
+    "rentMax": 39
+   },
+   {
+    "label": "경기도 용인시 수지구",
+    "units": 4,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 46,
+    "rentMax": 56
+   },
+   {
+    "label": "경기도 용인시 처인구",
+    "units": 97,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 17,
+    "rentMax": 30
+   },
+   {
+    "label": "경기도 화성시 효행구",
+    "units": 7,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 15,
+    "rentMax": 31
+   },
+   {
+    "label": "경기도 화성시 병점구",
+    "units": 46,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 35,
+    "rentMax": 36
+   }
+  ]
+ },
+ "2015122300020689": {
+  "kind": "기숙사",
+  "unitsTotal": 22,
+  "groups": [
+   {
+    "label": "당정동 한림에스타워",
+    "units": 13,
+    "depMin": 10,
+    "depMax": 13,
+    "rentMin": 17,
+    "rentMax": 36
+   },
+   {
+    "label": "고잔동 월드스테이",
+    "units": 1,
+    "depMin": 14,
+    "depMax": 14,
+    "rentMin": 26,
+    "rentMax": 26
+   },
+   {
+    "label": "단원캐슬",
+    "units": 1,
+    "depMin": 15,
+    "depMax": 15,
+    "rentMin": 24,
+    "rentMax": 24
+   },
+   {
+    "label": "경기도 안성시 대덕면 대학3길 2",
+    "units": 3,
+    "depMin": 16,
+    "depMax": 18,
+    "rentMin": 20,
+    "rentMax": 28
+   },
+   {
+    "label": "스마트오피스텔",
+    "units": 4,
+    "depMin": 19,
+    "depMax": 22,
+    "rentMin": 16,
+    "rentMax": 17
+   }
+  ]
+ },
+ "2015122300020688": {
+  "kind": "매입임대",
+  "unitsTotal": 232,
+  "groups": [
+   {
+    "label": "경기도 성남시 수정구",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 27,
+    "rentMax": 27
+   },
+   {
+    "label": "경기도 성남시 중원구",
+    "units": 3,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 27,
+    "rentMax": 37
+   },
+   {
+    "label": "경기도 수원시 권선구",
+    "units": 27,
+    "depMin": 10,
+    "depMax": 31,
+    "rentMin": 15,
+    "rentMax": 36
+   },
+   {
+    "label": "경기도 수원시 영통구",
+    "units": 3,
+    "depMin": 32,
+    "depMax": 34,
+    "rentMin": 25,
+    "rentMax": 35
+   },
+   {
+    "label": "경기도 수원시 장안구",
+    "units": 7,
+    "depMin": 35,
+    "depMax": 41,
+    "rentMin": 16,
+    "rentMax": 20
+   },
+   {
+    "label": "경기도 수원시 팔달구",
+    "units": 23,
+    "depMin": 42,
+    "depMax": 64,
+    "rentMin": 18,
+    "rentMax": 23
+   },
+   {
+    "label": "경기도 시흥시",
+    "units": 54,
+    "depMin": 65,
+    "depMax": 118,
+    "rentMin": 14,
+    "rentMax": 39
+   },
+   {
+    "label": "경기도 안산시 단원구",
+    "units": 19,
+    "depMin": 119,
+    "depMax": 137,
+    "rentMin": 13,
+    "rentMax": 26
+   },
+   {
+    "label": "경기도 안산시 상록구",
+    "units": 11,
+    "depMin": 138,
+    "depMax": 148,
+    "rentMin": 17,
+    "rentMax": 29
+   },
+   {
+    "label": "경기도 오산시",
+    "units": 44,
+    "depMin": 149,
+    "depMax": 192,
+    "rentMin": 12,
+    "rentMax": 32
+   },
+   {
+    "label": "경기도 용인시 기흥구",
+    "units": 6,
+    "depMin": 193,
+    "depMax": 198,
+    "rentMin": 22,
+    "rentMax": 41
+   },
+   {
+    "label": "경기도 용인시 수지구",
+    "units": 7,
+    "depMin": 199,
+    "depMax": 205,
+    "rentMin": 31,
+    "rentMax": 48
+   },
+   {
+    "label": "경기도 용인시 처인구",
+    "units": 26,
+    "depMin": 206,
+    "depMax": 231,
+    "rentMin": 10,
+    "rentMax": 27
+   },
+   {
+    "label": "경기도 이천시",
+    "units": 1,
+    "depMin": 232,
+    "depMax": 232,
+    "rentMin": 16,
+    "rentMax": 16
+   }
+  ]
+ },
+ "2015122300020693": {
+  "kind": "매입임대",
+  "unitsTotal": 58,
+  "groups": [
+   {
+    "label": "인천광역시 제물포구",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 16,
+    "rentMax": 16
+   },
+   {
+    "label": "인천광역시 미추홀구",
+    "units": 15,
+    "depMin": 10,
+    "depMax": 16,
+    "rentMin": 11,
+    "rentMax": 26
+   },
+   {
+    "label": "인천광역시 연수구",
+    "units": 4,
+    "depMin": 17,
+    "depMax": 20,
+    "rentMin": 22,
+    "rentMax": 31
+   },
+   {
+    "label": "인천광역시 남동구",
+    "units": 23,
+    "depMin": 21,
+    "depMax": 43,
+    "rentMin": 11,
+    "rentMax": 28
+   },
+   {
+    "label": "인천광역시 부평구",
+    "units": 2,
+    "depMin": 44,
+    "depMax": 45,
+    "rentMin": 19,
+    "rentMax": 19
+   },
+   {
+    "label": "인천광역시 서해구",
+    "units": 3,
+    "depMin": 46,
+    "depMax": 48,
+    "rentMin": 17,
+    "rentMax": 19
+   },
+   {
+    "label": "경기도 부천시 오정구",
+    "units": 1,
+    "depMin": 49,
+    "depMax": 49,
+    "rentMin": 42,
+    "rentMax": 42
+   },
+   {
+    "label": "경기도 부천시 소사구",
+    "units": 2,
+    "depMin": 50,
+    "depMax": 51,
+    "rentMin": 36,
+    "rentMax": 46
+   },
+   {
+    "label": "경기도 부천시 원미구",
+    "units": 7,
+    "depMin": 52,
+    "depMax": 58,
+    "rentMin": 24,
+    "rentMax": 53
+   }
+  ]
  }
 }
