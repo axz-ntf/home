@@ -1,195 +1,562 @@
 [
   {
-    "id": "lh-rental-21046-2",
-    "pblancId": "21046",
-    "houseSn": 2,
+    "id": "lh-rental-21157-0",
+    "pblancId": "21157",
+    "houseSn": 0,
     "category": "임대",
-    "typeId": "happy",
-    "housingType": "행복주택",
-    "houseType": "아파트",
-    "title": "서귀포혁신LH3",
-    "noticeTitle": "제주지역 행복주택 예비입주자 모집(2026.08.18.)",
+    "typeId": "buy",
+    "housingType": "매입임대",
+    "houseType": "다가구주택",
+    "title": "[경기남부] 신혼·신생아 매입임대주택Ⅰ 예비입주자 모집공고",
+    "noticeTitle": "[경기남부] 신혼·신생아 매입임대주택Ⅰ 예비입주자 모집공고",
     "provider": "LH",
-    "sido": "제주특별자치도",
-    "sigungu": "서귀포시",
-    "address": "제주특별자치도 서귀포시 서호중앙로 56-13 ",
-    "pnu": "5013010300116150003",
-    "totalUnits": 200,
-    "supplyUnits": 20,
-    "depositWon": 44000000,
-    "monthlyRentWon": 194330,
-    "depositManwon": 4400,
-    "monthlyRentManwon": 19,
-    "announceDate": "2026.08.18",
-    "beginDate": "2026.08.31",
-    "endDate": "2026.09.07",
-    "winnerDate": "2026.11.18",
-    "noticeStatus": "일반공고",
+    "sido": "경기도",
+    "sigungu": "여주시",
+    "address": "",
+    "pnu": "",
+    "totalUnits": 0,
+    "supplyUnits": 5,
+    "depositWon": 0,
+    "monthlyRentWon": 0,
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "announceDate": "2026.08.27",
+    "beginDate": "2026.09.07",
+    "endDate": "2026.09.09",
+    "winnerDate": "2026.11.27",
+    "noticeStatus": "정정공고",
     "progressStatus": "",
     "activeStatus": "closing",
-    "daysToDeadline": 1,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020582&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21046&houseSn=2",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21046&houseSn=2",
+    "daysToDeadline": 2,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020687&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21157",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21157",
     "attachmentId": "",
-    "lat": 33.2557922,
-    "lng": 126.55533,
     "details": {
-      "pageAddress": "제주특별자치도 제주시 전농로 100(삼도일동) 주거복지사업팀",
-      "matchedTab": "서귀포서홍 행복주택",
-      "coordCount": 2,
-      "housingTypes": [
-        {
-          "주택형": "36A[신혼부부,한부모]",
-          "전용면적(㎡)": "36.72",
-          "금회공급세대수(예비자포함)": "20",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "청약신청전"
-        }
-      ],
+      "pageAddress": "",
+      "matchedTab": null,
+      "coordCount": 0,
+      "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-08-19T03:51:45.079Z"
-    },
-    "photos": [
-      {
-        "kind": "null",
-        "name": "[크기변환]서홍행복주택교통광역도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37329501"
-      },
-      {
-        "kind": "null",
-        "name": "[크기변환]서귀포서홍행복주택투시도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37329502"
-      },
-      {
-        "kind": "null",
-        "name": "[크기변환]서홍행복주택단지배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37329503"
-      },
-      {
-        "kind": "null",
-        "name": "서홍행복주택동호배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37329504"
-      },
-      {
-        "kind": "null",
-        "name": "크기변환_제주혁신도시행복주택교통망도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32512884"
-      },
-      {
-        "kind": "null",
-        "name": "크기변환_0625_제주혁신행복주택조감도.JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32512885"
-      },
-      {
-        "kind": "null",
-        "name": "단지배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32512886"
-      },
-      {
-        "kind": "null",
-        "name": "동호배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32512887"
-      }
-    ]
+      "enrichedAt": "2026-09-06T17:24:29.135Z"
+    }
   },
   {
-    "id": "lh-rental-21046-3",
-    "pblancId": "21046",
-    "houseSn": 3,
+    "id": "lh-rental-21156-0",
+    "pblancId": "21156",
+    "houseSn": 0,
     "category": "임대",
-    "typeId": "happy",
-    "housingType": "행복주택",
-    "houseType": "아파트",
-    "title": "서귀포서홍",
-    "noticeTitle": "제주지역 행복주택 예비입주자 모집(2026.08.18.)",
+    "typeId": "buy",
+    "housingType": "매입임대",
+    "houseType": "다가구주택",
+    "title": "[경기남부] 26년 3차 청년 매입임대주택 예비입주자 모집공고",
+    "noticeTitle": "[경기남부] 26년 3차 청년 매입임대주택 예비입주자 모집공고",
     "provider": "LH",
-    "sido": "제주특별자치도",
-    "sigungu": "서귀포시",
-    "address": "제주특별자치도 서귀포시 장수로 115 ",
-    "pnu": "5013010600103550001",
-    "totalUnits": 90,
-    "supplyUnits": 20,
-    "depositWon": 44800000,
-    "monthlyRentWon": 197860,
-    "depositManwon": 4480,
-    "monthlyRentManwon": 20,
-    "announceDate": "2026.08.18",
-    "beginDate": "2026.08.31",
-    "endDate": "2026.09.07",
-    "winnerDate": "2026.11.18",
+    "sido": "경기도",
+    "sigungu": "수원시 권선구",
+    "address": "",
+    "pnu": "",
+    "totalUnits": 0,
+    "supplyUnits": 27,
+    "depositWon": 0,
+    "monthlyRentWon": 0,
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "announceDate": "2026.08.27",
+    "beginDate": "2026.09.07",
+    "endDate": "2026.09.09",
+    "winnerDate": "2026.11.27",
+    "noticeStatus": "정정공고",
+    "progressStatus": "",
+    "activeStatus": "closing",
+    "daysToDeadline": 2,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020688&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21156",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21156",
+    "attachmentId": "",
+    "details": {
+      "pageAddress": "",
+      "matchedTab": null,
+      "coordCount": 0,
+      "housingTypes": [],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-09-06T17:24:28.969Z"
+    }
+  },
+  {
+    "id": "lh-rental-21155-0",
+    "pblancId": "21155",
+    "houseSn": 0,
+    "category": "임대",
+    "typeId": "buy",
+    "housingType": "매입임대",
+    "houseType": "다가구주택",
+    "title": "[경기 군포·안산·안성·화성시] 26년 2차 기숙사형 청년주택 예비입주자 모집공고",
+    "noticeTitle": "[경기 군포·안산·안성·화성시] 26년 2차 기숙사형 청년주택 예비입주자 모집공고",
+    "provider": "LH",
+    "sido": "경기도",
+    "sigungu": "안산시 상록구",
+    "address": "",
+    "pnu": "",
+    "totalUnits": 0,
+    "supplyUnits": 1,
+    "depositWon": 0,
+    "monthlyRentWon": 0,
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "announceDate": "2026.08.27",
+    "beginDate": "2026.09.07",
+    "endDate": "2026.09.09",
+    "winnerDate": "2026.10.30",
+    "noticeStatus": "정정공고",
+    "progressStatus": "",
+    "activeStatus": "closing",
+    "daysToDeadline": 2,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020689&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21155",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21155",
+    "attachmentId": "",
+    "details": {
+      "pageAddress": "",
+      "matchedTab": null,
+      "coordCount": 0,
+      "housingTypes": [],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-09-06T17:24:28.899Z"
+    }
+  },
+  {
+    "id": "lh-rental-21154-0",
+    "pblancId": "21154",
+    "houseSn": 0,
+    "category": "임대",
+    "typeId": "buy",
+    "housingType": "매입임대",
+    "houseType": "다가구주택",
+    "title": "[인천지역본부] 26년 6차 청년 매입임대주택 예비입주자 모집공고(인천,부천)",
+    "noticeTitle": "[인천지역본부] 26년 6차 청년 매입임대주택 예비입주자 모집공고(인천,부천)",
+    "provider": "LH",
+    "sido": "인천광역시",
+    "sigungu": "부평구",
+    "address": "",
+    "pnu": "",
+    "totalUnits": 0,
+    "supplyUnits": 2,
+    "depositWon": 0,
+    "monthlyRentWon": 0,
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "announceDate": "2026.08.27",
+    "beginDate": "2026.09.07",
+    "endDate": "2026.09.09",
+    "winnerDate": "2026.11.12",
+    "noticeStatus": "정정공고",
+    "progressStatus": "",
+    "activeStatus": "closing",
+    "daysToDeadline": 2,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020693&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21154",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21154",
+    "attachmentId": "",
+    "details": {
+      "pageAddress": "",
+      "matchedTab": null,
+      "coordCount": 0,
+      "housingTypes": [],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-09-06T17:24:28.801Z"
+    }
+  },
+  {
+    "id": "lh-rental-21129-0",
+    "pblancId": "21129",
+    "houseSn": 0,
+    "category": "임대",
+    "typeId": "buy",
+    "housingType": "매입임대",
+    "houseType": "다가구주택",
+    "title": "[인천지역본부]26년 6차 신혼·신생아Ⅱ(전세형) 예비입주자 모집공고(인천,부천)",
+    "noticeTitle": "[인천지역본부]26년 6차 신혼·신생아Ⅱ(전세형) 예비입주자 모집공고(인천,부천)",
+    "provider": "LH",
+    "sido": "인천광역시",
+    "sigungu": "서해구",
+    "address": "",
+    "pnu": "",
+    "totalUnits": 0,
+    "supplyUnits": 11,
+    "depositWon": 0,
+    "monthlyRentWon": 0,
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "announceDate": "2026.08.27",
+    "beginDate": "2026.09.07",
+    "endDate": "2026.09.09",
+    "winnerDate": "2026.11.12",
+    "noticeStatus": "정정공고",
+    "progressStatus": "",
+    "activeStatus": "closing",
+    "daysToDeadline": 2,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020661&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21129",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21129",
+    "attachmentId": "",
+    "details": {
+      "pageAddress": "",
+      "matchedTab": null,
+      "coordCount": 0,
+      "housingTypes": [],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-09-06T17:24:29.314Z"
+    }
+  },
+  {
+    "id": "lh-rental-21104-0",
+    "pblancId": "21104",
+    "houseSn": 0,
+    "category": "임대",
+    "typeId": "buy",
+    "housingType": "매입임대",
+    "houseType": "다가구주택",
+    "title": "[인천지역본부] 26년 6차 청년 매입임대주택 예비입주자 모집공고(인천,부천)",
+    "noticeTitle": "[인천지역본부] 26년 6차 청년 매입임대주택 예비입주자 모집공고(인천,부천)",
+    "provider": "LH",
+    "sido": "인천광역시",
+    "sigungu": "연수구",
+    "address": "",
+    "pnu": "",
+    "totalUnits": 0,
+    "supplyUnits": 5,
+    "depositWon": 0,
+    "monthlyRentWon": 0,
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "announceDate": "2026.08.27",
+    "beginDate": "2026.09.07",
+    "endDate": "2026.09.09",
+    "winnerDate": "2026.11.12",
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "closing",
-    "daysToDeadline": 1,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020582&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21046&houseSn=3",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21046&houseSn=3",
+    "daysToDeadline": 2,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020630&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21104",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21104",
     "attachmentId": "",
-    "lat": 33.2557922,
-    "lng": 126.55533,
     "details": {
-      "pageAddress": "제주특별자치도 제주시 전농로 100(삼도일동) 주거복지사업팀",
-      "matchedTab": "서귀포서홍 행복주택",
-      "coordCount": 2,
-      "housingTypes": [
-        {
-          "주택형": "36A[신혼부부,한부모]",
-          "전용면적(㎡)": "36.72",
-          "금회공급세대수(예비자포함)": "20",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "청약신청전"
-        }
-      ],
+      "pageAddress": "",
+      "matchedTab": null,
+      "coordCount": 0,
+      "housingTypes": [],
+      "schedule": [],
+      "noticeStatus": "정정공고중",
+      "enrichedAt": "2026-09-06T17:24:30.312Z"
+    }
+  },
+  {
+    "id": "lh-rental-21102-0",
+    "pblancId": "21102",
+    "houseSn": 0,
+    "category": "임대",
+    "typeId": "buy",
+    "housingType": "매입임대",
+    "houseType": "다가구주택",
+    "title": "[경기남부] 26년 3차 청년 매입임대주택 예비입주자 모집공고",
+    "noticeTitle": "[경기남부] 26년 3차 청년 매입임대주택 예비입주자 모집공고",
+    "provider": "LH",
+    "sido": "경기도",
+    "sigungu": "용인시 수지구",
+    "address": "",
+    "pnu": "",
+    "totalUnits": 0,
+    "supplyUnits": 7,
+    "depositWon": 0,
+    "monthlyRentWon": 0,
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "announceDate": "2026.08.27",
+    "beginDate": "2026.09.07",
+    "endDate": "2026.09.09",
+    "winnerDate": "2026.11.27",
+    "noticeStatus": "일반공고",
+    "progressStatus": "",
+    "activeStatus": "closing",
+    "daysToDeadline": 2,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020621&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21102",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21102",
+    "attachmentId": "",
+    "details": {
+      "pageAddress": "",
+      "matchedTab": null,
+      "coordCount": 0,
+      "housingTypes": [],
+      "schedule": [],
+      "noticeStatus": "정정공고중",
+      "enrichedAt": "2026-09-06T17:24:30.671Z"
+    }
+  },
+  {
+    "id": "lh-rental-21101-0",
+    "pblancId": "21101",
+    "houseSn": 0,
+    "category": "임대",
+    "typeId": "buy",
+    "housingType": "매입임대",
+    "houseType": "다가구주택",
+    "title": "[경기 안성시] 26년 2차 기숙사형 청년주택 예비입주자 모집공고",
+    "noticeTitle": "[경기 안성시] 26년 2차 기숙사형 청년주택 예비입주자 모집공고",
+    "provider": "LH",
+    "sido": "경기도",
+    "sigungu": "안성시",
+    "address": "",
+    "pnu": "",
+    "totalUnits": 0,
+    "supplyUnits": 3,
+    "depositWon": 0,
+    "monthlyRentWon": 0,
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "announceDate": "2026.08.27",
+    "beginDate": "2026.09.07",
+    "endDate": "2026.09.09",
+    "winnerDate": "2026.10.30",
+    "noticeStatus": "일반공고",
+    "progressStatus": "",
+    "activeStatus": "closing",
+    "daysToDeadline": 2,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020618&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21101",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21101",
+    "attachmentId": "",
+    "details": {
+      "pageAddress": "",
+      "matchedTab": null,
+      "coordCount": 0,
+      "housingTypes": [],
+      "schedule": [],
+      "noticeStatus": "정정공고중",
+      "enrichedAt": "2026-09-06T17:24:30.561Z"
+    }
+  },
+  {
+    "id": "lh-rental-21096-0",
+    "pblancId": "21096",
+    "houseSn": 0,
+    "category": "임대",
+    "typeId": "buy",
+    "housingType": "매입임대",
+    "houseType": "다가구주택",
+    "title": "[경기남부] 신혼·신생아 매입임대주택Ⅰ 예비입주자 모집공고",
+    "noticeTitle": "[경기남부] 신혼·신생아 매입임대주택Ⅰ 예비입주자 모집공고",
+    "provider": "LH",
+    "sido": "경기도",
+    "sigungu": "시흥시",
+    "address": "",
+    "pnu": "",
+    "totalUnits": 0,
+    "supplyUnits": 25,
+    "depositWon": 0,
+    "monthlyRentWon": 0,
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "announceDate": "2026.08.27",
+    "beginDate": "2026.09.07",
+    "endDate": "2026.09.09",
+    "winnerDate": "2026.11.27",
+    "noticeStatus": "일반공고",
+    "progressStatus": "",
+    "activeStatus": "closing",
+    "daysToDeadline": 2,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020628&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21096",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21096",
+    "attachmentId": "",
+    "details": {
+      "pageAddress": "",
+      "matchedTab": null,
+      "coordCount": 0,
+      "housingTypes": [],
+      "schedule": [],
+      "noticeStatus": "정정공고중",
+      "enrichedAt": "2026-09-06T17:24:30.990Z"
+    }
+  },
+  {
+    "id": "lh-rental-21095-0",
+    "pblancId": "21095",
+    "houseSn": 0,
+    "category": "임대",
+    "typeId": "buy",
+    "housingType": "매입임대",
+    "houseType": "다가구주택",
+    "title": "[경기남부] 신혼·신생아 매입임대주택Ⅱ(전세형) 예비입주자 모집공고",
+    "noticeTitle": "[경기남부] 신혼·신생아 매입임대주택Ⅱ(전세형) 예비입주자 모집공고",
+    "provider": "LH",
+    "sido": "경기도",
+    "sigungu": "의왕시",
+    "address": "",
+    "pnu": "",
+    "totalUnits": 0,
+    "supplyUnits": 8,
+    "depositWon": 0,
+    "monthlyRentWon": 0,
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "announceDate": "2026.08.27",
+    "beginDate": "2026.09.07",
+    "endDate": "2026.09.09",
+    "winnerDate": "2026.11.27",
+    "noticeStatus": "일반공고",
+    "progressStatus": "",
+    "activeStatus": "closing",
+    "daysToDeadline": 2,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020629&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21095",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21095",
+    "attachmentId": "",
+    "details": {
+      "pageAddress": "",
+      "matchedTab": null,
+      "coordCount": 0,
+      "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-08-19T03:51:45.348Z"
-    },
-    "photos": [
-      {
-        "kind": "null",
-        "name": "[크기변환]서홍행복주택교통광역도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37329501"
-      },
-      {
-        "kind": "null",
-        "name": "[크기변환]서귀포서홍행복주택투시도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37329502"
-      },
-      {
-        "kind": "null",
-        "name": "[크기변환]서홍행복주택단지배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37329503"
-      },
-      {
-        "kind": "null",
-        "name": "서홍행복주택동호배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37329504"
-      },
-      {
-        "kind": "null",
-        "name": "크기변환_제주혁신도시행복주택교통망도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32512884"
-      },
-      {
-        "kind": "null",
-        "name": "크기변환_0625_제주혁신행복주택조감도.JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32512885"
-      },
-      {
-        "kind": "null",
-        "name": "단지배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32512886"
-      },
-      {
-        "kind": "null",
-        "name": "동호배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32512887"
-      }
-    ]
+      "enrichedAt": "2026-09-06T17:24:30.986Z"
+    }
+  },
+  {
+    "id": "lh-rental-21094-0",
+    "pblancId": "21094",
+    "houseSn": 0,
+    "category": "임대",
+    "typeId": "buy",
+    "housingType": "매입임대",
+    "houseType": "다가구주택",
+    "title": "[인천지역본부]26년 6차 신혼·신생아Ⅱ(전세형) 예비입주자 모집공고(인천,부천)",
+    "noticeTitle": "[인천지역본부]26년 6차 신혼·신생아Ⅱ(전세형) 예비입주자 모집공고(인천,부천)",
+    "provider": "LH",
+    "sido": "인천광역시",
+    "sigungu": "제물포구",
+    "address": "",
+    "pnu": "",
+    "totalUnits": 0,
+    "supplyUnits": 4,
+    "depositWon": 0,
+    "monthlyRentWon": 0,
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "announceDate": "2026.08.27",
+    "beginDate": "2026.09.07",
+    "endDate": "2026.09.09",
+    "winnerDate": "2026.11.12",
+    "noticeStatus": "일반공고",
+    "progressStatus": "",
+    "activeStatus": "closing",
+    "daysToDeadline": 2,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020633&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21094",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21094",
+    "attachmentId": "",
+    "details": {
+      "pageAddress": "",
+      "matchedTab": null,
+      "coordCount": 0,
+      "housingTypes": [],
+      "schedule": [],
+      "noticeStatus": "정정공고중",
+      "enrichedAt": "2026-09-06T17:24:31.714Z"
+    }
+  },
+  {
+    "id": "lh-rental-21093-0",
+    "pblancId": "21093",
+    "houseSn": 0,
+    "category": "임대",
+    "typeId": "buy",
+    "housingType": "매입임대",
+    "houseType": "다가구주택",
+    "title": "[인천지역본부]26년 6차 신혼·신생아Ⅰ 예비입주자 모집공고(인천,부천)",
+    "noticeTitle": "[인천지역본부]26년 6차 신혼·신생아Ⅰ 예비입주자 모집공고(인천,부천)",
+    "provider": "LH",
+    "sido": "인천광역시",
+    "sigungu": "부평구",
+    "address": "",
+    "pnu": "",
+    "totalUnits": 0,
+    "supplyUnits": 9,
+    "depositWon": 0,
+    "monthlyRentWon": 0,
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "announceDate": "2026.08.27",
+    "beginDate": "2026.09.07",
+    "endDate": "2026.09.09",
+    "winnerDate": "2026.11.12",
+    "noticeStatus": "일반공고",
+    "progressStatus": "",
+    "activeStatus": "closing",
+    "daysToDeadline": 2,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020634&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21093",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21093",
+    "attachmentId": "",
+    "details": {
+      "pageAddress": "",
+      "matchedTab": null,
+      "coordCount": 0,
+      "housingTypes": [],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-09-06T17:24:32.074Z"
+    }
+  },
+  {
+    "id": "lh-rental-21092-0",
+    "pblancId": "21092",
+    "houseSn": 0,
+    "category": "임대",
+    "typeId": "buy",
+    "housingType": "매입임대",
+    "houseType": "다가구주택",
+    "title": "[대전·충남] 2026년 2차 든든전세주택 입주자 모집공고(비분양전환형)",
+    "noticeTitle": "[대전·충남] 2026년 2차 든든전세주택 입주자 모집공고(비분양전환형)",
+    "provider": "LH",
+    "sido": "충청남도",
+    "sigungu": "아산시",
+    "address": "",
+    "pnu": "",
+    "totalUnits": 0,
+    "supplyUnits": 14,
+    "depositWon": 0,
+    "monthlyRentWon": 0,
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "announceDate": "2026.08.27",
+    "beginDate": "2026.09.07",
+    "endDate": "2026.09.09",
+    "winnerDate": "2026.11.12",
+    "noticeStatus": "일반공고",
+    "progressStatus": "",
+    "activeStatus": "closing",
+    "daysToDeadline": 2,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020620&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21092",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21092",
+    "attachmentId": "",
+    "details": {
+      "pageAddress": "",
+      "matchedTab": null,
+      "coordCount": 0,
+      "housingTypes": [],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-09-06T17:24:32.067Z"
+    }
   },
   {
     "id": "lh-rental-21028-1",
@@ -219,7 +586,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "closing",
-    "daysToDeadline": 2,
+    "daysToDeadline": 1,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020557&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21028&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21028&houseSn=1",
@@ -243,7 +610,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:01:56.680Z"
+      "enrichedAt": "2026-09-06T17:24:32.038Z"
     }
   },
   {
@@ -274,7 +641,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "closing",
-    "daysToDeadline": 2,
+    "daysToDeadline": 1,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020549&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21027&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21027&houseSn=1",
@@ -298,7 +665,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:01:56.618Z"
+      "enrichedAt": "2026-09-06T17:24:32.065Z"
     }
   },
   {
@@ -336,23 +703,6 @@
     "attachmentId": "1a06b25936413",
     "lat": 34.8134379,
     "lng": 126.4569611,
-    "photos": [
-      {
-        "kind": "단지배치도",
-        "name": "dans.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=24546343"
-      },
-      {
-        "kind": "위치도",
-        "name": "wes.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=24546332"
-      },
-      {
-        "kind": "조감도",
-        "name": "jos.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=24546342"
-      }
-    ],
     "details": {
       "pageAddress": "전남광주통합특별시 서구 시청로 91(치평동) 6층 임대공급운영팀",
       "matchedTab": "평면도",
@@ -394,7 +744,24 @@
       "schedule": [],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-09-05T17:01:57.091Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "단지배치도",
+        "name": "dans.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=24546343"
+      },
+      {
+        "kind": "위치도",
+        "name": "wes.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=24546332"
+      },
+      {
+        "kind": "조감도",
+        "name": "jos.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=24546342"
+      }
+    ]
   },
   {
     "id": "lh-sale-1474",
@@ -727,6 +1094,49 @@
     ]
   },
   {
+    "id": "lh-rental-21091-0",
+    "pblancId": "21091",
+    "houseSn": 0,
+    "category": "임대",
+    "typeId": "buy",
+    "housingType": "매입임대",
+    "houseType": "다가구주택",
+    "title": "[전남광주통합특별시 서구,남구,나주시] 기존주택 등 매입임대주택 예비입주자 모집 공고",
+    "noticeTitle": "[전남광주통합특별시 서구,남구,나주시] 기존주택 등 매입임대주택 예비입주자 모집 공고",
+    "provider": "LH",
+    "sido": "전남광주통합특별시",
+    "sigungu": "남구",
+    "address": "",
+    "pnu": "",
+    "totalUnits": 0,
+    "supplyUnits": 250,
+    "depositWon": 0,
+    "monthlyRentWon": 0,
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "announceDate": "2026.08.27",
+    "beginDate": "2026.09.07",
+    "endDate": "2026.09.11",
+    "winnerDate": "2026.10.30",
+    "noticeStatus": "일반공고",
+    "progressStatus": "",
+    "activeStatus": "open",
+    "daysToDeadline": 4,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020616&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21091",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21091",
+    "attachmentId": "",
+    "details": {
+      "pageAddress": "",
+      "matchedTab": null,
+      "coordCount": 0,
+      "housingTypes": [],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-09-06T17:24:32.778Z"
+    }
+  },
+  {
     "id": "lh-sale-1475",
     "pblancId": "1475",
     "houseSn": null,
@@ -761,33 +1171,6 @@
     "attachmentId": "1a06af2c95d14",
     "lat": 37.8446256,
     "lng": 127.0578092,
-    "photos": [
-      {
-        "kind": "단지조감도",
-        "name": "양주회천A-26BL_단지조감도(0827).jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68392847"
-      },
-      {
-        "kind": "단지배치도",
-        "name": "양주회천A-26BL_단지배치도(0827).jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68392845"
-      },
-      {
-        "kind": "동호배치도",
-        "name": "양주회천A-26BL_동호배치도(0827).jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68392849"
-      },
-      {
-        "kind": "지역위치도",
-        "name": "양주회천A26BL_교통망도(0827).jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68392846"
-      },
-      {
-        "kind": "토지이용계획도",
-        "name": "양주회천A-26BL_토지이용계획도(0827).jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68392848"
-      }
-    ],
     "details": {
       "pageAddress": "경기도 남양주시 별내동 816-1 LH주택전시관 Ⅱ관",
       "matchedTab": null,
@@ -883,7 +1266,34 @@
       ],
       "noticeStatus": "공고중",
       "enrichedAt": "2026-09-05T17:01:57.112Z"
-    }
+    },
+    "photos": [
+      {
+        "kind": "단지조감도",
+        "name": "양주회천A-26BL_단지조감도(0827).jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68392847"
+      },
+      {
+        "kind": "단지배치도",
+        "name": "양주회천A-26BL_단지배치도(0827).jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68392845"
+      },
+      {
+        "kind": "동호배치도",
+        "name": "양주회천A-26BL_동호배치도(0827).jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68392849"
+      },
+      {
+        "kind": "지역위치도",
+        "name": "양주회천A26BL_교통망도(0827).jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68392846"
+      },
+      {
+        "kind": "토지이용계획도",
+        "name": "양주회천A-26BL_토지이용계획도(0827).jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68392848"
+      }
+    ]
   },
   {
     "id": "lh-sale-1472",
@@ -1267,8 +1677,311 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:01:57.921Z"
+      "enrichedAt": "2026-09-06T17:24:33.127Z"
     }
+  },
+  {
+    "id": "lh-rental-21080-1",
+    "pblancId": "21080",
+    "houseSn": 1,
+    "category": "임대",
+    "typeId": "perm",
+    "housingType": "영구임대",
+    "houseType": "아파트",
+    "title": "안동옥동2",
+    "noticeTitle": "[안동옥동2] 영구임대주택 예비입주자 모집",
+    "provider": "LH",
+    "sido": "경상북도",
+    "sigungu": "안동시",
+    "address": "경상북도 안동시 은행나무로 106-3 ",
+    "pnu": "4717013300109740000",
+    "totalUnits": null,
+    "supplyUnits": 100,
+    "depositWon": 2993000,
+    "monthlyRentWon": 59570,
+    "depositManwon": 299,
+    "monthlyRentManwon": 6,
+    "announceDate": "2026.08.24",
+    "beginDate": "2026.09.07",
+    "endDate": "2026.09.11",
+    "winnerDate": "2026.12.04",
+    "noticeStatus": "일반공고",
+    "progressStatus": "",
+    "activeStatus": "open",
+    "daysToDeadline": 4,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020584&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21080&houseSn=1",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21080&houseSn=1",
+    "attachmentId": "",
+    "lat": 36.5675668,
+    "lng": 128.6969194,
+    "details": {
+      "pageAddress": "",
+      "matchedTab": null,
+      "coordCount": 1,
+      "housingTypes": [
+        {
+          "주택형": "45.3400",
+          "전용면적(㎡)": "31.32",
+          "세대수": "776",
+          "금회공급세대수(예비자포함)": "100",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        }
+      ],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-09-06T17:24:33.121Z"
+    }
+  },
+  {
+    "id": "lh-rental-21079-1",
+    "pblancId": "21079",
+    "houseSn": 1,
+    "category": "임대",
+    "typeId": "happy",
+    "housingType": "행복주택",
+    "houseType": "아파트",
+    "title": "동해천곡",
+    "noticeTitle": "동해천곡(고령자) 행복주택 입주자 모집",
+    "provider": "LH",
+    "sido": "강원특별자치도",
+    "sigungu": "동해시",
+    "address": "강원특별자치도 동해시 봉오동길 53 ",
+    "pnu": "5117010100200050004",
+    "totalUnits": null,
+    "supplyUnits": 84,
+    "depositWon": 13940000,
+    "monthlyRentWon": 81310,
+    "depositManwon": 1394,
+    "monthlyRentManwon": 8,
+    "announceDate": "2026.08.24",
+    "beginDate": "2026.09.07",
+    "endDate": "2026.09.11",
+    "winnerDate": "2027.02.19",
+    "noticeStatus": "일반공고",
+    "progressStatus": "",
+    "activeStatus": "open",
+    "daysToDeadline": 4,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020611&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21079&houseSn=1",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21079&houseSn=1",
+    "attachmentId": "",
+    "lat": 37.5140182,
+    "lng": 129.1215503,
+    "details": {
+      "pageAddress": "강원특별자치도 춘천시 공지로 337(효자동) ",
+      "matchedTab": "평면도",
+      "coordCount": 1,
+      "housingTypes": [
+        {
+          "주택형": "21A(청년)",
+          "전용면적(㎡)": "21.93",
+          "금회공급세대수": "30",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        },
+        {
+          "주택형": "44A(신혼부부)",
+          "전용면적(㎡)": "44.95",
+          "금회공급세대수": "54",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        }
+      ],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-08-31T02:17:11.331Z"
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "동해천곡_단지조감도(저용량).JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68230274"
+      },
+      {
+        "kind": "null",
+        "name": "동해천곡_단지배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68230275"
+      },
+      {
+        "kind": "null",
+        "name": "동해천곡_동호배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68230276"
+      }
+    ]
+  },
+  {
+    "id": "lh-rental-21078-1",
+    "pblancId": "21078",
+    "houseSn": 1,
+    "category": "임대",
+    "typeId": "perm",
+    "housingType": "영구임대",
+    "houseType": "아파트",
+    "title": "동해천곡",
+    "noticeTitle": "동해천곡 고령자복지주택(영구임대) 입주자 모집",
+    "provider": "LH",
+    "sido": "강원특별자치도",
+    "sigungu": "동해시",
+    "address": "강원특별자치도 동해시 봉오동길 53 ",
+    "pnu": "5117010100200050004",
+    "totalUnits": null,
+    "supplyUnits": 202,
+    "depositWon": 2568000,
+    "monthlyRentWon": 51060,
+    "depositManwon": 257,
+    "monthlyRentManwon": 5,
+    "announceDate": "2026.08.24",
+    "beginDate": "2026.09.07",
+    "endDate": "2026.09.11",
+    "winnerDate": "2027.02.19",
+    "noticeStatus": "일반공고",
+    "progressStatus": "",
+    "activeStatus": "open",
+    "daysToDeadline": 4,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020609&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21078&houseSn=1",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21078&houseSn=1",
+    "attachmentId": "",
+    "lat": 37.5140182,
+    "lng": 129.1215503,
+    "details": {
+      "pageAddress": "강원특별자치도 춘천시 공지로 337(효자동) ",
+      "matchedTab": "평면도",
+      "coordCount": 1,
+      "housingTypes": [
+        {
+          "주택형": "26A(고령자)",
+          "전용면적(㎡)": "26.72",
+          "세대수": "170",
+          "금회공급세대수": "170",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        },
+        {
+          "주택형": "29B1(고령자_쉐어형_여)",
+          "전용면적(㎡)": "29.63",
+          "세대수": "16",
+          "금회공급세대수": "16",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        },
+        {
+          "주택형": "29B2(고령자_쉐어형_남)",
+          "전용면적(㎡)": "29.63",
+          "세대수": "16",
+          "금회공급세대수": "16",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        }
+      ],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-08-31T02:17:11.575Z"
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "동해천곡_단지조감도(저용량).JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68230225"
+      },
+      {
+        "kind": "null",
+        "name": "동해천곡_단지배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68230226"
+      },
+      {
+        "kind": "null",
+        "name": "동해천곡_동호배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68230227"
+      }
+    ]
+  },
+  {
+    "id": "lh-rental-21077-1",
+    "pblancId": "21077",
+    "houseSn": 1,
+    "category": "임대",
+    "typeId": "happy",
+    "housingType": "행복주택",
+    "houseType": "아파트",
+    "title": "동해천곡",
+    "noticeTitle": "동해천곡 고령자복지주택(행복주택) 입주자 모집",
+    "provider": "LH",
+    "sido": "강원특별자치도",
+    "sigungu": "동해시",
+    "address": "강원특별자치도 동해시 봉오동길 53 ",
+    "pnu": "5117010100200050004",
+    "totalUnits": null,
+    "supplyUnits": 116,
+    "depositWon": 16800000,
+    "monthlyRentWon": 98000,
+    "depositManwon": 1680,
+    "monthlyRentManwon": 10,
+    "announceDate": "2026.08.24",
+    "beginDate": "2026.09.07",
+    "endDate": "2026.09.11",
+    "winnerDate": "2027.02.19",
+    "noticeStatus": "일반공고",
+    "progressStatus": "",
+    "activeStatus": "open",
+    "daysToDeadline": 4,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020610&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21077&houseSn=1",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21077&houseSn=1",
+    "attachmentId": "",
+    "lat": 37.5140182,
+    "lng": 129.1215503,
+    "details": {
+      "pageAddress": "강원특별자치도 춘천시 공지로 337(효자동) ",
+      "matchedTab": "평면도",
+      "coordCount": 1,
+      "housingTypes": [
+        {
+          "주택형": "29A(고령자)",
+          "전용면적(㎡)": "29.86",
+          "금회공급세대수": "56",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        },
+        {
+          "주택형": "36A(고령자)",
+          "전용면적(㎡)": "36.21",
+          "금회공급세대수": "60",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "청약신청전"
+        }
+      ],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-08-31T02:17:11.671Z"
+    },
+    "photos": [
+      {
+        "kind": "null",
+        "name": "동해천곡_단지조감도(저용량).JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68230274"
+      },
+      {
+        "kind": "null",
+        "name": "동해천곡_단지배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68230275"
+      },
+      {
+        "kind": "null",
+        "name": "동해천곡_동호배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68230276"
+      }
+    ]
   },
   {
     "id": "lh-sale-1467",
@@ -1321,7 +2034,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:01:57.763Z"
+      "enrichedAt": "2026-09-06T17:24:33.109Z"
     }
   },
   {
@@ -1364,7 +2077,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:01:57.739Z"
+      "enrichedAt": "2026-09-06T17:24:33.023Z"
     }
   },
   {
@@ -1517,7 +2230,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:01:58.244Z"
+      "enrichedAt": "2026-09-06T17:24:33.849Z"
     }
   },
   {
@@ -1548,7 +2261,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 39,
+    "daysToDeadline": 38,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020529&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20997",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20997",
@@ -1560,7 +2273,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:01:58.281Z"
+      "enrichedAt": "2026-09-06T17:24:34.095Z"
     }
   },
   {
@@ -1780,6 +2493,61 @@
     ]
   },
   {
+    "id": "lh-rental-20980-1",
+    "pblancId": "20980",
+    "houseSn": 1,
+    "category": "임대",
+    "typeId": "perm",
+    "housingType": "영구임대",
+    "houseType": "아파트",
+    "title": "김해구산",
+    "noticeTitle": "김해구산1 영구임대주택 예비입주자 모집 공고",
+    "provider": "LH",
+    "sido": "경상남도",
+    "sigungu": "김해시",
+    "address": "경상남도 김해시 가락로 222 ",
+    "pnu": "4825010600103210000",
+    "totalUnits": null,
+    "supplyUnits": 100,
+    "depositWon": 2518000,
+    "monthlyRentWon": 50100,
+    "depositManwon": 252,
+    "monthlyRentManwon": 5,
+    "announceDate": "2026.08.06",
+    "beginDate": "2026.09.07",
+    "endDate": "2026.09.11",
+    "winnerDate": "2026.11.19",
+    "noticeStatus": "일반공고",
+    "progressStatus": "",
+    "activeStatus": "open",
+    "daysToDeadline": 4,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020500&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20980&houseSn=1",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20980&houseSn=1",
+    "attachmentId": "",
+    "lat": 35.2467561,
+    "lng": 128.8764792,
+    "details": {
+      "pageAddress": "",
+      "matchedTab": null,
+      "coordCount": 1,
+      "housingTypes": [
+        {
+          "주택형": "41.2200",
+          "전용면적(㎡)": "26.34",
+          "세대수": "552",
+          "금회공급세대수(예비자포함)": "100",
+          "임대보증금(원)": "공고문 확인",
+          "월임대료(원)": "공고문 확인",
+          "인터넷청약": "-"
+        }
+      ],
+      "schedule": [],
+      "noticeStatus": "공고중",
+      "enrichedAt": "2026-09-06T17:24:34.164Z"
+    }
+  },
+  {
     "id": "lh-rental-20957-1",
     "pblancId": "20957",
     "houseSn": 1,
@@ -1807,7 +2575,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 53,
+    "daysToDeadline": 52,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020495&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20957&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20957&houseSn=1",
@@ -1884,7 +2652,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 328,
+    "daysToDeadline": 327,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020453&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20935&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20935&houseSn=1",
@@ -1908,7 +2676,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:01:59.064Z"
+      "enrichedAt": "2026-09-06T17:24:34.388Z"
     }
   },
   {
@@ -1939,7 +2707,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 328,
+    "daysToDeadline": 327,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020453&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20935&houseSn=2",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20935&houseSn=2",
@@ -1963,7 +2731,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:01:59.112Z"
+      "enrichedAt": "2026-09-06T17:24:34.394Z"
     }
   },
   {
@@ -1994,7 +2762,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 328,
+    "daysToDeadline": 327,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020453&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20935&houseSn=3",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20935&houseSn=3",
@@ -2018,7 +2786,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:01:59.526Z"
+      "enrichedAt": "2026-09-06T17:24:35.071Z"
     }
   },
   {
@@ -2049,7 +2817,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 328,
+    "daysToDeadline": 327,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020453&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20935&houseSn=4",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20935&houseSn=4",
@@ -2073,7 +2841,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:01:59.753Z"
+      "enrichedAt": "2026-09-06T17:24:35.342Z"
     }
   },
   {
@@ -2104,7 +2872,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 328,
+    "daysToDeadline": 327,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020453&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20935&houseSn=5",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20935&houseSn=5",
@@ -2128,7 +2896,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:01:59.895Z"
+      "enrichedAt": "2026-09-06T17:24:35.392Z"
     }
   },
   {
@@ -2159,7 +2927,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 328,
+    "daysToDeadline": 327,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020453&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20935&houseSn=6",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20935&houseSn=6",
@@ -2183,7 +2951,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:00.277Z"
+      "enrichedAt": "2026-09-06T17:24:35.594Z"
     }
   },
   {
@@ -2214,7 +2982,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 328,
+    "daysToDeadline": 327,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020453&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20935&houseSn=7",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20935&houseSn=7",
@@ -2238,7 +3006,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:00.369Z"
+      "enrichedAt": "2026-09-06T17:24:35.654Z"
     }
   },
   {
@@ -2482,7 +3250,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:00.580Z"
+      "enrichedAt": "2026-09-06T17:24:36.040Z"
     }
   },
   {
@@ -2525,7 +3293,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-09-05T17:02:00.711Z"
+      "enrichedAt": "2026-09-06T17:24:36.383Z"
     }
   },
   {
@@ -2779,7 +3547,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:01.050Z"
+      "enrichedAt": "2026-09-06T17:24:36.608Z"
     }
   },
   {
@@ -2822,7 +3590,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-09-05T17:02:01.220Z"
+      "enrichedAt": "2026-09-06T17:24:36.609Z"
     }
   },
   {
@@ -2865,7 +3633,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-09-05T17:02:01.318Z"
+      "enrichedAt": "2026-09-06T17:24:36.621Z"
     }
   },
   {
@@ -2925,7 +3693,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:01.627Z"
+      "enrichedAt": "2026-09-06T17:24:37.100Z"
     }
   },
   {
@@ -2968,7 +3736,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:01.652Z"
+      "enrichedAt": "2026-09-06T17:24:37.356Z"
     }
   },
   {
@@ -3011,7 +3779,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:01.998Z"
+      "enrichedAt": "2026-09-06T17:24:37.579Z"
     }
   },
   {
@@ -3411,7 +4179,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:02.249Z"
+      "enrichedAt": "2026-09-06T17:24:37.656Z"
     }
   },
   {
@@ -4337,7 +5105,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:02.391Z"
+      "enrichedAt": "2026-09-06T17:24:37.703Z"
     }
   },
   {
@@ -5463,7 +6231,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 107,
+    "daysToDeadline": 106,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020042&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20571&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20571&houseSn=1",
@@ -5553,7 +6321,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 115,
+    "daysToDeadline": 114,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020090&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20460&houseSn=2",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20460&houseSn=2",
@@ -5620,7 +6388,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 115,
+    "daysToDeadline": 114,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020090&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20460&houseSn=8",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20460&houseSn=8",
@@ -5687,7 +6455,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 115,
+    "daysToDeadline": 114,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020090&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20460&houseSn=9",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20460&houseSn=9",
@@ -5777,7 +6545,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:02.686Z"
+      "enrichedAt": "2026-09-06T17:24:38.193Z"
     }
   },
   {
@@ -5831,7 +6599,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:02.681Z"
+      "enrichedAt": "2026-09-06T17:24:38.385Z"
     }
   },
   {
@@ -5917,7 +6685,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:03.094Z"
+      "enrichedAt": "2026-09-06T17:24:38.715Z"
     }
   },
   {
@@ -6003,7 +6771,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:03.366Z"
+      "enrichedAt": "2026-09-06T17:24:38.782Z"
     }
   },
   {
@@ -6055,7 +6823,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:03.473Z"
+      "enrichedAt": "2026-09-06T17:24:38.793Z"
     }
   },
   {
@@ -6472,7 +7240,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:03.598Z"
+      "enrichedAt": "2026-09-06T17:24:39.146Z"
     }
   },
   {
@@ -6515,7 +7283,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-09-05T17:02:03.614Z"
+      "enrichedAt": "2026-09-06T17:24:39.360Z"
     }
   },
   {
@@ -6558,7 +7326,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:04.016Z"
+      "enrichedAt": "2026-09-06T17:24:39.668Z"
     }
   },
   {
@@ -6707,7 +7475,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:04.379Z"
+      "enrichedAt": "2026-09-06T17:24:39.832Z"
     },
     "geocoded": "vworld-road"
   },
@@ -7301,7 +8069,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:04.401Z"
+      "enrichedAt": "2026-09-06T17:24:39.738Z"
     },
     "geocoded": "sido-center"
   },
@@ -7469,7 +8237,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:04.619Z"
+      "enrichedAt": "2026-09-06T17:24:40.186Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -7524,7 +8292,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:06.120Z"
+      "enrichedAt": "2026-09-06T17:24:40.404Z"
     }
   },
   {
@@ -8136,7 +8904,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 54,
+    "daysToDeadline": 53,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300019841&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20175&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20175&houseSn=1",
@@ -8266,7 +9034,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:05.088Z"
+      "enrichedAt": "2026-09-06T17:24:40.748Z"
     }
   },
   {
@@ -8402,7 +9170,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:05.413Z"
+      "enrichedAt": "2026-09-06T17:24:43.939Z"
     },
     "geocoded": "vworld-road"
   },
@@ -9485,7 +10253,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 116,
+    "daysToDeadline": 115,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300019546&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=17&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19834",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19834",
@@ -9499,7 +10267,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수중",
-      "enrichedAt": "2026-09-05T17:02:06.069Z"
+      "enrichedAt": "2026-09-06T17:24:41.613Z"
     },
     "geocoded": "sido-center"
   },
@@ -9531,7 +10299,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 116,
+    "daysToDeadline": 115,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300019550&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=17&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19833",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19833",
@@ -9545,7 +10313,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수중",
-      "enrichedAt": "2026-09-05T17:02:06.434Z"
+      "enrichedAt": "2026-09-06T17:24:41.927Z"
     },
     "geocoded": "sido-center"
   },
@@ -9560,7 +10328,7 @@
     "title": "2026년 신혼·신생아 전세임대Ⅱ 입주자 수시모집 공고",
     "noticeTitle": "2026년 신혼·신생아 전세임대Ⅱ 입주자 수시모집 공고",
     "provider": "LH",
-    "sido": "경상남도",
+    "sido": "대구광역시",
     "sigungu": "",
     "address": "",
     "pnu": "",
@@ -9577,7 +10345,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 116,
+    "daysToDeadline": 115,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300019551&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=17&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19832",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19832",
@@ -9591,7 +10359,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수중",
-      "enrichedAt": "2026-09-05T17:02:06.776Z"
+      "enrichedAt": "2026-09-06T17:24:42.106Z"
     },
     "geocoded": "sido-center"
   },
@@ -9623,7 +10391,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 116,
+    "daysToDeadline": 115,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300019433&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19696",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19696",
@@ -9637,7 +10405,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:06.480Z"
+      "enrichedAt": "2026-09-06T17:24:44.128Z"
     },
     "geocoded": "sido-center"
   },
@@ -9988,7 +10756,7 @@
     "title": "2026년 청년 전세임대 1순위 입주자 수시모집",
     "noticeTitle": "2026년 청년 전세임대 1순위 입주자 수시모집",
     "provider": "LH",
-    "sido": "울산광역시",
+    "sido": "경상북도",
     "sigungu": "",
     "address": "",
     "pnu": "",
@@ -10005,7 +10773,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 116,
+    "daysToDeadline": 115,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300019376&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=17&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19631",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19631",
@@ -10019,7 +10787,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수중",
-      "enrichedAt": "2026-09-05T17:02:07.832Z"
+      "enrichedAt": "2026-09-06T17:24:43.374Z"
     },
     "geocoded": "sido-center"
   },
@@ -10051,7 +10819,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 116,
+    "daysToDeadline": 115,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300019241&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19585&houseSn=2",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19585&houseSn=2",
@@ -10075,7 +10843,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:07.190Z"
+      "enrichedAt": "2026-09-06T17:24:43.020Z"
     }
   },
   {
@@ -10106,7 +10874,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 116,
+    "daysToDeadline": 115,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300019241&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19585&houseSn=3",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19585&houseSn=3",
@@ -10130,7 +10898,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:07.506Z"
+      "enrichedAt": "2026-09-06T17:24:43.208Z"
     }
   },
   {
@@ -10175,7 +10943,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:07.691Z"
+      "enrichedAt": "2026-09-06T17:24:43.982Z"
     },
     "geocoded": "sido-center"
   },
@@ -10207,7 +10975,7 @@
     "noticeStatus": "정정공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 116,
+    "daysToDeadline": 115,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300019312&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19575&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19575&houseSn=1",
@@ -10278,7 +11046,7 @@
     "noticeStatus": "정정공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 116,
+    "daysToDeadline": 115,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300019312&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19575&houseSn=2",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19575&houseSn=2",
@@ -10349,7 +11117,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 116,
+    "daysToDeadline": 115,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300019307&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19574&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19574&houseSn=1",
@@ -10373,7 +11141,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:07.787Z"
+      "enrichedAt": "2026-09-06T17:24:44.256Z"
     }
   },
   {
@@ -10404,7 +11172,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 116,
+    "daysToDeadline": 115,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300019308&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19573&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19573&houseSn=1",
@@ -10475,7 +11243,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 116,
+    "daysToDeadline": 115,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300019308&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19573&houseSn=2",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19573&houseSn=2",
@@ -10560,7 +11328,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:08.132Z"
+      "enrichedAt": "2026-09-06T17:24:44.331Z"
     },
     "geocoded": "sido-center"
   },
@@ -10604,7 +11372,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:08.461Z"
+      "enrichedAt": "2026-09-06T17:24:44.909Z"
     }
   },
   {
@@ -10649,7 +11417,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:08.670Z"
+      "enrichedAt": "2026-09-06T17:24:47.201Z"
     },
     "geocoded": "sido-center"
   },
@@ -10837,7 +11605,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:08.835Z"
+      "enrichedAt": "2026-09-06T17:24:45.198Z"
     }
   },
   {
@@ -10891,7 +11659,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:08.874Z"
+      "enrichedAt": "2026-09-06T17:24:45.319Z"
     }
   },
   {
@@ -10945,7 +11713,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:09.199Z"
+      "enrichedAt": "2026-09-06T17:24:45.387Z"
     }
   },
   {
@@ -10999,7 +11767,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:09.555Z"
+      "enrichedAt": "2026-09-06T17:24:46.004Z"
     }
   },
   {
@@ -11525,7 +12293,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:10.105Z"
+      "enrichedAt": "2026-09-06T17:24:46.676Z"
     }
   },
   {
@@ -11998,7 +12766,7 @@
       ],
       "schedule": [],
       "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-09-05T17:02:10.328Z"
+      "enrichedAt": "2026-09-06T17:24:46.828Z"
     }
   },
   {
@@ -13309,7 +14077,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:09.938Z"
+      "enrichedAt": "2026-09-06T17:24:46.457Z"
     }
   },
   {
@@ -13371,7 +14139,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:10.365Z"
+      "enrichedAt": "2026-09-06T17:24:47.079Z"
     }
   },
   {
@@ -13402,7 +14170,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 116,
+    "daysToDeadline": 115,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300019412&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19677&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=19677&houseSn=1",
@@ -13420,7 +14188,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:10.564Z"
+      "enrichedAt": "2026-09-06T17:24:47.493Z"
     }
   },
   {
@@ -13914,7 +14682,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:10.881Z"
+      "enrichedAt": "2026-09-06T17:24:49.016Z"
     },
     "geocoded": "sido-center"
   },
@@ -13969,7 +14737,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:11.264Z"
+      "enrichedAt": "2026-09-06T17:24:48.004Z"
     }
   },
   {
@@ -14283,7 +15051,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:11.353Z"
+      "enrichedAt": "2026-09-06T17:24:48.142Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -14329,7 +15097,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:11.301Z"
+      "enrichedAt": "2026-09-06T17:24:48.180Z"
     },
     "geocoded": "sido-center"
   },
@@ -14457,7 +15225,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:11.496Z"
+      "enrichedAt": "2026-09-06T17:24:48.456Z"
     },
     "geocoded": "sido-center"
   },
@@ -14526,7 +15294,7 @@
         }
       ],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:11.833Z"
+      "enrichedAt": "2026-09-06T17:24:48.972Z"
     }
   },
   {
@@ -14588,7 +15356,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:12.431Z"
+      "enrichedAt": "2026-09-06T17:24:49.307Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -14634,7 +15402,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:12.288Z"
+      "enrichedAt": "2026-09-06T17:24:49.134Z"
     },
     "geocoded": "sido-center"
   },
@@ -14680,7 +15448,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:12.291Z"
+      "enrichedAt": "2026-09-06T17:24:49.437Z"
     },
     "geocoded": "sido-center"
   },
@@ -15401,7 +16169,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:12.744Z"
+      "enrichedAt": "2026-09-06T17:24:50.214Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -15472,7 +16240,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:13.047Z"
+      "enrichedAt": "2026-09-06T17:24:51.292Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -16244,7 +17012,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:13.317Z"
+      "enrichedAt": "2026-09-06T17:24:50.186Z"
     }
   },
   {
@@ -16647,7 +17415,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:13.329Z"
+      "enrichedAt": "2026-09-06T17:24:50.338Z"
     }
   },
   {
@@ -16678,7 +17446,7 @@
     "noticeStatus": "정정공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 1121,
+    "daysToDeadline": 1120,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300018799&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=18977&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=18977&houseSn=1",
@@ -16785,7 +17553,7 @@
     "noticeStatus": "정정공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 1121,
+    "daysToDeadline": 1120,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300018799&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=18977&houseSn=2",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=18977&houseSn=2",
@@ -16892,7 +17660,7 @@
     "noticeStatus": "정정공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 1121,
+    "daysToDeadline": 1120,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300018799&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=18977&houseSn=3",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=18977&houseSn=3",
@@ -16999,7 +17767,7 @@
     "noticeStatus": "정정공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 1121,
+    "daysToDeadline": 1120,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300018799&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=18977&houseSn=4",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=18977&houseSn=4",
@@ -17106,7 +17874,7 @@
     "noticeStatus": "정정공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 1121,
+    "daysToDeadline": 1120,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300018799&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=18977&houseSn=5",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=18977&houseSn=5",
@@ -17213,7 +17981,7 @@
     "noticeStatus": "정정공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 1121,
+    "daysToDeadline": 1120,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300018799&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=18977&houseSn=6",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=18977&houseSn=6",
@@ -17320,7 +18088,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 1121,
+    "daysToDeadline": 1120,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300018780&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=18976&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=18976&houseSn=1",
@@ -17427,7 +18195,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 1121,
+    "daysToDeadline": 1120,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300018780&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=18976&houseSn=2",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=18976&houseSn=2",
@@ -17534,7 +18302,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 1121,
+    "daysToDeadline": 1120,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300018780&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=18976&houseSn=3",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=18976&houseSn=3",
@@ -17641,7 +18409,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 1121,
+    "daysToDeadline": 1120,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300018780&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=18976&houseSn=4",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=18976&houseSn=4",
@@ -17748,7 +18516,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 1121,
+    "daysToDeadline": 1120,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300018780&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=18976&houseSn=5",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=18976&houseSn=5",
@@ -17855,7 +18623,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "open",
-    "daysToDeadline": 1121,
+    "daysToDeadline": 1120,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300018780&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=18976&houseSn=6",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=18976&houseSn=6",
@@ -18299,7 +19067,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:13.379Z"
+      "enrichedAt": "2026-09-06T17:24:51.972Z"
     },
     "geocoded": "sido-center"
   },
@@ -18416,7 +19184,7 @@
         }
       ],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:13.723Z"
+      "enrichedAt": "2026-09-06T17:24:51.192Z"
     }
   },
   {
@@ -18470,7 +19238,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:14.132Z"
+      "enrichedAt": "2026-09-06T17:24:51.344Z"
     }
   },
   {
@@ -18656,7 +19424,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:14.384Z"
+      "enrichedAt": "2026-09-06T17:24:51.439Z"
     }
   },
   {
@@ -18803,7 +19571,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:14.424Z"
+      "enrichedAt": "2026-09-06T17:24:52.322Z"
     }
   },
   {
@@ -19142,7 +19910,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": null,
-      "enrichedAt": "2026-09-05T17:02:14.250Z"
+      "enrichedAt": "2026-09-06T17:24:52.191Z"
     },
     "geocoded": "sido-center"
   },
@@ -19188,7 +19956,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:14.644Z"
+      "enrichedAt": "2026-09-06T17:24:52.320Z"
     },
     "geocoded": "sido-center"
   },
@@ -20776,7 +21544,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:15.147Z"
+      "enrichedAt": "2026-09-06T17:24:52.482Z"
     }
   },
   {
@@ -20830,7 +21598,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:15.331Z"
+      "enrichedAt": "2026-09-06T17:24:53.098Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -20962,7 +21730,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:15.388Z"
+      "enrichedAt": "2026-09-06T17:24:54.270Z"
     }
   },
   {
@@ -21016,7 +21784,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:15.483Z"
+      "enrichedAt": "2026-09-06T17:24:53.396Z"
     }
   },
   {
@@ -21070,7 +21838,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:15.688Z"
+      "enrichedAt": "2026-09-06T17:24:53.376Z"
     }
   },
   {
@@ -21119,7 +21887,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:16.170Z"
+      "enrichedAt": "2026-09-06T17:24:53.533Z"
     }
   },
   {
@@ -21181,7 +21949,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:16.374Z"
+      "enrichedAt": "2026-09-06T17:24:54.152Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -21384,7 +22152,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:16.428Z"
+      "enrichedAt": "2026-09-06T17:24:54.451Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -21578,7 +22346,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:16.404Z"
+      "enrichedAt": "2026-09-06T17:24:54.366Z"
     },
     "geocoded": "sido-center"
   },
@@ -21862,7 +22630,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:16.640Z"
+      "enrichedAt": "2026-09-06T17:24:54.531Z"
     },
     "geocoded": "sido-center"
   },
@@ -21908,7 +22676,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:17.100Z"
+      "enrichedAt": "2026-09-06T17:24:55.125Z"
     },
     "geocoded": "sido-center"
   },
@@ -21954,7 +22722,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:17.318Z"
+      "enrichedAt": "2026-09-06T17:24:55.900Z"
     },
     "geocoded": "sido-center"
   },
@@ -22000,7 +22768,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:17.334Z"
+      "enrichedAt": "2026-09-06T17:24:55.341Z"
     },
     "geocoded": "sido-center"
   },
@@ -22217,7 +22985,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:17.494Z"
+      "enrichedAt": "2026-09-06T17:24:55.549Z"
     }
   },
   {
@@ -22614,7 +23382,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:17.753Z"
+      "enrichedAt": "2026-09-06T17:24:55.639Z"
     }
   },
   {
@@ -23098,7 +23866,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:18.126Z"
+      "enrichedAt": "2026-09-06T17:24:56.163Z"
     }
   },
   {
@@ -23377,7 +24145,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:18.389Z"
+      "enrichedAt": "2026-09-06T17:24:57.094Z"
     }
   },
   {
@@ -23431,7 +24199,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:18.378Z"
+      "enrichedAt": "2026-09-06T17:24:56.643Z"
     }
   },
   {
@@ -23501,7 +24269,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:18.585Z"
+      "enrichedAt": "2026-09-06T17:24:56.750Z"
     }
   },
   {
@@ -23917,7 +24685,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:18.772Z"
+      "enrichedAt": "2026-09-06T17:24:56.942Z"
     }
   },
   {
@@ -23971,7 +24739,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:19.189Z"
+      "enrichedAt": "2026-09-06T17:24:57.214Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -24680,7 +25448,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:19.348Z"
+      "enrichedAt": "2026-09-06T17:24:57.600Z"
     },
     "geocoded": "sido-center"
   },
@@ -25669,7 +26437,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:20.150Z"
+      "enrichedAt": "2026-09-06T17:24:59.327Z"
     }
   },
   {
@@ -25723,7 +26491,7 @@
       ],
       "schedule": [],
       "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-09-05T17:02:20.501Z"
+      "enrichedAt": "2026-09-06T17:24:58.852Z"
     }
   },
   {
@@ -25852,7 +26620,7 @@
         }
       ],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:19.760Z"
+      "enrichedAt": "2026-09-06T17:24:58.083Z"
     }
   },
   {
@@ -25981,7 +26749,7 @@
         }
       ],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:20.178Z"
+      "enrichedAt": "2026-09-06T17:24:58.219Z"
     }
   },
   {
@@ -26110,7 +26878,7 @@
         }
       ],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:22.182Z"
+      "enrichedAt": "2026-09-06T17:24:58.599Z"
     }
   },
   {
@@ -26339,7 +27107,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:20.789Z"
+      "enrichedAt": "2026-09-06T17:24:59.109Z"
     }
   },
   {
@@ -26393,7 +27161,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:21.176Z"
+      "enrichedAt": "2026-09-06T17:24:59.286Z"
     },
     "geocoded": "vworld-road"
   },
@@ -26439,7 +27207,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:21.111Z"
+      "enrichedAt": "2026-09-06T17:24:59.569Z"
     },
     "geocoded": "sido-center"
   },
@@ -26483,7 +27251,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:21.423Z"
+      "enrichedAt": "2026-09-06T17:25:00.313Z"
     }
   },
   {
@@ -26528,7 +27296,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-09-05T17:02:21.715Z"
+      "enrichedAt": "2026-09-06T17:25:00.074Z"
     },
     "geocoded": "sido-center"
   },
@@ -26574,7 +27342,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-09-05T17:02:22.052Z"
+      "enrichedAt": "2026-09-06T17:25:00.261Z"
     },
     "geocoded": "sido-center"
   },
@@ -26620,7 +27388,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-09-05T17:02:22.130Z"
+      "enrichedAt": "2026-09-06T17:25:00.291Z"
     },
     "geocoded": "sido-center"
   },
@@ -27442,7 +28210,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:22.350Z"
+      "enrichedAt": "2026-09-06T17:25:00.526Z"
     },
     "geocoded": "sido-center"
   },
@@ -27529,7 +28297,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:22.853Z"
+      "enrichedAt": "2026-09-06T17:25:01.213Z"
     }
   },
   {
@@ -27615,7 +28383,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:23.174Z"
+      "enrichedAt": "2026-09-06T17:25:02.055Z"
     }
   },
   {
@@ -27669,7 +28437,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:23.216Z"
+      "enrichedAt": "2026-09-06T17:25:01.362Z"
     }
   },
   {
@@ -28135,7 +28903,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:23.445Z"
+      "enrichedAt": "2026-09-06T17:25:01.604Z"
     }
   },
   {
@@ -28197,7 +28965,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:24.320Z"
+      "enrichedAt": "2026-09-06T17:25:02.189Z"
     }
   },
   {
@@ -28318,7 +29086,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:24.088Z"
+      "enrichedAt": "2026-09-06T17:25:02.379Z"
     }
   },
   {
@@ -28603,7 +29371,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:24.099Z"
+      "enrichedAt": "2026-09-06T17:25:02.820Z"
     },
     "geocoded": "sido-center"
   },
@@ -28658,7 +29426,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:24.299Z"
+      "enrichedAt": "2026-09-06T17:25:02.691Z"
     }
   },
   {
@@ -28804,7 +29572,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:24.458Z"
+      "enrichedAt": "2026-09-06T17:25:03.017Z"
     },
     "geocoded": "sido-center"
   },
@@ -28891,7 +29659,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:25.199Z"
+      "enrichedAt": "2026-09-06T17:25:03.813Z"
     }
   },
   {
@@ -28945,7 +29713,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:25.166Z"
+      "enrichedAt": "2026-09-06T17:25:03.446Z"
     },
     "geocoded": "vworld-road"
   },
@@ -29194,7 +29962,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:25.253Z"
+      "enrichedAt": "2026-09-06T17:25:03.664Z"
     },
     "geocoded": "sido-center"
   },
@@ -29249,7 +30017,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:25.420Z"
+      "enrichedAt": "2026-09-06T17:25:03.932Z"
     }
   },
   {
@@ -29521,7 +30289,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:28.045Z"
+      "enrichedAt": "2026-09-06T17:25:04.637Z"
     }
   },
   {
@@ -29817,7 +30585,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:26.214Z"
+      "enrichedAt": "2026-09-06T17:25:04.511Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -29872,7 +30640,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:26.239Z"
+      "enrichedAt": "2026-09-06T17:25:05.208Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -29943,7 +30711,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:26.631Z"
+      "enrichedAt": "2026-09-06T17:25:05.134Z"
     }
   },
   {
@@ -30081,7 +30849,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:26.369Z"
+      "enrichedAt": "2026-09-06T17:25:04.890Z"
     },
     "geocoded": "sido-center"
   },
@@ -30136,7 +30904,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:27.225Z"
+      "enrichedAt": "2026-09-06T17:25:05.571Z"
     }
   },
   {
@@ -30206,7 +30974,7 @@
         }
       ],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:27.188Z"
+      "enrichedAt": "2026-09-06T17:25:06.106Z"
     }
   },
   {
@@ -30591,7 +31359,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:27.413Z"
+      "enrichedAt": "2026-09-06T17:25:05.976Z"
     }
   },
   {
@@ -30645,7 +31413,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:27.662Z"
+      "enrichedAt": "2026-09-06T17:25:06.188Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -30970,7 +31738,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:28.314Z"
+      "enrichedAt": "2026-09-06T17:25:06.294Z"
     }
   },
   {
@@ -31024,7 +31792,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:28.316Z"
+      "enrichedAt": "2026-09-06T17:25:06.664Z"
     }
   },
   {
@@ -31750,7 +32518,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:28.461Z"
+      "enrichedAt": "2026-09-06T17:25:07.073Z"
     },
     "geocoded": "vworld-road"
   },
@@ -32333,7 +33101,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:28.740Z"
+      "enrichedAt": "2026-09-06T17:25:07.658Z"
     }
   },
   {
@@ -32382,7 +33150,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:29.091Z"
+      "enrichedAt": "2026-09-06T17:25:07.272Z"
     }
   },
   {
@@ -32772,7 +33540,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:29.464Z"
+      "enrichedAt": "2026-09-06T17:25:07.452Z"
     }
   },
   {
@@ -32834,7 +33602,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:29.386Z"
+      "enrichedAt": "2026-09-06T17:25:07.752Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -32884,7 +33652,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:29.471Z"
+      "enrichedAt": "2026-09-06T17:25:08.119Z"
     },
     "geocoded": "vworld-road"
   },
@@ -32934,7 +33702,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:29.824Z"
+      "enrichedAt": "2026-09-06T17:25:08.834Z"
     }
   },
   {
@@ -32988,7 +33756,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:30.123Z"
+      "enrichedAt": "2026-09-06T17:25:08.519Z"
     }
   },
   {
@@ -33222,7 +33990,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:30.534Z"
+      "enrichedAt": "2026-09-06T17:25:08.787Z"
     }
   },
   {
@@ -33276,7 +34044,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:30.610Z"
+      "enrichedAt": "2026-09-06T17:25:08.867Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -33331,7 +34099,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:30.585Z"
+      "enrichedAt": "2026-09-06T17:25:09.247Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -33392,7 +34160,7 @@
         }
       ],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:32.761Z"
+      "enrichedAt": "2026-09-06T17:25:09.814Z"
     }
   },
   {
@@ -33441,7 +34209,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:31.195Z"
+      "enrichedAt": "2026-09-06T17:25:09.889Z"
     }
   },
   {
@@ -33486,7 +34254,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:31.549Z"
+      "enrichedAt": "2026-09-06T17:25:09.793Z"
     },
     "geocoded": "sido-center"
   },
@@ -33541,7 +34309,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:31.673Z"
+      "enrichedAt": "2026-09-06T17:25:09.957Z"
     },
     "geocoded": "vworld-road"
   },
@@ -33596,7 +34364,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:31.805Z"
+      "enrichedAt": "2026-09-06T17:25:10.447Z"
     }
   },
   {
@@ -33748,7 +34516,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:32.345Z"
+      "enrichedAt": "2026-09-06T17:25:11.015Z"
     }
   },
   {
@@ -33802,7 +34570,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:32.854Z"
+      "enrichedAt": "2026-09-06T17:25:11.546Z"
     }
   },
   {
@@ -33903,7 +34671,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:32.616Z"
+      "enrichedAt": "2026-09-06T17:25:10.849Z"
     },
     "geocoded": "sido-center"
   },
@@ -34167,7 +34935,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:32.910Z"
+      "enrichedAt": "2026-09-06T17:25:11.097Z"
     }
   },
   {
@@ -34221,7 +34989,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:33.463Z"
+      "enrichedAt": "2026-09-06T17:25:11.577Z"
     }
   },
   {
@@ -34494,7 +35262,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:33.680Z"
+      "enrichedAt": "2026-09-06T17:25:12.235Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -34636,7 +35404,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:34.362Z"
+      "enrichedAt": "2026-09-06T17:25:12.537Z"
     }
   },
   {
@@ -34690,7 +35458,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:33.912Z"
+      "enrichedAt": "2026-09-06T17:25:12.199Z"
     }
   },
   {
@@ -34739,7 +35507,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:34.242Z"
+      "enrichedAt": "2026-09-06T17:25:12.967Z"
     }
   },
   {
@@ -34825,7 +35593,7 @@
         }
       ],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:34.431Z"
+      "enrichedAt": "2026-09-06T17:25:12.585Z"
     }
   },
   {
@@ -34911,7 +35679,7 @@
         }
       ],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:34.643Z"
+      "enrichedAt": "2026-09-06T17:25:13.184Z"
     }
   },
   {
@@ -35219,7 +35987,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:35.545Z"
+      "enrichedAt": "2026-09-06T17:25:13.794Z"
     }
   },
   {
@@ -35273,7 +36041,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:35.828Z"
+      "enrichedAt": "2026-09-06T17:25:14.164Z"
     }
   },
   {
@@ -35417,7 +36185,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:35.401Z"
+      "enrichedAt": "2026-09-06T17:25:13.954Z"
     }
   },
   {
@@ -35937,7 +36705,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:35.484Z"
+      "enrichedAt": "2026-09-06T17:25:13.918Z"
     },
     "geocoded": "sido-center"
   },
@@ -36494,7 +37262,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:37.375Z"
+      "enrichedAt": "2026-09-06T17:25:14.255Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -36549,7 +37317,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:36.458Z"
+      "enrichedAt": "2026-09-06T17:25:14.856Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -36776,7 +37544,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:36.614Z"
+      "enrichedAt": "2026-09-06T17:25:15.315Z"
     }
   },
   {
@@ -36825,7 +37593,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:36.612Z"
+      "enrichedAt": "2026-09-06T17:25:15.065Z"
     }
   },
   {
@@ -36874,7 +37642,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:36.942Z"
+      "enrichedAt": "2026-09-06T17:25:15.285Z"
     }
   },
   {
@@ -36928,7 +37696,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:37.550Z"
+      "enrichedAt": "2026-09-06T17:25:15.349Z"
     }
   },
   {
@@ -36973,7 +37741,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:37.567Z"
+      "enrichedAt": "2026-09-06T17:25:15.830Z"
     },
     "geocoded": "sido-center"
   },
@@ -37215,7 +37983,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:37.570Z"
+      "enrichedAt": "2026-09-06T17:25:16.343Z"
     },
     "geocoded": "sido-center"
   },
@@ -37270,7 +38038,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:37.976Z"
+      "enrichedAt": "2026-09-06T17:25:16.359Z"
     }
   },
   {
@@ -37324,7 +38092,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:38.412Z"
+      "enrichedAt": "2026-09-06T17:25:16.405Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -37783,7 +38551,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:38.587Z"
+      "enrichedAt": "2026-09-06T17:25:16.424Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -38394,7 +39162,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:38.987Z"
+      "enrichedAt": "2026-09-06T17:25:17.235Z"
     }
   },
   {
@@ -38573,7 +39341,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:38.631Z"
+      "enrichedAt": "2026-09-06T17:25:17.748Z"
     },
     "geocoded": "vworld-road"
   },
@@ -38619,7 +39387,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:38.924Z"
+      "enrichedAt": "2026-09-06T17:25:17.331Z"
     },
     "geocoded": "sido-center"
   },
@@ -38665,7 +39433,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:39.358Z"
+      "enrichedAt": "2026-09-06T17:25:17.376Z"
     },
     "geocoded": "sido-center"
   },
@@ -38711,7 +39479,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:39.535Z"
+      "enrichedAt": "2026-09-06T17:25:19.737Z"
     },
     "geocoded": "sido-center"
   },
@@ -38844,7 +39612,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:39.557Z"
+      "enrichedAt": "2026-09-06T17:25:18.207Z"
     },
     "geocoded": "sido-center"
   },
@@ -39410,7 +40178,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:39.954Z"
+      "enrichedAt": "2026-09-06T17:25:18.703Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -39897,7 +40665,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:40.034Z"
+      "enrichedAt": "2026-09-06T17:25:18.447Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -40083,7 +40851,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:40.303Z"
+      "enrichedAt": "2026-09-06T17:25:18.741Z"
     },
     "geocoded": "sido-center"
   },
@@ -40507,7 +41275,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:40.557Z"
+      "enrichedAt": "2026-09-06T17:25:19.232Z"
     }
   },
   {
@@ -40659,7 +41427,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:40.563Z"
+      "enrichedAt": "2026-09-06T17:25:19.787Z"
     }
   },
   {
@@ -40713,7 +41481,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:40.969Z"
+      "enrichedAt": "2026-09-06T17:25:19.766Z"
     }
   },
   {
@@ -40767,7 +41535,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:41.074Z"
+      "enrichedAt": "2026-09-06T17:25:19.814Z"
     },
     "geocoded": "vworld-road"
   },
@@ -41001,7 +41769,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:41.362Z"
+      "enrichedAt": "2026-09-06T17:25:20.311Z"
     }
   },
   {
@@ -41427,7 +42195,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:41.599Z"
+      "enrichedAt": "2026-09-06T17:25:20.807Z"
     }
   },
   {
@@ -41481,7 +42249,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:41.610Z"
+      "enrichedAt": "2026-09-06T17:25:21.150Z"
     }
   },
   {
@@ -41526,7 +42294,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:41.895Z"
+      "enrichedAt": "2026-09-06T17:25:20.757Z"
     },
     "geocoded": "sido-center"
   },
@@ -41572,7 +42340,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:42.010Z"
+      "enrichedAt": "2026-09-06T17:25:20.766Z"
     },
     "geocoded": "sido-center"
   },
@@ -41622,7 +42390,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:42.388Z"
+      "enrichedAt": "2026-09-06T17:25:21.339Z"
     }
   },
   {
@@ -42142,7 +42910,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:42.700Z"
+      "enrichedAt": "2026-09-06T17:25:21.818Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -42192,7 +42960,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:42.688Z"
+      "enrichedAt": "2026-09-06T17:25:22.127Z"
     }
   },
   {
@@ -42246,7 +43014,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:42.975Z"
+      "enrichedAt": "2026-09-06T17:25:21.913Z"
     }
   },
   {
@@ -42300,7 +43068,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:43.093Z"
+      "enrichedAt": "2026-09-06T17:25:22.229Z"
     }
   },
   {
@@ -42452,7 +43220,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:43.446Z"
+      "enrichedAt": "2026-09-06T17:25:22.391Z"
     },
     "geocoded": "vworld-road"
   },
@@ -42515,7 +43283,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:43.737Z"
+      "enrichedAt": "2026-09-06T17:25:22.878Z"
     },
     "geocoded": "vworld-road"
   },
@@ -42821,7 +43589,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:43.631Z"
+      "enrichedAt": "2026-09-06T17:25:23.024Z"
     },
     "geocoded": "sido-center"
   },
@@ -42984,7 +43752,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:44.080Z"
+      "enrichedAt": "2026-09-06T17:25:23.246Z"
     }
   },
   {
@@ -43111,7 +43879,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:44.134Z"
+      "enrichedAt": "2026-09-06T17:25:23.273Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -43414,7 +44182,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:44.394Z"
+      "enrichedAt": "2026-09-06T17:25:23.502Z"
     },
     "geocoded": "sido-center"
   },
@@ -43469,7 +44237,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:44.689Z"
+      "enrichedAt": "2026-09-06T17:25:23.931Z"
     }
   },
   {
@@ -43523,7 +44291,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:44.812Z"
+      "enrichedAt": "2026-09-06T17:25:24.236Z"
     },
     "geocoded": "vworld-road"
   },
@@ -44674,7 +45442,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:45.219Z"
+      "enrichedAt": "2026-09-06T17:25:24.426Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -44729,7 +45497,7 @@
       ],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:45.229Z"
+      "enrichedAt": "2026-09-06T17:25:24.416Z"
     },
     "geocoded": "page-addr-osm"
   },
@@ -47478,7 +48246,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "접수마감",
-      "enrichedAt": "2026-09-05T17:02:45.343Z"
+      "enrichedAt": "2026-09-06T17:25:24.466Z"
     },
     "geocoded": "sido-center"
   },
@@ -95042,7 +95810,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 12,
+    "daysToDeadline": 11,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020678&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21160&houseSn=2",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21160&houseSn=2",
@@ -95066,7 +95834,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:45.750Z"
+      "enrichedAt": "2026-09-06T17:25:25.023Z"
     }
   },
   {
@@ -95097,7 +95865,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 12,
+    "daysToDeadline": 11,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020678&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21160&houseSn=3",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21160&houseSn=3",
@@ -95121,7 +95889,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:45.886Z"
+      "enrichedAt": "2026-09-06T17:25:25.629Z"
     }
   },
   {
@@ -95152,7 +95920,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 12,
+    "daysToDeadline": 11,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020691&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21159",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21159",
@@ -95164,7 +95932,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:46.357Z"
+      "enrichedAt": "2026-09-06T17:25:25.547Z"
     }
   },
   {
@@ -95195,7 +95963,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 17,
+    "daysToDeadline": 16,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020694&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21153&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21153&houseSn=1",
@@ -95213,7 +95981,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:46.246Z"
+      "enrichedAt": "2026-09-06T17:25:25.473Z"
     }
   },
   {
@@ -95244,7 +96012,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 23,
+    "daysToDeadline": 22,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020682&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21152&houseSn=2",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21152&houseSn=2",
@@ -95377,7 +96145,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 23,
+    "daysToDeadline": 22,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020682&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21152&houseSn=3",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21152&houseSn=3",
@@ -95510,7 +96278,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 9,
+    "daysToDeadline": 8,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020636&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21149&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21149&houseSn=1",
@@ -95606,7 +96374,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 9,
+    "daysToDeadline": 8,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020636&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21149&houseSn=2",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21149&houseSn=2",
@@ -95702,7 +96470,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 9,
+    "daysToDeadline": 8,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020636&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21149&houseSn=3",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21149&houseSn=3",
@@ -95798,7 +96566,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 11,
+    "daysToDeadline": 10,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020663&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21148&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21148&houseSn=1",
@@ -95919,7 +96687,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 11,
+    "daysToDeadline": 10,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020663&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21148&houseSn=2",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21148&houseSn=2",
@@ -96040,7 +96808,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 11,
+    "daysToDeadline": 10,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020663&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21148&houseSn=3",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21148&houseSn=3",
@@ -96161,7 +96929,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 11,
+    "daysToDeadline": 10,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020663&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21148&houseSn=4",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21148&houseSn=4",
@@ -96282,7 +97050,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 11,
+    "daysToDeadline": 10,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020663&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21148&houseSn=5",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21148&houseSn=5",
@@ -96403,7 +97171,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 10,
+    "daysToDeadline": 9,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020673&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21147",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21147",
@@ -96415,7 +97183,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:46.541Z"
+      "enrichedAt": "2026-09-06T17:25:25.686Z"
     }
   },
   {
@@ -96446,7 +97214,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 10,
+    "daysToDeadline": 9,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020675&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21146",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21146",
@@ -96458,7 +97226,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:46.885Z"
+      "enrichedAt": "2026-09-06T17:25:26.196Z"
     }
   },
   {
@@ -96489,7 +97257,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 10,
+    "daysToDeadline": 9,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020679&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21145",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21145",
@@ -96501,7 +97269,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:47.089Z"
+      "enrichedAt": "2026-09-06T17:25:26.954Z"
     }
   },
   {
@@ -96532,7 +97300,7 @@
     "noticeStatus": "정정공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 9,
+    "daysToDeadline": 8,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020681&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=08&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21143&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21143&houseSn=1",
@@ -96613,7 +97381,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 116,
+    "daysToDeadline": 115,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020623&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=08&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21142&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21142&houseSn=1",
@@ -96694,7 +97462,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 24,
+    "daysToDeadline": 23,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061163&ccrCnntSysDsCd=02&uppAisTpCd=06&aisTpCd=08&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21141&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21141&houseSn=1",
@@ -96786,7 +97554,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 10,
+    "daysToDeadline": 9,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020658&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21133&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21133&houseSn=1",
@@ -96872,7 +97640,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 11,
+    "daysToDeadline": 10,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020657&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=08&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21125&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21125&houseSn=1",
@@ -96896,7 +97664,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:47.269Z"
+      "enrichedAt": "2026-09-06T17:25:26.600Z"
     }
   },
   {
@@ -96927,7 +97695,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 15,
+    "daysToDeadline": 14,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020650&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21124&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21124&houseSn=1",
@@ -96951,7 +97719,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:47.396Z"
+      "enrichedAt": "2026-09-06T17:25:26.684Z"
     }
   },
   {
@@ -96982,7 +97750,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 15,
+    "daysToDeadline": 14,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020651&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21123&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21123&houseSn=1",
@@ -97006,7 +97774,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:47.584Z"
+      "enrichedAt": "2026-09-06T17:25:26.747Z"
     }
   },
   {
@@ -97037,7 +97805,7 @@
     "noticeStatus": "정정공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 3,
+    "daysToDeadline": 2,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020685&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21151&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21151&houseSn=1",
@@ -97121,7 +97889,7 @@
     "noticeStatus": "정정공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 3,
+    "daysToDeadline": 2,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020685&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21151&houseSn=2",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21151&houseSn=2",
@@ -97205,7 +97973,7 @@
     "noticeStatus": "정정공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 3,
+    "daysToDeadline": 2,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020676&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21140&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21140&houseSn=1",
@@ -97388,7 +98156,7 @@
     "noticeStatus": "정정공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 3,
+    "daysToDeadline": 2,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020676&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21140&houseSn=2",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21140&houseSn=2",
@@ -97571,7 +98339,7 @@
     "noticeStatus": "정정공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 3,
+    "daysToDeadline": 2,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020676&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21140&houseSn=3",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21140&houseSn=3",
@@ -97754,7 +98522,7 @@
     "noticeStatus": "정정공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 3,
+    "daysToDeadline": 2,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020672&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21137&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21137&houseSn=1",
@@ -97937,7 +98705,7 @@
     "noticeStatus": "정정공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 3,
+    "daysToDeadline": 2,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020672&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21137&houseSn=2",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21137&houseSn=2",
@@ -98120,7 +98888,7 @@
     "noticeStatus": "정정공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 3,
+    "daysToDeadline": 2,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020672&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21137&houseSn=3",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21137&houseSn=3",
@@ -98303,7 +99071,7 @@
     "noticeStatus": "정정공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 3,
+    "daysToDeadline": 2,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020671&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21136&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21136&houseSn=1",
@@ -98387,7 +99155,7 @@
     "noticeStatus": "정정공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 3,
+    "daysToDeadline": 2,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020671&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21136&houseSn=2",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21136&houseSn=2",
@@ -98471,7 +99239,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 3,
+    "daysToDeadline": 2,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020648&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21121&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21121&houseSn=1",
@@ -98561,7 +99329,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 3,
+    "daysToDeadline": 2,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020646&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21120&houseSn=2",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21120&houseSn=2",
@@ -98744,7 +99512,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 3,
+    "daysToDeadline": 2,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020646&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21120&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21120&houseSn=1",
@@ -98927,7 +99695,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 3,
+    "daysToDeadline": 2,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020646&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21120&houseSn=3",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21120&houseSn=3",
@@ -99110,7 +99878,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 3,
+    "daysToDeadline": 2,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020647&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21119&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21119&houseSn=1",
@@ -99194,7 +99962,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 3,
+    "daysToDeadline": 2,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020647&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21119&houseSn=2",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21119&houseSn=2",
@@ -99278,7 +100046,7 @@
     "noticeStatus": "정정공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 5,
+    "daysToDeadline": 4,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020666&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21132&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21132&houseSn=1",
@@ -99302,7 +100070,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:47.915Z"
+      "enrichedAt": "2026-09-06T17:25:27.244Z"
     }
   },
   {
@@ -99333,7 +100101,7 @@
     "noticeStatus": "정정공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 25,
+    "daysToDeadline": 24,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020654&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21115",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21115",
@@ -99345,7 +100113,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:48.642Z"
+      "enrichedAt": "2026-09-06T17:25:28.127Z"
     }
   },
   {
@@ -99376,7 +100144,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 16,
+    "daysToDeadline": 15,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020635&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=1",
@@ -99538,7 +100306,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 16,
+    "daysToDeadline": 15,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020635&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=2",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=2",
@@ -99700,7 +100468,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 16,
+    "daysToDeadline": 15,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020635&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=3",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=3",
@@ -99862,7 +100630,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 16,
+    "daysToDeadline": 15,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020635&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=6",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=6",
@@ -100024,7 +100792,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 16,
+    "daysToDeadline": 15,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020635&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=14",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=14",
@@ -100186,7 +100954,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 16,
+    "daysToDeadline": 15,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020635&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=15",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=15",
@@ -100348,7 +101116,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 16,
+    "daysToDeadline": 15,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020635&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=16",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=16",
@@ -100510,7 +101278,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 16,
+    "daysToDeadline": 15,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020635&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=17",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=17",
@@ -100672,7 +101440,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 16,
+    "daysToDeadline": 15,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020635&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=18",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=18",
@@ -100834,7 +101602,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 16,
+    "daysToDeadline": 15,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020635&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=19",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=19",
@@ -100996,7 +101764,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 16,
+    "daysToDeadline": 15,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020635&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=20",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=20",
@@ -101158,7 +101926,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 16,
+    "daysToDeadline": 15,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020635&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=21",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=21",
@@ -101320,7 +102088,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 16,
+    "daysToDeadline": 15,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020635&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=22",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21112&houseSn=22",
@@ -101482,7 +102250,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 4,
+    "daysToDeadline": 3,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020615&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21110&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21110&houseSn=1",
@@ -101506,7 +102274,7 @@
       ],
       "schedule": [],
       "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-09-05T17:02:48.296Z"
+      "enrichedAt": "2026-09-06T17:25:28.036Z"
     }
   },
   {
@@ -101537,7 +102305,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 25,
+    "daysToDeadline": 24,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020601&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21109",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21109",
@@ -101549,7 +102317,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-09-05T17:02:48.887Z"
+      "enrichedAt": "2026-09-06T17:25:28.225Z"
     }
   },
   {
@@ -101580,7 +102348,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 5,
+    "daysToDeadline": 4,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020639&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21108&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21108&houseSn=1",
@@ -101604,7 +102372,7 @@
       ],
       "schedule": [],
       "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-09-05T17:02:50.390Z"
+      "enrichedAt": "2026-09-06T17:25:28.000Z"
     }
   },
   {
@@ -101635,7 +102403,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 9,
+    "daysToDeadline": 8,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020624&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=08&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21107&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21107&houseSn=1",
@@ -101659,7 +102427,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:48.946Z"
+      "enrichedAt": "2026-09-06T17:25:30.505Z"
     }
   },
   {
@@ -101690,7 +102458,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 26,
+    "daysToDeadline": 25,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020625&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21106&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21106&houseSn=1",
@@ -101714,7 +102482,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:49.332Z"
+      "enrichedAt": "2026-09-06T17:25:29.042Z"
     }
   },
   {
@@ -101745,7 +102513,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 17,
+    "daysToDeadline": 16,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020627&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=48&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21105&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21105&houseSn=1",
@@ -101832,351 +102600,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:49.798Z"
-    }
-  },
-  {
-    "id": "lh-rental-21157-0",
-    "pblancId": "21157",
-    "houseSn": 0,
-    "category": "임대",
-    "typeId": "buy",
-    "housingType": "매입임대",
-    "houseType": "다가구주택",
-    "title": "[경기남부] 신혼·신생아 매입임대주택Ⅰ 예비입주자 모집공고",
-    "noticeTitle": "[경기남부] 신혼·신생아 매입임대주택Ⅰ 예비입주자 모집공고",
-    "provider": "LH",
-    "sido": "경기도",
-    "sigungu": "여주시",
-    "address": "",
-    "pnu": "",
-    "totalUnits": 0,
-    "supplyUnits": 5,
-    "depositWon": 0,
-    "monthlyRentWon": 0,
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "announceDate": "2026.08.27",
-    "beginDate": "2026.09.07",
-    "endDate": "2026.09.09",
-    "winnerDate": "2026.11.27",
-    "noticeStatus": "정정공고",
-    "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 3,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020687&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21157",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21157",
-    "attachmentId": "",
-    "details": {
-      "pageAddress": "",
-      "matchedTab": null,
-      "coordCount": 0,
-      "housingTypes": [],
-      "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:50.493Z"
-    }
-  },
-  {
-    "id": "lh-rental-21156-0",
-    "pblancId": "21156",
-    "houseSn": 0,
-    "category": "임대",
-    "typeId": "buy",
-    "housingType": "매입임대",
-    "houseType": "다가구주택",
-    "title": "[경기남부] 26년 3차 청년 매입임대주택 예비입주자 모집공고",
-    "noticeTitle": "[경기남부] 26년 3차 청년 매입임대주택 예비입주자 모집공고",
-    "provider": "LH",
-    "sido": "경기도",
-    "sigungu": "수원시 권선구",
-    "address": "",
-    "pnu": "",
-    "totalUnits": 0,
-    "supplyUnits": 27,
-    "depositWon": 0,
-    "monthlyRentWon": 0,
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "announceDate": "2026.08.27",
-    "beginDate": "2026.09.07",
-    "endDate": "2026.09.09",
-    "winnerDate": "2026.11.27",
-    "noticeStatus": "정정공고",
-    "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 3,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020688&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21156",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21156",
-    "attachmentId": "",
-    "details": {
-      "pageAddress": "",
-      "matchedTab": null,
-      "coordCount": 0,
-      "housingTypes": [],
-      "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:50.452Z"
-    }
-  },
-  {
-    "id": "lh-rental-21155-0",
-    "pblancId": "21155",
-    "houseSn": 0,
-    "category": "임대",
-    "typeId": "buy",
-    "housingType": "매입임대",
-    "houseType": "다가구주택",
-    "title": "[경기 군포·안산·안성·화성시] 26년 2차 기숙사형 청년주택 예비입주자 모집공고",
-    "noticeTitle": "[경기 군포·안산·안성·화성시] 26년 2차 기숙사형 청년주택 예비입주자 모집공고",
-    "provider": "LH",
-    "sido": "경기도",
-    "sigungu": "안산시 상록구",
-    "address": "",
-    "pnu": "",
-    "totalUnits": 0,
-    "supplyUnits": 1,
-    "depositWon": 0,
-    "monthlyRentWon": 0,
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "announceDate": "2026.08.27",
-    "beginDate": "2026.09.07",
-    "endDate": "2026.09.09",
-    "winnerDate": "2026.10.30",
-    "noticeStatus": "정정공고",
-    "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 3,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020689&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21155",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21155",
-    "attachmentId": "",
-    "details": {
-      "pageAddress": "",
-      "matchedTab": null,
-      "coordCount": 0,
-      "housingTypes": [],
-      "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:50.591Z"
-    }
-  },
-  {
-    "id": "lh-rental-21154-0",
-    "pblancId": "21154",
-    "houseSn": 0,
-    "category": "임대",
-    "typeId": "buy",
-    "housingType": "매입임대",
-    "houseType": "다가구주택",
-    "title": "[인천지역본부] 26년 6차 청년 매입임대주택 예비입주자 모집공고(인천,부천)",
-    "noticeTitle": "[인천지역본부] 26년 6차 청년 매입임대주택 예비입주자 모집공고(인천,부천)",
-    "provider": "LH",
-    "sido": "인천광역시",
-    "sigungu": "부평구",
-    "address": "",
-    "pnu": "",
-    "totalUnits": 0,
-    "supplyUnits": 2,
-    "depositWon": 0,
-    "monthlyRentWon": 0,
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "announceDate": "2026.08.27",
-    "beginDate": "2026.09.07",
-    "endDate": "2026.09.09",
-    "winnerDate": "2026.11.12",
-    "noticeStatus": "정정공고",
-    "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 3,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020693&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21154",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21154",
-    "attachmentId": "",
-    "details": {
-      "pageAddress": "",
-      "matchedTab": null,
-      "coordCount": 0,
-      "housingTypes": [],
-      "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:51.174Z"
-    }
-  },
-  {
-    "id": "lh-rental-21129-0",
-    "pblancId": "21129",
-    "houseSn": 0,
-    "category": "임대",
-    "typeId": "buy",
-    "housingType": "매입임대",
-    "houseType": "다가구주택",
-    "title": "[인천지역본부]26년 6차 신혼·신생아Ⅱ(전세형) 예비입주자 모집공고(인천,부천)",
-    "noticeTitle": "[인천지역본부]26년 6차 신혼·신생아Ⅱ(전세형) 예비입주자 모집공고(인천,부천)",
-    "provider": "LH",
-    "sido": "인천광역시",
-    "sigungu": "서해구",
-    "address": "",
-    "pnu": "",
-    "totalUnits": 0,
-    "supplyUnits": 11,
-    "depositWon": 0,
-    "monthlyRentWon": 0,
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "announceDate": "2026.08.27",
-    "beginDate": "2026.09.07",
-    "endDate": "2026.09.09",
-    "winnerDate": "2026.11.12",
-    "noticeStatus": "정정공고",
-    "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 3,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020661&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21129",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21129",
-    "attachmentId": "",
-    "details": {
-      "pageAddress": "",
-      "matchedTab": null,
-      "coordCount": 0,
-      "housingTypes": [],
-      "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:51.623Z"
-    }
-  },
-  {
-    "id": "lh-rental-21104-0",
-    "pblancId": "21104",
-    "houseSn": 0,
-    "category": "임대",
-    "typeId": "buy",
-    "housingType": "매입임대",
-    "houseType": "다가구주택",
-    "title": "[인천지역본부] 26년 6차 청년 매입임대주택 예비입주자 모집공고(인천,부천)",
-    "noticeTitle": "[인천지역본부] 26년 6차 청년 매입임대주택 예비입주자 모집공고(인천,부천)",
-    "provider": "LH",
-    "sido": "인천광역시",
-    "sigungu": "연수구",
-    "address": "",
-    "pnu": "",
-    "totalUnits": 0,
-    "supplyUnits": 5,
-    "depositWon": 0,
-    "monthlyRentWon": 0,
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "announceDate": "2026.08.27",
-    "beginDate": "2026.09.07",
-    "endDate": "2026.09.09",
-    "winnerDate": "2026.11.12",
-    "noticeStatus": "일반공고",
-    "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 3,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020630&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21104",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21104",
-    "attachmentId": "",
-    "details": {
-      "pageAddress": "",
-      "matchedTab": null,
-      "coordCount": 0,
-      "housingTypes": [],
-      "schedule": [],
-      "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-09-05T17:02:51.843Z"
-    }
-  },
-  {
-    "id": "lh-rental-21102-0",
-    "pblancId": "21102",
-    "houseSn": 0,
-    "category": "임대",
-    "typeId": "buy",
-    "housingType": "매입임대",
-    "houseType": "다가구주택",
-    "title": "[경기남부] 26년 3차 청년 매입임대주택 예비입주자 모집공고",
-    "noticeTitle": "[경기남부] 26년 3차 청년 매입임대주택 예비입주자 모집공고",
-    "provider": "LH",
-    "sido": "경기도",
-    "sigungu": "용인시 수지구",
-    "address": "",
-    "pnu": "",
-    "totalUnits": 0,
-    "supplyUnits": 7,
-    "depositWon": 0,
-    "monthlyRentWon": 0,
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "announceDate": "2026.08.27",
-    "beginDate": "2026.09.07",
-    "endDate": "2026.09.09",
-    "winnerDate": "2026.11.27",
-    "noticeStatus": "일반공고",
-    "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 3,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020621&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21102",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21102",
-    "attachmentId": "",
-    "details": {
-      "pageAddress": "",
-      "matchedTab": null,
-      "coordCount": 0,
-      "housingTypes": [],
-      "schedule": [],
-      "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-09-05T17:02:51.986Z"
-    }
-  },
-  {
-    "id": "lh-rental-21101-0",
-    "pblancId": "21101",
-    "houseSn": 0,
-    "category": "임대",
-    "typeId": "buy",
-    "housingType": "매입임대",
-    "houseType": "다가구주택",
-    "title": "[경기 안성시] 26년 2차 기숙사형 청년주택 예비입주자 모집공고",
-    "noticeTitle": "[경기 안성시] 26년 2차 기숙사형 청년주택 예비입주자 모집공고",
-    "provider": "LH",
-    "sido": "경기도",
-    "sigungu": "안성시",
-    "address": "",
-    "pnu": "",
-    "totalUnits": 0,
-    "supplyUnits": 3,
-    "depositWon": 0,
-    "monthlyRentWon": 0,
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "announceDate": "2026.08.27",
-    "beginDate": "2026.09.07",
-    "endDate": "2026.09.09",
-    "winnerDate": "2026.10.30",
-    "noticeStatus": "일반공고",
-    "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 3,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020618&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21101",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21101",
-    "attachmentId": "",
-    "details": {
-      "pageAddress": "",
-      "matchedTab": null,
-      "coordCount": 0,
-      "housingTypes": [],
-      "schedule": [],
-      "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-09-05T17:02:52.093Z"
+      "enrichedAt": "2026-09-06T17:25:29.483Z"
     }
   },
   {
@@ -102207,7 +102631,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 4,
+    "daysToDeadline": 3,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020622&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21100",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21100",
@@ -102219,7 +102643,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:52.349Z"
+      "enrichedAt": "2026-09-06T17:25:29.309Z"
     }
   },
   {
@@ -102250,7 +102674,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 4,
+    "daysToDeadline": 3,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020622&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21098",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21098",
@@ -102262,265 +102686,7 @@
       "housingTypes": [],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:52.804Z"
-    }
-  },
-  {
-    "id": "lh-rental-21096-0",
-    "pblancId": "21096",
-    "houseSn": 0,
-    "category": "임대",
-    "typeId": "buy",
-    "housingType": "매입임대",
-    "houseType": "다가구주택",
-    "title": "[경기남부] 신혼·신생아 매입임대주택Ⅰ 예비입주자 모집공고",
-    "noticeTitle": "[경기남부] 신혼·신생아 매입임대주택Ⅰ 예비입주자 모집공고",
-    "provider": "LH",
-    "sido": "경기도",
-    "sigungu": "시흥시",
-    "address": "",
-    "pnu": "",
-    "totalUnits": 0,
-    "supplyUnits": 25,
-    "depositWon": 0,
-    "monthlyRentWon": 0,
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "announceDate": "2026.08.27",
-    "beginDate": "2026.09.07",
-    "endDate": "2026.09.09",
-    "winnerDate": "2026.11.27",
-    "noticeStatus": "일반공고",
-    "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 3,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020628&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21096",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21096",
-    "attachmentId": "",
-    "details": {
-      "pageAddress": "",
-      "matchedTab": null,
-      "coordCount": 0,
-      "housingTypes": [],
-      "schedule": [],
-      "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-09-05T17:02:53.477Z"
-    }
-  },
-  {
-    "id": "lh-rental-21095-0",
-    "pblancId": "21095",
-    "houseSn": 0,
-    "category": "임대",
-    "typeId": "buy",
-    "housingType": "매입임대",
-    "houseType": "다가구주택",
-    "title": "[경기남부] 신혼·신생아 매입임대주택Ⅱ(전세형) 예비입주자 모집공고",
-    "noticeTitle": "[경기남부] 신혼·신생아 매입임대주택Ⅱ(전세형) 예비입주자 모집공고",
-    "provider": "LH",
-    "sido": "경기도",
-    "sigungu": "의왕시",
-    "address": "",
-    "pnu": "",
-    "totalUnits": 0,
-    "supplyUnits": 8,
-    "depositWon": 0,
-    "monthlyRentWon": 0,
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "announceDate": "2026.08.27",
-    "beginDate": "2026.09.07",
-    "endDate": "2026.09.09",
-    "winnerDate": "2026.11.27",
-    "noticeStatus": "일반공고",
-    "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 3,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020629&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21095",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21095",
-    "attachmentId": "",
-    "details": {
-      "pageAddress": "",
-      "matchedTab": null,
-      "coordCount": 0,
-      "housingTypes": [],
-      "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:53.382Z"
-    }
-  },
-  {
-    "id": "lh-rental-21094-0",
-    "pblancId": "21094",
-    "houseSn": 0,
-    "category": "임대",
-    "typeId": "buy",
-    "housingType": "매입임대",
-    "houseType": "다가구주택",
-    "title": "[인천지역본부]26년 6차 신혼·신생아Ⅱ(전세형) 예비입주자 모집공고(인천,부천)",
-    "noticeTitle": "[인천지역본부]26년 6차 신혼·신생아Ⅱ(전세형) 예비입주자 모집공고(인천,부천)",
-    "provider": "LH",
-    "sido": "인천광역시",
-    "sigungu": "제물포구",
-    "address": "",
-    "pnu": "",
-    "totalUnits": 0,
-    "supplyUnits": 4,
-    "depositWon": 0,
-    "monthlyRentWon": 0,
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "announceDate": "2026.08.27",
-    "beginDate": "2026.09.07",
-    "endDate": "2026.09.09",
-    "winnerDate": "2026.11.12",
-    "noticeStatus": "일반공고",
-    "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 3,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020633&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21094",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21094",
-    "attachmentId": "",
-    "details": {
-      "pageAddress": "",
-      "matchedTab": null,
-      "coordCount": 0,
-      "housingTypes": [],
-      "schedule": [],
-      "noticeStatus": "정정공고중",
-      "enrichedAt": "2026-09-05T17:02:53.470Z"
-    }
-  },
-  {
-    "id": "lh-rental-21093-0",
-    "pblancId": "21093",
-    "houseSn": 0,
-    "category": "임대",
-    "typeId": "buy",
-    "housingType": "매입임대",
-    "houseType": "다가구주택",
-    "title": "[인천지역본부]26년 6차 신혼·신생아Ⅰ 예비입주자 모집공고(인천,부천)",
-    "noticeTitle": "[인천지역본부]26년 6차 신혼·신생아Ⅰ 예비입주자 모집공고(인천,부천)",
-    "provider": "LH",
-    "sido": "인천광역시",
-    "sigungu": "부평구",
-    "address": "",
-    "pnu": "",
-    "totalUnits": 0,
-    "supplyUnits": 9,
-    "depositWon": 0,
-    "monthlyRentWon": 0,
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "announceDate": "2026.08.27",
-    "beginDate": "2026.09.07",
-    "endDate": "2026.09.09",
-    "winnerDate": "2026.11.12",
-    "noticeStatus": "일반공고",
-    "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 3,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020634&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21093",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21093",
-    "attachmentId": "",
-    "details": {
-      "pageAddress": "",
-      "matchedTab": null,
-      "coordCount": 0,
-      "housingTypes": [],
-      "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:53.711Z"
-    }
-  },
-  {
-    "id": "lh-rental-21092-0",
-    "pblancId": "21092",
-    "houseSn": 0,
-    "category": "임대",
-    "typeId": "buy",
-    "housingType": "매입임대",
-    "houseType": "다가구주택",
-    "title": "[대전·충남] 2026년 2차 든든전세주택 입주자 모집공고(비분양전환형)",
-    "noticeTitle": "[대전·충남] 2026년 2차 든든전세주택 입주자 모집공고(비분양전환형)",
-    "provider": "LH",
-    "sido": "충청남도",
-    "sigungu": "아산시",
-    "address": "",
-    "pnu": "",
-    "totalUnits": 0,
-    "supplyUnits": 14,
-    "depositWon": 0,
-    "monthlyRentWon": 0,
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "announceDate": "2026.08.27",
-    "beginDate": "2026.09.07",
-    "endDate": "2026.09.09",
-    "winnerDate": "2026.11.12",
-    "noticeStatus": "일반공고",
-    "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 3,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020620&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21092",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21092",
-    "attachmentId": "",
-    "details": {
-      "pageAddress": "",
-      "matchedTab": null,
-      "coordCount": 0,
-      "housingTypes": [],
-      "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:54.057Z"
-    }
-  },
-  {
-    "id": "lh-rental-21091-0",
-    "pblancId": "21091",
-    "houseSn": 0,
-    "category": "임대",
-    "typeId": "buy",
-    "housingType": "매입임대",
-    "houseType": "다가구주택",
-    "title": "[전남광주통합특별시 서구,남구,나주시] 기존주택 등 매입임대주택 예비입주자 모집 공고",
-    "noticeTitle": "[전남광주통합특별시 서구,남구,나주시] 기존주택 등 매입임대주택 예비입주자 모집 공고",
-    "provider": "LH",
-    "sido": "전남광주통합특별시",
-    "sigungu": "남구",
-    "address": "",
-    "pnu": "",
-    "totalUnits": 0,
-    "supplyUnits": 250,
-    "depositWon": 0,
-    "monthlyRentWon": 0,
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "announceDate": "2026.08.27",
-    "beginDate": "2026.09.07",
-    "endDate": "2026.09.11",
-    "winnerDate": "2026.10.30",
-    "noticeStatus": "일반공고",
-    "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 5,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020616&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21091",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21091",
-    "attachmentId": "",
-    "details": {
-      "pageAddress": "",
-      "matchedTab": null,
-      "coordCount": 0,
-      "housingTypes": [],
-      "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:54.449Z"
+      "enrichedAt": "2026-09-06T17:25:29.413Z"
     }
   },
   {
@@ -102551,7 +102717,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 5,
+    "daysToDeadline": 4,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020573&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=08&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21090&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21090&houseSn=1",
@@ -102584,7 +102750,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:54.540Z"
+      "enrichedAt": "2026-09-06T17:25:30.130Z"
     }
   },
   {
@@ -102615,7 +102781,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 3,
+    "daysToDeadline": 2,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020603&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21089&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21089&houseSn=1",
@@ -102639,7 +102805,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:54.548Z"
+      "enrichedAt": "2026-09-06T17:25:30.717Z"
     }
   },
   {
@@ -102670,7 +102836,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 3,
+    "daysToDeadline": 2,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020603&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21089&houseSn=2",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21089&houseSn=2",
@@ -102694,7 +102860,7 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:54.801Z"
+      "enrichedAt": "2026-09-06T17:25:30.510Z"
     }
   },
   {
@@ -102725,7 +102891,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 5,
+    "daysToDeadline": 4,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061160&ccrCnntSysDsCd=02&uppAisTpCd=06&aisTpCd=08&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21085&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21085&houseSn=1",
@@ -102825,7 +102991,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 145,
+    "daysToDeadline": 144,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020581&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21083&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21083&houseSn=1",
@@ -102969,7 +103135,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 145,
+    "daysToDeadline": 144,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020581&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21083&houseSn=2",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21083&houseSn=2",
@@ -103113,7 +103279,7 @@
     "noticeStatus": "일반공고",
     "progressStatus": "",
     "activeStatus": "upcoming",
-    "daysToDeadline": 12,
+    "daysToDeadline": 11,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020612&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
     "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21081&houseSn=1",
     "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21081&houseSn=1",
@@ -103137,116 +103303,53 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:55.075Z"
+      "enrichedAt": "2026-09-06T17:25:30.538Z"
     }
   },
   {
-    "id": "lh-rental-21080-1",
-    "pblancId": "21080",
-    "houseSn": 1,
-    "category": "임대",
-    "typeId": "perm",
-    "housingType": "영구임대",
-    "houseType": "아파트",
-    "title": "안동옥동2",
-    "noticeTitle": "[안동옥동2] 영구임대주택 예비입주자 모집",
-    "provider": "LH",
-    "sido": "경상북도",
-    "sigungu": "안동시",
-    "address": "경상북도 안동시 은행나무로 106-3 ",
-    "pnu": "4717013300109740000",
-    "totalUnits": null,
-    "supplyUnits": 100,
-    "depositWon": 2993000,
-    "monthlyRentWon": 59570,
-    "depositManwon": 299,
-    "monthlyRentManwon": 6,
-    "announceDate": "2026.08.24",
-    "beginDate": "2026.09.07",
-    "endDate": "2026.09.11",
-    "winnerDate": "2026.12.04",
-    "noticeStatus": "일반공고",
-    "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 5,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020584&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21080&houseSn=1",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21080&houseSn=1",
-    "attachmentId": "",
-    "lat": 36.5675668,
-    "lng": 128.6969194,
-    "details": {
-      "pageAddress": "",
-      "matchedTab": null,
-      "coordCount": 1,
-      "housingTypes": [
-        {
-          "주택형": "45.3400",
-          "전용면적(㎡)": "31.32",
-          "세대수": "776",
-          "금회공급세대수(예비자포함)": "100",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        }
-      ],
-      "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:55.516Z"
-    }
-  },
-  {
-    "id": "lh-rental-21079-1",
-    "pblancId": "21079",
-    "houseSn": 1,
+    "id": "lh-rental-21046-2",
+    "pblancId": "21046",
+    "houseSn": 2,
     "category": "임대",
     "typeId": "happy",
     "housingType": "행복주택",
     "houseType": "아파트",
-    "title": "동해천곡",
-    "noticeTitle": "동해천곡(고령자) 행복주택 입주자 모집",
+    "title": "서귀포혁신LH3",
+    "noticeTitle": "제주지역 행복주택 예비입주자 모집(2026.08.18.)",
     "provider": "LH",
-    "sido": "강원특별자치도",
-    "sigungu": "동해시",
-    "address": "강원특별자치도 동해시 봉오동길 53 ",
-    "pnu": "5117010100200050004",
-    "totalUnits": null,
-    "supplyUnits": 84,
-    "depositWon": 13940000,
-    "monthlyRentWon": 81310,
-    "depositManwon": 1394,
-    "monthlyRentManwon": 8,
-    "announceDate": "2026.08.24",
-    "beginDate": "2026.09.07",
-    "endDate": "2026.09.11",
-    "winnerDate": "2027.02.19",
+    "sido": "제주특별자치도",
+    "sigungu": "서귀포시",
+    "address": "제주특별자치도 서귀포시 서호중앙로 56-13 ",
+    "pnu": "5013010300116150003",
+    "totalUnits": 200,
+    "supplyUnits": 20,
+    "depositWon": 44000000,
+    "monthlyRentWon": 194330,
+    "depositManwon": 4400,
+    "monthlyRentManwon": 19,
+    "announceDate": "2026.08.18",
+    "beginDate": "2026.08.31",
+    "endDate": "2026.09.07",
+    "winnerDate": "2026.11.18",
     "noticeStatus": "일반공고",
     "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 5,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020611&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21079&houseSn=1",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21079&houseSn=1",
+    "activeStatus": "closed",
+    "daysToDeadline": 0,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020582&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21046&houseSn=2",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21046&houseSn=2",
     "attachmentId": "",
-    "lat": 37.5140182,
-    "lng": 129.1215503,
+    "lat": 33.2557922,
+    "lng": 126.55533,
     "details": {
-      "pageAddress": "강원특별자치도 춘천시 공지로 337(효자동) ",
-      "matchedTab": "평면도",
-      "coordCount": 1,
+      "pageAddress": "제주특별자치도 제주시 전농로 100(삼도일동) 주거복지사업팀",
+      "matchedTab": "서귀포서홍 행복주택",
+      "coordCount": 2,
       "housingTypes": [
         {
-          "주택형": "21A(청년)",
-          "전용면적(㎡)": "21.93",
-          "금회공급세대수": "30",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "청약신청전"
-        },
-        {
-          "주택형": "44A(신혼부부)",
-          "전용면적(㎡)": "44.95",
-          "금회공급세대수": "54",
+          "주택형": "36A[신혼부부,한부모]",
+          "전용면적(㎡)": "36.72",
+          "금회공급세대수(예비자포함)": "20",
           "임대보증금(원)": "공고문 확인",
           "월임대료(원)": "공고문 확인",
           "인터넷청약": "청약신청전"
@@ -103254,168 +103357,95 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-08-31T02:17:11.331Z"
+      "enrichedAt": "2026-08-19T03:51:45.079Z"
     },
     "photos": [
       {
         "kind": "null",
-        "name": "동해천곡_단지조감도(저용량).JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68230274"
+        "name": "[크기변환]서홍행복주택교통광역도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37329501"
       },
       {
         "kind": "null",
-        "name": "동해천곡_단지배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68230275"
+        "name": "[크기변환]서귀포서홍행복주택투시도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37329502"
       },
       {
         "kind": "null",
-        "name": "동해천곡_동호배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68230276"
+        "name": "[크기변환]서홍행복주택단지배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37329503"
+      },
+      {
+        "kind": "null",
+        "name": "서홍행복주택동호배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37329504"
+      },
+      {
+        "kind": "null",
+        "name": "크기변환_제주혁신도시행복주택교통망도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32512884"
+      },
+      {
+        "kind": "null",
+        "name": "크기변환_0625_제주혁신행복주택조감도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32512885"
+      },
+      {
+        "kind": "null",
+        "name": "단지배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32512886"
+      },
+      {
+        "kind": "null",
+        "name": "동호배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32512887"
       }
     ]
   },
   {
-    "id": "lh-rental-21078-1",
-    "pblancId": "21078",
-    "houseSn": 1,
-    "category": "임대",
-    "typeId": "perm",
-    "housingType": "영구임대",
-    "houseType": "아파트",
-    "title": "동해천곡",
-    "noticeTitle": "동해천곡 고령자복지주택(영구임대) 입주자 모집",
-    "provider": "LH",
-    "sido": "강원특별자치도",
-    "sigungu": "동해시",
-    "address": "강원특별자치도 동해시 봉오동길 53 ",
-    "pnu": "5117010100200050004",
-    "totalUnits": null,
-    "supplyUnits": 202,
-    "depositWon": 2568000,
-    "monthlyRentWon": 51060,
-    "depositManwon": 257,
-    "monthlyRentManwon": 5,
-    "announceDate": "2026.08.24",
-    "beginDate": "2026.09.07",
-    "endDate": "2026.09.11",
-    "winnerDate": "2027.02.19",
-    "noticeStatus": "일반공고",
-    "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 5,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020609&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21078&houseSn=1",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21078&houseSn=1",
-    "attachmentId": "",
-    "lat": 37.5140182,
-    "lng": 129.1215503,
-    "details": {
-      "pageAddress": "강원특별자치도 춘천시 공지로 337(효자동) ",
-      "matchedTab": "평면도",
-      "coordCount": 1,
-      "housingTypes": [
-        {
-          "주택형": "26A(고령자)",
-          "전용면적(㎡)": "26.72",
-          "세대수": "170",
-          "금회공급세대수": "170",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "청약신청전"
-        },
-        {
-          "주택형": "29B1(고령자_쉐어형_여)",
-          "전용면적(㎡)": "29.63",
-          "세대수": "16",
-          "금회공급세대수": "16",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "청약신청전"
-        },
-        {
-          "주택형": "29B2(고령자_쉐어형_남)",
-          "전용면적(㎡)": "29.63",
-          "세대수": "16",
-          "금회공급세대수": "16",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "청약신청전"
-        }
-      ],
-      "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-08-31T02:17:11.575Z"
-    },
-    "photos": [
-      {
-        "kind": "null",
-        "name": "동해천곡_단지조감도(저용량).JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68230225"
-      },
-      {
-        "kind": "null",
-        "name": "동해천곡_단지배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68230226"
-      },
-      {
-        "kind": "null",
-        "name": "동해천곡_동호배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68230227"
-      }
-    ]
-  },
-  {
-    "id": "lh-rental-21077-1",
-    "pblancId": "21077",
-    "houseSn": 1,
+    "id": "lh-rental-21046-3",
+    "pblancId": "21046",
+    "houseSn": 3,
     "category": "임대",
     "typeId": "happy",
     "housingType": "행복주택",
     "houseType": "아파트",
-    "title": "동해천곡",
-    "noticeTitle": "동해천곡 고령자복지주택(행복주택) 입주자 모집",
+    "title": "서귀포서홍",
+    "noticeTitle": "제주지역 행복주택 예비입주자 모집(2026.08.18.)",
     "provider": "LH",
-    "sido": "강원특별자치도",
-    "sigungu": "동해시",
-    "address": "강원특별자치도 동해시 봉오동길 53 ",
-    "pnu": "5117010100200050004",
-    "totalUnits": null,
-    "supplyUnits": 116,
-    "depositWon": 16800000,
-    "monthlyRentWon": 98000,
-    "depositManwon": 1680,
-    "monthlyRentManwon": 10,
-    "announceDate": "2026.08.24",
-    "beginDate": "2026.09.07",
-    "endDate": "2026.09.11",
-    "winnerDate": "2027.02.19",
+    "sido": "제주특별자치도",
+    "sigungu": "서귀포시",
+    "address": "제주특별자치도 서귀포시 장수로 115 ",
+    "pnu": "5013010600103550001",
+    "totalUnits": 90,
+    "supplyUnits": 20,
+    "depositWon": 44800000,
+    "monthlyRentWon": 197860,
+    "depositManwon": 4480,
+    "monthlyRentManwon": 20,
+    "announceDate": "2026.08.18",
+    "beginDate": "2026.08.31",
+    "endDate": "2026.09.07",
+    "winnerDate": "2026.11.18",
     "noticeStatus": "일반공고",
     "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 5,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020610&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21077&houseSn=1",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21077&houseSn=1",
+    "activeStatus": "closed",
+    "daysToDeadline": 0,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020582&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
+    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21046&houseSn=3",
+    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=21046&houseSn=3",
     "attachmentId": "",
-    "lat": 37.5140182,
-    "lng": 129.1215503,
+    "lat": 33.2557922,
+    "lng": 126.55533,
     "details": {
-      "pageAddress": "강원특별자치도 춘천시 공지로 337(효자동) ",
-      "matchedTab": "평면도",
-      "coordCount": 1,
+      "pageAddress": "제주특별자치도 제주시 전농로 100(삼도일동) 주거복지사업팀",
+      "matchedTab": "서귀포서홍 행복주택",
+      "coordCount": 2,
       "housingTypes": [
         {
-          "주택형": "29A(고령자)",
-          "전용면적(㎡)": "29.86",
-          "금회공급세대수": "56",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "청약신청전"
-        },
-        {
-          "주택형": "36A(고령자)",
-          "전용면적(㎡)": "36.21",
-          "금회공급세대수": "60",
+          "주택형": "36A[신혼부부,한부모]",
+          "전용면적(㎡)": "36.72",
+          "금회공급세대수(예비자포함)": "20",
           "임대보증금(원)": "공고문 확인",
           "월임대료(원)": "공고문 확인",
           "인터넷청약": "청약신청전"
@@ -103423,79 +103453,49 @@
       ],
       "schedule": [],
       "noticeStatus": "공고중",
-      "enrichedAt": "2026-08-31T02:17:11.671Z"
+      "enrichedAt": "2026-08-19T03:51:45.348Z"
     },
     "photos": [
       {
         "kind": "null",
-        "name": "동해천곡_단지조감도(저용량).JPG",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68230274"
+        "name": "[크기변환]서홍행복주택교통광역도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37329501"
       },
       {
         "kind": "null",
-        "name": "동해천곡_단지배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68230275"
+        "name": "[크기변환]서귀포서홍행복주택투시도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37329502"
       },
       {
         "kind": "null",
-        "name": "동해천곡_동호배치도.jpg",
-        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=68230276"
+        "name": "[크기변환]서홍행복주택단지배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37329503"
+      },
+      {
+        "kind": "null",
+        "name": "서홍행복주택동호배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=37329504"
+      },
+      {
+        "kind": "null",
+        "name": "크기변환_제주혁신도시행복주택교통망도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32512884"
+      },
+      {
+        "kind": "null",
+        "name": "크기변환_0625_제주혁신행복주택조감도.JPG",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32512885"
+      },
+      {
+        "kind": "null",
+        "name": "단지배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32512886"
+      },
+      {
+        "kind": "null",
+        "name": "동호배치도.jpg",
+        "url": "https://apply.lh.or.kr/lhapply/lhFile.do?fileid=32512887"
       }
     ]
-  },
-  {
-    "id": "lh-rental-20980-1",
-    "pblancId": "20980",
-    "houseSn": 1,
-    "category": "임대",
-    "typeId": "perm",
-    "housingType": "영구임대",
-    "houseType": "아파트",
-    "title": "김해구산",
-    "noticeTitle": "김해구산1 영구임대주택 예비입주자 모집 공고",
-    "provider": "LH",
-    "sido": "경상남도",
-    "sigungu": "김해시",
-    "address": "경상남도 김해시 가락로 222 ",
-    "pnu": "4825010600103210000",
-    "totalUnits": null,
-    "supplyUnits": 100,
-    "depositWon": 2518000,
-    "monthlyRentWon": 50100,
-    "depositManwon": 252,
-    "monthlyRentManwon": 5,
-    "announceDate": "2026.08.06",
-    "beginDate": "2026.09.07",
-    "endDate": "2026.09.11",
-    "winnerDate": "2026.11.19",
-    "noticeStatus": "일반공고",
-    "progressStatus": "",
-    "activeStatus": "upcoming",
-    "daysToDeadline": 5,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020500&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "detailUrl": "https://www.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20980&houseSn=1",
-    "mobileUrl": "https://m.myhome.go.kr/hws/portal/sch/selectRsdtRcritNtcDetailView.do?pblancId=20980&houseSn=1",
-    "attachmentId": "",
-    "lat": 35.2467561,
-    "lng": 128.8764792,
-    "details": {
-      "pageAddress": "",
-      "matchedTab": null,
-      "coordCount": 1,
-      "housingTypes": [
-        {
-          "주택형": "41.2200",
-          "전용면적(㎡)": "26.34",
-          "세대수": "552",
-          "금회공급세대수(예비자포함)": "100",
-          "임대보증금(원)": "공고문 확인",
-          "월임대료(원)": "공고문 확인",
-          "인터넷청약": "-"
-        }
-      ],
-      "schedule": [],
-      "noticeStatus": "공고중",
-      "enrichedAt": "2026-09-05T17:02:55.587Z"
-    }
   }
 ]
