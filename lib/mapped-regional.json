@@ -2135,8 +2135,7 @@
         "label": "완주황운",
         "address": "전북 완주군 소양면 소양로 204-43",
         "depositManwon": 999,
-        "rentManwon": 14,
-        "coverPhotoLocal": "/lh-covers/lh-2015122300020342-57037564.jpg"
+        "rentManwon": 14
       },
       {
         "lat": 35.9237415361636,
@@ -2565,6 +2564,52 @@
         "lat": 37.17045597250748,
         "lng": 127.11005863477601,
         "address": "경기도 화성시",
+        "districtId": "gyeonggi",
+        "district": "경기도"
+      }
+    ]
+  },
+  "2015122300020703": {
+    "districtId": "gyeonggi",
+    "district": "경기도",
+    "points": [
+      {
+        "lat": 37.17045597250748,
+        "lng": 127.11005863477601,
+        "address": "경기도 화성시",
+        "districtId": "gyeonggi",
+        "district": "경기도"
+      },
+      {
+        "lat": 37.04414613336532,
+        "lng": 127.07210818460061,
+        "address": "경기도 평택시",
+        "districtId": "gyeonggi",
+        "district": "경기도"
+      }
+    ]
+  },
+  "2015122300020702": {
+    "districtId": "gyeonggi",
+    "district": "경기도",
+    "points": [
+      {
+        "lat": 37.28328139981305,
+        "lng": 127.1102888388036,
+        "address": "경기도 용인시",
+        "districtId": "gyeonggi",
+        "district": "경기도"
+      }
+    ]
+  },
+  "2015122300020699": {
+    "districtId": "gyeonggi",
+    "district": "경기도",
+    "points": [
+      {
+        "lat": 37.28328139981305,
+        "lng": 127.1102888388036,
+        "address": "경기도 용인시",
         "districtId": "gyeonggi",
         "district": "경기도"
       }
