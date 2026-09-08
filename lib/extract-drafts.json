@@ -18087,5 +18087,75 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020710": {
+    "at": "2026-09-08T19:01:13.078Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "남양주마석2단지 51A",
+          "area": "51.49",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "남양주마석2단지 51B",
+          "area": "51.95",
+          "supplyUnits": 20,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "남양주마석2단지 59",
+          "area": "59.64",
+          "supplyUnits": 20,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-sale-0000061172": {
+    "at": "2026-09-08T19:04:57.054Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "A-57-2블록 신혼희망타운 55형",
+          "area": "55",
+          "supplyUnits": 3,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6654": {
+    "at": "2026-09-08T19:05:38.462Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.09.23"
+      },
+      "deadline": "2026.09.20",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
   }
 }
