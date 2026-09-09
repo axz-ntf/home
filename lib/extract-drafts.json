@@ -18157,5 +18157,115 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집예정"
     }
+  },
+  "lh-rental-2015122300020706-m0": {
+    "at": "2026-09-09T18:52:32.528Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020706-m1": {
+    "at": "2026-09-09T18:54:26.026Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "1형(2인 이하 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "2형(2~4인 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "3형(5인 이상 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020725": {
+    "at": "2026-09-09T18:55:35.559Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.11.10"
+      },
+      "deadline": "2026.09.22",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020705": {
+    "at": "2026-09-09T18:56:17.009Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-310041": {
+    "at": "2026-09-09T18:57:27.986Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2027.3.30"
+      },
+      "deadline": "2026.10.2",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-310046": {
+    "at": "2026-09-09T18:59:01.606Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026. 12. 28."
+      },
+      "deadline": "2026. 9. 30.",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
   }
 }

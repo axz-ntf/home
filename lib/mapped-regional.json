@@ -2615,5 +2615,25 @@
         "district": "경기도"
       }
     ]
+  },
+  "2015122300020706": {
+    "districtId": "gyeongnam",
+    "district": "경상남도",
+    "points": [
+      {
+        "lat": 35.23244403088461,
+        "lng": 128.87157407569794,
+        "address": "경상남도 김해시",
+        "districtId": "gyeongnam",
+        "district": "경상남도"
+      },
+      {
+        "lat": 35.476664630576906,
+        "lng": 128.76565056678672,
+        "address": "경상남도 밀양시",
+        "districtId": "gyeongnam",
+        "district": "경상남도"
+      }
+    ]
   }
 }
