@@ -18267,5 +18267,525 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집예정"
     }
+  },
+  "lh-rental-2015122300020670": {
+    "at": "2026-09-10T18:42:43.360Z",
+    "type": "fifty",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "의정부송산3 49형",
+          "area": "49.86",
+          "supplyUnits": 25,
+          "deposit": 3216,
+          "rent": 13,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "의정부송산3 49형",
+            "limitManwon": 1200,
+            "maxDeposit": 4416,
+            "minRent": 7
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020711": {
+    "at": "2026-09-10T18:44:04.561Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "다자녀 가구",
+          "areaRange": "73㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4
+      },
+      "deadline": "2026.09.23",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020731": {
+    "at": "2026-09-10T18:45:21.805Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "1형(2인 이하 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "2형(2~4인 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "3형(5인 이상 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020723": {
+    "at": "2026-09-10T18:46:37.296Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": null
+      },
+      "schedule": {
+        "winnerAt": "2026.10.06"
+      },
+      "deadline": "2026.09.29",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020722": {
+    "at": "2026-09-10T18:47:35.415Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6
+      },
+      "schedule": {
+        "winnerAt": "2026.10.6"
+      },
+      "deadline": "2026.9.29",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020721": {
+    "at": "2026-09-10T18:48:39.286Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.11.13"
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020720": {
+    "at": "2026-09-10T18:49:39.054Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.11.13"
+      },
+      "deadline": "2026.09.23",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020717": {
+    "at": "2026-09-10T18:50:45.708Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": 6
+      },
+      "schedule": {
+        "winnerAt": "2026.10.02"
+      },
+      "deadline": "2026.09.29",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020713": {
+    "at": "2026-09-10T18:51:21.265Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4
+      },
+      "deadline": null,
+      "noticeStatus": null,
+      "progressStatus": null
+    }
+  },
+  "youth-6665": {
+    "at": "2026-09-10T18:52:14.021Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "성북구 미아 헤리츠타워 19TYPE (특별공급)",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 14000,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "성북구 미아 헤리츠타워 19TYPE (일반공급)",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 16600,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "성북구 미아 헤리츠타워 36TYPE (일반공급)",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 28600,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "성북구 미아 헤리츠타워 59TYPE (일반공급)",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 41200,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.09.15"
+      },
+      "deadline": "2026.09.14",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6664": {
+    "at": "2026-09-10T18:53:27.438Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "중랑구 상봉생활 신혼부부형 특별공급 57형",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 22940,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "중랑구 상봉생활 신혼부부형 특별공급 65형",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 25740,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "중랑구 상봉생활 신혼부부형 특별공급 84A형",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 31880,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "중랑구 상봉생활 청년형 일반공급 25형",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 16620,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "중랑구 상봉생활 신혼부부형 일반공급 54형",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 29890,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "중랑구 상봉생활 신혼부부형 일반공급 57형",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 27240,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "중랑구 상봉생활 신혼부부형 일반공급 84A형",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 37870,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": "2026.09.14",
+      "noticeStatus": "재공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "youth-6663": {
+    "at": "2026-09-10T18:54:26.547Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "동대문구 UNIT125 18B",
+          "area": "18.05",
+          "supplyUnits": 1,
+          "deposit": 11030,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.09.15"
+      },
+      "deadline": "2026.09.14",
+      "noticeStatus": "재공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6662": {
+    "at": "2026-09-10T18:55:15.062Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "동대문구 퀸즈W청량리역 25A",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 11000,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 퀸즈W청량리역 53A(특별공급)",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 17000,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 퀸즈W청량리역 52A",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 20200,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 퀸즈W청량리역 51B",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 20200,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 퀸즈W청량리역 53A(일반공급)",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 20200,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": "2026.09.15",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6661": {
+    "at": "2026-09-10T18:56:03.230Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "동대문구 휘경제이스카이시티 특별공급 1106호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 9500,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 휘경제이스카이시티 특별공급 408호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 7600,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 휘경제이스카이시티 일반공급 502호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 16000,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 휘경제이스카이시티 일반공급 504호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 14300,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 휘경제이스카이시티 일반공급 703호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 9505,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 휘경제이스카이시티 일반공급 609호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 9876,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.09.16"
+      },
+      "deadline": "2026.09.14",
+      "noticeStatus": "재공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6660": {
+    "at": "2026-09-10T18:57:01.341Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "도봉구 쌍문동 103-6 D1타입 일반공급",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 7448,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "도봉구 쌍문동 103-6 F2타입 일반공급",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 7840,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "도봉구 쌍문동 103-6 C1타입 일반공급",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 4704,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "도봉구 쌍문동 103-6 C1타입 일반공급",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 4704,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "도봉구 쌍문동 103-6 B1타입 특별공급",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 3840,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "도봉구 쌍문동 103-6 B1타입 특별공급",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 3840,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "도봉구 쌍문동 103-6 B1타입 특별공급",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 2880,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "도봉구 쌍문동 103-6 A1타입 특별공급",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 3840,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
