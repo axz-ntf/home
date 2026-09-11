@@ -18787,5 +18787,134 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "youth-6659": {
+    "at": "2026-09-11T18:47:39.660Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "강서구 우장산역 해링턴타워 특별공급 1115호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 4544,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강서구 우장산역 해링턴타워 특별공급 1209호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 8320,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.09.15"
+      },
+      "deadline": "2026.09.14",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6658": {
+    "at": "2026-09-11T18:48:27.826Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "은평구 구산주택 특별 17A",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 4800,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "은평구 구산주택 특별 33A",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 8200,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "은평구 구산주택 특별 33B",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 8200,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "은평구 구산주택 일반 17A",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 4000,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "은평구 구산주택 일반 17A",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 4700,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "은평구 구산주택 일반 17A",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 5300,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "은평구 구산주택 일반 17B",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 4700,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "은평구 구산주택 일반 17B",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 5300,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "은평구 구산주택 일반 33A",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 8000,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "재공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-310107": {
+    "at": "2026-09-11T18:49:19.273Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.12.28"
+      },
+      "deadline": "2026.09.30",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
