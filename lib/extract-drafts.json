@@ -18916,5 +18916,65 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020735": {
+    "at": "2026-09-13T18:26:51.482Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "태백시 태백철암1 39형",
+          "area": "39.72",
+          "supplyUnits": 11,
+          "deposit": 1272,
+          "rent": 8,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "태백시 태백철암1 46형",
+          "area": "46.9",
+          "supplyUnits": 9,
+          "deposit": 1979,
+          "rent": 12,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "태백시 태백철암1 59형",
+          "area": "59.88",
+          "supplyUnits": 6,
+          "deposit": 2700,
+          "rent": 21,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "태백시 태백철암1 39형",
+            "limitManwon": 300,
+            "maxDeposit": 1572,
+            "minRent": 6
+          },
+          {
+            "houseType": "태백시 태백철암1 46형",
+            "limitManwon": 1000,
+            "maxDeposit": 2979,
+            "minRent": 7
+          },
+          {
+            "houseType": "태백시 태백철암1 59형",
+            "limitManwon": 2300,
+            "maxDeposit": 5000,
+            "minRent": 9
+          }
+        ]
+      },
+      "deadline": "2026.10.28",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
   }
 }
