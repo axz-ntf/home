@@ -18976,5 +18976,402 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집예정"
     }
+  },
+  "lh-rental-2015122300020732": {
+    "at": "2026-09-15T19:31:28.475Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020767": {
+    "at": "2026-09-15T19:33:33.861Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "원주시 원주무실7 51형",
+          "area": "51.93",
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "원주시 원주흥업2 36형",
+          "area": "36.8",
+          "supplyUnits": 60,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "원주시 원주태장5 26B형",
+          "area": "26.92",
+          "supplyUnits": 20,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020740": {
+    "at": "2026-09-15T19:34:56.263Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "원주태장4 51",
+          "area": "51.93",
+          "supplyUnits": 90,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": null,
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020739": {
+    "at": "2026-09-15T19:36:30.020Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "원주무실1 51일반",
+          "area": "51.88",
+          "supplyUnits": 120,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "원주무실1 51 TA",
+          "area": "51.98",
+          "supplyUnits": 120,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "원주무실1 51 TB",
+          "area": "51.97",
+          "supplyUnits": 120,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020738": {
+    "at": "2026-09-15T19:37:50.157Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "원주문막1 46A",
+          "area": "46.79",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "원주문막1 46B",
+          "area": "46.9",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "원주문막1 51",
+          "area": "51.93",
+          "supplyUnits": 25,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020757": {
+    "at": "2026-09-15T19:39:03.275Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "남해군 남해평리 휴먼시아 33BC",
+          "area": "33.61",
+          "supplyUnits": 15,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": null,
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020754": {
+    "at": "2026-09-15T19:40:16.782Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "양산대석 46㎡",
+          "area": "46.9",
+          "supplyUnits": 60,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020729": {
+    "at": "2026-09-15T19:42:50.670Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "홍성남장2 59형",
+          "area": "59.88",
+          "supplyUnits": 40,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020726": {
+    "at": "2026-09-15T19:44:29.375Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.12.15"
+      },
+      "deadline": "2026.09.30",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020724": {
+    "at": "2026-09-15T19:45:36.479Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "창녕창녕 36",
+          "area": "36.63",
+          "supplyUnits": 20,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "창녕창녕 46",
+          "area": "46.18",
+          "supplyUnits": 10,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020716": {
+    "at": "2026-09-15T19:48:44.586Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "김해진영6 26",
+          "area": "26.8",
+          "supplyUnits": 200,
+          "deposit": 875,
+          "rent": 17,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "김해진영6 33",
+          "area": "33.88",
+          "supplyUnits": 200,
+          "deposit": 1104,
+          "rent": 20,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "김해진영6 46",
+          "area": "46.93",
+          "supplyUnits": 120,
+          "deposit": 2459,
+          "rent": 30,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "김해진영6 26",
+            "limitManwon": 1900,
+            "maxDeposit": 2775,
+            "minRent": 8
+          },
+          {
+            "houseType": "김해진영6 33",
+            "limitManwon": 2300,
+            "maxDeposit": 3404,
+            "minRent": 9
+          },
+          {
+            "houseType": "김해진영6 46",
+            "limitManwon": 3400,
+            "maxDeposit": 5859,
+            "minRent": 13
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020714": {
+    "at": "2026-09-15T19:49:46.612Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "천안병천신한 38형",
+          "area": "38.64",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "천안병천신한 42형",
+          "area": "42.54",
+          "supplyUnits": 10,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "천안병천신한 49형",
+          "area": "49.77",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020684": {
+    "at": "2026-09-15T19:50:50.659Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "음성신천 39",
+          "area": "39.63",
+          "supplyUnits": 40,
+          "deposit": 1237,
+          "rent": 10,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 29,
+        "perHouseType": [
+          {
+            "houseType": "음성신천 39",
+            "limitManwon": 800,
+            "maxDeposit": 2037,
+            "minRent": 6
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020758": {
+    "at": "2026-09-15T19:54:07.909Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "부산정관2 51",
+          "area": "51.77",
+          "supplyUnits": 100,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "부산정관2 51",
+          "area": "51.93",
+          "supplyUnits": 100,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
