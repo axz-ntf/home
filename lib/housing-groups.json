@@ -4226,5 +4226,1283 @@
     "rentMax": 20
    }
   ]
+ },
+ "2015122300020793": {
+  "kind": "매입임대",
+  "unitsTotal": 2,
+  "groups": [
+   {
+    "label": "!image/image/placeholder<br>황금슈퍼 장성119 태백장성동 안전센터 우체국 농협 강원태백 경찰서 금천골 태백시근로자 종합복지관 태백장성지구 국민임대주택 태백작은영화관 새마을금고 장성중앙시장 장성동 주민센터 정량",
+    "units": 2,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
+ },
+ "2015122300020759": {
+  "kind": "매입임대",
+  "unitsTotal": 420,
+  "groups": [
+   {
+    "label": "서울특별시 강남구",
+    "units": 2,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 강동구",
+    "units": 30,
+    "depMin": 10,
+    "depMax": 32,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 강북구",
+    "units": 68,
+    "depMin": 33,
+    "depMax": 100,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 강서구",
+    "units": 49,
+    "depMin": 101,
+    "depMax": 149,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 관악구",
+    "units": 11,
+    "depMin": 150,
+    "depMax": 160,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 광진구",
+    "units": 6,
+    "depMin": 161,
+    "depMax": 166,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 구로구",
+    "units": 4,
+    "depMin": 167,
+    "depMax": 170,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 금천구",
+    "units": 1,
+    "depMin": 171,
+    "depMax": 171,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 노원구",
+    "units": 1,
+    "depMin": 172,
+    "depMax": 172,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 도봉구",
+    "units": 49,
+    "depMin": 173,
+    "depMax": 221,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 동대문구",
+    "units": 28,
+    "depMin": 222,
+    "depMax": 249,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 동작구",
+    "units": 4,
+    "depMin": 250,
+    "depMax": 253,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 서대문구",
+    "units": 20,
+    "depMin": 254,
+    "depMax": 273,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 서초구",
+    "units": 7,
+    "depMin": 274,
+    "depMax": 280,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 성동구",
+    "units": 3,
+    "depMin": 281,
+    "depMax": 283,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 성북구",
+    "units": 11,
+    "depMin": 284,
+    "depMax": 294,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 송파구",
+    "units": 51,
+    "depMin": 295,
+    "depMax": 345,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 양천구",
+    "units": 6,
+    "depMin": 346,
+    "depMax": 351,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 영등포구",
+    "units": 12,
+    "depMin": 352,
+    "depMax": 363,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 용산구",
+    "units": 2,
+    "depMin": 364,
+    "depMax": 365,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 은평구",
+    "units": 7,
+    "depMin": 366,
+    "depMax": 372,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 종로구",
+    "units": 13,
+    "depMin": 373,
+    "depMax": 385,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 중구",
+    "units": 10,
+    "depMin": 386,
+    "depMax": 395,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 중랑구",
+    "units": 25,
+    "depMin": 396,
+    "depMax": 420,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
+ },
+ "2015122300020750": {
+  "kind": "매입임대",
+  "unitsTotal": 81,
+  "groups": [
+   {
+    "label": "서울특별시 강동구",
+    "units": 8,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 강북구",
+    "units": 8,
+    "depMin": 10,
+    "depMax": 16,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 관악구",
+    "units": 1,
+    "depMin": 17,
+    "depMax": 17,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 광진구",
+    "units": 4,
+    "depMin": 18,
+    "depMax": 21,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 구로구",
+    "units": 2,
+    "depMin": 22,
+    "depMax": 23,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 금천구",
+    "units": 6,
+    "depMin": 24,
+    "depMax": 29,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 노원구",
+    "units": 3,
+    "depMin": 30,
+    "depMax": 32,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 도봉구",
+    "units": 17,
+    "depMin": 33,
+    "depMax": 49,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 동대문구",
+    "units": 9,
+    "depMin": 50,
+    "depMax": 58,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 동작구",
+    "units": 1,
+    "depMin": 59,
+    "depMax": 59,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 마포구",
+    "units": 1,
+    "depMin": 60,
+    "depMax": 60,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 서대문구",
+    "units": 1,
+    "depMin": 61,
+    "depMax": 61,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 성북구",
+    "units": 8,
+    "depMin": 62,
+    "depMax": 69,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 송파구",
+    "units": 1,
+    "depMin": 70,
+    "depMax": 70,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 양천구",
+    "units": 1,
+    "depMin": 71,
+    "depMax": 71,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 영등포구",
+    "units": 2,
+    "depMin": 72,
+    "depMax": 73,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 은평구",
+    "units": 2,
+    "depMin": 74,
+    "depMax": 75,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 종로구",
+    "units": 1,
+    "depMin": 76,
+    "depMax": 76,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 중랑구",
+    "units": 5,
+    "depMin": 77,
+    "depMax": 81,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
+ },
+ "2015122300020749": {
+  "kind": "매입임대",
+  "unitsTotal": 67,
+  "groups": [
+   {
+    "label": "서울특별시 강남구",
+    "units": 4,
+    "depMin": 18885,
+    "depMax": 28516,
+    "rentMin": 25,
+    "rentMax": 32
+   },
+   {
+    "label": "서울특별시 강동구",
+    "units": 6,
+    "depMin": 13835,
+    "depMax": 24112,
+    "rentMin": 16,
+    "rentMax": 28
+   },
+   {
+    "label": "서울특별시 강북구",
+    "units": 7,
+    "depMin": 11086,
+    "depMax": 19651,
+    "rentMin": 14,
+    "rentMax": 22
+   },
+   {
+    "label": "서울특별시 강서구",
+    "units": 1,
+    "depMin": 22753,
+    "depMax": 22753,
+    "rentMin": 25,
+    "rentMax": 25
+   },
+   {
+    "label": "서울특별시 광진구",
+    "units": 3,
+    "depMin": 19249,
+    "depMax": 21982,
+    "rentMin": 22,
+    "rentMax": 23
+   },
+   {
+    "label": "서울특별시 구로구",
+    "units": 1,
+    "depMin": 17661,
+    "depMax": 17661,
+    "rentMin": 20,
+    "rentMax": 20
+   },
+   {
+    "label": "서울특별시 노원구",
+    "units": 2,
+    "depMin": 15081,
+    "depMax": 17828,
+    "rentMin": 16,
+    "rentMax": 20
+   },
+   {
+    "label": "서울특별시 도봉구",
+    "units": 2,
+    "depMin": 13836,
+    "depMax": 16281,
+    "rentMin": 18,
+    "rentMax": 19
+   },
+   {
+    "label": "서울특별시 동대문구",
+    "units": 10,
+    "depMin": 17431,
+    "depMax": 27216,
+    "rentMin": 19,
+    "rentMax": 39
+   },
+   {
+    "label": "서울특별시 동작구",
+    "units": 1,
+    "depMin": 25344,
+    "depMax": 25344,
+    "rentMin": 26,
+    "rentMax": 26
+   },
+   {
+    "label": "서울특별시 마포구",
+    "units": 2,
+    "depMin": 23262,
+    "depMax": 23743,
+    "rentMin": 25,
+    "rentMax": 26
+   },
+   {
+    "label": "서울특별시 서초구",
+    "units": 2,
+    "depMin": 15777,
+    "depMax": 22379,
+    "rentMin": 21,
+    "rentMax": 25
+   },
+   {
+    "label": "서울특별시 성북구",
+    "units": 7,
+    "depMin": 19586,
+    "depMax": 21849,
+    "rentMin": 23,
+    "rentMax": 32
+   },
+   {
+    "label": "서울특별시 송파구",
+    "units": 2,
+    "depMin": 25901,
+    "depMax": 25901,
+    "rentMin": 28,
+    "rentMax": 28
+   },
+   {
+    "label": "서울특별시 양천구",
+    "units": 1,
+    "depMin": 11225,
+    "depMax": 11225,
+    "rentMin": 13,
+    "rentMax": 13
+   },
+   {
+    "label": "서울특별시 영등포구",
+    "units": 2,
+    "depMin": 23960,
+    "depMax": 24441,
+    "rentMin": 24,
+    "rentMax": 24
+   },
+   {
+    "label": "서울특별시 은평구",
+    "units": 1,
+    "depMin": 21015,
+    "depMax": 21015,
+    "rentMin": 22,
+    "rentMax": 22
+   },
+   {
+    "label": "서울특별시 중랑구",
+    "units": 13,
+    "depMin": 12946,
+    "depMax": 23078,
+    "rentMin": 15,
+    "rentMax": 27
+   }
+  ]
+ },
+ "2015122300020798": {
+  "kind": "매입임대",
+  "unitsTotal": 43,
+  "groups": [
+   {
+    "label": "O",
+    "units": 19,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "본 인천광역시 미추홀구",
+    "units": 2,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "본 인천광역시 남동구",
+    "units": 14,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "본 인천광역시 부평구",
+    "units": 2,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "26-7차",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "◎",
+    "units": 4,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "◎ 수정계약시",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
+ },
+ "2015122300020797": {
+  "kind": "매입임대",
+  "unitsTotal": 63,
+  "groups": [
+   {
+    "label": "인천광역시 계양구",
+    "units": 4,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 12,
+    "rentMax": 14
+   },
+   {
+    "label": "인천광역시 남동구",
+    "units": 6,
+    "depMin": 10,
+    "depMax": 10,
+    "rentMin": 7,
+    "rentMax": 20
+   },
+   {
+    "label": "인천광역시 미추홀구",
+    "units": 9,
+    "depMin": 11,
+    "depMax": 19,
+    "rentMin": 9,
+    "rentMax": 24
+   },
+   {
+    "label": "인천광역시 부평구",
+    "units": 13,
+    "depMin": 20,
+    "depMax": 32,
+    "rentMin": 10,
+    "rentMax": 20
+   },
+   {
+    "label": "인천광역시 서해구",
+    "units": 26,
+    "depMin": 33,
+    "depMax": 58,
+    "rentMin": 11,
+    "rentMax": 17
+   },
+   {
+    "label": "인천광역시 제물포구",
+    "units": 1,
+    "depMin": 59,
+    "depMax": 59,
+    "rentMin": 20,
+    "rentMax": 20
+   },
+   {
+    "label": "경기도 부천시 원미구",
+    "units": 4,
+    "depMin": 60,
+    "depMax": 63,
+    "rentMin": 18,
+    "rentMax": 25
+   }
+  ]
+ },
+ "2015122300020795": {
+  "kind": "매입임대",
+  "unitsTotal": 77,
+  "groups": [
+   {
+    "label": "인천광역시 검단구",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 14,
+    "rentMax": 14
+   },
+   {
+    "label": "인천광역시 남동구",
+    "units": 26,
+    "depMin": 10,
+    "depMax": 27,
+    "rentMin": 17,
+    "rentMax": 30
+   },
+   {
+    "label": "인천광역시 미추홀구",
+    "units": 13,
+    "depMin": 28,
+    "depMax": 40,
+    "rentMin": 15,
+    "rentMax": 28
+   },
+   {
+    "label": "인천광역시 부평구",
+    "units": 16,
+    "depMin": 41,
+    "depMax": 56,
+    "rentMin": 13,
+    "rentMax": 44
+   },
+   {
+    "label": "인천광역시 서해구",
+    "units": 14,
+    "depMin": 57,
+    "depMax": 70,
+    "rentMin": 11,
+    "rentMax": 30
+   },
+   {
+    "label": "인천광역시 제물포구",
+    "units": 4,
+    "depMin": 71,
+    "depMax": 74,
+    "rentMin": 23,
+    "rentMax": 23
+   },
+   {
+    "label": "경기도 부천시 소사구",
+    "units": 3,
+    "depMin": 75,
+    "depMax": 77,
+    "rentMin": 28,
+    "rentMax": 36
+   }
+  ]
+ },
+ "2015122300020784": {
+  "kind": "매입임대",
+  "unitsTotal": 8,
+  "groups": [
+   {
+    "label": "지산휴먼시아",
+    "units": 1,
+    "depMin": 15219,
+    "depMax": 15219,
+    "rentMin": 18,
+    "rentMax": 18
+   },
+   {
+    "label": "푸른길 두산위브",
+    "units": 1,
+    "depMin": 13997,
+    "depMax": 13997,
+    "rentMin": 18,
+    "rentMax": 18
+   },
+   {
+    "label": "동천 리버팰리스",
+    "units": 1,
+    "depMin": 18604,
+    "depMax": 18604,
+    "rentMin": 19,
+    "rentMax": 19
+   },
+   {
+    "label": "한국아델리움 2차",
+    "units": 2,
+    "depMin": 10067,
+    "depMax": 15398,
+    "rentMin": 12,
+    "rentMax": 18
+   },
+   {
+    "label": "운암동",
+    "units": 1,
+    "depMin": 16271,
+    "depMax": 16271,
+    "rentMin": 19,
+    "rentMax": 19
+   },
+   {
+    "label": "선운 모아엘가",
+    "units": 1,
+    "depMin": 15291,
+    "depMax": 15291,
+    "rentMin": 16,
+    "rentMax": 16
+   },
+   {
+    "label": "하남2지구 다사로움 2단지 아파트",
+    "units": 1,
+    "depMin": 10783,
+    "depMax": 10783,
+    "rentMin": 13,
+    "rentMax": 13
+   }
+  ]
+ },
+ "2015122300020778": {
+  "kind": "매입임대",
+  "unitsTotal": 57,
+  "groups": [
+   {
+    "label": "충청북도 청주시 상당구",
+    "units": 9,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 9,
+    "rentMax": 19
+   },
+   {
+    "label": "충청북도 청주시 서원구",
+    "units": 6,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 6,
+    "rentMax": 13
+   },
+   {
+    "label": "충청북도 청주시 청원구",
+    "units": 13,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 7,
+    "rentMax": 26
+   },
+   {
+    "label": "충청북도 청주시 흥덕구",
+    "units": 29,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 8,
+    "rentMax": 20
+   }
+  ]
+ },
+ "2015122300020777": {
+  "kind": "매입임대",
+  "unitsTotal": 23,
+  "groups": [
+   {
+    "label": "매입다가구 전남광주통합특별시 매입다가구",
+    "units": 20,
+    "depMin": 707,
+    "depMax": 1313,
+    "rentMin": 20,
+    "rentMax": 44
+   },
+   {
+    "label": "성하파밀리아2차 전남광주통합특별시 매입다가구",
+    "units": 1,
+    "depMin": 776,
+    "depMax": 776,
+    "rentMin": 31,
+    "rentMax": 31
+   },
+   {
+    "label": "흑석 전남광주통합특별시 매입다가구",
+    "units": 1,
+    "depMin": 530,
+    "depMax": 530,
+    "rentMin": 21,
+    "rentMax": 21
+   },
+   {
+    "label": "17(산정동) 전남광주통합특별시 매입다가구",
+    "units": 1,
+    "depMin": 520,
+    "depMax": 520,
+    "rentMin": 19,
+    "rentMax": 19
+   }
+  ]
+ },
+ "2015122300020776": {
+  "kind": "매입임대",
+  "unitsTotal": 43,
+  "groups": [
+   {
+    "label": "충청북도 청주시 상당구",
+    "units": 16,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 11,
+    "rentMax": 30
+   },
+   {
+    "label": "충청북도 청주시 서원구",
+    "units": 6,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 13,
+    "rentMax": 18
+   },
+   {
+    "label": "충청북도 청주시 청원구",
+    "units": 3,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 11,
+    "rentMax": 12
+   },
+   {
+    "label": "충청북도 청주시 흥덕구",
+    "units": 15,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 9,
+    "rentMax": 20
+   },
+   {
+    "label": "충청북도 음성군",
+    "units": 3,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 13,
+    "rentMax": 17
+   }
+  ]
+ },
+ "2015122300020775": {
+  "kind": "기숙사",
+  "unitsTotal": 2,
+  "groups": [
+   {
+    "label": "용봉동",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "용봉동",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
+ },
+ "2015122300020774": {
+  "kind": "매입임대",
+  "unitsTotal": 5,
+  "groups": [
+   {
+    "label": "파모스라움",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 12,
+    "rentMax": 12
+   },
+   {
+    "label": "충주2차푸르지오아파트",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 12,
+    "rentMax": 12
+   },
+   {
+    "label": "충주지웰",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 8,
+    "rentMax": 8
+   },
+   {
+    "label": "왕암동 코아루드림 102",
+    "units": 2,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 7,
+    "rentMax": 7
+   }
+  ]
+ },
+ "2015122300020773": {
+  "kind": "매입임대",
+  "unitsTotal": 19,
+  "groups": [
+   {
+    "label": "전남광주통합특별시 서구",
+    "units": 3,
+    "depMin": 200,
+    "depMax": 200,
+    "rentMin": 10,
+    "rentMax": 10
+   },
+   {
+    "label": "서구",
+    "units": 1,
+    "depMin": 200,
+    "depMax": 200,
+    "rentMin": 10,
+    "rentMax": 10
+   },
+   {
+    "label": "매화 전남광주통합특별시 북구",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "전남광주통합특별시 북구",
+    "units": 8,
+    "depMin": 200,
+    "depMax": 200,
+    "rentMin": 9,
+    "rentMax": 23
+   },
+   {
+    "label": "북구",
+    "units": 1,
+    "depMin": 200,
+    "depMax": 200,
+    "rentMin": 22,
+    "rentMax": 22
+   },
+   {
+    "label": "전남광주통합특별시 광산구",
+    "units": 2,
+    "depMin": 200,
+    "depMax": 200,
+    "rentMin": 17,
+    "rentMax": 38
+   },
+   {
+    "label": "에코클래스) 전남광주통합특별시 광산구",
+    "units": 1,
+    "depMin": 200,
+    "depMax": 200,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "전남광주통합특별시",
+    "units": 2,
+    "depMin": 200,
+    "depMax": 200,
+    "rentMin": 12,
+    "rentMax": 12
+   }
+  ]
+ },
+ "2015122300020791": {
+  "kind": "매입임대",
+  "unitsTotal": 104,
+  "groups": [
+   {
+    "label": "부산광역시 남구",
+    "units": 13,
+    "depMin": 445,
+    "depMax": 1445,
+    "rentMin": 17,
+    "rentMax": 29
+   },
+   {
+    "label": "부산광역시 동래구",
+    "units": 24,
+    "depMin": 414,
+    "depMax": 1522,
+    "rentMin": 18,
+    "rentMax": 31
+   },
+   {
+    "label": "부산광역시 부산진구",
+    "units": 3,
+    "depMin": 511,
+    "depMax": 1286,
+    "rentMin": 18,
+    "rentMax": 26
+   },
+   {
+    "label": "부산광역시 북구",
+    "units": 4,
+    "depMin": 726,
+    "depMax": 726,
+    "rentMin": 28,
+    "rentMax": 28
+   },
+   {
+    "label": "부산광역시 사상구",
+    "units": 10,
+    "depMin": 491,
+    "depMax": 1359,
+    "rentMin": 18,
+    "rentMax": 29
+   },
+   {
+    "label": "부산광역시 사하구",
+    "units": 4,
+    "depMin": 540,
+    "depMax": 809,
+    "rentMin": 14,
+    "rentMax": 33
+   },
+   {
+    "label": "부산광역시 서구",
+    "units": 1,
+    "depMin": 1386,
+    "depMax": 1386,
+    "rentMin": 34,
+    "rentMax": 34
+   },
+   {
+    "label": "부산광역시 연제구",
+    "units": 19,
+    "depMin": 530,
+    "depMax": 1669,
+    "rentMin": 24,
+    "rentMax": 38
+   },
+   {
+    "label": "부산광역시 금정구",
+    "units": 14,
+    "depMin": 472,
+    "depMax": 1742,
+    "rentMin": 20,
+    "rentMax": 31
+   },
+   {
+    "label": "부산광역시 수영구",
+    "units": 9,
+    "depMin": 405,
+    "depMax": 1326,
+    "rentMin": 24,
+    "rentMax": 32
+   },
+   {
+    "label": "부산광역시 해운대구",
+    "units": 3,
+    "depMin": 549,
+    "depMax": 742,
+    "rentMin": 23,
+    "rentMax": 25
+   }
+  ]
+ },
+ "2015122300020790": {
+  "kind": "매입임대",
+  "unitsTotal": 149,
+  "groups": [
+   {
+    "label": "부산광역시 서구",
+    "units": 3,
+    "depMin": 100,
+    "depMax": 100,
+    "rentMin": 26,
+    "rentMax": 26
+   },
+   {
+    "label": "부산광역시 부산진구",
+    "units": 17,
+    "depMin": 100,
+    "depMax": 100,
+    "rentMin": 19,
+    "rentMax": 25
+   },
+   {
+    "label": "부산광역시 동래구",
+    "units": 20,
+    "depMin": 100,
+    "depMax": 100,
+    "rentMin": 11,
+    "rentMax": 38
+   },
+   {
+    "label": "부산광역시 북구",
+    "units": 14,
+    "depMin": 100,
+    "depMax": 100,
+    "rentMin": 10,
+    "rentMax": 27
+   },
+   {
+    "label": "부산광역시 연제구",
+    "units": 8,
+    "depMin": 100,
+    "depMax": 100,
+    "rentMin": 16,
+    "rentMax": 19
+   },
+   {
+    "label": "부산광역시 사상구",
+    "units": 18,
+    "depMin": 100,
+    "depMax": 100,
+    "rentMin": 9,
+    "rentMax": 23
+   },
+   {
+    "label": "부산광역시 금정구",
+    "units": 31,
+    "depMin": 100,
+    "depMax": 100,
+    "rentMin": 16,
+    "rentMax": 37
+   },
+   {
+    "label": "부산광역시 수영구",
+    "units": 25,
+    "depMin": 100,
+    "depMax": 100,
+    "rentMin": 17,
+    "rentMax": 38
+   },
+   {
+    "label": "부산광역시 해운대구",
+    "units": 13,
+    "depMin": 100,
+    "depMax": 100,
+    "rentMin": 11,
+    "rentMax": 17
+   }
+  ]
+ },
+ "2015122300020789": {
+  "kind": "매입임대",
+  "unitsTotal": 126,
+  "groups": [
+   {
+    "label": "부산광역시 강서구",
+    "units": 1,
+    "depMin": 11920,
+    "depMax": 11920,
+    "rentMin": 15,
+    "rentMax": 15
+   },
+   {
+    "label": "부산광역시 남구",
+    "units": 2,
+    "depMin": 11708,
+    "depMax": 15808,
+    "rentMin": 12,
+    "rentMax": 16
+   },
+   {
+    "label": "부산광역시 동구",
+    "units": 3,
+    "depMin": 10393,
+    "depMax": 13932,
+    "rentMin": 11,
+    "rentMax": 15
+   },
+   {
+    "label": "부산광역시 동래구",
+    "units": 9,
+    "depMin": 9820,
+    "depMax": 12643,
+    "rentMin": 13,
+    "rentMax": 16
+   },
+   {
+    "label": "부산광역시 부산진구",
+    "units": 39,
+    "depMin": 10268,
+    "depMax": 15250,
+    "rentMin": 14,
+    "rentMax": 17
+   },
+   {
+    "label": "부산광역시 북구",
+    "units": 12,
+    "depMin": 8703,
+    "depMax": 12504,
+    "rentMin": 11,
+    "rentMax": 15
+   },
+   {
+    "label": "부산광역시 사상구",
+    "units": 16,
+    "depMin": 11089,
+    "depMax": 13770,
+    "rentMin": 13,
+    "rentMax": 19
+   },
+   {
+    "label": "부산광역시 사하구",
+    "units": 6,
+    "depMin": 7513,
+    "depMax": 11477,
+    "rentMin": 10,
+    "rentMax": 12
+   },
+   {
+    "label": "부산광역시 연제구",
+    "units": 6,
+    "depMin": 16012,
+    "depMax": 19490,
+    "rentMin": 25,
+    "rentMax": 30
+   },
+   {
+    "label": "울산광역시 남구",
+    "units": 32,
+    "depMin": 19792,
+    "depMax": 23572,
+    "rentMin": 25,
+    "rentMax": 30
+   }
+  ]
  }
 }

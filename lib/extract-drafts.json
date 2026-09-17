@@ -19373,5 +19373,260 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-sale-0000061178": {
+    "at": "2026-09-17T19:49:39.933Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "84형",
+          "area": "84",
+          "supplyUnits": 331,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": "2026.09.30",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-sale-2015122300020766": {
+    "at": "2026-09-17T19:50:17.035Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "남구 신대연 코오롱하늘채 105동 604호",
+          "area": "84.6588",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 28900
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.01"
+      },
+      "deadline": "2026.09.30",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020753": {
+    "at": "2026-09-17T19:51:18.201Z",
+    "type": "integ",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.10.13."
+      },
+      "deadline": "2026.10.1.",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020796": {
+    "at": "2026-09-17T19:52:04.899Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020793": {
+    "at": "2026-09-17T19:53:02.867Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020750": {
+    "at": "2026-09-17T19:54:09.377Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6
+      },
+      "schedule": {
+        "winnerAt": "2026.10.09"
+      },
+      "deadline": "2026.10.02",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020749": {
+    "at": "2026-09-17T19:55:18.418Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": null
+      },
+      "schedule": {
+        "winnerAt": "2026.12.10"
+      },
+      "deadline": "2026.10.02",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020798": {
+    "at": "2026-09-17T19:56:23.532Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": 6
+      },
+      "schedule": {
+        "winnerAt": "2026.10.08"
+      },
+      "deadline": "2026.10.02",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020797": {
+    "at": "2026-09-17T19:57:34.653Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.10.09"
+      },
+      "deadline": "2026.10.02",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020795": {
+    "at": "2026-09-17T19:58:27.209Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4
+      },
+      "schedule": {
+        "winnerAt": "2026.10.09"
+      },
+      "deadline": "2026.10.02",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020778": {
+    "at": "2026-09-17T19:59:58.245Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": 6
+      },
+      "schedule": {
+        "winnerAt": "2026.12.08"
+      },
+      "deadline": "2026.10.02",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020776": {
+    "at": "2026-09-17T20:01:15.018Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4
+      },
+      "schedule": {
+        "winnerAt": "2026.10.09"
+      },
+      "deadline": "2026.10.02",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020775": {
+    "at": "2026-09-17T20:03:09.773Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": 6
+      },
+      "schedule": {
+        "winnerAt": "2026.10.12"
+      },
+      "deadline": "2026.10.02",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020774": {
+    "at": "2026-09-17T20:05:01.485Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": null
+      },
+      "schedule": {
+        "winnerAt": "2026.10.06"
+      },
+      "deadline": "2026.10.02",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020773": {
+    "at": "2026-09-17T20:06:16.426Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": null
+      },
+      "schedule": {
+        "winnerAt": "2026.10.12"
+      },
+      "deadline": "2026.10.02",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
