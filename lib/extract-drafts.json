@@ -19628,5 +19628,606 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020801": {
+    "at": "2026-09-18T18:49:00.241Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "26형",
+          "area": "26.37㎡",
+          "supplyUnits": 1433,
+          "incomes": [
+            {
+              "label": "가군(생계·의료급여수급자 등)",
+              "deposit": 240,
+              "rent": 5
+            },
+            {
+              "label": "나군(일반 등) - 402~406동",
+              "deposit": 336,
+              "rent": 7
+            },
+            {
+              "label": "나군(일반 등) - 407·408동",
+              "deposit": 783,
+              "rent": 12
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020804": {
+    "at": "2026-09-18T18:50:48.010Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "일도 16A",
+          "area": "16.64",
+          "supplyUnits": 3,
+          "deposit": 2887,
+          "rent": 13,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "일도 16A",
+            "limitManwon": 1400,
+            "maxDeposit": 4287,
+            "minRent": 6
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.12.28"
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-sale-2015122300020799": {
+    "at": "2026-09-18T18:52:01.362Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "광주전남혁신 빛가람 LH1단지 84A 104-102",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 16900
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH1단지 84A 104-103",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 16900
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH1단지 84A 104-403",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 18100
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH1단지 84A 104-501",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 18100
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH1단지 84A 104-1001",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 19000
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH1단지 84A 104-1401",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 19000
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH1단지 84A 104-1604",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 19000
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH1단지 84A 105-203",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 17900
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH1단지 84A 105-503",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 18500
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-sale-2015122300020598": {
+    "at": "2026-09-18T18:54:42.176Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "효천2 LH천년나무 6단지 51A 603-401",
+          "area": "51.87",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 14785
+        },
+        {
+          "houseType": "효천2 LH천년나무 6단지 51A 603-602",
+          "area": "51.87",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 15235
+        },
+        {
+          "houseType": "효천2 LH천년나무 6단지 51A 603-803",
+          "area": "51.87",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 15555
+        },
+        {
+          "houseType": "효천2 LH천년나무 6단지 51A 603-1003",
+          "area": "51.87",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 15725
+        },
+        {
+          "houseType": "효천2 LH천년나무 6단지 51A 603-1202",
+          "area": "51.87",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 15725
+        },
+        {
+          "houseType": "효천2 LH천년나무 6단지 51A 603-1204",
+          "area": "51.87",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 15555
+        },
+        {
+          "houseType": "효천2 LH천년나무 6단지 51A 603-1302",
+          "area": "51.87",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 15725
+        },
+        {
+          "houseType": "효천2 LH천년나무 6단지 51A 603-1803",
+          "area": "51.87",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 15725
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.02."
+      },
+      "deadline": "2026.10.01.",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020791": {
+    "at": "2026-09-18T18:55:11.368Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4
+      },
+      "schedule": {
+        "winnerAt": "2026.10.15"
+      },
+      "deadline": "2026.10.02",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020790": {
+    "at": "2026-09-18T18:55:51.043Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": 6
+      },
+      "schedule": {
+        "winnerAt": "2026.12.11"
+      },
+      "deadline": "2026.10.02",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020789": {
+    "at": "2026-09-18T18:56:27.008Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": null
+      },
+      "schedule": {
+        "winnerAt": "2026.10.15"
+      },
+      "deadline": "2026.10.2",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-310258": {
+    "at": "2026-09-18T18:58:48.384Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "은평구 갈현 공공기숙사 13형",
+          "area": "13.25",
+          "supplyUnits": 4,
+          "deposit": 109,
+          "rent": 11,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "은평구 갈현 공공기숙사 18형",
+          "area": "18.04",
+          "supplyUnits": 1,
+          "deposit": 109,
+          "rent": 15,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "은평구 갈현 공공기숙사 22형",
+          "area": "22.05 ~ 22.69",
+          "supplyUnits": 15,
+          "deposit": 109,
+          "rent": 18,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "노원구 공릉 공공기숙사 11형",
+          "area": "11.41",
+          "supplyUnits": 2,
+          "deposit": 109,
+          "rent": 9,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "노원구 공릉 공공기숙사 14형",
+          "area": "14.00 ~ 14.97",
+          "supplyUnits": 9,
+          "deposit": 109,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.12.14"
+      },
+      "deadline": "2026.10.2",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "youth-6677": {
+    "at": "2026-09-18T19:01:04.179Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.09.28"
+      },
+      "deadline": "2026.09.23",
+      "noticeStatus": "재공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6676": {
+    "at": "2026-09-18T19:02:39.715Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "동대문구 회기역하트리움 특별공급 15A",
+          "area": null,
+          "supplyUnits": 2,
+          "deposit": 9500,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 회기역하트리움 일반공급 15A",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 8900,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 회기역하트리움 일반공급 15A",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 11300,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 회기역하트리움 일반공급 33(B1)",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 17200,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 회기역하트리움 일반공급 33(B1)",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 22200,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 회기역하트리움 일반공급 33(B2)",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 22200,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 회기역하트리움 일반공급 32(B3)",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 22200,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 회기역하트리움 일반공급 33(B4)",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 22200,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6674": {
+    "at": "2026-09-18T19:04:16.533Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "성북구 라온프라이빗 종암 청년 특별공급",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 7100,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.09.22"
+      },
+      "deadline": "2026.09.21",
+      "noticeStatus": "재공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "youth-6673": {
+    "at": "2026-09-18T19:06:21.217Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "성동구 라봄성동 39A",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "성동구 라봄성동 39B",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.09.22"
+      },
+      "deadline": "2026.09.21",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6672": {
+    "at": "2026-09-18T19:07:33.864Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "은평구 루미노816 1608호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 5700,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "은평구 루미노816 1905호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 5900,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "은평구 루미노816 607호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 5700,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "은평구 루미노816 308호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 9800,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "은평구 루미노816 508호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 5700,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.09.23"
+      },
+      "deadline": "2026.09.21",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6671": {
+    "at": "2026-09-18T19:08:55.872Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "영등포구 신풍역 비스타동원 53타입 특별공급",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 29800,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "영등포구 신풍역 비스타동원 53타입 일반공급",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 36700,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "영등포구 신풍역 비스타동원 15타입 특별공급",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 7800,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "영등포구 신풍역 비스타동원 15타입 특별공급",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 13000,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "영등포구 신풍역 비스타동원 28타입 특별공급",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 22100,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "영등포구 신풍역 비스타동원 15타입 특별공급",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 11700,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
