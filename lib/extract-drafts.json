@@ -20229,5 +20229,496 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "youth-6675": {
+    "at": "2026-09-19T18:19:04.977Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "퀸즈W 청량리역 61B (신혼부부 특별)",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 17000,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "퀸즈W 청량리역 61A (청년/신혼부부 일반)",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 20200,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "퀸즈W 청량리역 61B (청년/신혼부부 일반)",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 20200,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.09.23"
+      },
+      "deadline": "2026.09.22",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6670": {
+    "at": "2026-09-19T18:20:38.572Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.09.22"
+      },
+      "deadline": "2026.09.21",
+      "noticeStatus": "재공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6669": {
+    "at": "2026-09-19T18:21:35.344Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "관악구 BX201 15형",
+          "area": null,
+          "supplyUnits": 2,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.09.22"
+      },
+      "deadline": "2026.09.21",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "youth-6667": {
+    "at": "2026-09-19T18:22:03.579Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "광진구 비바힐스강변 805호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 5500,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.09.22"
+      },
+      "deadline": "2026.09.21",
+      "noticeStatus": "재공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020792": {
+    "at": "2026-09-19T18:24:41.979Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "원주무실1 51일반",
+          "area": "51.88",
+          "supplyUnits": 120,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "원주무실1 51 TA",
+          "area": "51.98",
+          "supplyUnits": 120,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "원주무실1 51 TB",
+          "area": "51.97",
+          "supplyUnits": 120,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020788": {
+    "at": "2026-09-19T18:24:53.283Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020744": {
+    "at": "2026-09-19T18:25:02.584Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.10.12"
+      },
+      "deadline": "2026.9.30",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020786": {
+    "at": "2026-09-19T18:25:48.792Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "칠곡북삼 45",
+          "area": "45.86",
+          "supplyUnits": 25,
+          "deposit": 1635,
+          "rent": 12,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020756": {
+    "at": "2026-09-19T18:26:19.274Z",
+    "type": "fifty",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "천안쌍용5-2 39.51형",
+          "area": "39.51",
+          "supplyUnits": 50,
+          "deposit": 1605,
+          "rent": 23,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "천안쌍용5-2 39.72형",
+          "area": "39.72",
+          "supplyUnits": 50,
+          "deposit": 1613,
+          "rent": 23,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "천안쌍용5-2 39.51형",
+            "limitManwon": 2700,
+            "maxDeposit": 4305,
+            "minRent": 9
+          },
+          {
+            "houseType": "천안쌍용5-2 39.72형",
+            "limitManwon": 2600,
+            "maxDeposit": 4213,
+            "minRent": 10
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020779": {
+    "at": "2026-09-19T18:27:21.385Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020783": {
+    "at": "2026-09-19T18:28:20.333Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "원주무실7 51",
+          "area": "51.93",
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "원주흥업2 36",
+          "area": "36.8",
+          "supplyUnits": 60,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "원주태장5 26B",
+          "area": "26.92",
+          "supplyUnits": 20,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020709": {
+    "at": "2026-09-19T18:29:02.519Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "구미시 구미구평 39형",
+          "area": "39.62",
+          "supplyUnits": 5,
+          "deposit": 2152,
+          "rent": 15,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "구미시 구미옥계2 33형",
+          "area": "33.8",
+          "supplyUnits": 10,
+          "deposit": 1463,
+          "rent": 10,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "구미시 구미옥계2 39형",
+          "area": "39.73",
+          "supplyUnits": 10,
+          "deposit": 1861,
+          "rent": 12,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "김천시 김천혁신4 26형",
+          "area": "26.9",
+          "supplyUnits": 10,
+          "deposit": 857,
+          "rent": 15,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "김천시 김천혁신4 33형",
+          "area": "33.92",
+          "supplyUnits": 10,
+          "deposit": 1080,
+          "rent": 19,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "김천시 김천혁신4 46형",
+          "area": "46.94",
+          "supplyUnits": 20,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "김천시 김천덕곡 51형",
+          "area": "51.93",
+          "supplyUnits": 20,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "의성군 경북의성 29A형",
+          "area": "29.52",
+          "supplyUnits": 5,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "의성군 경북의성 29A-1형",
+          "area": "29.52",
+          "supplyUnits": 5,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "구미시 구미구평 39형",
+            "limitManwon": 1700,
+            "maxDeposit": 3852,
+            "minRent": 6
+          },
+          {
+            "houseType": "구미시 구미옥계2 33형",
+            "limitManwon": 700,
+            "maxDeposit": 2163,
+            "minRent": 7
+          },
+          {
+            "houseType": "구미시 구미옥계2 39형",
+            "limitManwon": 1100,
+            "maxDeposit": 2961,
+            "minRent": 7
+          },
+          {
+            "houseType": "김천시 김천혁신4 26형",
+            "limitManwon": 1700,
+            "maxDeposit": 2557,
+            "minRent": 7
+          },
+          {
+            "houseType": "김천시 김천혁신4 33형",
+            "limitManwon": 2100,
+            "maxDeposit": 3180,
+            "minRent": 8
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020696": {
+    "at": "2026-09-19T18:29:39.174Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "칠곡군 칠곡왜관4 51형",
+          "area": "51.93",
+          "supplyUnits": 40,
+          "deposit": 2219,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020683": {
+    "at": "2026-09-19T18:30:10.969Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "괴산군 괴산동부 39",
+          "area": "39.63",
+          "supplyUnits": 15,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020752": {
+    "at": "2026-09-19T18:31:16.036Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "서원구 청주가경4 36",
+          "area": "36.97",
+          "supplyUnits": 50,
+          "deposit": 1514,
+          "rent": 14,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "서원구 청주가경4 39",
+          "area": "39.39",
+          "supplyUnits": 50,
+          "deposit": 1613,
+          "rent": 16,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "서원구 청주가경4 36",
+            "limitManwon": 1600,
+            "maxDeposit": 3114,
+            "minRent": 7
+          },
+          {
+            "houseType": "서원구 청주가경4 36",
+            "limitManwon": 1000,
+            "maxDeposit": 514,
+            "minRent": 17
+          },
+          {
+            "houseType": "서원구 청주가경4 39",
+            "limitManwon": 1800,
+            "maxDeposit": 3413,
+            "minRent": 7
+          },
+          {
+            "houseType": "서원구 청주가경4 39",
+            "limitManwon": 1100,
+            "maxDeposit": 513,
+            "minRent": 19
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
