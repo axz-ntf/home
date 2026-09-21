@@ -5504,5 +5504,67 @@
     "rentMax": 30
    }
   ]
+ },
+ "2015122300020808": {
+  "kind": "매입임대",
+  "unitsTotal": 63,
+  "groups": [
+   {
+    "label": "인천광역시 계양구",
+    "units": 4,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 12,
+    "rentMax": 14
+   },
+   {
+    "label": "인천광역시 남동구",
+    "units": 6,
+    "depMin": 10,
+    "depMax": 10,
+    "rentMin": 7,
+    "rentMax": 20
+   },
+   {
+    "label": "인천광역시 미추홀구",
+    "units": 9,
+    "depMin": 11,
+    "depMax": 19,
+    "rentMin": 9,
+    "rentMax": 24
+   },
+   {
+    "label": "인천광역시 부평구",
+    "units": 13,
+    "depMin": 20,
+    "depMax": 32,
+    "rentMin": 10,
+    "rentMax": 20
+   },
+   {
+    "label": "인천광역시 서해구",
+    "units": 26,
+    "depMin": 33,
+    "depMax": 58,
+    "rentMin": 11,
+    "rentMax": 17
+   },
+   {
+    "label": "인천광역시 제물포구",
+    "units": 1,
+    "depMin": 59,
+    "depMax": 59,
+    "rentMin": 20,
+    "rentMax": 20
+   },
+   {
+    "label": "경기도 부천시 원미구",
+    "units": 4,
+    "depMin": 60,
+    "depMax": 63,
+    "rentMin": 18,
+    "rentMax": 25
+   }
+  ]
  }
 }
