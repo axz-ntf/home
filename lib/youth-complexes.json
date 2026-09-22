@@ -1,5 +1,35 @@
 [
   {
+    "homeCode": "20000613",
+    "homeName": "장지역 송파해링턴타워",
+    "gu": "송파구",
+    "address": "송파구 장지동 842-1",
+    "subway": "8호선 장지역 1번 출구 151m, 도보 2분",
+    "depositLowWon": 30000000,
+    "rentLowWon": 350000,
+    "totalUnits": 484,
+    "phone": "02-6273-0484",
+    "homepage": "https://songpaht484.com",
+    "lat": 37.4794106,
+    "lng": 127.1274121,
+    "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=d4cffc14edb8487b93b1583dd2df4189&fileSn=1"
+  },
+  {
+    "homeCode": "20000612",
+    "homeName": "대흥역 리마크빌 마포",
+    "gu": "마포구",
+    "address": "마포구 염리동 534",
+    "subway": "6호선 대흥역, 도보5분",
+    "depositLowWon": 75000000,
+    "rentLowWon": 430000,
+    "totalUnits": 499,
+    "phone": "02-3272-6008",
+    "homepage": "https://remarkvillmapo.com",
+    "lat": 37.5475112,
+    "lng": 126.9452,
+    "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=2b1adad7140b45098651ac3ed93e2bee&fileSn=1"
+  },
+  {
     "homeCode": "20000611",
     "homeName": "공덕역  e·seo(이서)",
     "gu": "마포구",
@@ -727,11 +757,11 @@
     "subway": "영등포구청역 6번 출구에서 146m",
     "depositLowWon": 58000000,
     "rentLowWon": 310000,
-    "totalUnits": 496,
-    "phone": "02-2633-2030",
-    "homepage": "http://www.포레나당산.com",
-    "lat": 37.5224159,
-    "lng": 126.8939463,
+    "totalUnits": null,
+    "phone": "",
+    "homepage": "",
+    "lat": 0,
+    "lng": 0,
     "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=dd1b3f18bc5142ab822158c66531244e&fileSn=13"
   },
   {
@@ -742,11 +772,11 @@
     "subway": "7호선, 경의중앙선, 경춘선 상봉역 8번 출구 88m",
     "depositLowWon": 38000000,
     "rentLowWon": 450000,
-    "totalUnits": 351,
-    "phone": "02-6451-0220",
-    "homepage": "https://ycentralcity.com",
-    "lat": 37.597077,
-    "lng": 127.0870521,
+    "totalUnits": null,
+    "phone": "",
+    "homepage": "",
+    "lat": 37.59709171227584,
+    "lng": 127.08705843447635,
     "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=ab497dc6fc5e4ac2bd5e37e51a4f4b31&fileSn=1"
   },
   {
@@ -1045,7 +1075,7 @@
     "totalUnits": null,
     "phone": "",
     "homepage": "",
-    "lat": 37.48636767647943,
+    "lat": 37.486367676479446,
     "lng": 127.12307746334886,
     "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=920c57725cbe4855b5722e87f81cbab3&fileSn=1"
   },
@@ -1075,7 +1105,7 @@
     "totalUnits": null,
     "phone": "",
     "homepage": "",
-    "lat": 37.510624616737374,
+    "lat": 37.51062461673739,
     "lng": 127.08344454252051,
     "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=8d211fa30bed4e1aae0d6d475a6a351a&fileSn=12"
   },

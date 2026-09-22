@@ -21223,5 +21223,251 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020800": {
+    "at": "2026-09-22T19:14:25.264Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "24A",
+          "area": "24.59/24.66",
+          "supplyUnits": 20,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 234,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 1744,
+              "rent": 10
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020811": {
+    "at": "2026-09-22T19:15:06.099Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020770": {
+    "at": "2026-09-22T19:16:05.119Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "남동구 1·2인 가구(1형)",
+          "areaRange": null,
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "남동구 3인 이상 가구(2·3형)",
+          "areaRange": null,
+          "supplyUnits": 100,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "서해구 1·2인 가구(1형)",
+          "areaRange": null,
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "서해구 3인 이상 가구(2·3형)",
+          "areaRange": null,
+          "supplyUnits": 0,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020768": {
+    "at": "2026-09-22T19:17:54.552Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "인천 남동구 1형",
+          "areaRange": "50㎡ 이하",
+          "supplyUnits": 150,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 남동구 2형",
+          "areaRange": "50㎡ 초과 ～ 85㎡ 이하",
+          "supplyUnits": 100,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 연수구 1형",
+          "areaRange": "50㎡ 이하",
+          "supplyUnits": 100,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 연수구 2형",
+          "areaRange": "50㎡ 초과 ～ 85㎡ 이하",
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 제물포구 1형",
+          "areaRange": "50㎡ 이하",
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 제물포구 2형",
+          "areaRange": "50㎡ 초과 ～ 85㎡ 이하",
+          "supplyUnits": 100,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 미추홀구 1형",
+          "areaRange": "50㎡ 이하",
+          "supplyUnits": 200,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 미추홀구 2형",
+          "areaRange": "50㎡ 초과 ～ 85㎡ 이하",
+          "supplyUnits": 200,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 부평구 1형",
+          "areaRange": "50㎡ 이하",
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 부평구 2형",
+          "areaRange": "50㎡ 초과 ～ 85㎡ 이하",
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 계양구 1형",
+          "areaRange": "50㎡ 이하",
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 계양구 2형",
+          "areaRange": "50㎡ 초과 ～ 85㎡ 이하",
+          "supplyUnits": 100,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 서해구 1형",
+          "areaRange": "50㎡ 이하",
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "인천 서해구 2형",
+          "areaRange": "50㎡ 초과 ～ 85㎡ 이하",
+          "supplyUnits": 50,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "경기 부천시 2형",
+          "areaRange": "50㎡ 초과 ～ 85㎡ 이하",
+          "supplyUnits": 100,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6679": {
+    "at": "2026-09-22T19:18:28.084Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.10.07"
+      },
+      "deadline": "2026.10.05",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6678": {
+    "at": "2026-09-22T19:20:00.540Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.10.07."
+      },
+      "deadline": "2026.10.04.",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020819": {
+    "at": "2026-09-22T19:21:07.676Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": null
+      },
+      "schedule": {
+        "winnerAt": "2026.10.12"
+      },
+      "deadline": "2026.10.02",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }

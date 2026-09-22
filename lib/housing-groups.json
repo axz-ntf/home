@@ -5566,5 +5566,97 @@
     "rentMax": 25
    }
   ]
+ },
+ "2015122300020811": {
+  "kind": "매입임대",
+  "unitsTotal": 68,
+  "groups": [
+   {
+    "label": "신흥동1가 제이빌",
+    "units": 4,
+    "depMin": 1001,
+    "depMax": 1121,
+    "rentMin": 29,
+    "rentMax": 30
+   },
+   {
+    "label": "늘푸름",
+    "units": 2,
+    "depMin": 965,
+    "depMax": 1071,
+    "rentMin": 32,
+    "rentMax": 34
+   },
+   {
+    "label": "간석동 미래타운 3차",
+    "units": 2,
+    "depMin": 1121,
+    "depMax": 1121,
+    "rentMin": 23,
+    "rentMax": 24
+   },
+   {
+    "label": "청천동",
+    "units": 2,
+    "depMin": 1212,
+    "depMax": 1212,
+    "rentMin": 30,
+    "rentMax": 31
+   },
+   {
+    "label": "신현동 신현포레스트",
+    "units": 29,
+    "depMin": 1192,
+    "depMax": 1216,
+    "rentMin": 33,
+    "rentMax": 36
+   },
+   {
+    "label": "내동 행복마을",
+    "units": 1,
+    "depMin": 805,
+    "depMax": 805,
+    "rentMin": 34,
+    "rentMax": 34
+   },
+   {
+    "label": "역곡동",
+    "units": 27,
+    "depMin": 942,
+    "depMax": 1013,
+    "rentMin": 45,
+    "rentMax": 50
+   },
+   {
+    "label": "드림파크",
+    "units": 1,
+    "depMin": 1032,
+    "depMax": 1032,
+    "rentMin": 34,
+    "rentMax": 34
+   }
+  ]
+ },
+ "2015122300020819": {
+  "kind": "기숙사",
+  "unitsTotal": 2,
+  "groups": [
+   {
+    "label": "용봉동",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "용봉동",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
  }
 }
