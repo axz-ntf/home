@@ -21469,5 +21469,95 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020822": {
+    "at": "2026-09-23T19:30:02.286Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "군산나운4 26.37A",
+          "area": "26.37㎡",
+          "supplyUnits": 10,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 245,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 342,
+              "rent": 8
+            }
+          ]
+        },
+        {
+          "houseType": "군산나운4 26.37B",
+          "area": "26.37㎡",
+          "supplyUnits": 10,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 245,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 342,
+              "rent": 8
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-310673": {
+    "at": "2026-09-23T19:31:14.905Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "양천구 신정도시마을 39 (일반형)",
+          "area": "39㎡",
+          "supplyUnits": 8,
+          "deposit": 4400,
+          "rent": 34,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "양천구 신정도시마을 0039 (복층형)",
+          "area": "39㎡",
+          "supplyUnits": 5,
+          "deposit": 4400,
+          "rent": 34,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 3,
+        "rateDown": 7,
+        "perHouseType": [
+          {
+            "houseType": "양천구 신정도시마을 39㎡",
+            "limitManwon": 8000,
+            "maxDeposit": 8000,
+            "minRent": 13
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.12.28"
+      },
+      "deadline": "2026.10.08",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
