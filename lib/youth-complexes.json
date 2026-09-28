@@ -1,18 +1,18 @@
 [
   {
-    "homeCode": "20000613",
-    "homeName": "장지역 송파해링턴타워",
-    "gu": "송파구",
-    "address": "송파구 장지동 842-1",
-    "subway": "8호선 장지역 1번 출구 151m, 도보 2분",
-    "depositLowWon": 30000000,
-    "rentLowWon": 350000,
-    "totalUnits": 484,
-    "phone": "02-6273-0484",
-    "homepage": "https://songpaht484.com",
-    "lat": 37.4794106,
-    "lng": 127.1274121,
-    "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=d4cffc14edb8487b93b1583dd2df4189&fileSn=1"
+    "homeCode": "20000501",
+    "homeName": "신길역 준타워",
+    "gu": "영등포구",
+    "address": "영등포구 신길동 173-6",
+    "subway": "1호선, 5호선 신길역 1번출구 345m",
+    "depositLowWon": 37000000,
+    "rentLowWon": 290000,
+    "totalUnits": 162,
+    "phone": "02-835-0888",
+    "homepage": "https://juntower.co.kr",
+    "lat": 37.5149414,
+    "lng": 126.9167395,
+    "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=09cabc273c47471783977c1801526ed0&fileSn=11"
   },
   {
     "homeCode": "20000612",
@@ -28,6 +28,21 @@
     "lat": 37.5475112,
     "lng": 126.9452,
     "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=2b1adad7140b45098651ac3ed93e2bee&fileSn=1"
+  },
+  {
+    "homeCode": "20000613",
+    "homeName": "장지역 송파해링턴타워",
+    "gu": "송파구",
+    "address": "송파구 장지동 842-1",
+    "subway": "8호선 장지역 1번 출구 151m, 도보 2분",
+    "depositLowWon": 30000000,
+    "rentLowWon": 350000,
+    "totalUnits": 484,
+    "phone": "02-6273-0484",
+    "homepage": "https://songpaht484.com",
+    "lat": 37.4794106,
+    "lng": 127.1274121,
+    "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=d4cffc14edb8487b93b1583dd2df4189&fileSn=1"
   },
   {
     "homeCode": "20000611",
@@ -742,11 +757,11 @@
     "subway": "3호선, 신분당선 양재역 4번출구 183m 도보 3분",
     "depositLowWon": 22000000,
     "rentLowWon": 420000,
-    "totalUnits": 209,
-    "phone": "02-823-9542",
-    "homepage": "https://www.dg-summit.co.kr/",
-    "lat": 37.4855872,
-    "lng": 127.0356505,
+    "totalUnits": null,
+    "phone": "",
+    "homepage": "",
+    "lat": 37.485571224101584,
+    "lng": 127.03563690016045,
     "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=05c0f34755c74176bc900af18a9d8fcc&fileSn=1"
   },
   {
@@ -973,21 +988,6 @@
     "lat": 37.57077975199866,
     "lng": 126.91364433386923,
     "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=a954e5b1c7014ad4bac989f3cb2e6685&fileSn=12"
-  },
-  {
-    "homeCode": "20000501",
-    "homeName": "신길역 준타워",
-    "gu": "영등포구",
-    "address": "영등포구 신길동 173-6",
-    "subway": "1호선, 5호선 신길역 1번출구 345m",
-    "depositLowWon": 37000000,
-    "rentLowWon": 290000,
-    "totalUnits": null,
-    "phone": "",
-    "homepage": "",
-    "lat": 37.514923879366165,
-    "lng": 126.91673515264792,
-    "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=09cabc273c47471783977c1801526ed0&fileSn=11"
   },
   {
     "homeCode": "20000366",

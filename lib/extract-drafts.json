@@ -21559,5 +21559,72 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020812": {
+    "at": "2026-09-28T21:42:38.464Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "성남신촌 A1 76A",
+          "area": "76.63",
+          "supplyUnits": 1,
+          "deposit": 15564,
+          "rent": 120,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "성남신촌 A1 76A",
+            "limitManwon": 14400,
+            "maxDeposit": 29964,
+            "minRent": 48
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.10.13"
+      },
+      "deadline": "2026.10.12",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020765": {
+    "at": "2026-09-28T21:43:38.702Z",
+    "type": "fifty",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "마산삼계2 49",
+          "area": "49.62",
+          "supplyUnits": 20,
+          "deposit": 1585,
+          "rent": 27,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "마산삼계2 49",
+            "limitManwon": 3200,
+            "maxDeposit": 4785,
+            "minRent": 11
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
