@@ -5658,5 +5658,423 @@
     "rentMax": null
    }
   ]
+ },
+ "2015122300020841": {
+  "kind": "매입임대",
+  "unitsTotal": 77,
+  "groups": [
+   {
+    "label": "대구광역시 동구",
+    "units": 10,
+    "depMin": 8102,
+    "depMax": 16278,
+    "rentMin": 9,
+    "rentMax": 20
+   },
+   {
+    "label": "대구광역시 수성구",
+    "units": 21,
+    "depMin": 9128,
+    "depMax": 12522,
+    "rentMin": 15,
+    "rentMax": 18
+   },
+   {
+    "label": "경상북도 경산시",
+    "units": 18,
+    "depMin": 7638,
+    "depMax": 11958,
+    "rentMin": 10,
+    "rentMax": 14
+   },
+   {
+    "label": "대구광역시 달서구",
+    "units": 12,
+    "depMin": 7280,
+    "depMax": 15344,
+    "rentMin": 13,
+    "rentMax": 20
+   },
+   {
+    "label": "대구광역시",
+    "units": 9,
+    "depMin": 5768,
+    "depMax": 11088,
+    "rentMin": 8,
+    "rentMax": 15
+   },
+   {
+    "label": "대구광역시 중구",
+    "units": 2,
+    "depMin": 10956,
+    "depMax": 13748,
+    "rentMin": 16,
+    "rentMax": 20
+   },
+   {
+    "label": "대구광역시 남구",
+    "units": 4,
+    "depMin": 9203,
+    "depMax": 10330,
+    "rentMin": 14,
+    "rentMax": 15
+   },
+   {
+    "label": "대구광역시 북구",
+    "units": 1,
+    "depMin": 10849,
+    "depMax": 10849,
+    "rentMin": 13,
+    "rentMax": 13
+   }
+  ]
+ },
+ "2015122300020840": {
+  "kind": "매입임대",
+  "unitsTotal": 200,
+  "groups": [
+   {
+    "label": "대구광역시 동구",
+    "units": 10,
+    "depMin": 839,
+    "depMax": 1078,
+    "rentMin": 18,
+    "rentMax": 21
+   },
+   {
+    "label": "대구광역시 수성구",
+    "units": 59,
+    "depMin": 1082,
+    "depMax": 2291,
+    "rentMin": 14,
+    "rentMax": 38
+   },
+   {
+    "label": "대구광역시 달서구",
+    "units": 15,
+    "depMin": 501,
+    "depMax": 1299,
+    "rentMin": 17,
+    "rentMax": 37
+   },
+   {
+    "label": "대구광역시 서구",
+    "units": 15,
+    "depMin": 520,
+    "depMax": 1410,
+    "rentMin": 14,
+    "rentMax": 34
+   },
+   {
+    "label": "대구광역시 남구",
+    "units": 23,
+    "depMin": 569,
+    "depMax": 1643,
+    "rentMin": 15,
+    "rentMax": 47
+   },
+   {
+    "label": "대구광역시 북구",
+    "units": 9,
+    "depMin": 550,
+    "depMax": 1260,
+    "rentMin": 20,
+    "rentMax": 35
+   },
+   {
+    "label": "경상북도 칠곡군",
+    "units": 2,
+    "depMin": 587,
+    "depMax": 831,
+    "rentMin": 17,
+    "rentMax": 23
+   },
+   {
+    "label": "경상북도 포항시 남구",
+    "units": 6,
+    "depMin": 710,
+    "depMax": 916,
+    "rentMin": 17,
+    "rentMax": 21
+   },
+   {
+    "label": "경상북도 포항시 북구",
+    "units": 15,
+    "depMin": 698,
+    "depMax": 900,
+    "rentMin": 11,
+    "rentMax": 18
+   },
+   {
+    "label": "경상북도 경주시",
+    "units": 3,
+    "depMin": 442,
+    "depMax": 1199,
+    "rentMin": 16,
+    "rentMax": 34
+   },
+   {
+    "label": "경상북도 영천시",
+    "units": 3,
+    "depMin": 626,
+    "depMax": 636,
+    "rentMin": 16,
+    "rentMax": 18
+   },
+   {
+    "label": "경상북도 구미시",
+    "units": 22,
+    "depMin": 427,
+    "depMax": 703,
+    "rentMin": 10,
+    "rentMax": 13
+   },
+   {
+    "label": "경상북도 상주시",
+    "units": 18,
+    "depMin": 839,
+    "depMax": 857,
+    "rentMin": 13,
+    "rentMax": 14
+   }
+  ]
+ },
+ "2015122300020839": {
+  "kind": "기숙사",
+  "unitsTotal": 3,
+  "groups": [
+   {
+    "label": "우리사랑",
+    "units": 3,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 12,
+    "rentMax": 16
+   }
+  ]
+ },
+ "2015122300020838": {
+  "kind": "매입임대",
+  "unitsTotal": 155,
+  "groups": [
+   {
+    "label": "대구광역시 달서구",
+    "units": 37,
+    "depMin": 100,
+    "depMax": 100,
+    "rentMin": 9,
+    "rentMax": 27
+   },
+   {
+    "label": "대구광역시",
+    "units": 4,
+    "depMin": 100,
+    "depMax": 100,
+    "rentMin": 13,
+    "rentMax": 16
+   },
+   {
+    "label": "대구광역시 북구",
+    "units": 16,
+    "depMin": 100,
+    "depMax": 100,
+    "rentMin": 13,
+    "rentMax": 23
+   },
+   {
+    "label": "경상북도 칠곡군",
+    "units": 13,
+    "depMin": 100,
+    "depMax": 100,
+    "rentMin": 16,
+    "rentMax": 22
+   },
+   {
+    "label": "경상북도 포항시 북구",
+    "units": 29,
+    "depMin": 100,
+    "depMax": 100,
+    "rentMin": 21,
+    "rentMax": 25
+   },
+   {
+    "label": "경상북도 경주시",
+    "units": 9,
+    "depMin": 100,
+    "depMax": 100,
+    "rentMin": 28,
+    "rentMax": 28
+   },
+   {
+    "label": "경상북도 구미시",
+    "units": 23,
+    "depMin": 100,
+    "depMax": 100,
+    "rentMin": 8,
+    "rentMax": 38
+   },
+   {
+    "label": "경상북도 상주시",
+    "units": 24,
+    "depMin": 100,
+    "depMax": 100,
+    "rentMin": 18,
+    "rentMax": 20
+   }
+  ]
+ },
+ "2015122300020737": {
+  "kind": "매입임대",
+  "unitsTotal": 265,
+  "groups": [
+   {
+    "label": "전북특별자치도 전주시 완산구",
+    "units": 63,
+    "depMin": 176,
+    "depMax": 1088,
+    "rentMin": 3,
+    "rentMax": 23
+   },
+   {
+    "label": "전북특별자치도 전주시 덕진구",
+    "units": 97,
+    "depMin": 172,
+    "depMax": 1303,
+    "rentMin": 3,
+    "rentMax": 38
+   },
+   {
+    "label": "전북특별자치도 완주군",
+    "units": 4,
+    "depMin": 206,
+    "depMax": 771,
+    "rentMin": 4,
+    "rentMax": 12
+   },
+   {
+    "label": "전북특별자치도 군산시",
+    "units": 47,
+    "depMin": 157,
+    "depMax": 898,
+    "rentMin": 2,
+    "rentMax": 23
+   },
+   {
+    "label": "전북특별자치도 익산시",
+    "units": 41,
+    "depMin": 321,
+    "depMax": 766,
+    "rentMin": 2,
+    "rentMax": 16
+   },
+   {
+    "label": "전북특별자치도 김제시",
+    "units": 13,
+    "depMin": 582,
+    "depMax": 837,
+    "rentMin": 7,
+    "rentMax": 11
+   }
+  ]
+ },
+ "2015122300020761": {
+  "kind": "매입임대",
+  "unitsTotal": 74,
+  "groups": [
+   {
+    "label": "대전광역시 서구",
+    "units": 3,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 12,
+    "rentMax": 18
+   },
+   {
+    "label": "대전광역시 중구",
+    "units": 18,
+    "depMin": 10,
+    "depMax": 21,
+    "rentMin": 12,
+    "rentMax": 22
+   },
+   {
+    "label": "충청남도 아산시",
+    "units": 40,
+    "depMin": 22,
+    "depMax": 61,
+    "rentMin": 8,
+    "rentMax": 28
+   },
+   {
+    "label": "충청남도 천안시 서북구",
+    "units": 13,
+    "depMin": 62,
+    "depMax": 74,
+    "rentMin": 17,
+    "rentMax": 26
+   }
+  ]
+ },
+ "2015122300020787": {
+  "kind": "매입임대",
+  "unitsTotal": 105,
+  "groups": [
+   {
+    "label": "동기 포에버 아파트",
+    "units": 3,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 10,
+    "rentMax": 11
+   },
+   {
+    "label": "노은동 토브스토리",
+    "units": 16,
+    "depMin": 10,
+    "depMax": 19,
+    "rentMin": 13,
+    "rentMax": 13
+   },
+   {
+    "label": "관평동 DTVan 오피스텔",
+    "units": 13,
+    "depMin": 20,
+    "depMax": 32,
+    "rentMin": 9,
+    "rentMax": 13
+   },
+   {
+    "label": "불당동 천안불당2차중흥S클래스프라디움레이크",
+    "units": 24,
+    "depMin": 33,
+    "depMax": 56,
+    "rentMin": 15,
+    "rentMax": 21
+   },
+   {
+    "label": "불당동 천안불당시티프라디움3차",
+    "units": 7,
+    "depMin": 57,
+    "depMax": 63,
+    "rentMin": 17,
+    "rentMax": 23
+   },
+   {
+    "label": "불당호반써밋플레이스 센터시티",
+    "units": 12,
+    "depMin": 64,
+    "depMax": 75,
+    "rentMin": 17,
+    "rentMax": 22
+   },
+   {
+    "label": "미소지움",
+    "units": 30,
+    "depMin": 76,
+    "depMax": 105,
+    "rentMin": 12,
+    "rentMax": 16
+   }
+  ]
  }
 }
