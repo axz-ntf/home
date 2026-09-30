@@ -2713,5 +2713,31 @@
         "district": "대구광역시"
       }
     ]
+  },
+  "2015122300020835": {
+    "districtId": "jeju",
+    "district": "제주특별자치도",
+    "points": [
+      {
+        "lat": 33.50358141299701,
+        "lng": 126.49795699112289,
+        "address": "제주특별자치도 제주시",
+        "districtId": "jeju",
+        "district": "제주특별자치도"
+      }
+    ]
+  },
+  "2015122300020834": {
+    "districtId": "jeju",
+    "district": "제주특별자치도",
+    "points": [
+      {
+        "lat": 33.244526457480774,
+        "lng": 126.5596970041995,
+        "address": "제주특별자치도 서귀포시",
+        "districtId": "jeju",
+        "district": "제주특별자치도"
+      }
+    ]
   }
 }

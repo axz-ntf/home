@@ -6076,5 +6076,289 @@
     "rentMax": 16
    }
   ]
+ },
+ "2015122300020815": {
+  "kind": "매입임대",
+  "unitsTotal": 41,
+  "groups": [
+   {
+    "label": "전북특별자치도 전주시 덕진구",
+    "units": 12,
+    "depMin": 10,
+    "depMax": 12,
+    "rentMin": 7,
+    "rentMax": 14
+   },
+   {
+    "label": "전북특별자치도 전주시 완산구",
+    "units": 9,
+    "depMin": 13,
+    "depMax": 21,
+    "rentMin": 11,
+    "rentMax": 20
+   },
+   {
+    "label": "전북특별자치도 김제시",
+    "units": 20,
+    "depMin": 22,
+    "depMax": 41,
+    "rentMin": 4,
+    "rentMax": 6
+   }
+  ]
+ },
+ "2015122300020814": {
+  "kind": "매입임대",
+  "unitsTotal": 52,
+  "groups": [
+   {
+    "label": "전북특별자치도 전주시 덕진구",
+    "units": 5,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 1,
+    "rentMax": 5
+   },
+   {
+    "label": "전북특별자치도 전주시 완산구",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": 6,
+    "rentMax": 6
+   },
+   {
+    "label": "전북특별자치도 정읍시",
+    "units": 35,
+    "depMin": 10,
+    "depMax": 41,
+    "rentMin": 7,
+    "rentMax": 41
+   },
+   {
+    "label": "전북특별자치도 김제시",
+    "units": 5,
+    "depMin": 42,
+    "depMax": 46,
+    "rentMin": 42,
+    "rentMax": 46
+   },
+   {
+    "label": "전북특별자치도 남원시",
+    "units": 6,
+    "depMin": 47,
+    "depMax": 52,
+    "rentMin": 47,
+    "rentMax": 52
+   }
+  ]
+ },
+ "2015122300020802": {
+  "kind": "든든전세",
+  "unitsTotal": 227,
+  "groups": [
+   {
+    "label": "경기도 수원시 권선구",
+    "units": 7,
+    "depMin": 17729,
+    "depMax": 19816,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 수원시 영통구",
+    "units": 82,
+    "depMin": 24338,
+    "depMax": 35550,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 수원시 장안구",
+    "units": 17,
+    "depMin": 18075,
+    "depMax": 30874,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 수원시 팔달구",
+    "units": 2,
+    "depMin": 22254,
+    "depMax": 22716,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 안산시 상록구",
+    "units": 7,
+    "depMin": 17098,
+    "depMax": 20274,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 안산시 단원구",
+    "units": 38,
+    "depMin": 21655,
+    "depMax": 22604,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 안양시 만안구",
+    "units": 13,
+    "depMin": 20692,
+    "depMax": 27808,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 안양시 동안구",
+    "units": 5,
+    "depMin": 25112,
+    "depMax": 30337,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 여주시",
+    "units": 8,
+    "depMin": 10506,
+    "depMax": 18764,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 오산시",
+    "units": 7,
+    "depMin": 17118,
+    "depMax": 19453,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 용인시 처인구",
+    "units": 13,
+    "depMin": 16221,
+    "depMax": 16922,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 용인시 기흥구",
+    "units": 10,
+    "depMin": 16659,
+    "depMax": 25164,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 시흥시",
+    "units": 17,
+    "depMin": 18282,
+    "depMax": 27223,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 화성시 병점구",
+    "units": 1,
+    "depMin": 28170,
+    "depMax": 28170,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
+ },
+ "2015122300020821": {
+  "kind": "매입임대",
+  "unitsTotal": 56,
+  "groups": [
+   {
+    "label": "전북특별자치도 전주시 덕진구",
+    "units": 20,
+    "depMin": 10,
+    "depMax": 20,
+    "rentMin": 1,
+    "rentMax": 20
+   },
+   {
+    "label": "전북특별자치도 전주시 완산구",
+    "units": 21,
+    "depMin": 21,
+    "depMax": 41,
+    "rentMin": 21,
+    "rentMax": 41
+   },
+   {
+    "label": "전북특별자치도 완주군",
+    "units": 2,
+    "depMin": 42,
+    "depMax": 43,
+    "rentMin": 42,
+    "rentMax": 43
+   },
+   {
+    "label": "전북특별자치도 익산시",
+    "units": 8,
+    "depMin": 44,
+    "depMax": 51,
+    "rentMin": 44,
+    "rentMax": 51
+   },
+   {
+    "label": "전북특별자치도 군산시",
+    "units": 2,
+    "depMin": 52,
+    "depMax": 53,
+    "rentMin": 52,
+    "rentMax": 53
+   },
+   {
+    "label": "전북특별자치도 김제시",
+    "units": 1,
+    "depMin": 54,
+    "depMax": 54,
+    "rentMin": 54,
+    "rentMax": 54
+   },
+   {
+    "label": "전북특별자치도 남원시",
+    "units": 2,
+    "depMin": 55,
+    "depMax": 56,
+    "rentMin": 55,
+    "rentMax": 56
+   }
+  ]
+ },
+ "2015122300020835": {
+  "kind": "든든전세",
+  "unitsTotal": 1,
+  "groups": [
+   {
+    "label": "1층",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
+ },
+ "2015122300020834": {
+  "kind": "든든전세",
+  "unitsTotal": 1,
+  "groups": [
+   {
+    "label": "1층",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
  }
 }
