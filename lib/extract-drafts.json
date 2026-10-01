@@ -22832,5 +22832,377 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020692": {
+    "at": "2026-10-01T20:46:28.176Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "마산중리1 102동 26형",
+          "area": "26.37㎡",
+          "supplyUnits": 150,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 252,
+              "rent": 5
+            },
+            {
+              "label": "나군",
+              "deposit": 352,
+              "rent": 8
+            }
+          ]
+        },
+        {
+          "houseType": "마산중리1 104동 26형",
+          "area": "26.37㎡",
+          "supplyUnits": 150,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 252,
+              "rent": 5
+            },
+            {
+              "label": "나군",
+              "deposit": 352,
+              "rent": 8
+            }
+          ]
+        },
+        {
+          "houseType": "마산중리1 101·103동 26형",
+          "area": "26.37㎡",
+          "supplyUnits": 150,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 252,
+              "rent": 5
+            },
+            {
+              "label": "나군",
+              "deposit": 352,
+              "rent": 8
+            }
+          ]
+        },
+        {
+          "houseType": "마산중리1 105동 31형",
+          "area": "31.32㎡",
+          "supplyUnits": 150,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 299,
+              "rent": 6
+            },
+            {
+              "label": "나군",
+              "deposit": 418,
+              "rent": 9
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-sale-2015122300020669": {
+    "at": "2026-10-01T20:47:39.771Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "행정중심복합도시 4-2생활권 M3블록 55A",
+          "area": "55.88",
+          "supplyUnits": 89,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "행정중심복합도시 4-2생활권 M3블록 55A-1",
+          "area": "55.88",
+          "supplyUnits": 9,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "행정중심복합도시 4-2생활권 M3블록 55B",
+          "area": "55.77",
+          "supplyUnits": 24,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "행정중심복합도시 4-2생활권 M3블록 55B-1",
+          "area": "55.77",
+          "supplyUnits": 7,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": null,
+        "perHouseType": [
+          {
+            "houseType": "행정중심복합도시 4-2생활권 M3블록 55A",
+            "limitManwon": 3600,
+            "maxDeposit": 10000,
+            "minRent": 12
+          },
+          {
+            "houseType": "행정중심복합도시 4-2생활권 M3블록 55A-1",
+            "limitManwon": 5200,
+            "maxDeposit": 1200,
+            "minRent": 46
+          },
+          {
+            "houseType": "행정중심복합도시 4-2생활권 M3블록 55B",
+            "limitManwon": 3500,
+            "maxDeposit": 9760,
+            "minRent": 12
+          },
+          {
+            "houseType": "행정중심복합도시 4-2생활권 M3블록 55B-1",
+            "limitManwon": 5100,
+            "maxDeposit": 1160,
+            "minRent": 45
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.11.03"
+      },
+      "deadline": "2026.10.15",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020843": {
+    "at": "2026-10-01T20:48:17.138Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.11.26"
+      },
+      "deadline": "2026.10.16",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020755": {
+    "at": "2026-10-01T20:48:55.406Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.11.20"
+      },
+      "deadline": "2026.10.15",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "youth-6685": {
+    "at": "2026-10-01T20:49:48.950Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "종로구 청계로벤하임 910호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 18410,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "종로구 청계로벤하임 806호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.08"
+      },
+      "deadline": "2026.10.07",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6684": {
+    "at": "2026-10-01T20:50:34.949Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "용산구 어반허브 서울스테이션 414호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 6480,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "용산구 어반허브 서울스테이션 509호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 8640,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "용산구 어반허브 서울스테이션 819호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 8480,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.28"
+      },
+      "deadline": "2026.10.15",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6683": {
+    "at": "2026-10-01T20:51:18.993Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "광진구 센텀힐스한강 804호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 12000,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "광진구 센텀힐스한강 705호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 11000,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.07"
+      },
+      "deadline": "2026.10.04",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6682": {
+    "at": "2026-10-01T20:52:16.367Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "중랑구 세이지움상봉 29형",
+          "area": null,
+          "supplyUnits": 2,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.06"
+      },
+      "deadline": "2026.10.05",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6681": {
+    "at": "2026-10-01T20:53:00.767Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "강남구 삼성동 마에스트로 10층 1019호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 9700,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강남구 삼성동 마에스트로 14층 1405호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 9600,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강남구 삼성동 마에스트로 9층 908호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 13900,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.07"
+      },
+      "deadline": "2026.10.05",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6680": {
+    "at": "2026-10-01T20:53:57.296Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "광진구 더포디엄830",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 17300,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.08"
+      },
+      "deadline": "2026.10.06",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }

@@ -6360,5 +6360,169 @@
     "rentMax": null
    }
   ]
+ },
+ "2015122300020843": {
+  "kind": "든든전세",
+  "unitsTotal": 56,
+  "groups": [
+   {
+    "label": "서울특별시 강동구",
+    "units": 1,
+    "depMin": 34228,
+    "depMax": 34228,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 강서구",
+    "units": 2,
+    "depMin": 34474,
+    "depMax": 37018,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 광진구",
+    "units": 3,
+    "depMin": 35002,
+    "depMax": 42312,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 금천구",
+    "units": 2,
+    "depMin": 31112,
+    "depMax": 31803,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 노원구",
+    "units": 7,
+    "depMin": 24962,
+    "depMax": 33406,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 도봉구",
+    "units": 16,
+    "depMin": 30080,
+    "depMax": 41520,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 동대문구",
+    "units": 2,
+    "depMin": 26655,
+    "depMax": 31214,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 성북구",
+    "units": 6,
+    "depMin": 31046,
+    "depMax": 36300,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 영등포구",
+    "units": 4,
+    "depMin": 30376,
+    "depMax": 41171,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 은평구",
+    "units": 2,
+    "depMin": 34916,
+    "depMax": 35598,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "서울특별시 중랑구",
+    "units": 11,
+    "depMin": 32336,
+    "depMax": 39770,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
+ },
+ "2015122300020755": {
+  "kind": "든든전세",
+  "unitsTotal": 134,
+  "groups": [
+   {
+    "label": "백석동 네스트168 백석동 1316-2",
+    "units": 55,
+    "depMin": 25517,
+    "depMax": 31784,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "구래역한강리슈빌",
+    "units": 1,
+    "depMin": 19864,
+    "depMax": 19864,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "마산동 로렌하우스",
+    "units": 45,
+    "depMin": 32358,
+    "depMax": 34566,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "한강신도시레이크에일린의뜰",
+    "units": 1,
+    "depMin": 17905,
+    "depMax": 17905,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "다산동 더 클래스 동진",
+    "units": 25,
+    "depMin": 32683,
+    "depMax": 38046,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "다산동 다산 와이시티 어반플랫",
+    "units": 1,
+    "depMin": 24862,
+    "depMax": 24862,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "성훈팰리스",
+    "units": 4,
+    "depMin": 21657,
+    "depMax": 22095,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "민락아크로빌A동",
+    "units": 2,
+    "depMin": 18237,
+    "depMax": 18851,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
  }
 }
