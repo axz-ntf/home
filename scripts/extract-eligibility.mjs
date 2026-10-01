@@ -10,7 +10,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { generateText } from "ai";
-import { aiModel, hasAiKey } from "./lib/ai-provider.mjs";
+import { aiModel, hasAiKey, isClaudeCli, cliGenerateText } from "./lib/ai-provider.mjs";
 import { z } from "zod";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -168,14 +168,15 @@ async function extractOne(id) {
   const md = await loadMarkdown(id);
   const eligibilityRegion = extractEligibilityRegion(md);
 
-  const result = await generateText({
-    model: aiModel(MODEL),
-    maxOutputTokens: 8000,
+  const req = {
     system: SYSTEM_PROMPT + SCHEMA_HINT,
     prompt:
       `다음은 LH 공고문의 자격 관련 섹션입니다. 자격 정보를 추출해 위 schema 의 JSON 만 출력하세요. 설명/주석/마크다운 헤더 금지, 오직 JSON 한 덩어리.\n\n` +
       eligibilityRegion,
-  });
+  };
+  const result = isClaudeCli(MODEL)
+    ? await cliGenerateText(req)
+    : await generateText({ model: aiModel(MODEL), maxOutputTokens: 8000, ...req });
 
   const raw = extractJsonFromText(result.text ?? "");
   let parsed;
@@ -252,6 +253,8 @@ async function main() {
   const elapsed = ((Date.now() - t0) / 1000).toFixed(1);
   console.log(`\n완료: ok=${ok} err=${err} (${elapsed}s, concurrency=${CONCURRENCY})`);
   console.log(`토큰: in=${totalIn.toLocaleString()} out=${totalOut.toLocaleString()}`);
+  // 절반 이상 실패면 실패로 끝낸다 — 크레딧 소진처럼 전부 실패해도 성공으로 보이던 문제 방지.
+  if (err > 0 && err >= (ok + err) / 2) process.exitCode = 1;
 }
 
 main().catch((e) => { console.error("FATAL:", e); process.exit(1); });
