@@ -60,6 +60,25 @@ for (const l of ggNation) {
 console.log(`   경기 국민임대 ${ggNation.length}건 → 매칭 ${matched} / 판교대장로 뭉침 ${pangyoStack}건`);
 ok(pangyoStack <= 1, `판교대장 오뭉침 ${pangyoStack}건 (수정 전 5+건 → 1건 이하 기대)`);
 
+// ── 4.5) 블록 오매칭 방지 (같은 지구 다른 블록 · 다른 지역 같은 블록) ──
+console.log("\n[4.5] 블록 오매칭 방지");
+const SIDO = { 경기: "41", 대전: "30", 인천: "28" };
+const blockCases = [
+  ["양주회천 A-26BL 공공분양주택 입주자모집공고", SIDO.경기, "양주회천 A10(2)BL"],
+  ["의정부우정 A-2블록 공공분양주택 입주자모집공고", SIDO.경기, "수원당수"],
+  ["양주옥정 A-4(1)블록 공공분양주택 추가모집", SIDO.경기, "양주옥정"],
+  ["대전대동2 1BL 공공분양 추가 입주자모집공고", SIDO.대전, "대전장대"],
+  ["성남신촌 A1블록 가정어린이집 운영예정자 모집공고", SIDO.경기, "수원매산"],
+  ["인천검단 AA19블록 국민임대 최초 입주자 모집", SIDO.인천, "AA35-2"],
+  ["칠곡왜관4 국민임대아파트 예비입주자 모집(51형)", "47", "포항우성"],
+];
+for (const [t, sido, wrong] of blockCases) {
+  const m = findMatchingComplex({ PAN_NM: t }, byKey, sido);
+  ok(!(m?.hsmpNm || "").includes(wrong), `"${t.slice(0, 20)}…" → ${m ? m.hsmpNm.slice(0, 24) : "매칭없음"}`);
+}
+const keep = findMatchingComplex({ PAN_NM: "평택고덕 A57-2블록 신혼희망타운(공공분양) 잔여세대" }, byKey, SIDO.경기);
+ok((keep?.hsmpNm || "").includes("A-57-2"), `같은 블록은 유지: 평택고덕 A57-2 → ${keep?.hsmpNm?.slice(0, 24) ?? "매칭없음"}`);
+
 // ── 5) 라이브: 시군구 추출 + 지오코딩 ──
 console.log("\n[5] 시군구 중심 지오코딩 (라이브)");
 const KAKAO = process.env.KAKAO_REST_API_KEY, KEY = process.env.VWORLD_API_KEY;
