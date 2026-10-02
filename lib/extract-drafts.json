@@ -23204,5 +23204,106 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020871": {
+    "at": "2026-10-02T20:25:29.356Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020870": {
+    "at": "2026-10-02T20:26:39.417Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": null,
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020850": {
+    "at": "2026-10-02T20:27:23.361Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": null,
+      "progressStatus": null
+    }
+  },
+  "lh-rental-2015122300020864": {
+    "at": "2026-10-02T20:28:39.943Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "26A",
+          "area": "26.70㎡",
+          "supplyUnits": 16,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 240,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 910,
+              "rent": 10
+            }
+          ]
+        },
+        {
+          "houseType": "36A",
+          "area": "36.35㎡",
+          "supplyUnits": 16,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 326,
+              "rent": 6
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 1238,
+              "rent": 13
+            }
+          ]
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.12.21"
+      },
+      "deadline": "2026.10.15",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020842": {
+    "at": "2026-10-02T20:29:39.257Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": 6
+      },
+      "schedule": {
+        "winnerAt": "2026.11.02"
+      },
+      "deadline": "2026.10.19",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }

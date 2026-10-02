@@ -6524,5 +6524,19 @@
     "rentMax": null
    }
   ]
+ },
+ "2015122300020842": {
+  "kind": "매입임대",
+  "unitsTotal": 1,
+  "groups": [
+   {
+    "label": "1층",
+    "units": 1,
+    "depMin": null,
+    "depMax": null,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
  }
 }
