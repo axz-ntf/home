@@ -6538,5 +6538,247 @@
     "rentMax": null
    }
   ]
+ },
+ "2015122300020875": {
+  "kind": "매입임대",
+  "unitsTotal": 565,
+  "groups": [
+   {
+    "label": "경상북도 경산시",
+    "units": 69,
+    "depMin": 131,
+    "depMax": 905,
+    "rentMin": 2,
+    "rentMax": 24
+   },
+   {
+    "label": "대구광역시 동구",
+    "units": 68,
+    "depMin": 160,
+    "depMax": 1509,
+    "rentMin": 3,
+    "rentMax": 38
+   },
+   {
+    "label": "대구광역시 수성구",
+    "units": 54,
+    "depMin": 162,
+    "depMax": 940,
+    "rentMin": 4,
+    "rentMax": 35
+   },
+   {
+    "label": "대구광역시 중구",
+    "units": 1,
+    "depMin": 856,
+    "depMax": 856,
+    "rentMin": 25,
+    "rentMax": 25
+   },
+   {
+    "label": "대구광역시 서구",
+    "units": 12,
+    "depMin": 549,
+    "depMax": 1129,
+    "rentMin": 11,
+    "rentMax": 25
+   },
+   {
+    "label": "대구광역시 남구",
+    "units": 19,
+    "depMin": 287,
+    "depMax": 1149,
+    "rentMin": 8,
+    "rentMax": 41
+   },
+   {
+    "label": "대구광역시 북구",
+    "units": 58,
+    "depMin": 197,
+    "depMax": 1606,
+    "rentMin": 3,
+    "rentMax": 38
+   },
+   {
+    "label": "경상북도 칠곡군",
+    "units": 34,
+    "depMin": 123,
+    "depMax": 1143,
+    "rentMin": 3,
+    "rentMax": 22
+   },
+   {
+    "label": "경상북도 김천시",
+    "units": 41,
+    "depMin": 117,
+    "depMax": 1358,
+    "rentMin": 1,
+    "rentMax": 19
+   },
+   {
+    "label": "경상북도 구미시",
+    "units": 209,
+    "depMin": 133,
+    "depMax": 1248,
+    "rentMin": 1,
+    "rentMax": 32
+   }
+  ]
+ },
+ "2015122300020873": {
+  "kind": "든든전세",
+  "unitsTotal": 282,
+  "groups": [
+   {
+    "label": "더 트루엘 포항",
+    "units": 86,
+    "depMin": 18140,
+    "depMax": 19821,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "남포항태왕아너스",
+    "units": 57,
+    "depMin": 13017,
+    "depMax": 19410,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "송정동 구미송정범양레우스센트럴포레아파트",
+    "units": 61,
+    "depMin": 16276,
+    "depMax": 26062,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "송정동 구미송정범양레우스센트럴포레아파트",
+    "units": 3,
+    "depMin": 23304,
+    "depMax": 24541,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "인의동 구미인동하늘채디어반2차",
+    "units": 75,
+    "depMin": 27042,
+    "depMax": 30627,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
+ },
+ "2015122300020876": {
+  "kind": "매입임대",
+  "unitsTotal": 200,
+  "groups": [
+   {
+    "label": "대구광역시 동구",
+    "units": 10,
+    "depMin": 839,
+    "depMax": 1078,
+    "rentMin": 18,
+    "rentMax": 21
+   },
+   {
+    "label": "대구광역시 수성구",
+    "units": 59,
+    "depMin": 1082,
+    "depMax": 2291,
+    "rentMin": 14,
+    "rentMax": 38
+   },
+   {
+    "label": "대구광역시 달서구",
+    "units": 15,
+    "depMin": 501,
+    "depMax": 1299,
+    "rentMin": 17,
+    "rentMax": 37
+   },
+   {
+    "label": "대구광역시 서구",
+    "units": 15,
+    "depMin": 520,
+    "depMax": 1410,
+    "rentMin": 14,
+    "rentMax": 34
+   },
+   {
+    "label": "대구광역시 남구",
+    "units": 23,
+    "depMin": 569,
+    "depMax": 1643,
+    "rentMin": 15,
+    "rentMax": 47
+   },
+   {
+    "label": "대구광역시 북구",
+    "units": 9,
+    "depMin": 550,
+    "depMax": 1260,
+    "rentMin": 20,
+    "rentMax": 35
+   },
+   {
+    "label": "경상북도 칠곡군",
+    "units": 2,
+    "depMin": 587,
+    "depMax": 831,
+    "rentMin": 17,
+    "rentMax": 23
+   },
+   {
+    "label": "경상북도 포항시 남구",
+    "units": 6,
+    "depMin": 710,
+    "depMax": 916,
+    "rentMin": 17,
+    "rentMax": 21
+   },
+   {
+    "label": "경상북도 포항시 북구",
+    "units": 15,
+    "depMin": 698,
+    "depMax": 900,
+    "rentMin": 11,
+    "rentMax": 18
+   },
+   {
+    "label": "경상북도 경주시",
+    "units": 3,
+    "depMin": 442,
+    "depMax": 1199,
+    "rentMin": 16,
+    "rentMax": 34
+   },
+   {
+    "label": "경상북도 영천시",
+    "units": 3,
+    "depMin": 626,
+    "depMax": 636,
+    "rentMin": 16,
+    "rentMax": 18
+   },
+   {
+    "label": "경상북도 구미시",
+    "units": 22,
+    "depMin": 427,
+    "depMax": 983,
+    "rentMin": 10,
+    "rentMax": 14
+   },
+   {
+    "label": "경상북도 상주시",
+    "units": 18,
+    "depMin": 839,
+    "depMax": 857,
+    "rentMin": 13,
+    "rentMax": 14
+   }
+  ]
  }
 }
