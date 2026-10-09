@@ -23611,5 +23611,297 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020893": {
+    "at": "2026-10-09T20:41:11.043Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": "2026.10.22",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "sh-311200": {
+    "at": "2026-10-09T20:42:08.742Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2027.03.30"
+      },
+      "deadline": "2026.10.02",
+      "noticeStatus": null,
+      "progressStatus": null
+    }
+  },
+  "sh-311087": {
+    "at": "2026-10-09T20:42:49.193Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": 7
+      },
+      "deadline": "2026.10.22",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6695": {
+    "at": "2026-10-09T20:43:40.116Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.10.23"
+      },
+      "deadline": "2026.10.15",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6694": {
+    "at": "2026-10-09T20:44:27.748Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "노원구 해링턴플레이스 노원 센트럴 23B",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 6500,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "노원구 해링턴플레이스 노원 센트럴 48A",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 13200,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "노원구 해링턴플레이스 노원 센트럴 49B",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 13400,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.15"
+      },
+      "deadline": "2026.10.14",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6693": {
+    "at": "2026-10-09T20:45:15.518Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.10.14"
+      },
+      "deadline": "2026.10.13",
+      "noticeStatus": "재공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "youth-6692": {
+    "at": "2026-10-09T20:46:08.386Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "강서구 포르투나블루 506호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 15680,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강서구 포르투나블루 905호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 9710,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강서구 포르투나블루 805호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 9830,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.13"
+      },
+      "deadline": "2026.10.12",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6691": {
+    "at": "2026-10-09T20:46:33.995Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "관악구 유벤투스240 33타입",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 15000,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.15"
+      },
+      "deadline": "2026.10.14",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6690": {
+    "at": "2026-10-09T20:47:15.099Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "중랑구 와이 센트럴시티 상봉 25A",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "중랑구 와이 센트럴시티 상봉 46B",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "중랑구 와이 센트럴시티 상봉 45C",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "중랑구 와이 센트럴시티 상봉 45D",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": null,
+      "progressStatus": null
+    }
+  },
+  "youth-6689": {
+    "at": "2026-10-09T20:48:06.603Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.10.15"
+      },
+      "deadline": "2026.10.14",
+      "noticeStatus": "재공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6688": {
+    "at": "2026-10-09T20:49:02.663Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "서초구 서초꽃마을 주얼리 16.63m2(A타입) 614호",
+          "area": "16.63",
+          "supplyUnits": 1,
+          "deposit": 6700,
+          "rent": 52,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.13"
+      },
+      "deadline": "2026.10.13",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6687": {
+    "at": "2026-10-09T20:49:47.522Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "성북구 미아 헤리츠타워 36형",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 28600,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "성북구 미아 헤리츠타워 59형",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 41200,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.15"
+      },
+      "deadline": "2026.10.14",
+      "noticeStatus": "재공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6686": {
+    "at": "2026-10-09T20:50:16.330Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
