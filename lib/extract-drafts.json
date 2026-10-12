@@ -23903,5 +23903,37 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020895": {
+    "at": "2026-10-12T23:01:13.953Z",
+    "type": "fifty",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "익산부송3 39",
+          "area": "39.87",
+          "supplyUnits": 80,
+          "deposit": 1164,
+          "rent": 17,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "익산부송3 39",
+            "limitManwon": 1900,
+            "maxDeposit": 3064,
+            "minRent": 8
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
