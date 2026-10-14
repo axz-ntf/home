@@ -35,6 +35,12 @@ jobs:
 
       - run: npm ci
 
+      # AI 단계는 Claude Code 헤드리스(`claude -p`, 구독 계정)로 돌린다 — API 크레딧 소진
+      # (2026-08 중순~) 이후 매일 조용히 실패하던 문제 대응. 토큰: `claude setup-token` →
+      # 시크릿 CLAUDE_CODE_OAUTH_TOKEN. scripts/lib/ai-provider.mjs 의 EXTRACT_MODEL=claude-cli 경로.
+      - name: Claude Code CLI 설치
+        run: npm install -g @anthropic-ai/claude-code
+
       # 정부 서버(마이홈·VWorld 등)가 해외 IP 를 차단해 GH 러너에서 직접 fetch 불가 —
       # Vercel icn1(서울) 프록시(/api/govproxy)로 우회 (scripts/lib/proxy-fetch.mjs).
       # NODE_OPTIONS 는 러너가 GITHUB_ENV 로 설정을 금지(스크립트 인젝션 방지)하므로
@@ -119,10 +125,14 @@ jobs:
           path: lib/notice-embeddings
           key: notice-embeddings-v2-${{ github.run_id }}
 
-      - name: Phase 5 — 자격 정보 구조화 추출 (Claude)
+      # 실패해도 데이터 commit 은 계속 — 대신 마지막 "AI 단계 결과 확인" 이 run 을 실패로 표시.
+      - name: Phase 5 — 자격 정보 구조화 추출 (Claude, 구독)
+        id: eligibility
+        continue-on-error: true
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          EXTRACT_MODEL: claude-cli
+          CONCURRENCY: "3"
         run: node scripts/extract-eligibility.mjs --limit 9999
 
       - name: Phase 6a — cover 사진 Blob 업로드
@@ -169,6 +179,16 @@ jobs:
         run: |
           node scripts/enrich-photos-api.mjs
           node scripts/upload-covers-to-blob.mjs
+
+      # 조감도 + 공고문 → 동 배치(lib/site-layouts) — 3D 모형·일조용. 조감도 크롤(7.5) 뒤.
+      # 이미 뽑은 공고는 skip 이라 매일 신규분만 (건당 약 25초).
+      - name: Phase 7.55 — 동 배치 추출 (조감도 + 공고문, Claude 구독)
+        id: layout
+        continue-on-error: true
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          CONCURRENCY: "2"
+        run: node scripts/extract-site-layout.mjs --active --limit 60
 
       # 다지점 공고(여러 단지/지역)를 단지별 핀으로 지도 분리 — .md 단지목록 AI 추출 +
       # VWorld 지오코딩. 제목 사전필터로 후보만 검사(비용↓). 이미 분리된 건 skip.
@@ -316,3 +336,17 @@ jobs:
           done
           echo "push failed after 3 retries"
           exit 1
+
+      # 위의 AI 단계는 continue-on-error 라 실패해도 run 이 초록으로 끝나던 문제 —
+      # 데이터 commit 이 끝난 뒤 여기서 실패를 드러낸다.
+      - name: AI 단계 결과 확인
+        if: always()
+        run: |
+          failed=""
+          [ "${{ steps.eligibility.outcome }}" = "failure" ] && failed="$failed Phase5-자격추출"
+          [ "${{ steps.layout.outcome }}" = "failure" ] && failed="$failed Phase7.55-동배치"
+          if [ -n "$failed" ]; then
+            echo "::error::AI 단계 실패:$failed (로그 확인 — 토큰 만료/한도 초과 가능)"
+            exit 1
+          fi
+          echo "AI 단계 정상"
