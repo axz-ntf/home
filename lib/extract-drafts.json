@@ -23957,5 +23957,195 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020879": {
+    "at": "2026-10-14T19:42:12.609Z",
+    "type": "fifty",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "음성금왕1 39",
+          "area": "39.99",
+          "supplyUnits": 40,
+          "deposit": 1306,
+          "rent": 17,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "음성금왕1 49",
+          "area": "49.96",
+          "supplyUnits": 120,
+          "deposit": 1612,
+          "rent": 20,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "음성금왕1 39",
+            "limitManwon": 2000,
+            "maxDeposit": 3306,
+            "minRent": 7
+          },
+          {
+            "houseType": "음성금왕1 49",
+            "limitManwon": 2300,
+            "maxDeposit": 3912,
+            "minRent": 8
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-sale-2015122300020906": {
+    "at": "2026-10-14T19:43:18.912Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "광주전남혁신 빛가람 LH3단지 84A 301-204",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 18630
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH3단지 84A 301-604",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 19625
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH3단지 84A 301-1504",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 19930
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH3단지 84A 303-203",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 19005
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH3단지 84A 303-603",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 20030
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH3단지 84A 303-1003",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 20330
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH3단지 84A 303-1703",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 20330
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH3단지 84A 303-1805",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 20130
+        },
+        {
+          "houseType": "광주전남혁신 빛가람 LH3단지 84A 304-103",
+          "area": "84.96",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 18600
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-311549": {
+    "at": "2026-10-14T19:44:10.179Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "1인형",
+          "areaRange": "14.05㎡ ~ 27.85㎡",
+          "supplyUnits": 37,
+          "deposit": [
+            1201,
+            2346
+          ],
+          "rent": [
+            7,
+            13
+          ]
+        },
+        {
+          "label": "부부형",
+          "areaRange": "45.12㎡",
+          "supplyUnits": 4,
+          "deposit": [
+            2856,
+            4762
+          ],
+          "rent": [
+            29,
+            49
+          ]
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": 7,
+        "perHouseType": [
+          {
+            "houseType": "1인형",
+            "limitManwon": 1408,
+            "maxDeposit": 3754,
+            "minRent": 5
+          },
+          {
+            "houseType": "부부형",
+            "limitManwon": 5272,
+            "maxDeposit": 10034,
+            "minRent": 20
+          }
+        ]
+      },
+      "schedule": {
+        "winnerAt": "2026.12.23"
+      },
+      "deadline": "2026.10.28",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
