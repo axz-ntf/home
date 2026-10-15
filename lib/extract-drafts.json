@@ -24147,5 +24147,354 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020909": {
+    "at": "2026-10-15T19:33:56.402Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.12.09"
+      },
+      "deadline": "2026.10.27",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020888": {
+    "at": "2026-10-15T19:34:57.880Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": "2026.10.28",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020919": {
+    "at": "2026-10-15T19:36:00.223Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "광산구 첨단H-1BL 39형",
+          "area": "39.78",
+          "supplyUnits": 25,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "광산구 첨단H-2BL 16형",
+          "area": "16.8",
+          "supplyUnits": 30,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "광산구 첨단H-2BL 36형",
+          "area": "36.72",
+          "supplyUnits": 10,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2027.02.18"
+      },
+      "deadline": "2026.10.27",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020887": {
+    "at": "2026-10-15T19:37:02.380Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2027.02.26"
+      },
+      "deadline": "2026.10.27",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020902": {
+    "at": "2026-10-15T19:37:53.343Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "60㎡미만",
+          "areaRange": "60㎡ 미만",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "60㎡이상~70㎡미만",
+          "areaRange": "60㎡ 이상 ~ 70㎡ 미만",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "70㎡이상~80㎡미만",
+          "areaRange": "70㎡ 이상 ~ 80㎡ 미만",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "80㎡이상",
+          "areaRange": "80㎡ 이상",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.11.27"
+      },
+      "deadline": "2026.10.28",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020901": {
+    "at": "2026-10-15T19:38:42.411Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.11.27"
+      },
+      "deadline": "2026.10.28",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-sale-2015122300020886": {
+    "at": "2026-10-15T19:39:40.807Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2027.03.03"
+      },
+      "deadline": "2026.10.30",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6702": {
+    "at": "2026-10-15T19:41:09.983Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "강동구 길동생활B동 17A형(특별)",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 5800,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강동구 길동생활B동 17A형(일반)",
+          "area": null,
+          "supplyUnits": 4,
+          "deposit": 6500,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강동구 길동생활B동 17B형(일반)",
+          "area": null,
+          "supplyUnits": 2,
+          "deposit": 6500,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "재공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6701": {
+    "at": "2026-10-15T19:42:08.321Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "강동구 길동생활A 36A형 (특별공급)",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 9400,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강동구 길동생활A 17A형 (일반공급)",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 6500,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강동구 길동생활A 34A형 (일반공급)",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "강동구 길동생활A 36A형 (일반공급)",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": null
+    }
+  },
+  "youth-6700": {
+    "at": "2026-10-15T19:43:09.593Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "강서구 포르투나블루 507호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 9830,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.21"
+      },
+      "deadline": "2026.10.19",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6699": {
+    "at": "2026-10-15T19:44:08.352Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "성북구 라온프라이빗 종암 1310호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 15100,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "성북구 라온프라이빗 종암 1407호",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 8900,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.20"
+      },
+      "deadline": "2026.10.19",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6698": {
+    "at": "2026-10-15T19:45:12.435Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6697": {
+    "at": "2026-10-15T19:46:09.579Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "중랑구 상봉생활 54형",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 29890,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "중랑구 상봉생활 57형",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 27240,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.20"
+      },
+      "deadline": "2026.10.19",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6696": {
+    "at": "2026-10-15T19:47:00.524Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "중구 166타워 15.51m2",
+          "area": "15.51m2",
+          "supplyUnits": 1,
+          "deposit": 8510,
+          "rent": 43,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.22"
+      },
+      "deadline": "2026.10.21",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }

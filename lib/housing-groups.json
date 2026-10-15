@@ -6832,5 +6832,167 @@
     "rentMax": null
    }
   ]
+ },
+ "2015122300020902": {
+  "kind": "든든전세",
+  "unitsTotal": 31,
+  "groups": [
+   {
+    "label": "동양해봄채",
+    "units": 23,
+    "depMin": 10000,
+    "depMax": 10080,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "내동 블루시티트리가",
+    "units": 2,
+    "depMin": 10464,
+    "depMax": 10643,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "내동 경보더숨시티",
+    "units": 6,
+    "depMin": 11627,
+    "depMax": 12253,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
+ },
+ "2015122300020901": {
+  "kind": "든든전세",
+  "unitsTotal": 150,
+  "groups": [
+   {
+    "label": "주영더팰리스지븐 아파트",
+    "units": 73,
+    "depMin": 18445,
+    "depMax": 22780,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "주영더팰리스지븐 아파트",
+    "units": 1,
+    "depMin": 22780,
+    "depMax": 22780,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "두산위브더제니스 양산",
+    "units": 51,
+    "depMin": 13440,
+    "depMax": 16160,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "양산 금호 리첸시아 시그니처",
+    "units": 21,
+    "depMin": 23440,
+    "depMax": 24640,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "진영한림풀에버1단지",
+    "units": 4,
+    "depMin": 13440,
+    "depMax": 14160,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
+ },
+ "2015122300020877": {
+  "kind": "매입임대",
+  "unitsTotal": 565,
+  "groups": [
+   {
+    "label": "경상북도 경산시",
+    "units": 69,
+    "depMin": 131,
+    "depMax": 905,
+    "rentMin": 2,
+    "rentMax": 24
+   },
+   {
+    "label": "대구광역시 동구",
+    "units": 68,
+    "depMin": 160,
+    "depMax": 1509,
+    "rentMin": 3,
+    "rentMax": 38
+   },
+   {
+    "label": "대구광역시 수성구",
+    "units": 54,
+    "depMin": 162,
+    "depMax": 940,
+    "rentMin": 4,
+    "rentMax": 35
+   },
+   {
+    "label": "대구광역시 중구",
+    "units": 1,
+    "depMin": 856,
+    "depMax": 856,
+    "rentMin": 25,
+    "rentMax": 25
+   },
+   {
+    "label": "대구광역시 서구",
+    "units": 12,
+    "depMin": 549,
+    "depMax": 1129,
+    "rentMin": 11,
+    "rentMax": 25
+   },
+   {
+    "label": "대구광역시 남구",
+    "units": 19,
+    "depMin": 287,
+    "depMax": 1149,
+    "rentMin": 8,
+    "rentMax": 41
+   },
+   {
+    "label": "대구광역시 북구",
+    "units": 58,
+    "depMin": 197,
+    "depMax": 1606,
+    "rentMin": 3,
+    "rentMax": 38
+   },
+   {
+    "label": "경상북도 칠곡군",
+    "units": 34,
+    "depMin": 123,
+    "depMax": 1143,
+    "rentMin": 3,
+    "rentMax": 22
+   },
+   {
+    "label": "경상북도 김천시",
+    "units": 41,
+    "depMin": 117,
+    "depMax": 1358,
+    "rentMin": 1,
+    "rentMax": 19
+   },
+   {
+    "label": "경상북도 구미시",
+    "units": 209,
+    "depMin": 133,
+    "depMax": 1248,
+    "rentMin": 1,
+    "rentMax": 32
+   }
+  ]
  }
 }
