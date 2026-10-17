@@ -6994,5 +6994,49 @@
     "rentMax": 32
    }
   ]
+ },
+ "2015122300020922": {
+  "kind": "든든전세",
+  "unitsTotal": 48,
+  "groups": [
+   {
+    "label": "용담이동 호반써밋",
+    "units": 48,
+    "depMin": 39690,
+    "depMax": 42120,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
+ },
+ "2015122300020900": {
+  "kind": "매입임대",
+  "unitsTotal": 68,
+  "groups": [
+   {
+    "label": "구래동 김포더럭스나인",
+    "units": 41,
+    "depMin": 10,
+    "depMax": 41,
+    "rentMin": 15,
+    "rentMax": 18
+   },
+   {
+    "label": "구래동 더끌리움 하이엔드",
+    "units": 11,
+    "depMin": 42,
+    "depMax": 52,
+    "rentMin": 50,
+    "rentMax": 56
+   },
+   {
+    "label": "신읍동 포천 헤리센트",
+    "units": 16,
+    "depMin": 53,
+    "depMax": 68,
+    "rentMin": 32,
+    "rentMax": 35
+   }
+  ]
  }
 }

@@ -24496,5 +24496,227 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020907": {
+    "at": "2026-10-17T18:21:06.699Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "26형",
+          "area": "26.37㎡",
+          "supplyUnits": 110,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 252,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 765,
+              "rent": 12
+            }
+          ]
+        },
+        {
+          "houseType": "31형",
+          "area": "31.32㎡",
+          "supplyUnits": 30,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 299,
+              "rent": 6
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 869,
+              "rent": 13
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020922": {
+    "at": "2026-10-17T18:22:37.414Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.12.11"
+      },
+      "deadline": "2026.10.28",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020900-m0": {
+    "at": "2026-10-17T18:23:18.315Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.11.24"
+      },
+      "deadline": "2026.10.29",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020900-m1": {
+    "at": "2026-10-17T18:24:19.926Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.11.24"
+      },
+      "deadline": "2026.10.29",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-311521": {
+    "at": "2026-10-17T18:25:29.824Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "1차 202호",
+          "areaRange": "27.98㎡",
+          "supplyUnits": 1,
+          "deposit": [
+            3160,
+            5269
+          ],
+          "rent": [
+            41,
+            69
+          ]
+        },
+        {
+          "label": "1차 203호",
+          "areaRange": "27.71㎡",
+          "supplyUnits": 1,
+          "deposit": [
+            3160,
+            5269
+          ],
+          "rent": [
+            41,
+            69
+          ]
+        },
+        {
+          "label": "1차 302호",
+          "areaRange": "27.98㎡",
+          "supplyUnits": 1,
+          "deposit": [
+            3220,
+            5367
+          ],
+          "rent": [
+            42,
+            70
+          ]
+        },
+        {
+          "label": "1차 402호",
+          "areaRange": "32.5㎡",
+          "supplyUnits": 1,
+          "deposit": [
+            3740,
+            6234
+          ],
+          "rent": [
+            49,
+            81
+          ]
+        },
+        {
+          "label": "2차 201호",
+          "areaRange": "30.2㎡",
+          "supplyUnits": 1,
+          "deposit": [
+            3308,
+            5514
+          ],
+          "rent": [
+            43,
+            72
+          ]
+        },
+        {
+          "label": "2차 502호",
+          "areaRange": "24.83㎡",
+          "supplyUnits": 1,
+          "deposit": [
+            2807,
+            4680
+          ],
+          "rent": [
+            37,
+            61
+          ]
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": 7
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020877": {
+    "at": "2026-10-17T18:25:51.624Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "1형(2인 이하 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "2형(2~4인 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "3형(5인 이상 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
