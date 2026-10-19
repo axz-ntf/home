@@ -7038,5 +7038,123 @@
     "rentMax": 35
    }
   ]
+ },
+ "2015122300020927": {
+  "kind": "든든전세",
+  "unitsTotal": 344,
+  "groups": [
+   {
+    "label": "경기도 수원시 권선구",
+    "units": 11,
+    "depMin": 17729,
+    "depMax": 24147,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 수원시 영통구",
+    "units": 82,
+    "depMin": 24338,
+    "depMax": 35550,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 수원시 장안구",
+    "units": 25,
+    "depMin": 18075,
+    "depMax": 30874,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 수원시 팔달구",
+    "units": 4,
+    "depMin": 22254,
+    "depMax": 23454,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 시흥시",
+    "units": 19,
+    "depMin": 18282,
+    "depMax": 26908,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 안산시 상록구",
+    "units": 7,
+    "depMin": 17098,
+    "depMax": 20274,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 안산시 단원구",
+    "units": 38,
+    "depMin": 21655,
+    "depMax": 22604,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 안양시 만안구",
+    "units": 14,
+    "depMin": 20692,
+    "depMax": 27808,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 안양시 동안구",
+    "units": 6,
+    "depMin": 24596,
+    "depMax": 30337,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 여주시",
+    "units": 11,
+    "depMin": 10506,
+    "depMax": 18764,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 오산시",
+    "units": 13,
+    "depMin": 17118,
+    "depMax": 20766,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 용인시 처인구",
+    "units": 14,
+    "depMin": 16221,
+    "depMax": 16922,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 용인시 기흥구",
+    "units": 10,
+    "depMin": 16659,
+    "depMax": 18764,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경기도 화성시 병점구",
+    "units": 90,
+    "depMin": 28170,
+    "depMax": 29880,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
  }
 }

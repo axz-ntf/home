@@ -24718,5 +24718,72 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020925": {
+    "at": "2026-10-19T21:01:07.021Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "인천부평 행복주택 16A",
+          "area": "16.37",
+          "supplyUnits": 117,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "인천부평 행복주택 21A",
+          "area": "21.19",
+          "supplyUnits": 86,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2027.04.20"
+      },
+      "deadline": "2026.11.04",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020917": {
+    "at": "2026-10-19T21:01:54.178Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": "2026.11.20",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020916": {
+    "at": "2026-10-19T21:02:41.405Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [],
+      "deadline": "2026.11.13",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020927": {
+    "at": "2026-10-19T21:03:34.465Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.12.02"
+      },
+      "deadline": "2026.10.27",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
