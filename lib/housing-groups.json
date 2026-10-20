@@ -7156,5 +7156,51 @@
     "rentMax": null
    }
   ]
+ },
+ "2015122300020929": {
+  "kind": "든든전세",
+  "unitsTotal": 282,
+  "groups": [
+   {
+    "label": "더 트루엘 포항",
+    "units": 86,
+    "depMin": 18140,
+    "depMax": 19821,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "남포항태왕아너스",
+    "units": 57,
+    "depMin": 13017,
+    "depMax": 19410,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "송정동 구미송정범양레우스센트럴포레아파트",
+    "units": 61,
+    "depMin": 16276,
+    "depMax": 26062,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "송정동 구미송정범양레우스센트럴포레아파트",
+    "units": 3,
+    "depMin": 23304,
+    "depMax": 24541,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "인의동 구미인동하늘채디어반2차",
+    "units": 75,
+    "depMin": 27042,
+    "depMax": 30627,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
  }
 }

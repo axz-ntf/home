@@ -1,5 +1,20 @@
 [
   {
+    "homeCode": "20000566",
+    "homeName": "마장역 한영스테이",
+    "gu": "성동구",
+    "address": "성동구 마장동 783-5",
+    "subway": "5호선 마장역 3번 출구 173m 도보2분",
+    "depositLowWon": 53000000,
+    "rentLowWon": 350000,
+    "totalUnits": 130,
+    "phone": "02-2293-8222",
+    "homepage": "https://www.hy-stay.com",
+    "lat": 37.566348,
+    "lng": 127.044416,
+    "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=20f52229ab5c4305bfa8cb8505ca183e&fileSn=1"
+  },
+  {
     "homeCode": "20000498",
     "homeName": "천호역 효성해링턴타워",
     "gu": "강동구",
@@ -742,11 +757,11 @@
     "subway": "5호선 아차산역 1번출구 167m",
     "depositLowWon": 54000000,
     "rentLowWon": 360000,
-    "totalUnits": 261,
-    "phone": "02-6216-1200",
-    "homepage": "https://whtower643.com",
-    "lat": 37.5537578,
-    "lng": 127.0891522,
+    "totalUnits": null,
+    "phone": "",
+    "homepage": "",
+    "lat": 37.55373845840848,
+    "lng": 127.08921471618898,
     "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=22c45710620542fd934bbc9b8c7bca9c&fileSn=1"
   },
   {
@@ -1408,21 +1423,6 @@
     "lat": 37.6129116146451,
     "lng": 126.92708041377807,
     "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=fbc6340187774279b9aee8b4f7c19711&fileSn=21"
-  },
-  {
-    "homeCode": "20000566",
-    "homeName": "마장역 한영스테이",
-    "gu": "성동구",
-    "address": "성동구 마장동 783-5",
-    "subway": "5호선 마장역 3번 출구 173m 도보2분",
-    "depositLowWon": 53000000,
-    "rentLowWon": 350000,
-    "totalUnits": null,
-    "phone": "",
-    "homepage": "",
-    "lat": 37.5663114304062,
-    "lng": 127.04434450066867,
-    "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=20f52229ab5c4305bfa8cb8505ca183e&fileSn=1"
   },
   {
     "homeCode": "20000420",

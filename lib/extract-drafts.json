@@ -24785,5 +24785,66 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020929": {
+    "at": "2026-10-20T19:28:50.691Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.12.03"
+      },
+      "deadline": "2026.10.21",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020897": {
+    "at": "2026-10-20T19:30:11.088Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "여수미평1 26.37형",
+          "area": "26.37㎡",
+          "supplyUnits": 15,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 252,
+              "rent": 5
+            },
+            {
+              "label": "나군",
+              "deposit": 352,
+              "rent": 8
+            }
+          ]
+        },
+        {
+          "houseType": "여수미평1 31.32형",
+          "area": "31.32㎡",
+          "supplyUnits": 40,
+          "incomes": [
+            {
+              "label": "가군",
+              "deposit": 299,
+              "rent": 6
+            },
+            {
+              "label": "나군",
+              "deposit": 418,
+              "rent": 9
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
