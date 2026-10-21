@@ -24846,5 +24846,33 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020923": {
+    "at": "2026-10-21T19:43:29.878Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.12.03"
+      },
+      "deadline": "2026.11.04",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020934": {
+    "at": "2026-10-21T19:44:13.037Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.11.27"
+      },
+      "deadline": "2026.10.28",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }

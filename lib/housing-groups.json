@@ -7202,5 +7202,97 @@
     "rentMax": null
    }
   ]
+ },
+ "2015122300020923": {
+  "kind": "든든전세",
+  "unitsTotal": 94,
+  "groups": [
+   {
+    "label": "대구광역시 동구",
+    "units": 10,
+    "depMin": 12074,
+    "depMax": 18782,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "대구광역시 수성구",
+    "units": 16,
+    "depMin": 13040,
+    "depMax": 24112,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "대구광역시",
+    "units": 42,
+    "depMin": 5631,
+    "depMax": 16160,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "대구광역시 달서구",
+    "units": 13,
+    "depMin": 11760,
+    "depMax": 16815,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "경상북도 포항시 북구",
+    "units": 13,
+    "depMin": 15607,
+    "depMax": 17185,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
+ },
+ "2015122300020934": {
+  "kind": "든든전세",
+  "unitsTotal": 150,
+  "groups": [
+   {
+    "label": "주영더팰리스지븐 아파트",
+    "units": 73,
+    "depMin": 18445,
+    "depMax": 22780,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "주영더팰리스지븐 아파트",
+    "units": 1,
+    "depMin": 22780,
+    "depMax": 22780,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "두산위브더제니스 양산",
+    "units": 51,
+    "depMin": 13440,
+    "depMax": 16160,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "양산 금호 리첸시아 시그니처",
+    "units": 21,
+    "depMin": 23440,
+    "depMax": 24640,
+    "rentMin": null,
+    "rentMax": null
+   },
+   {
+    "label": "진영한림풀에버1단지",
+    "units": 4,
+    "depMin": 13440,
+    "depMax": 14160,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
  }
 }
