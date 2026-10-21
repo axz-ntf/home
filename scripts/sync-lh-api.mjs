@@ -481,7 +481,10 @@ async function main() {
     // 우선순위: 단지매칭(API 1)+VWorld > 기존 데이터 좌표 > 페이지 scrape > VWorld(페이지 주소)
     // VWorld 실패 / 키없음 시에도 ex 좌표 fallback 으로 가도록 — 옛 데이터 좌표 살림.
     const ex = existingByPanId.get(id);
-    const hasExCoord = ex && ex.lat && ex.lng && ex.geocoded && ex.geocoded !== "sido-center";
+    // 지난 sync 에 단지매칭(api1-*)으로 얻은 좌표는, 이번에 매칭이 없으면 버린다 —
+    // 과거 오매칭(다른 블록·다른 지역 단지) 좌표가 계속 남는 것 방지.
+    const exFromMatch = String(ex?.geocoded ?? "").startsWith("api1") && !matchedComplex;
+    const hasExCoord = ex && ex.lat && ex.lng && ex.geocoded && ex.geocoded !== "sido-center" && !exFromMatch;
     let lat = null, lng = null, address = "", geocoded = "none";
 
     if (matchedComplex?.rnAdres && (VWORLD_API_KEY || KAKAO_REST_API_KEY)) {
@@ -501,7 +504,7 @@ async function main() {
     } else if (hasExCoord) {
       // VWorld 없거나 API1 매칭 안된 경우: ex 좌표 fallback
       lat = ex.lat; lng = ex.lng;
-      address = matchedComplex?.rnAdres || ex.address || "";
+      address = matchedComplex?.rnAdres || (exFromMatch ? "" : ex.address) || "";
       geocoded = ex.geocoded;
       coordExisting++;
     } else {

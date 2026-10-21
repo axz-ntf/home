@@ -10,7 +10,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { generateText } from "ai";
-import { aiModel, hasAiKey } from "./lib/ai-provider.mjs";
+import { aiModel, hasAiKey, isClaudeCli, cliGenerateText } from "./lib/ai-provider.mjs";
 import { z } from "zod";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -117,14 +117,11 @@ const SCHEMA_HINT = `\n출력 형식 (JSON, 다른 텍스트 금지):
 // LH 공고문 markdown 에서 자격 정보 섹션만 추출 — input token 90%↓ 비용 절감.
 // "신청자격"/"입주자격"/"자격요건" 첫 등장부터 다음 큰 섹션 (신청서류/계약절차 등) 직전까지.
 function extractEligibilityRegion(md) {
-  // 시작 marker — 자격 관련 첫 등장
-  const startRes = [/신\s*청\s*자\s*격/, /입\s*주\s*자\s*격/, /자\s*격\s*요\s*건/, /4\.\s*신청\s*자격/];
-  let start = -1;
-  for (const re of startRes) {
-    const m = md.search(re);
-    if (m >= 0 && (start < 0 || m < start)) start = m;
-  }
-  if (start < 0) return md.slice(0, 15000); // fallback — 자격 marker 못 찾으면 앞 15K
+  // 시작 marker 후보 — 모든 등장 위치. 첫 등장만 쓰면 공고 첫머리 안내문("신청자격 등을 충분히
+  // 숙지하시어…")을 잡아 소득·자산 기준이 빠진 몇백 자만 넘기게 된다 (영구임대 예비입주자 공고 등).
+  const startRe = /신\s*청\s*자\s*격|입\s*주\s*자\s*격|자\s*격\s*요\s*건/g;
+  const starts = [...md.matchAll(startRe)].map((m) => m.index).slice(0, 30);
+  if (!starts.length) return md.slice(0, 15000); // fallback — 자격 marker 못 찾으면 앞 15K
 
   // 종료 marker — 자격 정보 끝났을 가능성 큰 큰 섹션 헤더
   const endRes = [
@@ -132,16 +129,26 @@ function extractEligibilityRegion(md) {
     /\d+\.\s*계약\s*및\s*입주/, /\d+\.\s*계약\s*절차/,
     /\d+\.\s*유의\s*사항/, /\d+\.\s*기타\s*안내/, /\d+\.\s*문의\s*처/,
   ];
-  let end = md.length;
-  const sliceForEnd = md.slice(start + 200); // 시작 직후엔 같은 키워드 잔류물 있을 수 있어 skip
-  for (const re of endRes) {
-    const m = sliceForEnd.search(re);
-    if (m >= 0) end = Math.min(end, start + 200 + m);
+  const regionFrom = (start) => {
+    let end = md.length;
+    const sliceForEnd = md.slice(start + 200); // 시작 직후엔 같은 키워드 잔류물 있을 수 있어 skip
+    for (const re of endRes) {
+      const m = sliceForEnd.search(re);
+      if (m >= 0) end = Math.min(end, start + 200 + m);
+    }
+    const region = md.slice(start, end);
+    // 안전 상한 — 너무 길면 자르기
+    return region.length > 20000 ? region.slice(0, 20000) : region;
+  };
+  // 자격 기준 신호(소득·자산·무주택·금액·%)가 가장 많은 구간을 고른다.
+  const SIGNAL = /소득|자산|무주택|세대구성원|자동차|만\s*원|\d+\s*%|부동산/g;
+  let best = "", bestScore = -1;
+  for (const st of starts) {
+    const r = regionFrom(st);
+    const score = (r.match(SIGNAL) || []).length;
+    if (score > bestScore) { best = r; bestScore = score; }
   }
-
-  const region = md.slice(start, end);
-  // 안전 상한 — 너무 길면 자르기 (Haiku context 충분하지만 비용 효율)
-  return region.length > 20000 ? region.slice(0, 20000) : region;
+  return best;
 }
 
 // 단위 가드 — 만원 지시에도 LH 원 단위 표를 천원 단위로 출력하는 사례가 있어 보정.
@@ -168,14 +175,15 @@ async function extractOne(id) {
   const md = await loadMarkdown(id);
   const eligibilityRegion = extractEligibilityRegion(md);
 
-  const result = await generateText({
-    model: aiModel(MODEL),
-    maxOutputTokens: 8000,
+  const req = {
     system: SYSTEM_PROMPT + SCHEMA_HINT,
     prompt:
       `다음은 LH 공고문의 자격 관련 섹션입니다. 자격 정보를 추출해 위 schema 의 JSON 만 출력하세요. 설명/주석/마크다운 헤더 금지, 오직 JSON 한 덩어리.\n\n` +
       eligibilityRegion,
-  });
+  };
+  const result = isClaudeCli(MODEL)
+    ? await cliGenerateText(req)
+    : await generateText({ model: aiModel(MODEL), maxOutputTokens: 8000, ...req });
 
   const raw = extractJsonFromText(result.text ?? "");
   let parsed;
@@ -214,7 +222,7 @@ async function main() {
     const existing = new Set((await fs.readdir(OUT_DIR)).filter((f) => f.endsWith(".json")).map((f) => f.replace(/\.json$/, "")));
     files = files.filter((id) => !existing.has(id));
   }
-  files = files.slice(0, args.limit);
+  if (!args.ids) files = files.slice(0, args.limit);
 
   console.log(`처리 대상: ${files.length}건\n`);
 
@@ -252,6 +260,8 @@ async function main() {
   const elapsed = ((Date.now() - t0) / 1000).toFixed(1);
   console.log(`\n완료: ok=${ok} err=${err} (${elapsed}s, concurrency=${CONCURRENCY})`);
   console.log(`토큰: in=${totalIn.toLocaleString()} out=${totalOut.toLocaleString()}`);
+  // 절반 이상 실패면 실패로 끝낸다 — 크레딧 소진처럼 전부 실패해도 성공으로 보이던 문제 방지.
+  if (err > 0 && err >= (ok + err) / 2) process.exitCode = 1;
 }
 
 main().catch((e) => { console.error("FATAL:", e); process.exit(1); });
