@@ -7294,5 +7294,143 @@
     "rentMax": null
    }
   ]
+ },
+ "2015122300020945": {
+  "kind": "매입임대",
+  "unitsTotal": 32,
+  "groups": [
+   {
+    "label": "인천광역시 미추홀구",
+    "units": 12,
+    "depMin": 285,
+    "depMax": 893,
+    "rentMin": 2,
+    "rentMax": 27
+   },
+   {
+    "label": "인천광역시 계양구",
+    "units": 2,
+    "depMin": 477,
+    "depMax": 2179,
+    "rentMin": 14,
+    "rentMax": 27
+   },
+   {
+    "label": "인천광역시 서해구",
+    "units": 7,
+    "depMin": 268,
+    "depMax": 680,
+    "rentMin": 9,
+    "rentMax": 25
+   },
+   {
+    "label": "인천광역시 검단구",
+    "units": 1,
+    "depMin": 620,
+    "depMax": 620,
+    "rentMin": 18,
+    "rentMax": 18
+   },
+   {
+    "label": "경기도 부천시 원미구",
+    "units": 4,
+    "depMin": 179,
+    "depMax": 733,
+    "rentMin": 5,
+    "rentMax": 34
+   },
+   {
+    "label": "경기도 부천시 소사구",
+    "units": 4,
+    "depMin": 579,
+    "depMax": 617,
+    "rentMin": 27,
+    "rentMax": 30
+   },
+   {
+    "label": "경기도 부천시 오정구",
+    "units": 2,
+    "depMin": 535,
+    "depMax": 719,
+    "rentMin": 13,
+    "rentMax": 14
+   }
+  ]
+ },
+ "2015122300020931": {
+  "kind": "매입임대",
+  "unitsTotal": 32,
+  "groups": [
+   {
+    "label": "인천광역시 미추홀구",
+    "units": 12,
+    "depMin": 285,
+    "depMax": 893,
+    "rentMin": 2,
+    "rentMax": 27
+   },
+   {
+    "label": "인천광역시 계양구",
+    "units": 2,
+    "depMin": 477,
+    "depMax": 2179,
+    "rentMin": 14,
+    "rentMax": 27
+   },
+   {
+    "label": "인천광역시 서해구",
+    "units": 7,
+    "depMin": 268,
+    "depMax": 680,
+    "rentMin": 9,
+    "rentMax": 25
+   },
+   {
+    "label": "인천광역시 검단구",
+    "units": 1,
+    "depMin": 620,
+    "depMax": 620,
+    "rentMin": 18,
+    "rentMax": 18
+   },
+   {
+    "label": "경기도 부천시 원미구",
+    "units": 4,
+    "depMin": 179,
+    "depMax": 733,
+    "rentMin": 5,
+    "rentMax": 34
+   },
+   {
+    "label": "경기도 부천시 소사구",
+    "units": 4,
+    "depMin": 579,
+    "depMax": 617,
+    "rentMin": 27,
+    "rentMax": 30
+   },
+   {
+    "label": "경기도 부천시 오정구",
+    "units": 2,
+    "depMin": 535,
+    "depMax": 719,
+    "rentMin": 13,
+    "rentMax": 14
+   }
+  ]
+ },
+ "2015122300020918": {
+  "kind": "든든전세",
+  "unitsTotal": 37,
+  "groups": [
+   {
+    "label": "구암동 e편한세상 군산 디오션루체",
+    "units": 37,
+    "depMin": 10,
+    "depMax": 37,
+    "rentMin": null,
+    "rentMax": null
+   }
+  ]
  }
 }

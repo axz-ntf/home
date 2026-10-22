@@ -24874,5 +24874,206 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-0000061190": {
+    "at": "2026-10-22T19:34:23.685Z",
+    "type": "nation",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "구리갈매S1 59A",
+          "area": "59.98",
+          "supplyUnits": 12,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.11.12"
+      },
+      "deadline": "2026.11.04",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020918": {
+    "at": "2026-10-22T19:35:45.753Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "schedule": {
+        "winnerAt": "2026.12.10"
+      },
+      "deadline": "2026.11.04",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020945": {
+    "at": "2026-10-22T19:36:20.621Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "1형(2인 이하 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        },
+        {
+          "label": "2형(2~4인 가구용)",
+          "areaRange": null,
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6707": {
+    "at": "2026-10-22T19:37:31.728Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "동대문구 퀸즈W청량리역 25A",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 11000,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 퀸즈W청량리역 53A",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 17000,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 퀸즈W청량리역 51B",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 20200,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "동대문구 퀸즈W청량리역 53B",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 20200,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": "2026.10.22",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6706": {
+    "at": "2026-10-22T19:38:13.654Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "관악구 유벤투스240 17타입",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 10000,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.29"
+      },
+      "deadline": "2026.10.28",
+      "noticeStatus": "재공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6705": {
+    "at": "2026-10-22T19:38:42.782Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "관악구 신림역 최강타워 B1803",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 9800,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "deadline": "2026.10.26",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "youth-6704": {
+    "at": "2026-10-22T19:39:38.135Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "중랑구 상봉동양엔파트 38C",
+          "area": null,
+          "supplyUnits": 1,
+          "deposit": 13200,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.27"
+      },
+      "deadline": "2026.10.26",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "youth-6703": {
+    "at": "2026-10-22T19:40:30.352Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "중랑구 화랑대역 에이트플레이스 39S",
+          "area": null,
+          "supplyUnits": null,
+          "deposit": 21740,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2026.10.29"
+      },
+      "deadline": "2026.10.28",
+      "noticeStatus": "재공고",
+      "progressStatus": "모집중"
+    }
   }
 }
