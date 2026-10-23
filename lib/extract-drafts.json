@@ -25075,5 +25075,77 @@
       "noticeStatus": "재공고",
       "progressStatus": "모집중"
     }
+  },
+  "sh-311908": {
+    "at": "2026-10-23T19:29:24.202Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "가동 26형 (26.2㎡ 이하)",
+          "areaRange": "26.2㎡ 이하",
+          "supplyUnits": 3,
+          "deposit": [
+            1324,
+            2209
+          ],
+          "rent": [
+            17,
+            29
+          ]
+        },
+        {
+          "label": "가동 29형 (29.14㎡)",
+          "areaRange": "29.14㎡",
+          "supplyUnits": 1,
+          "deposit": [
+            1463,
+            2437
+          ],
+          "rent": [
+            19,
+            32
+          ]
+        },
+        {
+          "label": "가동 34형 (33.77㎡)",
+          "areaRange": "33.77㎡",
+          "supplyUnits": 1,
+          "deposit": [
+            1728,
+            2880
+          ],
+          "rent": [
+            23,
+            38
+          ]
+        },
+        {
+          "label": "나동 36형 (36.01㎡)",
+          "areaRange": "36.01㎡",
+          "supplyUnits": 1,
+          "deposit": [
+            1845,
+            3076
+          ],
+          "rent": [
+            24,
+            40
+          ]
+        }
+      ],
+      "conversion": {
+        "rateUp": 3,
+        "rateDown": 7
+      },
+      "schedule": {
+        "winnerAt": "2026.12.23"
+      },
+      "deadline": "2026.11.09",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
