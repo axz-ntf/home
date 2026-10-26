@@ -1,5 +1,35 @@
 [
   {
+    "homeCode": "20000567",
+    "homeName": "등촌역 아르체움 등촌 청년주택",
+    "gu": "강서구",
+    "address": "강서구 공항대로 555",
+    "subway": "9호선 등촌역 3번출구 11m 도보 1분",
+    "depositLowWon": 63000000,
+    "rentLowWon": 440000,
+    "totalUnits": 156,
+    "phone": "02-6735-1561",
+    "homepage": "https://blog.naver.com/fltower",
+    "lat": 37.5498498,
+    "lng": 126.8676413,
+    "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=3dc0afa680a4458e8f77de172f3b51c2&fileSn=1"
+  },
+  {
+    "homeCode": "20000415",
+    "homeName": "발산역 엘크루",
+    "gu": "강서구",
+    "address": "강서구 강서로56길 44",
+    "subway": "5호선 발산역 3번출구 286m",
+    "depositLowWon": 38000000,
+    "rentLowWon": 231000,
+    "totalUnits": 252,
+    "phone": "02-6735-1560",
+    "homepage": "https://blog.naver.com/fltower1",
+    "lat": 37.5591863,
+    "lng": 126.841106,
+    "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=dab03b7f6cf14fd9af259a623a91f6d4&fileSn=10"
+  },
+  {
     "homeCode": "20000612",
     "homeName": "대흥역 리마크빌 마포",
     "gu": "마포구",
@@ -727,11 +757,11 @@
     "subway": "6호선 구산역 4번출구 258m",
     "depositLowWon": 36000000,
     "rentLowWon": 290000,
-    "totalUnits": 238,
-    "phone": "-",
-    "homepage": "https://duckyoung2016.com/",
-    "lat": 37.6122404,
-    "lng": 126.9150401,
+    "totalUnits": null,
+    "phone": "",
+    "homepage": "",
+    "lat": 37.61224039582889,
+    "lng": 126.91504005835469,
     "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=209a14a71d2d41f081b06440ae961a4a&fileSn=29"
   },
   {
@@ -742,11 +772,11 @@
     "subway": "9호선, 신분당선 신논현역 3번출구 258m",
     "depositLowWon": 41570000,
     "rentLowWon": 380000,
-    "totalUnits": 297,
-    "phone": "02-542-6114",
-    "homepage": "http://www.listgangnam.co.kr/",
-    "lat": 37.5057599,
-    "lng": 127.027426,
+    "totalUnits": null,
+    "phone": "",
+    "homepage": "",
+    "lat": 37.50573506772035,
+    "lng": 127.02743233780517,
     "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=63bbf5888a4245dcb58d6c9be60d93e1&fileSn=24"
   },
   {
@@ -778,21 +808,6 @@
     "lat": 37.55373845840848,
     "lng": 127.08921471618896,
     "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=22c45710620542fd934bbc9b8c7bca9c&fileSn=1"
-  },
-  {
-    "homeCode": "20000567",
-    "homeName": "등촌역 아르체움 등촌 청년주택",
-    "gu": "강서구",
-    "address": "강서구 공항대로 555",
-    "subway": "9호선 등촌역 3번출구 11m 도보 1분",
-    "depositLowWon": 63000000,
-    "rentLowWon": 440000,
-    "totalUnits": null,
-    "phone": "",
-    "homepage": "",
-    "lat": 0,
-    "lng": 0,
-    "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=3dc0afa680a4458e8f77de172f3b51c2&fileSn=1"
   },
   {
     "homeCode": "20000609",
@@ -883,21 +898,6 @@
     "lat": 37.482864675387155,
     "lng": 127.07520286222606,
     "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=0c884df430574e69af1743cfe6a3d76c&fileSn=1"
-  },
-  {
-    "homeCode": "20000415",
-    "homeName": "발산역 엘크루",
-    "gu": "강서구",
-    "address": "강서구 강서로56길 44",
-    "subway": "5호선 발산역 3번출구 286m",
-    "depositLowWon": 38000000,
-    "rentLowWon": 231000,
-    "totalUnits": null,
-    "phone": "",
-    "homepage": "",
-    "lat": 37.559163454396945,
-    "lng": 126.84110498038234,
-    "photoUrl": "https://soco.seoul.go.kr/coHouse/cmmn/file/fileDown.do?atchFileId=dab03b7f6cf14fd9af259a623a91f6d4&fileSn=10"
   },
   {
     "homeCode": "20000604",

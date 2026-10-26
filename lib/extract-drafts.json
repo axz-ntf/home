@@ -25147,5 +25147,270 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-sale-2015122300020961": {
+    "at": "2026-10-26T20:52:57.915Z",
+    "type": "sale",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "아산 엘크루 101동 101호",
+          "area": "26.5009",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 12175
+        },
+        {
+          "houseType": "아산 엘크루 101동 102호",
+          "area": "26.5009",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 12710
+        },
+        {
+          "houseType": "아산 엘크루 101동 106호",
+          "area": "26.5009",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 12295
+        },
+        {
+          "houseType": "아산 엘크루 102동 101호",
+          "area": "26.5009",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 12295
+        },
+        {
+          "houseType": "아산 엘크루 102동 102호",
+          "area": "26.5009",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 12415
+        },
+        {
+          "houseType": "아산 엘크루 103동 102호",
+          "area": "26.5009",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 12295
+        },
+        {
+          "houseType": "아산 엘크루 103동 103호",
+          "area": "26.5009",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 12295
+        },
+        {
+          "houseType": "아산 엘크루 104동 101호",
+          "area": "26.5009",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 11925
+        },
+        {
+          "houseType": "아산 엘크루 104동 104호",
+          "area": "26.5009",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 12175
+        },
+        {
+          "houseType": "아산 엘크루 108동 402호",
+          "area": "30.1397",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 12830
+        },
+        {
+          "houseType": "아산 엘크루 108동 404호",
+          "area": "30.1397",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 12710
+        },
+        {
+          "houseType": "아산 엘크루 108동 501호",
+          "area": "26.3388",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 12955
+        },
+        {
+          "houseType": "아산 엘크루 108동 503호",
+          "area": "26.3388",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 13095
+        },
+        {
+          "houseType": "아산 엘크루 109동 101호",
+          "area": "30.1397",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 12060
+        },
+        {
+          "houseType": "아산 엘크루 109동 102호",
+          "area": "30.1397",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 12175
+        },
+        {
+          "houseType": "아산 엘크루 109동 201호",
+          "area": "30.1397",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 12305
+        },
+        {
+          "houseType": "아산 엘크루 109동 401호",
+          "area": "30.1397",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 12575
+        },
+        {
+          "houseType": "아산 엘크루 109동 504호",
+          "area": "30.1397",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 12830
+        }
+      ],
+      "deadline": "2026.11.26",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020964": {
+    "at": "2026-10-26T20:54:06.018Z",
+    "type": "fifty",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "익산부송3 39",
+          "area": "39.87",
+          "supplyUnits": 80,
+          "deposit": 1164,
+          "rent": 17,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 4,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "익산부송3 39",
+            "limitManwon": 1900,
+            "maxDeposit": 3064,
+            "minRent": 8
+          }
+        ]
+      },
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020959": {
+    "at": "2026-10-26T20:55:18.904Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "26㎡",
+          "area": "26.37㎡",
+          "supplyUnits": 573,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 252,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 707,
+              "rent": 12
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-311965": {
+    "at": "2026-10-26T20:56:30.383Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "강북구 인수봉로 72 길 15-18 해피하우스 (엘리베이터)無",
+          "areaRange": "42.24㎡~44.78㎡",
+          "supplyUnits": 2,
+          "deposit": [
+            2012,
+            2198
+          ],
+          "rent": [
+            26,
+            29
+          ]
+        },
+        {
+          "label": "강북구 삼양로 123 길 40-8 해피하우스 (엘리베이터)無",
+          "areaRange": "44.63㎡",
+          "supplyUnits": 1,
+          "deposit": 2346,
+          "rent": 31
+        },
+        {
+          "label": "강북구 삼양로 123 길 40-12 해피하우스 (엘리베이터)無",
+          "areaRange": "50.09㎡",
+          "supplyUnits": 1,
+          "deposit": 2463,
+          "rent": 32
+        }
+      ],
+      "conversion": {
+        "rateUp": null,
+        "rateDown": 7
+      },
+      "schedule": {
+        "winnerAt": "2027.01.22"
+      },
+      "deadline": "2026.11.12",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
