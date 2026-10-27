@@ -2889,5 +2889,31 @@
         "district": "전북특별자치도"
       }
     ]
+  },
+  "2015122300020933": {
+    "districtId": "gyeongnam",
+    "district": "경상남도",
+    "points": [
+      {
+        "lat": 35.69499178078708,
+        "lng": 127.92595906820108,
+        "address": "경상남도 거창군",
+        "districtId": "gyeongnam",
+        "district": "경상남도"
+      }
+    ]
+  },
+  "2015122300020928": {
+    "districtId": "gyeongnam",
+    "district": "경상남도",
+    "points": [
+      {
+        "lat": 35.31829899489675,
+        "lng": 128.2599595690767,
+        "address": "경상남도 의령군",
+        "districtId": "gyeongnam",
+        "district": "경상남도"
+      }
+    ]
   }
 }

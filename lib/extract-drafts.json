@@ -25412,5 +25412,267 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020933": {
+    "at": "2026-10-27T20:27:12.988Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "다자녀 가구 (2인 이상 미성년 자녀)",
+          "areaRange": "전용 84㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4
+      },
+      "deadline": "2026.11.13",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020928": {
+    "at": "2026-10-27T20:28:07.079Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "의령군 화정면 화정로 309 전용 84㎡",
+          "areaRange": "84㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 6,
+        "rateDown": 4
+      },
+      "deadline": "2026.11.13",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020971": {
+    "at": "2026-10-27T20:29:17.418Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "26A",
+          "area": "26.37㎡",
+          "supplyUnits": 9,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 280,
+              "rent": 6
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 649,
+              "rent": 9
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020970": {
+    "at": "2026-10-27T20:30:28.871Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "31형",
+          "area": "31.32㎡",
+          "supplyUnits": 60,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 333,
+              "rent": 7
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 771,
+              "rent": 11
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020969": {
+    "at": "2026-10-27T20:31:39.209Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "광주두암2 26형",
+          "area": "26.37",
+          "supplyUnits": 120,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 280,
+              "rent": 6
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 649,
+              "rent": 9
+            }
+          ]
+        },
+        {
+          "houseType": "광주두암2 31형",
+          "area": "31.32",
+          "supplyUnits": 60,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 333,
+              "rent": 7
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 771,
+              "rent": 11
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020968": {
+    "at": "2026-10-27T20:32:46.520Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "광주오치1 26형",
+          "area": "26.37㎡",
+          "supplyUnits": 1180,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 280,
+              "rent": 6
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 649,
+              "rent": 9
+            }
+          ]
+        },
+        {
+          "houseType": "광주오치1 31형",
+          "area": "31.32㎡",
+          "supplyUnits": 478,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 333,
+              "rent": 7
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 771,
+              "rent": 11
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020967": {
+    "at": "2026-10-27T20:34:06.561Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "북구 광주두암4 26 형",
+          "area": "26.37㎡",
+          "supplyUnits": 100,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 280,
+              "rent": 6
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 649,
+              "rent": 9
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020966": {
+    "at": "2026-10-27T20:35:05.327Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "31형",
+          "area": "31.32㎡",
+          "supplyUnits": 537,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 333,
+              "rent": 7
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 771,
+              "rent": 11
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }
