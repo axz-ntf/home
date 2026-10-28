@@ -25674,5 +25674,442 @@
       "noticeStatus": "일반공고",
       "progressStatus": "모집중"
     }
+  },
+  "lh-rental-2015122300020960": {
+    "at": "2026-10-28T20:43:00.147Z",
+    "type": "happy",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "과천시 과천지식정보타운 S12블록 16A 대학생",
+          "area": "16.98",
+          "supplyUnits": 221,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "과천시 과천지식정보타운 S12블록 16A 청년",
+          "area": "16.98",
+          "supplyUnits": 292,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "과천시 과천지식정보타운 S12블록 16A 주거급여수급자",
+          "area": "16.98",
+          "supplyUnits": 40,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "과천시 과천지식정보타운 S12블록 16B 고령자(주거약자용)",
+          "area": "16.98",
+          "supplyUnits": 38,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "과천시 과천지식정보타운 S12블록 26A 대학생",
+          "area": "26.89",
+          "supplyUnits": 133,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "과천시 과천지식정보타운 S12블록 26A 청년",
+          "area": "26.89",
+          "supplyUnits": 191,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "과천시 과천지식정보타운 S12블록 26A 주거급여수급자",
+          "area": "26.89",
+          "supplyUnits": 60,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "과천시 과천지식정보타운 S12블록 26B 고령자(주거약자용)",
+          "area": "26.89",
+          "supplyUnits": 12,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "과천시 과천지식정보타운 S12블록 36A 청년",
+          "area": "36.85",
+          "supplyUnits": 116,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "과천시 과천지식정보타운 S12블록 36A 신혼부부·한부모가족",
+          "area": "36.85",
+          "supplyUnits": 388,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "과천시 과천지식정보타운 S12블록 36A 고령자(주거약자용外)",
+          "area": "36.85",
+          "supplyUnits": 62,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2027.03.24"
+      },
+      "deadline": "2026.11.12",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020981": {
+    "at": "2026-10-28T20:44:14.888Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "광주두암4 26형",
+          "area": "26.37㎡",
+          "supplyUnits": 100,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 280,
+              "rent": 6
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 649,
+              "rent": 9
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020980": {
+    "at": "2026-10-28T20:45:26.224Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "광주하남1 31형",
+          "area": "31.32㎡",
+          "supplyUnits": 20,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 333,
+              "rent": 7
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 771,
+              "rent": 11
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020979": {
+    "at": "2026-10-28T20:46:43.057Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "광산구 광주하남1 26A형",
+          "area": "26.37",
+          "supplyUnits": 10,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 280,
+              "rent": 6
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 649,
+              "rent": 9
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020978": {
+    "at": "2026-10-28T20:48:00.117Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "광주오치1 26형",
+          "area": "26.37㎡",
+          "supplyUnits": 1180,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 280,
+              "rent": 6
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 649,
+              "rent": 9
+            }
+          ]
+        },
+        {
+          "houseType": "광주오치1 31형",
+          "area": "31.32㎡",
+          "supplyUnits": 478,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 333,
+              "rent": 7
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 771,
+              "rent": 11
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020977": {
+    "at": "2026-10-28T20:49:05.358Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "26형",
+          "area": "26.37㎡",
+          "supplyUnits": 120,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 280,
+              "rent": 6
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 649,
+              "rent": 9
+            }
+          ]
+        },
+        {
+          "houseType": "31형",
+          "area": "31.32㎡",
+          "supplyUnits": 60,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 333,
+              "rent": 7
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 771,
+              "rent": 11
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "lh-rental-2015122300020976": {
+    "at": "2026-10-28T20:50:20.455Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "31형",
+          "area": "31.32㎡",
+          "supplyUnits": 537,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 333,
+              "rent": 7
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 771,
+              "rent": 11
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-311962": {
+    "at": "2026-10-28T20:51:18.687Z",
+    "type": "buy",
+    "fields": {
+      "priceModel": "by-household-size",
+      "rows": [],
+      "householdTypes": [
+        {
+          "label": "1인 가구(소득 50% 이하)",
+          "areaRange": "37.2㎡ ~ 49.98㎡",
+          "supplyUnits": 12,
+          "deposit": [
+            2257,
+            2876
+          ],
+          "rent": [
+            23,
+            30
+          ]
+        },
+        {
+          "label": "1인 가구(소득 50% 초과 ~ 100% 이하)",
+          "areaRange": "37.2㎡ ~ 49.98㎡",
+          "supplyUnits": 12,
+          "deposit": [
+            3762,
+            4792
+          ],
+          "rent": [
+            39,
+            49
+          ]
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2027.01.26"
+      },
+      "deadline": "2026.11.12",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
+  },
+  "sh-312339": {
+    "at": "2026-10-28T20:52:24.105Z",
+    "type": "youth",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "내발산 공공기숙사 원룸형 인실1 (장애인/일반)",
+          "area": "23.3㎡",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "정릉 희망하우징 원룸형 인실1",
+          "area": "14.2㎡",
+          "supplyUnits": 7,
+          "deposit": 109,
+          "rent": 9,
+          "salePriceManwon": null
+        }
+      ],
+      "schedule": {
+        "winnerAt": "2027.01.26"
+      },
+      "deadline": "2026.11.11",
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집예정"
+    }
+  },
+  "lh-rental-2015122300020988": {
+    "at": "2026-10-28T20:53:25.202Z",
+    "type": "perm",
+    "fields": {
+      "priceModel": "tiered-by-income",
+      "rows": [],
+      "tiers": [
+        {
+          "houseType": "남원노암 39.63형",
+          "area": "26.37㎡",
+          "supplyUnits": 120,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 252,
+              "rent": 5
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 794,
+              "rent": 13
+            }
+          ]
+        },
+        {
+          "houseType": "남원노암 45.16형",
+          "area": "31.32㎡",
+          "supplyUnits": 50,
+          "incomes": [
+            {
+              "label": "가군 (생계·의료급여수급자 등)",
+              "deposit": 299,
+              "rent": 6
+            },
+            {
+              "label": "나군 (일반 등)",
+              "deposit": 902,
+              "rent": 14
+            }
+          ]
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "일반공고",
+      "progressStatus": "모집중"
+    }
   }
 }

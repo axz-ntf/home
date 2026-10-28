@@ -1,0 +1,67 @@
+{
+  "supplyTotal": 245,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "영구임대 일반(차목)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 50,
+        "byHousehold": null,
+        "note": "월평균 소득 50%이하(차목, 일반입주자)"
+      },
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "etc",
+      "name": "장애인(2순위)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 100,
+        "byHousehold": null,
+        "note": "월평균 소득 100%이하(타목, 2순위 장애인)"
+      },
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "etc",
+      "name": "국가유공자/북한이탈주민/장애인(1순위)/아동복지시설퇴소자",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": 70,
+        "byHousehold": null,
+        "note": "월평균 소득 70%이하(나목 국가유공자등, 마목 북한이탈주민, 바목 1순위 장애인, 아목 아동복지시설퇴소자)"
+      },
+      "asset": null,
+      "other": []
+    },
+    {
+      "id": "etc",
+      "name": "주거약자",
+      "units": 20,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "평택고덕A-2블록 26B(주거약자) 주택은 주거약자만 신청 가능",
+        "고령자(65세 이상), 장애인, 국가유공자(상이등급 1~7급), 보훈보상대상자(상이등급 1~7급), 5·18민주화운동부상자(신체장해등급 1~14급), 고엽제후유의증환자(경도 이상), 국가유공자에 준하는 군경 등(상이등급 1~7급) 중 영구임대 일반공급 자격을 갖춘 자"
+      ]
+    }
+  ],
+  "priority": [
+    "생계·의료급여 수급자",
+    "국가유공자",
+    "위안부 피해자",
+    "지원대상 한부모가족",
+    "65세 이상 직계존속부양자"
+  ]
+}
