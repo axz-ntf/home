@@ -5,6 +5,7 @@ import Link from "next/link";
 import { redirect, useRouter } from "next/navigation";
 import { EligibilityFields, INITIAL_FORM, canNext1, canNext2 } from "@/components/eligibility-fields";
 import { loadProfileFull, saveProfile } from "@/lib/profile";
+import { DdsIcon } from "@/components/dds-icon";
 import { Button } from "@/components/button";
 import type { EligibilityForm } from "@/lib/eligibility";
 
@@ -121,10 +122,7 @@ export default function ProfileEditPage() {
       <div className="profile-content">
         <div className="profile-hero">
           <div className="profile-avatar" aria-hidden>
-            <svg viewBox="0 0 24 24" width="38" height="38" fill="none">
-              <circle cx="12" cy="8.2" r="3.8" fill="currentColor" />
-              <path d="M4.5 20c0-3.6 3.4-6 7.5-6s7.5 2.4 7.5 6" fill="currentColor" />
-            </svg>
+            <DdsIcon name="person" size={40} />
           </div>
           <div className="profile-hero-name">{nickname || email || "내 프로필"}</div>
         </div>

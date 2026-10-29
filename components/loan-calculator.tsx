@@ -1,5 +1,8 @@
 "use client";
 
+import { DdsIcon } from "./dds-icon";
+import "./dds-components.css";
+
 import { useEffect, useState } from "react";
 import type { Listing } from "@/lib/types";
 import { HOUSING_TYPES } from "@/lib/mock-data";
@@ -116,7 +119,7 @@ export function LoanCalculator({ item }: { item: Listing }) {
         {profile ? (
           <strong>
             · 만 {profile.age}세{profile.newlywed ? " · 신혼" : ""}
-            {profile.annual > 0 ? ` · 연소득 ${comma(profile.annual)}만` : ""} ✓
+            {profile.annual > 0 ? ` · 연소득 ${comma(profile.annual)}만` : ""} <DdsIcon name="check" size={16}/>
           </strong>
         ) : (
           <em>프로필 미입력 — 최고 소득구간 금리로 계산</em>

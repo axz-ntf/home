@@ -207,7 +207,7 @@ async function main() {
   let okCount = 0;
   let skipCount = 0;
   let errCount = 0;
-  const startIdx = resume ? progress.done : 0;
+  const startIdx = 0; // 목록 순서는 매일 바뀐다. 인덱스로 resume 하지 않는다.
 
   // 병렬 처리 — N개 워커가 같은 인덱스 큐 소비.
   let nextIdx = startIdx;
@@ -229,7 +229,7 @@ async function main() {
       if (i >= notices.length) return;
       const n = notices[i];
 
-      if (n.details?.enrichedAt && n.photos?.length && n.details?.noticeStatus) {
+      if (resume && n.details?.enrichedAt && Date.now() - Date.parse(n.details.enrichedAt) < 86400000 && n.details?.noticeStatus) {
         skipCount++;
         if (i + 1 > progress.done) progress.done = i + 1;
         continue;

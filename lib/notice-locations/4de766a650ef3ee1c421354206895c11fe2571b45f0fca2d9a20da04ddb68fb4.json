@@ -1,0 +1,33 @@
+{
+  "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020491&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+  "collectedAt": "2026-10-28T06:06:50.223Z",
+  "locations": [
+    {
+      "address": "대구광역시 수성구 동대구로59길 14-19",
+      "units": 0,
+      "sourceLabel": "공고문 임대대상 단지 · 행정안전부 주소 확인",
+      "localUrl": "/notice-files/1d9e68435d0a79aa62790849f2e8f394be84ac885b3e6265751d293546346db3.pdf#page=2",
+      "evidence": "PDF 2쪽 임대대상 단지 표: ['대구\\n경북', '대구시', '수성구', '범어역 아이위시', '2013', '47', '178', '20', '', '2', '0', '6', ''] · 주소 API 건물명: 범어역 아이위시",
+      "lat": 35.8581711901074,
+      "lng": 128.623415381162,
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치"
+    },
+    {
+      "address": "대구광역시 달서구 상화로58길 35",
+      "units": 0,
+      "sourceLabel": "공고문 임대대상 단지 · 행정안전부 주소 확인",
+      "localUrl": "/notice-files/1d9e68435d0a79aa62790849f2e8f394be84ac885b3e6265751d293546346db3.pdf#page=2",
+      "evidence": "PDF 2쪽 임대대상 단지 표: [None, None, '달서구', '서한이다음 레이크뷰', '2015', '59', '633', '22', '', '3', '0', '15', ''] · 주소 API 건물명: 서한 이다음 레이크뷰",
+      "lat": 35.8073751484197,
+      "lng": 128.54604621855,
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치"
+    }
+  ],
+  "review": {
+    "status": "partial",
+    "message": "공고문 단지 중 주소 일치를 확인한 항목만 표시합니다. 나머지 단지 주소는 확인 중입니다.",
+    "evidence": "PDF 2쪽 임대대상 단지 표: ['대구\\n경북', '대구시', '수성구', '범어역 아이위시', '2013', '47', '178', '20', '', '2', '0', '6', '']",
+    "localUrl": "/notice-files/1d9e68435d0a79aa62790849f2e8f394be84ac885b3e6265751d293546346db3.pdf#page=2",
+    "sourceLabel": "공고문 임대대상 단지"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020481&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+  "collectedAt": "2026-10-28T06:06:50.226Z",
+  "locations": [
+    {
+      "address": "전북특별자치도 군산시 축동로 83",
+      "units": 0,
+      "sourceLabel": "공고문 임대대상 단지 · 행정안전부 주소 확인",
+      "localUrl": "/notice-files/06ca492e68dd414e13deeac09e75b522967a9a6fbb58872179955edb7557ff56.pdf#page=1",
+      "evidence": "PDF 1쪽 임대대상 단지 표: ['전북', '군산', '나운동', '수송코아루', '2009', '59', '392', '20', '2.3m', '2', '0', '5', ''] · 주소 API 건물명: 수송코아루아파트",
+      "lat": 35.9658140021792,
+      "lng": 126.709396414971,
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치"
+    },
+    {
+      "address": "전북특별자치도 군산시 계산로 90",
+      "units": 0,
+      "sourceLabel": "공고문 임대대상 단지 · 행정안전부 주소 확인",
+      "localUrl": "/notice-files/06ca492e68dd414e13deeac09e75b522967a9a6fbb58872179955edb7557ff56.pdf#page=1",
+      "evidence": "PDF 1쪽 임대대상 단지 표: ['전북', '군산', '지곡동', '엠코타운', '2015', '59', '502', '20', '2.3m', '1', '0', '5', ''] · 주소 API 건물명: 지곡동 엠코타운",
+      "lat": 35.9514514208023,
+      "lng": 126.714075419263,
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치"
+    }
+  ]
+}

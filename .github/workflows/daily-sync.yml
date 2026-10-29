@@ -1,318 +1,58 @@
-name: Daily LH Sync
-
-# 매일 KST 00:00 (UTC 15:00) 자동 실행 + 수동 dispatch 허용.
-# 신규 공고만 incremental 처리 — 이미 캐시된 매물은 모든 단계에서 skip.
+name: Daily housing data sync
 on:
   schedule:
-    # 하루 1회(KST 00:00). 2회 돌리던 것을 축소 — 월 사용량이 Actions 무료 한도(2,000분)를
-    # 넘어 2026-08-22부터 잔여 기간 전체가 결제 차단으로 멈췄던 문제 대응.
-    - cron: "0 15 * * *"  # UTC 15:00 = KST 00:00
+    - cron: '0 15 * * *'
   workflow_dispatch:
-
-# 중복 실행 방지 — 실행이 늘어져 다음 회차와 겹치면 이전 것을 취소하고 최신만 유지.
-# (겹쳐 돌면 LH API 레이트리밋·커밋 충돌로 되레 느려지던 문제 해결.)
 concurrency:
-  group: daily-lh-sync
-  cancel-in-progress: true
-
+  group: daily-housing-data-sync
+  cancel-in-progress: false
+permissions:
+  contents: write
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 180   # 실측 20분~2시간. 이 이상이면 어딘가 걸린 것이니 잘라 다음 회차에 맡김.
-
-    permissions:
-      contents: write       # 변경된 데이터 자동 commit + push
-
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 1
-          token: ${{ secrets.GITHUB_TOKEN }}
-
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-
+          cache: npm
       - run: npm ci
-
-      # 정부 서버(마이홈·VWorld 등)가 해외 IP 를 차단해 GH 러너에서 직접 fetch 불가 —
-      # Vercel icn1(서울) 프록시(/api/govproxy)로 우회 (scripts/lib/proxy-fetch.mjs).
-      # NODE_OPTIONS 는 러너가 GITHUB_ENV 로 설정을 금지(스크립트 인젝션 방지)하므로
-      # 차단 호스트를 치는 단계마다 step env 로 직접 지정한다 (NODE_OPTIONS --import ...).
-      - name: 정부 API 프록시 활성화 (해외 IP 차단 우회)
-        run: |
-          echo "GOV_PROXY_URL=https://public-housing-map.vercel.app/api/govproxy" >> "$GITHUB_ENV"
-          echo "GOV_PROXY_SECRET=${{ secrets.GOV_PROXY_SECRET }}" >> "$GITHUB_ENV"
-          echo "GOV_PROXY_HOSTS=apis.data.go.kr,www.myhome.go.kr,data.myhome.go.kr,api.vworld.kr" >> "$GITHUB_ENV"
-
-      # actions/cache 의 post-step save 는 job 성공 시에만 실행 → cancelled/timeout
-      # 시 영원히 cache 안 됨. 해결: restore/save 분리 + Phase 끝나자마자 즉시 save.
-      - name: Restore notice-texts cache
+      - name: Restore complex API cache
         uses: actions/cache/restore@v4
         with:
-          path: lib/notice-texts
-          key: notice-texts-v1-${{ github.run_id }}
-          restore-keys: notice-texts-v1-
-
-      - name: Restore notice-embeddings cache
-        uses: actions/cache/restore@v4
-        with:
-          path: lib/notice-embeddings
-          # v2: 중복 공고문 dedup 도입 + index/vectors desync 해소를 위한 1회 클린 리빌드.
-          key: notice-embeddings-v2-${{ github.run_id }}
-          restore-keys: notice-embeddings-v2-
-
-      - name: Restore lh-complexes cache
-        uses: actions/cache/restore@v4
-        with:
-          path: lib/lh-complexes.json
-          key: lh-complexes-v1-${{ github.run_id }}
-          restore-keys: lh-complexes-v1-
-
-      - name: Phase 1 — LH 공고 list sync (data.go.kr)
+          path: |
+            lib/lh-complexes.json
+            lib/lh-complexes.json.fetched-at
+          key: lh-complexes-v2-${{ github.run_id }}
+          restore-keys: lh-complexes-v2-
+      - name: Collect housing data with public APIs and official pages
         env:
           NODE_OPTIONS: --import ./scripts/lib/proxy-fetch.mjs
-          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-        run: |
-          node scripts/sync-myhome-all.mjs
-          node scripts/normalize-lh-notices.mjs
-
-      - name: Phase 2 — 상세 페이지 enrich (좌표·사진·일정·noticeStatus)
-        run: |
-          node scripts/enrich-lh-details.mjs --resume
-          node scripts/enrich-complexes.mjs
-
-      - name: Phase 3 — 공고문 PDF → markdown (Solar Document Parse)
-        env:
-          SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
-        run: |
-          node scripts/enrich-notice-text.mjs --limit 9999 --active-only
-          node scripts/enrich-notice-text.mjs --limit 9999 --active-only --from-api
-          # 청년안심(민간임대) 공고문 PDF → md — 전날 sync-youth(Phase 8)가 커밋한
-          # youth-notices.json 기준. Phase 4 임베딩 전에 실행해야 RAG 인덱스에 포함됨.
-          npx tsx scripts/enrich-youth-text.ts --limit 9999
-
-      # 캐시 즉시 저장 — Phase 3 가 1시간 37분 걸리는 가장 비싼 단계.
-      # 이후 step 이 timeout/실패해도 이 cache 는 보존 → 다음 run 부터 hit.
-      - name: Save notice-texts cache (즉시)
-        if: always()
-        uses: actions/cache/save@v4
-        with:
-          path: lib/notice-texts
-          key: notice-texts-v1-${{ github.run_id }}
-
-      - name: Phase 3.5 — markdown 표 → supply / 임대조건 정형 추출 (regex)
-        # PDF→md 의 모집세대수·보증금·월세 표를 결정론적으로 파싱 → listings-api 정정.
-        # LH API 부정확 값 (supplyUnits=1 등) / null 임대조건 보강. 데이터 정합성 최우선.
-        run: node scripts/extract-supply-from-md.mjs --force
-
-      - name: Phase 4 — 임베딩 인덱스 (Solar embedding)
-        env:
-          SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
-        run: |
-          node scripts/embed-notice-texts.mjs --limit 9999
-
-      - name: Save notice-embeddings cache (즉시)
-        if: always()
-        uses: actions/cache/save@v4
-        with:
-          path: lib/notice-embeddings
-          key: notice-embeddings-v2-${{ github.run_id }}
-
-      - name: Phase 5 — 자격 정보 구조화 추출 (Claude)
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
-        run: node scripts/extract-eligibility.mjs --limit 9999
-
-      - name: Phase 6a — cover 사진 Blob 업로드
-        env:
-          BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
-        run: node scripts/upload-covers-to-blob.mjs
-
-      # 임베딩 인덱스를 Supabase Postgres(pgvector)로 적재. (이전: Vercel Blob — vectors.bin 이
-      # 1GB Hobby 한도를 넘어 매일 업로드 실패했음.) DB 적재는 대량 마이그레이션이라 DIRECT_URL
-      # (세션 풀러 5432) 사용. 실패해도 데이터 commit 은 계속(다음 run 재시도).
-      # 증분 적재 — 변경된 공고만 delete+insert (이전 전량 재적재 16분/일이 무료 한도 초과 주범).
-      # 청킹 로직을 바꾼 리빌드 뒤에는 로컬에서 --full 로 1회 전량 재적재할 것.
-      - name: Phase 6b — 임베딩 인덱스 Supabase(pgvector) 적재 (실패 허용)
-        continue-on-error: true
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
-          DIRECT_URL: ${{ secrets.DIRECT_URL }}
-        run: node scripts/upload-vectors-to-db.mjs
-
-      - name: Phase 7 — 최종 sync (LH 공공데이터 API + 좌표 보강)
-        env:
-          NODE_OPTIONS: --import ./scripts/lib/proxy-fetch.mjs
+          GOV_PROXY_URL: https://public-housing-map.vercel.app/api/govproxy
+          GOV_PROXY_SECRET: ${{ secrets.GOV_PROXY_SECRET }}
+          GOV_PROXY_HOSTS: apis.data.go.kr,www.myhome.go.kr,data.myhome.go.kr,api.vworld.kr,apply.lh.or.kr,www.i-sh.co.kr,soco.seoul.go.kr,housing.seoul.go.kr
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
           VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
           KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
-        run: node scripts/sync-lh-api.mjs
-
-      # 잔여세대·선착순·일반매각 등 좌표 못 받은 활성 공고를 address 로 지오코딩 보강
-      # (지도 기반이라 좌표 없으면 안 뜸). sync-lh-api 뒤에 실행해 비워진 좌표도 재보강. 증분.
-      - name: Phase 7.1 — 좌표 없는 활성 매물 지오코딩 보강
-        continue-on-error: true
-        env:
-          NODE_OPTIONS: --import ./scripts/lib/proxy-fetch.mjs
-          VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
-          KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
-        run: node scripts/geocode-missing-coords.mjs
-
-      # 최종 sync 로 listings-api 가 갱신된 뒤 신규 매물의 단지조감도 크롤(기존은 skip)
-      # → Blob 업로드. sync-lh-api 가 기존 cover 는 보존하므로 매일 신규분만 처리.
-      - name: Phase 7.5 — 단지조감도 크롤 + Blob 업로드 (신규 매물)
-        continue-on-error: true
-        env:
-          BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
-        run: |
-          node scripts/enrich-photos-api.mjs
-          node scripts/upload-covers-to-blob.mjs
-
-      # 다지점 공고(여러 단지/지역)를 단지별 핀으로 지도 분리 — .md 단지목록 AI 추출 +
-      # VWorld 지오코딩. 제목 사전필터로 후보만 검사(비용↓). 이미 분리된 건 skip.
-      - name: Phase 7.6 — 다지점 공고 지도 분리 (AI + 지오코딩)
-        continue-on-error: true
-        env:
-          NODE_OPTIONS: --import ./scripts/lib/proxy-fetch.mjs
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
-          VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
-          KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
-        run: node scripts/extract-mapped-regional.mjs --active
-
-      # "전국 모집"에 잘못 떨어진 단일 공고(제목에 시·군·구 명확)를 지역 단위 지도 핀으로 이동.
-      # 다지점 분리(7.6) 다음에 실행 — 이미 분리된 pid 는 skip. 시/도만 넓은 광역은 잔류.
-      - name: Phase 7.6b — 단일 지역 공고 지오코딩 → 지도 이동
-        continue-on-error: true
-        env:
-          NODE_OPTIONS: --import ./scripts/lib/proxy-fetch.mjs
-          VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
-          KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
-        run: node scripts/geocode-regional-singles.mjs --active
-
-      # (비활성 2026-07-03) 매입임대·든든전세 "지도 핀 분리"는 매물수 폭증으로 제외 (T-004 2단계에서 재검토).
-      # 대신 data-only 모드로 주택목록 집계만 — 상세 "공급 주택" 표 + 카드 보증금 범위 (T-004 1단계).
-      - name: Phase 7.6c — 광역 공고 주택목록 집계 (data-only)
-        continue-on-error: true
-        env:
-          SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
-        run: node scripts/enrich-housing-xlsx.mjs --data-only --active
-
-      # 분리된 다지점 단지마다 제 조감도 크롤(없으면 비움) → Blob 업로드.
-      - name: Phase 7.7 — 다지점 단지별 조감도 크롤 + Blob 업로드
-        continue-on-error: true
-        env:
-          BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
-        run: |
-          node scripts/enrich-mapped-covers.mjs
-          node scripts/upload-covers-to-blob.mjs
-
-      # 활성 LH 공고의 평면도 이미지 → Claude 비전으로 3D 평면도 스펙 생성(없는 건만).
-      # 최종 sync(Phase 7) 뒤라 최신 활성 매물 기준. 이미 스펙 있는 공고는 skip(비용↓).
-      - name: Phase 7.8 — 평면도 3D 스펙 추출 (Claude 비전)
-        continue-on-error: true
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: npx tsx scripts/extract-floorplans.ts
-
-      # LH 접수결과/신청현황 공지 첨부 PDF → 공고별 경쟁률 (lib/competition.json).
-      # LH 는 경쟁률 API 미제공 (청약홈 API 도 LH 자체접수 공고 미커버) — 공지 첨부가 유일한 소스.
-      # 캐시(competition-notices.json) 기반 증분이라 하루 신규 1~3건만 처리됨.
-      - name: Phase 7.9 — 접수결과 공지 → 경쟁률 추출
-        continue-on-error: true
-        env:
-          NODE_OPTIONS: --import ./scripts/lib/proxy-fetch.mjs
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-          SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
-        run: node scripts/sync-competition.mjs --days 30 --limit 20
-
-      # SH(서울주거포털)·청년안심주택(soco) 공고 sync — 어드민 검수 큐 공급원.
-      # sync-sh 가 sh-notices.json 을 전체 재작성하므로 geocode-sh 를 바로 뒤에 실행해
-      # 좌표(lat/lng) 재부여 (geocode-sh 는 매 실행 전 건 재지오코딩). 스크래핑이라 실패 허용.
-      - name: Phase 8 — SH·청년안심 공고 sync
-        continue-on-error: true
-        env:
-          NODE_OPTIONS: --import ./scripts/lib/proxy-fetch.mjs
-          VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
-        run: |
-          node scripts/sync-sh.mjs
-          node scripts/geocode-sh.mjs
-          node scripts/sync-youth.mjs
-
-      # 신규 SH 메가공고(행복주택·장기전세 등 시단위) 단지별 분리 — 이미 분리된 seq 는 skip.
-      - name: Phase 8.5 — SH 다지점 공고 단지 분리 (AI + 지오코딩)
-        continue-on-error: true
-        env:
-          NODE_OPTIONS: --import ./scripts/lib/proxy-fetch.mjs
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          VWORLD_API_KEY: ${{ secrets.VWORLD_API_KEY }}
-          SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
-        run: node scripts/extract-sh-mapped.mjs
-
-      # 검수 큐(미검수+이슈) 야간 일괄 추출 → 초안(extract-drafts.json) 커밋.
-      # 검수자는 아침에 "초안 불러오기"로 대기 없이 확인·저장 (어드민 P5).
-      - name: Phase 9 — 검수 큐 일괄 추출 초안
-        continue-on-error: true
-        env:
-          SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
-        run: npx tsx scripts/batch-extract.ts --limit 15
-
-      # 주변입지 분석 사전 계산 — 신규 좌표만 Solar 로 계산해 insight-cache.json 증분 갱신.
-      # 커밋 → 재배포되면 /api/insight 가 시드 캐시로 즉시 응답 (사용자 대기 0초).
-      # MOLIT_API_KEY 없으면 인근 시세 텍스트만 빠진 채 저장됨 (graceful).
-      - name: Phase 9.5 — 주변입지 분석 캐시 warm (신규 좌표만)
-        continue-on-error: true
-        env:
-          NODE_OPTIONS: --import ./scripts/lib/proxy-fetch.mjs
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          SOLAR_API_KEY: ${{ secrets.SOLAR_API_KEY }}
-          KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
-          MOLIT_API_KEY: ${{ secrets.MOLIT_API_KEY }}
-        run: npx tsx scripts/warm-insight.ts --limit 200
-
-      - name: Save lh-complexes cache (즉시)
+        run: node scripts/sync-api-first.mjs --data-only
+      - name: Save complex API cache
         if: always()
         uses: actions/cache/save@v4
         with:
-          path: lib/lh-complexes.json
-          key: lh-complexes-v1-${{ github.run_id }}
-
-      - name: Commit & push data updates
+          path: |
+            lib/lh-complexes.json
+            lib/lh-complexes.json.fetched-at
+          key: lh-complexes-v2-${{ github.run_id }}
+      - name: Commit verified data updates
         run: |
-          git config user.name  "doongji-bot"
-          git config user.email "bot@doongji.local"
-          # gitignored 파일 (vectors.bin, lh-covers/) 은 자동 제외됨.
-          # blob-covers.json, blob-vectors.json, listings-api.json, lh-notices-all.json 등은 commit 대상.
-          git add lib/ || true
-          if git diff --cached --quiet; then
-            echo "No data changes — skip commit"
-            exit 0
-          fi
+          git config user.name 'doongji-bot'
+          git config user.email 'bot@doongji.local'
+          git add -u lib/
+          if git diff --cached --quiet; then exit 0; fi
           git commit -m "data: daily sync $(date -u +%Y-%m-%dT%H:%MZ)"
-          # workflow 도는 동안 다른 push 가 있을 수 있어 rebase 후 retry.
-          # rebase 충돌 시: extract-drafts.json 은 키 단위 병합(양쪽 추가 모두 보존),
-          # 그 외 데이터 파일은 이 run 이 방금 재생성한 값(rebase 의 theirs)이 최신이라 그쪽 우선.
-          for i in 1 2 3; do
-            if git push; then
-              echo "push success (attempt $i)"
-              exit 0
-            fi
-            echo "push rejected, fetching + rebasing (attempt $i)"
-            if ! git pull --rebase origin main; then
-              if git status --porcelain | grep -q "^UU lib/extract-drafts.json"; then
-                node scripts/merge-drafts.mjs
-                git add lib/extract-drafts.json
-              fi
-              conflicted=$(git status --porcelain | awk '$1=="UU"{print $2}')
-              if [ -n "$conflicted" ]; then
-                echo "$conflicted" | xargs git checkout --theirs --
-                echo "$conflicted" | xargs git add --
-              fi
-              GIT_EDITOR=true git rebase --continue || git rebase --skip || git rebase --abort
-            fi
-          done
-          echo "push failed after 3 retries"
-          exit 1
+          git pull --rebase origin main
+          git push origin HEAD:main

@@ -1,0 +1,35 @@
+/* Native table composition; interactive chips use the official DDS component. */
+.nw-page { height: 100dvh; overflow-y: auto; -webkit-overflow-scrolling: touch; background: var(--dds-background-surface-on); color: var(--dds-text-primary); font-family: var(--daum-font); }
+.nw-container { max-width: 1080px; margin: 0 auto; padding: var(--dds-spacing-32) var(--dds-spacing-24) var(--dds-spacing-40); }
+.nw-page-heading { margin-bottom: var(--dds-spacing-24); }
+.nw-back { display: inline-flex; align-items: center; gap: var(--dds-spacing-8); color: var(--dds-text-secondary); font-size: var(--dds-typography-caption-strong-size); font-weight: 600; text-decoration: none; margin-bottom: var(--dds-spacing-24); }
+.nw-page-heading h1 { margin: 0; font-size: var(--dds-typography-title-xl-size); font-weight: var(--dds-typography-title-xl-weight); }
+.nw-page-heading p { margin: var(--dds-spacing-12) 0 0; max-width: 720px; font-size: var(--dds-typography-body-sm-normal-size); color: var(--dds-text-quaternary); line-height: 1.6; }
+.nw-filters { display: flex; flex-wrap: wrap; gap: var(--dds-spacing-8); margin-bottom: var(--dds-spacing-24); }
+.nw-empty { text-align: center; padding: var(--dds-spacing-40) var(--dds-spacing-24); color: var(--dds-text-quaternary); font-size: var(--dds-typography-body-md-normal-size); }
+.nw-board { background: var(--dds-background-surface-base); border: 1px solid var(--dds-border-card); border-radius: var(--dds-radius-12); overflow: hidden; }
+.nw-head, .nw-row { display: grid; grid-template-columns: 112px minmax(0, 1fr) 100px 100px 100px; align-items: center; gap: var(--dds-spacing-16); padding: var(--dds-spacing-16) var(--dds-spacing-20); }
+.nw-head { font-size: var(--dds-typography-caption-strong-size); font-weight: 600; color: var(--dds-text-secondary); background: var(--dds-background-surface-on); border-bottom: 1px solid var(--dds-border-divider-section); }
+.nw-row { border-bottom: 1px solid var(--dds-border-divider-item); text-decoration: none; color: inherit; transition: background 120ms ease; }
+.nw-row:last-child { border-bottom: 0; }
+.nw-row:hover { background: var(--dds-background-state-hover); }
+.nw-row:focus-visible, .nw-back:focus-visible { outline: 2px solid var(--dds-border-focus); outline-offset: -2px; }
+.nw-type { display: inline-flex; flex-direction: column; gap: var(--dds-spacing-8); align-items: flex-start; }
+.nw-status { padding: var(--dds-spacing-4) var(--dds-spacing-8); border-radius: var(--dds-radius-4); font-size: var(--dds-typography-label-strong-size); font-weight: 600; white-space: nowrap; }
+.nw-type-label { font-size: var(--dds-typography-label-normal-size); color: var(--dds-text-quaternary); }
+.nw-title { min-width: 0; }
+.nw-listing-title { display: block; font-size: var(--dds-typography-body-sm-strong-size); font-weight: 600; line-height: 1.5; word-break: keep-all; overflow-wrap: anywhere; }
+.nw-meta { display: block; margin-top: var(--dds-spacing-8); font-size: var(--dds-typography-caption-normal-size); color: var(--dds-text-quaternary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.nw-announce, .nw-winner, .nw-deadline { text-align: right; font-size: var(--dds-typography-caption-normal-size); color: var(--dds-text-quaternary); font-variant-numeric: tabular-nums; }
+.nw-deadline-date { display: block; color: var(--dds-text-secondary); }
+.nw-dday { display: block; margin-top: var(--dds-spacing-4); font-size: var(--dds-typography-label-strong-size); font-weight: 600; }
+.nw-dday.is-urgent { color: var(--dds-text-state-accent); }
+@media (max-width: 760px) {
+  .nw-container { padding: var(--dds-spacing-24) var(--dds-spacing-16) var(--dds-spacing-40); }
+  .nw-head { display: none; }
+  .nw-row { grid-template-columns: 1fr auto; grid-template-areas: "type meta" "title title"; gap: var(--dds-spacing-12); padding: var(--dds-spacing-16); }
+  .nw-type { grid-area: type; flex-direction: row; align-items: center; }
+  .nw-title { grid-area: title; }
+  .nw-announce, .nw-winner { display: none; }
+  .nw-deadline { grid-area: meta; }
+}

@@ -1,0 +1,43 @@
+{
+  "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020480&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+  "collectedAt": "2026-10-28T06:06:50.227Z",
+  "locations": [
+    {
+      "address": "경기도 수원시 권선구 동수원로146번길 281-25",
+      "units": 0,
+      "sourceLabel": "공고문 임대대상 단지 · 행정안전부 주소 확인",
+      "localUrl": "/notice-files/c59c596fdd7dd0a79f5053cbfa0dd93c2657d65431c6cea6d6fb83a96207fa99.pdf#page=2",
+      "evidence": "PDF 2쪽 임대대상 단지 표: ['경기도', '수원시', '곡반정동', '권선신일유토빌', '2013', '59', '243', '15', '2.3', '2', '0', '5', '(2)'] · 주소 API 건물명: 권선신일유토빌",
+      "lat": 37.2404020288328,
+      "lng": 127.029649954764,
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치"
+    },
+    {
+      "address": "경기도 수원시 권선구 서수원로577번길 263",
+      "units": 0,
+      "sourceLabel": "공고문 임대대상 단지 · 행정안전부 주소 확인",
+      "localUrl": "/notice-files/c59c596fdd7dd0a79f5053cbfa0dd93c2657d65431c6cea6d6fb83a96207fa99.pdf#page=2",
+      "evidence": "PDF 2쪽 임대대상 단지 표: ['경기도', '수원시', '금곡동', '호매실더센트라고(1)', '2014', '59', '450', '19', '2.2', '3', '0', '10', '(0)'] · 주소 API 건물명: 호매실 더 센트라고",
+      "lat": 37.2762105489711,
+      "lng": 126.94318270798,
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치"
+    },
+    {
+      "address": "경기도 평택시 서재로 36",
+      "units": 0,
+      "sourceLabel": "공고문 임대대상 단지 · 행정안전부 주소 확인",
+      "localUrl": "/notice-files/c59c596fdd7dd0a79f5053cbfa0dd93c2657d65431c6cea6d6fb83a96207fa99.pdf#page=2",
+      "evidence": "PDF 2쪽 임대대상 단지 표: ['경기도', '평택시', '동삭동', '서재자이아파트', '2014', '59', '802', '23', '2.3', '8', '0', '10', '(2)'] · 주소 API 건물명: 서재자이아파트",
+      "lat": 37.0119899711589,
+      "lng": 127.1016854295,
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치"
+    }
+  ],
+  "review": {
+    "status": "partial",
+    "message": "공고문 단지 중 주소 일치를 확인한 항목만 표시합니다. 나머지 단지 주소는 확인 중입니다.",
+    "evidence": "PDF 2쪽 임대대상 단지 표: ['경기도', '수원시', '곡반정동', '권선신일유토빌', '2013', '59', '243', '15', '2.3', '2', '0', '5', '(2)']",
+    "localUrl": "/notice-files/c59c596fdd7dd0a79f5053cbfa0dd93c2657d65431c6cea6d6fb83a96207fa99.pdf#page=2",
+    "sourceLabel": "공고문 임대대상 단지"
+  }
+}

@@ -92,6 +92,7 @@ async function docParse(pdfBuf: Buffer, filename: string): Promise<string> {
     method: "POST",
     headers: { Authorization: `Bearer ${KEY}` },
     body: form,
+    signal: AbortSignal.timeout(120000),
   });
   if (!r.ok) throw new Error(`Document Parse 실패 (${r.status}): ${(await r.text()).slice(0, 200)}`);
   return assembleMarkdown(await r.json());
@@ -99,12 +100,12 @@ async function docParse(pdfBuf: Buffer, filename: string): Promise<string> {
 
 // sourceUrl(LH 공고 상세 페이지) → 공고문 PDF → Document Parse → 마크다운.
 export async function parseNoticeFromSource(sourceUrl: string): Promise<string> {
-  const detail = await fetch(sourceUrl, { headers: { "User-Agent": UA } });
+  const detail = await fetch(sourceUrl, { signal: AbortSignal.timeout(30000), headers: { "User-Agent": UA } });
   if (!detail.ok) throw new Error(`공고 상세 페이지 로드 실패 (${detail.status})`);
   const html = await detail.text();
   const pdf = pickNoticePdf(html);
   if (!pdf) throw new Error("공고 페이지에서 공고문 PDF 를 찾지 못했습니다.");
-  const dl = await fetch(PDF_BASE + pdf.fileid, { headers: { "User-Agent": UA } });
+  const dl = await fetch(PDF_BASE + pdf.fileid, { signal: AbortSignal.timeout(30000), headers: { "User-Agent": UA } });
   if (!dl.ok) throw new Error(`PDF 다운로드 실패 (${dl.status})`);
   return docParse(Buffer.from(await dl.arrayBuffer()), pdf.name);
 }
@@ -137,6 +138,7 @@ async function resolveYouthMarkdown(id: string): Promise<string> {
 export async function resolveMarkdown(
   id: string,
   sourceUrl: string | null,
+  fresh = false,
 ): Promise<{ markdown: string; source: MarkdownSource }> {
   if (id.startsWith("sh-")) {
     return { markdown: await resolveShMarkdown(id), source: "parsed" };
@@ -144,7 +146,7 @@ export async function resolveMarkdown(
   if (id.startsWith("youth-")) {
     return { markdown: await resolveYouthMarkdown(id), source: "parsed" };
   }
-  const cached = await readCachedMarkdown(id);
+  const cached = fresh ? null : await readCachedMarkdown(id);
   if (cached) return { markdown: cached, source: "cache" };
   if (!sourceUrl) throw new Error("캐시가 없고 sourceUrl 도 없어 공고문을 가져올 수 없습니다.");
   return { markdown: await parseNoticeFromSource(sourceUrl), source: "parsed" };

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import type { FloorPlanSpec, MaterialRef } from "@/lib/floorplan-spec";
+import { Button } from "./button";
 
 // 스펙(JSON) → 3D 씬. 코드는 여기 한 곳에만 있고, 공고별로 바뀌는 건 spec 데이터뿐.
 // 브라우저 API는 전부 useEffect 안에서만 접근 → SSR 안전.
@@ -297,9 +298,9 @@ export default function FloorPlan3D({ spec, height = 520 }: { spec: FloorPlanSpe
   }, [spec, height]);
 
   return (
-    <div style={{ position: "relative", width: "100%", height, borderRadius: 12, overflow: "hidden", background: "#efe9df" }}>
+    <div style={{ position: "relative", width: "100%", height, borderRadius: "var(--dds-radius-12)", overflow: "hidden", background: "var(--dds-background-surface-base)" }}>
       <div ref={mountRef} style={{ width: "100%", height: "100%" }} />
-      <div style={{ position: "absolute", top: 12, left: 12, display: "flex", gap: 6 }}>
+      <div style={{ position: "absolute", top: "var(--dds-spacing-12)", left: "var(--dds-spacing-12)", right: "var(--dds-spacing-12)", display: "flex", flexWrap: "wrap", gap: "var(--dds-spacing-6)" }}>
         <FpButton
           on={lowWall}
           label={lowWall ? "벽 올리기" : "벽 낮추기"}
@@ -310,11 +311,12 @@ export default function FloorPlan3D({ spec, height = 520 }: { spec: FloorPlanSpe
           label="자동 회전"
           onClick={() => { ctrlRef.current?.toggleSpin(); setSpinning((v) => !v); }}
         />
-        <FpButton on={false} label="위에서 보기" onClick={() => ctrlRef.current?.topView()} />
+        <Button size="sm" color="inverse" variant="outline" onClick={() => ctrlRef.current?.topView()}>위에서 보기</Button>
       </div>
       <div style={{
-        position: "absolute", bottom: 10, right: 12, fontSize: 11, color: "#8a7f6f",
-        background: "rgba(255,253,248,.85)", border: "1px solid #d8cfc0", borderRadius: 8, padding: "5px 9px",
+        position: "absolute", bottom: "var(--dds-spacing-12)", right: "var(--dds-spacing-12)", left: "var(--dds-spacing-12)", width: "fit-content", maxWidth: "calc(100% - 24px)", marginLeft: "auto",
+        fontSize: "var(--dds-typography-label-normal-size)", color: "var(--dds-text-quaternary)",
+        background: "var(--dds-background-surface-base)", border: "1px solid var(--dds-border-card)", borderRadius: "var(--dds-radius-8)", padding: "var(--dds-spacing-6) var(--dds-spacing-8)",
       }}>
         {spec.meta.widthMm.toLocaleString()} × {spec.meta.depthMm.toLocaleString()} mm · 벽고 {spec.meta.wallHeightMm.toLocaleString()}
       </div>
@@ -324,17 +326,14 @@ export default function FloorPlan3D({ spec, height = 520 }: { spec: FloorPlanSpe
 
 function FpButton({ on, label, onClick }: { on: boolean; label: string; onClick: () => void }) {
   return (
-    <button
-      type="button"
+    <Button
+      size="sm"
+      variant={on ? "solid" : "outline"}
+      color={on ? "primary" : "inverse"}
+      aria-pressed={on}
       onClick={onClick}
-      style={{
-        font: "inherit", fontSize: 12, padding: "6px 10px", borderRadius: 7, cursor: "pointer",
-        border: `1px solid ${on ? "#b5754a" : "#d8cfc0"}`,
-        background: on ? "#b5754a" : "#fff",
-        color: on ? "#fff" : "#2b2620",
-      }}
     >
       {label}
-    </button>
+    </Button>
   );
 }

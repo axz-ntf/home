@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { FilterKey, Filters } from "@/lib/types";
 import { ChevronIcon } from "./icons";
+import "./dds-components.css";
 
 type FilterOption = { value: string; label: string };
 type FilterConfigEntry = { label: string; options: FilterOption[] };
@@ -70,7 +71,7 @@ function FilterPopover({
   };
 
   return (
-    <div ref={ref} className="filter-popover">
+    <div ref={ref} className="filter-popover" id={`desktop-filter-${filterKey}`} role="group" aria-label={config.label}>
       <ul className="filter-grid">
         {config.options.map((opt) => {
           const active = selected.includes(opt.value);
@@ -110,6 +111,8 @@ export function FilterBar({
     <div className="filterbar">
       <div className="filterbar-chips">
         <button
+          type="button"
+          aria-pressed={isAll}
           className={`filter-chip filter-chip-all ${isAll ? "active" : ""}`}
           onClick={() => {
             onReset();
@@ -125,12 +128,15 @@ export function FilterBar({
           return (
             <div key={key} className="filterbar-chip-wrap">
               <button
+                type="button"
+                aria-expanded={isOpen}
+                aria-controls={`desktop-filter-${key}`}
                 className={`filter-chip ${active ? "active" : ""} ${isOpen ? "open" : ""}`}
                 onClick={() => setOpenKey(isOpen ? null : key)}
               >
                 {FILTER_CONFIG[key].label}
                 {active && <span className="filter-chip-count">{sel.length}</span>}
-                <ChevronIcon size={10} dir={isOpen ? "up" : "down"} />
+                <ChevronIcon size={16} dir={isOpen ? "up" : "down"} />
               </button>
               {isOpen && (
                 <FilterPopover

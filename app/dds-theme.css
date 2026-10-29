@@ -1,0 +1,95 @@
+/* DDS component adapters. All foundations load before application styles. */
+/* <dds-button> 호스트는 inline-flex 라 fullWidth 여도 부모 칸을 안 채움 → 기존 .abtn--full 과 같게 */
+dds-button.dds-full { display: flex; flex: 1 1 0; width: 100%; min-width: 0; }
+
+/* 상세 상단 배지 줄 (제목 위) */
+.detail-badges { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
+
+/* 모집 일정 — DDS 목업의 가로 단계 */
+.dds-steps { list-style: none; margin: 4px 0 0; padding: 0; display: grid; position: relative; }
+.dds-steps::before { content: ""; position: absolute; left: 12%; right: 12%; top: 7px; height: 2px; background: var(--dds-border-divider-section); }
+.dds-step { position: relative; display: grid; justify-items: center; gap: 4px; text-align: center; }
+.dds-step i { width: 16px; height: 16px; border-radius: 50%; background: var(--dds-background-surface-base); border: 2px solid var(--dds-border-divider-inline); }
+.dds-step--done i { background: var(--dds-text-subtle); border-color: var(--dds-text-subtle); }
+.dds-step--now i { background: var(--dds-background-interaction-primary); border-color: var(--dds-background-interaction-primary); box-shadow: 0 0 0 4px var(--dds-background-state-info-subtle); }
+.dds-step b { font-size: var(--dds-typography-caption-strong-size); font-weight: 700; color: var(--dds-text-secondary); }
+.dds-step--now b { color: var(--dds-text-state-info); }
+.dds-step span { font-size: var(--dds-typography-label-normal-size); color: var(--dds-text-subtle); font-variant-numeric: tabular-nums; }
+
+/* 섹션 구분 띠 — styles.css 의 고정색(#f2f4f6)을 DDS base 로 */
+.detail-section { border-top-color: var(--dds-background-base); }
+
+/* Shared native adapters for form and accessibility semantics that live outside
+   a Web Component's shadow root. Values mirror the official DDS controls. */
+*, *::before, *::after { box-sizing: border-box; }
+body { font-size: var(--dds-typography-body-sm-normal-size); line-height: 1.4; word-break: keep-all; overflow-wrap: break-word; -webkit-font-smoothing: antialiased; }
+::selection { background: var(--dds-background-surface-highlight); color: var(--dds-text-primary); }
+:where(button, a, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--dds-border-focus); outline-offset: 3px;
+}
+:where(input, select, textarea) { color: var(--dds-text-primary); accent-color: var(--dds-background-interaction-primary); }
+:where(input[type="checkbox"], input[type="radio"]) { width: 20px; height: 20px; flex-shrink: 0; }
+:where(input, select, textarea):disabled { color: var(--dds-text-disabled); cursor: not-allowed; }
+:where(input, textarea)::placeholder { color: var(--dds-text-subtle); }
+:where(input, select, textarea)[aria-invalid="true"] { border-color: var(--dds-border-input-error); }
+
+/* Kept in one place so native form/ARIA controls match dds-button. */
+.abtn {
+  position: relative; display: inline-flex; align-items: center; justify-content: center;
+  gap: var(--dds-spacing-4); border: 1px solid transparent; border-radius: var(--dds-radius-8);
+  font-family: inherit; font-weight: var(--dds-typography-body-sm-strong-weight); line-height: 1.32;
+  white-space: nowrap; text-decoration: none; cursor: pointer; user-select: none;
+  transition: background-color .15s, color .15s, border-color .15s;
+}
+.abtn--full { width: 100%; }
+.abtn-ico { display: inline-flex; flex-shrink: 0; line-height: 0; }
+.abtn:hover:not(:disabled):not([aria-disabled="true"]):not(.is-disabled):not(.is-loading) {
+  background-image: linear-gradient(var(--dds-background-state-hover), var(--dds-background-state-hover));
+}
+.abtn:focus-visible { outline: 2px solid var(--dds-border-focus); outline-offset: 2px; }
+.abtn--sm { height: 32px; min-height: 32px; padding: var(--dds-spacing-6) var(--dds-spacing-8); font-size: var(--dds-typography-caption-strong-size); }
+.abtn--md { height: 36px; min-height: 36px; padding: var(--dds-spacing-8) var(--dds-spacing-12); font-size: var(--dds-typography-body-sm-strong-size); }
+.abtn--lg { height: 40px; min-height: 40px; padding: var(--dds-spacing-10) var(--dds-spacing-16); font-size: var(--dds-typography-body-sm-strong-size); }
+.abtn--xl { height: 44px; min-height: 44px; padding: var(--dds-spacing-12) var(--dds-spacing-16); font-size: var(--dds-typography-body-sm-strong-size); }
+.abtn--2xl { gap: var(--dds-spacing-8); height: 48px; min-height: 48px; padding: var(--dds-spacing-12) var(--dds-spacing-16); font-size: var(--dds-typography-body-md-strong-size); }
+.abtn--3xl { gap: var(--dds-spacing-8); height: 56px; min-height: 56px; padding: var(--dds-spacing-16) var(--dds-spacing-20); font-size: var(--dds-typography-body-lg-strong-size); line-height: 1.4; }
+.abtn--rounded { border-radius: var(--dds-radius-100); }
+.abtn--solid-primary { background: var(--dds-background-interaction-primary); color: var(--dds-text-static-white-primary); }
+.abtn--solid-secondary { background: var(--dds-background-interaction-secondary); color: var(--dds-text-inverse); }
+.abtn--solid-subtlest { background: var(--dds-background-interaction-subtlest); color: var(--dds-text-secondary); }
+.abtn--solid-neutral { background: var(--dds-background-interaction-neutral); color: var(--dds-text-secondary); }
+.abtn--solid-inverse { background: var(--dds-background-interaction-inverse); color: var(--dds-text-secondary); border-color: transparent; }
+.abtn--solid-ghost { background: transparent; color: var(--dds-text-secondary); }
+.abtn--solid-danger { background: var(--dds-background-interaction-danger); color: var(--dds-text-static-white-primary); }
+.abtn[class*="abtn--outline-"] { border-color: var(--dds-border-button-outline); font-weight: var(--dds-typography-body-sm-normal-weight); }
+.abtn--outline-primary { color: var(--dds-text-state-info); }
+.abtn--outline-secondary, .abtn--outline-ghost, .abtn--outline-inverse, .abtn--outline-subtlest, .abtn--outline-neutral { color: var(--dds-text-secondary); }
+.abtn--outline-danger { color: var(--dds-text-state-accent); }
+.abtn--outline-secondary, .abtn--outline-ghost { background: transparent; }
+.abtn--outline-subtlest { background: var(--dds-background-interaction-subtlest); }
+.abtn--outline-neutral { background: var(--dds-background-interaction-neutral); }
+.abtn--outline-inverse { background: var(--dds-background-interaction-inverse); }
+/* Loading retains its variant colors, just like the official component. */
+.abtn:is(:disabled, [aria-disabled="true"], .is-disabled, .is-loading) { cursor: not-allowed; }
+.abtn[class*="abtn--solid-"]:is(:disabled, [aria-disabled="true"], .is-disabled):not(.is-loading) { color: var(--dds-text-disabled); background: var(--dds-background-interaction-disabled); }
+.abtn.abtn--solid-ghost:is(:disabled, [aria-disabled="true"], .is-disabled):not(.is-loading) { background: transparent; }
+.abtn[class*="abtn--outline-"]:is(:disabled, [aria-disabled="true"], .is-disabled):not(.is-loading) { color: var(--dds-text-disabled); }
+.abtn.abtn--outline-primary:is(:disabled, [aria-disabled="true"], .is-disabled):not(.is-loading) { color: var(--dds-text-state-info); opacity: .4; }
+.abtn.abtn--outline-danger:is(:disabled, [aria-disabled="true"], .is-disabled):not(.is-loading) { color: var(--dds-text-state-accent); opacity: .4; }
+.abtn.is-loading .abtn-ico, .abtn.is-loading .abtn-label { visibility: hidden; }
+.abtn-spinner { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); --dds-spinner-size: 18px; --dds-spinner-color: var(--dds-icon-static-white-secondary); }
+.abtn[class*="abtn--outline-"] .abtn-spinner, .abtn--solid-ghost .abtn-spinner, .abtn--solid-inverse .abtn-spinner, .abtn--solid-neutral .abtn-spinner, .abtn--solid-subtlest .abtn-spinner { --dds-spinner-color: var(--dds-icon-subtlest); }
+.abtn--sm .abtn-spinner, .abtn--md .abtn-spinner { --dds-spinner-size: 16px; }
+.abtn--xl .abtn-spinner, .abtn--2xl .abtn-spinner { --dds-spinner-size: 20px; }
+.abtn--3xl .abtn-spinner { --dds-spinner-size: 24px; }
+.abtn--sm .abtn-ico { font-size: 12px; }
+.abtn--md .abtn-ico, .abtn--lg .abtn-ico { font-size: 16px; }
+.abtn--xl .abtn-ico, .abtn--2xl .abtn-ico { font-size: 16px; }
+.abtn--3xl .abtn-ico { font-size: 20px; }
+dds-button.dds-button-adapter { vertical-align: middle; }
+/* Reserve control geometry while the locally bundled custom elements register. */
+dds-button:not(:defined) { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 10px 16px; border-radius: var(--dds-radius-8); background: var(--dds-background-interaction-primary); color: var(--dds-text-inverse); font-size: var(--dds-typography-body-sm-normal-size); }
+dds-button:not(:defined)[size="sm"] { min-height: 32px; padding: 6px 8px; }
+dds-button:not(:defined)[size="md"] { min-height: 36px; padding: 8px 12px; }
+dds-button:not(:defined)[color="ghost"] { background: transparent; color: var(--dds-text-secondary); }
+@media (prefers-reduced-motion: reduce) { .abtn, .abtn::after, .abtn-spinner { transition: none; animation-duration: 1.5s; } }

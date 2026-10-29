@@ -1,4 +1,5 @@
 "use client";
+import { DdsIcon } from "@/components/dds-icon";
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -508,7 +509,7 @@ export default function ReviewForm({
       {/* 검수 큐 위치는 topbar(pageSub)·단축키는 상단 메타줄이 안내 — 중복 배너 제거 */}
       {override && (
         <div className="a-review-banner">
-          <span>✓ 검수됨 — {override._reviewedAt}</span>
+          <span><DdsIcon name="check" size={16}/> 검수됨 — {override._reviewedAt}</span>
           {override._note && <span className="note">메모: {override._note}</span>}
         </div>
       )}
@@ -601,12 +602,12 @@ export default function ReviewForm({
                 : "보증금 · 월세 · 공급 세대수. LH API 부정확값 정정.")}
         >
           <div style={{
-            display: "flex", alignItems: "center", gap: 12, padding: "10px 0",
+            display: "flex", alignItems: "center", gap: 12, padding: "8px 0",
             borderBottom: "1px dashed var(--a-line)",
           }}>
             <ModeToggle byRows={byRows} onChange={setByRows} />
             {byRows && (
-              <span style={{ fontSize: 11.5, color: "var(--a-ink-3)", marginLeft: "auto" }}>
+              <span style={{ fontSize: 12, color: "var(--a-ink-3)", marginLeft: "auto" }}>
                 총 공급 세대수: <strong style={{ color: "var(--a-ink)", fontVariantNumeric: "tabular-nums" }}>
                   {totalSupply != null ? totalSupply.toLocaleString() : "—"}
                 </strong>
@@ -684,7 +685,7 @@ export default function ReviewForm({
         </div>
 
         {current.announceDate && (
-          <div style={{ fontSize: 11, color: "var(--a-ink-3)", fontWeight: 500 }}>
+          <div style={{ fontSize: 12, color: "var(--a-ink-3)", fontWeight: 600 }}>
             공고일: <strong style={{ color: "var(--a-ink-2)", fontWeight: 700 }}>{current.announceDate}</strong> (자동 추출, 수정 불가)
           </div>
         )}
@@ -719,9 +720,9 @@ export default function ReviewForm({
             onClick={() => save(true)}
             disabled={busy}
             className="a-btn primary"
-            style={{ background: "var(--a-btn-dark)", color: "white" }}
+            style={{ background: "var(--a-btn-dark)", color: "var(--dds-text-static-white-primary)" }}
           >
-            {busy ? "저장 중..." : "저장하고 다음 →"}
+            {busy ? "저장 중..." : <>저장하고 다음 <DdsIcon name="arrow-right" size={16}/></>}
           </button>
         )}
         <span className="a-kbd-hint"><kbd>⌘S</kbd> · <kbd>⌘⏎</kbd></span>
@@ -759,24 +760,24 @@ function RowsEditor({
   onAdd: () => void;
 }) {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
       {rows.map((r, i) => (
         <div key={i} style={{
           padding: 12,
           border: "1px solid var(--a-line)",
-          borderRadius: 10,
+          borderRadius: 8,
           background: "var(--a-bg-2)",
           position: "relative",
         }}>
           <div style={{
             position: "absolute", top: 8, right: 8,
-            fontSize: 10.5, fontWeight: 800,
+            fontSize: 12, fontWeight: 700,
             color: "var(--a-ink-3)",
             letterSpacing: "0.04em",
           }}>
             #{i + 1}
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
             <RowField label="주택형" hint='예: "59A" / "84"'>
               <input
                 value={r.houseType}
@@ -835,17 +836,18 @@ function RowsEditor({
               type="button"
               onClick={() => onRemove(i)}
               style={{
-                marginTop: 8, padding: "5px 10px",
+                display: "inline-flex", alignItems: "center", gap: 4,
+                marginTop: 8, padding: "4px 8px",
                 background: "transparent",
                 border: "1px solid var(--a-line-2)",
-                borderRadius: 6,
-                fontSize: 11.5, fontWeight: 600,
+                borderRadius: 4,
+                fontSize: 12, fontWeight: 600,
                 color: "var(--a-ink-3)",
                 cursor: "pointer",
                 fontFamily: "inherit",
               }}
             >
-              × 이 평형 삭제
+              <DdsIcon name="delete" size={14}/> 이 평형 삭제
             </button>
           )}
         </div>
@@ -854,17 +856,18 @@ function RowsEditor({
         type="button"
         onClick={onAdd}
         style={{
-          padding: "10px 14px",
-          background: "white",
+          display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 4,
+          padding: "8px 12px",
+          background: "var(--a-bg)",
           border: "1.5px dashed var(--a-line-2)",
-          borderRadius: 10,
-          fontSize: 12.5, fontWeight: 700,
+          borderRadius: 8,
+          fontSize: 14, fontWeight: 700,
           color: "var(--a-carrot)",
           cursor: "pointer",
           fontFamily: "inherit",
         }}
       >
-        + 평형 추가
+        <DdsIcon name="add" size={16}/> 평형 추가
       </button>
     </div>
   );
@@ -873,8 +876,8 @@ function RowsEditor({
 function RowField({ label, hint, children }: { label: string; hint?: string; children: React.ReactNode }) {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-      <label style={{ fontSize: 11, fontWeight: 700, color: "var(--a-ink-2)" }}>{label}</label>
-      {hint && <span style={{ fontSize: 10, color: "var(--a-ink-3)" }}>{hint}</span>}
+      <label style={{ fontSize: 12, fontWeight: 700, color: "var(--a-ink-2)" }}>{label}</label>
+      {hint && <span style={{ fontSize: 12, color: "var(--a-ink-3)" }}>{hint}</span>}
       <div className="a-field">
         {children}
       </div>
@@ -908,7 +911,7 @@ function Field({ label, hint, orig, children }: { label: string; hint?: string; 
           {hint && <span className="hint">{hint}</span>}
         </div>
         <div className="c-orig">{orig}</div>
-        <span className="c-arrow" aria-hidden>→</span>
+        <span className="c-arrow" aria-hidden><DdsIcon name="arrow-right" size={16}/></span>
         <div className="c-input">{children}</div>
       </div>
     );
@@ -928,7 +931,7 @@ function OrigRef({ value, unit, bad }: { value: number | null | undefined; unit:
   return (
     <span className={`a-orig-ref ${has && bad ? "bad" : ""}`}>
       <span className="cap">LH 원본</span>
-      <strong>{has ? `${value.toLocaleString()}${unit}` : "—"}{has && bad ? " ⚠" : ""}</strong>
+      <strong>{has ? `${value.toLocaleString()}${unit}` : "—"}{has && bad && <span role="img" aria-label="값 확인 필요"><DdsIcon name="exclamation" size={14} style={{ marginLeft: 4 }}/></span>}</strong>
     </span>
   );
 }
@@ -939,7 +942,7 @@ function OrigRefText({ value, bad }: { value: string | null; bad?: boolean }) {
   return (
     <span className={`a-orig-ref ${has && bad ? "bad" : ""}`}>
       <span className="cap">LH 원본</span>
-      <strong>{has ? `${value}${bad ? " ⚠" : ""}` : "—"}</strong>
+      <strong>{has ? value : "—"}{has && bad && <span role="img" aria-label="값 확인 필요"><DdsIcon name="exclamation" size={14} style={{ marginLeft: 4 }}/></span>}</strong>
     </span>
   );
 }

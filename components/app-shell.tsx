@@ -1,11 +1,15 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from "react";
+import { HomeConditionsPanel, CompareTray } from "./home-discovery";
+import { useHomeConditions, useCompareSelection, useListingChanges } from "@/lib/use-home-discovery";
+import { conditionMatch, type HomeConditions } from "@/lib/home-discovery";
 import { comma } from "@/lib/format";
 import { useRouter } from "next/navigation";
 import { sendGAEvent } from "@next/third-parties/google";
 import Link from "next/link";
-import { MdOutlineSearch, MdClose } from "react-icons/md";
+import { DdsIcon } from "./dds-icon";
+import "./dds-components.css";
 import { NewsHomeIcon, GuideBookIcon, SaveBookmarkIcon, SparklesIcon, HandleIcon } from "./icons";
 import { isNewListing } from "@/lib/new-listings";
 import type { Density, District, Filters, HousingTypeId, Listing, SortKey } from "@/lib/types";
@@ -17,9 +21,15 @@ import { DetailPanel } from "./detail-panel";
 import { DetailAiPanel } from "./detail-ai-panel";
 import { EligibilityModal } from "./eligibility-modal";
 import { ChatPanelBody } from "./chat-panel-body";
+import { CompareClient } from "@/app/compare/compare-client";
+import "@/app/compare/compare.css";
 import { SavedClient } from "@/app/saved/saved-client";
 import { TweaksPanel } from "./tweaks-panel";
 import { MobileChrome } from "./mobile-chrome";
+
+const subscribeMounted = () => () => {};
+const clientMounted = () => true;
+const serverMounted = () => false;
 
 const INITIAL_FILTERS: Filters = {
   type: [],
@@ -60,15 +70,25 @@ export function AppShell({
   districts,
   regionalCount = 0,
   tips = [],
+  initialCompare = false,
 }: {
   listings: Listing[];
   districts: District[];
   regionalCount?: number;
   tips?: GuideTip[];
+  initialCompare?: boolean;
 }) {
   const router = useRouter();
+  const [conditions, setConditions] = useHomeConditions();
+  const [compareIds, setCompareIds] = useCompareSelection();
+  const { changes } = useListingChanges(listings);
+  const [onlyChanged, setOnlyChanged] = useState(false);
+  const validCompareIds = compareIds.filter(id => listings.some(l => l.id === id));
+  const toggleCompare = (id: string) => setCompareIds(validCompareIds.includes(id) ? validCompareIds.filter(x => x !== id) : validCompareIds.length < 3 ? [...validCompareIds, id] : validCompareIds);
+
   // "new" 는 홈의 드릴인 뷰 (사이드바 탭 없음) — 배너 클릭으로 진입, 뒤로가기로 홈 복귀.
-  const [activeSection, setActiveSection] = useState<"home" | "new" | "tips" | "saved" | "ai">("home");
+  const [activeSection, setActiveSection] = useState<"home" | "new" | "tips" | "saved" | "ai">(initialCompare ? "saved" : "home");
+  const [compareOpen, setCompareOpen] = useState(initialCompare);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [query, setQuery] = useState("");
   // 입력값(타이핑)과 적용된 검색어(query)를 분리 — 엔터 시에만 query 반영(라이브 필터 방지).
@@ -82,6 +102,7 @@ export function AppShell({
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [detailOpen, setDetailOpen] = useState(false);
+  const [aiFocusId, setAiFocusId] = useState<string | null>(null);
 
   const [tweaksOpen, setTweaksOpen] = useState(false);
   const [eliOpen, setEliOpen] = useState(false);
@@ -92,36 +113,35 @@ export function AppShell({
   const [sheetSnap, setSheetSnap] = useState<"hidden" | "expanded">("hidden");
   // 마운트 게이트 — 마감 여부(effectiveStatus)는 현재 시각 의존이라 SSR(빌드 시각)과 어긋나
   // 목록 필터/정렬 결과가 달라짐 → hydration #418. 마운트 전엔 원본 status 로 계산해 SSR과 일치시킨다.
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  const mounted = useSyncExternalStore(subscribeMounted, clientMounted, serverMounted);
 
   useEffect(() => {
     void density;
   }, [density]);
 
-  const filtered = useMemo(() => {
+  const selectListings = useCallback((candidate: HomeConditions, statuses: Filters["status"], resetMap = false) => {
     // 마운트 전엔 시각 무관 원본 status, 후엔 정확한 effectiveStatus (hydration 일치용).
     const eff = mounted
       ? (x: Listing) => effectiveStatus(x.status, x.deadline, x.beginDate)
       : (x: Listing) => x.status;
     // 마감 공고는 기본 숨김 — 지도에 마감 핀까지 뜨면 혼란 (사용자 피드백).
     // "마감" 필터를 켜면 회색 핀/흐림 카드로 함께 표시 (개선안1차 절충).
-    const showClosed = filters.status.includes("closed");
-    let list = listings.slice();
+    const showClosed = statuses.includes("closed");
+    let list = listings.filter(l => { const result = conditionMatch(l, candidate); return result === "match" || (result === "unknown" && candidate.includeUnknown); });
     if (!showClosed) list = list.filter((x) => eff(x) !== "closed");
     if (filters.type.length) list = list.filter((x) => filters.type.includes(x.type));
     // 마감임박(closing)은 raw status 에 없고 deadline 으로 derive 되므로 effectiveStatus 비교.
-    if (filters.status.length) list = list.filter((x) => filters.status.includes(eff(x)));
+    if (statuses.length) list = list.filter((x) => statuses.includes(eff(x)));
     if (filters.agency.length) list = list.filter((x) => filters.agency.includes(x.agency));
     // 지역 필터: 지도 영역 모드가 우선, 그 다음 시도 클릭 모드
-    if (searchBounds) {
+    if (!resetMap && searchBounds) {
       list = list.filter((x) =>
         x.lat >= searchBounds.swLat &&
         x.lat <= searchBounds.neLat &&
         x.lng >= searchBounds.swLng &&
         x.lng <= searchBounds.neLng,
       );
-    } else if (activeDistrict) {
+    } else if (!resetMap && activeDistrict) {
       list = list.filter((x) => x.districtId === activeDistrict);
     }
     // 텍스트 검색 — 단지명·제목·주소·자치구 어디든 매치(공백 무시, 대소문자 무관).
@@ -151,16 +171,21 @@ export function AppShell({
     );
     return list;
   }, [filters, sort, activeDistrict, searchBounds, listings, query, mounted]);
+  const conditionFiltered = useMemo(() => selectListings(conditions, filters.status), [selectListings, conditions, filters.status]);
+  const changedCount = conditionFiltered.filter(l => changes[l.id]?.length).length;
+  const filtered = useMemo(() => onlyChanged ? conditionFiltered.filter(l => changes[l.id]?.length) : conditionFiltered, [onlyChanged, conditionFiltered, changes]);
+  const unknownCount = conditions.deposit || conditions.rent || conditions.area ? filtered.filter(l => conditionMatch(l, conditions) === "unknown").length : 0;
 
   const districtCounts = useMemo<Record<string, number>>(() => {
     const map: Record<string, number> = {};
     // filtered 와 동일 정책 — 마감은 필터 켰을 때만 카운트.
     const showClosed = filters.status.includes("closed");
-    let list = listings.slice();
+    let list = listings.filter(l => { const result = conditionMatch(l, conditions); return result === "match" || (result === "unknown" && conditions.includeUnknown); });
     if (!showClosed) list = list.filter((x) => effectiveStatus(x.status, x.deadline, x.beginDate) !== "closed");
     if (filters.type.length) list = list.filter((x) => filters.type.includes(x.type));
     if (filters.status.length) list = list.filter((x) => filters.status.includes(effectiveStatus(x.status, x.deadline, x.beginDate)));
     if (filters.agency.length) list = list.filter((x) => filters.agency.includes(x.agency));
+    if (onlyChanged) list = list.filter(l => changes[l.id]?.length);
     list.forEach((x) => {
       map[x.districtId] = (map[x.districtId] ?? 0) + 1;
     });
@@ -168,7 +193,7 @@ export function AppShell({
       if (!map[d.id]) map[d.id] = 0;
     });
     return map;
-  }, [filters, listings, districts]);
+  }, [filters, listings, districts, conditions, onlyChanged, changes]);
 
   // 신규 뷰 — 현재 필터·검색·정렬을 물려받고 공고일 7일 이내만.
   const newItems = useMemo(() => {
@@ -183,6 +208,7 @@ export function AppShell({
   const selectedItem = filtered.find((x) => x.id === selectedId) ?? listings.find((x) => x.id === selectedId);
 
   const handleSelect = useCallback((id: string) => {
+    setCompareOpen(false);
     sendGAEvent("event", "select_listing", { listing_id: id });
     // 모바일 viewport: 풀스크린 라우트로 이동 (overlay 대신 별도 페이지)
     if (typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches) {
@@ -192,7 +218,7 @@ export function AppShell({
     setSelectedId(id);
     setDetailOpen(true);
     setAiFocusId(null); // 다른 공고 선택 시 이전 공고의 AI 상담 패널은 닫는다
-  }, [router]);
+  }, [router, setCompareOpen, setDetailOpen, setAiFocusId]);
   const handleDistrictClick = useCallback((id: string) => {
     setActiveDistrict(id);
     setSearchBounds(null);
@@ -208,12 +234,13 @@ export function AppShell({
       // 검색 직후 결과를 list 로 자동 노출
       setSheetSnap("expanded");
     },
-    [],
+    [setSheetSnap],
   );
-  const handleDetailClose = useCallback(() => { setDetailOpen(false); setAiFocusId(null); }, []);
+  const handleDetailClose = useCallback(() => { setDetailOpen(false); setAiFocusId(null); }, [setDetailOpen, setAiFocusId]);
 
   // 브랜드("부동산") 클릭 → 깨끗한 메인 홈으로 (열린 패널·필터·지역 모두 초기화).
   const goHome = useCallback(() => {
+    setCompareOpen(false);
     setDetailOpen(false);
     setTweaksOpen(false);
     setEliOpen(false);
@@ -222,10 +249,11 @@ export function AppShell({
     setActiveDistrict(null);
     setSearchBounds(null);
     setFilters(INITIAL_FILTERS);
-  }, []);
+    setOnlyChanged(false);
+  }, [setCompareOpen, setDetailOpen, setEliOpen, setAiFocusId, setFilters]);
 
   // 상세 옆 도킹 AI 상담 — PC 는 컬럼으로, 모바일/태블릿은 /ai 풀스크린 라우트.
-  const [aiFocusId, setAiFocusId] = useState<string | null>(null);
+
   const aiFocusItem = aiFocusId ? (listings.find((x) => x.id === aiFocusId) ?? null) : null;
   const handleAskAI = useCallback((id: string) => {
     if (typeof window !== "undefined" && window.matchMedia("(max-width: 1199px)").matches) {
@@ -235,7 +263,7 @@ export function AppShell({
     // 새로 열 때마다 이전 대화 기록 비우고 시작 (공고별 새 상담).
     try { sessionStorage.removeItem("doongji:ai-chat:messages"); } catch {}
     setAiFocusId(id);
-  }, [router]);
+  }, [router, setAiFocusId]);
 
   return (
     <div className={`app ${sidebarCollapsed ? "sidebar-collapsed" : ""}`}>
@@ -263,6 +291,8 @@ export function AppShell({
           className="topbar-menu"
           onClick={() => setSidebarCollapsed((v) => !v)}
           aria-label={sidebarCollapsed ? "사이드바 펼치기" : "사이드바 접기"}
+          aria-expanded={!sidebarCollapsed}
+          aria-controls="public-sidebar"
         >
           <HandleIcon />
         </button>
@@ -278,10 +308,11 @@ export function AppShell({
           </button>
         </div>
         <div className="topbar-search">
-          <MdOutlineSearch className="topbar-search-ico" />
+          <DdsIcon name="search" className="topbar-search-ico" />
           <input
             type="text"
             className="topbar-search-input"
+            aria-label="단지, 지역, 지하철, 초등학교 검색"
             placeholder="단지, 지역, 지하철, 초등학교 검색"
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
@@ -291,7 +322,7 @@ export function AppShell({
           />
           {searchInput && (
             <button type="button" className="topbar-search-clear" onClick={() => { setSearchInput(""); setQuery(""); }} aria-label="검색어 지우기">
-              <MdClose />
+              <DdsIcon name="close" size={20}/>
             </button>
           )}
         </div>
@@ -299,9 +330,9 @@ export function AppShell({
         {/* 로그인 기능 임시 숨김 (개인정보 처리 위험 검토 전까지) — AuthButton + /login·/signup·/onboarding·/profile 비활성 */}
       </header>
 
-      <div className={`main ${detailOpen && selectedItem ? "detail-open" : ""} ${aiFocusItem ? "ai-open" : ""}`}>
-        <aside className="app-sidebar">
-          <nav className="app-sidebar-nav">
+      <div className={`main ${detailOpen && selectedItem ? "detail-open" : ""} ${aiFocusItem ? "ai-open" : ""} ${compareOpen ? "comparison-open" : ""}`}>
+        <aside className="app-sidebar" id="public-sidebar">
+          <nav className="app-sidebar-nav" aria-label="주요 메뉴">
             {[
               { id: "home", label: "홈", Icon: NewsHomeIcon },
               { id: "tips", label: "가이드", Icon: GuideBookIcon },
@@ -312,8 +343,9 @@ export function AppShell({
                 key={id}
                 type="button"
                 className={`app-sidebar-item ${activeSection === id || (id === "home" && activeSection === "new") ? "active" : ""}`}
-                onClick={() => { setActiveSection(id as typeof activeSection); setSheetSnap("expanded"); }}
+                onClick={() => { setActiveSection(id as typeof activeSection); setCompareOpen(false); setSheetSnap("expanded"); }}
                 title={label}
+                aria-current={activeSection === id || (id === "home" && activeSection === "new") ? "page" : undefined}
               >
                 <span className="app-sidebar-ico"><Icon /></span>
                 <span className="app-sidebar-label">{label}</span>
@@ -331,8 +363,13 @@ export function AppShell({
             activeDistrict={activeDistrict}
             onHover={setHoveredId}
             onSelect={handleSelect}
+            compareIds={validCompareIds}
+            onCompare={toggleCompare}
+            changes={changes}
+            compareTray={<CompareTray items={validCompareIds.map(id => listings.find(l => l.id === id)!)} remove={toggleCompare} clear={() => setCompareIds([])} open={() => { setDetailOpen(false); setCompareOpen(true); }} />}
             snap={sheetSnap}
             setSnap={setSheetSnap}
+            discovery={<HomeConditionsPanel value={conditions} status={filters.status} onChange={(v, status) => { setConditions(v); setFilters(f => ({ ...f, status })); setActiveDistrict(null); setSearchBounds(null); setOnlyChanged(false); }} countResults={(v, status) => selectListings(v, status, true).length} districts={districts} changedCount={changedCount} onlyChanged={onlyChanged} onChanged={() => setOnlyChanged(!onlyChanged)} unknownCount={unknownCount} />}
             newCount={newItems.length}
             onNewClick={() => setActiveSection("new")}
           />
@@ -347,6 +384,10 @@ export function AppShell({
             activeDistrict={activeDistrict}
             onHover={setHoveredId}
             onSelect={handleSelect}
+            compareIds={validCompareIds}
+            onCompare={toggleCompare}
+            changes={changes}
+            compareTray={<CompareTray items={validCompareIds.map(id => listings.find(l => l.id === id)!)} remove={toggleCompare} clear={() => setCompareIds([])} open={() => { setDetailOpen(false); setCompareOpen(true); }} />}
             snap={sheetSnap}
             setSnap={setSheetSnap}
             heading="이번 주 새 공고"
@@ -356,7 +397,7 @@ export function AppShell({
         {activeSection === "tips" && <GuidePanel tips={tips} />}
         {activeSection === "saved" && (
           <div className="listing section-panel">
-            <SavedClient listings={listings} />
+            <SavedClient listings={listings} onCompare={() => { setDetailOpen(false); setCompareOpen(true); }} />
           </div>
         )}
         {activeSection === "ai" && (
@@ -375,9 +416,7 @@ export function AppShell({
           aria-label="매물 목록 보기"
           aria-hidden={sheetSnap !== "hidden"}
         >
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
-            <path d="M 2 3 L 12 3 M 2 7 L 12 7 M 2 11 L 12 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-          </svg>
+          <DdsIcon name="list" size={20}/>
           <span>목록 {comma(visibleItems.length)}건</span>
         </button>
 
@@ -398,6 +437,8 @@ export function AppShell({
             <FilterBar filters={filters} setFilters={setFilters} onReset={resetFilters} />
           }
         />
+
+        {compareOpen && <div className="compare-drawer"><CompareClient listings={listings} onClose={() => setCompareOpen(false)} /></div>}
 
         <DetailPanel item={selectedItem} open={detailOpen} onClose={handleDetailClose} onAskAI={handleAskAI} />
         {aiFocusItem && (

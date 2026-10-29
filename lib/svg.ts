@@ -44,6 +44,8 @@ export const SEOUL_MAP_SVG = `
 
 export function thumbnailSVG(seed: number, type: HousingTypeId): string {
   const palettes: Record<HousingTypeId, string[]> = {
+    public: ["#d2edfa", "#87d7ff", "#57c7ff", "#0088cc"],
+    rental: ["#eeeeee", "#cccccc", "#aaaaaa", "#666666"],
     happy: ["#ffd2b9", "#ffbc97", "#ff9e66", "#cc4700"],
     nation: ["#d2edfa", "#87d7ff", "#57c7ff", "#0088cc"],
     integ: ["#c7f2e4", "#96ebc3", "#6adeac", "#077a5e"],

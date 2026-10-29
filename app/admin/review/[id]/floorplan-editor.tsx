@@ -8,7 +8,7 @@ import type { FloorPlanSpec } from "@/lib/floorplan-spec";
 // JSON 교정 → 저장. three.js 가 무거워 뷰어는 동적 로드(스펙이 생겼을 때만).
 const FloorPlan3D = dynamic(() => import("@/components/floor-plan-3d"), {
   ssr: false,
-  loading: () => <div style={{ padding: 30, textAlign: "center", color: "var(--a-ink-3)" }}>3D 뷰어 로딩…</div>,
+  loading: () => <div style={{ padding: 32, textAlign: "center", color: "var(--a-ink-3)" }}>3D 뷰어 로딩…</div>,
 });
 
 export default function FloorplanEditor({ listingId, initialSpec }: { listingId: string; initialSpec: FloorPlanSpec | null }) {
@@ -73,12 +73,12 @@ export default function FloorplanEditor({ listingId, initialSpec }: { listingId:
   }
 
   return (
-    <section className="a-form-section" style={{ marginTop: 14, maxWidth: 760 }}>
+    <section className="a-form-section" style={{ marginTop: 12, maxWidth: 760 }}>
       <header>
         <h2>평면도 3D</h2>
         <p className="section-sub">평면도 이미지를 올리면 AI 가 3D 스펙을 만들고, 검수자가 교정해 저장합니다.</p>
       </header>
-      <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
+      <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
         <label className="a-btn primary" style={{ cursor: busy ? "default" : "pointer", margin: 0 }}>
           {busy === "extract" ? "추출 중…" : "평면도 이미지 업로드"}
           <input
@@ -120,9 +120,9 @@ export default function FloorplanEditor({ listingId, initialSpec }: { listingId:
             value={draft}
             onChange={(e) => setDraft(e.target.value)}
             spellCheck={false}
-            style={{ width: "100%", minHeight: 220, fontFamily: "ui-monospace, monospace", fontSize: 11.5, boxSizing: "border-box" }}
+            style={{ width: "100%", minHeight: 220, fontFamily: "ui-monospace, monospace", fontSize: 12, boxSizing: "border-box" }}
           />
-          <button type="button" className="a-btn ghost" onClick={applyDraft} style={{ marginTop: 6 }}>
+          <button type="button" className="a-btn ghost" onClick={applyDraft} style={{ marginTop: 4 }}>
             미리보기 적용
           </button>
         </div>

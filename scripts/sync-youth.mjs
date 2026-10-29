@@ -4,7 +4,7 @@
 // 상세 페이지에서 자치구(카테고리)·첨부 PDF(fileDown.do?atchFileId&fileSn)를 해석한다.
 // 출력: lib/youth-notices.json (메타 + pdfUrl). 가격/평형 추출은 기존 extract 파이프라인 재사용.
 //
-// 사용: node scripts/sync-youth.mjs [--pages N] [--probe-pdf]   (페이지당 10건, 기본 10페이지)
+// 사용: node scripts/sync-youth.mjs [--pages N] [--probe-pdf]   (페이지당 10건, 기본 전체 페이지)
 
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -68,14 +68,17 @@ async function fetchComplexes() {
     body: "pageNum=1&rowCount=300&searchPresale=&searchTheme=&searchMovinHoman=&searchHouseType=&searchHouseForm=&searchAdresGu=&searchSil=",
   });
   if (!cardRes.ok) throw new Error(`HTTP ${cardRes.status} yoHomeListJson`);
-  const cards = (await cardRes.json()).resultList ?? [];
+  const cards = (await cardRes.json()).resultList;
+  if (!Array.isArray(cards) || !cards.length || cards.length >= 300) throw new Error("청년 단지목록 응답 오류 또는 페이지 한도 도달");
 
   const mapRes = await fetch(`${BASE}/youth/pgm/home/yohome/maplist.json`, {
     method: "POST",
     headers: { "User-Agent": UA, "Content-Type": "application/x-www-form-urlencoded" },
     body: "",
   });
-  const mapRows = mapRes.ok ? (await mapRes.json()).mapResultList ?? [] : [];
+  if (!mapRes.ok) throw new Error(`청년 지도 HTTP ${mapRes.status}`);
+  const mapRows = (await mapRes.json()).mapResultList;
+  if (!Array.isArray(mapRows) || !mapRows.length) throw new Error("청년 지도 응답 오류");
   const byCode = new Map(mapRows.map((m) => [m.homeCode, m]));
 
   const complexes = cards.map((c) => {
@@ -125,19 +128,23 @@ async function fetchComplexes() {
 function parseArgs() {
   const a = process.argv.slice(2);
   const pi = a.indexOf("--pages");
-  return { pages: pi >= 0 ? Number(a[pi + 1]) : 10, probePdf: a.includes("--probe-pdf") };
+  return { pages: pi >= 0 ? Number(a[pi + 1]) : Infinity, probePdf: a.includes("--probe-pdf") };
 }
 
 async function main() {
   const args = parseArgs();
   const notices = [];
   let totPage = args.pages;
+  const seen = new Set();
   for (let p = 1; p <= Math.min(args.pages, totPage); p++) {
     const d = await fetchListPage(p);
-    totPage = d.pagingInfo.totPage;
-    const rows = d.resultList ?? [];
-    if (rows.length === 0) break;
+    totPage = Number(d.pagingInfo?.totPage);
+    if (!Number.isInteger(totPage) || totPage < 1 || !Array.isArray(d.resultList) || !d.resultList.length) throw new Error("청년 목록 응답 오류 — 기존 데이터 보존");
+    const rows = d.resultList;
+    if (rows.every(r => seen.has(r.boardId))) throw new Error("청년 중복 페이지 수신");
     for (const r of rows) {
+      if (seen.has(r.boardId)) continue;
+      seen.add(r.boardId);
       notices.push({
         boardId: r.boardId,
         title: (r.nttSj ?? "").trim(),
@@ -154,13 +161,15 @@ async function main() {
     await sleep(300);
   }
 
+  if (args.pages < totPage) throw new Error("청년 --pages 한도로 수집 미완료 — 기존 데이터 보존");
+
   console.log(`\n상세(자치구·PDF) 해석 ${notices.length}건...`);
   let done = 0;
   for (const n of notices) {
     try {
       Object.assign(n, await resolveDetail(n.boardId));
     } catch (e) {
-      n.error = e.message;
+      throw new Error(`청년 ${n.boardId} 상세 실패 — 기존 데이터 보존: ${e.message}`);
     }
     done++;
     if (done % 20 === 0) console.log(`  ${done}/${notices.length}`);
@@ -172,10 +181,10 @@ async function main() {
   const priv = notices.filter((n) => n.isPrivate).length;
   console.log(`\n수집 ${notices.length}건 | PDF ${withPdf} | 자치구 ${withGu} | 민간임대 ${priv} / 공공 ${notices.length - priv}`);
 
+  const complexes = await fetchComplexes();
   await fs.writeFile(OUT_PATH, JSON.stringify(notices, null, 2) + "\n", "utf8");
   console.log(`저장: ${OUT_PATH}`);
 
-  const complexes = await fetchComplexes();
   await fs.writeFile(COMPLEX_PATH, JSON.stringify(complexes, null, 2) + "\n", "utf8");
   console.log(`단지 디렉토리 ${complexes.length}건 저장: ${COMPLEX_PATH}`);
   await recordSync("youth", notices.length);

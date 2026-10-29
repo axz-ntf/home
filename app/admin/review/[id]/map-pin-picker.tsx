@@ -1,4 +1,5 @@
 "use client";
+import { DdsIcon } from "@/components/dds-icon";
 
 // SH 좌표를 손으로 찍는 모달 (P1 보조) — 지도를 클릭하면 그 지점의 위/경도를 잡아
 // 편집기 행에 채워준다. 주소검색·숫자입력 없이 "지도에서 바로 찍기".
@@ -74,7 +75,7 @@ export default function MapPinPicker({
       <div className="a-mappick" onClick={(e) => e.stopPropagation()}>
         <header className="a-mappick-head">
           <strong>지도에서 위치 클릭{label ? ` — ${label}` : ""}</strong>
-          <button type="button" onClick={onClose} aria-label="닫기">×</button>
+          <button type="button" onClick={onClose} aria-label="닫기"><DdsIcon name="close" size={20}/></button>
         </header>
         {err ? (
           <div className="a-mappick-err">{err}</div>

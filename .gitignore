@@ -73,3 +73,12 @@ CLAUDE.md
 DEPLOY.md
 tik
 .tik/
+
+# Downloaded original notice documents (local archive)
+/public/notice-files/
+/lib/downloaded-documents.local.json
+
+/lib/notice-information-local/
+
+# Local candidate records; sync to shared storage only after review
+/lib/building-register-local/

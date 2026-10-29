@@ -1,10 +1,9 @@
 import Link from "next/link";
+import { DdsIcon } from "@/components/dds-icon";
 import { notFound } from "next/navigation";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { getAllTips, getTip, thumbClass } from "@/lib/tips";
-import "../../m/tokens.css";
-import "../../m/mobile.css";
 import "../tips.css";
 import "./post.css";
 
@@ -34,8 +33,8 @@ export default async function TipPostPage({ params }: { params: Promise<{ slug: 
     <div style={{ height: "100dvh", overflowY: "auto" }}>
       <div className="post-page">
         <header className="post-nav">
-          <Link href="/tips" style={{ display: "inline-flex", alignItems: "center", gap: 6, textDecoration: "none", color: "inherit" }}>
-            <strong style={{ fontSize: 16, letterSpacing: "-0.02em" }}>주거 가이드</strong>
+          <Link href="/tips" className="tips-brand-link"><DdsIcon name="arrow-left" size={20} />
+            <strong>주거 가이드</strong>
           </Link>
         </header>
 
@@ -59,7 +58,7 @@ export default async function TipPostPage({ params }: { params: Promise<{ slug: 
 
         <section className="post-cta">
           <strong className="post-cta-text">내 조건에 맞는 공고가 궁금하다면</strong>
-          <Link href="/" className="post-cta-btn">지도에서 공고 보기 →</Link>
+          <Link href="/" className="post-cta-btn">지도에서 공고 보기 <DdsIcon name="arrow-right" size={20} /></Link>
         </section>
 
         <Link href="/tips" className="post-home">콘텐츠 홈 돌아가기</Link>

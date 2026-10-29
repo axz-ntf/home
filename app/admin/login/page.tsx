@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import "../admin.css";
+import "../admin-dds.css";
+import { DdsIcon } from "@/components/dds-icon";
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -34,9 +36,10 @@ export default function AdminLoginPage() {
     <main className="a-login-shell">
       <form onSubmit={submit} className="a-login-card">
         <div className="a-login-brand">
+          <span className="a-brand-symbol"><DdsIcon name="home" size={24} /></span>
           <div>
             <h1>부동산 어드민</h1>
-            <p className="sub">LH 공고 검수 — 내부 도구</p>
+            <p className="sub">공공주택 데이터 운영 센터</p>
           </div>
         </div>
         <div className="a-field">
@@ -45,7 +48,8 @@ export default function AdminLoginPage() {
             id="pw"
             type="password"
             autoFocus
-            placeholder="ADMIN_PASSWORD"
+            placeholder="비밀번호를 입력하세요"
+            autoComplete="current-password"
             value={pw}
             onChange={(e) => setPw(e.target.value)}
           />
