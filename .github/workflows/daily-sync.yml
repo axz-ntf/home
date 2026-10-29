@@ -48,6 +48,7 @@ jobs:
             lib/lh-complexes.json.fetched-at
           key: lh-complexes-v2-${{ github.run_id }}
       - name: Commit verified data updates
+        if: github.ref == 'refs/heads/main'
         run: |
           git config user.name 'doongji-bot'
           git config user.email 'bot@doongji.local'
