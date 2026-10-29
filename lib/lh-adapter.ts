@@ -126,6 +126,7 @@ interface ApiListing {
   beginDate?: string;
   priceSource?: string;
   priceUnverified?: boolean;
+  officialNoticeStatus?: string;
   complexName: string | null;
   pnu: string | null;
   houseType: unknown;
@@ -281,7 +282,7 @@ function adaptApi(r: ApiListing, loose = false): Listing | null {
     id: r.id,
     pblancId: r.pblancId,
     title: r.title,
-    noticeStatus: raw?.noticeStatus || undefined,
+    noticeStatus: r.officialNoticeStatus || raw?.noticeStatus || undefined,
     progressStatus: raw?.progressStatus || undefined,
     announceDate: raw?.announceDate || r.announceDate || undefined,
     type: r.type as HousingTypeId,
@@ -578,6 +579,17 @@ export const LH_ADMIN_LISTINGS: Listing[] = [
   ...SH_ADMIN_LISTINGS.map(applyOverride),
   ...YOUTH_ADMIN_LISTINGS.map(applyOverride),
 ];
+
+// Older versions of a corrected announcement can be hidden from the list by
+// deduplication but must remain reachable by their own official identifier.
+export function getAdminListingById(id: string): Listing | undefined {
+  const visible = LH_ADMIN_LISTINGS.find(listing => listing.id === id);
+  if (visible) return visible;
+  const raw = (apiListings as unknown as ApiListing[]).find(row => row.id === id);
+  if (!raw) return undefined;
+  const listing = adaptApi(raw, true);
+  return listing ? fillDistrictId(applyOverride(listing)) : undefined;
+}
 
 // 검수 필요 여부 — 공급세대수가 의심값(없음/1)인 매물. 단, 이미 마감(closed)된 매물은
 // 정정해도 사용자 노출이 끝나 검수 의미가 없으므로 제외. (active 만 큐에 노출)

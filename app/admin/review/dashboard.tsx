@@ -65,7 +65,7 @@ function formatDday(deadline: string): { text: string; urgent: boolean } | null 
 }
 
 // 저장된 수집 시각의 경과 시간이며, 크롤러 실행 상태는 아니다.
-interface SyncEntry { at: string; count: number }
+interface SyncEntry { at: string; count: number; supplementalCount?: number; supplementalAt?: string }
 const SYNC_SOURCES: { key: string; label: string }[] = [
   { key: "lh", label: "LH" },
   { key: "sh", label: "SH" },
@@ -107,7 +107,7 @@ function SyncHealthStrip({ meta }: { meta: Record<string, SyncEntry | undefined>
               {label} 크롤러
               <span className={`a-badge ${state.badge}`}>{state.text}</span>
             </div>
-            <div className="d">{ago} 실행 · <strong>{e.count}건</strong> 수집{hours >= 24 ? " · 24시간 초과" : ""}</div>
+            <div className="d">{ago} 실행 · <strong>{e.count}건</strong> 수집{e.supplementalCount ? ` · 원문 확인 ${e.supplementalCount}건` : ""}{hours >= 24 ? " · 24시간 초과" : ""}</div>
           </div>
         );
       })}

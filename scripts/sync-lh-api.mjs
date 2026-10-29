@@ -15,6 +15,7 @@ import { extractPriceArea, mapHousingType, noticeRows, collectPages } from "./li
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { recordSync } from "./sync-meta.mjs";
+import { reconcileMissingNotices } from "./lib/lh-notice-reconciliation.mjs";
 import { buildComplexIndex, findMatchingComplex } from "./lib/lh-complex-match.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -400,6 +401,9 @@ async function main() {
     console.log(`myhome 당첨발표일 인덱스: ${winnerByPan.size}개 키\n`);
   } catch { console.warn("myhome-all-notices.json 없음 — winnerAt 건너뜀\n"); }
 
+  let previousListings = [];
+  try { previousListings = JSON.parse(fs.readFileSync(OUT_PATH, "utf8")); if (!Array.isArray(previousListings)) throw Error("invalid"); }
+  catch (error) { if (error.code !== "ENOENT") throw new Error("기존 LH 데이터 확인 실패 — 기존 파일 보존"); }
   const listings = [];
   let supplyOk = 0, supplyFail = 0;
   let complexMatched = 0;
@@ -526,8 +530,12 @@ async function main() {
     if ((i + 1) % 50 === 0) console.log(`  진행: ${i + 1}/${notices.length}`);
   }
 
+  const apiCount = listings.length;
+  const reconciled = await reconcileMissingNotices(listings, previousListings);
+  if (reconciled.recovered) console.log(`공식 원문 확인으로 누락 공고 ${reconciled.recovered}건 보존`);
+  listings.splice(0, listings.length, ...reconciled.listings);
   fs.writeFileSync(OUT_PATH, JSON.stringify(listings, null, 2));
-  await recordSync("lh", listings.length);
+  await recordSync("lh", apiCount, { supplementalCount: reconciled.recovered, supplementalAt: reconciled.recovered ? new Date().toISOString() : null });
   console.log(`\n저장: ${OUT_PATH}`);
   console.log(`  공급정보 추출: 성공 ${supplyOk} / 실패 ${supplyFail}`);
   console.log(`  단지 매칭 (API 1): ${complexMatched} / ${notices.length}`);
