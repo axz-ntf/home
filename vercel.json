@@ -1,4 +1,7 @@
 {
   "framework": "nextjs",
-  "regions": ["icn1"]
+  "regions": [
+    "icn1"
+  ],
+  "ignoreCommand": "[ \"$VERCEL_GIT_COMMIT_MESSAGE\" = \"Add scheduled official notice storage sync\" ]"
 }
