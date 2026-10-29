@@ -40,7 +40,7 @@ const FIELD_LABELS: Record<string, string> = {
   styleNm: "주택형", suplyPrvuseAr: "전용면적 (㎡)", suplyCmnuseAr: "공용면적 (㎡)", bassRentGtn: "기본 보증금 (원)", bassMtRntchrg: "기본 월임대료 (원)",
   depositManwon: "보증금 (만원)", monthlyRentManwon: "월임대료 (만원)", depositLowWon: "최저 보증금 (원)", rentLowWon: "최저 월임대료 (원)",
   hshldCo: "원본 세대 수", totalUnits: "총 세대 수", supplyUnits: "모집 세대 수", lat: "위도", lng: "경도", postedAt: "공고 게시일", announceDate: "공고일",
-  status: "수집 당시 상태", progressStatus: "수집 당시 모집상태", deadline: "마감일", beginDate: "접수 시작일", endDate: "접수 종료일", detailFetchedAt: "상세 수집 시각",
+  officialNoticeStatus: "LH 공식 공고상태", officialStatusCheckedAt: "공식 상태 확인 시각", collectionMethod: "수집 방식", status: "수집 당시 상태", progressStatus: "수집 당시 모집상태", deadline: "마감일", beginDate: "접수 시작일", endDate: "접수 종료일", detailFetchedAt: "상세 수집 시각",
 };
 export default async function HousingDataDetail({ params, searchParams }: { params: Promise<{ source: string; id: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   const { source: sourceId, id } = await params;

@@ -1,7 +1,7 @@
 import { DdsIcon } from "@/components/dds-icon";
 import NoticeWorkspace from "./notice-workspace";
 import { adminNav } from "@/lib/admin-nav";
-import { LH_ADMIN_LISTINGS, listingIssues } from "@/lib/lh-adapter";
+import { LH_ADMIN_LISTINGS, getAdminListingById, listingIssues } from "@/lib/lh-adapter";
 import { OVERRIDES, type OverrideRow } from "@/lib/manual-overrides";
 import { notFound } from "next/navigation";
 import ReviewForm from "./review-form";
@@ -62,7 +62,7 @@ export const dynamic = "force-dynamic";
 export default async function ReviewDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const decodedId = decodeURIComponent(id);
-  const listing = LH_ADMIN_LISTINGS.find((l) => l.id === decodedId);
+  const listing = getAdminListingById(decodedId);
   if (!listing) notFound();
 
   const override = OVERRIDES[decodedId] ?? null;
