@@ -14,9 +14,10 @@ export async function reconcileMissingNotices(current,previous,{fetcher=globalTh
  for(const item of pending){
   const id=String(item.pblancId??item.id);if(known.has(id))continue;
   const last=Date.parse(item.officialStatusCheckedAt??'');const knownClosed=item.status==='closed'&&/접수마감|공고마감|모집중지|공고종료/.test(item.officialNoticeStatus??'');
-  const recentlyChecked=Number.isFinite(last)&&last<=now&&now-last<86400000;
+  const maxAge=knownClosed?7*86400000:86400000;
+  const recentlyChecked=Number.isFinite(last)&&last<=now&&now-last<maxAge;
   let verified;
-  if((knownClosed||recentlyChecked)&&item.collectionMethod==='official-detail-reconciliation')verified={status:item.status,officialStatus:item.officialNoticeStatus,deadline:item.deadline,checkedAt:item.officialStatusCheckedAt};
+  if(recentlyChecked&&item.collectionMethod==='official-detail-reconciliation')verified={status:item.status,officialStatus:item.officialNoticeStatus,deadline:item.deadline,checkedAt:item.officialStatusCheckedAt};
   else{
    const u=new URL(item.sourceUrl);if(u.protocol!=='https:'||u.hostname!=='apply.lh.or.kr'||u.searchParams.get('panId')!==String(item.pblancId))throw Error(`LH ${id} 공식 출처 확인 실패 — 기존 데이터 보존`);
    let lastError;

@@ -14,7 +14,7 @@ test('failed official validation prevents the new snapshot from silently droppin
  await assert.rejects(reconcileMissingNotices([],[notice],{delay:0,fetcher:async()=>new Response('upstream error',{status:503})}),/기존 데이터 보존/);
 });
 test('does not recheck verified closed history or duplicate API records',async()=>{
- const past={...notice,status:'closed',officialNoticeStatus:'접수마감',officialStatusCheckedAt:'2026-01-01T00:00:00Z',collectionMethod:'official-detail-reconciliation'};
+ const past={...notice,status:'closed',officialNoticeStatus:'접수마감',officialStatusCheckedAt:new Date().toISOString(),collectionMethod:'official-detail-reconciliation'};
  const fetcher=async()=>{throw Error('unexpected fetch')};
  assert.equal((await reconcileMissingNotices([],[past],{delay:0,fetcher})).listings.length,1);
  assert.equal((await reconcileMissingNotices([notice],[past],{delay:0,fetcher})).listings.length,1);
