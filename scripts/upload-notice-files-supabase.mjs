@@ -13,6 +13,7 @@ const existing=await client.storage.getBucket(bucket);
 if(existing.error){if(existing.error.statusCode!=='404'&&existing.error.statusCode!==404)throw Error(`Storage 버킷 조회 실패: ${existing.error.message}`);const created=await client.storage.createBucket(bucket,{public:false,fileSizeLimit:52428800});if(created.error)throw Error(`Storage 버킷 생성 실패: ${created.error.message}`);}
 else if(existing.data.public)throw Error('기존 버킷이 공개 상태여서 처리를 중단합니다.');
 const sql=postgres(conn,{prepare:false,max:1,connect_timeout:15});let uploaded=0,skipped=0,failed=0;
+let verificationPending=process.argv.includes('--verify-one');
 const shardArg=process.argv.indexOf('--shard'),shardsArg=process.argv.indexOf('--shards');
 const shard=shardArg<0?0:Number(process.argv[shardArg+1]),shards=shardsArg<0?1:Number(process.argv[shardsArg+1]);
 if(!Number.isInteger(shard)||!Number.isInteger(shards)||shards<1||shard<0||shard>=shards)throw Error('잘못된 분할 설정');
@@ -26,7 +27,8 @@ try{
   if(!/^[a-f0-9]{64}\.(?:pdf|hwp|hwpx|zip|xlsx|xls)$/.test(filename)||filename.split('.')[0]!==record.sha256){failed++;console.error(`${record.name}: 지원하지 않는 형식 또는 잘못된 파일명`);continue;}
   try{
    const known=await sql`select sha256,object_name from public.housing_notice_documents where original_url=${originalUrl}`;
-   if(known[0]?.sha256===record.sha256&&known[0]?.object_name===filename){skipped++;continue;}
+   if(known[0]?.sha256===record.sha256&&known[0]?.object_name===filename&&!verificationPending){skipped++;continue;}
+   verificationPending=false;
    const bytes=await readFile(path.join('public/notice-files',filename));
    if(bytes.length!==record.bytes||createHash('sha256').update(bytes).digest('hex')!==record.sha256)throw Error('파일 무결성 확인 실패');
    // Objects larger than the project's 50 MB per-file cap are stored in ordered parts.

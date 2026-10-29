@@ -63,7 +63,11 @@ jobs:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: |
           test -f lib/downloaded-documents.local.json || printf '{}\n' > lib/downloaded-documents.local.json
-          node scripts/upload-notice-files-supabase.mjs
+          if [ "$GITHUB_REF_NAME" = "codex/notice-storage-sync" ]; then
+            node scripts/upload-notice-files-supabase.mjs --verify-one
+          else
+            node scripts/upload-notice-files-supabase.mjs
+          fi
       - name: Save document collection state
         if: always()
         uses: actions/cache/save@v4
