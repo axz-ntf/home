@@ -56,6 +56,8 @@ export interface NaverNamespace {
         mapDataControl?: boolean;
         zoomControl?: boolean;
         mapTypeControl?: boolean;
+        scrollWheel?: boolean;
+        disableDoubleClickZoom?: boolean;
       }
     ) => NaverMap;
     Marker: new (options: {

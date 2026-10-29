@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { DdsIcon } from "@/components/dds-icon";
 import { LH_LISTINGS } from "@/lib/lh-adapter";
 import { YOUTH_PUBLIC_LISTINGS } from "@/lib/youth-adapter";
 import { SH_PUBLIC_LISTINGS } from "@/lib/sh-adapter";
@@ -6,8 +7,6 @@ import { dedupeCorrections } from "@/lib/dedupe-corrections";
 import { effectiveStatus, dDayText } from "@/lib/dday";
 import { depositText, rentText } from "@/lib/price-label";
 import { getAllTips, thumbClass } from "@/lib/tips";
-import "../m/tokens.css";
-import "../m/mobile.css";
 import "./tips.css";
 
 export const metadata = {
@@ -31,8 +30,8 @@ export default function TipsPage() {
     <div style={{ height: "100dvh", overflowY: "auto" }}>
       <div className="tips-hub">
         <header className="tips-gnb">
-          <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: 6, textDecoration: "none", color: "inherit" }}>
-            <strong style={{ fontSize: 16, letterSpacing: "-0.02em" }}>부동산</strong>
+          <Link href="/" className="tips-brand-link"><DdsIcon name="arrow-left" size={20} />
+            <strong>부동산</strong>
           </Link>
         </header>
 
@@ -70,7 +69,7 @@ export default function TipsPage() {
           <section className="tips-section">
             <div className="tips-section-head">
               <h2 className="tips-h2">이번 주 눈여겨볼 공고</h2>
-              <Link href="/" className="tips-more">지도에서 더 보기 →</Link>
+              <Link href="/" className="tips-more">지도에서 더 보기 <DdsIcon name="arrow-right" size={16} /></Link>
             </div>
             <div className="tips-listing-grid">
               {picks.map((l) => {
@@ -78,11 +77,11 @@ export default function TipsPage() {
                 const dep = depositText(l), rent = rentText(l);
                 return (
                   <Link key={l.id} href={`/listings/${encodeURIComponent(l.id)}`} className="tips-listing-card">
-                    <div style={{ display: "flex", justifyContent: "space-between", gap: 8 }}>
-                      <strong style={{ fontSize: 14.5, letterSpacing: "-0.02em" }}>{l.title}</strong>
-                      {dday && <span suppressHydrationWarning style={{ fontSize: 12.5, fontWeight: 800, color: "var(--seed-scale-color-red-600, #e5484d)", whiteSpace: "nowrap" }}>{dday}</span>}
+                    <div className="tips-listing-title">
+                      <strong>{l.title}</strong>
+                      {dday && <dds-badge variant="weak" color="accent" size="sm" suppressHydrationWarning>{dday}</dds-badge>}
                     </div>
-                    <div style={{ fontSize: 12.5, color: "var(--seed-semantic-color-ink-text-low)", marginTop: 4 }}>
+                    <div className="tips-listing-meta">
                       {l.district} · {l.agency}{dep ? ` · 보 ${dep}` : ""}{rent ? ` · 월 ${rent}` : ""}
                     </div>
                   </Link>
@@ -92,7 +91,7 @@ export default function TipsPage() {
           </section>
         )}
 
-        <p style={{ fontSize: 12, color: "var(--seed-semantic-color-ink-text-low)", marginTop: 24, lineHeight: 1.6, maxWidth: 720 }}>
+        <p className="tips-note">
           정확한 자격·서류 기준은 각 공고문과 LH 청약플러스(apply.lh.or.kr)·마이홈(myhome.go.kr)에서 확인하세요.
           내 상황에 맞는 답은 매물 상세의 <strong>AI 자격상담</strong>에서 바로 물어볼 수 있어요.
         </p>

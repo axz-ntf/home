@@ -78,7 +78,7 @@ const recommendListings = tool({
     "사용자가 매물 추천/검색을 요청할 때만 사용. 단순 정보 질문에는 호출하지 말 것.",
   inputSchema: z.object({
     types: z
-      .array(z.enum(["happy", "nation", "perm", "integ", "fifty", "sale", "buy", "jeonse", "youth"]))
+      .array(z.enum(["happy", "public", "rental", "nation", "perm", "integ", "fifty", "sale", "buy", "jeonse", "youth"]))
       .optional()
       .describe(
         "주택 유형 필터 (다중 선택 가능). happy=행복주택, nation=국민임대, perm=영구임대, integ=통합공공임대, fifty=50년임대, sale=공공분양, buy=매입임대, jeonse=전세임대, youth=청년주택",

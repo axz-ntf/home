@@ -1,6 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
+import { DdsIcon } from "@/components/dds-icon";
+import "./nationwide.css";
 import { comma } from "@/lib/format";
 import Link from "next/link";
 import { depositText, rentText } from "@/lib/price-label";
@@ -26,17 +28,17 @@ export interface NationwideRow {
 }
 
 const TYPE_LABEL: Record<string, string> = {
-  happy: "행복주택", nation: "국민임대", integ: "통합공공임대", perm: "영구임대",
+  public: "공공임대", rental: "임대 · 유형 확인", happy: "행복주택", nation: "국민임대", integ: "통합공공임대", perm: "영구임대",
   buy: "매입임대", jeonse: "전세임대", fifty: "50년임대", sale: "분양", youth: "청년주택",
 };
 const STATUS_LABEL: Record<NationwideRow["status"], string> = {
   open: "모집중", upcoming: "모집예정", closing: "마감임박", closed: "마감",
 };
 const STATUS_COLOR: Record<NationwideRow["status"], { bg: string; fg: string }> = {
-  open:     { bg: "var(--seed-scale-color-green-50)",  fg: "var(--seed-scale-color-green-700)" },
-  upcoming: { bg: "var(--seed-scale-color-blue-50)",   fg: "var(--seed-scale-color-blue-700)" },
-  closing:  { bg: "var(--seed-scale-color-red-50)",    fg: "var(--seed-scale-color-red-700)" },
-  closed:   { bg: "var(--seed-scale-color-gray-100)",  fg: "var(--seed-scale-color-gray-600)" },
+  open:     { bg: "var(--dds-background-state-info-subtle)",  fg: "var(--dds-text-state-info)" },
+  upcoming: { bg: "var(--dds-background-state-info-subtle)",   fg: "var(--dds-text-state-info)" },
+  closing:  { bg: "var(--dds-background-state-accent-subtle)",    fg: "var(--dds-text-state-accent)" },
+  closed:   { bg: "var(--dds-background-surface-on)",  fg: "var(--dds-text-quaternary)" },
 };
 
 function formatDday(deadline: string): string {
@@ -60,35 +62,16 @@ export default function NationwideList({ rows }: { rows: NationwideRow[] }) {
   );
 
   return (
-    <main style={{
-      // body 가 overflow:hidden(지도 풀스크린용)이라 이 페이지는 자체 스크롤 컨테이너로 둔다.
-      height: "100dvh",
-      overflowY: "auto",
-      WebkitOverflowScrolling: "touch",
-      background: "var(--seed-scale-color-gray-50)",
-      fontFamily: "'Pretendard Variable', Pretendard, -apple-system, sans-serif",
-      color: "var(--seed-scale-color-gray-900)",
-    }}>
-      <div style={{ maxWidth: 920, margin: "0 auto", padding: "20px 16px 80px" }}>
-        {/* 헤더 */}
-        <header style={{ marginBottom: 18 }}>
-          <Link href="/" style={{
-            display: "inline-flex", alignItems: "center", gap: 4,
-            color: "var(--seed-scale-color-gray-600)", fontSize: 13, fontWeight: 600,
-            textDecoration: "none", marginBottom: 12,
-          }}>
-            ← 지도로 돌아가기
-          </Link>
-          <h1 style={{ margin: 0, fontSize: 23, fontWeight: 800, letterSpacing: "-0.03em" }}>
-            전체 공고
-          </h1>
-          <p style={{ margin: "6px 0 0", fontSize: 13.5, color: "var(--seed-scale-color-gray-600)", lineHeight: 1.5 }}>
-            모집 중인 공공임대·분양 공고를 최근 공고일 순으로 모았어요. 지도에 표시되는 단지부터 전국 단위 광역 공고까지 한눈에.
-          </p>
+    <main className="nw-page">
+      <div className="nw-container">
+        <header className="nw-page-heading">
+          <Link href="/" className="nw-back"><DdsIcon name="arrow-left" size={20} /> 지도로 돌아가기</Link>
+          <h1>전체 공고</h1>
+          <p>모집 중인 공공임대·분양 공고를 최근 공고일 순으로 모았어요. 지도에 표시되는 단지부터 전국 단위 광역 공고까지 한눈에.</p>
         </header>
 
         {/* 유형 필터 */}
-        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 14 }}>
+        <div className="nw-filters" aria-label="임대 유형 필터">
           <FilterChip active={type === "all"} onClick={() => setType("all")}>전체 {rows.length}</FilterChip>
           {types.map((t) => {
             const count = rows.filter((r) => r.type === t).length;
@@ -102,16 +85,11 @@ export default function NationwideList({ rows }: { rows: NationwideRow[] }) {
 
         {/* 공고 게시판 */}
         {filtered.length === 0 ? (
-          <div style={{ textAlign: "center", padding: 64, color: "var(--seed-scale-color-gray-500)" }}>
+          <div className="nw-empty">
             현재 모집 중인 전국 공고가 없어요
           </div>
         ) : (
-          <div style={{
-            background: "var(--seed-scale-color-gray-00)",
-            border: "1px solid var(--seed-scale-color-gray-200)",
-            borderRadius: 12,
-            overflow: "hidden",
-          }}>
+          <div className="nw-board">
             {/* 컬럼 헤더 (넓은 화면) */}
             <div className="nw-head">
               <span>유형</span>
@@ -124,42 +102,6 @@ export default function NationwideList({ rows }: { rows: NationwideRow[] }) {
           </div>
         )}
       </div>
-
-      <style>{`
-        .nw-head, .nw-row {
-          display: grid;
-          grid-template-columns: 84px 1fr 96px 92px 96px;
-          align-items: center;
-          gap: 12px;
-          padding: 12px 16px;
-        }
-        .nw-head {
-          font-size: 12px; font-weight: 700;
-          color: var(--seed-scale-color-gray-500);
-          background: var(--seed-scale-color-gray-50);
-          border-bottom: 1px solid var(--seed-scale-color-gray-200);
-        }
-        .nw-row {
-          border-bottom: 1px solid var(--seed-scale-color-gray-100);
-          text-decoration: none; color: inherit;
-          transition: background 120ms ease;
-        }
-        .nw-row:last-child { border-bottom: 0; }
-        .nw-row:hover { background: var(--seed-scale-color-gray-50); }
-        @media (max-width: 640px) {
-          .nw-head { display: none; }
-          .nw-row {
-            grid-template-columns: 1fr auto;
-            grid-template-areas: "type meta" "title title";
-            row-gap: 8px;
-          }
-          .nw-row .nw-type { grid-area: type; }
-          .nw-row .nw-title { grid-area: title; }
-          .nw-row .nw-announce { display: none; }
-          .nw-row .nw-winner { display: none; }
-          .nw-row .nw-deadline { grid-area: meta; text-align: right; }
-        }
-      `}</style>
     </main>
   );
 }
@@ -183,47 +125,40 @@ function NoticeRow({ r }: { r: NationwideRow }) {
 
   return (
     <a href={r.sourceUrl} target="_blank" rel="noreferrer" className="nw-row">
-      <span className="nw-type" style={{ display: "inline-flex", flexDirection: "column", gap: 4, alignItems: "flex-start" }}>
-        <span style={{
-          padding: "2px 8px", borderRadius: 999, fontSize: 11, fontWeight: 700,
-          background: sc.bg, color: sc.fg, whiteSpace: "nowrap",
-        }}>
+      <span className="nw-type">
+        <span className="nw-status" style={{ background: sc.bg, color: sc.fg }}>
           {STATUS_LABEL[r.status]}
         </span>
-        <span style={{ fontSize: 11, fontWeight: 600, color: "var(--seed-scale-color-gray-600)" }}>
+        <span className="nw-type-label">
           {TYPE_LABEL[r.type] ?? r.type}
         </span>
       </span>
 
-      <span className="nw-title" style={{ minWidth: 0 }}>
-        <span style={{
-          display: "block", fontSize: 14.5, fontWeight: 600, lineHeight: 1.35,
-          letterSpacing: "-0.01em",
-          overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
-        }}>
+      <span className="nw-title">
+        <span className="nw-listing-title">
           {r.title}
         </span>
-        <span style={{ display: "block", marginTop: 3, fontSize: 12, color: "var(--seed-scale-color-gray-500)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+        <span className="nw-meta">
           {meta.join(" · ")}
         </span>
       </span>
 
-      <span className="nw-announce" style={{ textAlign: "right", fontSize: 12.5, color: "var(--seed-scale-color-gray-500)", fontVariantNumeric: "tabular-nums" }}>
+      <span className="nw-announce">
         {r.announceDate || "—"}
       </span>
 
-      <span className="nw-deadline" style={{ textAlign: "right" }}>
-        <span style={{ display: "block", fontSize: 12.5, color: "var(--seed-scale-color-gray-700)", fontVariantNumeric: "tabular-nums" }}>
+      <span className="nw-deadline">
+        <span className="nw-deadline-date">
           {r.deadline || "—"}
         </span>
         {dday && dday !== "마감" && (
-          <span suppressHydrationWarning style={{ display: "block", marginTop: 2, fontSize: 12, fontWeight: 800, color: urgent ? "var(--seed-scale-color-red-600)" : "var(--seed-scale-color-gray-500)" }}>
+          <span suppressHydrationWarning className={`nw-dday ${urgent ? "is-urgent" : ""}`}>
             {dday}
           </span>
         )}
       </span>
 
-      <span className="nw-winner" style={{ textAlign: "right", fontSize: 12.5, color: "var(--seed-scale-color-gray-500)", fontVariantNumeric: "tabular-nums" }}>
+      <span className="nw-winner">
         {r.winnerAt || "—"}
       </span>
     </a>
@@ -231,21 +166,15 @@ function NoticeRow({ r }: { r: NationwideRow }) {
 }
 
 function FilterChip({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
+  const chipRef = useCallback((element: (HTMLElement & { selected?: boolean }) | null) => {
+    if (!element) return;
+    const sync = () => { element.selected = active; };
+    sync();
+    customElements.whenDefined("dds-chip").then(sync);
+  }, [active]);
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      style={{
-        appearance: "none",
-        border: "1px solid",
-        borderColor: active ? "var(--seed-scale-color-gray-900)" : "var(--seed-scale-color-gray-200)",
-        background: active ? "var(--seed-scale-color-gray-900)" : "var(--seed-scale-color-gray-00)",
-        color: active ? "#fff" : "var(--seed-scale-color-gray-700)",
-        padding: "7px 13px", borderRadius: 999, fontSize: 13, fontWeight: 600,
-        cursor: "pointer", fontFamily: "inherit",
-      }}
-    >
+    <dds-chip ref={chipRef} color={active ? "primary" : "neutral"} size="lg" selected={active} onClick={(event) => { (event.currentTarget as HTMLElement & { selected: boolean }).selected = true; onClick(); }}>
       {children}
-    </button>
+    </dds-chip>
   );
 }

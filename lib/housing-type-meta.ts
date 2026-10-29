@@ -21,6 +21,8 @@ export interface HousingTypeMeta {
 }
 
 export const HOUSING_TYPE_META: Record<HousingTypeId, HousingTypeMeta> = {
+  public: { variant: "rental", accent: "blue", tagline: "공고별 임대기간·신청 자격 확인", metrics: [] },
+  rental: { variant: "rental", accent: "gray", tagline: "공고문에서 공급 유형과 조건을 확인하세요", metrics: [] },
   happy: {
     variant: "happy",
     accent: "carrot",
@@ -78,5 +80,5 @@ export const HOUSING_TYPE_META: Record<HousingTypeId, HousingTypeMeta> = {
 };
 
 export function housingTypeMeta(type: HousingTypeId): HousingTypeMeta {
-  return HOUSING_TYPE_META[type] ?? HOUSING_TYPE_META.nation;
+  return HOUSING_TYPE_META[type] ?? HOUSING_TYPE_META.rental;
 }

@@ -1,16 +1,24 @@
 "use client";
 
 import Link from "next/link";
+import { useSyncExternalStore } from "react";
 import { useRouter } from "next/navigation";
 import type { Listing } from "@/lib/types";
 import { useSavedListings } from "@/lib/use-saved";
 import { ListingCard } from "@/components/listing-panel";
 import { effectiveStatus } from "@/lib/dday";
+import { DdsIcon } from "@/components/dds-icon";
+import "./saved.css";
+
+const subscribeHydration = () => () => {};
+const clientReady = () => true;
+const serverReady = () => false;
 
 // 저장한 공고 모아보기 (N1) — 마감돼도 유지(마감 상태로 표시, 뒤로 정렬).
-export function SavedClient({ listings }: { listings: Listing[] }) {
+export function SavedClient({ listings, onCompare }: { listings: Listing[]; onCompare?: () => void }) {
   const router = useRouter();
-  const { savedIds, toggle, loaded } = useSavedListings();
+  const { savedIds, toggle } = useSavedListings();
+  const loaded = useSyncExternalStore(subscribeHydration, clientReady, serverReady);
 
   const byId = new Map(listings.map((l) => [l.id, l]));
   const saved = savedIds.map((id) => byId.get(id)).filter((l): l is Listing => Boolean(l));
@@ -22,22 +30,26 @@ export function SavedClient({ listings }: { listings: Listing[] }) {
   const missing = loaded ? savedIds.length - saved.length : 0;
 
   return (
-    <main style={{ maxWidth: 680, margin: "0 auto", padding: "20px 0 60px" }}>
-      <header style={{ display: "flex", alignItems: "baseline", gap: 10, padding: "0 16px 14px" }}>
-        <h1 style={{ fontSize: 19, fontWeight: 800, margin: 0 }}>저장한 공고</h1>
-        <span style={{ fontSize: 13, color: "var(--seed-semantic-color-ink-text-low)" }}>
+    <main className="saved-page">
+      <header className="saved-page-heading">
+        <h1>저장한 공고</h1>
+        <span className="saved-count">
           {loaded ? `${saved.length}건` : ""}
         </span>
-        <Link href="/" style={{ marginLeft: "auto", fontSize: 13, fontWeight: 600, color: "var(--seed-semantic-color-primary)", textDecoration: "none" }}>
-          지도로 →
+        <Link href="/" className="saved-map-link">
+          지도로 <DdsIcon name="arrow-right" size={16} />
         </Link>
       </header>
 
+      <button type="button" className="saved-compare-entry" onClick={() => onCompare ? onCompare() : router.push("/compare")}>
+        <span>공고 비교</span><span>{saved.length ? `저장한 공고 ${saved.length}건 비교하기` : "비교 기능 둘러보기"} <DdsIcon name="arrow-right" size={16} /></span>
+      </button>
+
       {loaded && saved.length === 0 && (
-        <div style={{ padding: "48px 16px", textAlign: "center", color: "var(--seed-semantic-color-ink-text-low)", fontSize: 14, lineHeight: 1.7 }}>
-          아직 저장한 공고가 없어요.
-          <br />
-          공고 상세에서 ♥ 를 누르면 여기에 모여요.
+        <div className="saved-empty">
+          <DdsIcon name="like" size={32} />
+          <strong>아직 저장한 공고가 없어요.</strong>
+          <p>공고 상세에서 관심 저장을 누르면 여기에 모여요.</p>
         </div>
       )}
 
@@ -61,16 +73,14 @@ export function SavedClient({ listings }: { listings: Listing[] }) {
               onClick={() => toggle(item.id)}
               className="saved-remove-btn"
             >
-              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden>
-                <path d="M 3 3 L 11 11 M 11 3 L 3 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-              </svg>
+              <DdsIcon name="close" size={20} />
             </button>
           </div>
         ))}
       </div>
 
       {missing > 0 && (
-        <p style={{ padding: "14px 16px", fontSize: 12, color: "var(--seed-semantic-color-ink-text-low)" }}>
+        <p className="saved-missing">
           저장했던 공고 {missing}건은 게시가 내려가 더 이상 표시할 수 없어요.
         </p>
       )}

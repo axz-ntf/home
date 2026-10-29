@@ -7,9 +7,9 @@ const man = (n: number) => {
   if (n >= 10000) {
     const eok = Math.floor(n / 10000);
     const rem = n % 10000;
-    return rem ? `${eok}억 ${rem.toLocaleString()}만` : `${eok}억`;
+    return rem ? `${eok}억 ${rem.toLocaleString("ko-KR", { maximumFractionDigits: 4 })}만` : `${eok}억`;
   }
-  return `${n.toLocaleString()}만`;
+  return `${n.toLocaleString("ko-KR", { maximumFractionDigits: 4 })}만`;
 };
 
 /** 보증금 표시값 — "1,059만~2,100만" | "1,059만" | null(0/미상) */

@@ -12,8 +12,12 @@ export function comma(n: number | null | undefined): string {
 export function formatManwon(manwon: number | null | undefined): string {
   if (manwon == null || !Number.isFinite(manwon) || manwon <= 0) return "";
   const eok = Math.floor(manwon / 10000);
-  const rest = manwon % 10000;
-  if (eok > 0 && rest > 0) return `${eok}억 ${comma(rest)}만원`;
+  const rest = Number((manwon % 10000).toFixed(4));
+  const precise = (n: number) => {
+    const [whole, fraction] = n.toString().split(".");
+    return whole.replace(/\B(?=(\d{3})+(?!\d))/g, ",") + (fraction ? `.${fraction}` : "");
+  };
+  if (eok > 0 && rest > 0) return `${eok}억 ${precise(rest)}만원`;
   if (eok > 0) return `${eok}억원`;
-  return `${comma(rest)}만원`;
+  return `${precise(rest)}만원`;
 }

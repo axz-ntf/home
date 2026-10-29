@@ -16,7 +16,8 @@ const CATEGORIES = {
 
 export type LocalCounts = Record<keyof typeof CATEGORIES, number>;
 
-// 반경(m) 내 카테고리별 개수. 키 없거나 좌표 없으면 null. 개별 실패는 0 처리.
+// 반경(m) 내 카테고리별 개수. 한 카테고리라도 확인할 수 없으면 null.
+// 0은 API가 실제로 시설이 없다고 응답한 경우에만 사용한다.
 export async function localCounts(
   lat: number | null | undefined,
   lng: number | null | undefined,
@@ -31,16 +32,24 @@ export async function localCounts(
         `https://dapi.kakao.com/v2/local/search/category.json` +
         `?category_group_code=${code}&x=${lng}&y=${lat}&radius=${radius}&size=1`;
       try {
-        const r = await fetch(url, { headers: { Authorization: `KakaoAK ${key}` } });
-        if (!r.ok) return [name, 0] as const;
+        const r = await fetch(url, {
+          headers: { Authorization: `KakaoAK ${key}` },
+          signal: AbortSignal.timeout(4000),
+          cache: "no-store",
+        });
+        if (!r.ok) return null;
         const j = await r.json();
-        return [name, j.meta?.total_count ?? 0] as const;
+        const count = j?.meta?.total_count;
+        if (!Number.isSafeInteger(count) || count < 0) return null;
+        return [name, count as number] as const;
       } catch {
-        return [name, 0] as const;
+        return null;
       }
     }),
   );
-  return Object.fromEntries(entries) as LocalCounts;
+  const complete = entries.filter((entry) => entry !== null);
+  if (complete.length !== entries.length) return null;
+  return Object.fromEntries(complete) as LocalCounts;
 }
 
 export type RegionInfo = { lawdCd: string; umd: string; sigungu: string };
@@ -55,6 +64,8 @@ export async function coord2region(
   try {
     const r = await fetch(`https://dapi.kakao.com/v2/local/geo/coord2regioncode.json?x=${lng}&y=${lat}`, {
       headers: { Authorization: `KakaoAK ${key}` },
+      signal: AbortSignal.timeout(3000),
+      cache: "no-store",
     });
     if (!r.ok) return null;
     const j = await r.json();

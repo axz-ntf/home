@@ -1,10 +1,11 @@
+import { DdsIcon } from "@/components/dds-icon";
+import NoticeWorkspace from "./notice-workspace";
+import { adminNav } from "@/lib/admin-nav";
 import { LH_ADMIN_LISTINGS, listingIssues } from "@/lib/lh-adapter";
 import { OVERRIDES, type OverrideRow } from "@/lib/manual-overrides";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import ReviewForm from "./review-form";
-import AdminShell, { type NavItem } from "../../admin-shell";
-import { AIcon } from "../../icons";
+import AdminShell from "../../admin-shell";
 import { getAdminUser } from "@/lib/admin-user";
 import rawApiListings from "@/lib/listings-api.json";
 import shMapped from "@/lib/sh-mapped.json";
@@ -45,7 +46,7 @@ for (const r of rawApiListings as RawApiListing[]) {
 }
 
 const TYPE_LABEL: Record<string, string> = {
-  happy: "행복주택", nation: "국민임대", integ: "통합공공임대", perm: "영구임대",
+  public: "공공임대", rental: "임대 · 유형 확인", happy: "행복주택", nation: "국민임대", integ: "통합공공임대", perm: "영구임대",
   buy: "매입임대", jeonse: "전세임대", fifty: "50년임대", sale: "분양", youth: "청년주택",
 };
 
@@ -55,6 +56,8 @@ function resolveFloorplanSpec(id: string): FloorPlanSpec | null {
   const raw = specs[id];
   return (typeof raw === "string" ? (specs[raw] as FloorPlanSpec | undefined) : raw) ?? null;
 }
+
+export const dynamic = "force-dynamic";
 
 export default async function ReviewDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -114,7 +117,6 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
     if (l.id in OVERRIDES) return false;
     return listingIssues(l).length > 0;
   });
-  const needsReview = queue.length;
 
   // 현재 매물이 큐 안에 있으면 다음 매물 id 계산 (없으면 첫 매물).
   const currentIdx = queue.findIndex((l) => l.id === decodedId);
@@ -147,82 +149,41 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
   const hasCoord = Number.isFinite(raw?.lat) && Number.isFinite(raw?.lng);
   if (!hasCoord && (!mapped || mapped.points.length === 0)) anomalies.push("좌표 없음 — 지도에 표시되지 않음");
 
-  const navItems: NavItem[] = [
-    { href: "/admin/review", label: "대시보드", icon: "dash" },
-    { href: "/admin/review?filter=review", label: "검수 큐", icon: "listing", badge: needsReview, badgeKind: "danger" },
-    { href: "/admin/activity", label: "수정 내역", icon: "history", badge: Object.keys(OVERRIDES).length, badgeKind: "subtle" },
-    { href: "/admin/complexes", label: "단지 관리", icon: "building" },
-    { href: "/admin/settings", label: "설정", icon: "settings" },
-  ];
+  const navItems = adminNav();
 
   return (
     <AdminShell
-      pageTitle="공고 검수"
-      pageSub={currentIdx >= 0 ? `검수 큐 ${currentIdx + 1} / ${queue.length}` : "단일 매물 정정"}
+      pageTitle="공고 관리"
+      pageSub="원문 · 수집 정보 · AI 처리 상태"
       navItems={navItems}
       user={getAdminUser()}
     >
-      <div className="a-detail-page">
-      <Link href="/admin/review" className="a-detail-back">
-        <AIcon.ChevronL /> 대시보드로
-      </Link>
-
-      <div className="a-detail-titlerow">
-        <h1 className="a-detail-title">{listing.title}</h1>
-        <div className="actions">
-          {listing.sourceUrl && (
-            <a href={listing.sourceUrl} target="_blank" rel="noreferrer" className="a-btn secondary">
-              {listing.agency} 공고 열기 <AIcon.External />
-            </a>
-          )}
-          {/* 폼(id=review-form)은 클라이언트 컴포넌트 안 — form 속성으로 원격 제출 */}
-          <button type="submit" form="review-form" className="a-btn primary">저장</button>
-        </div>
-      </div>
-      <div className="a-detail-meta">
-        <span style={{ fontFamily: "ui-monospace, monospace" }}>{listing.pblancId}</span>
-        <span className="sep">·</span>
-        <span>{listing.district}</span>
-        <span className="sep">·</span>
-        <span>{TYPE_LABEL[listing.type] ?? listing.type}</span>
-        {!override && anomalies.length > 0 && <span className="a-badge danger">검수 필요</span>}
-        <span className="a-kbd-hint" style={{ marginLeft: "auto" }}>
-          <kbd>⌘S</kbd> 저장 · <kbd>⌘⏎</kbd> 저장하고 다음
-        </span>
-      </div>
-
-      {anomalies.length > 0 && (
-        <div className="a-anomaly-bar">
-          <span className="a-anomaly-icon">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z" /></svg>
-          </span>
-          <span className="a-anomaly-title">이상값 {anomalies.length}건 감지</span>
-          <span className="a-anomaly-list">{anomalies.map((a) => `· ${a}`).join("  ")}</span>
-        </div>
-      )}
-
+      <div className="a-detail-page nw-page">
+      <NoticeWorkspace listing={listing} anomalies={anomalies} />
+      <details className="nw-manual">
+        <summary>직접 정보 수정 <span>필요한 경우에만 기존 편집 도구를 사용하세요</span></summary>
       <ReviewLiveProvider>
       <div className="a-review-layout">
         <div className="a-review-main">
       {dirRows && (
-        <section style={{ margin: "14px 0 4px", padding: "12px 14px", border: "1px solid var(--a-line)", borderRadius: 10, background: "var(--a-bg-2)" }}>
-          <div style={{ fontSize: 13, fontWeight: 800, marginBottom: 8 }}>
-            공식 단지 디렉토리 대조 <span style={{ fontWeight: 500, color: "var(--a-ink-3)", fontSize: 12 }}>(soco 단지정보 vs 현재 표시값 — 다르면 강조)</span>
+        <section style={{ margin: "12px 0 4px", padding: "12px 12px", border: "1px solid var(--a-line)", borderRadius: 8, background: "var(--a-bg-2)" }}>
+          <div style={{ fontSize: 14, fontWeight: 700, marginBottom: 8 }}>
+            공식 단지 디렉토리 대조 <span style={{ fontWeight: 600, color: "var(--a-ink-3)", fontSize: 14 }}>(soco 단지정보 vs 현재 표시값 — 다르면 강조)</span>
           </div>
-          <table style={{ borderCollapse: "collapse", fontSize: 12.5, width: "100%" }}>
+          <table style={{ borderCollapse: "collapse", fontSize: 14, width: "100%" }}>
             <thead>
               <tr style={{ color: "var(--a-ink-3)", textAlign: "left" }}>
-                <th style={{ padding: "2px 8px 2px 0" }}></th>
-                <th style={{ padding: "2px 8px" }}>디렉토리(공식)</th>
-                <th style={{ padding: "2px 8px" }}>현재값</th>
+                <th style={{ padding: "0px 8px 0px 0" }}></th>
+                <th style={{ padding: "0px 8px" }}>디렉토리(공식)</th>
+                <th style={{ padding: "0px 8px" }}>현재값</th>
               </tr>
             </thead>
             <tbody>
               {dirRows.map((r) => (
-                <tr key={r.label} style={r.mismatch ? { background: "var(--a-yellow-low, #fff7e0)" } : undefined}>
-                  <td style={{ padding: "3px 8px 3px 0", fontWeight: 700, color: "var(--a-ink-2)", whiteSpace: "nowrap" }}>{r.label}</td>
-                  <td style={{ padding: "3px 8px" }}>{r.official}</td>
-                  <td style={{ padding: "3px 8px", fontWeight: r.mismatch ? 800 : 400 }}>{r.current}{r.mismatch ? " ⚠" : ""}</td>
+                <tr key={r.label} style={r.mismatch ? { background: "var(--a-yellow-low)" } : undefined}>
+                  <td style={{ padding: "4px 8px 4px 0", fontWeight: 700, color: "var(--a-ink-2)", whiteSpace: "nowrap" }}>{r.label}</td>
+                  <td style={{ padding: "4px 8px" }}>{r.official}</td>
+                  <td style={{ padding: "4px 8px", fontWeight: r.mismatch ? 800 : 400 }}>{r.current}{r.mismatch && <span role="img" aria-label="값 불일치"><DdsIcon name="exclamation" size={14} style={{ marginLeft: 4 }}/></span>}</td>
                 </tr>
               ))}
             </tbody>
@@ -230,7 +191,7 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
         </section>
       )}
       {decodedId.startsWith("youth-") && !dirRows && (
-        <p style={{ fontSize: 12.5, color: "var(--a-ink-3)", margin: "10px 0 0" }}>
+        <p style={{ fontSize: 14, color: "var(--a-ink-3)", margin: "8px 0 0" }}>
           공식 단지 디렉토리에 매칭되는 단지가 없습니다 (만실로 내려간 단지 추정) — 공고문 기준으로 검수하세요.
         </p>
       )}
@@ -312,6 +273,7 @@ export default async function ReviewDetailPage({ params }: { params: Promise<{ i
         />
       </div>
       </ReviewLiveProvider>
+      </details>
       </div>
     </AdminShell>
   );

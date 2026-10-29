@@ -1,0 +1,93 @@
+{
+  "collectedAt": "2026-10-05T04:48:44.055Z",
+  "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061178&ccrCnntSysDsCd=02&uppAisTpCd=05&aisTpCd=05&mi=1027",
+  "sourceHash": "36ac26dd97375740edb13fcd4d9eec53d078de686afbaba9b6eb30ba3364c9a7",
+  "sourceLabel": "(정정)익산평화공공분양무이자할부입주자모집공고문(안)_최종.pdf",
+  "fields": {
+    "priceModel": "per-unit-sale",
+    "rows": [
+      {
+        "houseType": "익산평화 84AH",
+        "area": "84.82",
+        "supplyUnits": 2,
+        "deposit": null,
+        "rent": null,
+        "salePriceManwon": null,
+        "salePriceRange": [
+          28582,
+          30407
+        ],
+        "priceBasis": "공고 전체 층별 주택가격 범위, 발코니 확장·옵션 금액 별도. 잔여 동·호는 분양사무실 확인."
+      },
+      {
+        "houseType": "익산평화 84B",
+        "area": "84.73",
+        "supplyUnits": 143,
+        "deposit": null,
+        "rent": null,
+        "salePriceManwon": null,
+        "salePriceRange": [
+          28551,
+          30374
+        ],
+        "priceBasis": "공고 전체 층별 주택가격 범위, 발코니 확장·옵션 금액 별도. 잔여 동·호는 분양사무실 확인."
+      },
+      {
+        "houseType": "익산평화 84C",
+        "area": "84.98",
+        "supplyUnits": 150,
+        "deposit": null,
+        "rent": null,
+        "salePriceManwon": null,
+        "salePriceRange": [
+          28636,
+          30464
+        ],
+        "priceBasis": "공고 전체 층별 주택가격 범위, 발코니 확장·옵션 금액 별도. 잔여 동·호는 분양사무실 확인."
+      },
+      {
+        "houseType": "익산평화 84D",
+        "area": "84.70",
+        "supplyUnits": 28,
+        "deposit": null,
+        "rent": null,
+        "salePriceManwon": null,
+        "salePriceRange": [
+          28542,
+          30364
+        ],
+        "priceBasis": "공고 전체 층별 주택가격 범위, 발코니 확장·옵션 금액 별도. 잔여 동·호는 분양사무실 확인."
+      },
+      {
+        "houseType": "익산평화 84E",
+        "area": "84.87",
+        "supplyUnits": 8,
+        "deposit": null,
+        "rent": null,
+        "salePriceManwon": null,
+        "salePriceRange": [
+          28598,
+          30424
+        ],
+        "priceBasis": "공고 전체 층별 주택가격 범위, 발코니 확장·옵션 금액 별도. 잔여 동·호는 분양사무실 확인."
+      }
+    ],
+    "deadline": null,
+    "noticeStatus": "정정공고",
+    "progressStatus": null,
+    "schedule": {
+      "applyStart": "2026.10.01",
+      "applyEnd": null,
+      "winnerAt": null,
+      "docResultAt": null
+    },
+    "warnings": [
+      "선착순 물량 소진 시까지: 정해진 접수 마감일이 없습니다."
+    ],
+    "supplyGroups": [],
+    "eligibility": []
+  },
+  "schemaVersion": 2,
+  "correctedAt": "2026-10-28T02:01:15.201Z",
+  "correctionNote": "PDF 2~3·7페이지 대조: 층별 가격 범위로 정리. 이전 회차 마감일 2026.09.30 제거, 2026.10.01부터 물량 소진 시까지로 정리."
+}

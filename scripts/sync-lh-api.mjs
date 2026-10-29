@@ -11,6 +11,7 @@
 //   Phase 5: 사진 보존 + 최종 normalize → 출력
 
 import fs from "node:fs";
+import { extractPriceArea, mapHousingType, noticeRows, collectPages } from "./lib/lh-data-quality.mjs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { recordSync } from "./sync-meta.mjs";
@@ -54,7 +55,7 @@ async function fetchWithRetry(url, init, label) {
   const MAX = 4;
   for (let attempt = 1; ; attempt++) {
     try {
-      const response = await fetch(url, init);
+      const response = await fetch(url, {...init, signal: init?.signal ?? AbortSignal.timeout(30000)});
       if (response.status >= 500 && attempt < MAX) throw new Error(`HTTP ${response.status}`);
       return response;
     } catch (error) {
@@ -100,8 +101,7 @@ async function fetchNoticePage(uppAisTpCd, page) {
     const text = await res.text();
     try {
       const json = JSON.parse(text);
-      if (!Array.isArray(json)) return [];
-      return json[1]?.dsList || [];
+      return noticeRows(json);
     } catch {
       if (attempt >= 3) throw new Error(`${label}: 3회 모두 non-JSON 응답 — ${text.slice(0, 80)}`);
       const wait = 2000 * attempt;
@@ -120,12 +120,14 @@ async function fetchAllNotices() {
     while (true) {
       const items = await fetchNoticePage(tp, page);
       if (!items.length) break;
+      const before = all.length;
       for (const it of items) {
         if (!it.PAN_ID || seen.has(it.PAN_ID)) continue;
         seen.add(it.PAN_ID);
         all.push(it);
         total++;
       }
+      if (page > 1 && before === all.length) throw new Error("LH 목록 중복 페이지 — 기존 출력 보존");
       console.log(`  API3 type=${tp} page=${page} +${items.length}`);
       if (items.length < PG_SZ) break;
       page++;
@@ -163,45 +165,6 @@ async function fetchSupply(notice) {
   return json[1] || null;
 }
 
-function extractPriceArea(supply) {
-  // API 2 응답은 SPL_INF_TP_CD 별 dsList01/02/03 로 들어옴. 모든 dsList* 의 row 합쳐서 처리.
-  if (!supply) return null;
-  const rows = [];
-  for (const [k, v] of Object.entries(supply)) {
-    if (!k.startsWith("dsList") || k.endsWith("Nm")) continue;
-    if (Array.isArray(v)) rows.push(...v);
-  }
-  if (!rows.length) return null;
-
-  const areas = [];
-  const deposits = [];
-  const rents = [];
-  const sales = [];
-  for (const r of rows) {
-    // 전용면적 (DDO_AR)
-    const a = Number(r.DDO_AR);
-    if (Number.isFinite(a) && a > 0) areas.push(a);
-    // 임대보증금 (LS_GMY) — 단위 원
-    const g = Number(String(r.LS_GMY || "").replace(/[^0-9]/g, ""));
-    if (Number.isFinite(g) && g > 0) deposits.push(g);
-    // 월임대료 (MM_RFE)
-    const m = Number(String(r.MM_RFE || "").replace(/[^0-9]/g, ""));
-    if (Number.isFinite(m) && m > 0) rents.push(m);
-    // 분양가 (SIL_AMT) — 공공분양
-    const s = Number(String(r.SIL_AMT || "").replace(/[^0-9]/g, ""));
-    if (Number.isFinite(s) && s > 0) sales.push(s);
-  }
-
-  return {
-    areaMin: areas.length ? Math.min(...areas) : null,
-    areaMax: areas.length ? Math.max(...areas) : null,
-    depositMin: deposits.length ? Math.min(...deposits) : 0,
-    rentMin: rents.length ? Math.min(...rents) : 0,
-    saleAvg: sales.length ? Math.round(sales.reduce((a, b) => a + b, 0) / sales.length) : null,
-    units: rows.length,
-  };
-}
-
 // ─────────────────────────────────────────────────────────────
 // Phase 2.5: API 1 — 단지 정보 (rentalHouseList)
 // 시도×시군구 단위로 페이징 호출하여 모든 단지 메타 수집.
@@ -217,7 +180,7 @@ async function fetchComplexPage(brtcCode, signguCode, pageNo, numOfRows = 1000) 
   let res;
   for (let attempt = 1; ; attempt++) {
     try {
-      res = await fetch(url, { headers: { "User-Agent": UA } });
+      res = await fetch(url, { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(30000) });
       break;
     } catch (e) {
       if (attempt >= 3) throw e;
@@ -225,9 +188,9 @@ async function fetchComplexPage(brtcCode, signguCode, pageNo, numOfRows = 1000) 
       await sleep(attempt * 1000);
     }
   }
-  if (!res.ok) return { items: [], totalCount: 0 };
+  if (!res.ok) throw new Error(`API1 HTTP ${res.status}`);
   const json = await res.json();
-  if (json?.code !== "000") return { items: [], totalCount: 0 };
+  if (json?.code !== "000" || !Array.isArray(json.hsmpList)) throw new Error("API1 응답 오류");
   return { items: json.hsmpList || [], totalCount: Number(json.hsmpList?.[0]?.totalCount || 0) };
 }
 
@@ -235,7 +198,7 @@ async function fetchAllComplexes() {
   // 캐시 사용 — 이미 받은 적 있으면 재사용 (1000회/일 한도 절약)
   try {
     const cached = JSON.parse(fs.readFileSync(COMPLEXES_PATH, "utf8"));
-    if (Array.isArray(cached) && cached.length > 0) {
+    if (Array.isArray(cached) && cached.length > 0 && Date.now() - Number(fs.readFileSync(COMPLEXES_PATH + ".fetched-at", "utf8")) < 7 * 86400000) {
       console.log(`  단지정보 캐시 사용: ${cached.length}건`);
       return cached;
     }
@@ -247,16 +210,12 @@ async function fetchAllComplexes() {
     for (const [sidoCode, sido] of Object.entries(admin)) {
       let sidoTotal = 0;
       for (const sg of sido.sigungu) {
-        let page = 1;
-        while (true) {
-          const { items, totalCount } = await fetchComplexPage(sidoCode, sg.code, page);
-          if (!items.length) break;
-          all.push(...items);
-          sidoTotal += items.length;
-          if (all.length >= page * 1000 || items.length < 1000 || all.length >= totalCount) break;
-          page++;
-          await sleep(DELAY);
-        }
+        const items = await collectPages(async page => {
+          if (page > 1) await sleep(DELAY);
+          return fetchComplexPage(sidoCode, sg.code, page);
+        }, 1000);
+        all.push(...items);
+        sidoTotal += items.length;
         await sleep(DELAY);
       }
       console.log(`  API1 ${sidoCode} ${sido.name}: ${sidoTotal}건`);
@@ -264,9 +223,11 @@ async function fetchAllComplexes() {
   } catch (e) {
     // data.myhome.go.kr 이 GH 러너(해외 IP)에서 간헐 불통 — 단지정보 없이도 sync 는 계속.
     // (좌표는 Phase 7.1 지오코딩이 보강. 성공 run 이 캐시를 만들면 이후엔 API 호출 자체를 안 함.)
-    console.log(`⚠️ 단지정보 수집 실패 — 확보분 ${all.length}건으로 계속: ${e.message ?? e}`);
-    return all;
+    console.log(`⚠️ 단지정보 수집 실패 — 확보분 ${all.length}건은 사용하지 않음: ${e.message ?? e}`);
+    if(process.env.API_FIRST === '1')throw new Error('단지 API 수집 실패 — 기존 단지·공고 데이터 유지');
+    return []; // 일부 지역만 수집된 결과를 완전한 단지 DB처럼 사용하지 않는다.
   }
+  fs.writeFileSync(COMPLEXES_PATH + ".fetched-at", String(Date.now()));
   fs.writeFileSync(COMPLEXES_PATH, JSON.stringify(all, null, 2));
   console.log(`  단지정보 저장: ${COMPLEXES_PATH} (${all.length}건)`);
   return all;
@@ -347,7 +308,7 @@ async function vworldGeocode(addr) {
     url.searchParams.set("address", clean);
     url.searchParams.set("key", VWORLD_API_KEY);
     try {
-      const res = await fetch(url, { headers: { "User-Agent": UA } });
+      const res = await fetch(url, { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(30000) });
       if (!res.ok) continue;
       const json = await res.json();
       if (json?.response?.status === "OK") {
@@ -369,20 +330,7 @@ async function vworldGeocode(addr) {
 // Phase 5: 정규화
 // ─────────────────────────────────────────────────────────────
 function mapType(notice) {
-  const tp = notice.UPP_AIS_TP_CD;
-  const sub = notice.AIS_TP_CD_NM || "";
-  const name = notice.PAN_NM || "";
-  if (tp === "05" || tp === "39") return "sale";
-  // 06/13 임대 계열 — 세부 매핑
-  const blob = sub + " " + name;
-  if (blob.includes("행복")) return "happy";
-  if (blob.includes("국민임대")) return "nation";
-  if (blob.includes("영구임대")) return "perm";
-  if (blob.includes("매입임대")) return "buy";
-  if (blob.includes("전세임대")) return "jeonse";
-  if (blob.includes("50년")) return "fifty";
-  if (blob.includes("통합공공임대") || blob.includes("든든")) return "integ";
-  return "nation";
+  return mapHousingType(notice.PAN_NM, notice.UPP_AIS_TP_CD, notice.AIS_TP_CD_NM);
 }
 
 function mapStatus(panSs) {
@@ -390,13 +338,6 @@ function mapStatus(panSs) {
   if (panSs === "접수중" || panSs === "정정공고중" || panSs === "상담요청") return "open";
   if (panSs === "접수마감" || panSs === "모집중지") return "closed";
   return "open";
-}
-
-// 상세 페이지에서 직접 추출한 "공고상태" 우선 사용. detail status 없으면 PAN_SS fallback.
-// PAN_SS 는 API sync 시점의 값이라 stale 일 수 있는 반면, 페이지 status 는 사용자가 보는 실시간 값.
-function resolveStatus(panSs, detailStatus) {
-  if (detailStatus) return mapStatus(detailStatus);
-  return mapStatus(panSs);
 }
 
 // API 1 응답이 빈 객체(`{}`)로 직렬화돼 들어오는 필드가 있어서 string/number 만 살리고 나머진 null.
@@ -425,6 +366,7 @@ function inferScope(notice, mappedType) {
 async function main() {
   console.log("=== Phase 1: API 3 (공고 목록) ===");
   const notices = await fetchAllNotices();
+  if (!notices.length) throw new Error("공고 0건 — 기존 출력 보존");
   console.log(`총 공고: ${notices.length}\n`);
 
   console.log("=== Phase 2.5: API 1 (단지 정보) ===");
@@ -481,7 +423,10 @@ async function main() {
     // 우선순위: 단지매칭(API 1)+VWorld > 기존 데이터 좌표 > 페이지 scrape > VWorld(페이지 주소)
     // VWorld 실패 / 키없음 시에도 ex 좌표 fallback 으로 가도록 — 옛 데이터 좌표 살림.
     const ex = existingByPanId.get(id);
-    const hasExCoord = ex && ex.lat && ex.lng && ex.geocoded && ex.geocoded !== "sido-center";
+    // 지난 sync 에 단지매칭(api1-*)으로 얻은 좌표는, 이번에 매칭이 없으면 버린다 —
+    // 과거 오매칭(다른 블록·다른 지역 단지) 좌표가 계속 남는 것 방지.
+    const exFromMatch = String(ex?.geocoded ?? "").startsWith("api1") && !matchedComplex;
+    const hasExCoord = ex && ex.lat && ex.lng && ex.geocoded && ex.geocoded !== "sido-center" && !exFromMatch;
     let lat = null, lng = null, address = "", geocoded = "none";
 
     if (matchedComplex?.rnAdres && (VWORLD_API_KEY || KAKAO_REST_API_KEY)) {
@@ -501,12 +446,12 @@ async function main() {
     } else if (hasExCoord) {
       // VWorld 없거나 API1 매칭 안된 경우: ex 좌표 fallback
       lat = ex.lat; lng = ex.lng;
-      address = matchedComplex?.rnAdres || ex.address || "";
+      address = matchedComplex?.rnAdres || (exFromMatch ? "" : ex.address) || "";
       geocoded = ex.geocoded;
       coordExisting++;
     } else {
       // 페이지 scrape
-      const sc = await scrapeAddress(n.DTL_URL);
+      const sc = process.env.API_FIRST === '1' ? null : await scrapeAddress(n.DTL_URL);
       await sleep(DELAY);
       if (sc?.lat && sc?.lng) {
         lat = sc.lat; lng = sc.lng; address = sc.address || ""; geocoded = "page-coords";
@@ -522,16 +467,15 @@ async function main() {
         }
         await sleep(DELAY);
       } else {
+        // Preserve a previously sourced address even when no trustworthy coordinates exist.
+        address = matchedComplex?.rnAdres || (!exFromMatch ? ex?.address : "") || "";
+        if (address) geocoded = "addr-only";
         coordNone++;
       }
     }
 
-    // 보증금/월세: API 2 (공고별 공급정보) 우선, 없으면 API 1 (단지 기본금액) fallback
-    const depositWon = pa?.depositMin || matchedComplex?.bassRentGtn || 0;
-    const rentWon = pa?.rentMin || matchedComplex?.bassMtRntchrg || 0;
-    const area = pa && pa.areaMin && pa.areaMax
-      ? (pa.areaMin === pa.areaMax ? `${pa.areaMin}` : `${pa.areaMin}~${pa.areaMax}`)
-      : (matchedComplex?.suplyPrvuseAr ? String(matchedComplex.suplyPrvuseAr) : "");
+    // 단지 DB의 기본 가격은 해당 모집공고의 임대조건을 보증하지 않는다.
+    const area = pa?.area || "";
 
     // Phase 5: 정규화 → Listing 타입
     const type = mapType(n);
@@ -546,7 +490,7 @@ async function main() {
       agency: "LH",
       district: n.CNP_CD_NM || "",
       districtId: SIDO_NAME_TO_ID[n.CNP_CD_NM] || null,
-      status: resolveStatus(n.PAN_SS, ex?.details?.noticeStatus),
+      status: mapStatus(n.PAN_SS),
       deadline: n.CLSG_DT || "",
       announceDate: n.PAN_NT_ST_DT || "",
       winnerAt: winnerByPan.get(id) || winnerByPan.get(String(id).replace(/^0+/, "")) || undefined,
@@ -554,10 +498,16 @@ async function main() {
       lat, lng, geocoded,
       // 가격/면적
       area,
-      depositManwon: depositWon ? Math.round(depositWon / 10000) : 0,
-      monthlyRentManwon: rentWon ? Math.round(rentWon / 10000) : 0,
-      salePriceManwon: pa?.saleAvg ? Math.round(pa.saleAvg / 10000) : null,
-      supplyUnits: pa?.units ?? matchedComplex?.hshldCo ?? null,
+      depositManwon: pa?.depositManwon ?? 0,
+      monthlyRentManwon: pa?.monthlyRentManwon ?? 0,
+      depositRange: pa?.depositRange ?? null,
+      rentRange: pa?.rentRange ?? null,
+      priceUnverified: !pa || !pa.rows.every(r => r.deposit != null && r.rent != null),
+      priceSource: pa ? "lh-api" : null,
+      complexes: pa ? [{ name: null, rows: pa.rows }] : [],
+      salePriceManwon: pa?.saleMin ? pa.saleMin / 10000 : null,
+      supplyUnits: null,
+      totalUnits: null,
       // 단지 메타 (API 1 매칭된 경우) — 빈객체 응답 방어
       complexName: strOrNull(matchedComplex?.hsmpNm),
       pnu: strOrNull(matchedComplex?.pnu),

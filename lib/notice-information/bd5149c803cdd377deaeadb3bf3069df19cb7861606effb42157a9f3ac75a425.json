@@ -1,0 +1,52 @@
+{
+  "collectedAt": "2026-10-05T04:46:50.823Z",
+  "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061180&ccrCnntSysDsCd=02&uppAisTpCd=05&aisTpCd=05&mi=1027",
+  "sourceHash": "91eb4846a866e763b87e0c00b640e9f13dfe78442cda5d69cdac45c8c5a01492",
+  "sourceLabel": "(공고문)원주무실A-2블록공공분양주택자격완화추가입주자모집(유주택가능)20260928.pdf",
+  "fields": {
+    "priceModel": "per-unit-sale",
+    "rows": [
+      {
+        "houseType": "A-2 74A",
+        "area": "74.84",
+        "supplyUnits": 60,
+        "deposit": null,
+        "rent": null,
+        "salePriceManwon": null,
+        "salePriceRange": [
+          35699,
+          37978
+        ],
+        "priceBasis": "공고 기본형 전체 층별 주택가격 범위, 발코니 확장비 별도."
+      },
+      {
+        "houseType": "A-2 84A",
+        "area": "84.79",
+        "supplyUnits": 122,
+        "deposit": null,
+        "rent": null,
+        "salePriceManwon": null,
+        "salePriceRange": [
+          40419,
+          42999
+        ],
+        "priceBasis": "공고 기본형 전체 층별 주택가격 범위, 발코니 확장비 별도."
+      }
+    ],
+    "schedule": {
+      "applyStart": "2026.10.12",
+      "applyEnd": "2026.10.14",
+      "winnerAt": "2026.10.15",
+      "docResultAt": null
+    },
+    "deadline": "2026.10.14",
+    "noticeStatus": "재공고",
+    "progressStatus": null,
+    "supplyGroups": [],
+    "eligibility": [],
+    "warnings": []
+  },
+  "schemaVersion": 2,
+  "correctedAt": "2026-10-28T02:01:15.616Z",
+  "correctionNote": "PDF 1~2페이지 대조: 최상층 가격을 단일 분양가로 표시하지 않도록 층별 범위로 정리. 접수 시작일 보완."
+}

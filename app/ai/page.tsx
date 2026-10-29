@@ -3,6 +3,7 @@
 import { Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ChatPanelBody } from "@/components/chat-panel-body";
+import { DdsIcon } from "@/components/dds-icon";
 import { LH_LISTINGS } from "@/lib/lh-adapter";
 
 // 모바일 풀스크린 AI 챗 라우트. ?focus=<listingId> 면 그 공고에 스코프된 상담.
@@ -31,15 +32,7 @@ function AiPageInner() {
           onClick={handleClose}
           aria-label="뒤로"
         >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path
-              d="M 12 4 L 6 10 L 12 16"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <DdsIcon name="chevron-left" size={24} />
         </button>
         <div className="ai-fullscreen-title">
           {/* eslint-disable-next-line @next/next/no-img-element */}

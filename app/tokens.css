@@ -1,405 +1,246 @@
-/* ============================================================
- * Karrot · Seed Design — Design Tokens
- * ------------------------------------------------------------
- * Source: daangn/seed-design (Apache-2.0)
- *   · Color / paper / radius / spacing / shadow
- *     ← packages/stylesheet/global.css @ main
- *   · Typography (t1–t10 scale + semantic styles)
- *     ← docs/content/docs/foundation/typography/overview.mdx @ dev
- *
- * Token layers (reference in this order):
- *   1. static    — immutable across themes
- *   2. scale     — raw primitives (palette, font-size, line-height…)
- *   3. semantic  — role tokens (USE THESE IN COMPONENTS)
- *
- * Naming: --seed-<layer>-<category>-<name>
- *         e.g. --seed-scale-font-size-t5  → 1rem
- *              --seed-semantic-color-primary
- * ============================================================ */
-
-
-/* ------------------------------------------------------------
- * 1. ROOT — light theme (default)
- * ------------------------------------------------------------ */
+/* Compatibility names for existing consumers. Every visual value resolves to DDS.
+ * Source of truth: dds-foundation.css; do not add a separate palette here. */
 :root {
-  color-scheme: light;
-
-  /* ──────────────────────────────────────────────
-   * STATIC · Theme-agnostic colors
-   * ────────────────────────────────────────────── */
-  --seed-static-color-black:              #000000;
-  --seed-static-color-white:              #ffffff;
-  --seed-static-color-gray-900:           #212124;
-  --seed-static-color-carrot-50:          #fff5f0;
-  --seed-static-color-carrot-800:         #cc4700;
-  --seed-static-color-green-50:           #e8faf6;
-  --seed-static-color-green-800:          #008c72;
-  --seed-static-color-yellow-50:          #fff7e6;
-  --seed-static-color-yellow-800:         #ba5e02;
-  --seed-static-color-red-50:             #fff3f2;
-  --seed-static-color-red-800:            #e81300;
-  --seed-static-color-blue-50:            #ebf7fa;
-  --seed-static-color-blue-800:           #0a85b5;
-  --seed-static-color-black-alpha-200:    #00000033;
-  --seed-static-color-black-alpha-500:    #00000080;
-  --seed-static-color-white-alpha-50:     #ffffff0d;
-  --seed-static-color-white-alpha-200:    #ffffff33;
-
-  /* ──────────────────────────────────────────────
-   * SCALE · Color palettes
-   * ────────────────────────────────────────────── */
-
-  /* Gray */
-  --seed-scale-color-gray-00:  #ffffff;
-  --seed-scale-color-gray-50:  #f7f8fa;
-  --seed-scale-color-gray-100: #f2f3f6;
-  --seed-scale-color-gray-200: #eaebee;
-  --seed-scale-color-gray-300: #dcdee3;
-  --seed-scale-color-gray-400: #d1d3d8;
-  --seed-scale-color-gray-500: #adb1ba;
-  --seed-scale-color-gray-600: #868b94;
-  --seed-scale-color-gray-700: #4d5159;
-  --seed-scale-color-gray-800: #393a40;
-  --seed-scale-color-gray-900: #212124;
-
-  /* Carrot (brand) */
-  --seed-scale-color-carrot-50:  #fff5f0;
-  --seed-scale-color-carrot-100: #ffe2d2;
-  --seed-scale-color-carrot-200: #ffd2b9;
-  --seed-scale-color-carrot-300: #ffbc97;
-  --seed-scale-color-carrot-400: #ff9e66;
-  --seed-scale-color-carrot-500: #ff6f0f;  /* ★ primary */
-  --seed-scale-color-carrot-600: #fa6616;
-  --seed-scale-color-carrot-700: #f05705;
-  --seed-scale-color-carrot-800: #cc4700;
-  --seed-scale-color-carrot-900: #b44104;
-  --seed-scale-color-carrot-950: #a03a03;
-
-  /* Blue */
-  --seed-scale-color-blue-50:  #ebf7fa;
-  --seed-scale-color-blue-100: #d2edfa;
-  --seed-scale-color-blue-200: #b9e3fa;
-  --seed-scale-color-blue-300: #87d7ff;
-  --seed-scale-color-blue-400: #57c7ff;
-  --seed-scale-color-blue-500: #009ceb;
-  --seed-scale-color-blue-600: #0088cc;
-  --seed-scale-color-blue-700: #0077b2;
-  --seed-scale-color-blue-800: #006199;
-  --seed-scale-color-blue-900: #004c73;
-  --seed-scale-color-blue-950: #003b59;
-
-  /* Red */
-  --seed-scale-color-red-50:  #fff3f2;
-  --seed-scale-color-red-100: #ffe5e3;
-  --seed-scale-color-red-200: #fcd2cf;
-  --seed-scale-color-red-300: #ffaca6;
-  --seed-scale-color-red-400: #ff7e75;
-  --seed-scale-color-red-500: #ff4133;
-  --seed-scale-color-red-600: #fa2314;
-  --seed-scale-color-red-700: #e81607;
-  --seed-scale-color-red-800: #a62014;
-  --seed-scale-color-red-900: #910c00;
-  --seed-scale-color-red-950: #821006;
-
-  /* Green */
-  --seed-scale-color-green-50:  #e8faf6;
-  --seed-scale-color-green-100: #c7f2e4;
-  --seed-scale-color-green-200: #96ebc3;
-  --seed-scale-color-green-300: #6adeac;
-  --seed-scale-color-green-400: #30c795;
-  --seed-scale-color-green-500: #1aa174;
-  --seed-scale-color-green-600: #128c6e;
-  --seed-scale-color-green-700: #077a5e;
-  --seed-scale-color-green-800: #06614a;
-  --seed-scale-color-green-900: #004f40;
-  --seed-scale-color-green-950: #004034;
-
-  /* Yellow */
-  --seed-scale-color-yellow-50:  #fff7e6;
-  --seed-scale-color-yellow-100: #ffe3ba;
-  --seed-scale-color-yellow-200: #facc87;
-  --seed-scale-color-yellow-300: #f7be68;
-  --seed-scale-color-yellow-400: #dea651;
-  --seed-scale-color-yellow-500: #c27f29;
-  --seed-scale-color-yellow-600: #a66c21;
-  --seed-scale-color-yellow-700: #805217;
-  --seed-scale-color-yellow-800: #6b4717;
-  --seed-scale-color-yellow-900: #593d17;
-  --seed-scale-color-yellow-950: #4d361a;
-
-  /* Pink */
-  --seed-scale-color-pink-50:  #fff5f5;
-  --seed-scale-color-pink-100: #ffdddb;
-  --seed-scale-color-pink-200: #ffbfc5;
-  --seed-scale-color-pink-300: #ffadb4;
-  --seed-scale-color-pink-400: #ff8a9d;
-  --seed-scale-color-pink-500: #f0657c;
-  --seed-scale-color-pink-600: #db4b6a;
-  --seed-scale-color-pink-700: #bd2b5c;
-  --seed-scale-color-pink-800: #991c45;
-  --seed-scale-color-pink-900: #800d3d;
-  --seed-scale-color-pink-950: #660a30;
-
-  /* Purple */
-  --seed-scale-color-purple-50:  #f6f4fe;
-  --seed-scale-color-purple-100: #e3dafe;
-  --seed-scale-color-purple-200: #d5c7ff;
-  --seed-scale-color-purple-300: #cfbfff;
-  --seed-scale-color-purple-400: #b69eff;
-  --seed-scale-color-purple-500: #9675fa;
-  --seed-scale-color-purple-600: #8361e8;
-  --seed-scale-color-purple-700: #6748c7;
-  --seed-scale-color-purple-800: #4f3699;
-  --seed-scale-color-purple-900: #3f2687;
-  --seed-scale-color-purple-950: #331e70;
-
-  /* Alpha ramps (overlays, low-intent tints) */
-  --seed-scale-color-gray-alpha-50:    #0017580d;
-  --seed-scale-color-gray-alpha-100:   #15234e1a;
-  --seed-scale-color-gray-alpha-200:   #19233e33;
-  --seed-scale-color-gray-alpha-500:   #282e4080;
-  --seed-scale-color-carrot-alpha-50:  #ff6f0f0d;
-  --seed-scale-color-carrot-alpha-100: #ff6f0f24;
-  --seed-scale-color-carrot-alpha-200: #ff6f0f33;
-  --seed-scale-color-blue-alpha-50:    #009ceb0d;
-  --seed-scale-color-blue-alpha-100:   #009ceb1a;
-  --seed-scale-color-blue-alpha-200:   #009ceb33;
-  --seed-scale-color-red-alpha-50:     #ff41330d;
-  --seed-scale-color-red-alpha-100:    #ff41331a;
-  --seed-scale-color-red-alpha-200:    #ff413333;
-  --seed-scale-color-yellow-alpha-50:  #f7be6814;
-  --seed-scale-color-yellow-alpha-100: #f7be6824;
-  --seed-scale-color-yellow-alpha-200: #f7be683d;
-  --seed-scale-color-green-alpha-50:   #1aa1740d;
-  --seed-scale-color-green-alpha-100:  #1aa17424;
-  --seed-scale-color-green-alpha-200:  #1aa17433;
-
-  /* ──────────────────────────────────────────────
-   * SCALE · Typography — t1 … t10
-   * Responsive (rem) + -static (px) variants.
-   * Base: 1rem = 16px. Pair same-index size + line-height.
-   * ────────────────────────────────────────────── */
-
-  /* Font-size · responsive (rem) */
-  --seed-scale-font-size-t1:  0.6875rem;   /* 11 */
-  --seed-scale-font-size-t2:  0.75rem;     /* 12 */
-  --seed-scale-font-size-t3:  0.8125rem;   /* 13 */
-  --seed-scale-font-size-t4:  0.875rem;    /* 14 */
-  --seed-scale-font-size-t5:  1rem;        /* 16 */
-  --seed-scale-font-size-t6:  1.125rem;    /* 18 */
-  --seed-scale-font-size-t7:  1.25rem;     /* 20 */
-  --seed-scale-font-size-t8:  1.375rem;    /* 22 */
-  --seed-scale-font-size-t9:  1.5rem;      /* 24 */
-  --seed-scale-font-size-t10: 1.625rem;    /* 26 */
-
-  /* Font-size · static (px) — ignores user font-size scaling */
-  --seed-scale-font-size-t1-static:  11px;
-  --seed-scale-font-size-t2-static:  12px;
-  --seed-scale-font-size-t3-static:  13px;
-  --seed-scale-font-size-t4-static:  14px;
-  --seed-scale-font-size-t5-static:  16px;
-  --seed-scale-font-size-t6-static:  18px;
-  --seed-scale-font-size-t7-static:  20px;
-  --seed-scale-font-size-t8-static:  22px;
-  --seed-scale-font-size-t9-static:  24px;
-  --seed-scale-font-size-t10-static: 26px;
-
-  /* Line-height · responsive (rem) */
-  --seed-scale-line-height-t1:  0.9375rem;  /* 15 */
-  --seed-scale-line-height-t2:  1rem;       /* 16 */
-  --seed-scale-line-height-t3:  1.125rem;   /* 18 */
-  --seed-scale-line-height-t4:  1.1875rem;  /* 19 */
-  --seed-scale-line-height-t5:  1.375rem;   /* 22 */
-  --seed-scale-line-height-t6:  1.5rem;     /* 24 */
-  --seed-scale-line-height-t7:  1.6875rem;  /* 27 */
-  --seed-scale-line-height-t8:  1.875rem;   /* 30 */
-  --seed-scale-line-height-t9:  2rem;       /* 32 */
-  --seed-scale-line-height-t10: 2.1875rem;  /* 35 */
-
-  /* Line-height · static (px) */
-  --seed-scale-line-height-t1-static:  15px;
-  --seed-scale-line-height-t2-static:  16px;
-  --seed-scale-line-height-t3-static:  18px;
-  --seed-scale-line-height-t4-static:  19px;
-  --seed-scale-line-height-t5-static:  22px;
-  --seed-scale-line-height-t6-static:  24px;
-  --seed-scale-line-height-t7-static:  27px;
-  --seed-scale-line-height-t8-static:  30px;
-  --seed-scale-line-height-t9-static:  32px;
-  --seed-scale-line-height-t10-static: 35px;
-
-  /* Font-weight */
+  --seed-semantic-color-primary-strong: var(--dds-blue-700);
+  --seed-semantic-color-accent-red: var(--dds-text-state-accent);
+  --seed-semantic-color-line-default: var(--dds-border-card);
+  --seed-static-color-black: var(--dds-black-1000);
+  --seed-static-color-white: var(--dds-white-1000);
+  --seed-static-color-gray-900: var(--dds-gray-900);
+  --seed-static-color-carrot-50: var(--dds-blue-50);
+  --seed-static-color-carrot-800: var(--dds-blue-700);
+  --seed-static-color-green-50: color-mix(in srgb, var(--dds-green) 8%, transparent);
+  --seed-static-color-green-800: var(--seed-scale-color-green-800);
+  --seed-static-color-yellow-50: var(--dds-yellow-50);
+  --seed-static-color-yellow-800: var(--dds-yellow-700);
+  --seed-static-color-red-50: var(--dds-red-50);
+  --seed-static-color-red-800: var(--dds-red-700);
+  --seed-static-color-blue-50: var(--dds-blue-50);
+  --seed-static-color-blue-800: var(--dds-blue-700);
+  --seed-static-color-black-alpha-200: var(--dds-black-300);
+  --seed-static-color-black-alpha-500: var(--dds-black-600);
+  --seed-static-color-white-alpha-50: var(--dds-white-50);
+  --seed-static-color-white-alpha-200: var(--dds-white-300);
+  --seed-scale-color-gray-00: var(--dds-white-1000);
+  --seed-scale-color-gray-50: var(--dds-gray-50);
+  --seed-scale-color-gray-100: var(--dds-gray-100);
+  --seed-scale-color-gray-200: var(--dds-gray-200);
+  --seed-scale-color-gray-300: var(--dds-gray-300);
+  --seed-scale-color-gray-400: var(--dds-gray-400);
+  --seed-scale-color-gray-500: var(--dds-gray-500);
+  --seed-scale-color-gray-600: var(--dds-gray-600);
+  --seed-scale-color-gray-700: var(--dds-gray-700);
+  --seed-scale-color-gray-800: var(--dds-gray-800);
+  --seed-scale-color-gray-900: var(--dds-gray-900);
+  --seed-scale-color-carrot-50: var(--dds-blue-50);
+  --seed-scale-color-carrot-100: var(--dds-blue-100);
+  --seed-scale-color-carrot-200: var(--dds-blue-200);
+  --seed-scale-color-carrot-300: var(--dds-blue-300);
+  --seed-scale-color-carrot-400: var(--dds-blue-400);
+  --seed-scale-color-carrot-500: var(--dds-blue-500);
+  --seed-scale-color-carrot-600: var(--dds-blue-600);
+  --seed-scale-color-carrot-700: var(--dds-blue-700);
+  --seed-scale-color-carrot-800: var(--dds-blue-700);
+  --seed-scale-color-carrot-900: var(--dds-blue-700);
+  --seed-scale-color-carrot-950: var(--dds-blue-700);
+  --seed-scale-color-blue-50: var(--dds-blue-50);
+  --seed-scale-color-blue-100: var(--dds-blue-100);
+  --seed-scale-color-blue-200: var(--dds-blue-200);
+  --seed-scale-color-blue-300: var(--dds-blue-300);
+  --seed-scale-color-blue-400: var(--dds-blue-400);
+  --seed-scale-color-blue-500: var(--dds-blue-500);
+  --seed-scale-color-blue-600: var(--dds-blue-600);
+  --seed-scale-color-blue-700: var(--dds-blue-700);
+  --seed-scale-color-blue-800: var(--dds-blue-700);
+  --seed-scale-color-blue-900: var(--dds-blue-700);
+  --seed-scale-color-blue-950: var(--dds-blue-700);
+  --seed-scale-color-red-50: var(--dds-red-50);
+  --seed-scale-color-red-100: var(--dds-red-100);
+  --seed-scale-color-red-200: var(--dds-red-200);
+  --seed-scale-color-red-300: var(--dds-red-300);
+  --seed-scale-color-red-400: var(--dds-red-400);
+  --seed-scale-color-red-500: var(--dds-red-500);
+  --seed-scale-color-red-600: var(--dds-red-600);
+  --seed-scale-color-red-700: var(--dds-red-700);
+  --seed-scale-color-red-800: var(--dds-red-700);
+  --seed-scale-color-red-900: var(--dds-red-700);
+  --seed-scale-color-red-950: var(--dds-red-700);
+  /* DDS has one green token; derive tints and legible text tones from it. */
+  --seed-scale-color-green-50: color-mix(in srgb, var(--dds-green) 8%, transparent);
+  --seed-scale-color-green-100: color-mix(in srgb, var(--dds-green) 16%, transparent);
+  --seed-scale-color-green-200: color-mix(in srgb, var(--dds-green) 24%, transparent);
+  --seed-scale-color-green-300: color-mix(in srgb, var(--dds-green) 48%, transparent);
+  --seed-scale-color-green-400: var(--dds-green);
+  --seed-scale-color-green-500: var(--dds-green);
+  --seed-scale-color-green-600: color-mix(in srgb, var(--dds-green) 85%, var(--dds-black-1000));
+  --seed-scale-color-green-700: color-mix(in srgb, var(--dds-green) 65%, var(--dds-black-1000));
+  --seed-scale-color-green-800: color-mix(in srgb, var(--dds-green) 55%, var(--dds-black-1000));
+  --seed-scale-color-green-900: color-mix(in srgb, var(--dds-green) 45%, var(--dds-black-1000));
+  --seed-scale-color-green-950: color-mix(in srgb, var(--dds-green) 35%, var(--dds-black-1000));
+  --seed-scale-color-yellow-50: var(--dds-yellow-50);
+  --seed-scale-color-yellow-100: var(--dds-yellow-100);
+  --seed-scale-color-yellow-200: var(--dds-yellow-200);
+  --seed-scale-color-yellow-300: var(--dds-yellow-300);
+  --seed-scale-color-yellow-400: var(--dds-yellow-400);
+  --seed-scale-color-yellow-500: var(--dds-yellow-500);
+  --seed-scale-color-yellow-600: var(--dds-yellow-600);
+  --seed-scale-color-yellow-700: var(--dds-yellow-700);
+  --seed-scale-color-yellow-800: var(--dds-yellow-700);
+  --seed-scale-color-yellow-900: var(--dds-yellow-700);
+  --seed-scale-color-yellow-950: var(--dds-yellow-700);
+  --seed-scale-color-pink-50: var(--dds-coral-50);
+  --seed-scale-color-pink-100: var(--dds-coral-100);
+  --seed-scale-color-pink-200: var(--dds-coral-200);
+  --seed-scale-color-pink-300: var(--dds-coral-300);
+  --seed-scale-color-pink-400: var(--dds-coral-400);
+  --seed-scale-color-pink-500: var(--dds-coral-500);
+  --seed-scale-color-pink-600: var(--dds-coral-600);
+  --seed-scale-color-pink-700: var(--dds-coral-700);
+  --seed-scale-color-pink-800: var(--dds-coral-700);
+  --seed-scale-color-pink-900: var(--dds-coral-700);
+  --seed-scale-color-pink-950: var(--dds-coral-700);
+  --seed-scale-color-purple-50: var(--dds-violet-50);
+  --seed-scale-color-purple-100: var(--dds-violet-100);
+  --seed-scale-color-purple-200: var(--dds-violet-200);
+  --seed-scale-color-purple-300: var(--dds-violet-300);
+  --seed-scale-color-purple-400: var(--dds-violet-400);
+  --seed-scale-color-purple-500: var(--dds-violet-500);
+  --seed-scale-color-purple-600: var(--dds-violet-600);
+  --seed-scale-color-purple-700: var(--dds-violet-700);
+  --seed-scale-color-purple-800: var(--dds-violet-700);
+  --seed-scale-color-purple-900: var(--dds-violet-700);
+  --seed-scale-color-purple-950: var(--dds-violet-700);
+  --seed-scale-color-gray-alpha-50: var(--dds-black-50);
+  --seed-scale-color-gray-alpha-100: var(--dds-black-100);
+  --seed-scale-color-gray-alpha-200: var(--dds-black-300);
+  --seed-scale-color-gray-alpha-500: var(--dds-black-600);
+  --seed-scale-color-carrot-alpha-50: var(--dds-blue-50);
+  --seed-scale-color-carrot-alpha-100: var(--dds-blue-100);
+  --seed-scale-color-carrot-alpha-200: var(--dds-blue-300);
+  --seed-scale-color-blue-alpha-50: var(--dds-blue-50);
+  --seed-scale-color-blue-alpha-100: var(--dds-blue-100);
+  --seed-scale-color-blue-alpha-200: var(--dds-blue-300);
+  --seed-scale-color-red-alpha-50: var(--dds-red-50);
+  --seed-scale-color-red-alpha-100: var(--dds-red-100);
+  --seed-scale-color-red-alpha-200: var(--dds-red-300);
+  --seed-scale-color-yellow-alpha-50: var(--dds-yellow-50);
+  --seed-scale-color-yellow-alpha-100: var(--dds-yellow-100);
+  --seed-scale-color-yellow-alpha-200: var(--dds-yellow-300);
+  --seed-scale-color-green-alpha-50: color-mix(in srgb, var(--dds-green) 8%, transparent);
+  --seed-scale-color-green-alpha-100: color-mix(in srgb, var(--dds-green) 8%, transparent);
+  --seed-scale-color-green-alpha-200: color-mix(in srgb, var(--dds-green) 8%, transparent);
+  --seed-scale-font-size-t1: var(--dds-typography-label-normal-size);
+  --seed-scale-font-size-t2: var(--dds-typography-label-normal-size);
+  --seed-scale-font-size-t3: var(--dds-typography-caption-normal-size);
+  --seed-scale-font-size-t4: var(--dds-typography-caption-normal-size);
+  --seed-scale-font-size-t5: var(--dds-typography-body-sm-normal-size);
+  --seed-scale-font-size-t6: var(--dds-typography-body-md-normal-size);
+  --seed-scale-font-size-t7: var(--dds-typography-title-sm-size);
+  --seed-scale-font-size-t8: var(--dds-typography-title-md-size);
+  --seed-scale-font-size-t9: var(--dds-typography-title-xl-size);
+  --seed-scale-font-size-t10: var(--dds-typography-display-md-size);
+  --seed-scale-font-size-t1-static: var(--dds-typography-label-normal-size);
+  --seed-scale-font-size-t2-static: var(--dds-typography-label-normal-size);
+  --seed-scale-font-size-t3-static: var(--dds-typography-caption-normal-size);
+  --seed-scale-font-size-t4-static: var(--dds-typography-caption-normal-size);
+  --seed-scale-font-size-t5-static: var(--dds-typography-body-sm-normal-size);
+  --seed-scale-font-size-t6-static: var(--dds-typography-body-md-normal-size);
+  --seed-scale-font-size-t7-static: var(--dds-typography-title-sm-size);
+  --seed-scale-font-size-t8-static: var(--dds-typography-title-md-size);
+  --seed-scale-font-size-t9-static: var(--dds-typography-title-xl-size);
+  --seed-scale-font-size-t10-static: var(--dds-typography-display-md-size);
+  --seed-scale-line-height-t1: 1.32;
+  --seed-scale-line-height-t2: 1.32;
+  --seed-scale-line-height-t3: 1.32;
+  --seed-scale-line-height-t4: 1.32;
+  --seed-scale-line-height-t5: 1.32;
+  --seed-scale-line-height-t6: 1.32;
+  --seed-scale-line-height-t7: 1.2;
+  --seed-scale-line-height-t8: 1.2;
+  --seed-scale-line-height-t9: 1.2;
+  --seed-scale-line-height-t10: 1.2;
+  --seed-scale-line-height-t1-static: 1.32;
+  --seed-scale-line-height-t2-static: 1.32;
+  --seed-scale-line-height-t3-static: 1.32;
+  --seed-scale-line-height-t4-static: 1.32;
+  --seed-scale-line-height-t5-static: 1.32;
+  --seed-scale-line-height-t6-static: 1.32;
+  --seed-scale-line-height-t7-static: 1.2;
+  --seed-scale-line-height-t8-static: 1.2;
+  --seed-scale-line-height-t9-static: 1.2;
+  --seed-scale-line-height-t10-static: 1.2;
   --seed-scale-font-weight-regular: 400;
-  --seed-scale-font-weight-medium:  500;
-  --seed-scale-font-weight-bold:    700;
-
-  /* ──────────────────────────────────────────────
-   * SCALE · Radius
-   * ────────────────────────────────────────────── */
-  --seed-scale-radius-2:    2px;
-  --seed-scale-radius-4:    4px;
-  --seed-scale-radius-6:    6px;
-  --seed-scale-radius-8:    8px;
-  --seed-scale-radius-10:  10px;
-  --seed-scale-radius-12:  12px;
-  --seed-scale-radius-16:  16px;
-  --seed-scale-radius-20:  20px;
-  --seed-scale-radius-24:  24px;
-  --seed-scale-radius-full: 9999px;
-
-  /* ──────────────────────────────────────────────
-   * SCALE · Spacing (4 px base grid)
-   * ────────────────────────────────────────────── */
-  --seed-scale-space-1:   2px;
-  --seed-scale-space-2:   4px;
-  --seed-scale-space-3:   6px;
-  --seed-scale-space-4:   8px;
-  --seed-scale-space-5:  10px;
-  --seed-scale-space-6:  12px;
-  --seed-scale-space-7:  14px;
-  --seed-scale-space-8:  16px;
-  --seed-scale-space-10: 20px;
-  --seed-scale-space-12: 24px;
-  --seed-scale-space-14: 28px;
-  --seed-scale-space-16: 32px;
-  --seed-scale-space-20: 40px;
-  --seed-scale-space-24: 48px;
-  --seed-scale-space-32: 64px;
-
-  /* ──────────────────────────────────────────────
-   * SCALE · Elevation
-   * ────────────────────────────────────────────── */
-  --seed-scale-shadow-sm: 0 1px 2px rgba(0,0,0,.04), 0 1px 1px rgba(0,0,0,.03);
-  --seed-scale-shadow-md: 0 2px 8px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
-  --seed-scale-shadow-lg: 0 8px 24px rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.04);
-  --seed-scale-shadow-xl: 0 16px 40px rgba(0,0,0,.12), 0 4px 10px rgba(0,0,0,.06);
-
-  /* ============================================================
-   * SEMANTIC LAYER — reference these from components.
-   * ============================================================ */
-
-  /* ── Color · Intent ─────────────────────────── */
-  --seed-semantic-color-primary:             var(--seed-scale-color-carrot-500);
-  --seed-semantic-color-primary-low:         var(--seed-scale-color-carrot-alpha-100);
-  --seed-semantic-color-primary-hover:       var(--seed-scale-color-carrot-400);
-  --seed-semantic-color-primary-pressed:     var(--seed-scale-color-carrot-400);
-  --seed-semantic-color-primary-low-hover:   var(--seed-scale-color-carrot-alpha-200);
-  --seed-semantic-color-primary-low-active:  var(--seed-scale-color-carrot-alpha-200);
-  --seed-semantic-color-primary-low-pressed: var(--seed-scale-color-carrot-alpha-200);
-
-  --seed-semantic-color-secondary:     var(--seed-scale-color-gray-900);
-  --seed-semantic-color-secondary-low: var(--seed-scale-color-gray-alpha-50);
-
-  --seed-semantic-color-success:     var(--seed-scale-color-green-500);
-  --seed-semantic-color-success-low: var(--seed-scale-color-green-alpha-50);
-  --seed-semantic-color-warning:     var(--seed-scale-color-yellow-400);
-  --seed-semantic-color-warning-low: var(--seed-scale-color-yellow-alpha-100);
-  --seed-semantic-color-danger:      var(--seed-scale-color-red-600);
-  --seed-semantic-color-danger-low:  var(--seed-scale-color-red-alpha-50);
-  --seed-semantic-color-accent:      var(--seed-scale-color-blue-500);
-
-  /* ── Color · Paper (surfaces) ───────────────── */
-  --seed-semantic-color-paper-default:    var(--seed-scale-color-gray-00);
-  --seed-semantic-color-paper-sheet:      var(--seed-scale-color-gray-00);
-  --seed-semantic-color-paper-dialog:     var(--seed-scale-color-gray-00);
-  --seed-semantic-color-paper-floating:   var(--seed-scale-color-gray-00);
-  --seed-semantic-color-paper-contents:   var(--seed-scale-color-gray-50);
-  --seed-semantic-color-paper-background: var(--seed-scale-color-gray-100);
-  --seed-semantic-color-paper-accent:     var(--seed-scale-color-carrot-50);
-
-  /* ── Color · Ink (text) ─────────────────────── */
-  --seed-semantic-color-on-primary:   var(--seed-static-color-white);
-  --seed-semantic-color-ink-text:     var(--seed-scale-color-gray-900);
-  --seed-semantic-color-ink-text-low: var(--seed-scale-color-gray-600);
-
-  /* ── Color · Divider ────────────────────────── */
-  --seed-semantic-color-divider-1: var(--seed-scale-color-gray-alpha-50);
-  --seed-semantic-color-divider-2: var(--seed-scale-color-gray-200);
-  --seed-semantic-color-divider-3: var(--seed-scale-color-gray-300);
-
-  /* ── Color · Interaction ────────────────────── */
-  --seed-semantic-color-gray-hover:     var(--seed-scale-color-gray-100);
-  --seed-semantic-color-gray-pressed:   var(--seed-scale-color-gray-100);
-  --seed-semantic-color-gray-active:    var(--seed-scale-color-gray-700);
-  --seed-semantic-color-text-selection: var(--seed-scale-color-carrot-50);
-
-  /* ── Color · Overlay ────────────────────────── */
-  --seed-semantic-color-overlay-low: var(--seed-static-color-black-alpha-200);
-  --seed-semantic-color-overlay-dim: var(--seed-static-color-black-alpha-500);
-
-  /* ── Font family ────────────────────────────── */
-  --seed-semantic-font-family-base:
-      -apple-system, BlinkMacSystemFont,
-      "Apple SD Gothic Neo", "Segoe UI", Roboto,
-      "Helvetica Neue", Arial, "Noto Sans",
-      sans-serif,
-      "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol", "Noto Color Emoji";
-  --seed-semantic-font-family-mono:
-      ui-monospace, SFMono-Regular, "SF Mono", Menlo,
+  --seed-scale-font-weight-medium: 600;
+  --seed-scale-font-weight-bold: 700;
+  --seed-scale-radius-2: var(--dds-radius-4);
+  --seed-scale-radius-4: var(--dds-radius-4);
+  --seed-scale-radius-6: var(--dds-radius-4);
+  --seed-scale-radius-8: var(--dds-radius-8);
+  --seed-scale-radius-10: var(--dds-radius-8);
+  --seed-scale-radius-12: var(--dds-radius-12);
+  --seed-scale-radius-16: var(--dds-radius-16);
+  --seed-scale-radius-20: var(--dds-radius-16);
+  --seed-scale-radius-24: var(--dds-radius-24);
+  --seed-scale-radius-full: var(--dds-radius-100);
+  --seed-scale-space-1: var(--dds-spacing-2);
+  --seed-scale-space-2: var(--dds-spacing-4);
+  --seed-scale-space-3: var(--dds-spacing-6);
+  --seed-scale-space-4: var(--dds-spacing-8);
+  --seed-scale-space-5: var(--dds-spacing-10);
+  --seed-scale-space-6: var(--dds-spacing-12);
+  --seed-scale-space-7: var(--dds-spacing-12);
+  --seed-scale-space-8: var(--dds-spacing-16);
+  --seed-scale-space-10: var(--dds-spacing-20);
+  --seed-scale-space-12: var(--dds-spacing-24);
+  --seed-scale-space-14: var(--dds-spacing-30);
+  --seed-scale-space-16: var(--dds-spacing-32);
+  --seed-scale-space-20: var(--dds-spacing-40);
+  --seed-scale-space-24: calc(var(--dds-spacing-24) * 2);
+  --seed-scale-space-32: calc(var(--dds-spacing-32) * 2);
+  --seed-scale-shadow-sm: var(--dds-shadow-low);
+  --seed-scale-shadow-md: var(--dds-shadow-medium);
+  --seed-scale-shadow-lg: var(--dds-shadow-high);
+  --seed-scale-shadow-xl: var(--dds-shadow-high);
+  --seed-semantic-color-primary: var(--dds-background-interaction-primary);
+  --seed-semantic-color-primary-low: var(--dds-background-surface-highlight-subtle);
+  --seed-semantic-color-primary-hover: var(--dds-blue-600);
+  --seed-semantic-color-primary-pressed: var(--dds-blue-700);
+  --seed-semantic-color-primary-low-hover: var(--dds-background-surface-highlight);
+  --seed-semantic-color-primary-low-active: var(--dds-background-surface-highlight);
+  --seed-semantic-color-primary-low-pressed: var(--dds-background-surface-highlight);
+  --seed-semantic-color-secondary: var(--dds-background-interaction-secondary);
+  --seed-semantic-color-secondary-low: var(--dds-background-interaction-subtlest);
+  --seed-semantic-color-success: var(--dds-green);
+  --seed-semantic-color-success-low: color-mix(in srgb, var(--dds-green) 8%, transparent);
+  --seed-semantic-color-warning: var(--dds-orange-600);
+  --seed-semantic-color-warning-low: var(--dds-orange-50);
+  --seed-semantic-color-danger: var(--dds-background-interaction-danger);
+  --seed-semantic-color-danger-low: var(--dds-red-50);
+  --seed-semantic-color-accent: var(--dds-blue-500);
+  --seed-semantic-color-paper-default: var(--dds-background-surface-base);
+  --seed-semantic-color-paper-sheet: var(--dds-background-layer-popup);
+  --seed-semantic-color-paper-dialog: var(--dds-background-layer-popup);
+  --seed-semantic-color-paper-floating: var(--dds-background-layer-popup);
+  --seed-semantic-color-paper-contents: var(--dds-background-surface-on);
+  --seed-semantic-color-paper-background: var(--dds-background-base);
+  --seed-semantic-color-paper-accent: var(--dds-background-surface-highlight-subtle);
+  --seed-semantic-color-on-primary: var(--dds-text-static-white-primary);
+  --seed-semantic-color-ink-text: var(--dds-text-primary);
+  --seed-semantic-color-ink-text-low: var(--dds-text-quaternary);
+  --seed-semantic-color-divider-1: var(--dds-border-divider-item);
+  --seed-semantic-color-divider-2: var(--dds-border-divider-section);
+  --seed-semantic-color-divider-3: var(--dds-border-divider-inline);
+  --seed-semantic-color-gray-hover: var(--dds-background-state-hover);
+  --seed-semantic-color-gray-pressed: var(--dds-background-surface-subtle);
+  --seed-semantic-color-gray-active: var(--dds-background-interaction-secondary);
+  --seed-semantic-color-text-selection: var(--dds-background-surface-highlight);
+  --seed-semantic-color-overlay-low: var(--dds-background-layer-overlay-subtle);
+  --seed-semantic-color-overlay-dim: var(--dds-background-layer-overlay);
+  --seed-semantic-font-family-base: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+  --seed-semantic-font-family-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo,
       Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-
-/* ------------------------------------------------------------
- * 2. DARK THEME — [data-theme="dark"]
- *    Overrides scale colors + paper roles; other semantics
- *    inherit automatically through the color layer.
- * ------------------------------------------------------------ */
-[data-theme="dark"] {
-  color-scheme: dark;
-
-  --seed-scale-color-gray-00:  #17171a;
-  --seed-scale-color-gray-50:  #212124;
-  --seed-scale-color-gray-100: #2b2e33;
-  --seed-scale-color-gray-200: #34373d;
-  --seed-scale-color-gray-300: #43474f;
-  --seed-scale-color-gray-400: #50545c;
-  --seed-scale-color-gray-500: #6d717a;
-  --seed-scale-color-gray-600: #868b94;
-  --seed-scale-color-gray-700: #adb1ba;
-  --seed-scale-color-gray-800: #ced3de;
-  --seed-scale-color-gray-900: #eaebee;
-
-  --seed-scale-color-carrot-50:  #7a3814;
-  --seed-scale-color-carrot-100: #974011;
-  --seed-scale-color-carrot-200: #bf4c0d;
-  --seed-scale-color-carrot-300: #d15715;
-  --seed-scale-color-carrot-400: #e96017;
-  --seed-scale-color-carrot-500: #ff6e1d;
-  --seed-scale-color-carrot-600: #ee9561;
-  --seed-scale-color-carrot-700: #edb08e;
-  --seed-scale-color-carrot-800: #edc4ad;
-  --seed-scale-color-carrot-900: #edd3c4;
-  --seed-scale-color-carrot-950: #ede4e0;
-
-  --seed-scale-color-gray-alpha-50:  #ffffff0d;
-  --seed-scale-color-gray-alpha-100: #ffffff1a;
-  --seed-scale-color-gray-alpha-200: #ffffff33;
-  --seed-scale-color-gray-alpha-500: #ffffff80;
-
-  /* Paper hierarchy inverts: background darkest, sheet lifts up */
-  --seed-semantic-color-paper-default:    var(--seed-scale-color-gray-50);
-  --seed-semantic-color-paper-sheet:      var(--seed-scale-color-gray-50);
-  --seed-semantic-color-paper-dialog:     var(--seed-scale-color-gray-100);
-  --seed-semantic-color-paper-floating:   var(--seed-scale-color-gray-100);
-  --seed-semantic-color-paper-contents:   var(--seed-scale-color-gray-00);
-  --seed-semantic-color-paper-background: var(--seed-scale-color-gray-00);
-  --seed-semantic-color-paper-accent:     var(--seed-scale-color-gray-100);
-}
-
-
-/* ------------------------------------------------------------
- * 3. TYPOGRAPHY UTILITY CLASSES
- *    Mirror Seed's textStyle API.
- *    Pattern: .seed-t<n><Weight>           (responsive)
- *             .seed-t<n>Static<Weight>     (px-locked)
- *             .seed-<semantic>             (screenTitle, articleBody, articleNote)
- *    n = 1…10, Weight = Regular | Medium | Bold
- *    Note: t8–t10 ship Bold only (per spec).
- * ------------------------------------------------------------ */
-
-/* ── Responsive scale ──────────────────────────── */
 .seed-t1Regular, .seed-t1Medium, .seed-t1Bold   { font-size: var(--seed-scale-font-size-t1);  line-height: var(--seed-scale-line-height-t1); }
 .seed-t2Regular, .seed-t2Medium, .seed-t2Bold   { font-size: var(--seed-scale-font-size-t2);  line-height: var(--seed-scale-line-height-t2); }
 .seed-t3Regular, .seed-t3Medium, .seed-t3Bold   { font-size: var(--seed-scale-font-size-t3);  line-height: var(--seed-scale-line-height-t3); }
@@ -458,28 +299,4 @@
   font-size:   var(--seed-scale-font-size-t4);
   line-height: var(--seed-scale-line-height-t5);
   font-weight: var(--seed-scale-font-weight-regular);
-}
-
-
-/* ------------------------------------------------------------
- * 4. BASE RESET
- * ------------------------------------------------------------ */
-*, *::before, *::after { box-sizing: border-box; }
-
-html, body { margin: 0; padding: 0; }
-
-body {
-  font-family: var(--seed-semantic-font-family-base);
-  font-size:   var(--seed-scale-font-size-t5);
-  line-height: var(--seed-scale-line-height-t6);
-  color:       var(--seed-semantic-color-ink-text);
-  background:  var(--seed-semantic-color-paper-default);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-
-::selection {
-  background: var(--seed-semantic-color-text-selection);
-  color:      var(--seed-semantic-color-ink-text);
 }

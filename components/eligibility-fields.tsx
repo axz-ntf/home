@@ -1,5 +1,8 @@
 "use client";
 
+import { DdsIcon } from "./dds-icon";
+import "./dds-components.css";
+
 import { urbanIncomeFor, type EligibilityForm } from "@/lib/eligibility";
 
 // 모달(EligibilityModal)과 온보딩(/onboarding)이 공유하는 자격 입력 폼.
@@ -22,7 +25,7 @@ export const canNext2 = (f: EligibilityForm) => f.income !== "" && f.assets !== 
 
 function Field({ label, subtitle, children }: { label: string; subtitle?: string; children: React.ReactNode }) {
   return (
-    <div className="eli-field">
+    <div className="eli-field" role="group" aria-label={label}>
       <div className="eli-field-label">
         <div>{label}</div>
         {subtitle && <div className="eli-field-sub">{subtitle}</div>}
@@ -44,7 +47,7 @@ function Seg<T extends string>({
   return (
     <div className="eli-seg">
       {options.map((o) => (
-        <button key={o.v} className={value === o.v ? "on" : ""} onClick={() => onChange(o.v)}>
+        <button key={o.v} type="button" aria-pressed={value === o.v} className={value === o.v ? "on" : ""} onClick={() => onChange(o.v)}>
           {o.label}
         </button>
       ))}
@@ -75,6 +78,8 @@ export function EligibilityFields({
               type="number"
               className="eli-input"
               placeholder="예: 29"
+              aria-label="나이"
+              min="0"
               value={form.age}
               onChange={(e) => update("age", e.target.value)}
             />
@@ -98,7 +103,9 @@ export function EligibilityFields({
                 type="number"
                 className="eli-input"
                 placeholder="혼인 기간"
-                value={form.marriedYears}
+                aria-label="혼인 기간"
+              min="0"
+              value={form.marriedYears}
                 onChange={(e) => update("marriedYears", e.target.value)}
               />
               <span className="eli-suffix">년차</span>
@@ -130,7 +137,7 @@ export function EligibilityFields({
             ]}
           />
           {form.houseOwner === "yes" && (
-            <div className="eli-warn">⚠️ 유주택 세대는 공공임대 신청이 원칙적으로 불가합니다.</div>
+            <div className="eli-warn"><DdsIcon name="info" size={16}/> 유주택 세대는 공공임대 신청이 원칙적으로 불가합니다.</div>
           )}
         </Field>
 
@@ -146,6 +153,8 @@ export function EligibilityFields({
             ].map((c) => (
               <button
                 key={c.v}
+                type="button"
+                aria-pressed={form.specialCase.includes(c.v)}
                 className={`eli-chip ${form.specialCase.includes(c.v) ? "on" : ""}`}
                 onClick={() => toggleSpecial(c.v)}
               >
@@ -171,7 +180,9 @@ export function EligibilityFields({
             type="number"
             className="eli-input"
             placeholder="예: 420"
-            value={form.income}
+            aria-label="세대 월평균 소득"
+              min="0"
+              value={form.income}
             onChange={(e) => update("income", e.target.value)}
           />
           <span className="eli-suffix">만원 / 월</span>
@@ -190,7 +201,9 @@ export function EligibilityFields({
             type="number"
             className="eli-input"
             placeholder="예: 8000"
-            value={form.assets}
+            aria-label="세대 총자산"
+              min="0"
+              value={form.assets}
             onChange={(e) => update("assets", e.target.value)}
           />
           <span className="eli-suffix">만원</span>

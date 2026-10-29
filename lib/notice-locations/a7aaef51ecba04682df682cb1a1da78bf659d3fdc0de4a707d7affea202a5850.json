@@ -1,0 +1,23 @@
+{
+  "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020478&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+  "collectedAt": "2026-10-28T06:11:52.348Z",
+  "locations": [
+    {
+      "address": "전남광주통합특별시 북구 대자로 55",
+      "units": 0,
+      "evidence": "PDF 2쪽: 명 동 호수 광주광역시 북구 운암동 벽산블루밍 304 1402 58 2018 ∼ 2024, 2026(7년) 3년 2년, 입주자격 유지시 총 10년의 임대기간에서 이전 임대기간을 제외한 잔여기간동안 2년마다 임대기간  · 도로명주소 API 벽산블루밍 메가씨티 304동: 대자로55 확인",
+      "sourceLabel": "2026년_2회차_하반기_청년신혼부부매입임대리츠_입주자_모집공고(게시).pdf",
+      "localUrl": "/notice-files/370467d95599c0510b2338ab58a6b67f767fd28a684330e280650be8b2bfa804.pdf#page=2",
+      "lat": 35.1757083725248,
+      "lng": 126.878982513065,
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치"
+    }
+  ],
+  "review": {
+    "status": "partial",
+    "message": "공고문 단지 중 주소 일치를 확인한 항목만 표시합니다. 나머지 단지 주소는 확인 중입니다.",
+    "evidence": "PDF 2쪽 임대대상 단지 표: ['광주광역시', '북구', '운암동', '벽산블루밍', '‘08.08', '58', '1,295', '26', '2.3M', '1', '1', '10', '']",
+    "localUrl": "/notice-files/370467d95599c0510b2338ab58a6b67f767fd28a684330e280650be8b2bfa804.pdf#page=2",
+    "sourceLabel": "공고문 임대대상 단지"
+  }
+}

@@ -1,5 +1,7 @@
 "use client";
 
+import "./dds-components.css";
+
 // AI 가 suggestActions tool 로 제안한 후속 액션을 클릭 가능한 칩으로 렌더.
 // 사용자가 다시 타이핑할 필요 없이 한 번 탭으로 대화 진행.
 

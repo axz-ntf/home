@@ -1,60 +1,60 @@
 .tips-hub {
   max-width: 1040px;
   margin: 0 auto;
-  padding: 0 24px 80px;
-  color: var(--seed-semantic-color-ink-text);
+  padding: 0 var(--dds-spacing-24) calc(var(--dds-spacing-40) * 2);
+  color: var(--dds-text-primary);
 }
 
 .tips-gnb {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 18px 0;
+  gap: var(--dds-spacing-8);
+  padding: var(--dds-spacing-18) 0;
 }
 
 .tips-title {
-  font-family: var(--fg-font-family);
-  font-size: var(--fg-display-lg-size, 40px);   /* Figma Display/Lg */
-  font-weight: var(--fg-display-lg-weight, 700);
+  font-family: var(--daum-font);
+  font-size: var(--dds-typography-display-md-size);
+  font-weight: var(--dds-typography-display-md-weight);
   letter-spacing: -0.035em;
-  line-height: var(--fg-display-lg-lh, 1.2);
-  margin: 14px 0 8px;
+  line-height: 1.3;
+  margin: var(--dds-spacing-12) 0 var(--dds-spacing-8);
 }
 .tips-sub {
-  font-size: 15px;
-  color: var(--seed-semantic-color-ink-text-low);
+  font-size: var(--dds-typography-body-sm-normal-size);
+  color: var(--dds-text-quaternary);
   line-height: 1.6;
-  margin: 0 0 40px;
+  margin: 0 0 var(--dds-spacing-40);
 }
 
 .tips-section {
-  margin-bottom: 48px;
+  margin-bottom: var(--dds-spacing-40);
 }
 .tips-section-head {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 12px;
-  margin: 0 0 18px;
+  gap: var(--dds-spacing-12);
+  margin: 0 0 var(--dds-spacing-18);
 }
 .tips-h2 {
-  font-size: 20px;
-  font-weight: 800;
+  font-size: var(--dds-typography-title-md-size);
+  font-weight: 700;
   letter-spacing: -0.03em;
   margin: 0;
 }
 .tips-more {
-  font-size: 13.5px;
+  font-size: var(--dds-typography-caption-normal-size);
   font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
-  color: var(--seed-semantic-color-ink-text-low);
+  color: var(--dds-text-quaternary);
 }
 
 /* ── 콘텐츠 카드 그리드 ── */
 .tips-grid {
   display: grid;
-  gap: 32px 24px;
+  gap: var(--dds-spacing-32) var(--dds-spacing-24);
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 .tip-card {
@@ -65,39 +65,35 @@
 }
 .tip-card-thumb {
   aspect-ratio: 16 / 10;
-  border-radius: 16px;
+  border-radius: var(--dds-radius-16);
   overflow: hidden;
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: flex-end;
-  padding: 16px;
-  transition: transform 0.18s ease;
-}
-.tip-card:hover .tip-card-thumb {
-  transform: translateY(-3px);
+  padding: var(--dds-spacing-16);
 }
 .tip-card-thumb-label {
-  font-size: 13px;
-  font-weight: 800;
+  font-size: var(--dds-typography-caption-normal-size);
+  font-weight: 700;
   letter-spacing: -0.02em;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.18);
-  padding: 5px 11px;
-  border-radius: 999px;
+  color: var(--dds-text-static-white-primary);
+  background: var(--dds-background-layer-overlay-subtle);
+  padding: var(--dds-spacing-4) var(--dds-spacing-10);
+  border-radius: var(--dds-radius-100);
 }
 .tip-card-title {
-  font-size: 17px;
-  font-weight: 800;
+  font-size: var(--dds-typography-body-lg-strong-size);
+  font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.4;
-  margin: 14px 0 0;
+  margin: var(--dds-spacing-12) 0 0;
 }
 .tip-card-desc {
-  font-size: 13.5px;
-  color: var(--seed-semantic-color-ink-text-low);
+  font-size: var(--dds-typography-caption-normal-size);
+  color: var(--dds-text-quaternary);
   line-height: 1.55;
-  margin: 7px 0 0;
+  margin: var(--dds-spacing-6) 0 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -105,42 +101,59 @@
 }
 .tip-card-tags {
   display: flex;
-  gap: 10px;
+  gap: var(--dds-spacing-10);
   flex-wrap: wrap;
-  margin: 12px 0 0;
+  margin: var(--dds-spacing-12) 0 0;
 }
 .tip-chip {
-  font-size: 12px;
+  font-size: var(--dds-typography-label-normal-size);
   font-weight: 600;
-  color: var(--seed-semantic-color-ink-text-low);
+  color: var(--dds-text-quaternary);
 }
 
-/* 그라데이션 썸네일 폴백 (cover 이미지 없을 때) */
-.tip-thumb-g0 { background-image: linear-gradient(135deg, #ff8a3d, #ff5e3a); }
-.tip-thumb-g1 { background-image: linear-gradient(135deg, #3182f6, #5e9bff); }
-.tip-thumb-g2 { background-image: linear-gradient(135deg, #22c55e, #0ea5a4); }
-.tip-thumb-g3 { background-image: linear-gradient(135deg, #8b5cf6, #d946ef); }
-.tip-thumb-g4 { background-image: linear-gradient(135deg, #0f172a, #334155); }
+/* DDS category surfaces for guides without a cover image. */
+.tip-thumb-g0 { background: var(--dds-background-category-cafe); }
+.tip-thumb-g1 { background: var(--dds-background-category-sports); }
+.tip-thumb-g2 { background: var(--dds-background-category-interest); }
+.tip-thumb-g3 { background: var(--dds-background-category-entertainment); }
+.tip-thumb-g4 { background: var(--dds-background-category-light-gray); }
 
 /* ── 공고 카드 (compact) ── */
 .tips-listing-grid {
   display: grid;
-  gap: 12px;
+  gap: var(--dds-spacing-12);
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 }
 .tips-listing-card {
   display: block;
-  padding: 14px 16px;
-  border-radius: 16px;
+  padding: var(--dds-spacing-12) var(--dds-spacing-16);
+  border-radius: var(--dds-radius-16);
   text-decoration: none;
-  border: 1px solid var(--seed-semantic-color-line-default, #eee);
+  border: 1px solid var(--dds-border-card);
   color: inherit;
 }
 
 @media (max-width: 640px) {
-  .tips-hub { padding: 0 16px 64px; }
-  .tips-title { font-size: 26px; }
-  .tips-sub { margin-bottom: 28px; }
-  .tips-grid { gap: 24px 16px; }
-  .tips-section { margin-bottom: 36px; }
+  .tips-hub { padding: 0 var(--dds-spacing-16) calc(var(--dds-spacing-40) * 2); }
+  .tips-title { font-size: var(--dds-typography-title-xl-size); }
+  .tips-sub { margin-bottom: var(--dds-spacing-30); }
+  .tips-grid { gap: var(--dds-spacing-24) var(--dds-spacing-16); }
+  .tips-section { margin-bottom: var(--dds-spacing-32); }
 }
+
+/* DDS card composition and keyboard focus, shared by guide and related-content grids. */
+.tip-card { border: 1px solid var(--dds-border-card); border-radius: var(--dds-radius-16); padding: var(--dds-spacing-12); background: var(--dds-background-surface-base); }
+.tip-card:hover { background: var(--dds-background-state-hover); }
+.tip-card-thumb { border-radius: var(--dds-radius-12); }
+.tip-card:hover .tip-card-thumb { transform: none; }
+.tip-card-title { margin-top: var(--dds-spacing-16); }
+.tip-card-tags { gap: var(--dds-spacing-8); }
+.tip-chip { border-radius: var(--dds-radius-4); background: var(--dds-background-surface-on); padding: var(--dds-spacing-4) var(--dds-spacing-8); }
+.tips-listing-card:hover { background: var(--dds-background-state-hover); }
+.tips-hub :is(a, button):focus-visible, .post-page :is(a, button):focus-visible { outline: 2px solid var(--dds-border-focus); outline-offset: 4px; }
+.tips-more { display: inline-flex; align-items: center; gap: var(--dds-spacing-4); }
+.tips-note { font-size: var(--dds-typography-caption-normal-size); color: var(--dds-text-quaternary); margin-top: var(--dds-spacing-24); line-height: 1.6; max-width: 720px; }
+.tips-listing-title { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--dds-spacing-12); font-size: var(--dds-typography-body-sm-strong-size); line-height: 1.5; }
+.tips-listing-meta { font-size: var(--dds-typography-caption-normal-size); color: var(--dds-text-quaternary); margin-top: var(--dds-spacing-8); }
+.tips-brand-link { display: inline-flex; align-items: center; gap: var(--dds-spacing-8); text-decoration: none; color: var(--dds-text-primary); font-size: var(--dds-typography-body-md-strong-size); }
+@media (max-width: 640px) { .tips-grid, .tips-listing-grid { grid-template-columns: minmax(0, 1fr); } }

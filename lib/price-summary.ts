@@ -59,8 +59,8 @@ export function summarizePrice(item: Listing): PriceSummary {
   for (const c of item.complexes ?? []) {
     for (const r of c.rows ?? []) {
       // ComplexRow 금액은 원 단위
-      if (r.deposit) deposits.push(Math.round(r.deposit / 10000));
-      if (r.rent) rents.push(Math.round(r.rent / 10000));
+      if (r.deposit) deposits.push(r.deposit / 10000);
+      if (r.rent) rents.push(r.rent / 10000);
       if (r.area) areas.push(r.area);
     }
   }

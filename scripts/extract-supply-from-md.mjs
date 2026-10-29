@@ -3,7 +3,7 @@
 // LH 50년임대·국민임대 표는 컬럼 구조가 표준. LLM 환각 회피 위해 결정론적 추출.
 //
 // 산출:
-//   - lib/listings-api.json 의 supplyUnits / deposit / rent / area 보강
+//   - lib/listings-api.json 의 supplyUnits / depositManwon / monthlyRentManwon / area 보강
 //
 // 사용:
 //   node scripts/extract-supply-from-md.mjs [--limit N] [--force] [--id LISTING_ID]
@@ -54,7 +54,7 @@ function isHeaderLikeRow(cells) {
 // 모집대상 표 추출 — 컬럼: 단지명/주택형/면적(여러)/건설호수/대기예비자/모집할예비자수
 // 핵심: "모집할 예비자수" 헤더에 (XX) 형태로 통합 값 명시되면 그 값을 supplyTotal 로.
 // 헤더 키워드: "모집할 예비자수" + "주택형"
-function parseSupplyTable(md) {
+export function parseSupplyTable(md) {
   const lines = md.split("\n");
   const result = { supplyTotal: null, units: [], integrated: false };
 
@@ -103,14 +103,9 @@ function parseSupplyTable(md) {
 
   // 통합 모집 표시 없고 행 단위 supply 있으면 합산
   if (result.supplyTotal == null && result.units.length > 0) {
-    // 모든 행 supply 가 같으면 그게 통합 (LH 50년임대 패턴)
-    const uniq = new Set(result.units.map((u) => u.supply));
-    if (uniq.size === 1) {
-      result.supplyTotal = result.units[0].supply;
-      result.integrated = true;
-    } else {
-      result.supplyTotal = result.units.reduce((a, u) => a + u.supply, 0);
-    }
+    // 행마다 같은 숫자여도 서로 다른 주택형의 모집인원이다.
+    // 통합 인원은 위의 명시적인 "모집할 예비자수 (N)"일 때만 인정한다.
+    result.supplyTotal = result.units.reduce((a, u) => a + u.supply, 0);
   }
 
   return result;
@@ -262,12 +257,12 @@ async function main() {
         .filter((u) => u.deposit > 0 && u.deposit <= WON_DEP_MAX && u.rent >= 0 && u.rent <= WON_RENT_MAX)
         .sort((a, b) => (a.area ?? Infinity) - (b.area ?? Infinity));
       const rep = sorted[0];
-      const depositManwon = rep ? Math.round(rep.deposit / 10000) : null;
-      const rentManwon = rep ? Math.round(rep.rent / 10000) : null;
+      const depositManwon = rep ? rep.deposit / 10000 : null;
+      const rentManwon = rep ? rep.rent / 10000 : null;
 
       // 유형별 보증금/월세 min~max (만원) — min≠max 면 카드·상세에 범위로 표시.
-      const depVals = sorted.map((u) => Math.round(u.deposit / 10000));
-      const rentVals = sorted.map((u) => Math.round(u.rent / 10000));
+      const depVals = sorted.map((u) => u.deposit / 10000);
+      const rentVals = sorted.map((u) => u.rent / 10000);
       const depositRange = depVals.length ? [Math.min(...depVals), Math.max(...depVals)] : null;
       const rentRange = rentVals.length ? [Math.min(...rentVals), Math.max(...rentVals)] : null;
 
@@ -303,12 +298,12 @@ async function main() {
     if (u.supplyUnits != null && (FORCE || item.supplyUnits == null || item.supplyUnits === 1)) {
       if (item.supplyUnits !== u.supplyUnits) { item.supplyUnits = u.supplyUnits; changed = true; }
     }
-    if (item.type !== "sale") {
-      if (u.deposit != null && (FORCE || item.deposit == null || item.deposit === 0)) {
-        if (item.deposit !== u.deposit) { item.deposit = u.deposit; changed = true; }
+    if (item.type !== "sale" && item.priceSource !== "lh-official-table" && item.priceSource !== "lh-api") {
+      if (u.deposit != null && (FORCE || item.depositManwon == null || item.depositManwon === 0)) {
+        if (item.depositManwon !== u.deposit) { item.depositManwon = u.deposit; changed = true; }
       }
-      if (u.rent != null && (FORCE || item.rent == null || item.rent === 0)) {
-        if (item.rent !== u.rent) { item.rent = u.rent; changed = true; }
+      if (u.rent != null && (FORCE || item.monthlyRentManwon == null || item.monthlyRentManwon === 0)) {
+        if (item.monthlyRentManwon !== u.rent) { item.monthlyRentManwon = u.rent; changed = true; }
       }
       // 가격 범위 — min≠max 면 저장(카드·상세 범위 표시용), 단일이면 제거.
       const dr = u.depositRange && u.depositRange[0] !== u.depositRange[1] ? u.depositRange : null;
@@ -316,6 +311,7 @@ async function main() {
       if (JSON.stringify(item.depositRange ?? null) !== JSON.stringify(dr)) { if (dr) item.depositRange = dr; else delete item.depositRange; changed = true; }
       if (JSON.stringify(item.rentRange ?? null) !== JSON.stringify(rr)) { if (rr) item.rentRange = rr; else delete item.rentRange; changed = true; }
     }
+    if (changed && !item.priceSource) { item.priceSource = "pdf-regex"; item.priceUnverified = true; }
     // complexes 비어있고 units 있으면 detail-panel 의 단지별 공급 정보 표용으로 채움.
     if ((!item.complexes || item.complexes.length === 0) && u.units && u.units.length > 0) {
       item.complexes = [{
@@ -324,14 +320,16 @@ async function main() {
           .slice()
           .sort((a, b) => (a.area ?? Infinity) - (b.area ?? Infinity))
           .map((un) => ({
-            houseType: String(un.area ?? un.type),
-            supplyTotal: un.supply ?? null,
+            houseType: String(un.type ?? un.area),
+            area: un.area ?? 0,
+            supplyTotal: null,
+            supplyThisRound: un.supply ?? null,
             deposit: un.deposit ?? null,
             rent: un.rent ?? null,
           })),
       }];
       changed = true;
-    } else if (item.complexes && item.complexes.length > 0 && u.units && u.units.length > 0) {
+    } else if (item.priceSource !== "lh-official-table" && item.priceSource !== "lh-api" && item.complexes && item.complexes.length > 0 && u.units && u.units.length > 0) {
       // complexes 이미 있고 rows 채워져 있는데 deposit/rent 만 null 인 경우 — 보강.
       // 매칭: houseType (= 면적 string) ↔ unit.area. 같은 면적이 여러 개면 순서대로.
       for (const c of item.complexes) {
@@ -357,4 +355,6 @@ async function main() {
   console.log(`\n완료: ok=${ok} patched=${patched} skip=${skip} miss=${miss} err=${err} / 대상 ${targets.length}건`);
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  main().catch((e) => { console.error(e); process.exit(1); });
+}

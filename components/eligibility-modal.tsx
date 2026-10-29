@@ -5,6 +5,7 @@ import type { HousingTypeId } from "@/lib/types";
 import { judge, type EligibilityForm } from "@/lib/eligibility";
 import { EligibilityFields, INITIAL_FORM, canNext1, canNext2 } from "./eligibility-fields";
 import { CloseIcon } from "./icons";
+import { DdsIcon } from "./dds-icon";
 import { Button } from "./button";
 
 export function EligibilityModal({
@@ -35,7 +36,7 @@ export function EligibilityModal({
 
   return (
     <div className="eli-overlay" onClick={onClose}>
-      <div className="eli-modal" onClick={(e) => e.stopPropagation()}>
+      <div className="eli-modal" role="dialog" aria-modal="true" aria-label="내 자격 확인" onClick={(e) => e.stopPropagation()}>
         <header className="eli-header">
           <div>
             <div className="eli-kicker">내 자격 확인</div>
@@ -49,7 +50,7 @@ export function EligibilityModal({
         <div className="eli-stepper">
           {[1, 2, 3].map((n) => (
             <div key={n} className={`eli-step ${step >= n ? "on" : ""} ${step === n ? "cur" : ""}`}>
-              <span className="eli-step-num">{step > n ? "✓" : n}</span>
+              <span className="eli-step-num">{step > n ? <DdsIcon name="check" size={16}/> : n}</span>
               <span className="eli-step-label">{["기본 정보", "소득·자산", "결과"][n - 1]}</span>
             </div>
           ))}
@@ -76,11 +77,11 @@ export function EligibilityModal({
               {result.results.map((r) => (
                 <div key={r.id} className={`eli-card ${r.status}`}>
                   <div className="eli-card-head">
-                    <span className={`badge ${r.badge}`} style={{ fontSize: 12, padding: "3px 9px" }}>
+                    <span className={`badge ${r.badge}`} style={{ fontSize: "var(--dds-typography-label-normal-size)", padding: "var(--dds-spacing-4) var(--dds-spacing-8)" }}>
                       {r.name}
                     </span>
                     <div className={`eli-card-status ${r.status}`}>
-                      {r.status === "eligible" ? "✓ 신청 가능" : "× 요건 미충족"}
+                      <DdsIcon name={r.status === "eligible" ? "check" : "close"} size={16}/>{r.status === "eligible" ? "신청 가능" : "요건 미충족"}
                     </div>
                   </div>
                   {r.fits.length > 0 && (
@@ -135,7 +136,7 @@ export function EligibilityModal({
                 disabled={result.results.filter((r) => r.status === "eligible").length === 0}
                 onClick={applyToFilter}
               >
-                가능한 매물만 보기 →
+                가능한 매물만 보기 <DdsIcon name="arrow-right" size={16}/>
               </Button>
             </>
           )}

@@ -1,4 +1,5 @@
 "use client";
+import { DdsIcon } from "@/components/dds-icon";
 
 import { useState } from "react";
 import MapPinPicker from "./map-pin-picker";
@@ -159,7 +160,7 @@ export default function MappedPointsEditor({
   }
 
   return (
-    <section className="a-form-section" style={{ marginTop: 14 }}>
+    <section className="a-form-section" style={{ marginTop: 12 }}>
       <header>
         <h2>위치 핀 {drafts.length}개</h2>
         <p className="section-sub">주소검색으로 단지 위치를 등록하면 지도에 핀으로 떠요. 행 삭제 후 저장하면 그 핀만 내려갑니다.</p>
@@ -178,7 +179,7 @@ export default function MappedPointsEditor({
             {drafts.length === 0 && (
               <tr>
                 <td colSpan={10} className="a-pins-empty">
-                  등록된 핀이 없어요. 아래 <strong>+ 핀 추가</strong> 후 <strong>주소검색</strong>으로 위치를 등록하세요.
+                  등록된 핀이 없어요. 아래 <strong><DdsIcon name="add" size={16}/> 핀 추가</strong> 후 <strong>주소검색</strong>으로 위치를 등록하세요.
                 </td>
               </tr>
             )}
@@ -211,7 +212,7 @@ export default function MappedPointsEditor({
                   </a>
                 </td>
                 <td>
-                  <button type="button" className="a-pins-del" onClick={() => remove(i)} aria-label={`핀 ${i + 1} 삭제`}>×</button>
+                  <button type="button" className="a-pins-del" onClick={() => remove(i)} aria-label={`핀 ${i + 1} 삭제`}><DdsIcon name="delete" size={16}/></button>
                 </td>
               </tr>
             ))}
@@ -219,8 +220,8 @@ export default function MappedPointsEditor({
         </table>
       </div>
 
-      <div className="a-actions" style={{ display: "flex", alignItems: "center", gap: 10 }}>
-        <button type="button" className="a-btn secondary sm" onClick={addRow}>+ 핀 추가</button>
+      <div className="a-actions" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+        <button type="button" className="a-btn secondary sm" onClick={addRow}><DdsIcon name="add" size={16}/> 핀 추가</button>
         <button type="button" className="a-btn primary sm" onClick={save} disabled={saving}>
           {saving ? "저장 중…" : `핀 ${drafts.length}개 저장`}
         </button>

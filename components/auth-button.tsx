@@ -1,5 +1,8 @@
 "use client";
 
+import { DdsIcon } from "./dds-icon";
+import "./dds-components.css";
+
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import type { User } from "@supabase/supabase-js";
@@ -74,9 +77,7 @@ export function AuthButton() {
           <span className="app-account-avatar" aria-hidden>{(displayName || "U")[0].toUpperCase()}</span>
           <span className="app-account-email">{displayName}</span>
           <span className="app-account-caret" aria-hidden>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-              <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
+            <DdsIcon name="chevron-down" size={16}/>
           </span>
         </button>
       </div>
@@ -86,10 +87,7 @@ export function AuthButton() {
   return (
     <Link href="/login" className="app-sidebar-login">
       <span className="app-sidebar-login-ico" aria-hidden>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="8" r="3.4" stroke="currentColor" strokeWidth="1.8" />
-          <path d="M5 19.5c0-3.3 3.1-5.5 7-5.5s7 2.2 7 5.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-        </svg>
+        <DdsIcon name="person" size={16}/>
       </span>
       로그인
     </Link>

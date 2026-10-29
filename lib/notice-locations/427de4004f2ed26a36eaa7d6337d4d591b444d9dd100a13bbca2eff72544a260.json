@@ -1,0 +1,33 @@
+{
+  "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020487&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+  "collectedAt": "2026-10-28T06:06:50.224Z",
+  "locations": [
+    {
+      "address": "경기도 남양주시 천마산로 65",
+      "units": 0,
+      "sourceLabel": "공고문 임대대상 단지 · 행정안전부 주소 확인",
+      "localUrl": "/notice-files/36a03506f216c41b8fed06544acbb7babfaf4c64b1766d5865552930b29879e2.pdf#page=2",
+      "evidence": "PDF 2쪽 임대대상 단지 표: ['경기도', '남양주시', '호평동', '호평파라곤', '2010', '59', '1,275', '20', '2.3', '3', '0', '5', ''] · 주소 API 건물명: 호평 파라곤",
+      "lat": 37.6699357124751,
+      "lng": 127.250623935785,
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치"
+    },
+    {
+      "address": "경기도 남양주시 화도읍 비룡로 56-8",
+      "units": 0,
+      "sourceLabel": "공고문 임대대상 단지 · 행정안전부 주소 확인",
+      "localUrl": "/notice-files/36a03506f216c41b8fed06544acbb7babfaf4c64b1766d5865552930b29879e2.pdf#page=2",
+      "evidence": "PDF 2쪽 임대대상 단지 표: ['경기도', '남양주시', '화도읍', '신명스카이뷰그린', '2005', '59', '657', '20', '2.3', '2', '0', '5', ''] · 주소 API 건물명: 신명스카이뷰그린아파트",
+      "lat": 37.6555122488724,
+      "lng": 127.303296035443,
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치"
+    }
+  ],
+  "review": {
+    "status": "partial",
+    "message": "공고문 단지 중 주소 일치를 확인한 항목만 표시합니다. 나머지 단지 주소는 확인 중입니다.",
+    "evidence": "PDF 2쪽 임대대상 단지 표: ['경기도', '남양주시', '호평동', '호평파라곤', '2010', '59', '1,275', '20', '2.3', '3', '0', '5', '']",
+    "localUrl": "/notice-files/36a03506f216c41b8fed06544acbb7babfaf4c64b1766d5865552930b29879e2.pdf#page=2",
+    "sourceLabel": "공고문 임대대상 단지"
+  }
+}

@@ -1,11 +1,20 @@
 import type { NextConfig } from "next";
 
+// Catalog files are selected from a registry at runtime, so trace them explicitly.
+// The 66 MB LH complex cache remains local-only under the existing global exclusion.
+const housingCatalogFiles = [
+  "./lib/listings-api.json", "./lib/lh-notices-all.json", "./lib/sh-notices.json",
+  "./lib/youth-notices.json", "./lib/youth-complexes.json", "./lib/_sync-meta.json",
+  "./lib/housing-data-notes.json",
+];
+
 const nextConfig: NextConfig = {
   turbopack: {
     root: process.cwd(),
   },
   // 구 자동도메인(doongji-liard.vercel.app)으로 들어온 요청을 새 도메인으로 영구 리다이렉트.
   // host 조건이라 새 도메인(daum-public-housing) 요청은 매칭 안 됨 → 루프 없음.
+  async rewrites() { return { beforeFiles: [{source:"/notice-files/:filename",destination:"/api/admin/notice-files/:filename"}] }; },
   async redirects() {
     return [
       {
@@ -15,6 +24,13 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
     ];
+  },
+  outputFileTracingIncludes: {
+    "/admin/data": [...housingCatalogFiles, "./lib/notice-information/**/*.json", "./lib/notice-locations/**/*.json"],
+    "/admin/data/**": [...housingCatalogFiles, "./lib/notice-information/**/*.json", "./lib/notice-locations/**/*.json"],
+    "/api/admin/housing-data/**": housingCatalogFiles,
+    "/admin/review/*": ["./lib/notice-information/**/*.json"],
+    "/admin/automation": ["./lib/notice-information/**/*.json"],
   },
   images: {
     remotePatterns: [

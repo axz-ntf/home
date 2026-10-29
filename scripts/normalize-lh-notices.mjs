@@ -26,6 +26,7 @@ const HOUSING_CATEGORY = {
 
 const HOUSING_TYPE_ID = {
   공공분양: "sale",
+  공공임대: "public",
   국민임대: "nation",
   행복주택: "happy",
   영구임대: "perm",
@@ -60,7 +61,7 @@ function computeActiveStatus(begin, end, today) {
 function normalize(item, today) {
   const housingType = item.housingType || "";
   const category = HOUSING_CATEGORY[housingType] ?? (item.sourceKind === "sale" ? "분양" : "임대");
-  const typeId = HOUSING_TYPE_ID[housingType] ?? "integ";
+  const typeId = HOUSING_TYPE_ID[housingType] ?? "rental";
 
   const begin = item.beginDate || "";
   const end = item.endDate || "";
@@ -93,8 +94,8 @@ function normalize(item, today) {
     supplyUnits: item.supplyUnits ?? null,
     depositWon: item.depositWon ?? null,
     monthlyRentWon: item.monthlyRentWon ?? null,
-    depositManwon: item.depositWon != null ? Math.round(item.depositWon / 10000) : null,
-    monthlyRentManwon: item.monthlyRentWon != null ? Math.round(item.monthlyRentWon / 10000) : null,
+    depositManwon: item.depositWon != null ? item.depositWon / 10000 : null,
+    monthlyRentManwon: item.monthlyRentWon != null ? item.monthlyRentWon / 10000 : null,
     announceDate: item.announceDate || "",
     beginDate: begin,
     endDate: end,

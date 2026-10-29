@@ -1,0 +1,40 @@
+{
+  "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020622&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+  "parserVersion": 2,
+  "sourceHashes": [
+    "65a799db48cf091607b686624a9176523d82c2f8c2b0b6188139f54ed8bd770e"
+  ],
+  "collectedAt": "2026-10-28T05:51:35.859Z",
+  "locations": [
+    {
+      "address": "제주특별자치도 제주시 애월읍 하귀3길 35 하귀 수하우스",
+      "units": 1,
+      "evidence": "전체!E8 (행 8): 제주시 애월읍 하귀3길 35 하귀 수하우스",
+      "sourceLabel": "20260827신혼.신생아Ⅰ매입임대주택공급대상주택목록(전체).xlsx",
+      "localUrl": "/notice-files/65a799db48cf091607b686624a9176523d82c2f8c2b0b6188139f54ed8bd770e.xlsx",
+      "coordinateStatus": "행정안전부 도로명주소 확인 · 카카오 단일 주소 일치",
+      "lat": 33.4864903393318,
+      "lng": 126.41573352717
+    },
+    {
+      "address": "제주특별자치도 제주시 한림읍 한림로 619",
+      "units": 16,
+      "evidence": "전체!E9 (행 9): 제주시 한림읍 한림로 619",
+      "sourceLabel": "20260827신혼.신생아Ⅰ매입임대주택공급대상주택목록(전체).xlsx",
+      "localUrl": "/notice-files/65a799db48cf091607b686624a9176523d82c2f8c2b0b6188139f54ed8bd770e.xlsx",
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치",
+      "lat": 33.4121302549316,
+      "lng": 126.259875452185
+    },
+    {
+      "address": "제주특별자치도 서귀포시 서호호근로96번길 10(서호동)",
+      "units": 8,
+      "evidence": "전체!E25 (행 25): 서귀포시 서호호근로96번길 10(서호동)",
+      "sourceLabel": "20260827신혼.신생아Ⅰ매입임대주택공급대상주택목록(전체).xlsx",
+      "localUrl": "/notice-files/65a799db48cf091607b686624a9176523d82c2f8c2b0b6188139f54ed8bd770e.xlsx",
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치",
+      "lat": 33.255488292883,
+      "lng": 126.525541306722
+    }
+  ]
+}

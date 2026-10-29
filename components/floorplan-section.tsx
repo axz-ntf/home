@@ -12,7 +12,7 @@ import type { FloorPlanSpec } from "@/lib/floorplan-spec";
 const FloorPlan3D = dynamic(() => import("./floor-plan-3d"), {
   ssr: false,
   loading: () => (
-    <div style={{ padding: "40px 0", textAlign: "center", color: "var(--ink-3, #999)", fontSize: 13 }}>
+    <div style={{ padding: "var(--dds-spacing-40) 0", textAlign: "center", color: "var(--dds-text-quaternary)", fontSize: "var(--dds-typography-caption-normal-size)" }}>
       3D 뷰어 불러오는 중…
     </div>
   ),
@@ -50,7 +50,7 @@ export function FloorplanSection({ listingId }: { listingId: string }) {
     <section className="detail-section">
       <h3>
         평면도 3D{" "}
-        <span style={{ fontWeight: 500, fontSize: 12, color: "var(--ink-3, #888)" }}>
+        <span style={{ fontWeight: 400, fontSize: "var(--dds-typography-label-normal-size)", color: "var(--dds-text-quaternary)" }}>
           {spec.meta.label} · {dims} · 마우스·터치로 돌려볼 수 있어요
         </span>
       </h3>
@@ -63,11 +63,11 @@ export function FloorplanSection({ listingId }: { listingId: string }) {
               height: 380,
               display: "grid",
               placeItems: "center",
-              border: "1px dashed var(--line, #ddd)",
-              borderRadius: 12,
-              background: "var(--bg-2, #fafafa)",
-              color: "var(--ink-3, #999)",
-              fontSize: 13,
+              border: "1px dashed var(--dds-border-card)",
+              borderRadius: "var(--dds-radius-12)",
+              background: "var(--dds-background-base)",
+              color: "var(--dds-text-quaternary)",
+              fontSize: "var(--dds-typography-caption-normal-size)",
             }}
           >
             평면도 준비 중…

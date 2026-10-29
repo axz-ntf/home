@@ -1,6 +1,8 @@
 import type { HousingType, StatusId, StatusLabel } from "./types";
 
 export const HOUSING_TYPES: HousingType[] = [
+  { id: "public", name: "공공임대", badge: "public" },
+  { id: "rental", name: "임대 · 유형 확인", badge: "rental" },
   { id: "happy", name: "행복주택", badge: "happy" },
   { id: "nation", name: "국민임대", badge: "nation" },
   { id: "perm", name: "영구임대", badge: "perm" },
@@ -64,6 +66,8 @@ export function groupEligibilityKeys(keys: string[]): Record<EligibilityGroup, s
 // 카드 요약 — 슬라이스 대신 housing type 의 자격 narrative 를 한 줄로.
 // 너무 디테일한 키 나열보다 "이 매물은 누구를 위한 것인지" 전달이 목적.
 const ELIGIBILITY_SUMMARY_BY_TYPE: Record<string, string> = {
+  public: "공고별 신청 자격 확인",
+  rental: "공고문에서 유형·자격 확인",
   happy: "청년·신혼·고령 등 6대 계층",
   nation: "무주택 · 소득 70% 이하",
   perm: "수급·차상위·장애 등 특별 자격",

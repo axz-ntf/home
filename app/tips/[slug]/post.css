@@ -1,47 +1,47 @@
 .post-page {
   max-width: 920px;
   margin: 0 auto;
-  padding: 0 24px 96px;
-  color: var(--seed-semantic-color-ink-text);
+  padding: 0 var(--dds-spacing-24) calc(var(--dds-spacing-40) * 2);
+  color: var(--dds-text-primary);
 }
 
 .post-nav {
   display: flex;
   align-items: center;
-  padding: 18px 0;
+  padding: var(--dds-spacing-18) 0;
 }
 
 /* ── 타이틀 블록 (가운데 정렬) ── */
 .post-head {
   max-width: 720px;
   margin: 0 auto;
-  padding: 36px 0 0;
+  padding: var(--dds-spacing-32) 0 0;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
+  gap: var(--dds-spacing-18);
 }
 .post-meta {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 13.5px;
-  color: var(--seed-semantic-color-ink-text-low);
+  gap: var(--dds-spacing-10);
+  font-size: var(--dds-typography-caption-normal-size);
+  color: var(--dds-text-quaternary);
 }
 .post-meta .dot {
   width: 3px;
   height: 3px;
-  border-radius: 999px;
+  border-radius: var(--dds-radius-100);
   background: currentColor;
   opacity: 0.5;
 }
 .post-title {
-  font-family: var(--fg-font-family);
-  font-size: var(--fg-display-lg-size, 40px);   /* Figma Display/Lg */
-  font-weight: var(--fg-display-lg-weight, 700);
+  font-family: var(--daum-font);
+  font-size: var(--dds-typography-display-md-size);
+  font-weight: var(--dds-typography-display-md-weight);
   letter-spacing: -0.035em;
-  line-height: var(--fg-display-lg-lh, 1.2);
+  line-height: 1.3;
   margin: 0;
   word-break: keep-all;
   text-wrap: balance;
@@ -53,63 +53,63 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: 20px;
-  background: var(--seed-scale-color-gray-100);
-  margin: 40px 0 0;
+  border-radius: var(--dds-radius-12);
+  background: var(--dds-background-surface-on);
+  margin: var(--dds-spacing-40) 0 0;
 }
 
 /* ── 본문 prose ── */
 .tip-post {
   max-width: 720px;
-  margin: 44px auto 0;
-  font-family: var(--fg-font-family);
-  font-size: var(--fg-body-lg-size, 17px);              /* Figma Body/Lg */
-  line-height: var(--fg-body-lg-reading-lh, 1.52);      /* Figma Body/Lg/ReadingNormal 152% (장문) */
-  color: var(--seed-semantic-color-ink-text);
+  margin: var(--dds-spacing-40) auto 0;
+  font-family: var(--daum-font);
+  font-size: var(--dds-typography-body-lg-reading-normal-size);
+  line-height: 1.7;
+  color: var(--dds-text-primary);
 }
 .tip-post h2 {
-  font-size: var(--fg-display-md-size, 26px);  /* Figma Display/Md */
-  font-weight: var(--fg-display-md-weight, 700);
+  font-size: var(--dds-typography-title-lg-size);
+  font-weight: var(--dds-typography-title-lg-weight);
   letter-spacing: -0.03em;
-  line-height: var(--fg-display-md-lh, 1.2);
-  margin: 56px 0 18px;
+  line-height: 1.4;
+  margin: var(--dds-spacing-40) 0 var(--dds-spacing-18);
 }
 .tip-post h3 {
-  font-size: var(--fg-title-sm-size, 18px);   /* Figma Title/Sm */
-  font-weight: var(--fg-title-sm-weight, 700);
-  margin: 40px 0 12px;
+  font-size: var(--dds-typography-title-sm-size);
+  font-weight: var(--dds-typography-title-sm-weight);
+  margin: var(--dds-spacing-40) 0 var(--dds-spacing-12);
 }
 .tip-post p {
-  margin: 0 0 22px;
+  margin: 0 0 var(--dds-spacing-20);
 }
 .tip-post ul,
 .tip-post ol {
-  margin: 0 0 22px;
-  padding-left: 22px;
+  margin: 0 0 var(--dds-spacing-20);
+  padding-left: var(--dds-spacing-20);
 }
 .tip-post li {
-  margin: 0 0 10px;
+  margin: 0 0 var(--dds-spacing-10);
 }
 .tip-post strong {
   font-weight: 700;
 }
 .tip-post a {
-  color: var(--seed-semantic-color-primary, #3182f6);
+  color: var(--dds-text-link);
 }
-/* em(*텍스트*) → 형광펜 하이라이트 (당근 블로그 스타일) */
+/* In-text emphasis follows DDS highlight semantics. */
 .tip-post em {
   font-style: normal;
-  background: #fcf5cf;
-  border-radius: 3px;
-  padding: 2px 4px;
+  background: var(--dds-background-state-highlight);
+  border-radius: var(--dds-radius-12);
+  padding: var(--dds-spacing-2) var(--dds-spacing-4);
 }
 .tip-post blockquote {
-  margin: 0 0 22px;
-  padding: 16px 20px;
-  border-left: 3px solid var(--seed-semantic-color-primary, #3182f6);
-  background: var(--seed-semantic-color-bg-layer-default, #f7f8fa);
-  border-radius: 0 10px 10px 0;
-  color: var(--seed-semantic-color-ink-text-low);
+  margin: 0 0 var(--dds-spacing-20);
+  padding: var(--dds-spacing-16) var(--dds-spacing-20);
+  border-left: 3px solid var(--dds-text-link);
+  background: var(--dds-background-surface-on);
+  border-radius: 0 var(--dds-radius-8) var(--dds-radius-8) 0;
+  color: var(--dds-text-quaternary);
 }
 .tip-post blockquote p {
   margin: 0;
@@ -117,53 +117,53 @@
 .tip-post table {
   width: 100%;
   border-collapse: collapse;
-  margin: 0 0 22px;
-  font-size: 14.5px;
+  margin: 0 0 var(--dds-spacing-20);
+  font-size: var(--dds-typography-caption-normal-size);
   display: block;
   overflow-x: auto;
 }
 .tip-post th,
 .tip-post td {
-  border: 1px solid var(--seed-semantic-color-line-default, #eee);
-  padding: 10px 12px;
+  border: 1px solid var(--dds-border-card);
+  padding: var(--dds-spacing-10) var(--dds-spacing-12);
   text-align: left;
   vertical-align: top;
 }
 .tip-post th {
   font-weight: 700;
-  background: var(--seed-semantic-color-bg-layer-default, #f7f8fa);
+  background: var(--dds-background-surface-on);
 }
 
 /* ── 하단 CTA 카드 ── */
 .post-cta {
   max-width: 720px;
-  margin: 72px auto 0;
+  margin: calc(var(--dds-spacing-40) * 2) auto 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: var(--dds-spacing-20);
   text-align: center;
-  background: var(--seed-semantic-color-bg-layer-default, #f7f8fa);
-  border-radius: 24px;
-  padding: 40px 24px 44px;
+  background: var(--dds-background-surface-on);
+  border-radius: var(--dds-radius-24);
+  padding: var(--dds-spacing-40) var(--dds-spacing-24) var(--dds-spacing-40);
 }
 .post-cta-text {
-  font-size: 15px;
+  font-size: var(--dds-typography-body-sm-normal-size);
   font-weight: 600;
-  color: var(--seed-semantic-color-ink-text-low);
+  color: var(--dds-text-quaternary);
   text-wrap: balance;
 }
 .post-cta-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--seed-semantic-color-ink-text);
-  color: var(--seed-semantic-color-paper-default, #fff);
-  font-size: 15px;
+  background: var(--dds-background-interaction-primary);
+  color: var(--dds-text-inverse);
+  font-size: var(--dds-typography-body-sm-normal-size);
   font-weight: 700;
   text-decoration: none;
-  padding: 14px 22px;
-  border-radius: 14px;
+  padding: var(--dds-spacing-12) var(--dds-spacing-20);
+  border-radius: var(--dds-radius-12);
 }
 
 /* ── 콘텐츠 홈 돌아가기 ── */
@@ -172,35 +172,39 @@
   align-items: center;
   justify-content: center;
   max-width: 300px;
-  margin: 56px auto 0;
-  padding: 14px 20px;
-  border-radius: 14px;
-  background: var(--seed-semantic-color-bg-layer-default, #f7f8fa);
-  color: var(--seed-semantic-color-ink-text);
+  margin: var(--dds-spacing-40) auto 0;
+  padding: var(--dds-spacing-12) var(--dds-spacing-20);
+  border-radius: var(--dds-radius-12);
+  background: var(--dds-background-surface-on);
+  color: var(--dds-text-primary);
   text-decoration: none;
-  font-size: 14px;
+  font-size: var(--dds-typography-caption-normal-size);
   font-weight: 700;
 }
 
 /* ── 연관 콘텐츠 ── */
 .post-related {
-  margin: 96px 0 0;
-  border-top: 1px solid var(--seed-semantic-color-line-default, #eee);
-  padding-top: 48px;
+  margin: calc(var(--dds-spacing-40) * 2) 0 0;
+  border-top: 1px solid var(--dds-border-card);
+  padding-top: var(--dds-spacing-40);
 }
 .post-related h2 {
-  font-size: 22px;
-  font-weight: 800;
+  font-size: var(--dds-typography-title-lg-size);
+  font-weight: 700;
   letter-spacing: -0.03em;
-  margin: 0 0 24px;
+  margin: 0 0 var(--dds-spacing-24);
 }
 
 @media (max-width: 640px) {
-  .post-page { padding: 0 16px 64px; }
-  .post-head { padding-top: 24px; }
-  .post-title { font-size: 26px; }
-  .post-cover { border-radius: 14px; margin-top: 24px; }
-  .tip-post { font-size: 16px; line-height: 1.85; margin-top: 28px; }
-  .tip-post h2 { font-size: 21px; margin: 40px 0 14px; }
-  .tip-post h3 { font-size: 18px; }
+  .post-page { padding: 0 var(--dds-spacing-16) calc(var(--dds-spacing-40) * 2); }
+  .post-head { padding-top: var(--dds-spacing-24); }
+  .post-title { font-size: var(--dds-typography-title-xl-size); }
+  .post-cover { border-radius: var(--dds-radius-12); margin-top: var(--dds-spacing-24); }
+  .tip-post { font-size: var(--dds-typography-body-md-normal-size); line-height: 1.85; margin-top: var(--dds-spacing-30); }
+  .tip-post h2 { font-size: var(--dds-typography-title-md-size); margin: var(--dds-spacing-40) 0 var(--dds-spacing-12); }
+  .tip-post h3 { font-size: var(--dds-typography-title-sm-size); }
 }
+
+.post-cta-btn { min-height: 48px; gap: var(--dds-spacing-8); border-radius: var(--dds-radius-8); color: var(--dds-text-static-white-primary); padding: var(--dds-spacing-12) var(--dds-spacing-20); }
+.post-cta-btn:hover { filter: brightness(.94); }
+.post-home { border: 1px solid var(--dds-border-button-outline); background: var(--dds-background-surface-base); border-radius: var(--dds-radius-8); min-height: 48px; }
