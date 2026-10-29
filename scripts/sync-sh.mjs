@@ -22,10 +22,11 @@ const INNO_FD = (seq, fileSeq, fileTp = "A", brdId = "GS0401") =>
   `${ISH_BASE}/main/com/file/innoFD.do?brdId=${brdId}&seq=${seq}&fileSeq=${fileSeq}&fileTp=${fileTp}`;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const boundedFetch = (url, options = {}) => globalThis.fetch(url, { ...options, signal: AbortSignal.timeout(20000) });
 const clean = (s) => s.replace(/<[^>]+>/g, " ").replace(/&[a-z]+;/g, " ").replace(/\s+/g, " ").trim();
 
 async function fetchText(url) {
-  const r = await fetch(url, { headers: { "User-Agent": UA } });
+  const r = await boundedFetch(url, { headers: { "User-Agent": UA } });
   if (!r.ok) throw new Error(`HTTP ${r.status} ${url}`);
   return r.text();
 }
@@ -104,10 +105,12 @@ async function main() {
 
   // 상세 → PDF 해석 (전 건)
   console.log(`\n상세/PDF 해석 ${notices.length}건...`);
+  let detailsChecked = 0;
   for (const n of notices) {
     try {
       const d = await resolveDetail(n.seq);
       Object.assign(n, d, { detailUrl: ISH_DETAIL(n.seq) });
+      if (++detailsChecked % 20 === 0) console.log(`  ${detailsChecked}/${notices.length}`);
     } catch (e) {
       throw new Error(`SH ${n.seq} 상세 실패 — 기존 데이터 보존: ${e.message}`);
     }
@@ -131,7 +134,7 @@ async function main() {
   if (args.probePdf) {
     const target = notices.find((n) => n.pdfUrl);
     if (target) {
-      const r = await fetch(target.pdfUrl, { headers: { "User-Agent": UA, Referer: ISH_DETAIL(target.seq) } });
+      const r = await boundedFetch(target.pdfUrl, { headers: { "User-Agent": UA, Referer: ISH_DETAIL(target.seq) } });
       const buf = Buffer.from(await r.arrayBuffer());
       console.log(`\nPDF probe: ${target.title.slice(0, 30)} → ${r.status}, ${Math.round(buf.length / 1024)}KB, PDF=${buf.slice(0, 4).toString() === "%PDF"}`);
     }

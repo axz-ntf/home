@@ -22,9 +22,10 @@ const LIST_URL = `${BASE}/youth/pgm/home/yohome/bbsListJson.json`;
 const DETAIL_URL = (boardId) => `${BASE}/youth/bbs/BMSR00015/view.do?boardId=${boardId}&menuNo=400008`;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const boundedFetch = (url, options = {}) => globalThis.fetch(url, { ...options, signal: AbortSignal.timeout(20000) });
 
 async function fetchListPage(pageIndex) {
-  const r = await fetch(LIST_URL, {
+  const r = await boundedFetch(LIST_URL, {
     method: "POST",
     headers: { "User-Agent": UA, "Content-Type": "application/x-www-form-urlencoded" },
     body: `bbsId=BMSR00015&pageIndex=${pageIndex}&pageUnit=10`,
@@ -35,7 +36,7 @@ async function fetchListPage(pageIndex) {
 
 // 상세 페이지 → 자치구(카테고리에서 선택된 구) + 첨부파일 목록.
 async function resolveDetail(boardId) {
-  const r = await fetch(DETAIL_URL(boardId), { headers: { "User-Agent": UA } });
+  const r = await boundedFetch(DETAIL_URL(boardId), { headers: { "User-Agent": UA } });
   if (!r.ok) throw new Error(`HTTP ${r.status} detail ${boardId}`);
   const html = await r.text();
 
@@ -62,7 +63,7 @@ async function resolveDetail(boardId) {
 // 좌표·세대수·전화·홈피는 지도 목록(maplist, 50단지 서브셋)에만 있어 homeCode 로 병합.
 // 좌표 없는 단지는 지번 주소(adresRo)가 정확해 VWorld 지오코딩으로 채운다(키 있을 때).
 async function fetchComplexes() {
-  const cardRes = await fetch(`${BASE}/youth/pgm/home/yohome/yoHomeListJson.json`, {
+  const cardRes = await boundedFetch(`${BASE}/youth/pgm/home/yohome/yoHomeListJson.json`, {
     method: "POST",
     headers: { "User-Agent": UA, "Content-Type": "application/x-www-form-urlencoded" },
     body: "pageNum=1&rowCount=300&searchPresale=&searchTheme=&searchMovinHoman=&searchHouseType=&searchHouseForm=&searchAdresGu=&searchSil=",
@@ -71,7 +72,7 @@ async function fetchComplexes() {
   const cards = (await cardRes.json()).resultList;
   if (!Array.isArray(cards) || !cards.length || cards.length >= 300) throw new Error("청년 단지목록 응답 오류 또는 페이지 한도 도달");
 
-  const mapRes = await fetch(`${BASE}/youth/pgm/home/yohome/maplist.json`, {
+  const mapRes = await boundedFetch(`${BASE}/youth/pgm/home/yohome/maplist.json`, {
     method: "POST",
     headers: { "User-Agent": UA, "Content-Type": "application/x-www-form-urlencoded" },
     body: "",
@@ -109,7 +110,7 @@ async function fetchComplexes() {
       const q = encodeURIComponent(`서울특별시 ${c.address}`);
       for (const type of ["parcel", "road"]) {
         try {
-          const j = await (await fetch(`https://api.vworld.kr/req/address?service=address&request=getcoord&version=2.0&crs=epsg:4326&type=${type}&address=${q}&format=json&key=${KEY}`)).json();
+          const j = await (await boundedFetch(`https://api.vworld.kr/req/address?service=address&request=getcoord&version=2.0&crs=epsg:4326&type=${type}&address=${q}&format=json&key=${KEY}`)).json();
           const p = j.response?.result?.point;
           if (p && inSeoul(Number(p.y), Number(p.x))) {
             c.lat = Number(p.y);
@@ -192,7 +193,7 @@ async function main() {
   if (args.probePdf) {
     const t = notices.find((n) => n.pdfUrl);
     if (t) {
-      const r = await fetch(t.pdfUrl, { headers: { "User-Agent": UA, Referer: t.detailUrl } });
+      const r = await boundedFetch(t.pdfUrl, { headers: { "User-Agent": UA, Referer: t.detailUrl } });
       const buf = Buffer.from(await r.arrayBuffer());
       console.log(`\nPDF probe: ${t.title.slice(0, 30)} → ${r.status}, ${Math.round(buf.length / 1024)}KB, PDF=${buf.slice(0, 4).toString() === "%PDF"}`);
     }
