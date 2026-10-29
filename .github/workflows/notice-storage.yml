@@ -1,0 +1,78 @@
+name: Official notice storage
+on:
+  schedule:
+    - cron: '0 18 * * *'
+  workflow_dispatch:
+  push:
+    branches: ['codex/notice-storage-sync']
+    paths:
+      - '.github/workflows/notice-storage.yml'
+      - 'scripts/collect-notice-materials.ts'
+      - 'scripts/download-notice-files.ts'
+      - 'scripts/upload-notice-files-supabase.mjs'
+      - 'scripts/lib/notice-materials.mjs'
+      - 'scripts/lib/download-material.mjs'
+      - 'scripts/lib/api-first-runner.mjs'
+concurrency:
+  group: official-notice-storage
+  cancel-in-progress: false
+permissions:
+  contents: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Restore document collection state
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            lib/notice-materials.json
+            lib/downloaded-documents.local.json
+            public/notice-files/
+          key: notice-storage-v1-${{ github.run_id }}
+          restore-keys: notice-storage-v1-
+      - name: Collect official attachment links
+        id: links
+        continue-on-error: true
+        env:
+          NODE_OPTIONS: --import ./scripts/lib/proxy-fetch.mjs
+          GOV_PROXY_URL: https://public-housing-map.vercel.app/api/govproxy
+          GOV_PROXY_SECRET: ${{ secrets.GOV_PROXY_SECRET }}
+          GOV_PROXY_HOSTS: apply.lh.or.kr,www.i-sh.co.kr,soco.seoul.go.kr,housing.seoul.go.kr
+        run: node --import tsx scripts/collect-notice-materials.ts --limit 100 --links-only
+      - name: Download official documents
+        id: downloads
+        continue-on-error: true
+        env:
+          NODE_OPTIONS: --import ./scripts/lib/proxy-fetch.mjs
+          GOV_PROXY_URL: https://public-housing-map.vercel.app/api/govproxy
+          GOV_PROXY_SECRET: ${{ secrets.GOV_PROXY_SECRET }}
+          GOV_PROXY_HOSTS: apply.lh.or.kr,www.i-sh.co.kr,soco.seoul.go.kr,housing.seoul.go.kr
+        run: node --import tsx scripts/download-notice-files.ts --limit 100 --active-only
+      - name: Upload verified documents to Supabase
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          test -f lib/downloaded-documents.local.json || printf '{}\n' > lib/downloaded-documents.local.json
+          node scripts/upload-notice-files-supabase.mjs
+      - name: Save document collection state
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            lib/notice-materials.json
+            lib/downloaded-documents.local.json
+            public/notice-files/
+          key: notice-storage-v1-${{ github.run_id }}
+      - name: Report collection failures
+        if: always() && (steps.links.outcome == 'failure' || steps.downloads.outcome == 'failure')
+        run: exit 1
