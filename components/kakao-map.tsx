@@ -75,6 +75,8 @@ function pinLabel(p: Listing): string {
     case "sale": return "공공분양";
     case "happy": return "행복주택";
     case "nation": return "국민임대";
+    case "public": return "공공임대";
+    case "rental": return "임대 · 유형 확인";
     case "perm": return "영구임대";
     case "buy": return "매입임대";
     case "jeonse": return "전세임대";
@@ -303,7 +305,7 @@ export function NaverMapView({
     let cancelled = false;
     loadNaverMaps(CLIENT_ID)
       .then(() => {
-        if (cancelled || !containerRef.current || !window.naver) return;
+        if (cancelled || !containerRef.current || !window.naver?.maps) return;
         const { naver } = window;
         const map = new naver.maps.Map(containerRef.current, {
           center: new naver.maps.LatLng(KOREA_CENTER.lat, KOREA_CENTER.lng),
@@ -350,7 +352,7 @@ export function NaverMapView({
   // District-level aggregate markers (visible only when zoomed out and no district selected)
   const showDistrictMarkers = !activeDistrict && zoom <= 10;
   useEffect(() => {
-    if (!ready || !mapRef.current || !window.naver) return;
+    if (!ready || !mapRef.current || !window.naver?.maps) return;
     const { naver } = window;
     const map = mapRef.current;
 
@@ -386,7 +388,7 @@ export function NaverMapView({
 
   // Individual listing pin markers + clustering
   useEffect(() => {
-    if (!ready || !mapRef.current || !window.naver) return;
+    if (!ready || !mapRef.current || !window.naver?.maps) return;
     const { naver } = window;
     const map = mapRef.current;
 
@@ -483,7 +485,7 @@ export function NaverMapView({
   // 지역이 "바뀔 때"만 카메라 이동 (pins 갱신·필터 변경으로 재실행돼도 같은 지역이면 무시).
   const lastDistrictRef = useRef<string | null>(null);
   useEffect(() => {
-    if (!ready || !mapRef.current || !window.naver) return;
+    if (!ready || !mapRef.current || !window.naver?.maps) return;
     if (lastDistrictRef.current === activeDistrict) return;
     lastDistrictRef.current = activeDistrict;
     const { naver } = window;
@@ -514,7 +516,7 @@ export function NaverMapView({
   const lastFocusedRef = useRef<string | null>(null);
   useEffect(() => {
     if (!selectedId) { lastFocusedRef.current = null; return; }
-    if (!ready || !mapRef.current || !window.naver) return;
+    if (!ready || !mapRef.current || !window.naver?.maps) return;
     if (lastFocusedRef.current === selectedId) return;
     const pin = pins.find((p) => p.id === selectedId);
     if (!pin) return;
@@ -527,7 +529,7 @@ export function NaverMapView({
   }, [ready, selectedId, pins]);
 
   const handleLocate = () => {
-    if (!navigator.geolocation || !mapRef.current || !window.naver) {
+    if (!navigator.geolocation || !mapRef.current || !window.naver?.maps) {
       alert("이 브라우저는 위치 확인을 지원하지 않아요");
       return;
     }
@@ -536,7 +538,7 @@ export function NaverMapView({
       (pos) => {
         const { latitude, longitude } = pos.coords;
         const map = mapRef.current;
-        if (!map || !window.naver) {
+        if (!map || !window.naver?.maps) {
           setLocating(false);
           return;
         }
@@ -607,18 +609,19 @@ export function NaverMapView({
             position: "absolute",
             inset: 0,
             display: "flex",
+            flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            padding: 24,
-            background: "var(--seed-scale-color-gray-100)",
-            color: "var(--seed-semantic-color-ink-text-low)",
-            fontSize: 13,
+            padding: "var(--dds-spacing-24)",
+            background: "var(--dds-background-surface-base)",
+            color: "var(--dds-text-quaternary)",
+            fontSize: "var(--dds-typography-body-sm-normal-size)",
             textAlign: "center",
           }}
         >
           지도를 불러올 수 없어요
           <br />
-          <span style={{ fontSize: 11, marginTop: 4, display: "block" }}>{loadError}</span>
+          <span style={{ fontSize: "var(--dds-typography-label-normal-size)", marginTop: "var(--dds-spacing-4)", display: "block" }}>{loadError}</span>
         </div>
       )}
 
@@ -646,15 +649,15 @@ export function NaverMapView({
         <div className="map-legend">
           <div className="legend-title">모집중 단지 수</div>
           <div className="legend-row">
-            <span className="legend-dot sm" style={{ background: "#ff6f0f" }} />
+            <span className="legend-dot sm" style={{ background: "var(--dds-background-interaction-primary)" }} />
             ~24개
           </div>
           <div className="legend-row">
-            <span className="legend-dot" style={{ background: "#ff6f0f" }} />
+            <span className="legend-dot" style={{ background: "var(--dds-background-interaction-primary)" }} />
             25~49개
           </div>
           <div className="legend-row">
-            <span className="legend-dot lg" style={{ background: "#ff6f0f" }} />
+            <span className="legend-dot lg" style={{ background: "var(--dds-background-interaction-primary)" }} />
             50개 이상
           </div>
         </div>

@@ -1,0 +1,501 @@
+[
+  {
+    "file": "8a8535a5dd9c2f53b76bb8d63c86e6524818940e675a67a4a7df9d8770817704.json",
+    "sourceHash": "36ac26dd97375740edb13fcd4d9eec53d078de686afbaba9b6eb30ba3364c9a7",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "익산평화 84AH",
+          "area": "84.82",
+          "supplyUnits": 2,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null,
+          "salePriceRange": [
+            28582,
+            30407
+          ],
+          "priceBasis": "공고 전체 층별 주택가격 범위, 발코니 확장·옵션 금액 별도. 잔여 동·호는 분양사무실 확인."
+        },
+        {
+          "houseType": "익산평화 84B",
+          "area": "84.73",
+          "supplyUnits": 143,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null,
+          "salePriceRange": [
+            28551,
+            30374
+          ],
+          "priceBasis": "공고 전체 층별 주택가격 범위, 발코니 확장·옵션 금액 별도. 잔여 동·호는 분양사무실 확인."
+        },
+        {
+          "houseType": "익산평화 84C",
+          "area": "84.98",
+          "supplyUnits": 150,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null,
+          "salePriceRange": [
+            28636,
+            30464
+          ],
+          "priceBasis": "공고 전체 층별 주택가격 범위, 발코니 확장·옵션 금액 별도. 잔여 동·호는 분양사무실 확인."
+        },
+        {
+          "houseType": "익산평화 84D",
+          "area": "84.70",
+          "supplyUnits": 28,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null,
+          "salePriceRange": [
+            28542,
+            30364
+          ],
+          "priceBasis": "공고 전체 층별 주택가격 범위, 발코니 확장·옵션 금액 별도. 잔여 동·호는 분양사무실 확인."
+        },
+        {
+          "houseType": "익산평화 84E",
+          "area": "84.87",
+          "supplyUnits": 8,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null,
+          "salePriceRange": [
+            28598,
+            30424
+          ],
+          "priceBasis": "공고 전체 층별 주택가격 범위, 발코니 확장·옵션 금액 별도. 잔여 동·호는 분양사무실 확인."
+        }
+      ],
+      "deadline": null,
+      "noticeStatus": "정정공고",
+      "progressStatus": null,
+      "schedule": {
+        "applyStart": "2026.10.01",
+        "applyEnd": null,
+        "winnerAt": null
+      },
+      "warnings": [
+        "선착순 물량 소진 시까지: 정해진 접수 마감일이 없습니다."
+      ]
+    },
+    "correctionNote": "PDF 2~3·7페이지 대조: 층별 가격 범위로 정리. 이전 회차 마감일 2026.09.30 제거, 2026.10.01부터 물량 소진 시까지로 정리."
+  },
+  {
+    "file": "62914999f5f37c1e08806d53c100334c272524e391971219f9e8115875bf871f.json",
+    "sourceHash": "8a2684c75dd1e9da13ddbe782ae14f19de5062460a539538be627a116ce6cb49",
+    "fields": {
+      "priceModel": "rows-by-area",
+      "rows": [
+        {
+          "houseType": "군산내흥7 16형 대학생",
+          "area": "16.98",
+          "supplyUnits": null,
+          "deposit": 1230.8,
+          "rent": 7.692,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "군산내흥7 16형 청년(소득X)",
+          "area": "16.98",
+          "supplyUnits": null,
+          "deposit": 1230.8,
+          "rent": 7.692,
+          "salePriceManwon": null
+        },
+        {
+          "houseType": "군산내흥7 16형 청년(소득O)",
+          "area": "16.98",
+          "supplyUnits": null,
+          "deposit": 1303.2,
+          "rent": 8.145,
+          "salePriceManwon": null
+        }
+      ],
+      "conversion": {
+        "rateUp": 3.5,
+        "rateDown": 6,
+        "perHouseType": [
+          {
+            "houseType": "군산내흥7 16형 대학생",
+            "limitManwon": 300,
+            "maxDeposit": 1530.8,
+            "minRent": 6.192,
+            "direction": "increase"
+          },
+          {
+            "houseType": "군산내흥7 16형 대학생",
+            "limitManwon": 900,
+            "maxDeposit": 330.8,
+            "minRent": 10.317,
+            "direction": "decrease"
+          },
+          {
+            "houseType": "군산내흥7 16형 청년(소득X)",
+            "limitManwon": 300,
+            "maxDeposit": 1530.8,
+            "minRent": 6.192,
+            "direction": "increase"
+          },
+          {
+            "houseType": "군산내흥7 16형 청년(소득X)",
+            "limitManwon": 900,
+            "maxDeposit": 330.8,
+            "minRent": 10.317,
+            "direction": "decrease"
+          },
+          {
+            "houseType": "군산내흥7 16형 청년(소득O)",
+            "limitManwon": 400,
+            "maxDeposit": 1703.2,
+            "minRent": 6.145,
+            "direction": "increase"
+          },
+          {
+            "houseType": "군산내흥7 16형 청년(소득O)",
+            "limitManwon": 1000,
+            "maxDeposit": 303.2,
+            "minRent": 11.061,
+            "direction": "decrease"
+          }
+        ]
+      },
+      "schedule": {
+        "applyStart": "2026.10.14",
+        "applyEnd": "2026.10.15",
+        "docResultAt": "2026.10.20",
+        "winnerAt": "2026.11.26"
+      },
+      "deadline": "2026.10.15",
+      "noticeStatus": "일반공고",
+      "progressStatus": null,
+      "supplyGroups": [
+        {
+          "label": "군산내흥7 16형 대학생·청년 통합 모집",
+          "kind": "reserve",
+          "count": 40,
+          "houseTypes": [
+            "군산내흥7 16형 대학생",
+            "군산내흥7 16형 청년(소득X)",
+            "군산내흥7 16형 청년(소득O)"
+          ],
+          "evidence": "■ 금회모집대상\n                                       임대조건                        전환가능            최대전환시\n공급                                                                                  임대조건\n                     금회모집          임대보증금(천원)                        보증금\n형별      금회 공급대상      예비자수                               월임대료        한도액\n(㎡)                                                      (원)                    임대보증금 월임대료\n                               계      계약금      잔금                   (천원)         (천원)      (원)\n                                                                (+) 3,000          15,308  61,920\n            대학생              12,308      616   11,692    76,920\n                                                                ( - ) 9,000         3,308 103,170\n                                                                (+) 3,000          15,308  61,920\n 16           소득X     40     12,308      616   11,692    76,920\n                                                                ( - ) 9,000         3,308 103,170\n       청년\n                                                                (+) 4,000          17,032  61,450\n              소득O            13,032      652   12,380    81,450\n                                                                ( - ) 10,000        3,032 110,610\n• 군산내흥7단지는 국민임대주택(420세대), 행복주택(400세대)의 혼합단지입니다.\n• 금회 모집예비자수에 속한 공급대상계층은 각 형별로 통합하여 추첨합니다."
+        }
+      ],
+      "address": "전북특별자치도 군산시 돌끝로 52",
+      "eligibility": [
+        {
+          "label": "소득",
+          "detail": "소득요건 배제. 청년 임대조건 부과유형 결정 등을 위한 소득 조회는 시행합니다.",
+          "evidence": "· 소득요건 배제\n      소득 요건\n               * 단, 청년계층 임대조건 부과유형 결정 등을 위해 소득 조회 시행\n               · 자산요건 배제(단, 자산 중 자동차가액은 4,542만원 이하일 것)"
+        },
+        {
+          "label": "자산·자동차",
+          "detail": "자산요건 배제. 자동차가액은 4,542만원 이하이며 대학생은 자동차가액 산출대상 자동차를 소유하지 않아야 합니다.",
+          "evidence": "· 자산요건 배제(단, 자산 중 자동차가액은 4,542만원 이하일 것)\n      자산 요건\n               * 대학생계층은 자동차가액 산출대상 자동차를 소유하고 있지 않아야 함"
+        },
+        {
+          "label": "무주택 완화",
+          "detail": "군산시 및 연접지역(김제시·익산시·서천군)에 주택이 없는 경우 허용. 소형·저가주택 예외의 면적·가격 기준은 원문을 확인하세요.",
+          "evidence": "· 주택건설지역 또는 연접지역에 주택이 없을 경우 허용, 소형 · 저가주택은 무주택 간주\n                · (주택건설지역 또는 연접지역에 주택이 없을 경우) 자격검증 범위에 속하는 세대원이 「주택공급에\n                  관한 규칙」에 따른 주택건설지역 또는 연접지역에 주택을 소유하지 않은 경우\n      무주택 요건       ① 주택건설지역 : 군산시 ② 연접지역 : 김제시, 익산시, 서천군\n                · (소형·저가주택) 전용 60㎡ 이하 주택으로 법령이 정하는 기준에 따른 가격이 1억원(수도권은 1억\n                  6천만원) 이하인 주택 또는 분양권(「주택공급에 관한 규칙」제2조 7의3)\n                   * 수도권의 범위 : 서울특별시, 인천광역시, 경기도"
+        },
+        {
+          "label": "청년 기간",
+          "detail": "소득이 있는 업무 종사기간 총 7년 이내.",
+          "evidence": "· (청년) 소득업무 종사기간 총 7년 이내"
+        },
+        {
+          "label": "대학생 계층",
+          "detail": "대학 재학 또는 다음 학기 입·복학 예정자, 또는 대학·고등학교 졸업·중퇴 후 2년 이내 취업준비생.",
+          "evidence": "① 대학생 계층\n- 대학생 : 대학에 재학 중이거나 다음 학기에 입·복학 예정인 사람\n- 취업준비생 : 대학 또는 고등학교를 졸업(또는 중퇴)한 지 2년 이내인 사람"
+        },
+        {
+          "label": "청년 계층",
+          "detail": "19~39세 청년 또는 원문에 명시된 사회초년생(소득업무 종사자·구직급여 수급자격 인정자·예술인).",
+          "evidence": "② 청년 계층\n- 청년 : 19세 이상 39세 이하인 사람(출생일 1986.10.03~2007.10.02)\n- 사회초년생 : 소득이 있는 업무에 종사한 기간이 총 7년 이내이며, 아래의 하나에 해당하는 사람\n  1) 소득이 있는 업무에 종사하는 사람\n  2) 퇴직한 후 1년이 지나지 않은 사람으로서 구직급여 수급자격을 인정받은 사람\n  3) 예술인"
+        }
+      ]
+    },
+    "correctionNote": "PDF 1~3·7페이지 대조: 중복 6행→3행, 통합 예비자 40명 분리, 증액/감액 전환 구분, 접수·서류 발표 일정 및 자격 완화조건 보완."
+  },
+  {
+    "file": "13167625a74f2db4ebab993428a0b9ef97b0a68b72799468353e40c1c63c87f8.json",
+    "sourceHash": "f4fa48b878f01597f26e8ffb739163ef52a00cdac00f4b826ce4c6471f8730ca",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "중산 디아채 103 101",
+          "area": "84.9921",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 20600
+        },
+        {
+          "houseType": "중산 디아채 103 302",
+          "area": "84.9921",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 22350
+        },
+        {
+          "houseType": "중산 디아채 106 301",
+          "area": "84.9921",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 22350
+        },
+        {
+          "houseType": "중산 디아채 202 104",
+          "area": "84.9805",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 20100
+        },
+        {
+          "houseType": "중산 디아채 205 104",
+          "area": "84.9805",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 20100
+        },
+        {
+          "houseType": "중산 디아채 205 302",
+          "area": "84.9921",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 22450
+        },
+        {
+          "houseType": "중산 디아채 206 201",
+          "area": "84.9921",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 21950
+        },
+        {
+          "houseType": "중산 디아채 206 301",
+          "area": "84.9921",
+          "supplyUnits": 1,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": 22350
+        }
+      ],
+      "deadline": "2026.12.23",
+      "noticeStatus": "일반공고",
+      "progressStatus": null,
+      "schedule": {
+        "applyStart": "2026.09.01",
+        "applyEnd": "2026.12.23",
+        "winnerAt": null
+      }
+    },
+    "correctionNote": "PDF 가격표 8호의 동·호별 금액 및 모집일정 대조. 원문과 일치하는 가격 유지, 접수 시작일 보완."
+  },
+  {
+    "file": "2f052fde9bca012f6c504177ec4adc5855f9e4a755cb82651bffa27120e7d829.json",
+    "sourceHash": "acef66815d56e98917f7d3ae2129de9dc6aede9827a4d79a948530373c66ea54",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "B2블록 74A",
+          "area": "74.9500",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null,
+          "salePriceRange": [
+            48536.3,
+            55131
+          ],
+          "priceBasis": "공고 가격표 전체 층·기본형/마이너스옵션 범위, 발코니 확장비 별도. 잔여 동·호별 가격은 원문 확인."
+        },
+        {
+          "houseType": "B2블록 84A",
+          "area": "84.5300",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null,
+          "salePriceRange": [
+            54538.8,
+            62177
+          ],
+          "priceBasis": "공고 가격표 전체 층·기본형/마이너스옵션 범위, 발코니 확장비 별도. 잔여 동·호별 가격은 원문 확인."
+        },
+        {
+          "houseType": "B2블록 84A1",
+          "area": "84.9900",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null,
+          "salePriceRange": [
+            54836.6,
+            62516
+          ],
+          "priceBasis": "공고 가격표 전체 층·기본형/마이너스옵션 범위, 발코니 확장비 별도. 잔여 동·호별 가격은 원문 확인."
+        },
+        {
+          "houseType": "B2블록 84A2",
+          "area": "84.9900",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null,
+          "salePriceRange": [
+            55038,
+            62516
+          ],
+          "priceBasis": "공고 가격표 전체 층·기본형/마이너스옵션 범위, 발코니 확장비 별도. 잔여 동·호별 가격은 원문 확인."
+        },
+        {
+          "houseType": "B2블록 84B",
+          "area": "84.5900",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null,
+          "salePriceRange": [
+            54578.1,
+            62222
+          ],
+          "priceBasis": "공고 가격표 전체 층·기본형/마이너스옵션 범위, 발코니 확장비 별도. 잔여 동·호별 가격은 원문 확인."
+        },
+        {
+          "houseType": "B2블록 84B1",
+          "area": "84.9900",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null,
+          "salePriceRange": [
+            55038,
+            62516
+          ],
+          "priceBasis": "공고 가격표 전체 층·기본형/마이너스옵션 범위, 발코니 확장비 별도. 잔여 동·호별 가격은 원문 확인."
+        },
+        {
+          "houseType": "B2블록 84C",
+          "area": "84.9800",
+          "supplyUnits": null,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null,
+          "salePriceRange": [
+            55030.5,
+            62508
+          ],
+          "priceBasis": "공고 가격표 전체 층·기본형/마이너스옵션 범위, 발코니 확장비 별도. 잔여 동·호별 가격은 원문 확인."
+        }
+      ],
+      "schedule": {
+        "applyStart": "2026.10.06",
+        "applyEnd": "2026.10.07",
+        "winnerAt": "2026.10.08"
+      },
+      "deadline": "2026.10.07",
+      "noticeStatus": "정정공고",
+      "progressStatus": null,
+      "supplyGroups": [
+        {
+          "label": "74A",
+          "kind": "units",
+          "count": 18,
+          "houseTypes": [
+            "B2블록 74A"
+          ],
+          "evidence": "합계                                                         308           56          252              7\n       74.9500A    74A    74.9500   23.7486   9.7791    41.4895    149.9672   확장    35.71    52.8548           41           23           18      23      0\n                   84A    84.5300   26.7841   11.0290   46.7927    169.1358   확장    37.33    59.6106                                             10      3\n       84.0000A    84A1   84.9900   26.9298   11.0891   47.0473    170.0562   확장    37.54    59.9350          187           33          154      22      1\n  B2                                                                                                                                                         ’28.07\n                   84A2   84.9900   26.9298   11.0891   47.0473    170.0562   확장    37.54    59.9350                                             20      -\n                   84B    84.5900   26.8031   11.0369   46.8259    169.2559   확장    31.18    59.6530                                             10      2\n       84.0000B                                                                                                58            -           58\n                   84B1   84.9900   26.9298   11.0891   47.0473    170.0562   확장    31.18    59.9350                                             23      1\n       84.9800C    84C    84.9800   26.9267   11.0878   47.0418    170.0363   확장    31.29    59.9280           22            -           22      23      -"
+        },
+        {
+          "label": "84A·84A1·84A2 통합",
+          "kind": "units",
+          "count": 154,
+          "houseTypes": [
+            "B2블록 84A",
+            "B2블록 84A1",
+            "B2블록 84A2"
+          ],
+          "evidence": "합계                                                         308           56          252              7\n       74.9500A    74A    74.9500   23.7486   9.7791    41.4895    149.9672   확장    35.71    52.8548           41           23           18      23      0\n                   84A    84.5300   26.7841   11.0290   46.7927    169.1358   확장    37.33    59.6106                                             10      3\n       84.0000A    84A1   84.9900   26.9298   11.0891   47.0473    170.0562   확장    37.54    59.9350          187           33          154      22      1\n  B2                                                                                                                                                         ’28.07\n                   84A2   84.9900   26.9298   11.0891   47.0473    170.0562   확장    37.54    59.9350                                             20      -\n                   84B    84.5900   26.8031   11.0369   46.8259    169.2559   확장    31.18    59.6530                                             10      2\n       84.0000B                                                                                                58            -           58\n                   84B1   84.9900   26.9298   11.0891   47.0473    170.0562   확장    31.18    59.9350                                             23      1\n       84.9800C    84C    84.9800   26.9267   11.0878   47.0418    170.0363   확장    31.29    59.9280           22            -           22      23      -"
+        },
+        {
+          "label": "84B·84B1 통합",
+          "kind": "units",
+          "count": 58,
+          "houseTypes": [
+            "B2블록 84B",
+            "B2블록 84B1"
+          ],
+          "evidence": "합계                                                         308           56          252              7\n       74.9500A    74A    74.9500   23.7486   9.7791    41.4895    149.9672   확장    35.71    52.8548           41           23           18      23      0\n                   84A    84.5300   26.7841   11.0290   46.7927    169.1358   확장    37.33    59.6106                                             10      3\n       84.0000A    84A1   84.9900   26.9298   11.0891   47.0473    170.0562   확장    37.54    59.9350          187           33          154      22      1\n  B2                                                                                                                                                         ’28.07\n                   84A2   84.9900   26.9298   11.0891   47.0473    170.0562   확장    37.54    59.9350                                             20      -\n                   84B    84.5900   26.8031   11.0369   46.8259    169.2559   확장    31.18    59.6530                                             10      2\n       84.0000B                                                                                                58            -           58\n                   84B1   84.9900   26.9298   11.0891   47.0473    170.0562   확장    31.18    59.9350                                             23      1\n       84.9800C    84C    84.9800   26.9267   11.0878   47.0418    170.0363   확장    31.29    59.9280           22            -           22      23      -"
+        },
+        {
+          "label": "84C",
+          "kind": "units",
+          "count": 22,
+          "houseTypes": [
+            "B2블록 84C"
+          ],
+          "evidence": "합계                                                         308           56          252              7\n       74.9500A    74A    74.9500   23.7486   9.7791    41.4895    149.9672   확장    35.71    52.8548           41           23           18      23      0\n                   84A    84.5300   26.7841   11.0290   46.7927    169.1358   확장    37.33    59.6106                                             10      3\n       84.0000A    84A1   84.9900   26.9298   11.0891   47.0473    170.0562   확장    37.54    59.9350          187           33          154      22      1\n  B2                                                                                                                                                         ’28.07\n                   84A2   84.9900   26.9298   11.0891   47.0473    170.0562   확장    37.54    59.9350                                             20      -\n                   84B    84.5900   26.8031   11.0369   46.8259    169.2559   확장    31.18    59.6530                                             10      2\n       84.0000B                                                                                                58            -           58\n                   84B1   84.9900   26.9298   11.0891   47.0473    170.0562   확장    31.18    59.9350                                             23      1\n       84.9800C    84C    84.9800   26.9267   11.0878   47.0418    170.0363   확장    31.29    59.9280           22            -           22      23      -"
+        }
+      ]
+    },
+    "correctionNote": "PDF 3~4페이지 대조: 계약금이 들어갔던 분양가 제거 후 총 주택가격의 층·옵션별 범위 저장. 통합 모집 252세대 중복 제거, 접수 시작일 보완."
+  },
+  {
+    "file": "bd5149c803cdd377deaeadb3bf3069df19cb7861606effb42157a9f3ac75a425.json",
+    "sourceHash": "91eb4846a866e763b87e0c00b640e9f13dfe78442cda5d69cdac45c8c5a01492",
+    "fields": {
+      "priceModel": "per-unit-sale",
+      "rows": [
+        {
+          "houseType": "A-2 74A",
+          "area": "74.84",
+          "supplyUnits": 60,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null,
+          "salePriceRange": [
+            35699,
+            37978
+          ],
+          "priceBasis": "공고 기본형 전체 층별 주택가격 범위, 발코니 확장비 별도."
+        },
+        {
+          "houseType": "A-2 84A",
+          "area": "84.79",
+          "supplyUnits": 122,
+          "deposit": null,
+          "rent": null,
+          "salePriceManwon": null,
+          "salePriceRange": [
+            40419,
+            42999
+          ],
+          "priceBasis": "공고 기본형 전체 층별 주택가격 범위, 발코니 확장비 별도."
+        }
+      ],
+      "schedule": {
+        "applyStart": "2026.10.12",
+        "applyEnd": "2026.10.14",
+        "winnerAt": "2026.10.15"
+      },
+      "deadline": "2026.10.14",
+      "noticeStatus": "재공고",
+      "progressStatus": null
+    },
+    "correctionNote": "PDF 1~2페이지 대조: 최상층 가격을 단일 분양가로 표시하지 않도록 층별 범위로 정리. 접수 시작일 보완."
+  }
+]

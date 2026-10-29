@@ -18,5 +18,5 @@ function announceEpoch(item: Listing): number | null {
 // 시간 의존이므로 호출부 mounted 게이트는 여전히 필수).
 export function isNewListing(item: Listing, nowMs = Date.now()): boolean {
   const t = announceEpoch(item);
-  return t != null && nowMs - t <= NEW_WINDOW_DAYS * 86_400_000;
+  return t != null && nowMs >= t && nowMs - t <= NEW_WINDOW_DAYS * 86_400_000;
 }

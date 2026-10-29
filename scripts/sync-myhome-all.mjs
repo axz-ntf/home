@@ -35,7 +35,7 @@ async function fetchWithRetry(url, init, label) {
   const MAX = 4;
   for (let attempt = 1; ; attempt++) {
     try {
-      const response = await fetch(url, init);
+      const response = await fetch(url, {...init, signal: init?.signal ?? AbortSignal.timeout(30000)});
       if (response.status >= 500 && attempt < MAX) throw new Error(`HTTP ${response.status}`);
       return response;
     } catch (error) {
@@ -256,6 +256,7 @@ async function main() {
     salesFailed = true;
   }
 
+  if(process.env.API_FIRST === '1' && (rentalsFailed || salesFailed)) throw new Error('공공 API 일부 수집 실패 — API 우선 실행에서는 기존 파일을 보존하고 중단합니다.');
   const all = [...rentals, ...sales].sort((a, b) =>
     (b.announceDate || "").localeCompare(a.announceDate || ""),
   );

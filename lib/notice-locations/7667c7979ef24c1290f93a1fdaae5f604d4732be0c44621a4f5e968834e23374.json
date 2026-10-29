@@ -1,0 +1,33 @@
+{
+  "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020541&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+  "collectedAt": "2026-10-28T06:06:50.220Z",
+  "locations": [
+    {
+      "address": "강원특별자치도 원주시 봉화로 231",
+      "units": 0,
+      "sourceLabel": "공고문 임대대상 단지 · 행정안전부 주소 확인",
+      "localUrl": "/notice-files/4ce930746bca3f9bbfc9b0d8c12398b3d85151e0dbd11d2b1d454320e9f1ada1.pdf#page=2",
+      "evidence": "PDF 2쪽 임대대상 단지 표: ['강원', '원주', '우산동', '한라비발디2차', '2014', '59', '717', '18', '2.3', '10', '', '10', ''] · 주소 API 건물명: 한라비발디2차아파트",
+      "lat": 37.3643779687357,
+      "lng": 127.929813540213,
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치"
+    },
+    {
+      "address": "강원특별자치도 춘천시 근화길15번길 22",
+      "units": 0,
+      "sourceLabel": "공고문 임대대상 단지 · 행정안전부 주소 확인",
+      "localUrl": "/notice-files/4ce930746bca3f9bbfc9b0d8c12398b3d85151e0dbd11d2b1d454320e9f1ada1.pdf#page=2",
+      "evidence": "PDF 2쪽 임대대상 단지 표: ['강원', '춘천', '근화동', '신성미소지움', '2007', '59', '1092', '15', '2.3', '3', '', '10', ''] · 주소 API 건물명: 신성미소지움아파트",
+      "lat": 37.8724880713471,
+      "lng": 127.717650888695,
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치"
+    }
+  ],
+  "review": {
+    "status": "partial",
+    "message": "공고문 단지 중 주소 일치를 확인한 항목만 표시합니다. 나머지 단지 주소는 확인 중입니다.",
+    "evidence": "PDF 2쪽 임대대상 단지 표: ['강원', '춘천', '근화동', '신성미소지움', '2007', '59', '1092', '15', '2.3', '3', '', '10', '']",
+    "localUrl": "/notice-files/4ce930746bca3f9bbfc9b0d8c12398b3d85151e0dbd11d2b1d454320e9f1ada1.pdf#page=2",
+    "sourceLabel": "공고문 임대대상 단지"
+  }
+}

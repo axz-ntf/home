@@ -6,10 +6,10 @@ import { fileURLToPath } from "node:url";
 
 const META_PATH = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../lib/_sync-meta.json");
 
-export async function recordSync(source, count) {
+export async function recordSync(source, count, extra = {}) {
   let meta = {};
   try { meta = JSON.parse(await fs.readFile(META_PATH, "utf8")); } catch { /* 첫 기록 */ }
-  meta[source] = { at: new Date().toISOString(), count };
+  meta[source] = { at: new Date().toISOString(), count, ...extra };
   await fs.writeFile(META_PATH, JSON.stringify(meta, null, 2) + "\n", "utf8");
   console.log(`sync-meta: ${source} = ${count}건`);
 }

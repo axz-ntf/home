@@ -1,10 +1,12 @@
 "use client";
 
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
-import AdminShell, { type NavItem } from "../admin-shell";
+import AdminShell from "../admin-shell";
+import { adminNav } from "@/lib/admin-nav";
 import { AIcon } from "../icons";
+import { DdsIcon } from "@/components/dds-icon";
 
 export interface DashboardRow {
   id: string;
@@ -43,7 +45,7 @@ const STATUS_LABEL: Record<DashboardRow["status"], string> = {
   open: "모집중", upcoming: "모집예정", closing: "마감임박", closed: "마감",
 };
 const TYPE_LABEL: Record<string, string> = {
-  happy: "행복주택", nation: "국민임대", integ: "통합공공임대", perm: "영구임대",
+  public: "공공임대", rental: "임대 · 유형 확인", happy: "행복주택", nation: "국민임대", integ: "통합공공임대", perm: "영구임대",
   buy: "매입임대", jeonse: "전세임대", fifty: "50년임대", sale: "분양", youth: "청년주택",
 };
 
@@ -62,8 +64,8 @@ function formatDday(deadline: string): { text: string; urgent: boolean } | null 
   return { text: `D-${days}`, urgent: days <= 7 };
 }
 
-// 소스 헬스 (P4) — 마지막 sync 가 오래되면 데이터가 썩고 있다는 뜻. 24h 노랑 / 48h 빨강.
-interface SyncEntry { at: string; count: number }
+// 저장된 수집 시각의 경과 시간이며, 크롤러 실행 상태는 아니다.
+interface SyncEntry { at: string; count: number; supplementalCount?: number; supplementalAt?: string }
 const SYNC_SOURCES: { key: string; label: string }[] = [
   { key: "lh", label: "LH" },
   { key: "sh", label: "SH" },
@@ -77,7 +79,7 @@ function SyncHealthStrip({ meta }: { meta: Record<string, SyncEntry | undefined>
     <div className="a-sync-band">
       {SYNC_SOURCES.map(({ key, label }) => {
         const e = meta[key];
-        if (!e) {
+        if (!e || !Number.isFinite(Date.parse(e.at)) || Date.parse(e.at) > now) {
           return (
             <div key={key} className="a-sync-cell">
               <div className="k">
@@ -90,13 +92,13 @@ function SyncHealthStrip({ meta }: { meta: Record<string, SyncEntry | undefined>
           );
         }
         const hours = (now - new Date(e.at).getTime()) / 3600000;
-        // <24h 정상 / ≥24h 지연 / ≥48h 실패 — 크롤러가 죽었는지 한눈에.
+        // 기록의 경과 시간만 표시한다.
         const state =
           hours >= 48
-            ? { tone: "var(--a-red)", badge: "danger", text: "실패 의심" }
+            ? { tone: "var(--a-red)", badge: "danger", text: "수집 기록 오래됨" }
             : hours >= 24
-              ? { tone: "var(--a-yellow)", badge: "warn", text: "지연" }
-              : { tone: "var(--a-green)", badge: "ok", text: "정상" };
+              ? { tone: "var(--a-yellow)", badge: "warn", text: "24시간 경과" }
+              : { tone: "var(--a-green)", badge: "ok", text: "최근 수집 기록" };
         const ago = hours < 1 ? "방금" : hours < 24 ? `${Math.floor(hours)}시간 전` : `${Math.floor(hours / 24)}일 전`;
         return (
           <div key={key} className="a-sync-cell">
@@ -105,37 +107,42 @@ function SyncHealthStrip({ meta }: { meta: Record<string, SyncEntry | undefined>
               {label} 크롤러
               <span className={`a-badge ${state.badge}`}>{state.text}</span>
             </div>
-            <div className="d">{ago} 실행 · <strong>{e.count}건</strong> 수집{hours >= 24 ? " · 24시간 초과" : ""}</div>
+            <div className="d">{ago} 실행 · <strong>{e.count}건</strong> 수집{e.supplementalCount ? ` · 원문 확인 ${e.supplementalCount}건` : ""}{hours >= 24 ? " · 24시간 초과" : ""}</div>
           </div>
         );
       })}
       <div className="a-sync-cell">
         <div className="k">
-          일일 파이프라인
-          <span className="a-badge notice-normal">다음 24:00</span>
+          저장된 자료
         </div>
-        <div className="d">GitHub Actions · 매일 KST 00:00 자동 실행</div>
+        <div className="d"><Link href="/admin/automation">파일과 최근 처리 결과 보기 →</Link></div>
       </div>
     </div>
   );
 }
 
-export default function Dashboard({ rows, user, syncMeta, activePins, overridesTotal }: { rows: DashboardRow[]; user?: { name: string; role: string; initial: string }; syncMeta?: Record<string, SyncEntry | undefined>; activePins?: number; overridesTotal?: number }) {
+export default function Dashboard({ rows, user, syncMeta, activePins }: { rows: DashboardRow[]; user?: { name: string; role: string; initial: string }; syncMeta?: Record<string, SyncEntry | undefined>; activePins?: number }) {
   const router = useRouter();
   const params = useSearchParams();
   const urlFilter = (params.get("filter") || "all") as FilterKey;
   const urlQuery = params.get("q") || "";
-  const [filter, setFilter] = useState<FilterKey>(urlFilter);
-  const [query, setQuery] = useState(urlQuery);
+  const filter = urlFilter;
+  const [search, setSearch] = useState({ url: urlQuery, value: urlQuery });
+  const query = search.url === urlQuery ? search.value : urlQuery;
 
-  // URL ↔ local state 동기화 — 사이드바 "검수 큐" 클릭 시 filter 자동 적용.
-  useEffect(() => { setFilter(urlFilter); }, [urlFilter]);
-  useEffect(() => { setQuery(urlQuery); }, [urlQuery]);
+  function setQuery(value: string) {
+    setSearch({ url: urlQuery, value });
+    const sp = new URLSearchParams(params.toString());
+    if (sp.has("page")) {
+      sp.delete("page");
+      router.replace(sp.toString() ? `/admin/review?${sp.toString()}` : "/admin/review", { scroll: false });
+    }
+  }
 
   // filter chip 클릭 → URL 도 같이 업데이트 (사이드바 active state 즉시 반영).
   function changeFilter(next: FilterKey) {
-    setFilter(next);
     const sp = new URLSearchParams(params.toString());
+    sp.delete("page");
     if (next === "all") sp.delete("filter");
     else sp.set("filter", next);
     const qs = sp.toString();
@@ -184,7 +191,7 @@ export default function Dashboard({ rows, user, syncMeta, activePins, overridesT
   const distribution = useMemo(() => {
     // 공급유형 코드 → 한글 라벨 (영문 코드 노출 방지).
     const TYPE_KO: Record<string, string> = {
-      happy: "행복주택", nation: "국민임대", perm: "영구임대", buy: "매입임대",
+      public: "공공임대", rental: "임대 · 유형 확인", happy: "행복주택", nation: "국민임대", perm: "영구임대", buy: "매입임대",
       integ: "통합공공임대", fifty: "50년임대", sale: "공공분양", jeonse: "전세임대", youth: "청년안심",
     };
     const active = sourceRows.filter((r) => r.status !== "closed");
@@ -228,16 +235,6 @@ export default function Dashboard({ rows, user, syncMeta, activePins, overridesT
   const pageStart = (page - 1) * PAGE_SIZE;
   const paged = filtered.slice(pageStart, pageStart + PAGE_SIZE);
 
-  // 필터/검색이 바뀌면 page=1 로 자동 리셋.
-  useEffect(() => {
-    if (pageFromUrl !== 1 && (filter !== urlFilter || query !== urlQuery)) {
-      const sp = new URLSearchParams(params.toString());
-      sp.delete("page");
-      router.replace(sp.toString() ? `/admin/review?${sp.toString()}` : "/admin/review", { scroll: false });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filter, query]);
-
   function goToPage(p: number) {
     const sp = new URLSearchParams(params.toString());
     if (p <= 1) sp.delete("page");
@@ -252,21 +249,17 @@ export default function Dashboard({ rows, user, syncMeta, activePins, overridesT
   const todayStr = `${today.getFullYear()}년 ${today.getMonth() + 1}월 ${today.getDate()}일`;
   const weekday = ["일", "월", "화", "수", "목", "금", "토"][today.getDay()];
 
-  const navItems: NavItem[] = [
-    { href: "/admin/review", label: "대시보드", icon: "dash" },
-    { href: "/admin/activity", label: "수정 내역", icon: "history", badge: overridesTotal ?? stats.reviewed, badgeKind: "subtle" },
-    { href: "/admin/complexes", label: "단지 관리", icon: "building" },
-    { href: "/admin/settings", label: "설정", icon: "settings" },
-  ];
+  const navItems = adminNav();
 
   return (
     <AdminShell
-      pageTitle="대시보드"
-      pageSub={`${todayStr} ${weekday}요일 · 실시간`}
+      pageTitle="공고 관리"
+      pageSub={`${todayStr} ${weekday}요일 · 공고 현황`}
       navItems={navItems}
       user={user}
     >
-      <SearchInTopbarSync onChange={setQuery} />
+      <div className="a-dashboard">
+        <header className="a-dashboard-heading"><div><h1>공고 관리</h1><p>모집 현황과 수집된 정보를 확인하고, 필요한 공고를 찾아보세요.</p></div><Link className="a-btn secondary" href="/admin/automation"><DdsIcon name="sparkles" size={20} /> 수집 현황</Link></header>
 
       {syncMeta && <SyncHealthStrip meta={syncMeta} />}
 
@@ -288,7 +281,7 @@ export default function Dashboard({ rows, user, syncMeta, activePins, overridesT
         <div className="a-stat">
           <div className="a-stat-label">마감임박 <span className="dot" /></div>
           <div className="a-stat-value">{stats.closing.toLocaleString()}<small>건</small></div>
-          <div className="a-stat-sub">7일 이내 마감 · 우선 검수</div>
+          <div className="a-stat-sub">7일 이내 접수 마감</div>
         </div>
         <div className="a-stat success">
           <div className="a-stat-label">수정됨</div>
@@ -308,7 +301,7 @@ export default function Dashboard({ rows, user, syncMeta, activePins, overridesT
             <QualityRow label="좌표 없음" value={quality.noCoord} total={quality.n} tone="warn" hint="지도에 안 뜸" />
             <QualityRow label="보증금·분양가 없음" value={quality.noDeposit} total={quality.n} tone="warn" hint="가격 결측" />
             <QualityRow label="당첨발표 없음" value={quality.noWinner} total={quality.n} tone="muted" hint="선착순·미수집" />
-            <QualityRow label="검수 필요" value={quality.issues} total={quality.n} tone="danger" hint="가격·세대수 이슈" />
+            <QualityRow label="자동 확인 대상" value={quality.issues} total={quality.n} tone="danger" hint="가격·세대수 이슈" />
           </ul>
         </div>
 
@@ -341,57 +334,52 @@ export default function Dashboard({ rows, user, syncMeta, activePins, overridesT
 
       <div className="a-table-wrap">
         <div className="a-table-head">
-          {/* 소스 필터 (LH/SH/청년안심) — 공급원별로 큐를 좁힌다. */}
-          <div className="a-table-filters">
-            <span style={{ fontSize: 11.5, fontWeight: 700, color: "var(--a-ink-3)", alignSelf: "center" }}>소스:</span>
+          <div className="a-table-title-row">
+            <h2><DdsIcon name="list" size={20} /> 공고 목록</h2>
+            <label className="a-table-search-field"><DdsIcon name="search" size={20} /><span className="a-visually-hidden">공고 제목 또는 지역 검색</span><input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="제목·지역 검색" className="a-table-search" /></label>
+          </div>
+          <div className="a-table-filters" aria-label="기관 필터">
+            <span className="a-table-filter-label">기관</span>
             <FilterChip active={source === "all"} onClick={() => setSource("all")} count={rows.length}>전체</FilterChip>
             <FilterChip active={source === "LH"} onClick={() => setSource("LH")} count={sourceCounts.LH}>LH</FilterChip>
             <FilterChip active={source === "SH"} onClick={() => setSource("SH")} count={sourceCounts.SH}>SH</FilterChip>
             <FilterChip active={source === "youth"} onClick={() => setSource("youth")} count={sourceCounts.youth}>청년안심</FilterChip>
           </div>
-          <div className="a-table-filters">
+          <div className="a-table-filters" aria-label="상태 필터">
+            <span className="a-table-filter-label">상태</span>
             <FilterChip active={filter === "all"} onClick={() => changeFilter("all")} count={stats.total}>전체</FilterChip>
             <FilterChip active={filter === "open"} onClick={() => changeFilter("open")} count={stats.open}>모집중</FilterChip>
             <FilterChip active={filter === "upcoming"} onClick={() => changeFilter("upcoming")} count={stats.upcoming}>예정</FilterChip>
             <FilterChip active={filter === "closing"} onClick={() => changeFilter("closing")} count={stats.closing}>마감임박</FilterChip>
             <FilterChip active={filter === "closed"} onClick={() => changeFilter("closed")} count={stats.closed}>마감</FilterChip>
           </div>
-          <div className="a-card-actions">
-            <input
-              type="search"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="제목·지역 검색"
-              className="a-table-search"
-            />
-          </div>
         </div>
 
+        <div className="a-table-scroll" tabIndex={0} role="region" aria-label="공고 목록">
         <table className="a-table">
           <thead>
             <tr>
-              <th style={{ width: 120 }}>공고 ID</th>
               <th>공고</th>
               <th>유형</th>
               <th>지역</th>
               <th>마감</th>
               <th>상태</th>
               <th style={{ textAlign: "right" }}>세대수</th>
-              <th>검수</th>
-              <th></th>
+              <th>확인 상태</th>
+              <th><span className="a-visually-hidden">공고 관리</span></th>
             </tr>
           </thead>
           <tbody>
             {paged.length === 0 && (
               <tr>
-                <td colSpan={9} className="a-empty">
-                  <div style={{ marginBottom: 6, color: "var(--a-ink-4)", display: "flex", justifyContent: "center" }}>
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+                <td colSpan={8} className="a-empty">
+                  <div style={{ marginBottom: 4, color: "var(--a-ink-4)", display: "flex", justifyContent: "center" }}>
+                    <DdsIcon name="search" size={28}/>
                   </div>
                   <div style={{ fontSize: 14, fontWeight: 700, color: "var(--a-ink)", marginBottom: 4 }}>
                     해당하는 공고가 없어요
                   </div>
-                  <div style={{ fontSize: 12, color: "var(--a-ink-3)", marginBottom: 12 }}>
+                  <div style={{ fontSize: 14, color: "var(--a-ink-3)", marginBottom: 12 }}>
                     {filter !== "all" && <>필터: <strong style={{ color: "var(--a-ink-2)" }}>{filter === "review" ? "검수 필요" : filter}</strong></>}
                     {filter !== "all" && query && " · "}
                     {query && <>검색어: <strong style={{ color: "var(--a-ink-2)" }}>&quot;{query}&quot;</strong></>}
@@ -417,18 +405,17 @@ export default function Dashboard({ rows, user, syncMeta, activePins, overridesT
                   onClick={() => router.push(`/admin/review/${encodeURIComponent(r.id)}`)}
                   style={{ cursor: "pointer" }}
                 >
-                  <td><span className="id-mono">{r.pblancId ?? r.id.slice(-12)}</span></td>
                   <td>
-                    <div className="title">{r.title}</div>
+                    <Link className="title" href={`/admin/review/${encodeURIComponent(r.id)}`} onClick={(event) => event.stopPropagation()}>{r.title}</Link>
                     <div className="sub">
                       {r.noticeStatus && (
-                        <span className={`a-badge ${r.noticeStatus.includes("정정") ? "notice-correction" : "notice-normal"}`} style={{ marginRight: 6 }}>
+                        <span className={`a-badge ${r.noticeStatus.includes("정정") ? "notice-correction" : "notice-normal"}`} style={{ marginRight: 4 }}>
                           {r.noticeStatus}
                         </span>
                       )}
                       {r.agency} · 공고일 {r.announceDate || "—"}
                       {r.pinCount != null && (
-                        <span title={`PC 지도에선 단지별 ${r.pinCount}개 핀으로 표시 — 클릭해 핀 편집`} style={{ marginLeft: 6, fontWeight: 700, color: "var(--a-ink-2)" }}>
+                        <span title={`PC 지도에선 단지별 ${r.pinCount}개 핀으로 표시 — 클릭해 핀 편집`} style={{ marginLeft: 4, fontWeight: 700, color: "var(--a-ink-2)" }}>
                           핀 {r.pinCount}
                         </span>
                       )}
@@ -437,7 +424,7 @@ export default function Dashboard({ rows, user, syncMeta, activePins, overridesT
                   <td><TypeBadge type={r.type} /></td>
                   <td style={{ color: "var(--a-ink-2)" }}>{r.district}</td>
                   <td>
-                    <div style={{ fontWeight: 700, fontSize: 12.5, color: "var(--a-ink)" }}>
+                    <div style={{ fontWeight: 700, fontSize: 14, color: "var(--a-ink)" }}>
                       {r.deadline ? r.deadline.replace(/\./g, ". ") : "—"}
                     </div>
                     {dday && (
@@ -464,7 +451,7 @@ export default function Dashboard({ rows, user, syncMeta, activePins, overridesT
                   <td>
                     <div style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
                       {r.reviewed ? (
-                        <span className="a-review-chip done">✓ 검수</span>
+                        <dds-badge variant="weak" color="primary" size="md">수정됨</dds-badge>
                       ) : r.needsReview ? (
                         <span className="a-review-chip need" title={`이슈: ${r.issues.join(", ")}`}>
                           {r.hasDraft ? "초안 · " : ""}
@@ -485,11 +472,11 @@ export default function Dashboard({ rows, user, syncMeta, activePins, overridesT
                             borderRadius: 4,
                             background: "var(--a-yellow-low)",
                             color: "var(--a-yellow)",
-                            fontSize: 11,
+                            fontSize: 12,
                             cursor: "help",
                           }}
                         >
-                          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 20h4L19 9a2.1 2.1 0 0 0-3-3L5 17v3Z" /></svg>
+                          <DdsIcon name="edit" size={14}/>
                         </span>
                       )}
                     </div>
@@ -523,6 +510,7 @@ export default function Dashboard({ rows, user, syncMeta, activePins, overridesT
             })}
           </tbody>
         </table>
+        </div>
         <div className="a-table-foot">
           <div>
             총 <strong style={{ color: "var(--a-ink)" }}>{filtered.length.toLocaleString()}</strong>건 ·{" "}
@@ -534,6 +522,7 @@ export default function Dashboard({ rows, user, syncMeta, activePins, overridesT
           </div>
           <Pagination page={page} totalPages={totalPages} onChange={goToPage} />
         </div>
+      </div>
       </div>
     </AdminShell>
   );
@@ -569,16 +558,24 @@ function FilterChip({ active, onClick, count, children }: {
   count: number;
   children: React.ReactNode;
 }) {
-  return (
-    <button type="button" className={`a-filter-chip ${active ? "on" : ""}`} onClick={onClick}>
-      {children}
-      <span className="count">{count.toLocaleString()}</span>
-    </button>
-  );
+  const chip = useRef<HTMLElement & { selected: boolean }>(null);
+  useEffect(() => {
+    const element = chip.current;
+    if (!element) return;
+    element.selected = active;
+    const change = () => {
+      // DDS toggles its own selected value. Keep the single-choice React filter authoritative.
+      element.selected = active;
+      onClick();
+    };
+    element.addEventListener("dds-chip-change", change);
+    return () => element.removeEventListener("dds-chip-change", change);
+  }, [active, onClick]);
+  return <dds-chip ref={chip} className="a-dds-filter" variant="solid" color={active ? "primary" : "neutral"} size="md" selected={active || undefined}>{children}<span slot="trailing" className="count">{count.toLocaleString()}</span></dds-chip>;
 }
 
 function TypeBadge({ type }: { type: string }) {
-  return <span className={`a-badge ${type}`}>{TYPE_LABEL[type] ?? type}</span>;
+  return <dds-badge variant="solid" color="secondary" size="md">{TYPE_LABEL[type] ?? type}</dds-badge>;
 }
 
 function Pagination({ page, totalPages, onChange }: { page: number; totalPages: number; onChange: (p: number) => void }) {
@@ -594,7 +591,7 @@ function Pagination({ page, totalPages, onChange }: { page: number; totalPages: 
 
   return (
     <div className="a-pagi">
-      <button type="button" onClick={() => onChange(page - 1)} disabled={page <= 1} aria-label="이전 페이지">‹</button>
+      <button type="button" onClick={() => onChange(page - 1)} disabled={page <= 1} aria-label="이전 페이지"><DdsIcon name="chevron-left" size={16} /></button>
       {pages.map((p, i) =>
         p === "..." ? (
           <span key={`e${i}`} style={{ padding: "0 4px", color: "var(--a-ink-4)" }}>…</span>
@@ -610,12 +607,7 @@ function Pagination({ page, totalPages, onChange }: { page: number; totalPages: 
           </button>
         ),
       )}
-      <button type="button" onClick={() => onChange(page + 1)} disabled={page >= totalPages} aria-label="다음 페이지">›</button>
+      <button type="button" onClick={() => onChange(page + 1)} disabled={page >= totalPages} aria-label="다음 페이지"><DdsIcon name="chevron-right" size={16} /></button>
     </div>
   );
-}
-
-// topbar 의 search 와 dashboard 의 query state 를 동기화하지 않는 dummy — 추후 통합 가능.
-function SearchInTopbarSync({ onChange: _onChange }: { onChange: (v: string) => void }) {
-  return null;
 }

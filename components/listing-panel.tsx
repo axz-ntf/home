@@ -1,8 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { MdOutlineSearch, MdClose } from "react-icons/md";
+import { useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
+import { DdsIcon } from "./dds-icon";
+import { Button } from "./button";
+import "./dds-components.css";
 import type { Listing, SortKey } from "@/lib/types";
+import { isNewListing } from "@/lib/new-listings";
 import { AgencyBadge } from "./agency-badge";
 import { eligibilitySummaryByType, HOUSING_TYPES } from "@/lib/mock-data";
 import { dDayText, effectiveStatus } from "@/lib/dday";
@@ -11,10 +14,11 @@ import { formatManwon, comma } from "@/lib/format";
 // 마운트 여부 — 시간 의존(D-day) 텍스트를 SSR/hydration 시점엔 렌더하지 않기 위함.
 // SSR HTML 은 빌드 시각으로 굳어(D-10 등), 사용자 접속 시각과 달라 hydration #418 유발.
 // 마운트 전엔 시간 무관 라벨, 마운트 후 정확한 D-day 로 교체.
+const subscribeMounted = () => () => {};
+const clientMounted = () => true;
+const serverMounted = () => false;
 function useMounted() {
-  const [m, setM] = useState(false);
-  useEffect(() => setM(true), []);
-  return m;
+  return useSyncExternalStore(subscribeMounted, clientMounted, serverMounted);
 }
 
 function typeBadge(type: Listing["type"], item?: Listing) {
@@ -42,8 +46,8 @@ function priceRange(item: Listing): { dep: [number, number] | null; rent: [numbe
   const rows = (item.complexes ?? []).flatMap((c) => c.rows ?? []);
   if (rows.length < 2) return null;
   // 타당성 가드 — 추출 오류로 자릿수 합쳐진 비현실적 값 제외 (보증금≤200억·월세≤500만, 만원 단위)
-  const deps = rows.map((r) => r.deposit).filter((d): d is number => d != null && d > 0).map((d) => Math.round(d / 10000)).filter((d) => d <= 2_000_000);
-  const rents = rows.map((r) => r.rent).filter((r): r is number => r != null && r > 0).map((r) => Math.round(r / 10000)).filter((r) => r <= 500);
+  const deps = rows.map((r) => r.deposit).filter((d): d is number => d != null && d > 0).map((d) => d / 10000).filter((d) => d <= 2_000_000);
+  const rents = rows.map((r) => r.rent).filter((r): r is number => r != null && r > 0).map((r) => r / 10000).filter((r) => r <= 500);
   const range = (ns: number[]): [number, number] | null => {
     if (ns.length < 2) return null;
     const lo = Math.min(...ns), hi = Math.max(...ns);
@@ -62,7 +66,7 @@ function priceText(item: Listing) {
       const isResale = /매각|분양전환/.test(item.title ?? "");
       return <strong>{isResale ? "매매가" : "분양가"} {formatManwon(item.salePriceManwon)}</strong>;
     }
-    return <span style={{ color: "var(--seed-semantic-color-ink-text-low)" }}>분양가 공고문 확인</span>;
+    return <span style={{ color: "var(--dds-text-quaternary)" }}>분양가 공고문 확인</span>;
   }
   // 평형별 범위가 있으면 범위 우선 (M3)
   const ranges = priceRange(item);
@@ -95,7 +99,7 @@ function priceText(item: Listing) {
   if (item.deposit > 0) {
     return <strong>{depositLabel} {formatManwon(item.deposit)}</strong>;
   }
-  return <span style={{ color: "var(--seed-semantic-color-ink-text-low)" }}>임대조건 공고문 확인</span>;
+  return <span style={{ color: "var(--dds-text-quaternary)" }}>임대조건 공고문 확인</span>;
 }
 
 export function ListingCard({
@@ -104,12 +108,20 @@ export function ListingCard({
   selected,
   onHover,
   onClick,
+  compareSelected = false,
+  compareDisabled = false,
+  onCompare,
+  changes = [],
 }: {
   item: Listing;
   hovered: boolean;
   selected: boolean;
   onHover: (id: string | null) => void;
   onClick: (id: string) => void;
+  compareSelected?: boolean;
+  compareDisabled?: boolean;
+  onCompare?: (id: string) => void;
+  changes?: string[];
 }) {
   const photo = item.coverPhotoUrl;
   const mounted = useMounted();
@@ -181,6 +193,12 @@ export function ListingCard({
             </>
           )}
         </div>
+        <div className="home-card-tools">
+          {mounted && isNewListing(item) && <dds-badge variant="weak" color="primary" size="sm">최근 7일 새 공고</dds-badge>}
+          {changes.map(change => <dds-badge variant="weak" color="accent" size="sm" key={change}>{change}</dds-badge>)}
+          <dds-badge variant="outline" color="ghost" size="sm">{!item.priceUnverified && item.priceSource === "lh-official-table" ? "공식 가격 확인" : item.priceSource === "ai-validated" ? "AI 원문 대조 완료" : item.priceSource === "reviewed" ? "가격 검수 완료" : "가격 확인 필요"}</dds-badge>
+          {onCompare && <Button size="sm" variant="outline" color={compareSelected ? "primary" : "ghost"} leadingIcon={<DdsIcon name={compareSelected ? "check" : "add"} size={16}/>} aria-label={`${item.complexName || item.title} 비교 담기`} aria-pressed={compareSelected} disabled={compareDisabled} onClick={e => { e.stopPropagation(); if (!compareDisabled) onCompare(item.id); }}>{compareSelected ? "비교 선택" : "비교"}<span className="home-sr-only"> · {item.complexName || item.title}</span></Button>}
+        </div>
       </div>
       <aside className="card-side">
         {statusLabel && <span className={`status-chip ${effStatus}`} suppressHydrationWarning>{statusLabel}</span>}
@@ -231,6 +249,11 @@ export function ListingPanel({
   onNewClick,
   heading,
   onBack,
+  discovery,
+  compareTray,
+  compareIds = [],
+  onCompare,
+  changes = {},
 }: {
   items: Listing[];
   sort: SortKey;
@@ -248,6 +271,11 @@ export function ListingPanel({
   onNewClick?: () => void;
   heading?: string;
   onBack?: () => void;
+  discovery?: ReactNode;
+  compareTray?: ReactNode;
+  compareIds?: string[];
+  onCompare?: (id: string) => void;
+  changes?: Record<string, string[]>;
 }) {
   const [loadedCount, setLoadedCount] = useState(20);
   const itemsRef = useRef<HTMLDivElement>(null);
@@ -295,7 +323,7 @@ export function ListingPanel({
   const visible = items.slice(0, loadedCount);
 
   return (
-    <div className={`listing sheet-${snap}`} data-snap={snap}>
+    <div className={`listing sheet-${snap}${onCompare ? " listing--discovery" : ""}`} data-snap={snap}>
       <button
         type="button"
         className="listing-handle"
@@ -305,17 +333,18 @@ export function ListingPanel({
       />
       {onQueryChange && (
         <div className="listing-search">
-          <MdOutlineSearch className="listing-search-ico" />
+          <DdsIcon name="search" className="listing-search-ico" />
           <input
             type="text"
             className="listing-search-input"
+            aria-label="단지명 또는 지역 검색"
             placeholder="단지명·지역으로 검색"
             value={query}
             onChange={(e) => onQueryChange(e.target.value)}
           />
           {query && (
             <button type="button" className="listing-search-clear" onClick={() => onQueryChange("")} aria-label="검색어 지우기">
-              <MdClose />
+              <DdsIcon name="close" size={20}/>
             </button>
           )}
         </div>
@@ -323,7 +352,7 @@ export function ListingPanel({
       <div className="listing-head">
         {onBack ? (
           <div className="listing-count listing-count--sub">
-            <button type="button" className="listing-back" onClick={onBack} aria-label="전체 목록으로 돌아가기">‹</button>
+            <button type="button" className="listing-back" onClick={onBack} aria-label="전체 목록으로 돌아가기"><DdsIcon name="arrow-left" size={20}/></button>
             {heading} <em suppressHydrationWarning>{comma(items.length)}</em>건
           </div>
         ) : (
@@ -333,30 +362,47 @@ export function ListingPanel({
         )}
         <div className="listing-sort">
           {SORT_OPTIONS.map((opt) => (
-            <button
+            <dds-chip
               key={opt.id}
-              className={`sort-chip ${sort === opt.id ? "active" : ""}`}
-              onClick={() => setSort(opt.id)}
+              ref={element => {
+                if (!element) return;
+                const chip = element as HTMLElement & { selected: boolean };
+                const apply = () => { if (chip.isConnected) chip.selected = sort === opt.id; };
+                apply();
+                customElements.whenDefined("dds-chip").then(apply);
+              }}
+              variant="solid"
+              color="neutral"
+              size="md"
+              selected={sort === opt.id}
+              role="button"
+              aria-pressed={sort === opt.id}
+              onClick={event => {
+                // Sorting is exclusive: clicking the current sort must keep it selected.
+                (event.currentTarget as HTMLElement & { selected: boolean }).selected = sort === opt.id;
+                setSort(opt.id);
+              }}
             >
               {opt.label}
-            </button>
+            </dds-chip>
           ))}
         </div>
       </div>
       <div className="listing-items" ref={itemsRef}>
+        {discovery}
         {/* 신규 공고 배너 — 카드별 표시 대신 상단 한 줄. 클릭 시 신규 공고 뷰로 이동 */}
         {newCount > 0 && onNewClick && (
           <button type="button" className="list-new-banner" onClick={onNewClick}>
             <span className="list-new-banner-text">
               이번 주 새 공고 <em>{comma(newCount)}건</em>이 올라왔어요
             </span>
-            <span className="list-new-banner-arr">신규만 보기 ›</span>
+            <span className="list-new-banner-arr">신규만 보기 <DdsIcon name="chevron-right" size={16}/></span>
           </button>
         )}
         {visible.length === 0 && (
-          <div style={{ padding: "40px 16px", textAlign: "center", color: "var(--seed-semantic-color-ink-text-low)" }}>
-            <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 4 }}>조건에 맞는 매물이 없어요</div>
-            <div style={{ fontSize: 12 }}>필터를 조정하거나 지도에서 다른 구를 눌러보세요.</div>
+          <div style={{ padding: "var(--dds-spacing-40) var(--dds-spacing-16)", textAlign: "center", color: "var(--dds-text-quaternary)" }}>
+            <div style={{ fontSize: "var(--dds-typography-caption-normal-size)", fontWeight: 600, marginBottom: "var(--dds-spacing-4)" }}>조건에 맞는 매물이 없어요</div>
+            <div style={{ fontSize: "var(--dds-typography-caption-normal-size)" }}>필터를 조정하거나 지도에서 다른 구를 눌러보세요.</div>
           </div>
         )}
         {visible.map((item) => (
@@ -367,6 +413,10 @@ export function ListingPanel({
             selected={selectedId === item.id}
             onHover={onHover}
             onClick={onSelect}
+            onCompare={onCompare}
+            compareSelected={compareIds.includes(item.id)}
+            compareDisabled={!compareIds.includes(item.id) && compareIds.length >= 3}
+            changes={changes[item.id]}
           />
         ))}
         {loadedCount < items.length && (
@@ -376,8 +426,8 @@ export function ListingPanel({
               style={{
                 width: 20,
                 height: 20,
-                margin: "0 auto 8px",
-                border: "2px solid var(--seed-scale-color-gray-200)",
+                margin: "0 auto var(--dds-spacing-8)",
+                border: "2px solid var(--dds-border-card)",
                 borderTopColor: "var(--seed-semantic-color-primary)",
                 borderRadius: "50%",
                 animation: "spin .8s linear infinite",
@@ -390,6 +440,7 @@ export function ListingPanel({
           <div className="scroll-sentinel">· 모든 매물을 확인했어요 ·</div>
         )}
       </div>
+      {compareTray}
       <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
     </div>
   );

@@ -1,0 +1,19 @@
+.notice-attachments-heading { display: flex; align-items: baseline; justify-content: space-between; gap: var(--dds-spacing-12); }
+.notice-attachments-heading h3 { margin-bottom: var(--dds-spacing-8); }
+.notice-attachments-heading h3>span { margin-left: var(--dds-spacing-4); color: var(--dds-text-quaternary); font-size: var(--dds-typography-label-normal-size); font-weight: var(--dds-typography-label-normal-weight); }
+.notice-attachments-hint { flex-shrink: 0; color: var(--dds-text-quaternary); font-size: var(--dds-typography-label-normal-size); }
+.notice-attachments-description { margin: 0 0 var(--dds-spacing-12); color: var(--dds-text-quaternary); font-size: var(--dds-typography-label-normal-size); line-height: 1.5; }
+.notice-attachments-list { list-style: none; padding: 0; margin: 0; }
+.notice-attachments-list li+li { border-top: 1px solid var(--dds-border-divider-item); }
+.notice-attachment { display: flex; align-items: center; gap: var(--dds-spacing-12); padding: var(--dds-spacing-12) var(--dds-spacing-8); min-width: 0; color: var(--dds-text-secondary); text-decoration: none; border-radius: var(--dds-radius-8); }
+.notice-attachment:hover { background: var(--dds-background-state-hover); }
+.notice-attachment-icon { display: grid; place-items: center; flex-shrink: 0; width: 36px; height: 36px; border-radius: var(--dds-radius-8); background: var(--dds-background-surface-on); color: var(--dds-icon-tertiary); }
+.notice-attachment-text { display: grid; gap: var(--dds-spacing-4); min-width: 0; flex: 1; }
+.notice-attachment-meta { color: var(--dds-text-quaternary); font-size: var(--dds-typography-label-normal-size); }
+.notice-attachment-name { overflow-wrap: anywhere; font-size: var(--dds-typography-caption-normal-size); line-height: 1.4; }
+.notice-attachment>.dds-icon { flex-shrink: 0; color: var(--dds-icon-quaternary); }
+.notice-attachments-pages { display: flex; align-items: center; justify-content: space-between; gap: var(--dds-spacing-12); padding-top: var(--dds-spacing-12); color: var(--dds-text-quaternary); font-size: var(--dds-typography-label-normal-size); font-variant-numeric: tabular-nums; }
+.notice-attachments-pages>div { display: flex; align-items: center; gap: var(--dds-spacing-8); }
+.notice-attachments-pages .abtn { min-width: 36px; min-height: 36px; }
+.notice-attachments-toggle { margin-top: var(--dds-spacing-12); }
+.notice-attachment-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }

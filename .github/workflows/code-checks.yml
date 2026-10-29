@@ -1,0 +1,30 @@
+name: Code checks
+on:
+  pull_request:
+    branches: [dev, main]
+  push:
+    branches: [dev]
+concurrency:
+  group: code-checks-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Type check
+        run: npx tsc --noEmit --incremental false
+      - name: Data and pipeline tests
+        run: |
+          node --test scripts/test-api-first.mjs scripts/test-data-quality.mjs scripts/test-lh-reconciliation.mjs scripts/test-download-material.mjs
+          node --import tsx --test scripts/test-housing-catalog.ts scripts/test-catalog-location-overlay.ts scripts/test-solar-position.ts scripts/test-listing-accuracy.ts
+      - name: Production build
+        run: npm run build

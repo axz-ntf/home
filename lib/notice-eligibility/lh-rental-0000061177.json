@@ -1,0 +1,25 @@
+{
+  "supplyTotal": 194,
+  "tiers": [
+    {
+      "id": "general",
+      "name": "일반",
+      "units": 194,
+      "age": "만 19세 이상 성년자",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득 및 자산기준 충족 여부와 관계없이 신청 가능"
+      },
+      "asset": null,
+      "other": [
+        "입주자모집공고일 현재 경기도 화성시 거주(주민등록표등본 기준)",
+        "무주택세대구성원",
+        "입주자저축(주택청약종합저축) 가입여부와 관계없이 신청 가능",
+        "외국인은 신청 불가"
+      ]
+    }
+  ],
+  "priority": []
+}

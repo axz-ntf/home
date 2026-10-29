@@ -1,238 +1,184 @@
 import Link from "next/link";
+import { DdsIcon } from "@/components/dds-icon";
 import { LH_ADMIN_LISTINGS } from "@/lib/lh-adapter";
-import { OVERRIDES, type ManualOverride } from "@/lib/manual-overrides";
-import AdminShell from "../admin-shell";
+import { OVERRIDES, type ManualOverride, type OverrideRow } from "@/lib/manual-overrides";
 import { adminNav } from "@/lib/admin-nav";
 import { getAdminUser } from "@/lib/admin-user";
+import AdminShell from "../admin-shell";
+import "./activity.css";
 
 const TYPE_LABEL: Record<string, string> = {
-  happy: "행복주택", nation: "국민임대", integ: "통합공공임대", perm: "영구임대",
+  public: "공공임대", rental: "임대 · 유형 확인", happy: "행복주택", nation: "국민임대", integ: "통합공공임대", perm: "영구임대",
   buy: "매입임대", jeonse: "전세임대", fifty: "50년임대", sale: "분양", youth: "청년주택",
 };
-
-// override 의 메타 키 (변경 필드 아님)
+const PRICE_LABEL: Record<string, string> = {
+  "rows-by-area": "평형별 임대조건", "tiered-by-income": "소득계층별 임대조건", "by-household-size": "가구원수별 임대조건",
+  "support-limit": "지원한도", "deposit-only": "전세보증금", "per-unit-sale": "동·호별 분양가",
+};
 const META_KEYS = new Set(["_reviewedAt", "_note"]);
-// 구조화 모델 키 — 그대로 String() 하면 "[object Object]" 로 깨짐 (감사 M1). 전용 포맷.
-const STRUCT_KEYS = new Set(["rows", "tiers", "householdTypes", "supportLimit", "conversion", "schedule"]);
+const STRUCT_KEYS = new Set(["rows", "tiers", "householdTypes", "supportLimit", "conversion", "schedule", "complexMeta"]);
 
-// 사람이 변경한 필드만 추출 (구조화 키 제외 — 별도/요약 렌더)
-function changedKeys(o: ManualOverride): string[] {
-  return Object.keys(o).filter((k) => !META_KEYS.has(k) && !STRUCT_KEYS.has(k));
+function changedKeys(override: ManualOverride): string[] {
+  return Object.keys(override).filter((key) => !META_KEYS.has(key) && !STRUCT_KEYS.has(key));
 }
 
-// 구조화 필드 요약 라벨 (검수내역 한 줄 표시용)
-function structSummaries(o: ManualOverride): string[] {
-  const out: string[] = [];
-  if (o.rows?.length) out.push(`평형별 ${o.rows.length}행`);
-  if (o.tiers?.length) out.push(`소득계층 ${o.tiers.length}평형`);
-  if (o.householdTypes?.length) out.push(`가구원수 ${o.householdTypes.length}유형`);
-  if (o.supportLimit?.byHousehold?.length) out.push(`지원한도 ${o.supportLimit.byHousehold.length}구간`);
-  if (o.conversion) out.push("전환보증금");
-  if (o.schedule?.winnerAt) out.push(`당첨발표 ${o.schedule.winnerAt}`);
-  return out;
+function structSummaries(override: ManualOverride): string[] {
+  const summaries: string[] = [];
+  if (override.rows?.length) summaries.push(`평형별 ${override.rows.length}행`);
+  if (override.tiers?.length) summaries.push(`소득계층 ${override.tiers.length}평형`);
+  if (override.householdTypes?.length) summaries.push(`가구원수 ${override.householdTypes.length}유형`);
+  if (override.supportLimit?.byHousehold?.length) summaries.push(`지원한도 ${override.supportLimit.byHousehold.length}구간`);
+  if (override.conversion) summaries.push("전환보증금");
+  const scheduleLabels = { applyStart: "접수 시작", applyEnd: "접수 마감", docResultAt: "서류 발표", winnerAt: "당첨 발표" };
+  for (const [key, label] of Object.entries(scheduleLabels)) {
+    const value = override.schedule?.[key as keyof typeof scheduleLabels];
+    if (value) summaries.push(`${label} ${value}`);
+  }
+  if (override.complexMeta) {
+    const labels = { addressJibun: "지번 주소", firstMoveIn: "최초 입주", structure: "구조", contact: "문의처" };
+    for (const [key, label] of Object.entries(labels)) {
+      const value = override.complexMeta[key as keyof typeof labels];
+      if (value) summaries.push(`${label} ${value}`);
+    }
+  }
+  return summaries;
 }
 
-// 필드 라벨 + 값 포맷 — 화면용
 function formatField(key: string, value: unknown): { label: string; value: string } {
   const labels: Record<string, string> = {
-    supplyUnits: "공급 세대수",
-    deposit: "보증금 (만원)",
-    rent: "월세 (만원)",
-    salePriceManwon: "분양가 (만원)",
-    area: "면적",
-    status: "활성 상태",
-    noticeStatus: "공고 종류",
-    progressStatus: "모집 진행",
-    deadline: "마감일",
-    priceModel: "가격 모델",
+    supplyUnits: "공급 세대수", deposit: "보증금 (만원)", rent: "월세 (만원)", salePriceManwon: "분양가 (만원)",
+    area: "면적", address: "주소", status: "활성 상태", noticeStatus: "공고 종류", progressStatus: "모집 진행", deadline: "마감일", priceModel: "가격 유형",
   };
-  const statusLabel: Record<string, string> = {
-    open: "모집중", upcoming: "모집예정", closing: "마감임박", closed: "마감",
-  };
-  const label = labels[key] ?? key;
+  const statusLabels: Record<string, string> = { open: "모집중", upcoming: "모집예정", closing: "마감임박", closed: "마감" };
   let display: string;
   if (value == null || value === "") display = "—";
-  else if (key === "status" && typeof value === "string") display = statusLabel[value] ?? value;
-  else if (typeof value === "number") display = value.toLocaleString();
+  else if (key === "status" && typeof value === "string") display = statusLabels[value] ?? value;
+  else if (key === "priceModel" && typeof value === "string") display = PRICE_LABEL[value] ?? value;
+  else if (typeof value === "number") display = value.toLocaleString("ko-KR");
   else display = String(value);
-  return { label, value: display };
+  return { label: labels[key] ?? key, value: display };
 }
 
-export default function ActivityPage() {
-  const navItems = adminNav();
+function dateKey(value: string): string {
+  if (!value) return "";
+  // Date-only values are already Korean calendar dates; timestamps are grouped in Korea time.
+  if (/^\d{4}-\d{2}-\d{2}$/.test(value)) return value;
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) return "";
+  return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Seoul", year: "numeric", month: "2-digit", day: "2-digit" }).format(parsed);
+}
 
-  // 매물 ID 로 listing 조회 맵
-  const listingMap = new Map(LH_ADMIN_LISTINGS.map((l) => [l.id, l] as const));
+function displayDate(value: string): string {
+  return value ? value.replaceAll("-", ".") : "날짜 미기록";
+}
 
-  // OVERRIDES → 시간 역순 정렬 (최근이 위)
+function SavedRows({ rows }: { rows: OverrideRow[] }) {
+  const columns = [
+    { key: "supplyUnits", label: "세대수" }, { key: "deposit", label: "보증금" },
+    { key: "rent", label: "월세" }, { key: "salePriceManwon", label: "분양가" },
+  ].filter(({ key }) => rows.some((row) => row[key as keyof OverrideRow] != null));
+  return (
+    <div className="act-rows">
+      <div className="act-rows-heading"><h4>평형별 정보 <span>{rows.length}개</span></h4><span>금액 단위: 만원</span></div>
+      <div className="act-table-scroll" tabIndex={0} role="region" aria-label="평형별 수정 정보">
+        <table className="act-table">
+          <thead><tr><th scope="col">평형</th><th scope="col">면적</th>{columns.map((column) => <th key={column.key} scope="col">{column.label}</th>)}</tr></thead>
+          <tbody>{rows.map((row, index) => (
+            <tr key={index}><th scope="row">{row.houseType || "미기록"}</th><td>{row.area || "—"}</td>{columns.map((column) => {
+              const value = row[column.key as keyof OverrideRow];
+              return <td key={column.key}>{typeof value === "number" ? value.toLocaleString("ko-KR") : "—"}</td>;
+            })}</tr>
+          ))}</tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+export default async function ActivityPage({ searchParams }: { searchParams: Promise<{ q?: string | string[]; page?: string | string[] }> }) {
+  const params = await searchParams;
+  const query = (typeof params.q === "string" ? params.q : "").slice(0, 200).trim();
+  const listingMap = new Map(LH_ADMIN_LISTINGS.map((listing) => [listing.id, listing] as const));
+  // The source retains the latest saved override per listing, not an append-only edit log.
   const activities = Object.entries(OVERRIDES)
-    .map(([id, o]) => ({ id, override: o, listing: listingMap.get(id) }))
-    .sort((a, b) => (b.override._reviewedAt || "").localeCompare(a.override._reviewedAt || ""));
-
-  // 날짜별 그룹
+    .map(([id, override]) => ({ id, override, listing: listingMap.get(id), day: dateKey(override._reviewedAt) }))
+    .sort((a, b) => b.day.localeCompare(a.day) || (b.override._reviewedAt || "").localeCompare(a.override._reviewedAt || ""));
+  const filtered = activities.filter(({ id, listing, override }) =>
+    `${id} ${listing?.title ?? ""} ${override._note ?? ""}`.toLocaleLowerCase().includes(query.toLocaleLowerCase()));
+  const pageCount = Math.max(1, Math.ceil(filtered.length / 12));
+  const requested = typeof params.page === "string" ? Number(params.page) : 1;
+  const page = Math.min(pageCount, Number.isSafeInteger(requested) && requested > 0 ? requested : 1);
+  const pageHref = (value: number) => `/admin/activity?${new URLSearchParams({ ...(query ? { q: query } : {}), page: String(value) })}`;
   const byDate = new Map<string, typeof activities>();
-  for (const a of activities) {
-    const d = a.override._reviewedAt || "(날짜 없음)";
-    if (!byDate.has(d)) byDate.set(d, []);
-    byDate.get(d)!.push(a);
+  for (const activity of filtered.slice((page - 1) * 12, page * 12)) {
+    if (!byDate.has(activity.day)) byDate.set(activity.day, []);
+    byDate.get(activity.day)!.push(activity);
   }
 
   return (
-    <AdminShell
-      pageTitle="수정 내역"
-      pageSub={`총 ${activities.length.toLocaleString()}건의 수정 활동`}
-      navItems={navItems}
-      user={getAdminUser()}
-    >
-      {activities.length === 0 ? (
-        <div className="a-card" style={{ padding: "60px 40px", textAlign: "center", maxWidth: 560, margin: "40px auto" }}>
-          <div style={{ marginBottom: 8, color: "var(--a-ink-4)", display: "flex", justifyContent: "center" }}>
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="5" y="4" width="14" height="17" rx="2" /><path d="M9 4.5V3h6v1.5M9 10h6M9 14h6M9 18h3" /></svg>
-          </div>
-          <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 6 }}>
-            아직 검수 내역이 없어요
-          </div>
-          <div style={{ fontSize: 13, color: "var(--a-ink-3)", lineHeight: 1.6 }}>
-            대시보드에서 공고를 검수하면 여기에 기록이 쌓여요.
-          </div>
-        </div>
-      ) : (
-        <div style={{ display: "flex", flexDirection: "column", gap: 24, maxWidth: 880 }}>
-          {Array.from(byDate.entries()).map(([date, items]) => (
-            <section key={date}>
-              <div style={{
-                fontSize: 11, fontWeight: 800, color: "var(--a-ink-3)",
-                letterSpacing: "0.06em", textTransform: "uppercase",
-                marginBottom: 10, paddingBottom: 6, borderBottom: "1px solid var(--a-line)",
-              }}>
-                {date} · {items.length}건
-              </div>
+    <AdminShell pageTitle="저장된 수정" pageSub="공고에 저장된 최신 수정 내용" navItems={adminNav()} user={getAdminUser()}>
+      <div className="act-page">
+        <header className="act-heading">
+          <div><div className="act-eyebrow"><DdsIcon name="clock" size={16} /> 운영 기록</div><h1>저장된 수정</h1><p>공고별로 마지막에 저장한 수정 내용과 메모를 확인하세요.</p></div>
+          <Link className="act-button" href="/admin/review">공고 관리 <DdsIcon name="chevron-right" size={18} /></Link>
+        </header>
 
-              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                {items.map(({ id, override, listing }) => {
-                  const fields = changedKeys(override);
-                  return (
-                    <article key={id} className="a-card" style={{ padding: 16 }}>
-                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12, marginBottom: 10 }}>
-                        <div style={{ minWidth: 0, flex: 1 }}>
-                          {listing ? (
-                            <Link
-                              href={`/admin/review/${encodeURIComponent(id)}`}
-                              style={{
-                                fontSize: 14, fontWeight: 700, letterSpacing: "-0.02em",
-                                color: "var(--a-ink)", textDecoration: "none",
-                                display: "block",
-                                overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
-                              }}
-                            >
-                              {listing.title}
-                            </Link>
-                          ) : (
-                            <div style={{ fontSize: 14, fontWeight: 700, color: "var(--a-ink-3)" }}>
-                              (매물 정보 없음 · 삭제됐을 수 있음)
-                            </div>
-                          )}
-                          {listing && (
-                            <div style={{ fontSize: 11.5, color: "var(--a-ink-3)", marginTop: 2, fontWeight: 500 }}>
-                              {listing.district} · {TYPE_LABEL[listing.type] ?? listing.type}
-                              {" · "}
-                              <code style={{ fontFamily: "ui-monospace, monospace" }}>{id}</code>
-                            </div>
-                          )}
-                        </div>
-                        <Link
-                          href={`/admin/review/${encodeURIComponent(id)}`}
-                          className="a-icon-btn"
-                          aria-label="편집"
-                          title="다시 편집"
-                        >
-                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                            <path d="M 9 2 L 12 5 L 5 12 L 2 12 L 2 9 Z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"/>
-                          </svg>
-                        </Link>
-                      </div>
+        <form className="act-search" action="/admin/activity">
+          <label htmlFor="activity-query">공고명 · ID · 메모 검색</label>
+          <div><input id="activity-query" name="q" defaultValue={query} maxLength={200} placeholder="찾고 싶은 공고나 메모" /><button className="act-button" type="submit">검색</button>{query && <Link className="act-button" href="/admin/activity">초기화</Link>}</div>
+        </form>
+        <div className="act-records-heading"><h2><DdsIcon name="list" size={20} /> 공고별 수정 내용</h2><span>검색 결과 {filtered.length}건 · 전체 {activities.length}건</span></div>
+        <div className="act-info"><DdsIcon name="info" size={18} /><p>공고마다 가장 최근에 저장된 내용을 보여줍니다. AI 수집·추출 결과는 <Link href="/admin/automation">수집 현황</Link>에서 확인할 수 있어요.</p></div>
 
-                      {(fields.length > 0 || structSummaries(override).length > 0) && (
-                        <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                          {structSummaries(override).map((s) => (
-                            <div key={s} style={{
-                              padding: "5px 10px", background: "var(--a-bg-2)", borderRadius: 6,
-                              fontSize: 11.5, fontWeight: 700, color: "var(--a-ink-2)",
-                            }}>
-                              {s}
-                            </div>
-                          ))}
-                          {fields.map((k) => {
-                            const f = formatField(k, (override as unknown as Record<string, unknown>)[k]);
-                            return (
-                              <div
-                                key={k}
-                                style={{
-                                  padding: "5px 10px",
-                                  background: "var(--a-bg-2)",
-                                  borderRadius: 6,
-                                  fontSize: 11.5,
-                                  display: "inline-flex",
-                                  gap: 6,
-                                  alignItems: "baseline",
-                                }}
-                              >
-                                <span style={{ color: "var(--a-ink-3)", fontWeight: 600 }}>{f.label}</span>
-                                <strong style={{ color: "var(--a-ink)", fontWeight: 700, fontVariantNumeric: "tabular-nums" }}>{f.value}</strong>
-                              </div>
-                            );
+        {filtered.length === 0 ? (
+          <section className="act-empty"><span><DdsIcon name="clock" size={32} /></span><h2>{query ? "검색 결과가 없습니다" : "아직 저장된 수정이 없어요"}</h2><p>{query ? "다른 검색어로 찾아보세요." : "공고 정보를 수정하고 저장하면 여기에 표시됩니다."}</p><Link className="act-button" href="/admin/review">공고 살펴보기 <DdsIcon name="chevron-right" size={18} /></Link></section>
+        ) : (
+          <div className="act-timeline">
+            {Array.from(byDate.entries()).map(([day, items]) => (
+              <section key={day} className="act-date-group">
+                <div className="act-date-heading"><span className="act-date-mark"><DdsIcon name="calendar" size={16} /></span><h2>{day ? <time dateTime={day}>{displayDate(day)}</time> : "날짜 미기록"}</h2><span className="act-count">이 페이지 {items.length}개 공고</span></div>
+                <div className="act-date-records">
+                  {items.map(({ id, override, listing }) => {
+                    const fields = changedKeys(override);
+                    const summaries = structSummaries(override);
+                    return (
+                      <article key={id} className="act-record">
+                        <header className="act-record-heading">
+                          <span className="act-record-icon"><DdsIcon name="edit" size={20} /></span>
+                          <div className="act-record-title">
+                            <div className="act-record-meta"><span className="act-saved"><DdsIcon name="check" size={12} /> 수정 내용 저장</span>{listing && <span>{listing.district} · {TYPE_LABEL[listing.type] ?? listing.type}</span>}</div>
+                            <h3>{listing ? <Link href={`/admin/review/${encodeURIComponent(id)}`}>{listing.title}</Link> : "현재 목록에서 찾을 수 없는 공고"}</h3>
+                            {!listing && <p className="act-missing">이전에 저장된 수정 내용입니다. ({id})</p>}
+                          </div>
+                          {listing && <Link className="act-record-link" href={`/admin/review/${encodeURIComponent(id)}`} aria-label={`${listing.title} 상세 보기`}><span>상세 보기</span><DdsIcon name="chevron-right" size={18} /></Link>}
+                        </header>
+
+                        <details className="act-record-details"><summary>저장 내용 보기</summary>
+                        {(fields.length > 0 || summaries.length > 0) && <div className="act-values">
+                          {fields.map((key) => {
+                            const field = formatField(key, (override as unknown as Record<string, unknown>)[key]);
+                            return <div className="act-value" key={key}><span>{field.label}</span><strong>{field.value}</strong></div>;
                           })}
-                        </div>
-                      )}
+                          {summaries.map((summary) => <span className="act-structure" key={summary}>{summary}</span>)}
+                        </div>}
 
-                      {override.rows && override.rows.length > 0 && (
-                        <div style={{ marginTop: 10 }}>
-                          <div style={{ fontSize: 11, fontWeight: 800, color: "var(--a-ink-3)", marginBottom: 6, letterSpacing: "0.04em", textTransform: "uppercase" }}>
-                            평형별 ({override.rows.length}개)
-                          </div>
-                          <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: 4 }}>
-                            {override.rows.map((row, i) => (
-                              <div key={i} style={{
-                                padding: "6px 10px",
-                                background: "var(--a-bg-2)",
-                                borderRadius: 6,
-                                fontSize: 11.5,
-                                display: "flex",
-                                gap: 12,
-                                alignItems: "baseline",
-                                fontVariantNumeric: "tabular-nums",
-                              }}>
-                                <strong style={{ color: "var(--a-ink)", minWidth: 60 }}>{row.houseType}</strong>
-                                {row.area && <span style={{ color: "var(--a-ink-3)" }}>{row.area}</span>}
-                                {row.supplyUnits != null && <span><span style={{ color: "var(--a-ink-3)" }}>세대수</span> <strong>{row.supplyUnits.toLocaleString()}</strong></span>}
-                                {row.salePriceManwon != null && <span><span style={{ color: "var(--a-ink-3)" }}>분양가</span> <strong>{row.salePriceManwon.toLocaleString()}</strong>만원</span>}
-                                {row.deposit != null && <span><span style={{ color: "var(--a-ink-3)" }}>보증금</span> <strong>{row.deposit.toLocaleString()}</strong>만원</span>}
-                                {row.rent != null && <span><span style={{ color: "var(--a-ink-3)" }}>월세</span> <strong>{row.rent.toLocaleString()}</strong>만원</span>}
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      {override._note && (
-                        <div style={{
-                          marginTop: 10, padding: "8px 12px",
-                          background: "var(--a-yellow-low)", color: "var(--a-yellow)",
-                          borderRadius: 6, fontSize: 12, fontWeight: 500,
-                          display: "flex", gap: 6,
-                        }}>
-                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ flexShrink: 0, marginTop: 2 }}><path d="M4 20h4L19 9a2.1 2.1 0 0 0-3-3L5 17v3Z" /></svg>
-                          <span>{override._note}</span>
-                        </div>
-                      )}
-                    </article>
-                  );
-                })}
-              </div>
-            </section>
-          ))}
-        </div>
-      )}
+                        {!!override.rows?.length && <SavedRows rows={override.rows} />}
+                        {override._note && <div className="act-note"><DdsIcon name="summary" size={18} /><div><h4>수정 메모</h4><p>{override._note}</p></div></div>}
+                        </details>
+                      </article>
+                    );
+                  })}
+                </div>
+              </section>
+            ))}
+          </div>
+        )}
+        <nav className="act-pagination" aria-label="저장된 수정 페이지">
+          {page > 1 ? <Link className="act-button" href={pageHref(page - 1)}>이전</Link> : <span>이전</span>}
+          <span>{page} / {pageCount}</span>
+          {page < pageCount ? <Link className="act-button" href={pageHref(page + 1)}>다음</Link> : <span>다음</span>}
+        </nav>
+      </div>
     </AdminShell>
   );
 }

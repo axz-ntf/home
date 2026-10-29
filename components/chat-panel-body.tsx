@@ -335,9 +335,9 @@ export function ChatPanelBody({ allListings = [], focusListing }: { allListings?
           </button>
         </div>
         <p className="chat-disclaimer">
-          AI 학습 데이터 기반의 답변으로, 실제와 차이가 있을 수 있습니다.
-          입력 내용은 답변 생성을 위해 외부 AI 서버로 전송되니 주민등록번호 등 민감한 정보는
-          입력하지 마세요. <a href="/privacy" target="_blank" style={{ color: "inherit", textDecoration: "underline" }}>개인정보처리방침</a>
+          AI가 생성한 답변이라 실제 공고와 다를 수 있어요. 신청 전 공고문을 꼭 확인하세요.
+          <br />
+          <a href="/privacy" target="_blank" style={{ color: "inherit", textDecoration: "underline" }}>개인정보처리방침</a>
         </p>
       </form>
     </>

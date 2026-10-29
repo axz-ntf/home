@@ -91,7 +91,7 @@ function matchComplex(title: string): YouthComplex | undefined {
   });
 }
 
-const manwon = (won: number | null) => (won ? Math.round(won / 10000) : 0);
+const manwon = (won: number | null) => (won ? won / 10000 : 0);
 
 // 어드민 소스 대조용 (P3) — 공고 제목으로 매칭된 공식 디렉토리 값을 그대로 노출.
 // 검수자가 "공식 vs 현재값" 비교로 soco 오입력(보↔월 뒤바뀜 등)을 눈으로 잡는다.
@@ -130,6 +130,8 @@ export const YOUTH_ADMIN_LISTINGS: Listing[] = (youthNotices as YouthNotice[])
       // 디렉토리 가격은 최저 옵션(저가 컨셉의 대표가) — 상세 범위는 검수(추출)로.
       deposit,
       rent,
+      priceUnverified: true,
+      priceSource: "directory-minimum",
       area: "",
       layout: "",
       totalUnits: c?.totalUnits ?? null,

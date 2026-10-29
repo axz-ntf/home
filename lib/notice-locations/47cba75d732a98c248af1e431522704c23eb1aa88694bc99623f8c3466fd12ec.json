@@ -1,0 +1,53 @@
+{
+  "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020489&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+  "collectedAt": "2026-10-28T06:06:50.223Z",
+  "locations": [
+    {
+      "address": "대전광역시 서구 용문로 41-80",
+      "units": 0,
+      "sourceLabel": "공고문 임대대상 단지 · 행정안전부 주소 확인",
+      "localUrl": "/notice-files/6604f390f14304fbdf27027ddb8b6ee2bff7754adc0dab8bbdcb6bb355658927.pdf#page=2",
+      "evidence": "PDF 2쪽 임대대상 단지 표: ['대전', '서구', '괴정동', '리베라아이누리', '2009', '40', '171', '3', '', '3', '0', '6', ''] · 주소 API 건물명: 리베라 아이누리",
+      "lat": 36.3395544015992,
+      "lng": 127.389003300613,
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치"
+    },
+    {
+      "address": "충청남도 아산시 신창면 행목로 202",
+      "units": 0,
+      "sourceLabel": "공고문 임대대상 단지 · 행정안전부 주소 확인",
+      "localUrl": "/notice-files/6604f390f14304fbdf27027ddb8b6ee2bff7754adc0dab8bbdcb6bb355658927.pdf#page=2",
+      "evidence": "PDF 2쪽 임대대상 단지 표: ['충남', '아산시', '신창면', '아산신창양우내안애', '2014', '59', '1,440', '15', '', '1', '0', '3', ''] · 주소 API 건물명: 아산신창양우내안애",
+      "lat": 36.7827526517626,
+      "lng": 126.957039586249,
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치"
+    },
+    {
+      "address": "충청남도 당진시 서해로 6216",
+      "units": 0,
+      "sourceLabel": "공고문 임대대상 단지 · 행정안전부 주소 확인",
+      "localUrl": "/notice-files/6604f390f14304fbdf27027ddb8b6ee2bff7754adc0dab8bbdcb6bb355658927.pdf#page=2",
+      "evidence": "PDF 2쪽 임대대상 단지 표: ['충남', '당진시', '시곡동', '우민늘사랑', '2007', '54', '926', '19', '2.2M', '4', '0', '5', ''] · 주소 API 건물명: 우민늘사랑아파트",
+      "lat": 36.9017174989218,
+      "lng": 126.676400122148,
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치"
+    },
+    {
+      "address": "충청남도 당진시 밤절로 103",
+      "units": 0,
+      "sourceLabel": "공고문 임대대상 단지 · 행정안전부 주소 확인",
+      "localUrl": "/notice-files/6604f390f14304fbdf27027ddb8b6ee2bff7754adc0dab8bbdcb6bb355658927.pdf#page=2",
+      "evidence": "PDF 2쪽 임대대상 단지 표: ['충남', '당진시', '원당동', '원당마을아파트', '2003', '51', '1,082', '15', '', '6', '0', '9', ''] · 주소 API 건물명: 원당마을아파트",
+      "lat": 36.9019435301288,
+      "lng": 126.64294124923,
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치"
+    }
+  ],
+  "review": {
+    "status": "partial",
+    "message": "공고문 단지 중 주소 일치를 확인한 항목만 표시합니다. 한성필하우스는 동명 단지 구분이 필요합니다.",
+    "evidence": "PDF 2쪽 임대대상 단지 표: ['충남', '천안시', '불당동', '한성필하우스', '2004', '59', '594', '15', '', '1', '0', '1', '']",
+    "localUrl": "/notice-files/6604f390f14304fbdf27027ddb8b6ee2bff7754adc0dab8bbdcb6bb355658927.pdf#page=2",
+    "sourceLabel": "공고문 임대대상 단지"
+  }
+}

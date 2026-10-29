@@ -1,0 +1,33 @@
+{
+  "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020486&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+  "collectedAt": "2026-10-28T06:06:50.224Z",
+  "locations": [
+    {
+      "address": "인천광역시 영종구 은하수로 351",
+      "units": 0,
+      "sourceLabel": "공고문 임대대상 단지 · 행정안전부 주소 확인",
+      "localUrl": "/notice-files/5b7506124084e1ab551c6493bf90531379825d6d2faa1e5f2460577f98ecf1f4.pdf#page=2",
+      "evidence": "PDF 2쪽 임대대상 단지 표: ['인천', '영종구', '중산동', '하늘도시우미린1단지', '2012', '59.96', '1,680', '36', '13', '2', '15', '재임대'] · 주소 API 건물명: 하늘도시우미린1단지",
+      "lat": 37.4933012596617,
+      "lng": 126.555022289108,
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치"
+    },
+    {
+      "address": "인천광역시 남동구 만수서로 55",
+      "units": 0,
+      "sourceLabel": "공고문 임대대상 단지 · 행정안전부 주소 확인",
+      "localUrl": "/notice-files/5b7506124084e1ab551c6493bf90531379825d6d2faa1e5f2460577f98ecf1f4.pdf#page=2",
+      "evidence": "PDF 2쪽 임대대상 단지 표: ['인천', '남동구', '만수동', '포레시안', '2011', '46.89', '3,208', '25', '5', '0', '10', '재임대'] · 주소 API 건물명: 포레시안(Foresian)",
+      "lat": 37.4635589650504,
+      "lng": 126.733601058448,
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치"
+    }
+  ],
+  "review": {
+    "status": "partial",
+    "message": "공고문 단지 중 주소 일치를 확인한 항목만 표시합니다. 나머지 단지 주소는 확인 중입니다.",
+    "evidence": "PDF 2쪽 임대대상 단지 표: ['인천', '영종구', '중산동', '하늘도시우미린1단지', '2012', '59.96', '1,680', '36', '13', '2', '15', '재임대']",
+    "localUrl": "/notice-files/5b7506124084e1ab551c6493bf90531379825d6d2faa1e5f2460577f98ecf1f4.pdf#page=2",
+    "sourceLabel": "공고문 임대대상 단지"
+  }
+}

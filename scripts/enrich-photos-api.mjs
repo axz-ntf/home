@@ -102,6 +102,9 @@ async function downloadImage(url, referer, destPath) {
   // 컨텐츠 시작이 HTML 이면 오류 페이지
   const head = buf.slice(0, 10).toString("utf8");
   if (head.startsWith("<!DOCTYPE") || head.startsWith("<html")) throw new Error("html error page");
+  const jpeg = buf[0] === 0xff && buf[1] === 0xd8 && buf[2] === 0xff;
+  const png = buf.subarray(0, 8).equals(Buffer.from([137,80,78,71,13,10,26,10]));
+  if (!jpeg && !png) throw new Error("not a JPEG/PNG image");
   fs.writeFileSync(destPath, buf);
   return buf.length;
 }
@@ -137,6 +140,7 @@ async function main() {
       const url = await resolveFilePath(pick.cmnAhflSn, l.sourceUrl);
       await sleep(200);
       if (!url) { fail++; await sleep(DELAY_MS); continue; }
+      if (/\.pdf(?:\?|$)/i.test(url)) { l.coverPhotoUrl = null; l.coverPhotoLocal = null; noImg++; continue; }
 
       const ext = (url.match(/\.(png|jpe?g)$/i) || ["", "jpg"])[1].toLowerCase();
       const fn = `${l.id}.${ext === "jpeg" ? "jpg" : ext}`;

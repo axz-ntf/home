@@ -5,7 +5,10 @@
 // 값 = 정정할 필드만 부분적으로. 빠진 필드는 자동값 유지.
 import type { HousingTypeId, Listing, StatusId } from "./types";
 import overridesRaw from "./manual-overrides.json";
-import draftsRaw from "./extract-drafts.json";
+import materialsRaw from "./notice-materials.json";
+import type { MaterialsStore } from "./notice-materials";
+import autoRaw from "./auto-prices.json";
+import { usableAuto, type AutoStore } from "./auto-prices";
 
 // ── 가격 모델 (유형별 어드민 구조, 설계: docs/type-aware-admin-design.md) ──
 // 유형마다 가격 구조가 달라 단일 rows 로 표현 불가 → 6개 모델로 수렴.
@@ -18,6 +21,8 @@ export type PriceModel =
   | "per-unit-sale";    // 동·호별 분양가 — 분양·매각
 
 const PRICE_MODEL_BY_TYPE: Record<HousingTypeId, PriceModel> = {
+  public: "rows-by-area",
+  rental: "rows-by-area",
   nation: "rows-by-area",
   fifty: "rows-by-area",
   happy: "rows-by-area",
@@ -139,32 +144,24 @@ export type OverridesMap = Record<string, ManualOverride>;
 
 export const OVERRIDES: OverridesMap = overridesRaw as OverridesMap;
 
-// 검수 전 AI 초안(extract-drafts) — 검수값이 없을 때 가격 관련 필드만 폴백으로 쓴다.
-// 상태·마감일 등은 오추출 위험이 커서 초안에서 가져오지 않는다 (가격은 "미검수" 배지로 표시).
-const DRAFT_PRICE_KEYS = [
-  "priceModel", "rows", "tiers", "householdTypes", "supportLimit", "conversion",
-  "deposit", "rent", "salePriceManwon", "area", "supplyUnits",
-] as const;
-
-function draftAsOverride(id: string): ManualOverride | null {
-  const d = (draftsRaw as unknown as Record<string, { fields?: Partial<ManualOverride> }>)[id]?.fields;
-  if (!d) return null;
-  const o: Partial<ManualOverride> = {};
-  for (const k of DRAFT_PRICE_KEYS) {
-    if (d[k] !== undefined && d[k] !== null) (o as Record<string, unknown>)[k] = d[k];
-  }
-  if (Object.keys(o).length === 0) return null;
-  return { ...o, _reviewedAt: "" } as ManualOverride;
-}
-
 export function applyOverride(listing: Listing): Listing {
-  let unverified = false;
+  const collected = (materialsRaw as MaterialsStore).records[listing.sourceUrl ?? ''];
+  if (collected?.status === 'collected') {
+    const attachments = new Map((listing.attachments ?? []).map(a => [a.url, a]));
+    for (const material of collected.materials) attachments.set(material.url, {
+      name: material.name, kind: material.kind, url: material.url, source: 'official-notice',
+    });
+    listing = { ...listing, attachments: [...attachments.values()] };
+  }
+
+  let automated = false;
   let o = OVERRIDES[listing.id];
   if (!o) {
-    const draft = draftAsOverride(listing.id);
-    if (!draft) return listing;
-    o = draft;
-    unverified = true;
+    if (!listing.priceUnverified && (listing.priceSource === "lh-official-table" || listing.priceSource === "lh-api")) return listing;
+    const approved = usableAuto((autoRaw as AutoStore).records[listing.id], listing.sourceUrl);
+    if (!approved) return listing;
+    o = approved;
+    automated = true;
   }
 
   // 새 가격 모델이면 레거시 rows/headline 으로 정규화 (없으면 derived={} → 기존 경로 무손상).
@@ -176,14 +173,16 @@ export function applyOverride(listing: Listing): Listing {
   let complexesPatched = listing.complexes;
   let derivedSupply: number | null | undefined = undefined;
   if (Array.isArray(effectiveRows) && effectiveRows.length > 0) {
-    const rows = effectiveRows.map((r) => ({
+    const rows = effectiveRows.map((r) => {
+      const existing = automated ? listing.complexes?.[0]?.rows.find(row => row.houseType === r.houseType) : undefined;
+      return ({
       houseType: r.houseType,
-      area: Number(String(r.area ?? "").replace(/[^0-9.]/g, "")) || 0,
-      supplyTotal: r.supplyUnits ?? null,
-      supplyThisRound: r.supplyUnits ?? null,
+      area: Number(String(r.area ?? "").replace(/[^0-9.]/g, "")) || existing?.area || 0,
+      supplyTotal: existing?.supplyTotal ?? null,
+      supplyThisRound: r.supplyUnits ?? existing?.supplyThisRound ?? null,
       deposit: r.deposit != null ? r.deposit * 10000 : null, // 만원 → 원
       rent: r.rent != null ? r.rent * 10000 : null,
-    }));
+    }); });
     complexesPatched = [{ name: listing.complexes?.[0]?.name ?? null, rows }];
     // 세대수 합계 — 행에 세대수가 하나도 없으면 0 으로 박제하지 않고 미정으로 둔다 (감사 H2).
     if (effectiveRows.some((r) => r.supplyUnits != null)) {
@@ -195,12 +194,21 @@ export function applyOverride(listing: Listing): Listing {
   const headlineDeposit = derived.deposit !== undefined ? derived.deposit : (o.deposit ?? undefined);
   const headlineRent = derived.rent !== undefined ? derived.rent : (o.rent ?? undefined);
 
+  if (!effectiveRows?.length && (headlineDeposit !== undefined || headlineRent !== undefined)) complexesPatched = undefined;
+
   return {
     ...listing,
-    ...(unverified && { priceUnverified: true }),
+    ...(headlineDeposit !== undefined && !effectiveRows?.length && { depositRange: null }),
+    ...(headlineRent !== undefined && !effectiveRows?.length && { rentRange: null }),
+    priceUnverified: false,
+    priceSource: automated ? "ai-validated" : "reviewed",
+    ...(effectiveRows?.length && {
+      depositRange: (() => { const v = effectiveRows.flatMap(r => r.deposit != null ? [r.deposit] : []); return v.length ? [Math.min(...v), Math.max(...v)] as [number, number] : null; })(),
+      rentRange: (() => { const v = effectiveRows.flatMap(r => r.rent != null ? [r.rent] : []); return v.length ? [Math.min(...v), Math.max(...v)] as [number, number] : null; })(),
+    }),
     // derived(평형 합계) 먼저, 명시적 검수값(o.supplyUnits)이 있으면 그것이 우선 (감사 H2).
-    ...(derivedSupply !== undefined && { supplyUnits: derivedSupply, totalUnits: derivedSupply }),
-    ...(o.supplyUnits !== undefined && o.supplyUnits !== null && { supplyUnits: o.supplyUnits, totalUnits: o.supplyUnits }),
+    ...(derivedSupply !== undefined && { supplyUnits: derivedSupply }),
+    ...(o.supplyUnits !== undefined && o.supplyUnits !== null && { supplyUnits: o.supplyUnits }),
     ...(headlineDeposit !== undefined && headlineDeposit !== null && { deposit: headlineDeposit }),
     ...(headlineRent !== undefined && headlineRent !== null && { rent: headlineRent }),
     ...(derived.salePriceManwon !== undefined

@@ -1,5 +1,8 @@
 "use client";
 
+import { DdsIcon } from "./dds-icon";
+import "./dds-components.css";
+
 // AI 챗 메시지 하단에 끼워 넣는 추천 매물 가로 캐러셀.
 // 카드 디자인: 1순위 칩 / 하트 / D-day pill / AI가 선택한 이유 / 상세보기 CTA.
 // 페이지 인디케이터 도트 — 캐러셀 하단에 현재 카드 위치 표시.
@@ -63,15 +66,7 @@ function CarouselCard({ item: { listing: item, reasons }, rank }: { item: Carous
           aria-label="관심 매물에 저장"
           onClick={(e) => e.stopPropagation()}
         >
-          <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-            <path
-              d="M 10 17 C 10 17 3 12 3 7.5 C 3 5 5 3 7.5 3 C 8.8 3 10 4 10 4 C 10 4 11.2 3 12.5 3 C 15 3 17 5 17 7.5 C 17 12 10 17 10 17 Z"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinejoin="round"
-              fill="none"
-            />
-          </svg>
+          <DdsIcon name="like" size={16}/>
         </button>
         {dday && <span className={`chat-rec-dday ${effStatus}`} suppressHydrationWarning>{dday}</span>}
       </div>
@@ -93,15 +88,7 @@ function CarouselCard({ item: { listing: item, reasons }, rank }: { item: Carous
           <div className="chat-rec-reasons" aria-label="추천 이유">
             <div className="chat-rec-reasons-title">
               <span className="chat-rec-reasons-check" aria-hidden>
-                <svg width="8" height="8" viewBox="0 0 10 10" fill="none">
-                  <path
-                    d="M 2 5 L 4.2 7 L 8 3"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <DdsIcon name="check" size={16}/>
               </span>
               AI가 선택한 이유
             </div>
@@ -121,9 +108,7 @@ function CarouselCard({ item: { listing: item, reasons }, rank }: { item: Carous
           }}
         >
           상세 보기
-          <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden>
-            <path d="M 4 2 L 8 6 L 4 10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+          <DdsIcon name="chevron-right" size={16}/>
         </button>
       </div>
     </article>

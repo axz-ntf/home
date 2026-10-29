@@ -6,9 +6,11 @@
 
 import { useEffect, useState } from "react";
 
-type HousingType = "happy" | "nation" | "perm" | "integ" | "fifty" | "sale" | "buy" | "jeonse" | "youth";
+type HousingType = "public" | "rental" | "happy" | "nation" | "perm" | "integ" | "fifty" | "sale" | "buy" | "jeonse" | "youth";
 
 export const TYPE_DESCRIPTIONS: Record<HousingType, { title: string; detail: string[] }> = {
+  public: { title: "공공임대", detail: ["임대기간과 소득·자산 등 신청 자격은 해당 모집공고에서 확인하세요."] },
+  rental: { title: "임대주택 · 유형 확인 필요", detail: ["공급 유형과 신청 자격은 해당 모집공고에서 확인하세요."] },
   happy: {
     title: "행복주택 — 청년·신혼·고령 등 다계층",
     detail: [

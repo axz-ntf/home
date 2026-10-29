@@ -1,0 +1,51 @@
+{
+  "supplyTotal": 500,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생 계층",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득기준 적용배제(완화)"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "대학에 재학 중이거나 다음 학기에 입·복학 예정인 사람",
+        "취업준비생: 대학 또는 고등학교를 졸업(또는 중퇴)한 지 2년 이내인 사람",
+        "총자산 기준 적용배제",
+        "자동차 기준 4,542만원 이하 적용"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "청년 계층",
+      "units": null,
+      "age": "19세 이상 39세 이하 (출생일 1986.08.19.~2007.08.18.)",
+      "marriage": null,
+      "income": {
+        "percent": null,
+        "byHousehold": null,
+        "note": "소득기준 적용배제(완화)"
+      },
+      "asset": {
+        "total": null,
+        "car": 4542
+      },
+      "other": [
+        "사회초년생: 소득이 있는 업무에 종사한 기간이 총 7년 이내(완화, 당초 5년 이내)",
+        "퇴직 후 1년이 지나지 않은 구직급여 수급자격 인정자 또는 예술인 포함",
+        "총자산 기준 적용배제",
+        "자동차 기준 4,542만원 이하 적용",
+        "소득 유무에 따라 임대조건 상이"
+      ]
+    }
+  ],
+  "priority": []
+}

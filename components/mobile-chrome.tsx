@@ -1,5 +1,8 @@
 "use client";
 
+import { DdsIcon } from "./dds-icon";
+import "./dds-components.css";
+
 // 모바일 viewport(<768px) 에서만 보이는 상단 chrome.
 // 데스크탑 트리는 그대로 두고 CSS @media 로 숨긴다.
 // 디자인 시안: app/m/MobileV1.tsx — 같은 .m-* 클래스를 그대로 사용.
@@ -42,7 +45,7 @@ function FilterPopover({
   };
 
   return (
-    <div ref={ref} className="m-fpop">
+    <div ref={ref} className="m-fpop" id={`mobile-filter-${filterKey}`} role="group" aria-label={config.label}>
       <ul className="m-fpop-grid">
         {config.options.map((opt) => {
           const active = selected.includes(opt.value);
@@ -50,6 +53,7 @@ function FilterPopover({
             <li key={opt.value}>
               <button
                 type="button"
+                aria-pressed={active}
                 className={`m-fpop-opt ${active ? "on" : ""}`}
                 onClick={() => toggle(opt.value)}
               >
@@ -98,14 +102,13 @@ function RegionSheet({
         <div className="m-region-sheet-head">
           <div className="m-region-sheet-title">지역 선택</div>
           <button className="m-region-sheet-close" onClick={onClose} aria-label="닫기">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M 4 4 L 12 12 M 12 4 L 4 12" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-            </svg>
+            <DdsIcon name="close" size={20}/>
           </button>
         </div>
         <div className="m-region-sheet-list">
           <button
             type="button"
+            aria-pressed={activeDistrict === null}
             className={`m-region-sheet-item ${activeDistrict === null ? "on" : ""}`}
             onClick={onClear}
           >
@@ -117,6 +120,7 @@ function RegionSheet({
               <button
                 key={d.id}
                 type="button"
+                aria-pressed={activeDistrict === d.id}
                 className={`m-region-sheet-item ${activeDistrict === d.id ? "on" : ""}`}
                 onClick={() => onPick(d.id)}
               >
@@ -169,26 +173,20 @@ function Top({
           className={`m-search ${isRegionDefault ? "is-placeholder" : ""}`}
           onClick={() => setRegionOpen(true)}
           aria-label="지역 선택"
+          aria-haspopup="dialog"
+          aria-expanded={regionOpen}
         >
           <span className="m-search-icon" aria-hidden>
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path
-                d="M 7 1 C 4.5 1 2.5 3 2.5 5.5 C 2.5 8.5 7 13 7 13 C 7 13 11.5 8.5 11.5 5.5 C 11.5 3 9.5 1 7 1 Z"
-                stroke="currentColor"
-                strokeWidth="1.4"
-                fill="none"
-              />
-              <circle cx="7" cy="5.5" r="1.4" fill="currentColor" />
-            </svg>
+            <DdsIcon name="location-arrow" size={16}/>
           </span>
           <span className="s-text">{isRegionDefault ? "지역 선택" : regionLabel}</span>
-          <svg className="m-search-arrow" width="9" height="9" viewBox="0 0 10 10" fill="none" aria-hidden>
-            <path d="M 2 4 L 5 7 L 8 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+          <DdsIcon name="chevron-down" size={16} className="m-search-arrow"/>
         </button>
       </div>
       <div className="m-filterrow">
         <button
+          type="button"
+          aria-pressed={totalSelected === 0}
           className={`m-fchip ${totalSelected === 0 ? "on" : ""}`}
           onClick={() => {
             onReset();
@@ -204,6 +202,9 @@ function Top({
           return (
             <button
               key={key}
+              type="button"
+              aria-expanded={isOpen}
+              aria-controls={`mobile-filter-${key}`}
               className={`m-fchip ${active || isOpen ? "on" : ""}`}
               onClick={(e) => {
                 e.stopPropagation();
@@ -212,15 +213,7 @@ function Top({
             >
               {FILTER_CONFIG[key].label}
               {active && <span className="m-fchip-count">{sel.length}</span>}
-              <svg width="8" height="8" viewBox="0 0 8 8">
-                <path
-                  d="M 2 3 L 4 5 L 6 3"
-                  stroke="currentColor"
-                  strokeWidth="1.3"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-              </svg>
+              <DdsIcon name="chevron-down" size={16}/>
             </button>
           );
         })}

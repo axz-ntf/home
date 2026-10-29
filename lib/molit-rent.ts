@@ -15,34 +15,42 @@ export type MarketRent = {
 
 type Item = { umd: string; deposit: number; rent: number; area: number };
 
-function parseItems(xml: string): Item[] {
-  return xml
+function parseItems(xml: string): Item[] | null {
+  const items = xml
     .split("<item>")
     .slice(1)
     .map((chunk) => {
       const get = (tag: string) => (chunk.match(new RegExp(`<${tag}>([^<]*)</${tag}>`))?.[1] ?? "").trim();
-      const num = (s: string) => parseInt(s.replace(/,/g, ""), 10) || 0;
+      const num = (s: string) => /^\d+(?:\.\d+)?$/.test(s.replace(/,/g, "")) ? Number(s.replace(/,/g, "")) : NaN;
+      const deposit = num(get("deposit"));
+      const rent = num(get("monthlyRent"));
+      // Missing monthly rent must not turn a broken response into a jeonse transaction.
+      if (!Number.isFinite(deposit) || !Number.isFinite(rent)) return null;
       return {
         umd: get("umdNm"),
-        deposit: num(get("deposit")),
-        rent: num(get("monthlyRent")),
+        deposit,
+        rent,
         area: parseFloat(get("excluUseAr")) || 0,
       };
     });
+  if (items.some((item) => item === null)) return null;
+  return items.filter((item) => item !== null);
 }
 
 // 최근 n개월(완료된 달 기준, 이번 달 제외) YYYYMM 배열.
 function recentMonths(n: number): string[] {
-  const now = new Date();
+  const parts = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Seoul", year: "numeric", month: "2-digit" }).formatToParts(new Date());
+  const year = Number(parts.find((part) => part.type === "year")?.value);
+  const month = Number(parts.find((part) => part.type === "month")?.value);
   const out: string[] = [];
   for (let i = 1; i <= n; i++) {
-    const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
-    out.push(`${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, "0")}`);
+    const d = new Date(Date.UTC(year, month - 1 - i, 1));
+    out.push(`${d.getUTCFullYear()}${String(d.getUTCMonth() + 1).padStart(2, "0")}`);
   }
   return out;
 }
 
-async function fetchMonth(key: string, lawdCd: string, ymd: string): Promise<Item[]> {
+async function fetchMonth(key: string, lawdCd: string, ymd: string): Promise<Item[] | null> {
   const qs = new URLSearchParams({
     serviceKey: key, // URLSearchParams가 한 번만 인코딩
     LAWD_CD: lawdCd,
@@ -51,23 +59,39 @@ async function fetchMonth(key: string, lawdCd: string, ymd: string): Promise<Ite
     pageNo: "1",
   });
   try {
-    const r = await fetch(`${URL}?${qs}`, { headers: { "User-Agent": "Mozilla/5.0" } });
-    if (!r.ok) return [];
-    return parseItems(await r.text());
+    const r = await fetch(`${URL}?${qs}`, {
+      headers: { "User-Agent": "Mozilla/5.0" },
+      signal: AbortSignal.timeout(4000),
+      cache: "no-store",
+    });
+    if (!r.ok) return null;
+    const xml = await r.text();
+    const resultCode = xml.match(/<resultCode>\s*(\d+)\s*<\/resultCode>/)?.[1];
+    const countText = xml.match(/<totalCount>\s*(\d+)\s*<\/totalCount>/)?.[1];
+    if (resultCode !== "000" && resultCode !== "00") return null;
+    if (countText === undefined) return null;
+    const count = Number(countText);
+    const items = parseItems(xml);
+    // The first 800 rows are not a complete month when totalCount is larger.
+    // Until paginated retrieval is available, never publish an average from that subset.
+    if (!Number.isSafeInteger(count) || !items || items.length !== count) return null;
+    return items;
   } catch {
-    return [];
+    return null;
   }
 }
 
 // 시군구(lawdCd)별 최근 3개월 거래목록 캐시 — 같은 구 매물은 MOLIT 재호출 안 함.
 const sigunguCache = new Map<string, Item[]>();
 
-async function itemsForSigungu(key: string, lawdCd: string): Promise<Item[]> {
-  const hit = sigunguCache.get(lawdCd);
+async function itemsForSigungu(key: string, lawdCd: string, months: string[]): Promise<Item[] | null> {
+  const cacheKey = `${lawdCd}:${months.join(",")}`;
+  const hit = sigunguCache.get(cacheKey);
   if (hit) return hit;
-  const months = recentMonths(3);
-  const all = (await Promise.all(months.map((m) => fetchMonth(key, lawdCd, m)))).flat();
-  sigunguCache.set(lawdCd, all);
+  const results = await Promise.all(months.map((m) => fetchMonth(key, lawdCd, m)));
+  if (results.some((items) => items === null)) return null;
+  const all = results.flatMap((items) => items ?? []);
+  sigunguCache.set(cacheKey, all);
   return all;
 }
 
@@ -80,8 +104,9 @@ export async function marketRent(
   const region = await coord2region(lat, lng);
   if (!region) return null;
 
-  const all = await itemsForSigungu(key, region.lawdCd);
-  if (!all.length) return null;
+  const months = recentMonths(3);
+  const all = await itemsForSigungu(key, region.lawdCd, months);
+  if (!all?.length) return null;
 
   // 같은 법정동 우선, 표본 부족하면 시군구 전체로 확장.
   let scoped = all.filter((x) => x.umd === region.umd);
@@ -102,5 +127,5 @@ export async function marketRent(
     ? Math.round(withArea.reduce((s, x) => s + x.deposit / x.area, 0) / withArea.length)
     : null;
 
-  return { scope, jeonseAvg, jeonsePerM2, jeonseCount: jeonse.length, months: recentMonths(3) };
+  return { scope, jeonseAvg, jeonsePerM2, jeonseCount: jeonse.length, months };
 }

@@ -1,0 +1,30 @@
+{
+  "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020842&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+  "parserVersion": 2,
+  "sourceHashes": [
+    "7c3380e31f26c7c1e7b1a5e1bb7cb195861ed2825df869d4f439d92683fe535e"
+  ],
+  "collectedAt": "2026-10-28T05:05:35.999Z",
+  "locations": [
+    {
+      "address": "제주시 산천단동3길 8-4(아라일동,탐라빌)",
+      "units": 2,
+      "evidence": "제주시(23)!E8 (행 8): 제주시 산천단동3길 8-4(아라일동,탐라빌)",
+      "sourceLabel": "20260930청년매입임대주택공급대상주택목록(제주시-23호).xlsx",
+      "localUrl": "/notice-files/7c3380e31f26c7c1e7b1a5e1bb7cb195861ed2825df869d4f439d92683fe535e.xlsx",
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치",
+      "lat": 33.4486383987576,
+      "lng": 126.559976636497
+    },
+    {
+      "address": "제주시 거로길 50(화북이동) 화북씨앤",
+      "units": 21,
+      "evidence": "제주시(23)!E10 (행 10): 제주시 거로길 50(화북이동) 화북씨앤",
+      "sourceLabel": "20260930청년매입임대주택공급대상주택목록(제주시-23호).xlsx",
+      "localUrl": "/notice-files/7c3380e31f26c7c1e7b1a5e1bb7cb195861ed2825df869d4f439d92683fe535e.xlsx",
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치",
+      "lat": 33.5114300177511,
+      "lng": 126.558480952652
+    }
+  ]
+}

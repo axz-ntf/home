@@ -1,10 +1,11 @@
 "use client";
 
-// 보금 모바일 v1 — 당근 Seed 디자인 시스템 기반 (bogeum-mobile-v1).
+// 보금 모바일 UI — DDS 토큰과 공식 아이콘을 공유합니다.
 // 4 화면: 홈(지도+시트) / 리스트 / 상세 / AI 보금이.
 // 데스크탑 캔버스 모드는 default export, 모바일 viewport 용 실제 앱 모드는 MobileApp.
 
 import { useState, type CSSProperties } from "react";
+import { DdsIcon } from "@/components/dds-icon";
 import { comma } from "@/lib/format";
 import type { Listing as RealListing, District as RealDistrict } from "@/lib/types";
 import { HOUSING_TYPES as REAL_HOUSING_TYPES, STATUS_LABELS as REAL_STATUS_LABELS, ELIGIBILITY_LABELS } from "@/lib/mock-data";
@@ -51,10 +52,10 @@ const HOUSING_TYPES: HousingType[] = [
 
 type StatusKey = "open" | "upcoming" | "closing" | "closed";
 const STATUS_LABELS: Record<StatusKey, { text: string; color: string }> = {
-  open: { text: "모집중", color: "#1aa174" },
-  upcoming: { text: "모집예정", color: "#c27f29" },
-  closing: { text: "마감임박", color: "#ff4133" },
-  closed: { text: "마감", color: "#868b94" },
+  open: { text: "모집중", color: "var(--dds-text-state-info)" },
+  upcoming: { text: "모집예정", color: "var(--dds-text-state-info)" },
+  closing: { text: "마감임박", color: "var(--dds-text-state-accent)" },
+  closed: { text: "마감", color: "var(--dds-text-quaternary)" },
 };
 
 type Listing = {
@@ -199,11 +200,11 @@ function MCard({ item, onClick }: { item: AnyListing; onClick?: (item: AnyListin
         <div className="m-card-tags">
           <MBadge type={item.type} />
           <span className="agency">{item.agency}</span>
-          <span style={{ marginLeft: "auto", fontSize: 10, fontWeight: 800, color: REAL_STATUS_LABELS[item.status]?.color }}>{dd}</span>
+          <span style={{ marginLeft: "auto", fontSize: 10, fontWeight: 700, color: REAL_STATUS_LABELS[item.status]?.color }}>{dd}</span>
         </div>
         <div className="m-card-title">{item.title}</div>
         <div className="m-card-price">
-          {item.deposit > 0 ? <><strong>보 {depositText(item)}</strong>{rentText(item) && <><span className="sep">·</span>월 {rentText(item)}</>}</> : <span style={{ color: "var(--seed-semantic-color-ink-text-low)" }}>임대조건 공고문 확인</span>}
+          {item.deposit > 0 ? <><strong>보 {depositText(item)}</strong>{rentText(item) && <><span className="sep">·</span>월 {rentText(item)}</>}</> : <span style={{ color: "var(--dds-text-quaternary)" }}>임대조건 공고문 확인</span>}
         </div>
         <div className="m-card-meta">
           {item.layout && <>{item.layout}<span className="dot">·</span></>}
@@ -224,24 +225,24 @@ function HomeScreen() {
     <div className="m-screen">
       <div className="m-topbar">
         <div className="m-search">
-          <span className="m-search-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="4.5" stroke="currentColor" strokeWidth="1.5"/><path d="M 10.5 10.5 L 14 14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg></span>
+          <span className="m-search-icon"><DdsIcon name="search" size={16} /></span>
           <div className="s-text">서울시 전체 <small>지하철·동·단지 검색</small></div>
         </div>
       </div>
       <div className="m-filterrow">
-        <button className="m-fchip on">임대유형 1<svg width="8" height="8" viewBox="0 0 8 8"><path d="M 2 3 L 4 5 L 6 3" stroke="currentColor" strokeWidth="1.3" fill="none" strokeLinecap="round"/></svg></button>
-        <button className="m-fchip">모집상태<svg width="8" height="8" viewBox="0 0 8 8"><path d="M 2 3 L 4 5 L 6 3" stroke="currentColor" strokeWidth="1.3" fill="none" strokeLinecap="round"/></svg></button>
-        <button className="m-fchip">교통<svg width="8" height="8" viewBox="0 0 8 8"><path d="M 2 3 L 4 5 L 6 3" stroke="currentColor" strokeWidth="1.3" fill="none" strokeLinecap="round"/></svg></button>
-        <button className="m-fchip on">청년<svg width="8" height="8" viewBox="0 0 8 8"><path d="M 2 3 L 4 5 L 6 3" stroke="currentColor" strokeWidth="1.3" fill="none" strokeLinecap="round"/></svg></button>
-        <button className="m-fchip">월세<svg width="8" height="8" viewBox="0 0 8 8"><path d="M 2 3 L 4 5 L 6 3" stroke="currentColor" strokeWidth="1.3" fill="none" strokeLinecap="round"/></svg></button>
-        <button className="m-fchip">입주 시기<svg width="8" height="8" viewBox="0 0 8 8"><path d="M 2 3 L 4 5 L 6 3" stroke="currentColor" strokeWidth="1.3" fill="none" strokeLinecap="round"/></svg></button>
+        <button className="m-fchip on">임대유형 1<DdsIcon name="chevron-down" size={16} /></button>
+        <button className="m-fchip">모집상태<DdsIcon name="chevron-down" size={16} /></button>
+        <button className="m-fchip">교통<DdsIcon name="chevron-down" size={16} /></button>
+        <button className="m-fchip on">청년<DdsIcon name="chevron-down" size={16} /></button>
+        <button className="m-fchip">월세<DdsIcon name="chevron-down" size={16} /></button>
+        <button className="m-fchip">입주 시기<DdsIcon name="chevron-down" size={16} /></button>
       </div>
       <div className="m-map">
         <div className="m-map-svg" dangerouslySetInnerHTML={{ __html: SEOUL_MAP_SVG }} />
         <div className="m-region-pill">
-          <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><path d="M 7 1 C 4.5 1 2.5 3 2.5 5.5 C 2.5 8.5 7 13 7 13 C 7 13 11.5 8.5 11.5 5.5 C 11.5 3 9.5 1 7 1 Z" stroke="currentColor" strokeWidth="1.3"/><circle cx="7" cy="5.5" r="1.5" fill="currentColor"/></svg>
+          <DdsIcon name="location-arrow" size={16} />
           서울특별시
-          <svg width="9" height="9" viewBox="0 0 10 10" style={{ marginLeft: 2 }}><path d="M 2 4 L 5 7 L 8 4" stroke="currentColor" strokeWidth="1.4" fill="none" strokeLinecap="round"/></svg>
+          <DdsIcon name="chevron-down" size={16} />
         </div>
         {visibleDistricts.map((d) => {
           const sz = d.count >= 50 ? "lg" : d.count >= 25 ? "" : "sm";
@@ -253,15 +254,15 @@ function HomeScreen() {
           );
         })}
         <div className="m-map-floats">
-          <button className="m-map-fab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" stroke="currentColor" strokeWidth="1.3"/><path d="M 8 1 V 3 M 8 13 V 15 M 1 8 H 3 M 13 8 H 15" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/></svg></button>
-          <button className="m-map-fab"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M 7 1 V 13 M 1 7 H 13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg></button>
-          <button className="m-map-fab" style={{ background: "var(--seed-semantic-color-primary)", color: "white" } as CSSProperties}><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M 3 8 C 3 5 5 3 8 3 C 11 3 13 5 13 8" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round"/><circle cx="8" cy="9" r="2.5" stroke="currentColor" strokeWidth="1.4"/><path d="M 5 12.5 L 11 12.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg></button>
+          <button className="m-map-fab"><DdsIcon name="locate-me" size={16} /></button>
+          <button className="m-map-fab"><DdsIcon name="add" size={16} /></button>
+          <button className="m-map-fab" style={{ background: "var(--dds-background-interaction-primary)", color: "var(--dds-text-static-white-primary)" } as CSSProperties}><DdsIcon name="chatbot" size={16} /></button>
         </div>
         <div className="m-sheet peek">
           <div className="m-sheet-handle" />
           <div className="m-sheet-head">
             <div className="m-sheet-title">서울 전체 <em>647</em>건 모집중</div>
-            <div className="m-sheet-sort">마감임박순<svg width="9" height="9" viewBox="0 0 10 10"><path d="M 2 4 L 5 7 L 8 4" stroke="currentColor" strokeWidth="1.4" fill="none" strokeLinecap="round"/></svg></div>
+            <div className="m-sheet-sort">마감임박순<DdsIcon name="chevron-down" size={16} /></div>
           </div>
           <div className="m-sheet-list">{peekItem && <MCard item={peekItem} />}</div>
         </div>
@@ -280,23 +281,23 @@ function ListScreen({ items = [] }: { items?: AnyListing[] }) {
     <div className="m-screen">
       <div className="m-topbar">
         <div className="m-search">
-          <span className="m-search-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="4.5" stroke="currentColor" strokeWidth="1.5"/><path d="M 10.5 10.5 L 14 14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg></span>
+          <span className="m-search-icon"><DdsIcon name="search" size={16} /></span>
           <div className="s-text">서울시 전체 <small>지하철·동·단지 검색</small></div>
         </div>
       </div>
       <div className="m-filterrow">
-        <button className="m-fchip on">임대유형 1<svg width="8" height="8" viewBox="0 0 8 8"><path d="M 2 3 L 4 5 L 6 3" stroke="currentColor" strokeWidth="1.3" fill="none" strokeLinecap="round"/></svg></button>
-        <button className="m-fchip on">모집중<svg width="8" height="8" viewBox="0 0 8 8"><path d="M 2 3 L 4 5 L 6 3" stroke="currentColor" strokeWidth="1.3" fill="none" strokeLinecap="round"/></svg></button>
-        <button className="m-fchip">교통<svg width="8" height="8" viewBox="0 0 8 8"><path d="M 2 3 L 4 5 L 6 3" stroke="currentColor" strokeWidth="1.3" fill="none" strokeLinecap="round"/></svg></button>
-        <button className="m-fchip">입주자격<svg width="8" height="8" viewBox="0 0 8 8"><path d="M 2 3 L 4 5 L 6 3" stroke="currentColor" strokeWidth="1.3" fill="none" strokeLinecap="round"/></svg></button>
-        <button className="m-fchip">월세<svg width="8" height="8" viewBox="0 0 8 8"><path d="M 2 3 L 4 5 L 6 3" stroke="currentColor" strokeWidth="1.3" fill="none" strokeLinecap="round"/></svg></button>
+        <button className="m-fchip on">임대유형 1<DdsIcon name="chevron-down" size={16} /></button>
+        <button className="m-fchip on">모집중<DdsIcon name="chevron-down" size={16} /></button>
+        <button className="m-fchip">교통<DdsIcon name="chevron-down" size={16} /></button>
+        <button className="m-fchip">입주자격<DdsIcon name="chevron-down" size={16} /></button>
+        <button className="m-fchip">월세<DdsIcon name="chevron-down" size={16} /></button>
       </div>
       <div className="m-listscreen-head">
         <div className="m-listscreen-count">총 <em>647</em>건 모집중</div>
-        <div className="m-listscreen-sort">마감임박순<svg width="9" height="9" viewBox="0 0 10 10"><path d="M 2 4 L 5 7 L 8 4" stroke="currentColor" strokeWidth="1.4" fill="none" strokeLinecap="round"/></svg></div>
+        <div className="m-listscreen-sort">마감임박순<DdsIcon name="chevron-down" size={16} /></div>
       </div>
       <div className="m-listscreen-content">{listings.map((item) => <MCard key={item.id} item={item as AnyListing} />)}</div>
-      <button className="m-floating-map-cta"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M 1 3 L 5 1.5 L 9 3 L 13 1.5 V 11 L 9 12.5 L 5 11 L 1 12.5 Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round"/><path d="M 5 1.5 V 11 M 9 3 V 12.5" stroke="currentColor" strokeWidth="1.3"/></svg>지도로 보기</button>
+      <button className="m-floating-map-cta"><DdsIcon name="map" size={16} />지도로 보기</button>
       <TabBar active="map" />
     </div>
   );
@@ -307,7 +308,7 @@ function ListScreen({ items = [] }: { items?: AnyListing[] }) {
 // ──────────────────────────────────────────────────────────────
 function DetailScreen({ item: propItem }: { item?: AnyListing }) {
   if (!propItem) {
-    return <div style={{ padding: 40, textAlign: "center", color: "#9ca3af" } as CSSProperties}>매물을 선택해주세요</div>;
+    return <div style={{ padding: 40, textAlign: "center", color: "var(--dds-text-quaternary)" } as CSSProperties}>매물을 선택해주세요</div>;
   }
   const item = propItem;
   const svg = thumbnailSVG(item.thumbSeed, item.type);
@@ -315,8 +316,8 @@ function DetailScreen({ item: propItem }: { item?: AnyListing }) {
   return (
     <div className="m-screen no-top-pad">
       <div className="m-detail-hero" dangerouslySetInnerHTML={{ __html: svg }} />
-      <button className="m-detail-back" style={{ position: "absolute", top: 56 } as CSSProperties}><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M 10 3 L 5 8 L 10 13" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg></button>
-      <button className="m-detail-share" style={{ position: "absolute", top: 56 } as CSSProperties}><svg width="15" height="15" viewBox="0 0 20 20" fill="none"><path d="M 10 3 V 13 M 10 3 L 6 7 M 10 3 L 14 7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/><path d="M 4 12 V 16 H 16 V 12" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg></button>
+      <button className="m-detail-back" style={{ position: "absolute", top: 56 } as CSSProperties}><DdsIcon name="chevron-left" size={16} /></button>
+      <button className="m-detail-share" style={{ position: "absolute", top: 56 } as CSSProperties}><DdsIcon name="share" size={16} /></button>
       <div className="m-photo-counter">1 / 8</div>
       <div className="m-detail-body">
         <div className="m-detail-eyebrow">{item.agency} · {item.district}</div>
@@ -346,7 +347,7 @@ function DetailScreen({ item: propItem }: { item?: AnyListing }) {
               <span key={e} className="m-eli-pill">{ELIGIBILITY_LABELS[e] ?? e}</span>
             ))}
           </div>
-          <div style={{ fontSize: 11, color: "var(--seed-semantic-color-ink-text-low)", marginTop: 6 } as CSSProperties}>정확한 자격은 LH 공고문을 확인하세요</div>
+          <div style={{ fontSize: "var(--dds-typography-label-normal-size)", color: "var(--dds-text-quaternary)", marginTop: 6 } as CSSProperties}>정확한 자격은 LH 공고문을 확인하세요</div>
         </section>
         <section className="m-section">
           <h3>기본 정보</h3>
@@ -360,7 +361,7 @@ function DetailScreen({ item: propItem }: { item?: AnyListing }) {
         </section>
       </div>
       <div className="m-detail-actions">
-        <button className="heart"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M 10 17 C 10 17 3 12 3 7.5 C 3 5 5 3 7.5 3 C 8.8 3 10 4 10 4 C 10 4 11.2 3 12.5 3 C 15 3 17 5 17 7.5 C 17 12 10 17 10 17 Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" fill="none"/></svg></button>
+        <button className="heart"><DdsIcon name="like" size={18} /></button>
         <button className="cta">청약 신청하기 →</button>
       </div>
     </div>
@@ -373,13 +374,13 @@ function DetailScreen({ item: propItem }: { item?: AnyListing }) {
 function AgentScreen({ items = [] }: { items?: AnyListing[] }) {
   const matchItem = items[0];
   if (!matchItem) {
-    return <div style={{ padding: 40, textAlign: "center", color: "#9ca3af" } as CSSProperties}>매물 데이터 로딩 중...</div>;
+    return <div style={{ padding: 40, textAlign: "center", color: "var(--dds-text-quaternary)" } as CSSProperties}>매물 데이터 로딩 중...</div>;
   }
   const svg = thumbnailSVG(matchItem.thumbSeed, matchItem.type);
   return (
     <div className="m-agent m-screen">
       <header className="m-agent-head">
-        <button className="m-agent-back"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M 10 3 L 5 8 L 10 13" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg></button>
+        <button className="m-agent-back"><DdsIcon name="chevron-left" size={16} /></button>
         <div className="m-agent-av">
           <svg viewBox="0 0 32 32" width="36" height="36">
             <defs><radialGradient id="mbg" cx=".4" cy=".4"><stop offset="0%" stopColor="#ffd2b9"/><stop offset="100%" stopColor="#ff6f0f"/></radialGradient></defs>
@@ -416,15 +417,15 @@ function AgentScreen({ items = [] }: { items?: AnyListing[] }) {
             </div>
           </div>
           <div className="m-bot-actions">
-            <button className="m-bot-action">매물 상세 보기<svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M 4 2 L 8 6 L 4 10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg></button>
-            <button className="m-bot-action">비슷한 청년 매물 12개 더 보기<svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M 4 2 L 8 6 L 4 10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg></button>
+            <button className="m-bot-action">매물 상세 보기<DdsIcon name="chevron-right" size={16} /></button>
+            <button className="m-bot-action">비슷한 청년 매물 12개 더 보기<DdsIcon name="chevron-right" size={16} /></button>
           </div>
         </div></div>
       </div>
       <div className="m-chat-input">
         <div className="m-chat-input-row">
           <input type="text" placeholder="상황을 자유롭게 적어보세요" />
-          <button className="m-chat-send"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M 2 8 L 14 2 L 11 14 L 8 9 L 2 8 Z" fill="currentColor"/></svg></button>
+          <button className="m-chat-send"><DdsIcon name="arrow-up-right" size={16} /></button>
         </div>
       </div>
     </div>
@@ -438,16 +439,16 @@ type TabId = "home" | "map" | "agent" | "fav" | "mypage";
 
 function TabBar({ active, onChange }: { active: TabId; onChange?: (id: TabId) => void }) {
   const tabs: { id: TabId; label: string; icon: React.ReactNode }[] = [
-    { id: "home", label: "홈", icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M 3 9 L 10 3 L 17 9 V 17 H 12 V 12 H 8 V 17 H 3 Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg> },
-    { id: "map", label: "지도", icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M 2 5 L 7 3 L 13 5 L 18 3 V 15 L 13 17 L 7 15 L 2 17 Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/><path d="M 7 3 V 15 M 13 5 V 17" stroke="currentColor" strokeWidth="1.5"/></svg> },
-    { id: "agent", label: "보금이", icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" strokeWidth="1.5"/><path d="M 7 9 L 7 9.5 M 13 9 L 13 9.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/><path d="M 7 12 Q 10 14 13 12" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round"/></svg> },
-    { id: "fav", label: "관심", icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M 10 17 C 10 17 3 12 3 7.5 C 3 5 5 3 7.5 3 C 8.8 3 10 4 10 4 C 10 4 11.2 3 12.5 3 C 15 3 17 5 17 7.5 C 17 12 10 17 10 17 Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg> },
-    { id: "mypage", label: "마이", icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3" stroke="currentColor" strokeWidth="1.5"/><path d="M 3 17 C 3 13.5 6 11 10 11 C 14 11 17 13.5 17 17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg> },
+    { id: "home", label: "홈", icon: <DdsIcon name="home" size={20} /> },
+    { id: "map", label: "지도", icon: <DdsIcon name="map" size={20} /> },
+    { id: "agent", label: "보금이", icon: <DdsIcon name="chatbot" size={20} /> },
+    { id: "fav", label: "관심", icon: <DdsIcon name="like" size={20} /> },
+    { id: "mypage", label: "마이", icon: <DdsIcon name="person" size={20} /> },
   ];
   return (
     <nav className="m-tabbar">
       {tabs.map((t) => (
-        <button key={t.id} className={`m-tab ${active === t.id ? "on" : ""}`} onClick={() => onChange?.(t.id)}>
+        <button key={t.id} className={`m-tab ${active === t.id ? "on" : ""}`} aria-current={active === t.id ? "page" : undefined} onClick={() => onChange?.(t.id)}>
           {t.icon}{t.label}
         </button>
       ))}
@@ -468,11 +469,7 @@ export function MobileApp({ listings = [], districts = [] }: { listings?: AnyLis
   const openDetail = (item: AnyListing) => { setSelectedItem(item); setTab("fav"); };
 
   return (
-    <div style={{ height: "100%", minHeight: "100vh", background: "#fff", display: "flex", flexDirection: "column", position: "relative" } as CSSProperties}>
-      {/* DEBUG — 매물 수 확인용 */}
-      <div style={{ position: "fixed", top: 0, left: 0, zIndex: 9999, background: "red", color: "white", padding: "2px 8px", fontSize: 11, fontWeight: 700 } as CSSProperties}>
-        listings: {listings.length} / active: {activeItems.length}
-      </div>
+    <div style={{ height: "100%", minHeight: "100vh", background: "var(--dds-background-surface-base)", display: "flex", flexDirection: "column", position: "relative" } as CSSProperties}>
       {tab === "home" && <MobileScreenWithTab screen={<HomeScreenInline items={activeItems} districts={districts} onCardClick={openDetail} />} tab={tab} onChange={setTab} />}
       {tab === "map" && <MobileScreenWithTab screen={<ListScreen items={activeItems} />} tab={tab} onChange={setTab} />}
       {tab === "agent" && <MobileScreenWithTab screen={<AgentScreen items={activeItems} />} tab={tab} onChange={setTab} />}
@@ -498,21 +495,21 @@ function HomeScreenInline({ items = [], districts = [], onCardClick }: { items?:
     <>
       <div className="m-topbar">
         <div className="m-search">
-          <span className="m-search-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="4.5" stroke="currentColor" strokeWidth="1.5"/><path d="M 10.5 10.5 L 14 14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg></span>
+          <span className="m-search-icon"><DdsIcon name="search" size={16} /></span>
           <div className="s-text">서울시 전체 <small>지하철·동·단지 검색</small></div>
         </div>
       </div>
       <div className="m-filterrow">
-        <button className="m-fchip on">임대유형 1<svg width="8" height="8" viewBox="0 0 8 8"><path d="M 2 3 L 4 5 L 6 3" stroke="currentColor" strokeWidth="1.3" fill="none" strokeLinecap="round"/></svg></button>
-        <button className="m-fchip">모집상태<svg width="8" height="8" viewBox="0 0 8 8"><path d="M 2 3 L 4 5 L 6 3" stroke="currentColor" strokeWidth="1.3" fill="none" strokeLinecap="round"/></svg></button>
-        <button className="m-fchip">교통<svg width="8" height="8" viewBox="0 0 8 8"><path d="M 2 3 L 4 5 L 6 3" stroke="currentColor" strokeWidth="1.3" fill="none" strokeLinecap="round"/></svg></button>
-        <button className="m-fchip on">청년<svg width="8" height="8" viewBox="0 0 8 8"><path d="M 2 3 L 4 5 L 6 3" stroke="currentColor" strokeWidth="1.3" fill="none" strokeLinecap="round"/></svg></button>
-        <button className="m-fchip">월세<svg width="8" height="8" viewBox="0 0 8 8"><path d="M 2 3 L 4 5 L 6 3" stroke="currentColor" strokeWidth="1.3" fill="none" strokeLinecap="round"/></svg></button>
+        <button className="m-fchip on">임대유형 1<DdsIcon name="chevron-down" size={16} /></button>
+        <button className="m-fchip">모집상태<DdsIcon name="chevron-down" size={16} /></button>
+        <button className="m-fchip">교통<DdsIcon name="chevron-down" size={16} /></button>
+        <button className="m-fchip on">청년<DdsIcon name="chevron-down" size={16} /></button>
+        <button className="m-fchip">월세<DdsIcon name="chevron-down" size={16} /></button>
       </div>
       <div className="m-map">
         <div className="m-map-svg" dangerouslySetInnerHTML={{ __html: SEOUL_MAP_SVG }} />
         <div className="m-region-pill">
-          <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><path d="M 7 1 C 4.5 1 2.5 3 2.5 5.5 C 2.5 8.5 7 13 7 13 C 7 13 11.5 8.5 11.5 5.5 C 11.5 3 9.5 1 7 1 Z" stroke="currentColor" strokeWidth="1.3"/><circle cx="7" cy="5.5" r="1.5" fill="currentColor"/></svg>
+          <DdsIcon name="location-arrow" size={16} />
           전국
         </div>
         {realMarkers.map((d) => {
@@ -546,7 +543,7 @@ function MobileScreenWithTab({ screen, tab, onChange }: { screen: React.ReactNod
 
 function EmptyScreen({ label }: { label: string }) {
   return (
-    <div style={{ flex: 1, display: "grid", placeItems: "center", color: "#9ca3af" } as CSSProperties}>
+    <div style={{ flex: 1, display: "grid", placeItems: "center", color: "var(--dds-text-quaternary)" } as CSSProperties}>
       <div>{label} (준비 중)</div>
     </div>
   );
@@ -558,7 +555,7 @@ function EmptyScreen({ label }: { label: string }) {
 function Frame({ children }: { children: React.ReactNode }) {
   return (
     <div style={{ width: 402, height: 874, borderRadius: 44, background: "#000", padding: 14, boxShadow: "0 30px 60px -20px rgba(0,0,0,.3)", flex: "0 0 auto" } as CSSProperties}>
-      <div style={{ width: "100%", height: "100%", borderRadius: 30, overflow: "hidden", background: "white", display: "flex", flexDirection: "column" } as CSSProperties}>
+      <div style={{ width: "100%", height: "100%", borderRadius: 30, overflow: "hidden", background: "var(--dds-background-surface-base)", display: "flex", flexDirection: "column" } as CSSProperties}>
         {children}
       </div>
     </div>
@@ -568,7 +565,7 @@ function Frame({ children }: { children: React.ReactNode }) {
 function Artboard({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 12, alignItems: "flex-start" } as CSSProperties}>
-      <div style={{ fontSize: 13, color: "#666", fontWeight: 600 }}>{label}</div>
+      <div style={{ fontSize: "var(--dds-typography-caption-normal-size)", color: "var(--dds-text-quaternary)", fontWeight: 600 }}>{label}</div>
       {children}
     </div>
   );
@@ -576,9 +573,9 @@ function Artboard({ label, children }: { label: string; children: React.ReactNod
 
 export default function MobileV1() {
   return (
-    <div className="canvas-bg" style={{ minHeight: "100vh", padding: 40, background: "#f5f5f7" } as CSSProperties}>
-      <h1 style={{ fontSize: 28, fontWeight: 800, margin: 0 }}>보금 · 모바일 UI</h1>
-      <p style={{ fontSize: 14, color: "#666", margin: "4px 0 24px" }}>당근 Seed 디자인 · iPhone 16 (402×874)</p>
+    <div className="canvas-bg" style={{ minHeight: "100vh", padding: 40, background: "var(--dds-background-surface-on)" } as CSSProperties}>
+      <h1 style={{ fontSize: 28, fontWeight: 700, margin: 0 }}>보금 · 모바일 UI</h1>
+      <p style={{ fontSize: 14, color: "var(--dds-text-quaternary)", margin: "4px 0 24px" }}>DDS 디자인 · 모바일 미리보기</p>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(420px, max-content))", gap: 32 } as CSSProperties}>
         <Artboard label="① 홈 — 지도 + 시트 peek"><Frame><HomeScreen /></Frame></Artboard>
         <Artboard label="② 매물 리스트"><Frame><ListScreen /></Frame></Artboard>

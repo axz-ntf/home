@@ -113,9 +113,9 @@ export function NaverPanorama({
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            background: "var(--seed-scale-color-gray-100, #f4f5f7)",
-            color: "var(--seed-semantic-color-ink-text-low)",
-            fontSize: 12,
+            background: "var(--dds-background-base)",
+            color: "var(--dds-text-quaternary)",
+            fontSize: "var(--dds-typography-label-normal-size)",
             pointerEvents: "none",
           }}
         >

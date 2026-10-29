@@ -30,14 +30,14 @@ const SH_TYPE_MAP: Record<string, HousingTypeId> = {
   수요자맞춤형: "buy",
   두레주택: "buy",
   국민공공임대주택: "nation",
-  도시형생활주택: "nation",
+  도시형생활주택: "rental",
   전세임대: "jeonse",
   장기안심주택: "jeonse",
   장기전세주택: "jeonse",
 };
 
 function mapType(supplyType: string): HousingTypeId {
-  return SH_TYPE_MAP[supplyType] ?? "nation";
+  return SH_TYPE_MAP[supplyType] ?? "rental";
 }
 
 // SH 접수 기간 — 구조화 데이터에 없어 공고문 PDF(lib/notice-texts/sh-*.md)에서 추출.

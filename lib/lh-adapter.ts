@@ -24,7 +24,7 @@ type CompetitionHistoryEntry = {
 const HISTORY_TYPE_TO_ID: Record<string, string[]> = {
   "행복주택": ["happy"], "국민임대": ["nation"], "영구임대": ["perm"],
   "통합공공임대": ["integ"], "매입임대": ["buy"], "전세임대": ["jeonse"],
-  "분양주택": ["sale"], "신혼희망타운": ["sale"], "공공분양(신혼희망)": ["sale"], "공공임대": ["fifty"],
+  "분양주택": ["sale"], "신혼희망타운": ["sale"], "공공분양(신혼희망)": ["sale"], "공공임대": ["public", "fifty"],
 };
 // 공백/구두점 제거 + 블록 표기 통일 ("1단지"→"1", "S-1블록"→"S1", "2BL"→"2")
 // → "고양창릉 S-4블록" 매물이 "고양창릉 S-1블록" 이력과 오매칭되지 않게 블록 식별자 보존.
@@ -122,6 +122,11 @@ interface ApiListing {
   rentRange?: [number, number] | null;
   salePriceManwon: number | null;
   supplyUnits: number | null;
+  totalUnits?: number | null;
+  beginDate?: string;
+  priceSource?: string;
+  priceUnverified?: boolean;
+  officialNoticeStatus?: string;
   complexName: string | null;
   pnu: string | null;
   houseType: unknown;
@@ -145,8 +150,8 @@ function formatArea(area: string): string {
   if (!area) return "";
   const parts = area.split("~").map((s) => Number(s)).filter((n) => Number.isFinite(n) && n > 0);
   if (!parts.length) return "";
-  const lo = Math.round(Math.min(...parts));
-  const hi = Math.round(Math.max(...parts));
+  const lo = Math.min(...parts);
+  const hi = Math.max(...parts);
   return lo === hi ? `${lo}㎡` : `${lo}~${hi}㎡`;
 }
 
@@ -260,7 +265,9 @@ function adaptApi(r: ApiListing, loose = false): Listing | null {
     if (!r.lat || !r.lng) return null;
     if (!r.districtId) return null;
   }
-  const [deposit, rent] = guardPrice(r.type, r.depositManwon || 0, r.monthlyRentManwon || 0);
+  const [deposit, rent] = r.priceSource === "lh-official-table" || r.priceSource === "lh-api"
+    ? [r.depositManwon || 0, r.monthlyRentManwon || 0]
+    : guardPrice(r.type, r.depositManwon || 0, r.monthlyRentManwon || 0);
   // 첨부 주택목록 집계(든든전세·매입임대) — 상세 "공급 주택" 표 + 가격 없을 때 보증금 범위 폴백.
   const hg = (housingGroupsRaw as Record<string, { groups: NonNullable<Listing["housingGroups"]> }>)[
     r.pblancId
@@ -275,7 +282,7 @@ function adaptApi(r: ApiListing, loose = false): Listing | null {
     id: r.id,
     pblancId: r.pblancId,
     title: r.title,
-    noticeStatus: raw?.noticeStatus || undefined,
+    noticeStatus: r.officialNoticeStatus || raw?.noticeStatus || undefined,
     progressStatus: raw?.progressStatus || undefined,
     announceDate: raw?.announceDate || r.announceDate || undefined,
     type: r.type as HousingTypeId,
@@ -288,6 +295,8 @@ function adaptApi(r: ApiListing, loose = false): Listing | null {
     pnu: r.pnu || undefined,
     deposit,
     rent,
+    priceUnverified: r.priceUnverified ?? !r.priceSource,
+    priceSource: r.priceSource,
     // 유형별 보증금/월세 범위 — 단일값이 guard 통과(>0)일 때만 노출.
     // 가격이 아예 없으면 주택목록 집계(실보증금) 범위로 폴백.
     depositRange: deposit > 0
@@ -299,13 +308,13 @@ function adaptApi(r: ApiListing, loose = false): Listing | null {
     ...(hg?.length ? { housingGroups: hg } : {}),
     area: formatArea(r.area || ""),
     layout: "",
-    totalUnits: r.supplyUnits ?? null,
+    totalUnits: r.totalUnits ?? null,
     supplyUnits: r.supplyUnits ?? null,
     heatMethod: safeString(r.heatMethod),
     salePriceManwon: r.salePriceManwon,
     status: r.status as StatusId,
     deadline: r.deadline || "",
-    beginDate: r.announceDate || "",
+    beginDate: r.beginDate || "",
     winnerAt: r.winnerAt || undefined,
     // 매물별 PDF 에서 추출된 자격 키 우선 (정확). 없으면 type 기본값.
     eligible: sortEligibility(
@@ -319,7 +328,7 @@ function adaptApi(r: ApiListing, loose = false): Listing | null {
     competition: ownCompetition ?? prevCompetition,
     competitionKind: ownCompetition != null ? "own" : prevCompetition != null ? "previous" : undefined,
     thumbSeed: r.thumbSeed,
-    suplyTyNm: safeString(r.houseType) || undefined,
+    suplyTyNm: undefined,
     complexName: cleanComplexName(r.complexName),
     buildingType: safeString(r.houseType) || BUILDING_TYPE_FALLBACK[r.type] || null,
     complexes: Array.isArray(r.complexes) ? (r.complexes as Listing["complexes"]) : undefined,
@@ -341,7 +350,7 @@ function resolveCoverPhoto(localPath: string | null, urlFallback: string | null)
     const file = localPath.split("/").pop();
     if (file && BLOB_COVERS[file]) return BLOB_COVERS[file];
   }
-  return urlFallback || undefined;
+  return urlFallback && !/\.pdf(?:\?|$)/i.test(urlFallback) ? urlFallback : undefined;
 }
 
 // 다중 단지 매물 분리: 한 공고에 여러 단지가 묶인 경우 (시흥시 10년 공공임대 = 11 단지 등)
@@ -350,6 +359,7 @@ function resolveCoverPhoto(localPath: string | null, urlFallback: string | null)
 function splitByComplex(base: Listing, raw: ApiListing): Listing[] {
   const complexes = Array.isArray(raw.complexes) ? (raw.complexes as Array<{
     name: string | null;
+    address?: string;
     rows: Array<{ houseType: string; area: number; supplyTotal: number | null; supplyThisRound: number | null; deposit: number | null; rent: number | null }>;
     lat: number | null;
     lng: number | null;
@@ -357,19 +367,35 @@ function splitByComplex(base: Listing, raw: ApiListing): Listing[] {
   const usable = complexes.filter((c) => c.lat && c.lng);
   if (usable.length < 2) return [base];
 
-  return usable.map((c, idx) => ({
-    ...base,
-    id: `${base.id}-c${idx}`,
-    title: c.name ? `${base.title} (${c.name})` : base.title,
-    lat: c.lat!,
-    lng: c.lng!,
-    complexes: [{ name: c.name, rows: c.rows }], // 분리 후엔 그 단지 표만
-  }));
+  return usable.map((c, idx) => {
+    const deps = c.rows.flatMap(r => r.deposit != null && r.deposit > 0 ? [r.deposit / 10000] : []);
+    const rents = c.rows.flatMap(r => r.rent != null && r.rent > 0 ? [r.rent / 10000] : []);
+    const areas = c.rows.map(r => r.area).filter(a => a > 0);
+    const count = (key: "supplyTotal" | "supplyThisRound") => c.rows.length && c.rows.every(r => r[key] != null)
+      ? c.rows.reduce((n, r) => n + (r[key] ?? 0), 0) : null;
+    return {
+      ...base,
+      id: `${base.id}-c${idx}`,
+      title: c.name ? `${base.title} (${c.name})` : base.title,
+      complexName: c.name,
+      address: c.address || "",
+      lat: c.lat!, lng: c.lng!,
+      deposit: deps.length ? Math.min(...deps) : 0,
+      rent: rents.length ? Math.min(...rents) : 0,
+      depositRange: deps.length ? [Math.min(...deps), Math.max(...deps)] as [number, number] : null,
+      rentRange: rents.length ? [Math.min(...rents), Math.max(...rents)] as [number, number] : null,
+      area: areas.length ? formatArea(`${Math.min(...areas)}~${Math.max(...areas)}`) : "",
+      totalUnits: count("supplyTotal"),
+      supplyUnits: /예비/.test(base.title) || (count("supplyTotal") != null && (count("supplyThisRound") ?? 0) > count("supplyTotal")!) ? null : count("supplyThisRound"),
+      complexes: [{ name: c.name, rows: c.rows }],
+    };
+  });
 }
 
 const ALL: Listing[] = (apiListings as unknown as ApiListing[])
   .flatMap((r) => {
-    const base = adaptApi(r);
+    const hasComplexCoords = Array.isArray(r.complexes) && r.complexes.filter(c => c.lat && c.lng).length >= 2;
+    const base = adaptApi(r, hasComplexCoords);
     if (!base) return [];
     return splitByComplex(base, r);
   })
@@ -553,6 +579,17 @@ export const LH_ADMIN_LISTINGS: Listing[] = [
   ...SH_ADMIN_LISTINGS.map(applyOverride),
   ...YOUTH_ADMIN_LISTINGS.map(applyOverride),
 ];
+
+// Older versions of a corrected announcement can be hidden from the list by
+// deduplication but must remain reachable by their own official identifier.
+export function getAdminListingById(id: string): Listing | undefined {
+  const visible = LH_ADMIN_LISTINGS.find(listing => listing.id === id);
+  if (visible) return visible;
+  const raw = (apiListings as unknown as ApiListing[]).find(row => row.id === id);
+  if (!raw) return undefined;
+  const listing = adaptApi(raw, true);
+  return listing ? fillDistrictId(applyOverride(listing)) : undefined;
+}
 
 // 검수 필요 여부 — 공급세대수가 의심값(없음/1)인 매물. 단, 이미 마감(closed)된 매물은
 // 정정해도 사용자 노출이 끝나 검수 의미가 없으므로 제외. (active 만 큐에 노출)

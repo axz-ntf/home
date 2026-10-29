@@ -84,7 +84,7 @@ export function findMatchingComplex(notice, complexesByKey, sidoCode) {
   const fallbacks = new Set();
   for (const kw of keywords) {
     for (const c of candidates) {
-      const blob = `${c.hsmpNm || ""} ${c.rnAdres || ""}`;
+      const blob = c.hsmpNm || ""; // 도로명에 포함된 지구명만으로 단지를 매칭하지 않는다.
       if (!blob.includes(kw)) continue;
       const cBlock = blockOf(c.hsmpNm);
       if (cBlock && !noticeBlock) continue;
@@ -96,6 +96,6 @@ export function findMatchingComplex(notice, complexesByKey, sidoCode) {
     }
   }
   // 공고엔 블록이 있는데 블록 없는 단지로 넘어가는 경우 — 그 지구에 후보가 하나뿐일 때만 (양주옥정 A-4(1) ↔ 양주옥정3단지 방지)
-  if (noticeBlock && fallbacks.size > 1) return null;
+  if (noticeBlock || fallbacks.size !== 1) return null;
   return fallbacks.values().next().value ?? null;
 }

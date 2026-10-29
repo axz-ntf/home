@@ -24,3 +24,10 @@ scripts/
 docs/
 *.progress.json
 .cache/
+
+# 공고 원본은 Supabase Storage에서 제공하며 로컬 수집 결과·비밀 파일은 배포하지 않음
+public/notice-files/
+lib/downloaded-documents.local.json
+lib/building-register-local/
+.env*
+!.env.local.example

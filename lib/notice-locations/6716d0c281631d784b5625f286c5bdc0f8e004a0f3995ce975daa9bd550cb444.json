@@ -1,0 +1,23 @@
+{
+  "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020538&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+  "collectedAt": "2026-10-28T06:06:50.221Z",
+  "locations": [
+    {
+      "address": "충청북도 충주시 대소원면 첨단산업2로 42",
+      "units": 0,
+      "sourceLabel": "공고문 임대대상 단지 · 행정안전부 주소 확인",
+      "localUrl": "/notice-files/781f2e7a12440369b2cf965e4117384036f89891048620383f780c8108283520.pdf#page=1",
+      "evidence": "PDF 1쪽 임대대상 단지 표: ['충북', '충주', '대소원면', '충주지웰'] · 주소 API 건물명: 충주지웰",
+      "lat": 36.9883883748359,
+      "lng": 127.829500709684,
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치"
+    }
+  ],
+  "review": {
+    "status": "partial",
+    "message": "공고문 단지 중 주소 일치를 확인한 항목만 표시합니다. 나머지 단지 주소는 확인 중입니다.",
+    "evidence": "PDF 1쪽 임대대상 단지 표: ['충북', '충주', '대소원면', '충주지웰']",
+    "localUrl": "/notice-files/781f2e7a12440369b2cf965e4117384036f89891048620383f780c8108283520.pdf#page=1",
+    "sourceLabel": "공고문 임대대상 단지"
+  }
+}

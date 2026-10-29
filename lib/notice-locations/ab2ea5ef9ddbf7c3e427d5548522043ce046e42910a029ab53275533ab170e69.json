@@ -1,0 +1,53 @@
+{
+  "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020493&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+  "collectedAt": "2026-10-28T06:06:50.223Z",
+  "locations": [
+    {
+      "address": "경상남도 창원시 진해구 행암로 25",
+      "units": 0,
+      "sourceLabel": "공고문 임대대상 단지 · 행정안전부 주소 확인",
+      "localUrl": "/notice-files/543ee9ff070f33dd4b8940bccbedc6d3ec1784780e1adc5917e4b6055c435d52.pdf#page=2",
+      "evidence": "PDF 2쪽 임대대상 단지 표: [None, None, '장천동', '진해장천대동다숲', '2007', '59', '1,264', '15', '2.1', '6', '0', '3', ''] · 주소 API 건물명: 진해 장천 대동 다:숲아파트",
+      "lat": 35.1292307376018,
+      "lng": 128.704756043594,
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치"
+    },
+    {
+      "address": "경상남도 양산시 동면 금오15길 9",
+      "units": 0,
+      "sourceLabel": "공고문 임대대상 단지 · 행정안전부 주소 확인",
+      "localUrl": "/notice-files/543ee9ff070f33dd4b8940bccbedc6d3ec1784780e1adc5917e4b6055c435d52.pdf#page=2",
+      "evidence": "PDF 2쪽 임대대상 단지 표: [None, '양산', '동면', '양산 동원로얄듀크 2차', '2013', '59', '621', '20', '2.1', '3', '0', '3', ''] · 주소 API 건물명: 양산신도시2차동원로얄듀크",
+      "lat": 35.317669459505,
+      "lng": 129.025040110481,
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치"
+    },
+    {
+      "address": "경상남도 양산시 물금읍 새실로 115",
+      "units": 0,
+      "sourceLabel": "공고문 임대대상 단지 · 행정안전부 주소 확인",
+      "localUrl": "/notice-files/543ee9ff070f33dd4b8940bccbedc6d3ec1784780e1adc5917e4b6055c435d52.pdf#page=2",
+      "evidence": "PDF 2쪽 임대대상 단지 표: [None, None, '물금읍', '대방노블랜드 5차', '2016', '59', '1,158', '31', '2.1', '2', '0', '3', ''] · 주소 API 건물명: 양산물금 대방노블랜드 5차 에듀카운티",
+      "lat": 35.3138329326279,
+      "lng": 128.999951644553,
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치"
+    },
+    {
+      "address": "경상남도 양산시 물금읍 범어로 77",
+      "units": 0,
+      "sourceLabel": "공고문 임대대상 단지 · 행정안전부 주소 확인",
+      "localUrl": "/notice-files/543ee9ff070f33dd4b8940bccbedc6d3ec1784780e1adc5917e4b6055c435d52.pdf#page=3",
+      "evidence": "PDF 3쪽 임대대상 단지 표: [None, None, '물금읍', '우미린아파트', None, None, None, None, None] · 주소 API 건물명: 우미린아파트",
+      "lat": 35.3286686625309,
+      "lng": 129.015591553854,
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치"
+    }
+  ],
+  "review": {
+    "status": "partial",
+    "message": "공고문 단지 중 주소 일치를 확인한 항목만 표시합니다. 나머지 단지 주소는 확인 중입니다.",
+    "evidence": "PDF 2쪽 임대대상 단지 표: ['경남', '창원', '풍호동', '창원마린푸르지오', '2015', '59', '1,822', '29', '2.1', '3', '1', '3', '']",
+    "localUrl": "/notice-files/543ee9ff070f33dd4b8940bccbedc6d3ec1784780e1adc5917e4b6055c435d52.pdf#page=2",
+    "sourceLabel": "공고문 임대대상 단지"
+  }
+}

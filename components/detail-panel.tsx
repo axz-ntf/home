@@ -8,15 +8,8 @@ import { calcDday, isRegularRecruitment, effectiveStatus } from "@/lib/dday";
 import { applyUrlFor, infoUrlFor } from "@/lib/notice-match";
 import { NaverPanorama } from "./naver-panorama";
 import { CloseIcon, HeartIcon } from "./icons";
-import {
-  MdOutlineSubway,
-  MdOutlineSchool,
-  MdOutlineStorefront,
-  MdOutlineLocalHospital,
-  MdErrorOutline,
-  MdOutlinePictureAsPdf,
-  MdArrowOutward,
-} from "react-icons/md";
+import { DdsIcon } from "./dds-icon";
+import "./dds-components.css";
 import { EligibilityDetail } from "./eligibility-detail";
 import { formatManwon } from "@/lib/format";
 import { nearbyStations } from "@/lib/subway";
@@ -26,19 +19,12 @@ import { useSavedListings } from "@/lib/use-saved";
 import { accentVars } from "./detail-type";
 import { summarizePrice, type Range } from "@/lib/price-summary";
 import { FloorplanSection } from "./floorplan-section";
+import { SiteSun3D, type Bldg } from "./site-sun-3d";
 import { LoanCalculator } from "./loan-calculator";
 import { Button } from "./button";
+import { NoticeAttachments } from "./notice-attachments";
+import { LocationInsight } from "./location-insight";
 import { sendGAEvent } from "@next/third-parties/google";
-
-type InsightGroup = { value: string; level: string; tone: "rich" | "good" | "mid" | "low" };
-
-// AI 입지 분석 2×2 타일 설정 (축별 아이콘·색).
-const INSIGHT_TILES = [
-  { key: "transit", label: "교통", Icon: MdOutlineSubway, color: "#1e84ff", bg: "#ebf3ff" },
-  { key: "life", label: "생활", Icon: MdOutlineStorefront, color: "#ff9429", bg: "#fff1e3" },
-  { key: "edu", label: "교육", Icon: MdOutlineSchool, color: "#18ba45", bg: "#e6f7ec" },
-  { key: "medical", label: "의료", Icon: MdOutlineLocalHospital, color: "#ff4e33", bg: "#ffeae6" },
-] as const;
 
 // 주택형 드롭다운 — SH 매입임대는 주택형(32A/36A…) 단위로 신청(호실은 무작위 배정).
 // 선택한 주택형의 면적·보증금·월세를 보여준다. 주택형별 가격이 없으면 단지 공통값으로 폴백.
@@ -83,8 +69,8 @@ function UnitTypePicker({ item, types }: { item: Listing; types: NonNullable<Lis
           </div>
         ))}
       </div>
-      <p style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12, color: "var(--seed-semantic-color-ink-text-low)", margin: "10px 0 0" }}>
-        <MdErrorOutline style={{ flexShrink: 0, fontSize: 14 }} />
+      <p style={{ display: "flex", alignItems: "center", gap: "var(--dds-spacing-8)", fontSize: "var(--dds-typography-label-normal-size)", color: "var(--dds-text-quaternary)", margin: "var(--dds-spacing-12) 0 0" }}>
+        <DdsIcon name="info" style={{ flexShrink: 0, fontSize: "var(--dds-typography-caption-normal-size)" }} />
         보증금·월세는 주택형·호실별로 달라요.
       </p>
     </>
@@ -148,16 +134,16 @@ function RentSummarySection({ item }: { item: Listing }) {
           <div className="detail-price-cell detail-price-cell--full">
             <div className="detail-price-label">{item.type === "sale" ? "분양 조건" : "임대조건"}</div>
             <div className="detail-price-value">
-              <span style={{ fontSize: 14, marginRight: 8 }}>단지별 상이</span>
+              <span style={{ fontSize: "var(--dds-typography-caption-normal-size)", marginRight: "var(--dds-spacing-8)" }}>단지별 상이</span>
               {item.sourceUrl && (
-                <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="detail-confirm-link">원문 보기 →</a>
+                <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="detail-confirm-link">원문 보기 <DdsIcon name="arrow-up-right" size={16}/></a>
               )}
             </div>
           </div>
         </div>
       )}
       {isRanged && (
-        <p style={{ fontSize: 11.5, color: "var(--seed-semantic-color-ink-text-low)", margin: "8px 0 0" }}>
+        <p style={{ fontSize: "var(--dds-typography-label-normal-size)", color: "var(--dds-text-quaternary)", margin: "var(--dds-spacing-8) 0 0" }}>
           계층·평형에 따라 달라요. 정확한 조건은 상세에서 확인하세요.
         </p>
       )}
@@ -183,8 +169,8 @@ function RentSummarySection({ item }: { item: Listing }) {
       )}
       {/* 면적 등은 있지만 가격이 없는 경우 — 안내만(링크 제거, 공고문은 하단 PDF 버튼으로). */}
       {cells.length > 0 && !s.deposit && !s.rent && !s.supportLimit && item.type !== "sale" && (
-        <p style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12, color: "var(--seed-semantic-color-ink-text-low)", margin: "10px 0 0" }}>
-          <MdErrorOutline style={{ flexShrink: 0, fontSize: 14 }} />
+        <p style={{ display: "flex", alignItems: "center", gap: "var(--dds-spacing-8)", fontSize: "var(--dds-typography-label-normal-size)", color: "var(--dds-text-quaternary)", margin: "var(--dds-spacing-12) 0 0" }}>
+          <DdsIcon name="info" style={{ flexShrink: 0, fontSize: "var(--dds-typography-caption-normal-size)" }} />
           <span>{perUnitPriced ? "보증금·월세가 호실마다 달라요." : "보증금·월세는 공고문에서 확인하세요."}</span>
         </p>
       )}
@@ -225,36 +211,25 @@ function ScheduleTimeline({ item }: { item: Listing }) {
 
   return (
     <section className="detail-section">
-      <h3 style={{ display: "flex", alignItems: "center", gap: 8 }}>
+      <h3 style={{ display: "flex", alignItems: "center", gap: "var(--dds-spacing-8)" }}>
         모집 일정
         <span style={{
-          fontSize: 11, fontWeight: 700, lineHeight: 1,
-          padding: "4px 8px", borderRadius: 999,
+          fontSize: "var(--dds-typography-label-normal-size)", fontWeight: 700, lineHeight: 1,
+          padding: "var(--dds-spacing-4) var(--dds-spacing-8)", borderRadius: "var(--dds-radius-100)",
           color: "white", background: statusLabel.color,
         }}>{statusLabel.text}</span>
       </h3>
-      <ol style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 0 }}>
+      <ol className="dds-steps" style={{ gridTemplateColumns: `repeat(${steps.length}, minmax(0, 1fr))` }}>
         {steps.map((s, i) => {
           const past = isPast(s.date);
-          const isActive = i === activeIdx;
-          const strong = isActive ? "var(--seed-semantic-color-ink-text)" : past ? "var(--seed-semantic-color-ink-text-low)" : "var(--seed-semantic-color-ink-text)";
+          const state = i === activeIdx ? "now" : past ? "done" : "next";
           return (
-            <li key={s.label} style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 2px", borderBottom: i < steps.length - 1 ? "1px solid var(--seed-scale-color-gray-100)" : "none" }}>
-              <span style={{
-                width: 22, height: 22, borderRadius: "50%", flexShrink: 0,
-                display: "inline-flex", alignItems: "center", justifyContent: "center",
-                fontSize: 11, fontWeight: 800,
-                background: isActive ? "var(--seed-semantic-color-primary)" : past ? "var(--seed-scale-color-gray-200)" : "var(--seed-scale-color-gray-100)",
-                color: isActive ? "white" : "var(--seed-semantic-color-ink-text-low)",
-              }}>{i + 1}</span>
-              <span style={{ fontSize: 13, fontWeight: isActive ? 700 : 500, color: strong }}>
-                {s.label}
-                {!isActive && s.label === "접수 마감" && dday && (
-                  <span suppressHydrationWarning style={{ marginLeft: 6, fontSize: 11, fontWeight: 800, color: "var(--seed-semantic-color-primary)" }}>{dday}</span>
-                )}
-              </span>
-              <span style={{ marginLeft: "auto", fontSize: 13, fontVariantNumeric: "tabular-nums", fontWeight: isActive ? 700 : 500, color: strong }}>
-                {s.date}
+            <li key={s.label} className={`dds-step dds-step--${state}`}>
+              <i aria-hidden />
+              <b>{s.label}</b>
+              <span suppressHydrationWarning>
+                {s.date.replace(/^\d{4}\./, "")}
+                {s.label === "접수 마감" && dday ? ` · ${dday}` : ""}
               </span>
             </li>
           );
@@ -316,9 +291,7 @@ function ListingPhotos({ item }: { item: Listing }) {
             onClick={() => setLightboxOpen(false)}
             aria-label="닫기"
           >
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden>
-              <path d="M 5 5 L 15 15 M 15 5 L 5 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            </svg>
+            <DdsIcon name="close" size={24}/>
           </button>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -330,6 +303,50 @@ function ListingPhotos({ item }: { item: Listing }) {
           />
         </div>
       )}
+    </section>
+  );
+}
+
+// 모집 상태 → DDS 배지 (접수중은 파랑 강조, 마감임박은 빨강, 나머지는 회색)
+const STATUS_BADGE = {
+  open: { variant: "weak", color: "primary" },
+  closing: { variant: "solid", color: "accent" },
+  upcoming: { variant: "outline", color: "secondary" },
+  closed: { variant: "solid", color: "secondary" },
+} as const;
+
+// 이 집에 드는 햇빛 — 조감도·공고문에서 뽑은 동 배치(lib/site-layouts)가 있는 단지만.
+// 배치 0~1 좌표를 대지 300×240m 로 환산 (조감도 기준 추정, 방위는 정남향 가정).
+const SITE_W = 300, SITE_D = 240;
+function SunSection({ item }: { item: Listing }) {
+  const [site, setSite] = useState<Bldg[] | null>(null);
+  useEffect(() => {
+    setSite(null);
+    if (!item.lat || !item.lng) return;
+    let alive = true;
+    fetch(`/api/site-layout/${encodeURIComponent(item.id)}`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j) => {
+        if (!alive || !j?.ok) return;
+        const bs = (j.data.buildings as { id: string; type: string; floors: number; x: number; y: number; widthRel: number }[]).map((b) => ({
+          id: b.id.replace(/동$/, ""),
+          floors: Math.max(3, Math.round(b.floors)),
+          cx: b.x * SITE_W,
+          cy: b.y * SITE_D,
+          w: Math.max(20, b.widthRel * SITE_W),
+          d: b.type === "탑상형" ? 22 : 16,
+          tower: b.type === "탑상형",
+        }));
+        if (bs.length) setSite(bs);
+      })
+      .catch(() => {});
+    return () => { alive = false; };
+  }, [item.id, item.lat, item.lng]);
+  if (!site) return null;
+  return (
+    <section className="detail-section">
+      <h3>이 집에 드는 햇빛 <span className="detail-section-note">동·층·계절별 직사광</span></h3>
+      <SiteSun3D lat={item.lat} lng={item.lng} site={site} />
     </section>
   );
 }
@@ -357,46 +374,6 @@ export function DetailPanel({
     return () => { alive = false; };
   }, [item?.lat, item?.lng]);
 
-  // AI 입지 분석 — 패널 열릴 때 /api/insight 호출(좌표 기반, 서버 캐시).
-  const [insight, setInsight] = useState<{
-    valueText: string | null;
-    marketText: string | null;
-    marketPerM2: number | null;
-    summary: string;
-    tags: string[];
-    groups: {
-      transit: InsightGroup;
-      life: InsightGroup | null;
-      edu: InsightGroup | null;
-      medical: InsightGroup | null;
-    };
-  } | null>(null);
-  const [insightLoading, setInsightLoading] = useState(false);
-  useEffect(() => {
-    if (!item?.lat || !item?.lng) { setInsight(null); return; }
-    let alive = true;
-    setInsight(null);
-    setInsightLoading(false);
-    const key = `${item.lat.toFixed(4)},${item.lng.toFixed(4)},${item.type ?? ""}`;
-    // 1) 사전 계산 캐시 먼저 — 있으면 즉시 표시(네트워크/LLM 호출 없음)
-    import("@/lib/insight-cache.json").then((m) => {
-      if (!alive) return;
-      const hit = (m.default as unknown as Record<string, typeof insight>)[key];
-      if (hit) { setInsight(hit); return; }
-      // 2) 캐시 미스 → 실시간 계산
-      setInsightLoading(true);
-      fetch("/api/insight", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ lat: item.lat, lng: item.lng, name: item.title, address: item.address, type: item.type }),
-      })
-        .then((r) => (r.ok ? r.json() : null))
-        .then((d) => { if (alive) { setInsight(d && !d.error ? d : null); setInsightLoading(false); } })
-        .catch(() => { if (alive) setInsightLoading(false); });
-    });
-    return () => { alive = false; };
-  }, [item?.lat, item?.lng, item?.title, item?.address, item?.type]);
-
   if (!item) return <div className={`detail-panel ${open ? "open" : ""}`} />;
   const liked = isSaved(item.id);
 
@@ -407,20 +384,12 @@ export function DetailPanel({
   const applyUrl = applyUrlFor(item.type);
   const infoUrl = infoUrlFor(item.type);
   const nearby = nearbyStations(item.lat, item.lng);
-  // 매물 전세환산(보증금 + 월세×12÷전환율 5.5%) ÷ 전용㎡ ÷ 인근 아파트 전세 ㎡당 평균 → 시세 대비 %.
-  // 단위가 다른 상품(공공임대↔아파트)이라 추정치. 비정상치(>130%)는 표본/면적 불일치로 보고 숨김.
-  const sqm = parseFloat(item.area);
-  const rawRatio =
-    insight?.marketPerM2 && item.type !== "sale" && sqm > 0 && (item.deposit > 0 || item.rent > 0)
-      ? Math.round(((item.deposit + (item.rent > 0 ? (item.rent * 12) / 0.055 : 0)) / sqm / insight.marketPerM2) * 100)
-      : null;
-  const priceRatio = rawRatio && rawRatio > 0 && rawRatio <= 130 ? rawRatio : null;
   // 청약 신청 버튼 — raw status 대신 effStatus 기반 (sync stale 보정 반영)
   const isRecurring = isRegularRecruitment(item.deadline, item.status);
   const applyButton: { label: string; active: boolean } = isRecurring
-    ? { label: "공고 확인 →", active: true }
+    ? { label: "공고 확인", active: true }
     : effStatus === "open" || effStatus === "closing"
-      ? { label: "신청하러 가기 →", active: true }
+      ? { label: "신청하러 가기", active: true }
       : effStatus === "upcoming"
         ? { label: "접수 예정", active: false }
         : { label: "접수 마감", active: false };
@@ -450,10 +419,22 @@ export function DetailPanel({
             {item.agency} · {item.district}
           </span>
         </div>
+        <div className="detail-badges">
+          {housingType && (
+            <span className={`badge ${housingType.badge}`} style={{ fontSize: "var(--dds-typography-label-normal-size)", padding: "var(--dds-spacing-4) var(--dds-spacing-8)" }}>
+              {/* SH 는 자체 청약유형(청년안심주택 등) 그대로 (M4) */}
+              {item.agency === "SH" && item.suplyTyNm ? item.suplyTyNm : housingType.name}
+            </span>
+          )}
+          <AgencyBadge agency={item.agency} className="detail-agency-badge" />
+          <dds-badge {...STATUS_BADGE[effStatus]} size="sm">
+            {status.text}
+          </dds-badge>
+        </div>
         {/* M3: 단지명을 제목으로, 공고명 전체는 부제로 (단지명 없으면 공고명이 제목) */}
         <h1 className="detail-title">{item.complexName || item.title}</h1>
         {item.complexName && (
-          <div style={{ fontSize: 12.5, color: "var(--seed-semantic-color-ink-text-low)", marginTop: -6, marginBottom: 8 }}>
+          <div style={{ fontSize: "var(--dds-typography-caption-normal-size)", color: "var(--dds-text-quaternary)", marginTop: "calc(-1 * var(--dds-spacing-8))", marginBottom: "var(--dds-spacing-8)" }}>
             {item.title}
           </div>
         )}
@@ -470,26 +451,6 @@ export function DetailPanel({
           </p>
         )}
 
-        <div style={{ display: "flex", gap: 6, marginBottom: 16 }}>
-          {housingType && (
-            <span className={`badge ${housingType.badge}`} style={{ fontSize: 12, padding: "4px 9px" }}>
-              {/* SH 는 자체 청약유형(청년안심주택 등) 그대로 (M4) */}
-              {item.agency === "SH" && item.suplyTyNm ? item.suplyTyNm : housingType.name}
-            </span>
-          )}
-          <AgencyBadge agency={item.agency} className="detail-agency-badge" />
-          <span
-            className="badge"
-            style={{
-              fontSize: 12,
-              padding: "4px 9px",
-              background: status.color + "22",
-              color: status.color,
-            }}
-          >
-            {status.text}
-          </span>
-        </div>
 
 
         {isRegularRecruitment(item.deadline, item.status) ? (
@@ -528,6 +489,8 @@ export function DetailPanel({
         <section className="detail-section">
           <EligibilityDetail listingId={item.id} sourceUrl={item.sourceUrl} housingType={item.type} />
         </section>
+
+        <SunSection item={item} />
 
         <section className="detail-section">
           <h3>기본 정보</h3>
@@ -570,63 +533,7 @@ export function DetailPanel({
           </dl>
         </section>
 
-        {item.lat && item.lng && (insightLoading || insight) && (
-          <section className="detail-section insight-section">
-            <h3>AI 입지 분석 <span className="detail-section-note">반경 500m 실측</span></h3>
-            {insight ? (
-              <>
-                {(priceRatio || insight.valueText) && (
-                  <div className="insight-hero">
-                    <div className="insight-hero-top">
-                      <span className="insight-hero-badge">가성비</span>
-                      <span className="insight-hero-val">
-                        {priceRatio
-                          ? `주변 아파트 전세 시세의 약 ${priceRatio}% 수준`
-                          : `공공임대 · 주변 ${insight.valueText} 수준`}
-                      </span>
-                    </div>
-                    {insight.marketText && <div className="insight-hero-mkt">📊 {insight.marketText}</div>}
-                  </div>
-                )}
-                <p className="insight-summary">{insight.summary}</p>
-                <div className="insight-grid">
-                  {INSIGHT_TILES.map(({ key, label, Icon, color, bg }) => {
-                    const g = insight.groups[key];
-                    if (!g) return null;
-                    return (
-                      <div key={key} className="insight-tile">
-                        <div className="insight-tile-top">
-                          <span className="insight-tile-ico" style={{ color, background: bg }}>
-                            <Icon />
-                          </span>
-                          <span className={`insight-lvl ${g.tone}`}>{g.level}</span>
-                        </div>
-                        <div className="insight-tile-k">{label}</div>
-                        <div className="insight-tile-v">{g.value}</div>
-                      </div>
-                    );
-                  })}
-                </div>
-                {insight.tags?.length > 0 && (
-                  <div className="insight-tags">
-                    {insight.tags.map((t, i) => (
-                      <span key={i} className="insight-tag">{t}</span>
-                    ))}
-                  </div>
-                )}
-                <p className="insight-disc">
-                  AI가 카카오맵·국토부 실거래가를 해석했어요 · 학군 배정·시세 전망 미포함
-                  {priceRatio ? " · 시세 비교는 전세환산·인근 아파트 기준 추정치" : ""}
-                </p>
-              </>
-            ) : (
-              <div className="insight-loading">
-                <span className="insight-spinner" aria-hidden />
-                <span>주변 입지 분석 중…</span>
-              </div>
-            )}
-          </section>
-        )}
+        {open && <LocationInsight key={`insight:${item.id}`} item={item} />}
 
         {nearby.length > 0 && (
           <section className="detail-section">
@@ -635,7 +542,7 @@ export function DetailPanel({
               {nearby.map((s, i) => (
                 <li key={i} className="subway-item">
                   <span className="subway-ico" aria-hidden>
-                    <MdOutlineSubway />
+                    <DdsIcon name="map" />
                   </span>
                   <span className="subway-name">{s.name}역</span>
                   <span className="subway-walk">도보 {s.walkMin}분 · {s.distM.toLocaleString()}m</span>
@@ -652,7 +559,7 @@ export function DetailPanel({
               {nearSchools.map((s, i) => (
                 <li key={i} className="subway-item">
                   <span className="subway-ico" aria-hidden>
-                    <MdOutlineSchool />
+                    <DdsIcon name="contents" />
                   </span>
                   <span className="subway-name">{s.name}</span>
                   <span className="subway-walk">도보 {s.walkMin}분 · {s.distM.toLocaleString()}m</span>
@@ -672,14 +579,18 @@ export function DetailPanel({
             rel="noreferrer"
           >
             <span className="subway-ico" aria-hidden>
-              <MdOutlinePictureAsPdf />
+              <DdsIcon name="summary" />
             </span>
             <span className="subway-name">{item.noticePdfUrl ? "공고문 PDF" : "공고 페이지"}</span>
             <span className="subway-walk">
-              새 창에서 열기 <MdArrowOutward />
+              새 창에서 열기 <DdsIcon name="arrow-up-right" />
             </span>
           </a>
         </section>
+
+        {!!item.attachments?.length && (
+          <NoticeAttachments key={`attachments:${item.id}`} files={item.attachments} />
+        )}
 
         <div className="detail-actions">
           <button
@@ -712,6 +623,7 @@ export function DetailPanel({
             size="lg"
             fullWidth
             href={applyButton.active ? (item.sourceUrl ?? applyUrl) : undefined}
+            trailingIcon={applyButton.active ? <DdsIcon name="arrow-up-right" size={20}/> : undefined}
             target="_blank"
             disabled={!applyButton.active}
             onClick={applyButton.active ? () => sendGAEvent("event", "click_apply", { listing_id: item.id, listing_title: item.title.slice(0, 90) }) : undefined}

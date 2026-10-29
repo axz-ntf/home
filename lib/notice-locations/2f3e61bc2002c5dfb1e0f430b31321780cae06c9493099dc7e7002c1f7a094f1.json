@@ -1,0 +1,23 @@
+{
+  "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020529&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+  "collectedAt": "2026-10-28T06:06:50.219Z",
+  "locations": [
+    {
+      "address": "충청남도 당진시 송산면 송산로 864-10",
+      "units": 0,
+      "sourceLabel": "공고문 임대대상 단지 · 행정안전부 주소 확인",
+      "localUrl": "/notice-files/dc092df44b8d18ae390dbf4eb6cf30ecfe2bf34cf59ecd57f6d14574d14a0936.pdf#page=2",
+      "evidence": "PDF 2쪽 임대대상 단지 표: ['충남', '당진', '송산면', '송산청광아파트', '2016', '49', '299', '10', '-', '37', '18', '-', ''] · 주소 API 건물명: 당진송산청광아파트",
+      "lat": 36.96196538121,
+      "lng": 126.699906244824,
+      "coordinateStatus": "카카오 주소 검색 · 단일 주소 일치"
+    }
+  ],
+  "review": {
+    "status": "partial",
+    "message": "공고문 단지 중 주소 일치를 확인한 항목만 표시합니다. 나머지 단지 주소는 확인 중입니다.",
+    "evidence": "PDF 2쪽 임대대상 단지 표: ['충남', '당진', '송산면', '송산청광아파트', '2016', '49', '299', '10', '-', '37', '18', '-', '']",
+    "localUrl": "/notice-files/dc092df44b8d18ae390dbf4eb6cf30ecfe2bf34cf59ecd57f6d14574d14a0936.pdf#page=2",
+    "sourceLabel": "공고문 임대대상 단지"
+  }
+}

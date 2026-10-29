@@ -1,0 +1,59 @@
+{
+  "supplyTotal": 120,
+  "tiers": [
+    {
+      "id": "student",
+      "name": "대학생(경상국립대학교 우선공급)",
+      "units": 74,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "경상국립대학교에 재학 중이거나 다음 학기 입학 또는 복학 예정인 사람",
+        "남 36호, 여 38호"
+      ]
+    },
+    {
+      "id": "student",
+      "name": "대학생(일반공급)",
+      "units": 52,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "대학에 재학 중이거나 다음 학기 입학 또는 복학 예정인 사람",
+        "남 32호, 여 42호"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "취업준비생(경상국립대학교)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "경상국립대학교를 졸업한 지 2년 이내인 사람 (우선공급)"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "취업준비생(일반)",
+      "units": null,
+      "age": null,
+      "marriage": null,
+      "income": null,
+      "asset": null,
+      "other": [
+        "대학 또는 고등학교를 졸업 또는 중퇴한 지 2년 이내인 사람 (일반공급)"
+      ]
+    }
+  ],
+  "priority": [
+    "2세 미만 자녀(태아포함) 우선배정 30% 범위",
+    "주거약자(고령자/장애인/국가유공자 등)"
+  ]
+}

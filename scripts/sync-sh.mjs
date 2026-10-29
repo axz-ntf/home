@@ -22,10 +22,11 @@ const INNO_FD = (seq, fileSeq, fileTp = "A", brdId = "GS0401") =>
   `${ISH_BASE}/main/com/file/innoFD.do?brdId=${brdId}&seq=${seq}&fileSeq=${fileSeq}&fileTp=${fileTp}`;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const boundedFetch = (url, options = {}) => globalThis.fetch(url, { ...options, signal: AbortSignal.timeout(20000) });
 const clean = (s) => s.replace(/<[^>]+>/g, " ").replace(/&[a-z]+;/g, " ").replace(/\s+/g, " ").trim();
 
 async function fetchText(url) {
-  const r = await fetch(url, { headers: { "User-Agent": UA } });
+  const r = await boundedFetch(url, { headers: { "User-Agent": UA } });
   if (!r.ok) throw new Error(`HTTP ${r.status} ${url}`);
   return r.text();
 }
@@ -75,32 +76,43 @@ async function resolveDetail(seq) {
 function parseArgs() {
   const a = process.argv.slice(2);
   const pi = a.indexOf("--pages");
-  return { pages: pi >= 0 ? Number(a[pi + 1]) : 10, probePdf: a.includes("--probe-pdf") };
+  return { pages: pi >= 0 ? Number(a[pi + 1]) : Infinity, probePdf: a.includes("--probe-pdf") };
 }
 
 async function main() {
   const args = parseArgs();
+  const previous = JSON.parse(await fs.readFile(OUT_PATH, "utf8").catch(() => "[]"));
   const notices = [];
-  for (let cp = 1; cp <= args.pages; cp++) {
+  const seen = new Set();
+  let lastPage = Infinity;
+  for (let cp = 1; cp <= Math.min(args.pages, lastPage); cp++) {
     const html = await fetchText(`${LIST_URL}?cp=${cp}&supplyType=publicLease`);
+    const last = html.match(/href="[^"]*[?&]cp=(\d+)[^"]*"[^>]*title="마지막 페이지"/);
+    if (!last) throw new Error("SH 페이지 정보 파싱 실패 — 기존 데이터 보존");
+    lastPage = Number(last[1]);
     const rows = parseListPage(html);
     if (rows.length === 0) {
-      console.log(`page ${cp}: 0건 — 종료`);
-      break;
+      throw new Error(`SH page ${cp}: 예상하지 않은 빈 목록 — 기존 데이터 보존`);
     }
-    notices.push(...rows);
+    const fresh = rows.filter(r => !seen.has(r.seq));
+    if (!fresh.length) throw new Error(`SH page ${cp}: 중복 페이지`);
+    for (const r of fresh) { seen.add(r.seq); notices.push(r); }
     console.log(`page ${cp}: ${rows.length}건`);
     await sleep(400);
   }
 
+  if (args.pages < lastPage) throw new Error("SH --pages 한도로 수집 미완료 — 기존 데이터 보존");
+
   // 상세 → PDF 해석 (전 건)
   console.log(`\n상세/PDF 해석 ${notices.length}건...`);
+  let detailsChecked = 0;
   for (const n of notices) {
     try {
       const d = await resolveDetail(n.seq);
       Object.assign(n, d, { detailUrl: ISH_DETAIL(n.seq) });
+      if (++detailsChecked % 20 === 0) console.log(`  ${detailsChecked}/${notices.length}`);
     } catch (e) {
-      n.error = e.message;
+      throw new Error(`SH ${n.seq} 상세 실패 — 기존 데이터 보존: ${e.message}`);
     }
     await sleep(300);
   }
@@ -111,6 +123,10 @@ async function main() {
   notices.forEach((n) => (byType[n.supplyType] = (byType[n.supplyType] || 0) + 1));
   console.log("청약유형 분포:", byType);
 
+  for (const n of notices) {
+    const old = previous.find(r => r.seq === n.seq && r.title === n.title);
+    for (const key of ["lat", "lng", "geocoded", "geoPlace"]) if (old?.[key] != null) n[key] = old[key];
+  }
   await fs.writeFile(OUT_PATH, JSON.stringify(notices, null, 2) + "\n", "utf8");
   await recordSync("sh", notices.length);
   console.log(`저장: ${OUT_PATH}`);
@@ -118,7 +134,7 @@ async function main() {
   if (args.probePdf) {
     const target = notices.find((n) => n.pdfUrl);
     if (target) {
-      const r = await fetch(target.pdfUrl, { headers: { "User-Agent": UA, Referer: ISH_DETAIL(target.seq) } });
+      const r = await boundedFetch(target.pdfUrl, { headers: { "User-Agent": UA, Referer: ISH_DETAIL(target.seq) } });
       const buf = Buffer.from(await r.arrayBuffer());
       console.log(`\nPDF probe: ${target.title.slice(0, 30)} → ${r.status}, ${Math.round(buf.length / 1024)}KB, PDF=${buf.slice(0, 4).toString() === "%PDF"}`);
     }

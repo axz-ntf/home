@@ -43,7 +43,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "공고문 텍스트가 비어 있습니다." }, { status: 422 });
     }
 
-    const fields = await extractFromMarkdown(markdown, { type, isSale });
+    const fields = await extractFromMarkdown(markdown, { type, isSale, fullDocument: true });
     return NextResponse.json({
       ok: true,
       source,

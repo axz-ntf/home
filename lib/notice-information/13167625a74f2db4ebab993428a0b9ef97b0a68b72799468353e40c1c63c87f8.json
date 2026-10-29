@@ -1,0 +1,90 @@
+{
+  "collectedAt": "2026-10-05T04:49:17.367Z",
+  "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020518&ccrCnntSysDsCd=03&uppAisTpCd=05&aisTpCd=05&mi=1027",
+  "sourceHash": "f4fa48b878f01597f26e8ffb739163ef52a00cdac00f4b826ce4c6471f8730ca",
+  "sourceLabel": "울산중산디아채일반매각공고문(최종).pdf",
+  "fields": {
+    "priceModel": "per-unit-sale",
+    "rows": [
+      {
+        "houseType": "중산 디아채 103 101",
+        "area": "84.9921",
+        "supplyUnits": 1,
+        "deposit": null,
+        "rent": null,
+        "salePriceManwon": 20600
+      },
+      {
+        "houseType": "중산 디아채 103 302",
+        "area": "84.9921",
+        "supplyUnits": 1,
+        "deposit": null,
+        "rent": null,
+        "salePriceManwon": 22350
+      },
+      {
+        "houseType": "중산 디아채 106 301",
+        "area": "84.9921",
+        "supplyUnits": 1,
+        "deposit": null,
+        "rent": null,
+        "salePriceManwon": 22350
+      },
+      {
+        "houseType": "중산 디아채 202 104",
+        "area": "84.9805",
+        "supplyUnits": 1,
+        "deposit": null,
+        "rent": null,
+        "salePriceManwon": 20100
+      },
+      {
+        "houseType": "중산 디아채 205 104",
+        "area": "84.9805",
+        "supplyUnits": 1,
+        "deposit": null,
+        "rent": null,
+        "salePriceManwon": 20100
+      },
+      {
+        "houseType": "중산 디아채 205 302",
+        "area": "84.9921",
+        "supplyUnits": 1,
+        "deposit": null,
+        "rent": null,
+        "salePriceManwon": 22450
+      },
+      {
+        "houseType": "중산 디아채 206 201",
+        "area": "84.9921",
+        "supplyUnits": 1,
+        "deposit": null,
+        "rent": null,
+        "salePriceManwon": 21950
+      },
+      {
+        "houseType": "중산 디아채 206 301",
+        "area": "84.9921",
+        "supplyUnits": 1,
+        "deposit": null,
+        "rent": null,
+        "salePriceManwon": 22350
+      }
+    ],
+    "deadline": "2026.12.23",
+    "noticeStatus": "일반공고",
+    "progressStatus": null,
+    "schedule": {
+      "applyStart": "2026.09.01",
+      "applyEnd": "2026.12.23",
+      "winnerAt": null,
+      "docResultAt": null
+    },
+    "supplyGroups": [],
+    "eligibility": [],
+    "warnings": []
+  },
+  "schemaVersion": 2,
+  "correctedAt": "2026-10-28T02:01:15.404Z",
+  "correctionNote": "PDF 가격표 8호의 동·호별 금액 및 모집일정 대조. 원문과 일치하는 가격 유지, 접수 시작일 보완."
+}

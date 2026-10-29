@@ -1,0 +1,7 @@
+.insight-result-meta { display: flex; align-items: center; justify-content: space-between; gap: var(--dds-spacing-8); margin-bottom: var(--dds-spacing-16); font-size: var(--dds-typography-label-normal-size); color: var(--dds-text-quaternary); }
+.insight-error { display: flex; flex-wrap: wrap; align-items: center; gap: var(--dds-spacing-12); padding: var(--dds-spacing-16); border-radius: var(--dds-radius-8); background: var(--dds-background-surface-on); color: var(--dds-text-quaternary); }
+.insight-error p { flex: 1; min-width: 140px; margin: 0; font-size: var(--dds-typography-caption-normal-size); line-height: 1.5; }
+.insight-error>dds-button { margin-left: auto; }
+.insight-status-message { margin: 0; padding: var(--dds-spacing-16); background: var(--dds-background-surface-on); border-radius: var(--dds-radius-8); font-size: var(--dds-typography-caption-normal-size); color: var(--dds-text-quaternary); line-height: 1.6; }
+.insight-partial { padding: var(--dds-spacing-12); margin-top: var(--dds-spacing-16); border-radius: var(--dds-radius-8); background: var(--dds-background-state-info-subtle); color: var(--dds-text-secondary); font-size: var(--dds-typography-label-normal-size); line-height: 1.6; }
+.insight-partial ul { margin: 0; padding-left: var(--dds-spacing-16); }

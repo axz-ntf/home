@@ -6,6 +6,20 @@ import { NextResponse, type NextRequest } from "next/server";
 export function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
+  // 로컬 작업 중에는 비밀번호 없이 화면과 API를 사용한다.
+  if (process.env.NODE_ENV === "development") {
+    if (pathname === "/admin/login") {
+      const from = req.nextUrl.searchParams.get("from");
+      const url = req.nextUrl.clone();
+      url.pathname = from && /^\/admin(?:\/[a-zA-Z0-9_-]+)*$/.test(from) && from !== "/admin/login"
+        ? from
+        : "/admin/automation";
+      url.search = "";
+      return NextResponse.redirect(url);
+    }
+    return NextResponse.next();
+  }
+
   // 로그인 자체는 보호 해제.
   if (pathname === "/admin/login" || pathname === "/api/admin/login") {
     return NextResponse.next();

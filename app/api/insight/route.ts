@@ -1,34 +1,51 @@
-import { computeInsight, insightCacheKey, type InsightResult } from "@/lib/insight";
-import type { HousingTypeId } from "@/lib/types";
+import { z } from "zod";
+import { computeInsight, insightCacheKey, isFreshInsight, type InsightResult } from "@/lib/insight";
 import seedCache from "@/lib/insight-cache.json";
 
 export const maxDuration = 30;
 
-// 좌표 기준 캐시 (입지 데이터는 안정적이라 TTL 불필요).
-// 야간 파이프라인이 갱신하는 lib/insight-cache.json 을 시드로 로드 → 대부분 즉시 응답.
+const requestSchema = z.object({
+  lat: z.number().finite().min(-90).max(90).refine((value) => value !== 0),
+  lng: z.number().finite().min(-180).max(180).refine((value) => value !== 0),
+  name: z.string().max(500).optional().default(""),
+  address: z.string().max(1000).optional().default(""),
+  type: z.enum(["happy", "nation", "public", "rental", "integ", "perm", "buy", "jeonse", "fifty", "sale", "youth"]).optional(),
+});
+
+// 구버전·만료 시드는 버린다. 정상 AI 요약 24시간, 데이터 대체 응답은 1분만 재사용한다.
 const cache = new Map<string, InsightResult>(
-  Object.entries(seedCache as unknown as Record<string, InsightResult>),
+  Object.entries(seedCache as unknown as Record<string, InsightResult>).filter(([, value]) => isFreshInsight(value)),
 );
+const pending = new Map<string, Promise<InsightResult>>();
 
 export async function POST(req: Request) {
-  let body: { lat?: number; lng?: number; name?: string; address?: string; type?: HousingTypeId };
+  let json: unknown;
   try {
-    body = await req.json();
+    json = await req.json();
   } catch {
-    return Response.json({ error: "잘못된 요청" }, { status: 400 });
+    return Response.json({ error: "잘못된 요청입니다." }, { status: 400 });
   }
-  const { lat, lng, name = "", address = "", type } = body;
-  if (!lat || !lng) return Response.json({ error: "좌표가 없습니다" }, { status: 400 });
-
-  const ckey = insightCacheKey(lat, lng, type);
-  const cached = cache.get(ckey);
-  if (cached) return Response.json(cached);
+  const parsed = requestSchema.safeParse(json);
+  if (!parsed.success) return Response.json({ error: "유효한 좌표와 공고 정보를 입력해 주세요." }, { status: 400 });
+  const { lat, lng, name, address, type } = parsed.data;
+  const key = insightCacheKey(lat, lng, type);
+  const cached = cache.get(key);
+  if (isFreshInsight(cached)) return Response.json(cached);
+  cache.delete(key);
 
   try {
-    const result = await computeInsight(lat, lng, name, address, type);
-    cache.set(ckey, result);
-    return Response.json(result);
+    let job = pending.get(key);
+    if (!job) {
+      job = computeInsight(lat, lng, name, address, type)
+        .then((result) => {
+          cache.set(key, result);
+          return result;
+        })
+        .finally(() => { pending.delete(key); });
+      pending.set(key, job);
+    }
+    return Response.json(await job);
   } catch {
-    return Response.json({ error: "분석 생성 실패" }, { status: 502 });
+    return Response.json({ error: "주변 정보를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요." }, { status: 502 });
   }
 }

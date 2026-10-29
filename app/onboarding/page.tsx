@@ -8,57 +8,35 @@ import { INITIAL_FORM } from "@/components/eligibility-fields";
 import { saveProfile } from "@/lib/profile";
 import { Button } from "@/components/button";
 import type { EligibilityForm } from "@/lib/eligibility";
-import type { IconType } from "react-icons";
-import {
-  MdOutlineWavingHand,
-  MdOutlineFavorite,
-  MdOutlineFamilyRestroom,
-  MdOutlineVpnKey,
-  MdOutlineStars,
-  MdOutlinePayments,
-  MdOutlineSavings,
-  MdOutlineLocationOn,
-  MdOutlineCelebration,
-} from "react-icons/md";
+import { DdsIcon, type DdsIconName } from "@/components/dds-icon";
 
 // 풀스텝 온보딩: 한 화면 = 한 질문 = 한 아이콘.
-// 단계별 아이콘은 블루 그라데이션 원 안에 흰색 글리프로 표시.
+// DDS의 상태 배경과 공식 아이콘을 단계별 안내에 사용합니다.
 
 type StepKey = "age" | "married" | "household" | "houseOwner" | "special" | "income" | "assets" | "region";
 
 const STEPS: {
   key: StepKey;
-  Icon: IconType;
-  grad: [string, string];
+  icon: DdsIconName;
   title: string;
   sub?: string;
   valid: (f: EligibilityForm) => boolean;
 }[] = [
-  // 그라데이션은 Daum 액센트 팔레트 기준 (Blue/Red/Green/Orange/Purple).
-  { key: "age", Icon: MdOutlineWavingHand, grad: ["#1E84FF", "#47A9FF"], title: "나이가 어떻게 되세요?", sub: "만 나이 기준", valid: (f) => !!f.age },
-  { key: "married", Icon: MdOutlineFavorite, grad: ["#FF4E33", "#FF7A66"], title: "혼인 상태를 알려주세요", sub: "예비부부도 신청할 수 있어요", valid: (f) => !!f.married },
-  { key: "household", Icon: MdOutlineFamilyRestroom, grad: ["#18BA45", "#3ECF6E"], title: "세대 구성원은 몇 명인가요?", sub: "본인 포함", valid: () => true },
-  { key: "houseOwner", Icon: MdOutlineVpnKey, grad: ["#FF9429", "#FFB35E"], title: "주택을 소유하고 있나요?", sub: "세대 구성원 전원 기준", valid: () => true },
-  { key: "special", Icon: MdOutlineStars, grad: ["#A05CFF", "#BC8AFF"], title: "해당하는 조건이 있나요?", sub: "선택하면 우선공급 대상이 될 수 있어요 · 없으면 건너뛰기", valid: () => true },
-  { key: "income", Icon: MdOutlinePayments, grad: ["#9557C0", "#B07FD8"], title: "세대 월평균 소득은요?", sub: "세전, 세대원 합산 (상여 포함)", valid: (f) => f.income !== "" },
-  { key: "assets", Icon: MdOutlineSavings, grad: ["#0F9D58", "#18BA45"], title: "세대 총자산은 얼마인가요?", sub: "부동산·금융·자동차 합산 (부채 차감)", valid: (f) => f.assets !== "" },
-  { key: "region", Icon: MdOutlineLocationOn, grad: ["#FF6B5C", "#FF8A73"], title: "어디에 거주하세요?", sub: "현재 거주 중인 지역을 선택해주세요", valid: () => true },
+  { key: "age", icon: "person", title: "나이가 어떻게 되세요?", sub: "만 나이 기준", valid: (f) => !!f.age },
+  { key: "married", icon: "like", title: "혼인 상태를 알려주세요", sub: "예비부부도 신청할 수 있어요", valid: (f) => !!f.married },
+  { key: "household", icon: "community", title: "세대 구성원은 몇 명인가요?", sub: "본인 포함", valid: () => true },
+  { key: "houseOwner", icon: "home", title: "주택을 소유하고 있나요?", sub: "세대 구성원 전원 기준", valid: () => true },
+  { key: "special", icon: "star", title: "해당하는 조건이 있나요?", sub: "선택하면 우선공급 대상이 될 수 있어요 · 없으면 건너뛰기", valid: () => true },
+  { key: "income", icon: "payment", title: "세대 월평균 소득은요?", sub: "세전, 세대원 합산 (상여 포함)", valid: (f) => f.income !== "" },
+  { key: "assets", icon: "money", title: "세대 총자산은 얼마인가요?", sub: "부동산·금융·자동차 합산 (부채 차감)", valid: (f) => f.assets !== "" },
+  { key: "region", icon: "map", title: "어디에 거주하세요?", sub: "현재 거주 중인 지역을 선택해주세요", valid: () => true },
 ];
 
-const DONE_GRAD: [string, string] = ["#A05CFF", "#1E84FF"];
-
-function Mascot({ Icon, grad }: { Icon: IconType; grad: [string, string] }) {
+function Mascot({ icon }: { icon: DdsIconName }) {
   return (
     <div className="ob-mascot">
-      <div
-        className="ob-mascot-ph"
-        aria-hidden
-        style={{
-          background: `linear-gradient(160deg, ${grad[0]}, ${grad[1]})`,
-          boxShadow: `0 12px 28px ${grad[0]}52`,
-        }}
-      >
-        <Icon />
+      <div className="ob-mascot-ph" aria-hidden style={{ background: "var(--dds-background-state-info-subtle)", color: "var(--dds-text-state-info)", boxShadow: "none" }}>
+        <DdsIcon name={icon} size={48} />
       </div>
     </div>
   );
@@ -76,7 +54,7 @@ function Seg<T extends string>({
   return (
     <div className="eli-seg">
       {options.map((o) => (
-        <button key={o.v} className={value === o.v ? "on" : ""} onClick={() => onChange(o.v)}>
+        <button type="button" key={o.v} aria-pressed={value === o.v} className={value === o.v ? "on" : ""} onClick={() => onChange(o.v)}>
           {o.label}
         </button>
       ))}
@@ -151,7 +129,7 @@ export default function OnboardingPage() {
       <div className="ob">
         <div className="ob-main">
           <div className="ob-card">
-            <Mascot Icon={MdOutlineCelebration} grad={DONE_GRAD} />
+            <Mascot icon="check" />
             <h1 className="ob-q">자격 입력 완료!</h1>
             <p className="ob-q-sub">이제 신청 가능한 공공임대만 골라서 보여드릴게요.</p>
             <div className="ob-foot">
@@ -180,7 +158,7 @@ export default function OnboardingPage() {
 
       <div className="ob-main">
         <div className="ob-card" key={step.key}>
-          <Mascot Icon={step.Icon} grad={step.grad} />
+          <Mascot icon={step.icon} />
           <h1 className="ob-q">{step.title}</h1>
           <p className="ob-q-sub">{step.sub ?? " "}</p>
 
@@ -250,7 +228,7 @@ export default function OnboardingPage() {
                   ]}
                 />
                 {form.houseOwner === "yes" && (
-                  <div className="eli-warn">⚠️ 유주택 세대는 공공임대 신청이 원칙적으로 불가합니다.</div>
+                  <div className="eli-warn"><DdsIcon name="exclamation" size={20} /> 유주택 세대는 공공임대 신청이 원칙적으로 불가합니다.</div>
                 )}
               </>
             )}
@@ -259,6 +237,8 @@ export default function OnboardingPage() {
               <div className="eli-chips">
                 {SPECIAL_OPTIONS.map((c) => (
                   <button
+                    type="button"
+                    aria-pressed={form.specialCase.includes(c.v)}
                     key={c.v}
                     className={`eli-chip ${form.specialCase.includes(c.v) ? "on" : ""}`}
                     onClick={() => toggleSpecial(c.v)}
