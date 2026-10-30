@@ -1,5 +1,189 @@
 [
   {
+    "id": "lh-sale-0000061196",
+    "pblancId": "0000061196",
+    "title": "안산신길2 B-1블록 공공분양주택 입주자 모집공고",
+    "noticeTitle": "안산신길2 B-1블록 공공분양주택 입주자 모집공고",
+    "type": "sale",
+    "scope": "single",
+    "agency": "LH",
+    "district": "경기도",
+    "districtId": "gyeonggi",
+    "status": "upcoming",
+    "deadline": "2026.11.18",
+    "announceDate": "2026.10.30",
+    "address": "",
+    "lat": 37.3412728,
+    "lng": 126.776292,
+    "geocoded": "official-page",
+    "area": "74.94~84.98",
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "depositRange": null,
+    "rentRange": null,
+    "priceUnverified": true,
+    "priceSource": "lh-official-table",
+    "complexes": [
+      {
+        "name": null,
+        "rows": [
+          {
+            "houseType": "74.9400A",
+            "area": 74.94,
+            "supplyTotal": 80,
+            "supplyThisRound": 80,
+            "deposit": null,
+            "rent": null
+          },
+          {
+            "houseType": "84.7100A",
+            "area": 84.71,
+            "supplyTotal": 110,
+            "supplyThisRound": 110,
+            "deposit": null,
+            "rent": null
+          },
+          {
+            "houseType": "84.9800B",
+            "area": 84.98,
+            "supplyTotal": 112,
+            "supplyThisRound": 112,
+            "deposit": null,
+            "rent": null
+          },
+          {
+            "houseType": "84.8700D",
+            "area": 84.87,
+            "supplyTotal": 62,
+            "supplyThisRound": 62,
+            "deposit": null,
+            "rent": null
+          },
+          {
+            "houseType": "84.5300G",
+            "area": 84.53,
+            "supplyTotal": 6,
+            "supplyThisRound": 6,
+            "deposit": null,
+            "rent": null
+          },
+          {
+            "houseType": "84.4400H",
+            "area": 84.44,
+            "supplyTotal": 5,
+            "supplyThisRound": 5,
+            "deposit": null,
+            "rent": null
+          },
+          {
+            "houseType": "84.5400I",
+            "area": 84.54,
+            "supplyTotal": 4,
+            "supplyThisRound": 4,
+            "deposit": null,
+            "rent": null
+          },
+          {
+            "houseType": "84.9800J",
+            "area": 84.98,
+            "supplyTotal": 8,
+            "supplyThisRound": 8,
+            "deposit": null,
+            "rent": null
+          }
+        ],
+        "lat": 37.3412728,
+        "lng": 126.776292
+      }
+    ],
+    "salePriceManwon": 50429.6,
+    "supplyUnits": 387,
+    "totalUnits": 387,
+    "complexName": null,
+    "pnu": null,
+    "houseType": null,
+    "heatMethod": null,
+    "parkngCo": null,
+    "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/10/29/2026102969214931.jpg",
+    "coverPhotoLocal": "/lh-covers/lh-sale-0000061196.jpg",
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061196&ccrCnntSysDsCd=02&uppAisTpCd=05&aisTpCd=05&mi=1027",
+    "thumbSeed": 0,
+    "beginDate": "2026.11.09",
+    "detailFetchedAt": "2026-10-30T20:07:51.396Z"
+  },
+  {
+    "id": "lh-sale-0000061198",
+    "pblancId": "0000061198",
+    "title": "인천가정2 B2블록 공공분양 잔여세대 입주자모집공고(순번추첨 동호지정)",
+    "noticeTitle": "인천가정2 B2블록 공공분양 잔여세대 입주자모집공고(순번추첨 동호지정)",
+    "type": "sale",
+    "scope": "single",
+    "agency": "LH",
+    "district": "인천광역시",
+    "districtId": "incheon",
+    "status": "upcoming",
+    "deadline": "2026.11.10",
+    "announceDate": "2026.10.30",
+    "address": "",
+    "lat": 37.5357383,
+    "lng": 126.6680565,
+    "geocoded": "official-page",
+    "area": "84.53~84.98",
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "depositRange": null,
+    "rentRange": null,
+    "priceUnverified": true,
+    "priceSource": "lh-official-table",
+    "complexes": [
+      {
+        "name": null,
+        "rows": [
+          {
+            "houseType": "84.0000A",
+            "area": 84.53,
+            "supplyTotal": 187,
+            "supplyThisRound": 151,
+            "deposit": null,
+            "rent": null
+          },
+          {
+            "houseType": "84.0000B",
+            "area": 84.59,
+            "supplyTotal": 58,
+            "supplyThisRound": 58,
+            "deposit": null,
+            "rent": null
+          },
+          {
+            "houseType": "84.9800C",
+            "area": 84.98,
+            "supplyTotal": 22,
+            "supplyThisRound": 22,
+            "deposit": null,
+            "rent": null
+          }
+        ],
+        "lat": 37.5357383,
+        "lng": 126.6680565
+      }
+    ],
+    "salePriceManwon": 61288.4,
+    "supplyUnits": 231,
+    "totalUnits": 267,
+    "complexName": null,
+    "pnu": null,
+    "houseType": null,
+    "heatMethod": null,
+    "parkngCo": null,
+    "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/10/30/2026041466442005.jpg",
+    "coverPhotoLocal": "/lh-covers/lh-sale-0000061198.jpg",
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061198&ccrCnntSysDsCd=02&uppAisTpCd=05&aisTpCd=05&mi=1027",
+    "thumbSeed": 1,
+    "beginDate": "2026.11.09",
+    "detailFetchedAt": "2026-10-30T20:07:51.977Z"
+  },
+  {
     "id": "lh-sale-0000061195",
     "pblancId": "0000061195",
     "title": "[정정공고]시흥거모 S-1블록 공공분양주택 입주자모집공고",
@@ -68,9 +252,9 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/10/27/2026102269101495.jpg",
     "coverPhotoLocal": "/lh-covers/lh-sale-0000061195.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061195&ccrCnntSysDsCd=02&uppAisTpCd=05&aisTpCd=05&mi=1027",
-    "thumbSeed": 0,
+    "thumbSeed": 2,
     "beginDate": "2026.11.02",
-    "detailFetchedAt": "2026-10-29T20:23:43.266Z"
+    "detailFetchedAt": "2026-10-30T20:07:51.991Z"
   },
   {
     "id": "lh-sale-2015122300020961",
@@ -157,8 +341,8 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020961&ccrCnntSysDsCd=03&uppAisTpCd=05&aisTpCd=05&mi=1027",
-    "thumbSeed": 1,
-    "detailFetchedAt": "2026-10-29T20:23:43.634Z"
+    "thumbSeed": 3,
+    "detailFetchedAt": "2026-10-30T20:07:52.131Z"
   },
   {
     "id": "lh-sale-0000061186",
@@ -229,9 +413,9 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/10/22/2026102269101495.jpg",
     "coverPhotoLocal": "/lh-covers/lh-sale-0000061186.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061186&ccrCnntSysDsCd=02&uppAisTpCd=05&aisTpCd=05&mi=1027",
-    "thumbSeed": 2,
+    "thumbSeed": 4,
     "beginDate": "2026.11.02",
-    "detailFetchedAt": "2026-10-29T20:23:43.204Z"
+    "detailFetchedAt": "2026-10-30T20:07:51.453Z"
   },
   {
     "id": "lh-sale-2015122300020906",
@@ -318,85 +502,8 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020906&ccrCnntSysDsCd=03&uppAisTpCd=05&aisTpCd=05&mi=1027",
-    "thumbSeed": 3,
-    "detailFetchedAt": "2026-10-29T20:23:43.459Z"
-  },
-  {
-    "id": "lh-sale-0000061183",
-    "pblancId": "0000061183",
-    "title": "[정정공고]인천가정2 B2블록 공공분양 잔여세대 추가 입주자모집공고",
-    "noticeTitle": "[정정공고]인천가정2 B2블록 공공분양 잔여세대 추가 입주자모집공고",
-    "type": "sale",
-    "scope": "single",
-    "agency": "LH",
-    "district": "인천광역시",
-    "districtId": "incheon",
-    "status": "closed",
-    "deadline": "2026.10.07",
-    "announceDate": "2026.09.30",
-    "winnerAt": "2026.10.08",
-    "address": "",
-    "lat": null,
-    "lng": null,
-    "geocoded": "none",
-    "area": "",
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "depositRange": null,
-    "rentRange": null,
-    "priceUnverified": true,
-    "priceSource": "lh-api",
-    "complexes": [
-      {
-        "name": null,
-        "rows": [
-          {
-            "houseType": "74.9500A",
-            "area": null,
-            "deposit": null,
-            "rent": null,
-            "supplyTotal": null,
-            "supplyThisRound": null
-          },
-          {
-            "houseType": "84.0000A",
-            "area": null,
-            "deposit": null,
-            "rent": null,
-            "supplyTotal": null,
-            "supplyThisRound": null
-          },
-          {
-            "houseType": "84.0000B",
-            "area": null,
-            "deposit": null,
-            "rent": null,
-            "supplyTotal": null,
-            "supplyThisRound": null
-          },
-          {
-            "houseType": "84.9800C",
-            "area": null,
-            "deposit": null,
-            "rent": null,
-            "supplyTotal": null,
-            "supplyThisRound": null
-          }
-        ]
-      }
-    ],
-    "salePriceManwon": 54977.7,
-    "supplyUnits": null,
-    "totalUnits": null,
-    "complexName": null,
-    "pnu": null,
-    "houseType": null,
-    "heatMethod": null,
-    "parkngCo": null,
-    "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/09/30/2026041466442005.jpg",
-    "coverPhotoLocal": "/lh-covers/lh-sale-0000061183.jpg",
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061183&ccrCnntSysDsCd=02&uppAisTpCd=05&aisTpCd=05&mi=1027",
-    "thumbSeed": 4
+    "thumbSeed": 5,
+    "detailFetchedAt": "2026-10-30T20:07:52.491Z"
   },
   {
     "id": "lh-sale-2015122300020860",
@@ -601,7 +708,84 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020860&ccrCnntSysDsCd=03&uppAisTpCd=05&aisTpCd=05&mi=1027",
-    "thumbSeed": 5
+    "thumbSeed": 6
+  },
+  {
+    "id": "lh-sale-0000061183",
+    "pblancId": "0000061183",
+    "title": "[정정공고]인천가정2 B2블록 공공분양 잔여세대 추가 입주자모집공고",
+    "noticeTitle": "[정정공고]인천가정2 B2블록 공공분양 잔여세대 추가 입주자모집공고",
+    "type": "sale",
+    "scope": "single",
+    "agency": "LH",
+    "district": "인천광역시",
+    "districtId": "incheon",
+    "status": "closed",
+    "deadline": "2026.10.07",
+    "announceDate": "2026.09.30",
+    "winnerAt": "2026.10.08",
+    "address": "",
+    "lat": null,
+    "lng": null,
+    "geocoded": "none",
+    "area": "",
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "depositRange": null,
+    "rentRange": null,
+    "priceUnverified": true,
+    "priceSource": "lh-api",
+    "complexes": [
+      {
+        "name": null,
+        "rows": [
+          {
+            "houseType": "74.9500A",
+            "area": null,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          },
+          {
+            "houseType": "84.0000A",
+            "area": null,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          },
+          {
+            "houseType": "84.0000B",
+            "area": null,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          },
+          {
+            "houseType": "84.9800C",
+            "area": null,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          }
+        ]
+      }
+    ],
+    "salePriceManwon": 54977.7,
+    "supplyUnits": null,
+    "totalUnits": null,
+    "complexName": null,
+    "pnu": null,
+    "houseType": null,
+    "heatMethod": null,
+    "parkngCo": null,
+    "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/09/30/2026041466442005.jpg",
+    "coverPhotoLocal": "/lh-covers/lh-sale-0000061183.jpg",
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061183&ccrCnntSysDsCd=02&uppAisTpCd=05&aisTpCd=05&mi=1027",
+    "thumbSeed": 7
   },
   {
     "id": "lh-sale-2015122300020823",
@@ -656,8 +840,8 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020823&ccrCnntSysDsCd=03&uppAisTpCd=05&aisTpCd=05&mi=1027",
-    "thumbSeed": 6,
-    "detailFetchedAt": "2026-10-29T20:23:43.994Z"
+    "thumbSeed": 8,
+    "detailFetchedAt": "2026-10-30T20:07:52.371Z"
   },
   {
     "id": "lh-sale-0000061180",
@@ -718,7 +902,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/09/22/2025092963731514.jpg",
     "coverPhotoLocal": "/lh-covers/lh-sale-0000061180.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061180&ccrCnntSysDsCd=02&uppAisTpCd=05&aisTpCd=05&mi=1027",
-    "thumbSeed": 7
+    "thumbSeed": 9
   },
   {
     "id": "lh-sale-0000061182",
@@ -795,7 +979,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/09/23/2026041466442005.jpg",
     "coverPhotoLocal": "/lh-covers/lh-sale-0000061182.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061182&ccrCnntSysDsCd=02&uppAisTpCd=05&aisTpCd=05&mi=1027",
-    "thumbSeed": 8
+    "thumbSeed": 10
   },
   {
     "id": "lh-sale-2015122300020799",
@@ -866,8 +1050,8 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020799&ccrCnntSysDsCd=03&uppAisTpCd=05&aisTpCd=05&mi=1027",
-    "thumbSeed": 9,
-    "detailFetchedAt": "2026-10-29T20:23:44.263Z"
+    "thumbSeed": 11,
+    "detailFetchedAt": "2026-10-30T20:07:52.842Z"
   },
   {
     "id": "lh-sale-2015122300020598",
@@ -944,7 +1128,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload/LSP/OLD/ftproot/Apt/1281/효천주공A-1BL_조감도점선(기본.jpg",
     "coverPhotoLocal": "/lh-covers/lh-sale-2015122300020598.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020598&ccrCnntSysDsCd=03&uppAisTpCd=05&aisTpCd=05&mi=1027",
-    "thumbSeed": 10
+    "thumbSeed": 12
   },
   {
     "id": "lh-sale-0000061178",
@@ -983,7 +1167,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061178&ccrCnntSysDsCd=02&uppAisTpCd=05&aisTpCd=05&mi=1027",
-    "thumbSeed": 11
+    "thumbSeed": 13
   },
   {
     "id": "lh-sale-2015122300020766",
@@ -1036,7 +1220,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020766&ccrCnntSysDsCd=03&uppAisTpCd=05&aisTpCd=05&mi=1027",
-    "thumbSeed": 12
+    "thumbSeed": 14
   },
   {
     "id": "lh-sale-0000061174",
@@ -1185,7 +1369,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/09/14/2026091468594546.jpg",
     "coverPhotoLocal": "/lh-covers/lh-sale-0000061174.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061174&ccrCnntSysDsCd=02&uppAisTpCd=05&aisTpCd=05&mi=1027",
-    "thumbSeed": 13
+    "thumbSeed": 15
   },
   {
     "id": "lh-sale-0000061171",
@@ -1223,7 +1407,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061171&ccrCnntSysDsCd=02&uppAisTpCd=05&aisTpCd=05&mi=1027",
-    "thumbSeed": 14
+    "thumbSeed": 16
   },
   {
     "id": "lh-sale-2015122300020606",
@@ -1300,7 +1484,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020606&ccrCnntSysDsCd=03&uppAisTpCd=05&aisTpCd=05&mi=1027",
-    "thumbSeed": 15
+    "thumbSeed": 17
   },
   {
     "id": "lh-sale-0000061168",
@@ -1385,7 +1569,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/09/01/2026082768327666.jpg",
     "coverPhotoLocal": "/lh-covers/lh-sale-0000061168.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061168&ccrCnntSysDsCd=02&uppAisTpCd=05&aisTpCd=05&mi=1027",
-    "thumbSeed": 16
+    "thumbSeed": 18
   },
   {
     "id": "lh-sale-0000061167",
@@ -1534,7 +1718,143 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/08/31/2026083168371586.jpg",
     "coverPhotoLocal": "/lh-covers/lh-sale-0000061167.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061167&ccrCnntSysDsCd=02&uppAisTpCd=05&aisTpCd=05&mi=1027",
-    "thumbSeed": 17
+    "thumbSeed": 19
+  },
+  {
+    "id": "lh-rental-2015122300020993",
+    "pblancId": "2015122300020993",
+    "title": "평창장평 통합공공임대주택(고령자복지형) 입주자 모집",
+    "noticeTitle": "평창장평 통합공공임대주택(고령자복지형) 입주자 모집",
+    "type": "integ",
+    "scope": "single",
+    "agency": "LH",
+    "district": "강원특별자치도",
+    "districtId": "gangwon",
+    "status": "upcoming",
+    "deadline": "2026.11.20",
+    "announceDate": "2026.10.30",
+    "winnerAt": "2027.04.09",
+    "address": "",
+    "lat": 37.5823201,
+    "lng": 128.4123611,
+    "geocoded": "official-page",
+    "area": "31.96",
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "depositRange": null,
+    "rentRange": null,
+    "priceUnverified": true,
+    "priceSource": "lh-official-table",
+    "complexes": [
+      {
+        "name": null,
+        "rows": [
+          {
+            "houseType": "31B",
+            "area": 31.96,
+            "supplyTotal": 32,
+            "supplyThisRound": 32,
+            "deposit": null,
+            "rent": null
+          },
+          {
+            "houseType": "31S",
+            "area": 31.96,
+            "supplyTotal": 4,
+            "supplyThisRound": 4,
+            "deposit": null,
+            "rent": null
+          }
+        ],
+        "lat": 37.5823201,
+        "lng": 128.4123611
+      }
+    ],
+    "salePriceManwon": null,
+    "supplyUnits": 36,
+    "totalUnits": 36,
+    "complexName": null,
+    "pnu": null,
+    "houseType": null,
+    "heatMethod": null,
+    "parkngCo": null,
+    "coverPhotoUrl": null,
+    "coverPhotoLocal": null,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020993&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=48&mi=1026",
+    "thumbSeed": 20,
+    "detailFetchedAt": "2026-10-30T20:07:53.399Z"
+  },
+  {
+    "id": "lh-rental-2015122300020992",
+    "pblancId": "2015122300020992",
+    "title": "평창장평 통합공공임대주택(일반형) 입주자 모집",
+    "noticeTitle": "평창장평 통합공공임대주택(일반형) 입주자 모집",
+    "type": "integ",
+    "scope": "single",
+    "agency": "LH",
+    "district": "강원특별자치도",
+    "districtId": "gangwon",
+    "status": "upcoming",
+    "deadline": "2026.11.20",
+    "announceDate": "2026.10.30",
+    "winnerAt": "2027.04.09",
+    "address": "",
+    "lat": 37.5823201,
+    "lng": 128.4123611,
+    "geocoded": "official-page",
+    "area": "31.96~46.99",
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "depositRange": null,
+    "rentRange": null,
+    "priceUnverified": true,
+    "priceSource": "lh-official-table",
+    "complexes": [
+      {
+        "name": null,
+        "rows": [
+          {
+            "houseType": "31A",
+            "area": 31.96,
+            "supplyTotal": 7,
+            "supplyThisRound": 7,
+            "deposit": null,
+            "rent": null
+          },
+          {
+            "houseType": "36A",
+            "area": 36.95,
+            "supplyTotal": 18,
+            "supplyThisRound": 18,
+            "deposit": null,
+            "rent": null
+          },
+          {
+            "houseType": "46A",
+            "area": 46.99,
+            "supplyTotal": 7,
+            "supplyThisRound": 7,
+            "deposit": null,
+            "rent": null
+          }
+        ],
+        "lat": 37.5823201,
+        "lng": 128.4123611
+      }
+    ],
+    "salePriceManwon": null,
+    "supplyUnits": 32,
+    "totalUnits": 32,
+    "complexName": null,
+    "pnu": null,
+    "houseType": null,
+    "heatMethod": null,
+    "parkngCo": null,
+    "coverPhotoUrl": null,
+    "coverPhotoLocal": null,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020992&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=48&mi=1026",
+    "thumbSeed": 21,
+    "detailFetchedAt": "2026-10-30T20:07:53.547Z"
   },
   {
     "id": "lh-rental-2015122300020905",
@@ -1613,8 +1933,8 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2025/LSE/09/29/2025092963727410.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020905.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020905&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=48&mi=1026",
-    "thumbSeed": 18,
-    "detailFetchedAt": "2026-10-29T20:23:44.741Z"
+    "thumbSeed": 22,
+    "detailFetchedAt": "2026-10-30T20:07:53.719Z"
   },
   {
     "id": "lh-rental-0000061193",
@@ -1684,9 +2004,9 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/10/23/2017112730530421.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-0000061193.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061193&ccrCnntSysDsCd=02&uppAisTpCd=06&aisTpCd=08&mi=1026",
-    "thumbSeed": 19,
+    "thumbSeed": 23,
     "beginDate": "2026.11.16",
-    "detailFetchedAt": "2026-10-29T20:23:44.724Z"
+    "detailFetchedAt": "2026-10-30T20:07:53.700Z"
   },
   {
     "id": "lh-rental-2015122300020960",
@@ -1829,8 +2149,8 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/LSE/10/22/2026102269101985.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020960.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020960&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 20,
-    "detailFetchedAt": "2026-10-29T20:23:45.200Z"
+    "thumbSeed": 24,
+    "detailFetchedAt": "2026-10-30T20:07:53.818Z"
   },
   {
     "id": "lh-rental-2015122300020963",
@@ -1901,8 +2221,8 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020963&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 21,
-    "detailFetchedAt": "2026-10-29T20:23:45.169Z"
+    "thumbSeed": 25,
+    "detailFetchedAt": "2026-10-30T20:07:54.466Z"
   },
   {
     "id": "lh-rental-2015122300020985",
@@ -1954,7 +2274,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020985&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 22
+    "thumbSeed": 26
   },
   {
     "id": "lh-rental-2015122300020981",
@@ -2009,8 +2329,8 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020981&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 23,
-    "detailFetchedAt": "2026-10-29T20:23:45.369Z"
+    "thumbSeed": 27,
+    "detailFetchedAt": "2026-10-30T20:07:54.547Z"
   },
   {
     "id": "lh-rental-2015122300020980",
@@ -2065,8 +2385,8 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020980&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 24,
-    "detailFetchedAt": "2026-10-29T20:23:45.756Z"
+    "thumbSeed": 28,
+    "detailFetchedAt": "2026-10-30T20:07:54.748Z"
   },
   {
     "id": "lh-rental-2015122300020979",
@@ -2121,8 +2441,8 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020979&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 25,
-    "detailFetchedAt": "2026-10-29T20:23:45.772Z"
+    "thumbSeed": 29,
+    "detailFetchedAt": "2026-10-30T20:07:54.706Z"
   },
   {
     "id": "lh-rental-2015122300020978",
@@ -2185,8 +2505,8 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020978&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 26,
-    "detailFetchedAt": "2026-10-29T20:23:46.058Z"
+    "thumbSeed": 30,
+    "detailFetchedAt": "2026-10-30T20:07:54.825Z"
   },
   {
     "id": "lh-rental-2015122300020977",
@@ -2249,8 +2569,8 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020977&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 27,
-    "detailFetchedAt": "2026-10-29T20:23:46.236Z"
+    "thumbSeed": 31,
+    "detailFetchedAt": "2026-10-30T20:07:55.351Z"
   },
   {
     "id": "lh-rental-2015122300020976",
@@ -2305,8 +2625,8 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020976&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 28,
-    "detailFetchedAt": "2026-10-29T20:23:46.478Z"
+    "thumbSeed": 32,
+    "detailFetchedAt": "2026-10-30T20:07:55.404Z"
   },
   {
     "id": "lh-rental-2015122300020958",
@@ -2761,8 +3081,8 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2022/LSE/06/30/2022063049033207.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020958.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020958&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 29,
-    "detailFetchedAt": "2026-10-29T20:23:48.189Z"
+    "thumbSeed": 33,
+    "detailFetchedAt": "2026-10-30T20:07:57.027Z"
   },
   {
     "id": "lh-rental-0000061188",
@@ -2856,9 +3176,9 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061188&ccrCnntSysDsCd=02&uppAisTpCd=06&aisTpCd=08&mi=1026",
-    "thumbSeed": 30,
+    "thumbSeed": 34,
     "beginDate": "2026.11.10",
-    "detailFetchedAt": "2026-10-29T20:23:46.772Z"
+    "detailFetchedAt": "2026-10-30T20:07:55.540Z"
   },
   {
     "id": "lh-rental-2015122300020932",
@@ -2937,8 +3257,8 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020932&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 31,
-    "detailFetchedAt": "2026-10-29T20:23:47.126Z"
+    "thumbSeed": 35,
+    "detailFetchedAt": "2026-10-30T20:07:55.885Z"
   },
   {
     "id": "lh-rental-2015122300020971",
@@ -2993,8 +3313,8 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020971&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 32,
-    "detailFetchedAt": "2026-10-29T20:23:47.076Z"
+    "thumbSeed": 36,
+    "detailFetchedAt": "2026-10-30T20:07:56.384Z"
   },
   {
     "id": "lh-rental-2015122300020970",
@@ -3049,8 +3369,8 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020970&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 33,
-    "detailFetchedAt": "2026-10-29T20:23:47.508Z"
+    "thumbSeed": 37,
+    "detailFetchedAt": "2026-10-30T20:07:56.235Z"
   },
   {
     "id": "lh-rental-2015122300020969",
@@ -3113,8 +3433,8 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020969&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 34,
-    "detailFetchedAt": "2026-10-29T20:23:47.819Z"
+    "thumbSeed": 38,
+    "detailFetchedAt": "2026-10-30T20:07:56.581Z"
   },
   {
     "id": "lh-rental-2015122300020968",
@@ -3177,8 +3497,8 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020968&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 35,
-    "detailFetchedAt": "2026-10-29T20:23:48.086Z"
+    "thumbSeed": 39,
+    "detailFetchedAt": "2026-10-30T20:07:56.915Z"
   },
   {
     "id": "lh-rental-2015122300020967",
@@ -3233,8 +3553,8 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020967&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 36,
-    "detailFetchedAt": "2026-10-29T20:23:48.171Z"
+    "thumbSeed": 40,
+    "detailFetchedAt": "2026-10-30T20:07:57.252Z"
   },
   {
     "id": "lh-rental-2015122300020966",
@@ -3289,8 +3609,8 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020966&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 37,
-    "detailFetchedAt": "2026-10-29T20:23:48.541Z"
+    "thumbSeed": 41,
+    "detailFetchedAt": "2026-10-30T20:07:57.412Z"
   },
   {
     "id": "lh-rental-2015122300020964",
@@ -3342,7 +3662,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020964&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=08&mi=1026",
-    "thumbSeed": 38
+    "thumbSeed": 42
   },
   {
     "id": "lh-rental-2015122300020959",
@@ -3397,8 +3717,8 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020959&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 39,
-    "detailFetchedAt": "2026-10-29T20:23:48.852Z"
+    "thumbSeed": 43,
+    "detailFetchedAt": "2026-10-30T20:07:57.575Z"
   },
   {
     "id": "lh-rental-2015122300020943",
@@ -3450,7 +3770,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020943&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 40
+    "thumbSeed": 44
   },
   {
     "id": "lh-rental-2015122300020940",
@@ -3502,7 +3822,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020940&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 41
+    "thumbSeed": 45
   },
   {
     "id": "lh-rental-2015122300020939",
@@ -3562,7 +3882,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020939&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 42
+    "thumbSeed": 46
   },
   {
     "id": "lh-rental-2015122300020941",
@@ -3614,7 +3934,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020941&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 43
+    "thumbSeed": 47
   },
   {
     "id": "lh-rental-2015122300020942",
@@ -3674,7 +3994,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020942&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 44
+    "thumbSeed": 48
   },
   {
     "id": "lh-rental-0000061191",
@@ -3828,7 +4148,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/10/22/2016093027456072.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-0000061191.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061191&ccrCnntSysDsCd=02&uppAisTpCd=06&aisTpCd=08&mi=1026",
-    "thumbSeed": 45
+    "thumbSeed": 49
   },
   {
     "id": "lh-rental-0000061190",
@@ -3890,9 +4210,9 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/10/21/2016070626960805.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-0000061190.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061190&ccrCnntSysDsCd=02&uppAisTpCd=06&aisTpCd=08&mi=1026",
-    "thumbSeed": 46,
+    "thumbSeed": 50,
     "beginDate": "2026.11.03",
-    "detailFetchedAt": "2026-10-29T20:23:49.058Z"
+    "detailFetchedAt": "2026-10-30T20:07:57.890Z"
   },
   {
     "id": "lh-rental-2015122300020937",
@@ -3968,7 +4288,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020937&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 47
+    "thumbSeed": 51
   },
   {
     "id": "lh-rental-2015122300020930",
@@ -4030,8 +4350,8 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2016/LSE/06/30/2016063026913652.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020930.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020930&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 48,
-    "detailFetchedAt": "2026-10-29T20:23:49.199Z"
+    "thumbSeed": 52,
+    "detailFetchedAt": "2026-10-30T20:07:58.075Z"
   },
   {
     "id": "lh-rental-0000061187",
@@ -4185,7 +4505,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/10/19/2016093027456072.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-0000061187.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061187&ccrCnntSysDsCd=02&uppAisTpCd=06&aisTpCd=08&mi=1026",
-    "thumbSeed": 49
+    "thumbSeed": 53
   },
   {
     "id": "lh-rental-2015122300020897",
@@ -4248,8 +4568,8 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020897&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 50,
-    "detailFetchedAt": "2026-10-29T20:23:49.235Z"
+    "thumbSeed": 54,
+    "detailFetchedAt": "2026-10-30T20:07:58.369Z"
   },
   {
     "id": "lh-rental-2015122300020925",
@@ -4360,8 +4680,8 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/LSE/10/19/2026101969034611.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020925.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020925&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 51,
-    "detailFetchedAt": "2026-10-29T20:23:49.701Z"
+    "thumbSeed": 55,
+    "detailFetchedAt": "2026-10-30T20:07:58.587Z"
   },
   {
     "id": "lh-rental-2015122300020917",
@@ -4424,8 +4744,8 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2022/LSE/09/28/2022092850222527.JPG",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020917.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020917&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 52,
-    "detailFetchedAt": "2026-10-29T20:23:49.937Z"
+    "thumbSeed": 56,
+    "detailFetchedAt": "2026-10-30T20:07:58.575Z"
   },
   {
     "id": "lh-rental-2015122300020916",
@@ -4512,8 +4832,8 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2021/LSE/03/29/2021032943623807.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020916.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020916&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 53,
-    "detailFetchedAt": "2026-10-29T20:23:50.144Z"
+    "thumbSeed": 57,
+    "detailFetchedAt": "2026-10-30T20:07:58.838Z"
   },
   {
     "id": "lh-rental-2015122300020903",
@@ -4592,8 +4912,8 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2022/LSE/10/25/2022102550572412.JPG",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020903.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020903&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 54,
-    "detailFetchedAt": "2026-10-29T20:23:50.279Z"
+    "thumbSeed": 58,
+    "detailFetchedAt": "2026-10-30T20:07:58.978Z"
   },
   {
     "id": "lh-rental-2015122300020907",
@@ -4605,49 +4925,46 @@
     "agency": "LH",
     "district": "경상남도",
     "districtId": "gyeongnam",
-    "status": "upcoming",
+    "status": "closed",
     "deadline": "2026.10.30",
     "announceDate": "2026.10.16",
-    "winnerAt": "2027.01.22",
     "address": "",
-    "lat": 34.9404159,
-    "lng": 128.0879487,
-    "geocoded": "official-page",
+    "lat": null,
+    "lng": null,
+    "geocoded": "none",
     "area": "26.37~31.32",
     "depositManwon": 0,
     "monthlyRentManwon": 0,
     "depositRange": null,
     "rentRange": null,
     "priceUnverified": true,
-    "priceSource": "lh-official-table",
+    "priceSource": "lh-api",
     "complexes": [
       {
         "name": null,
         "rows": [
           {
-            "houseType": "37.1300",
+            "houseType": "26.37",
             "area": 26.37,
-            "supplyTotal": 298,
-            "supplyThisRound": 110,
             "deposit": null,
-            "rent": null
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
           },
           {
-            "houseType": "42.1900",
+            "houseType": "31.32",
             "area": 31.32,
-            "supplyTotal": 149,
-            "supplyThisRound": 30,
             "deposit": null,
-            "rent": null
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
           }
-        ],
-        "lat": 34.9404159,
-        "lng": 128.0879487
+        ]
       }
     ],
     "salePriceManwon": null,
     "supplyUnits": null,
-    "totalUnits": 447,
+    "totalUnits": null,
     "complexName": null,
     "pnu": null,
     "houseType": null,
@@ -4656,8 +4973,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020907&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 55,
-    "detailFetchedAt": "2026-10-29T20:23:50.249Z"
+    "thumbSeed": 59
   },
   {
     "id": "lh-rental-2015122300020920",
@@ -4725,7 +5041,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2018/LSE/12/24/2018122434328993.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020920.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020920&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 56
+    "thumbSeed": 60
   },
   {
     "id": "lh-rental-2015122300020909",
@@ -4857,7 +5173,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2017/LSE/06/29/2017062929295676.png",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020909.png",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020909&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 57
+    "thumbSeed": 61
   },
   {
     "id": "lh-rental-2015122300020912",
@@ -4869,57 +5185,54 @@
     "agency": "LH",
     "district": "부산광역시",
     "districtId": "busan",
-    "status": "open",
+    "status": "closed",
     "deadline": "2026.10.30",
     "announceDate": "2026.10.15",
-    "winnerAt": "2027.02.17",
     "address": "",
-    "lat": 35.189267,
-    "lng": 128.98555,
-    "geocoded": "official-page",
+    "lat": null,
+    "lng": null,
+    "geocoded": "none",
     "area": "31.1~44.71",
     "depositManwon": 0,
     "monthlyRentManwon": 0,
     "depositRange": null,
     "rentRange": null,
     "priceUnverified": true,
-    "priceSource": "lh-official-table",
+    "priceSource": "lh-api",
     "complexes": [
       {
         "name": null,
         "rows": [
           {
-            "houseType": "31A",
+            "houseType": "31.84",
             "area": 31.84,
-            "supplyTotal": 45,
-            "supplyThisRound": 45,
             "deposit": null,
-            "rent": null
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
           },
           {
-            "houseType": "31AS(주거약자용)",
+            "houseType": "31.1",
             "area": 31.1,
-            "supplyTotal": 5,
-            "supplyThisRound": 5,
             "deposit": null,
-            "rent": null
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
           },
           {
-            "houseType": "44A",
+            "houseType": "44.71",
             "area": 44.71,
-            "supplyTotal": 44,
-            "supplyThisRound": 44,
             "deposit": null,
-            "rent": null
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
           }
-        ],
-        "lat": 35.189267,
-        "lng": 128.98555
+        ]
       }
     ],
     "salePriceManwon": null,
-    "supplyUnits": 94,
-    "totalUnits": 94,
+    "supplyUnits": null,
+    "totalUnits": null,
     "complexName": null,
     "pnu": null,
     "houseType": null,
@@ -4928,8 +5241,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020912&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=48&mi=1026",
-    "thumbSeed": 58,
-    "detailFetchedAt": "2026-10-29T20:23:50.767Z"
+    "thumbSeed": 62
   },
   {
     "id": "lh-rental-2015122300020919",
@@ -5029,7 +5341,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020919&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 59
+    "thumbSeed": 63
   },
   {
     "id": "lh-rental-2015122300020911",
@@ -5137,7 +5449,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2018/LSE/06/29/2018062932514588.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020911.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020911&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 60
+    "thumbSeed": 64
   },
   {
     "id": "lh-rental-2015122300020910",
@@ -5205,7 +5517,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2018/LSE/12/24/2018122434328993.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020910.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020910&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 61
+    "thumbSeed": 65
   },
   {
     "id": "lh-rental-2015122300020888",
@@ -5393,7 +5705,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2019/LSE/03/26/2019032635268057.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020888.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020888&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 62
+    "thumbSeed": 66
   },
   {
     "id": "lh-rental-2015122300020887",
@@ -5461,7 +5773,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2022/LSE/11/29/2022112951087405.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020887.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020887&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 63
+    "thumbSeed": 67
   },
   {
     "id": "lh-rental-2015122300020879",
@@ -5521,7 +5833,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020879&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=08&mi=1026",
-    "thumbSeed": 64
+    "thumbSeed": 68
   },
   {
     "id": "lh-rental-2015122300020904",
@@ -5597,7 +5909,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020904&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 65
+    "thumbSeed": 69
   },
   {
     "id": "lh-rental-2015122300020899",
@@ -5673,7 +5985,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020899&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 66
+    "thumbSeed": 70
   },
   {
     "id": "lh-rental-2015122300020898",
@@ -5726,7 +6038,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020898&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 67
+    "thumbSeed": 71
   },
   {
     "id": "lh-rental-0000061184",
@@ -5808,7 +6120,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061184&ccrCnntSysDsCd=02&uppAisTpCd=06&aisTpCd=08&mi=1026",
-    "thumbSeed": 68
+    "thumbSeed": 72
   },
   {
     "id": "lh-rental-2015122300020895",
@@ -5860,7 +6172,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020895&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=08&mi=1026",
-    "thumbSeed": 69
+    "thumbSeed": 73
   },
   {
     "id": "lh-rental-2015122300020892",
@@ -5920,7 +6232,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020892&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 70
+    "thumbSeed": 74
   },
   {
     "id": "lh-rental-2015122300020893",
@@ -5958,7 +6270,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020893&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 71
+    "thumbSeed": 75
   },
   {
     "id": "lh-rental-2015122300020854",
@@ -6034,7 +6346,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020854&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 72
+    "thumbSeed": 76
   },
   {
     "id": "lh-rental-2015122300020881",
@@ -6182,7 +6494,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2016/LSE/07/05/2016070526952476.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020881.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020881&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 73
+    "thumbSeed": 77
   },
   {
     "id": "lh-rental-2015122300020878",
@@ -6298,7 +6610,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020878&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=48&mi=1026",
-    "thumbSeed": 74
+    "thumbSeed": 78
   },
   {
     "id": "lh-rental-2015122300020874",
@@ -6336,7 +6648,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020874&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 75
+    "thumbSeed": 79
   },
   {
     "id": "lh-rental-2015122300020868",
@@ -6348,49 +6660,46 @@
     "agency": "LH",
     "district": "충청남도",
     "districtId": "chungnam",
-    "status": "upcoming",
+    "status": "closed",
     "deadline": "2026.10.30",
     "announceDate": "2026.10.06",
-    "winnerAt": "2027.02.26",
     "address": "",
-    "lat": 36.7634146,
-    "lng": 127.0149022,
-    "geocoded": "official-page",
+    "lat": null,
+    "lng": null,
+    "geocoded": "none",
     "area": "26.37~31.32",
     "depositManwon": 0,
     "monthlyRentManwon": 0,
     "depositRange": null,
     "rentRange": null,
     "priceUnverified": true,
-    "priceSource": "lh-official-table",
+    "priceSource": "lh-api",
     "complexes": [
       {
         "name": null,
         "rows": [
           {
-            "houseType": "26",
+            "houseType": "26.37",
             "area": 26.37,
-            "supplyTotal": 1074,
-            "supplyThisRound": 200,
             "deposit": null,
-            "rent": null
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
           },
           {
-            "houseType": "45.3400",
+            "houseType": "31.32",
             "area": 31.32,
-            "supplyTotal": 149,
-            "supplyThisRound": 40,
             "deposit": null,
-            "rent": null
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
           }
-        ],
-        "lat": 36.7634146,
-        "lng": 127.0149022
+        ]
       }
     ],
     "salePriceManwon": null,
     "supplyUnits": null,
-    "totalUnits": 1223,
+    "totalUnits": null,
     "complexName": null,
     "pnu": null,
     "houseType": null,
@@ -6399,8 +6708,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020868&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 76,
-    "detailFetchedAt": "2026-10-29T20:23:50.950Z"
+    "thumbSeed": 80
   },
   {
     "id": "lh-rental-2015122300020866",
@@ -6452,7 +6760,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020866&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 77
+    "thumbSeed": 81
   },
   {
     "id": "lh-rental-2015122300020863",
@@ -6600,7 +6908,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2016/LSE/07/05/2016070526952476.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020863.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020863&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 78
+    "thumbSeed": 82
   },
   {
     "id": "lh-rental-2015122300020865",
@@ -6660,7 +6968,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020865&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 79
+    "thumbSeed": 83
   },
   {
     "id": "lh-rental-2015122300020871",
@@ -6712,7 +7020,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2019/LSE/06/21/2019062136223931.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020871.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020871&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 80
+    "thumbSeed": 84
   },
   {
     "id": "lh-rental-2015122300020870",
@@ -6764,7 +7072,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2018/LSE/01/30/2018013031130669.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020870.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020870&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 81
+    "thumbSeed": 85
   },
   {
     "id": "lh-rental-2015122300020850",
@@ -6843,8 +7151,8 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2023/LSE/11/02/2023110254963304.JPG",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020850.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020850&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 82,
-    "detailFetchedAt": "2026-10-29T20:23:51.189Z"
+    "thumbSeed": 86,
+    "detailFetchedAt": "2026-10-30T20:07:59.421Z"
   },
   {
     "id": "lh-rental-2015122300020864",
@@ -6896,7 +7204,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2022/LSE/08/31/2022083149903085.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020864.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020864&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 83
+    "thumbSeed": 87
   },
   {
     "id": "lh-rental-2015122300020692",
@@ -6948,7 +7256,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020692&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 84
+    "thumbSeed": 88
   },
   {
     "id": "lh-rental-2015122300020825",
@@ -7001,7 +7309,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020825&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 85
+    "thumbSeed": 89
   },
   {
     "id": "lh-rental-2015122300020858",
@@ -7093,7 +7401,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/LSE/09/29/2026092968789018.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020858.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020858&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 86
+    "thumbSeed": 90
   },
   {
     "id": "lh-rental-2015122300020855",
@@ -7209,7 +7517,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020855&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=48&mi=1026",
-    "thumbSeed": 87
+    "thumbSeed": 91
   },
   {
     "id": "lh-rental-2015122300020824",
@@ -7261,7 +7569,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020824&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 88
+    "thumbSeed": 92
   },
   {
     "id": "lh-rental-2015122300020853",
@@ -7329,7 +7637,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020853&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=08&mi=1026",
-    "thumbSeed": 89
+    "thumbSeed": 93
   },
   {
     "id": "lh-rental-2015122300020856",
@@ -7381,7 +7689,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020856&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=08&mi=1026",
-    "thumbSeed": 90
+    "thumbSeed": 94
   },
   {
     "id": "lh-rental-0000061176",
@@ -7455,7 +7763,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/09/16/2022062248868664.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-0000061176.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061176&ccrCnntSysDsCd=02&uppAisTpCd=06&aisTpCd=08&mi=1026",
-    "thumbSeed": 91
+    "thumbSeed": 95
   },
   {
     "id": "lh-rental-2015122300020812",
@@ -7507,7 +7815,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2025/LSE/10/21/2025102163969178.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020812.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020812&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=40&mi=1026",
-    "thumbSeed": 92
+    "thumbSeed": 96
   },
   {
     "id": "lh-rental-2015122300020765",
@@ -7559,7 +7867,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020765&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=08&mi=1026",
-    "thumbSeed": 93
+    "thumbSeed": 97
   },
   {
     "id": "lh-rental-2015122300020822",
@@ -7619,7 +7927,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020822&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 94
+    "thumbSeed": 98
   },
   {
     "id": "lh-rental-2015122300020818",
@@ -7719,7 +8027,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2020/LSE/12/03/2020120342302366.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020818.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020818&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 95
+    "thumbSeed": 99
   },
   {
     "id": "lh-rental-2015122300020806",
@@ -7827,7 +8135,59 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/LSE/09/18/2026091868673355.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020806.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020806&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 96
+    "thumbSeed": 100
+  },
+  {
+    "id": "lh-rental-2015122300020800",
+    "pblancId": "2015122300020800",
+    "title": "철원갈말 영구임대 예비입주자 모집공고",
+    "noticeTitle": "철원갈말 영구임대 예비입주자 모집공고",
+    "type": "perm",
+    "scope": "single",
+    "agency": "LH",
+    "district": "강원특별자치도",
+    "districtId": "gangwon",
+    "status": "closed",
+    "deadline": "2026.10.23",
+    "announceDate": "2026.09.22",
+    "address": "",
+    "lat": null,
+    "lng": null,
+    "geocoded": "none",
+    "area": "24.59",
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "depositRange": null,
+    "rentRange": null,
+    "priceUnverified": true,
+    "priceSource": "lh-api",
+    "complexes": [
+      {
+        "name": null,
+        "rows": [
+          {
+            "houseType": "24.59",
+            "area": 24.59,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          }
+        ]
+      }
+    ],
+    "salePriceManwon": null,
+    "supplyUnits": null,
+    "totalUnits": null,
+    "complexName": null,
+    "pnu": null,
+    "houseType": null,
+    "heatMethod": null,
+    "parkngCo": null,
+    "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2020/LSE/12/29/2020122942620969.jpg",
+    "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020800.jpg",
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020800&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
+    "thumbSeed": 101
   },
   {
     "id": "lh-rental-2015122300020781",
@@ -7887,59 +8247,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020781&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 97
-  },
-  {
-    "id": "lh-rental-2015122300020800",
-    "pblancId": "2015122300020800",
-    "title": "철원갈말 영구임대 예비입주자 모집공고",
-    "noticeTitle": "철원갈말 영구임대 예비입주자 모집공고",
-    "type": "perm",
-    "scope": "single",
-    "agency": "LH",
-    "district": "강원특별자치도",
-    "districtId": "gangwon",
-    "status": "closed",
-    "deadline": "2026.10.23",
-    "announceDate": "2026.09.22",
-    "address": "",
-    "lat": null,
-    "lng": null,
-    "geocoded": "none",
-    "area": "24.59",
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "depositRange": null,
-    "rentRange": null,
-    "priceUnverified": true,
-    "priceSource": "lh-api",
-    "complexes": [
-      {
-        "name": null,
-        "rows": [
-          {
-            "houseType": "24.59",
-            "area": 24.59,
-            "deposit": null,
-            "rent": null,
-            "supplyTotal": null,
-            "supplyThisRound": null
-          }
-        ]
-      }
-    ],
-    "salePriceManwon": null,
-    "supplyUnits": null,
-    "totalUnits": null,
-    "complexName": null,
-    "pnu": null,
-    "houseType": null,
-    "heatMethod": null,
-    "parkngCo": null,
-    "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2020/LSE/12/29/2020122942620969.jpg",
-    "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020800.jpg",
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020800&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 98
+    "thumbSeed": 102
   },
   {
     "id": "lh-rental-2015122300020710",
@@ -8007,7 +8315,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020710&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 99
+    "thumbSeed": 103
   },
   {
     "id": "lh-rental-2015122300020817",
@@ -8059,7 +8367,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2024/LSE/05/17/2024051757299108.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020817.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020817&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 100
+    "thumbSeed": 104
   },
   {
     "id": "lh-rental-2015122300020816",
@@ -8119,7 +8427,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020816&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 101
+    "thumbSeed": 105
   },
   {
     "id": "lh-rental-2015122300020727",
@@ -8179,7 +8487,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2025/LSE/11/24/2025112464468185.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020727.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020727&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 102
+    "thumbSeed": 106
   },
   {
     "id": "lh-rental-2015122300020807",
@@ -8231,7 +8539,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020807&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=48&mi=1026",
-    "thumbSeed": 103
+    "thumbSeed": 107
   },
   {
     "id": "lh-rental-2015122300020813",
@@ -8299,7 +8607,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020813&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 104
+    "thumbSeed": 108
   },
   {
     "id": "lh-rental-2015122300020801",
@@ -8351,7 +8659,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020801&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 105
+    "thumbSeed": 109
   },
   {
     "id": "lh-rental-2015122300020804",
@@ -8459,7 +8767,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2021/LSE/12/01/2021120146460281.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020804.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020804&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 106
+    "thumbSeed": 110
   },
   {
     "id": "lh-rental-2015122300020753",
@@ -8511,7 +8819,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020753&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=48&mi=1026",
-    "thumbSeed": 107
+    "thumbSeed": 111
   },
   {
     "id": "lh-rental-0000061177",
@@ -8769,7 +9077,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061177&ccrCnntSysDsCd=02&uppAisTpCd=06&aisTpCd=08&mi=1026",
-    "thumbSeed": 108
+    "thumbSeed": 112
   },
   {
     "id": "lh-rental-2015122300020796",
@@ -8965,7 +9273,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2024/LSE/05/17/2024051757298928.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020796.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020796&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 109
+    "thumbSeed": 113
   },
   {
     "id": "lh-rental-2015122300020793",
@@ -8977,14 +9285,13 @@
     "agency": "LH",
     "district": "강원특별자치도",
     "districtId": "gangwon",
-    "status": "upcoming",
+    "status": "closed",
     "deadline": "2026.10.30",
     "announceDate": "2026.09.17",
-    "winnerAt": "2026.12.31",
-    "address": "강원특별자치도 태백시 소도길 60 ",
-    "lat": 37.13776748293921,
-    "lng": 128.97714849940485,
-    "geocoded": "vworld-addr",
+    "address": "",
+    "lat": null,
+    "lng": null,
+    "geocoded": "none",
     "area": "36.79",
     "depositManwon": 0,
     "monthlyRentManwon": 0,
@@ -9018,7 +9325,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020793&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 110
+    "thumbSeed": 114
   },
   {
     "id": "lh-rental-2015122300020794",
@@ -9214,7 +9521,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2024/LSE/05/17/2024051757298928.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020794.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020794&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 111
+    "thumbSeed": 115
   },
   {
     "id": "lh-rental-2015122300020792",
@@ -9266,7 +9573,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload/LSP/OLD/ftproot/Apt/227/조감도.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020792.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020792&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 112
+    "thumbSeed": 116
   },
   {
     "id": "lh-rental-2015122300020780",
@@ -9334,7 +9641,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2021/LSE/09/29/2021092945750842.JPG",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020780.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020780&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 113
+    "thumbSeed": 117
   },
   {
     "id": "lh-rental-2015122300020788",
@@ -9386,7 +9693,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2017/LSE/03/16/2017031628517885.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020788.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020788&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 114
+    "thumbSeed": 118
   },
   {
     "id": "lh-rental-2015122300020744",
@@ -9478,7 +9785,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2019/LSE/03/28/2019032835306918.png",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020744.png",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020744&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 115
+    "thumbSeed": 119
   },
   {
     "id": "lh-rental-2015122300020786",
@@ -9530,7 +9837,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2020/LSE/07/15/2020071540558570.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020786.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020786&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 116
+    "thumbSeed": 120
   },
   {
     "id": "lh-rental-2015122300020782",
@@ -9590,7 +9897,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2020/LSE/12/30/2020123042630858.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020782.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020782&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 117
+    "thumbSeed": 121
   },
   {
     "id": "lh-rental-2015122300020756",
@@ -9642,7 +9949,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020756&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=08&mi=1026",
-    "thumbSeed": 118
+    "thumbSeed": 122
   },
   {
     "id": "lh-rental-2015122300020779",
@@ -9774,7 +10081,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload/LSP/OLD/ftproot/Apt/216/춘천퇴계02(단지조감도).jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020779.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020779&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 119
+    "thumbSeed": 123
   },
   {
     "id": "lh-rental-2015122300020783",
@@ -9842,7 +10149,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2016/LSE/09/20/2016092027379716.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020783.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020783&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 120
+    "thumbSeed": 124
   },
   {
     "id": "lh-rental-2015122300020732",
@@ -10038,7 +10345,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2024/LSE/05/17/2024051757298928.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020732.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020732&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 121
+    "thumbSeed": 125
   },
   {
     "id": "lh-rental-0000061173",
@@ -10296,7 +10603,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061173&ccrCnntSysDsCd=02&uppAisTpCd=06&aisTpCd=08&mi=1026",
-    "thumbSeed": 122
+    "thumbSeed": 126
   },
   {
     "id": "lh-rental-2015122300020746",
@@ -10356,7 +10663,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload/LSP/OLD/ftproot/Apt/435/조감도(2).jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020746.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020746&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 123
+    "thumbSeed": 127
   },
   {
     "id": "lh-rental-2015122300020767",
@@ -10424,7 +10731,67 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2016/LSE/09/20/2016092027379716.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020767.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020767&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 124
+    "thumbSeed": 128
+  },
+  {
+    "id": "lh-rental-2015122300020809",
+    "pblancId": "2015122300020809",
+    "title": "[정정공고]대구서부권 고령다산2 국민임대 입주자격완화 모집공고",
+    "noticeTitle": "[정정공고]대구서부권 고령다산2 국민임대 입주자격완화 모집공고",
+    "type": "nation",
+    "scope": "single",
+    "agency": "LH",
+    "district": "경상북도",
+    "districtId": "gyeongbuk",
+    "status": "closed",
+    "deadline": "2026.10.14",
+    "announceDate": "2026.09.15",
+    "address": "",
+    "lat": null,
+    "lng": null,
+    "geocoded": "none",
+    "area": "36.66~51.93",
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "depositRange": null,
+    "rentRange": null,
+    "priceUnverified": true,
+    "priceSource": "lh-api",
+    "complexes": [
+      {
+        "name": null,
+        "rows": [
+          {
+            "houseType": "36.66",
+            "area": 36.66,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          },
+          {
+            "houseType": "51.93",
+            "area": 51.93,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          }
+        ]
+      }
+    ],
+    "salePriceManwon": null,
+    "supplyUnits": null,
+    "totalUnits": null,
+    "complexName": null,
+    "pnu": null,
+    "houseType": null,
+    "heatMethod": null,
+    "parkngCo": null,
+    "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload/LSP/OLD/ftproot/Apt/435/조감도(2).jpg",
+    "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020809.jpg",
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020809&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
+    "thumbSeed": 129
   },
   {
     "id": "lh-rental-2015122300020743",
@@ -10484,7 +10851,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020743&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 125
+    "thumbSeed": 130
   },
   {
     "id": "lh-rental-2015122300020740",
@@ -10536,7 +10903,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2025/LSE/09/11/2025091163491479.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020740.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020740&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 126
+    "thumbSeed": 131
   },
   {
     "id": "lh-rental-2015122300020739",
@@ -10588,7 +10955,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload/LSP/OLD/ftproot/Apt/227/조감도.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020739.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020739&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 127
+    "thumbSeed": 132
   },
   {
     "id": "lh-rental-2015122300020738",
@@ -10656,7 +11023,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2019/LSE/11/20/2019112037982483.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020738.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020738&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 128
+    "thumbSeed": 133
   },
   {
     "id": "lh-rental-2015122300020733",
@@ -10812,7 +11179,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2017/LSE/09/14/2017091429959314.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020733.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020733&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 129
+    "thumbSeed": 134
   },
   {
     "id": "lh-rental-2015122300020709",
@@ -10928,67 +11295,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload/LSP/OLD/ftproot/Apt/648/조감도.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020709.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020709&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 130
-  },
-  {
-    "id": "lh-rental-2015122300020809",
-    "pblancId": "2015122300020809",
-    "title": "[정정공고]대구서부권 고령다산2 국민임대 입주자격완화 모집공고",
-    "noticeTitle": "[정정공고]대구서부권 고령다산2 국민임대 입주자격완화 모집공고",
-    "type": "nation",
-    "scope": "single",
-    "agency": "LH",
-    "district": "경상북도",
-    "districtId": "gyeongbuk",
-    "status": "closed",
-    "deadline": "2026.10.14",
-    "announceDate": "2026.09.15",
-    "address": "",
-    "lat": null,
-    "lng": null,
-    "geocoded": "none",
-    "area": "36.66~51.93",
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "depositRange": null,
-    "rentRange": null,
-    "priceUnverified": true,
-    "priceSource": "lh-api",
-    "complexes": [
-      {
-        "name": null,
-        "rows": [
-          {
-            "houseType": "36.66",
-            "area": 36.66,
-            "deposit": null,
-            "rent": null,
-            "supplyTotal": null,
-            "supplyThisRound": null
-          },
-          {
-            "houseType": "51.93",
-            "area": 51.93,
-            "deposit": null,
-            "rent": null,
-            "supplyTotal": null,
-            "supplyThisRound": null
-          }
-        ]
-      }
-    ],
-    "salePriceManwon": null,
-    "supplyUnits": null,
-    "totalUnits": null,
-    "complexName": null,
-    "pnu": null,
-    "houseType": null,
-    "heatMethod": null,
-    "parkngCo": null,
-    "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload/LSP/OLD/ftproot/Apt/435/조감도(2).jpg",
-    "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020809.jpg",
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020809&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 131
+    "thumbSeed": 135
   },
   {
     "id": "lh-rental-2015122300020734",
@@ -11120,7 +11427,183 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2018/LSE/11/24/2018112434003233.png",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020734.png",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020734&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 132
+    "thumbSeed": 136
+  },
+  {
+    "id": "lh-rental-2015122300020667",
+    "pblancId": "2015122300020667",
+    "title": "보성군·순천시·광양시 국민임대주택 예비입주자 모집",
+    "noticeTitle": "보성군·순천시·광양시 국민임대주택 예비입주자 모집",
+    "type": "nation",
+    "scope": "single",
+    "agency": "LH",
+    "district": "전남광주통합특별시",
+    "districtId": null,
+    "status": "closed",
+    "deadline": "2026.09.30",
+    "announceDate": "2026.09.15",
+    "address": "",
+    "lat": null,
+    "lng": null,
+    "geocoded": "none",
+    "area": "34.32~59.88",
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "depositRange": null,
+    "rentRange": null,
+    "priceUnverified": true,
+    "priceSource": "lh-api",
+    "complexes": [
+      {
+        "name": null,
+        "rows": [
+          {
+            "houseType": "36.81",
+            "area": 36.81,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          },
+          {
+            "houseType": "59.88",
+            "area": 59.88,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          },
+          {
+            "houseType": "36.8",
+            "area": 36.8,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          },
+          {
+            "houseType": "46.22",
+            "area": 46.22,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          },
+          {
+            "houseType": "39.59",
+            "area": 39.59,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          },
+          {
+            "houseType": "46.59",
+            "area": 46.59,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          },
+          {
+            "houseType": "34.32",
+            "area": 34.32,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          },
+          {
+            "houseType": "39.12",
+            "area": 39.12,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          }
+        ]
+      }
+    ],
+    "salePriceManwon": null,
+    "supplyUnits": null,
+    "totalUnits": null,
+    "complexName": null,
+    "pnu": null,
+    "houseType": null,
+    "heatMethod": null,
+    "parkngCo": null,
+    "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2021/LSE/05/18/2021051844191176.jpg",
+    "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020667.jpg",
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020667&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
+    "thumbSeed": 137
+  },
+  {
+    "id": "lh-rental-2015122300020655",
+    "pblancId": "2015122300020655",
+    "title": "부산광역시 기장군 정관7국민임대 소득완화 모집공고",
+    "noticeTitle": "부산광역시 기장군 정관7국민임대 소득완화 모집공고",
+    "type": "nation",
+    "scope": "single",
+    "agency": "LH",
+    "district": "부산광역시",
+    "districtId": "busan",
+    "status": "closed",
+    "deadline": "2026.09.29",
+    "announceDate": "2026.09.15",
+    "address": "",
+    "lat": null,
+    "lng": null,
+    "geocoded": "none",
+    "area": "24.72~26.83",
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "depositRange": null,
+    "rentRange": null,
+    "priceUnverified": true,
+    "priceSource": "lh-api",
+    "complexes": [
+      {
+        "name": null,
+        "rows": [
+          {
+            "houseType": "24.72",
+            "area": 24.72,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          },
+          {
+            "houseType": "24.79",
+            "area": 24.79,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          },
+          {
+            "houseType": "26.83",
+            "area": 26.83,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          }
+        ]
+      }
+    ],
+    "salePriceManwon": null,
+    "supplyUnits": null,
+    "totalUnits": null,
+    "complexName": null,
+    "pnu": null,
+    "houseType": null,
+    "heatMethod": null,
+    "parkngCo": null,
+    "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2016/LSE/06/30/2016063026913652.jpg",
+    "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020655.jpg",
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020655&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
+    "thumbSeed": 138
   },
   {
     "id": "lh-rental-2015122300020757",
@@ -11172,7 +11655,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020757&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 133
+    "thumbSeed": 139
   },
   {
     "id": "lh-rental-2015122300020754",
@@ -11224,7 +11707,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2024/LSE/05/17/2024051757299108.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020754.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020754&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 134
+    "thumbSeed": 140
   },
   {
     "id": "lh-rental-2015122300020748",
@@ -11276,7 +11759,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020748&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 135
+    "thumbSeed": 141
   },
   {
     "id": "lh-rental-2015122300020747",
@@ -11352,7 +11835,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2020/LSE/02/14/2020021438988533.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020747.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020747&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 136
+    "thumbSeed": 142
   },
   {
     "id": "lh-rental-2015122300020729",
@@ -11404,7 +11887,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020729&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 137
+    "thumbSeed": 143
   },
   {
     "id": "lh-rental-2015122300020726",
@@ -11608,7 +12091,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2020/LSE/06/04/2020060440111580.png",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020726.png",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020726&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 138
+    "thumbSeed": 144
   },
   {
     "id": "lh-rental-2015122300020724",
@@ -11668,7 +12151,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020724&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 139
+    "thumbSeed": 145
   },
   {
     "id": "lh-rental-2015122300020716",
@@ -11736,7 +12219,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020716&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 140
+    "thumbSeed": 146
   },
   {
     "id": "lh-rental-2015122300020714",
@@ -11804,7 +12287,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020714&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 141
+    "thumbSeed": 147
   },
   {
     "id": "lh-rental-2015122300020708",
@@ -11920,183 +12403,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload/LSP/OLD/ftproot/Apt/777/(수정)광주선운지구조감도변경후0831.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020708.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020708&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 142
-  },
-  {
-    "id": "lh-rental-2015122300020667",
-    "pblancId": "2015122300020667",
-    "title": "보성군·순천시·광양시 국민임대주택 예비입주자 모집",
-    "noticeTitle": "보성군·순천시·광양시 국민임대주택 예비입주자 모집",
-    "type": "nation",
-    "scope": "single",
-    "agency": "LH",
-    "district": "전남광주통합특별시",
-    "districtId": null,
-    "status": "closed",
-    "deadline": "2026.09.30",
-    "announceDate": "2026.09.15",
-    "address": "",
-    "lat": null,
-    "lng": null,
-    "geocoded": "none",
-    "area": "34.32~59.88",
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "depositRange": null,
-    "rentRange": null,
-    "priceUnverified": true,
-    "priceSource": "lh-api",
-    "complexes": [
-      {
-        "name": null,
-        "rows": [
-          {
-            "houseType": "36.81",
-            "area": 36.81,
-            "deposit": null,
-            "rent": null,
-            "supplyTotal": null,
-            "supplyThisRound": null
-          },
-          {
-            "houseType": "59.88",
-            "area": 59.88,
-            "deposit": null,
-            "rent": null,
-            "supplyTotal": null,
-            "supplyThisRound": null
-          },
-          {
-            "houseType": "36.8",
-            "area": 36.8,
-            "deposit": null,
-            "rent": null,
-            "supplyTotal": null,
-            "supplyThisRound": null
-          },
-          {
-            "houseType": "46.22",
-            "area": 46.22,
-            "deposit": null,
-            "rent": null,
-            "supplyTotal": null,
-            "supplyThisRound": null
-          },
-          {
-            "houseType": "39.59",
-            "area": 39.59,
-            "deposit": null,
-            "rent": null,
-            "supplyTotal": null,
-            "supplyThisRound": null
-          },
-          {
-            "houseType": "46.59",
-            "area": 46.59,
-            "deposit": null,
-            "rent": null,
-            "supplyTotal": null,
-            "supplyThisRound": null
-          },
-          {
-            "houseType": "34.32",
-            "area": 34.32,
-            "deposit": null,
-            "rent": null,
-            "supplyTotal": null,
-            "supplyThisRound": null
-          },
-          {
-            "houseType": "39.12",
-            "area": 39.12,
-            "deposit": null,
-            "rent": null,
-            "supplyTotal": null,
-            "supplyThisRound": null
-          }
-        ]
-      }
-    ],
-    "salePriceManwon": null,
-    "supplyUnits": null,
-    "totalUnits": null,
-    "complexName": null,
-    "pnu": null,
-    "houseType": null,
-    "heatMethod": null,
-    "parkngCo": null,
-    "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2021/LSE/05/18/2021051844191176.jpg",
-    "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020667.jpg",
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020667&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 143
-  },
-  {
-    "id": "lh-rental-2015122300020655",
-    "pblancId": "2015122300020655",
-    "title": "부산광역시 기장군 정관7국민임대 소득완화 모집공고",
-    "noticeTitle": "부산광역시 기장군 정관7국민임대 소득완화 모집공고",
-    "type": "nation",
-    "scope": "single",
-    "agency": "LH",
-    "district": "부산광역시",
-    "districtId": "busan",
-    "status": "closed",
-    "deadline": "2026.09.29",
-    "announceDate": "2026.09.15",
-    "address": "",
-    "lat": null,
-    "lng": null,
-    "geocoded": "none",
-    "area": "24.72~26.83",
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "depositRange": null,
-    "rentRange": null,
-    "priceUnverified": true,
-    "priceSource": "lh-api",
-    "complexes": [
-      {
-        "name": null,
-        "rows": [
-          {
-            "houseType": "24.72",
-            "area": 24.72,
-            "deposit": null,
-            "rent": null,
-            "supplyTotal": null,
-            "supplyThisRound": null
-          },
-          {
-            "houseType": "24.79",
-            "area": 24.79,
-            "deposit": null,
-            "rent": null,
-            "supplyTotal": null,
-            "supplyThisRound": null
-          },
-          {
-            "houseType": "26.83",
-            "area": 26.83,
-            "deposit": null,
-            "rent": null,
-            "supplyTotal": null,
-            "supplyThisRound": null
-          }
-        ]
-      }
-    ],
-    "salePriceManwon": null,
-    "supplyUnits": null,
-    "totalUnits": null,
-    "complexName": null,
-    "pnu": null,
-    "houseType": null,
-    "heatMethod": null,
-    "parkngCo": null,
-    "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2016/LSE/06/30/2016063026913652.jpg",
-    "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020655.jpg",
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020655&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 144
+    "thumbSeed": 148
   },
   {
     "id": "lh-rental-2015122300020763",
@@ -12164,7 +12471,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020763&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 145
+    "thumbSeed": 149
   },
   {
     "id": "lh-rental-2015122300020677",
@@ -12232,7 +12539,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2016/LSE/09/20/2016092027379716.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020677.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020677&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 146
+    "thumbSeed": 150
   },
   {
     "id": "lh-rental-2015122300020760",
@@ -12300,7 +12607,59 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020760&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 147
+    "thumbSeed": 151
+  },
+  {
+    "id": "lh-rental-2015122300020810",
+    "pblancId": "2015122300020810",
+    "title": "[정정공고]칠곡왜관4 국민임대아파트 예비입주자 모집(51형)",
+    "noticeTitle": "[정정공고]칠곡왜관4 국민임대아파트 예비입주자 모집(51형)",
+    "type": "nation",
+    "scope": "single",
+    "agency": "LH",
+    "district": "경상북도",
+    "districtId": "gyeongbuk",
+    "status": "closed",
+    "deadline": "2026.09.28",
+    "announceDate": "2026.09.15",
+    "address": "",
+    "lat": null,
+    "lng": null,
+    "geocoded": "none",
+    "area": "51.93",
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "depositRange": null,
+    "rentRange": null,
+    "priceUnverified": true,
+    "priceSource": "lh-api",
+    "complexes": [
+      {
+        "name": null,
+        "rows": [
+          {
+            "houseType": "51.93",
+            "area": 51.93,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          }
+        ]
+      }
+    ],
+    "salePriceManwon": null,
+    "supplyUnits": null,
+    "totalUnits": null,
+    "complexName": null,
+    "pnu": null,
+    "houseType": null,
+    "heatMethod": null,
+    "parkngCo": null,
+    "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload/LSP/OLD/ftproot/Apt/492/단지조감도(2).jpg",
+    "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020810.jpg",
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020810&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
+    "thumbSeed": 152
   },
   {
     "id": "lh-rental-2015122300020758",
@@ -12352,7 +12711,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2017/LSE/03/16/2017031628517885.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020758.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020758&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 148
+    "thumbSeed": 153
   },
   {
     "id": "lh-rental-2015122300020752",
@@ -12412,7 +12771,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020752&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 149
+    "thumbSeed": 154
   },
   {
     "id": "lh-rental-2015122300020745",
@@ -12552,7 +12911,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2019/LSE/05/31/2019053136000139.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020745.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020745&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 150
+    "thumbSeed": 155
   },
   {
     "id": "lh-rental-2015122300020741",
@@ -12684,7 +13043,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload/LSP/OLD/ftproot/Apt/216/춘천퇴계02(단지조감도).jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020741.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020741&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 151
+    "thumbSeed": 156
   },
   {
     "id": "lh-rental-2015122300020719",
@@ -12736,7 +13095,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2020/LSE/07/15/2020071540558570.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020719.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020719&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 152
+    "thumbSeed": 157
   },
   {
     "id": "lh-rental-2015122300020698",
@@ -12860,7 +13219,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2021/LSE/06/11/2021061144544818.png",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020698.png",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020698&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 153
+    "thumbSeed": 158
   },
   {
     "id": "lh-rental-2015122300020696",
@@ -12912,7 +13271,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload/LSP/OLD/ftproot/Apt/492/단지조감도(2).jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020696.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020696&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 154
+    "thumbSeed": 159
   },
   {
     "id": "lh-rental-2015122300020684",
@@ -12964,7 +13323,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020684&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 155
+    "thumbSeed": 160
   },
   {
     "id": "lh-rental-2015122300020683",
@@ -13016,59 +13375,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020683&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 156
-  },
-  {
-    "id": "lh-rental-2015122300020810",
-    "pblancId": "2015122300020810",
-    "title": "[정정공고]칠곡왜관4 국민임대아파트 예비입주자 모집(51형)",
-    "noticeTitle": "[정정공고]칠곡왜관4 국민임대아파트 예비입주자 모집(51형)",
-    "type": "nation",
-    "scope": "single",
-    "agency": "LH",
-    "district": "경상북도",
-    "districtId": "gyeongbuk",
-    "status": "closed",
-    "deadline": "2026.09.28",
-    "announceDate": "2026.09.15",
-    "address": "",
-    "lat": null,
-    "lng": null,
-    "geocoded": "none",
-    "area": "51.93",
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "depositRange": null,
-    "rentRange": null,
-    "priceUnverified": true,
-    "priceSource": "lh-api",
-    "complexes": [
-      {
-        "name": null,
-        "rows": [
-          {
-            "houseType": "51.93",
-            "area": 51.93,
-            "deposit": null,
-            "rent": null,
-            "supplyTotal": null,
-            "supplyThisRound": null
-          }
-        ]
-      }
-    ],
-    "salePriceManwon": null,
-    "supplyUnits": null,
-    "totalUnits": null,
-    "complexName": null,
-    "pnu": null,
-    "houseType": null,
-    "heatMethod": null,
-    "parkngCo": null,
-    "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload/LSP/OLD/ftproot/Apt/492/단지조감도(2).jpg",
-    "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020810.jpg",
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020810&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 157
+    "thumbSeed": 161
   },
   {
     "id": "lh-rental-2015122300020742",
@@ -13152,7 +13459,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/LSE/09/11/2026091168573138.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020742.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020742&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=48&mi=1026",
-    "thumbSeed": 158
+    "thumbSeed": 162
   },
   {
     "id": "lh-rental-2015122300020751",
@@ -13220,7 +13527,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020751&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 159
+    "thumbSeed": 163
   },
   {
     "id": "lh-rental-2015122300020730",
@@ -13273,7 +13580,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020730&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 160
+    "thumbSeed": 164
   },
   {
     "id": "lh-rental-2015122300020680",
@@ -13325,7 +13632,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020680&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 161
+    "thumbSeed": 165
   },
   {
     "id": "lh-rental-2015122300020728",
@@ -13385,7 +13692,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020728&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=08&mi=1026",
-    "thumbSeed": 162
+    "thumbSeed": 166
   },
   {
     "id": "lh-rental-2015122300020735",
@@ -13453,7 +13760,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/LSE/08/28/2026082868346823.png",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020735.png",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020735&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 163
+    "thumbSeed": 167
   },
   {
     "id": "lh-rental-2015122300020712",
@@ -13553,7 +13860,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020712&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 164
+    "thumbSeed": 168
   },
   {
     "id": "lh-rental-2015122300020670",
@@ -13605,7 +13912,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020670&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=08&mi=1026",
-    "thumbSeed": 165
+    "thumbSeed": 169
   },
   {
     "id": "lh-rental-2015122300020704",
@@ -13689,7 +13996,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload/LSP/OLD/ftproot/Apt/463/[김포장기]단지조감(2).jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020704.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020704&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 166
+    "thumbSeed": 170
   },
   {
     "id": "lh-rental-2015122300020707",
@@ -13741,7 +14048,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020707&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 167
+    "thumbSeed": 171
   },
   {
     "id": "lh-rental-2015122300020695",
@@ -13793,7 +14100,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020695&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 168
+    "thumbSeed": 172
   },
   {
     "id": "lh-rental-2015122300020686",
@@ -13949,7 +14256,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload/LSP/OLD/ftproot/Apt/447/크기변환_1단지조감도.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020686.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020686&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 169
+    "thumbSeed": 173
   },
   {
     "id": "lh-rental-2015122300020805",
@@ -14033,7 +14340,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2025/LSE/09/12/2025091263496908.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020805.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020805&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 170
+    "thumbSeed": 174
   },
   {
     "id": "lh-rental-2015122300020988",
@@ -14095,8 +14402,8 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020988&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 171,
-    "detailFetchedAt": "2026-10-29T20:23:51.286Z"
+    "thumbSeed": 175,
+    "detailFetchedAt": "2026-10-30T20:07:59.591Z"
   },
   {
     "id": "lh-rental-2015122300020619",
@@ -14164,7 +14471,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2016/LSE/06/02/2016060226747646.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020619.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020619&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 172
+    "thumbSeed": 176
   },
   {
     "id": "lh-rental-2015122300020659",
@@ -14248,7 +14555,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2025/LSE/09/12/2025091263496908.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020659.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020659&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 173
+    "thumbSeed": 177
   },
   {
     "id": "lh-rental-2015122300020701",
@@ -14308,7 +14615,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020701&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 174
+    "thumbSeed": 178
   },
   {
     "id": "lh-rental-2015122300020649",
@@ -14371,68 +14678,8 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020649&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 175,
-    "detailFetchedAt": "2026-10-29T20:23:51.205Z"
-  },
-  {
-    "id": "lh-rental-2015122300020697",
-    "pblancId": "2015122300020697",
-    "title": "인천옹진연평 국민임대주택 예비입주자 모집",
-    "noticeTitle": "인천옹진연평 국민임대주택 예비입주자 모집",
-    "type": "nation",
-    "scope": "single",
-    "agency": "LH",
-    "district": "인천광역시",
-    "districtId": "incheon",
-    "status": "closed",
-    "deadline": "2026.09.22",
-    "announceDate": "2026.09.07",
-    "address": "",
-    "lat": null,
-    "lng": null,
-    "geocoded": "none",
-    "area": "29.75",
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "depositRange": null,
-    "rentRange": null,
-    "priceUnverified": true,
-    "priceSource": "lh-api",
-    "complexes": [
-      {
-        "name": null,
-        "rows": [
-          {
-            "houseType": "29.75",
-            "area": 29.75,
-            "deposit": null,
-            "rent": null,
-            "supplyTotal": null,
-            "supplyThisRound": null
-          },
-          {
-            "houseType": "29.75",
-            "area": 29.75,
-            "deposit": null,
-            "rent": null,
-            "supplyTotal": null,
-            "supplyThisRound": null
-          }
-        ]
-      }
-    ],
-    "salePriceManwon": null,
-    "supplyUnits": null,
-    "totalUnits": null,
-    "complexName": null,
-    "pnu": null,
-    "houseType": null,
-    "heatMethod": null,
-    "parkngCo": null,
-    "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2021/LSE/10/29/2021102946067489.jpg",
-    "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020697.jpg",
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020697&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 176
+    "thumbSeed": 179,
+    "detailFetchedAt": "2026-10-30T20:07:59.672Z"
   },
   {
     "id": "lh-rental-2015122300020668",
@@ -14500,7 +14747,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020668&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 177
+    "thumbSeed": 180
   },
   {
     "id": "lh-rental-2015122300020662",
@@ -14584,7 +14831,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload/LSP/OLD/ftproot/Apt/463/[김포장기]단지조감(2).jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020662.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020662&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 178
+    "thumbSeed": 181
   },
   {
     "id": "lh-rental-2015122300020652",
@@ -14660,7 +14907,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020652&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 179
+    "thumbSeed": 182
   },
   {
     "id": "lh-rental-2015122300020578",
@@ -14720,7 +14967,67 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2019/LSE/09/05/2019090537107030.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020578.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020578&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 180
+    "thumbSeed": 183
+  },
+  {
+    "id": "lh-rental-2015122300020697",
+    "pblancId": "2015122300020697",
+    "title": "인천옹진연평 국민임대주택 예비입주자 모집",
+    "noticeTitle": "인천옹진연평 국민임대주택 예비입주자 모집",
+    "type": "nation",
+    "scope": "single",
+    "agency": "LH",
+    "district": "인천광역시",
+    "districtId": "incheon",
+    "status": "closed",
+    "deadline": "2026.09.22",
+    "announceDate": "2026.09.07",
+    "address": "",
+    "lat": null,
+    "lng": null,
+    "geocoded": "none",
+    "area": "29.75",
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "depositRange": null,
+    "rentRange": null,
+    "priceUnverified": true,
+    "priceSource": "lh-api",
+    "complexes": [
+      {
+        "name": null,
+        "rows": [
+          {
+            "houseType": "29.75",
+            "area": 29.75,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          },
+          {
+            "houseType": "29.75",
+            "area": 29.75,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          }
+        ]
+      }
+    ],
+    "salePriceManwon": null,
+    "supplyUnits": null,
+    "totalUnits": null,
+    "complexName": null,
+    "pnu": null,
+    "houseType": null,
+    "heatMethod": null,
+    "parkngCo": null,
+    "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2021/LSE/10/29/2021102946067489.jpg",
+    "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020697.jpg",
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020697&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
+    "thumbSeed": 184
   },
   {
     "id": "lh-rental-2015122300020678",
@@ -14780,7 +15087,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020678&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 181
+    "thumbSeed": 185
   },
   {
     "id": "lh-rental-2015122300020694",
@@ -14818,7 +15125,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020694&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 182
+    "thumbSeed": 186
   },
   {
     "id": "lh-rental-2015122300020682",
@@ -14934,7 +15241,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020682&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 183
+    "thumbSeed": 187
   },
   {
     "id": "lh-rental-2015122300020663",
@@ -15042,7 +15349,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2021/LSE/08/27/2021082745446723.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020663.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020663&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 184
+    "thumbSeed": 188
   },
   {
     "id": "lh-rental-2015122300020636",
@@ -15134,7 +15441,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2017/LSE/09/18/2017091829981038.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020636.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020636&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 185
+    "thumbSeed": 189
   },
   {
     "id": "lh-rental-2015122300020685",
@@ -15218,7 +15525,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2021/LSE/06/24/2021062444698449.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020685.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020685&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 186
+    "thumbSeed": 190
   },
   {
     "id": "lh-rental-2015122300020681",
@@ -15278,7 +15585,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2022/LSE/04/04/2022040447936176.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020681.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020681&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=08&mi=1026",
-    "thumbSeed": 187
+    "thumbSeed": 191
   },
   {
     "id": "lh-rental-2015122300020623",
@@ -15338,7 +15645,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2022/LSE/04/04/2022040447936176.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020623.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020623&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=08&mi=1026",
-    "thumbSeed": 188
+    "thumbSeed": 192
   },
   {
     "id": "lh-rental-0000061163",
@@ -15404,7 +15711,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/09/01/2018112233978561.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-0000061163.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061163&ccrCnntSysDsCd=02&uppAisTpCd=06&aisTpCd=08&mi=1026",
-    "thumbSeed": 189
+    "thumbSeed": 193
   },
   {
     "id": "lh-rental-2015122300020676",
@@ -15584,7 +15891,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2019/LSE/12/03/2019120338154420.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020676.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020676&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 190
+    "thumbSeed": 194
   },
   {
     "id": "lh-rental-2015122300020672",
@@ -15764,7 +16071,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2019/LSE/12/03/2019120338154420.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020672.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020672&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 191
+    "thumbSeed": 195
   },
   {
     "id": "lh-rental-2015122300020671",
@@ -15848,7 +16155,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2021/LSE/06/24/2021062444698449.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020671.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020671&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 192
+    "thumbSeed": 196
   },
   {
     "id": "lh-rental-2015122300020658",
@@ -15908,7 +16215,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2020/LSE/12/30/2020123042630858.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020658.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020658&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 193
+    "thumbSeed": 197
   },
   {
     "id": "lh-rental-2015122300020666",
@@ -15960,7 +16267,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020666&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 194
+    "thumbSeed": 198
   },
   {
     "id": "lh-rental-2015122300020651",
@@ -16012,7 +16319,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020651&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 195
+    "thumbSeed": 199
   },
   {
     "id": "lh-rental-2015122300020650",
@@ -16064,7 +16371,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020650&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 196
+    "thumbSeed": 200
   },
   {
     "id": "lh-rental-2015122300020657",
@@ -16116,7 +16423,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020657&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=08&mi=1026",
-    "thumbSeed": 197
+    "thumbSeed": 201
   },
   {
     "id": "lh-rental-2015122300020647",
@@ -16200,7 +16507,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2021/LSE/06/24/2021062444698449.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020647.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020647&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 198
+    "thumbSeed": 202
   },
   {
     "id": "lh-rental-2015122300020646",
@@ -16380,7 +16687,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2019/LSE/12/03/2019120338154420.jpg",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020646.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020646&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-    "thumbSeed": 199
+    "thumbSeed": 203
   },
   {
     "id": "lh-rental-2015122300020648",
@@ -16448,7 +16755,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2021/LSE/06/11/2021061144543917.PNG",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020648.png",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020648&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 200
+    "thumbSeed": 204
   },
   {
     "id": "lh-rental-2015122300020645",
@@ -16516,7 +16823,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/LSE/08/28/2026082868346823.png",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020645.png",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020645&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 201
+    "thumbSeed": 205
   },
   {
     "id": "lh-rental-2015122300020638",
@@ -16584,7 +16891,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/LSE/08/28/2026082868346823.png",
     "coverPhotoLocal": "/lh-covers/lh-rental-2015122300020638.png",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020638&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-    "thumbSeed": 202
+    "thumbSeed": 206
   },
   {
     "id": "lh-rental-2015122300020544",
@@ -16636,7 +16943,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020544&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=09&mi=1026",
-    "thumbSeed": 203
+    "thumbSeed": 207
   },
   {
     "id": "lh-rental-2015122300020972",
@@ -17097,7 +17404,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020972&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 204
+    "thumbSeed": 208
   },
   {
     "id": "lh-rental-2015122300020965",
@@ -17136,7 +17443,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020965&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 205
+    "thumbSeed": 209
   },
   {
     "id": "lh-rental-2015122300020944",
@@ -17175,7 +17482,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020944&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 206
+    "thumbSeed": 210
   },
   {
     "id": "lh-rental-2015122300020933",
@@ -17214,7 +17521,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020933&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 207
+    "thumbSeed": 211
   },
   {
     "id": "lh-rental-2015122300020928",
@@ -17253,7 +17560,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020928&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 208
+    "thumbSeed": 212
   },
   {
     "id": "lh-rental-2015122300020945",
@@ -17554,7 +17861,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020945&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 209
+    "thumbSeed": 213
   },
   {
     "id": "lh-rental-2015122300020931",
@@ -17855,7 +18162,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020931&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 210
+    "thumbSeed": 214
   },
   {
     "id": "lh-rental-2015122300020918",
@@ -17894,7 +18201,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020918&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 211
+    "thumbSeed": 215
   },
   {
     "id": "lh-rental-2015122300020923",
@@ -17933,7 +18240,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020923&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 212
+    "thumbSeed": 216
   },
   {
     "id": "lh-rental-2015122300020934",
@@ -17971,7 +18278,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020934&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 213
+    "thumbSeed": 217
   },
   {
     "id": "lh-rental-2015122300020929",
@@ -18009,7 +18316,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020929&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 214
+    "thumbSeed": 218
   },
   {
     "id": "lh-rental-2015122300020927",
@@ -18047,7 +18354,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020927&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 215
+    "thumbSeed": 219
   },
   {
     "id": "lh-rental-2015122300020922",
@@ -18085,7 +18392,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020922&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 216
+    "thumbSeed": 220
   },
   {
     "id": "lh-rental-2015122300020900",
@@ -18123,7 +18430,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020900&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 217
+    "thumbSeed": 221
   },
   {
     "id": "lh-rental-2015122300020902",
@@ -18161,7 +18468,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020902&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 218
+    "thumbSeed": 222
   },
   {
     "id": "lh-rental-2015122300020901",
@@ -18199,7 +18506,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020901&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 219
+    "thumbSeed": 223
   },
   {
     "id": "lh-rental-2015122300020882",
@@ -18907,7 +19214,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020882&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 220
+    "thumbSeed": 224
   },
   {
     "id": "lh-rental-2015122300020880",
@@ -18945,7 +19252,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020880&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 221
+    "thumbSeed": 225
   },
   {
     "id": "lh-rental-2015122300020877",
@@ -18983,7 +19290,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020877&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 222
+    "thumbSeed": 226
   },
   {
     "id": "lh-rental-2015122300020875",
@@ -19021,7 +19328,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020875&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 223
+    "thumbSeed": 227
   },
   {
     "id": "lh-rental-2015122300020873",
@@ -19059,7 +19366,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020873&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 224
+    "thumbSeed": 228
   },
   {
     "id": "lh-rental-2015122300020876",
@@ -19097,7 +19404,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020876&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 225
+    "thumbSeed": 229
   },
   {
     "id": "lh-rental-2015122300020842",
@@ -19135,7 +19442,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020842&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 226
+    "thumbSeed": 230
   },
   {
     "id": "lh-rental-2015122300020843",
@@ -19173,7 +19480,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020843&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 227
+    "thumbSeed": 231
   },
   {
     "id": "lh-rental-2015122300020755",
@@ -19211,121 +19518,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020755&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 228
-  },
-  {
-    "id": "lh-rental-2015122300020821",
-    "pblancId": "2015122300020821",
-    "title": "[전북지역본부]2026년 3차 청년매입임대주택 예비입주자 모집공고",
-    "noticeTitle": "[전북지역본부]2026년 3차 청년매입임대주택 예비입주자 모집공고",
-    "type": "buy",
-    "scope": "regional",
-    "agency": "LH",
-    "district": "전북특별자치도",
-    "districtId": "jeonbuk",
-    "status": "closed",
-    "deadline": "2026.10.14",
-    "announceDate": "2026.09.30",
-    "address": "",
-    "lat": null,
-    "lng": null,
-    "geocoded": "none",
-    "area": "",
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "depositRange": null,
-    "rentRange": null,
-    "priceUnverified": true,
-    "priceSource": null,
-    "complexes": [],
-    "salePriceManwon": null,
-    "supplyUnits": null,
-    "totalUnits": null,
-    "complexName": null,
-    "pnu": null,
-    "houseType": null,
-    "heatMethod": null,
-    "parkngCo": null,
-    "coverPhotoUrl": null,
-    "coverPhotoLocal": null,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020821&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 229
-  },
-  {
-    "id": "lh-rental-2015122300020815",
-    "pblancId": "2015122300020815",
-    "title": "[전북지역본부]2026년 3차 신혼·신생아 매입임대주택Ⅱ(전세형) 예비입주자 모집공고",
-    "noticeTitle": "[전북지역본부]2026년 3차 신혼·신생아 매입임대주택Ⅱ(전세형) 예비입주자 모집공고",
-    "type": "buy",
-    "scope": "regional",
-    "agency": "LH",
-    "district": "전북특별자치도",
-    "districtId": "jeonbuk",
-    "status": "closed",
-    "deadline": "2026.10.14",
-    "announceDate": "2026.09.30",
-    "address": "",
-    "lat": null,
-    "lng": null,
-    "geocoded": "none",
-    "area": "",
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "depositRange": null,
-    "rentRange": null,
-    "priceUnverified": true,
-    "priceSource": null,
-    "complexes": [],
-    "salePriceManwon": null,
-    "supplyUnits": null,
-    "totalUnits": null,
-    "complexName": null,
-    "pnu": null,
-    "houseType": null,
-    "heatMethod": null,
-    "parkngCo": null,
-    "coverPhotoUrl": null,
-    "coverPhotoLocal": null,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020815&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 230
-  },
-  {
-    "id": "lh-rental-2015122300020814",
-    "pblancId": "2015122300020814",
-    "title": "[전북지역본부]2026년 3차 신혼·신생아 매입임대주택Ⅰ 예비입주자 모집공고",
-    "noticeTitle": "[전북지역본부]2026년 3차 신혼·신생아 매입임대주택Ⅰ 예비입주자 모집공고",
-    "type": "buy",
-    "scope": "regional",
-    "agency": "LH",
-    "district": "전북특별자치도",
-    "districtId": "jeonbuk",
-    "status": "closed",
-    "deadline": "2026.10.14",
-    "announceDate": "2026.09.30",
-    "address": "",
-    "lat": null,
-    "lng": null,
-    "geocoded": "none",
-    "area": "",
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "depositRange": null,
-    "rentRange": null,
-    "priceUnverified": true,
-    "priceSource": null,
-    "complexes": [],
-    "salePriceManwon": null,
-    "supplyUnits": null,
-    "totalUnits": null,
-    "complexName": null,
-    "pnu": null,
-    "houseType": null,
-    "heatMethod": null,
-    "parkngCo": null,
-    "coverPhotoUrl": null,
-    "coverPhotoLocal": null,
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020814&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 231
+    "thumbSeed": 232
   },
   {
     "id": "lh-rental-2015122300020802",
@@ -19363,7 +19556,121 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020802&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 232
+    "thumbSeed": 233
+  },
+  {
+    "id": "lh-rental-2015122300020821",
+    "pblancId": "2015122300020821",
+    "title": "[전북지역본부]2026년 3차 청년매입임대주택 예비입주자 모집공고",
+    "noticeTitle": "[전북지역본부]2026년 3차 청년매입임대주택 예비입주자 모집공고",
+    "type": "buy",
+    "scope": "regional",
+    "agency": "LH",
+    "district": "전북특별자치도",
+    "districtId": "jeonbuk",
+    "status": "closed",
+    "deadline": "2026.10.14",
+    "announceDate": "2026.09.30",
+    "address": "",
+    "lat": null,
+    "lng": null,
+    "geocoded": "none",
+    "area": "",
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "depositRange": null,
+    "rentRange": null,
+    "priceUnverified": true,
+    "priceSource": null,
+    "complexes": [],
+    "salePriceManwon": null,
+    "supplyUnits": null,
+    "totalUnits": null,
+    "complexName": null,
+    "pnu": null,
+    "houseType": null,
+    "heatMethod": null,
+    "parkngCo": null,
+    "coverPhotoUrl": null,
+    "coverPhotoLocal": null,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020821&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+    "thumbSeed": 234
+  },
+  {
+    "id": "lh-rental-2015122300020815",
+    "pblancId": "2015122300020815",
+    "title": "[전북지역본부]2026년 3차 신혼·신생아 매입임대주택Ⅱ(전세형) 예비입주자 모집공고",
+    "noticeTitle": "[전북지역본부]2026년 3차 신혼·신생아 매입임대주택Ⅱ(전세형) 예비입주자 모집공고",
+    "type": "buy",
+    "scope": "regional",
+    "agency": "LH",
+    "district": "전북특별자치도",
+    "districtId": "jeonbuk",
+    "status": "closed",
+    "deadline": "2026.10.14",
+    "announceDate": "2026.09.30",
+    "address": "",
+    "lat": null,
+    "lng": null,
+    "geocoded": "none",
+    "area": "",
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "depositRange": null,
+    "rentRange": null,
+    "priceUnverified": true,
+    "priceSource": null,
+    "complexes": [],
+    "salePriceManwon": null,
+    "supplyUnits": null,
+    "totalUnits": null,
+    "complexName": null,
+    "pnu": null,
+    "houseType": null,
+    "heatMethod": null,
+    "parkngCo": null,
+    "coverPhotoUrl": null,
+    "coverPhotoLocal": null,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020815&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+    "thumbSeed": 235
+  },
+  {
+    "id": "lh-rental-2015122300020814",
+    "pblancId": "2015122300020814",
+    "title": "[전북지역본부]2026년 3차 신혼·신생아 매입임대주택Ⅰ 예비입주자 모집공고",
+    "noticeTitle": "[전북지역본부]2026년 3차 신혼·신생아 매입임대주택Ⅰ 예비입주자 모집공고",
+    "type": "buy",
+    "scope": "regional",
+    "agency": "LH",
+    "district": "전북특별자치도",
+    "districtId": "jeonbuk",
+    "status": "closed",
+    "deadline": "2026.10.14",
+    "announceDate": "2026.09.30",
+    "address": "",
+    "lat": null,
+    "lng": null,
+    "geocoded": "none",
+    "area": "",
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "depositRange": null,
+    "rentRange": null,
+    "priceUnverified": true,
+    "priceSource": null,
+    "complexes": [],
+    "salePriceManwon": null,
+    "supplyUnits": null,
+    "totalUnits": null,
+    "complexName": null,
+    "pnu": null,
+    "houseType": null,
+    "heatMethod": null,
+    "parkngCo": null,
+    "coverPhotoUrl": null,
+    "coverPhotoLocal": null,
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020814&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
+    "thumbSeed": 236
   },
   {
     "id": "lh-rental-2015122300020835",
@@ -19401,7 +19708,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020835&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 233
+    "thumbSeed": 237
   },
   {
     "id": "lh-rental-2015122300020834",
@@ -19439,7 +19746,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020834&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 234
+    "thumbSeed": 238
   },
   {
     "id": "lh-rental-2015122300020841",
@@ -19477,7 +19784,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020841&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 235
+    "thumbSeed": 239
   },
   {
     "id": "lh-rental-2015122300020840",
@@ -19515,7 +19822,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020840&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 236
+    "thumbSeed": 240
   },
   {
     "id": "lh-rental-2015122300020839",
@@ -19553,7 +19860,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020839&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 237
+    "thumbSeed": 241
   },
   {
     "id": "lh-rental-2015122300020838",
@@ -19591,7 +19898,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020838&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 238
+    "thumbSeed": 242
   },
   {
     "id": "lh-rental-2015122300020737",
@@ -21755,7 +22062,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020737&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 239
+    "thumbSeed": 243
   },
   {
     "id": "lh-rental-2015122300020761",
@@ -21793,7 +22100,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020761&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 240
+    "thumbSeed": 244
   },
   {
     "id": "lh-rental-2015122300020787",
@@ -21831,7 +22138,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020787&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 241
+    "thumbSeed": 245
   },
   {
     "id": "lh-rental-2015122300020770",
@@ -21869,7 +22176,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020770&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 242
+    "thumbSeed": 246
   },
   {
     "id": "lh-rental-2015122300020768",
@@ -21907,7 +22214,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020768&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 243
+    "thumbSeed": 247
   },
   {
     "id": "lh-rental-2015122300020811",
@@ -21945,7 +22252,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020811&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 244
+    "thumbSeed": 248
   },
   {
     "id": "lh-rental-2015122300020808",
@@ -21983,7 +22290,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020808&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 245
+    "thumbSeed": 249
   },
   {
     "id": "lh-rental-2015122300020759",
@@ -22021,7 +22328,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020759&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 246
+    "thumbSeed": 250
   },
   {
     "id": "lh-rental-2015122300020750",
@@ -22059,7 +22366,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020750&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 247
+    "thumbSeed": 251
   },
   {
     "id": "lh-rental-2015122300020749",
@@ -22097,7 +22404,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020749&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 248
+    "thumbSeed": 252
   },
   {
     "id": "lh-rental-2015122300020798",
@@ -22135,7 +22442,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020798&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 249
+    "thumbSeed": 253
   },
   {
     "id": "lh-rental-2015122300020797",
@@ -22173,7 +22480,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020797&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 250
+    "thumbSeed": 254
   },
   {
     "id": "lh-rental-2015122300020795",
@@ -22211,7 +22518,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020795&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 251
+    "thumbSeed": 255
   },
   {
     "id": "lh-rental-2015122300020784",
@@ -22249,7 +22556,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020784&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 252
+    "thumbSeed": 256
   },
   {
     "id": "lh-rental-2015122300020778",
@@ -22287,7 +22594,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020778&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 253
+    "thumbSeed": 257
   },
   {
     "id": "lh-rental-2015122300020777",
@@ -22325,7 +22632,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020777&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 254
+    "thumbSeed": 258
   },
   {
     "id": "lh-rental-2015122300020776",
@@ -22363,7 +22670,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020776&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 255
+    "thumbSeed": 259
   },
   {
     "id": "lh-rental-2015122300020775",
@@ -22401,7 +22708,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020775&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 256
+    "thumbSeed": 260
   },
   {
     "id": "lh-rental-2015122300020774",
@@ -22439,7 +22746,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020774&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 257
+    "thumbSeed": 261
   },
   {
     "id": "lh-rental-2015122300020773",
@@ -22477,7 +22784,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020773&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 258
+    "thumbSeed": 262
   },
   {
     "id": "lh-rental-2015122300020819",
@@ -22515,7 +22822,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020819&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 259
+    "thumbSeed": 263
   },
   {
     "id": "lh-rental-2015122300020791",
@@ -22553,7 +22860,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020791&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 260
+    "thumbSeed": 264
   },
   {
     "id": "lh-rental-2015122300020790",
@@ -22591,7 +22898,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020790&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 261
+    "thumbSeed": 265
   },
   {
     "id": "lh-rental-2015122300020789",
@@ -22629,7 +22936,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020789&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 262
+    "thumbSeed": 266
   },
   {
     "id": "lh-rental-2015122300020769",
@@ -27369,7 +27676,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020769&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 263
+    "thumbSeed": 267
   },
   {
     "id": "lh-rental-2015122300020731",
@@ -32109,7 +32416,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020731&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 264
+    "thumbSeed": 268
   },
   {
     "id": "lh-rental-2015122300020723",
@@ -32147,7 +32454,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020723&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 265
+    "thumbSeed": 269
   },
   {
     "id": "lh-rental-2015122300020722",
@@ -32185,7 +32492,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020722&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 266
+    "thumbSeed": 270
   },
   {
     "id": "lh-rental-2015122300020721",
@@ -32223,7 +32530,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020721&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 267
+    "thumbSeed": 271
   },
   {
     "id": "lh-rental-2015122300020720",
@@ -32261,7 +32568,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020720&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 268
+    "thumbSeed": 272
   },
   {
     "id": "lh-rental-2015122300020717",
@@ -32299,7 +32606,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020717&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 269
+    "thumbSeed": 273
   },
   {
     "id": "lh-rental-2015122300020713",
@@ -32935,7 +33242,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020713&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 270
+    "thumbSeed": 274
   },
   {
     "id": "lh-rental-2015122300020711",
@@ -32973,7 +33280,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020711&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 271
+    "thumbSeed": 275
   },
   {
     "id": "lh-rental-2015122300020725",
@@ -33011,7 +33318,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020725&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 272
+    "thumbSeed": 276
   },
   {
     "id": "lh-rental-2015122300020715",
@@ -33049,7 +33356,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020715&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 273
+    "thumbSeed": 277
   },
   {
     "id": "lh-rental-2015122300020705",
@@ -34253,7 +34560,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020705&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 274
+    "thumbSeed": 278
   },
   {
     "id": "lh-rental-2015122300020706",
@@ -34473,7 +34780,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020706&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 275
+    "thumbSeed": 279
   },
   {
     "id": "lh-rental-2015122300020703",
@@ -34511,7 +34818,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020703&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 276
+    "thumbSeed": 280
   },
   {
     "id": "lh-rental-2015122300020702",
@@ -34549,7 +34856,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020702&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 277
+    "thumbSeed": 281
   },
   {
     "id": "lh-rental-2015122300020699",
@@ -34587,7 +34894,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020699&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 278
+    "thumbSeed": 282
   },
   {
     "id": "lh-rental-2015122300020691",
@@ -34625,7 +34932,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020691&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 279
+    "thumbSeed": 283
   },
   {
     "id": "lh-rental-2015122300020687",
@@ -34663,7 +34970,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020687&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 280
+    "thumbSeed": 284
   },
   {
     "id": "lh-rental-2015122300020690",
@@ -34701,7 +35008,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020690&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 281
+    "thumbSeed": 285
   },
   {
     "id": "lh-rental-2015122300020689",
@@ -34739,7 +35046,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020689&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 282
+    "thumbSeed": 286
   },
   {
     "id": "lh-rental-2015122300020688",
@@ -34777,7 +35084,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020688&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 283
+    "thumbSeed": 287
   },
   {
     "id": "lh-rental-2015122300020693",
@@ -34815,7 +35122,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020693&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 284
+    "thumbSeed": 288
   },
   {
     "id": "lh-rental-2015122300020679",
@@ -34853,7 +35160,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020679&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 285
+    "thumbSeed": 289
   },
   {
     "id": "lh-rental-2015122300020675",
@@ -34891,7 +35198,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020675&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 286
+    "thumbSeed": 290
   },
   {
     "id": "lh-rental-2015122300020673",
@@ -34929,7 +35236,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020673&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 287
+    "thumbSeed": 291
   },
   {
     "id": "lh-rental-2015122300020661",
@@ -34967,7 +35274,7 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020661&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 288
+    "thumbSeed": 292
   },
   {
     "id": "lh-rental-2015122300020654",
@@ -35627,7 +35934,128 @@
     "coverPhotoUrl": null,
     "coverPhotoLocal": null,
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020654&ccrCnntSysDsCd=03&uppAisTpCd=13&aisTpCd=26&mi=1026",
-    "thumbSeed": 289
+    "thumbSeed": 293
+  },
+  {
+    "id": "lh-sale-0000061189",
+    "pblancId": "0000061189",
+    "title": "안산신길2 A-6블록 신혼희망타운(공공분양) 입주자모집공고",
+    "noticeTitle": "안산신길2 A-6블록 신혼희망타운(공공분양) 입주자모집공고",
+    "type": "sale",
+    "scope": "single",
+    "agency": "LH",
+    "district": "경기도",
+    "districtId": "gyeonggi",
+    "status": "upcoming",
+    "deadline": "2026.11.24",
+    "announceDate": "2026.10.30",
+    "address": "",
+    "lat": 37.3381167,
+    "lng": 126.772097,
+    "geocoded": "official-page",
+    "area": "55.77~55.81",
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "depositRange": null,
+    "rentRange": null,
+    "priceUnverified": true,
+    "priceSource": "lh-official-table",
+    "complexes": [
+      {
+        "name": null,
+        "rows": [
+          {
+            "houseType": "55.0000A",
+            "area": 55.81,
+            "supplyTotal": 344,
+            "supplyThisRound": 229,
+            "deposit": null,
+            "rent": null
+          },
+          {
+            "houseType": "55.0000B",
+            "area": 55.77,
+            "supplyTotal": 32,
+            "supplyThisRound": 22,
+            "deposit": null,
+            "rent": null
+          }
+        ],
+        "lat": 37.3381167,
+        "lng": 126.772097
+      }
+    ],
+    "salePriceManwon": 45239,
+    "supplyUnits": 251,
+    "totalUnits": 376,
+    "complexName": null,
+    "pnu": null,
+    "houseType": null,
+    "heatMethod": null,
+    "parkngCo": null,
+    "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/10/27/2026102769173647.jpg",
+    "coverPhotoLocal": "/lh-covers/lh-sale-0000061189.jpg",
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061189&ccrCnntSysDsCd=02&uppAisTpCd=39&aisTpCd=39&mi=1027",
+    "thumbSeed": 294,
+    "beginDate": "2026.11.16",
+    "detailFetchedAt": "2026-10-30T20:07:59.798Z"
+  },
+  {
+    "id": "lh-sale-0000061197",
+    "pblancId": "0000061197",
+    "title": "인천가정2 A-2블록 신혼희망타운(공공분양) 잔여세대 추가 입주자모집공고",
+    "noticeTitle": "인천가정2 A-2블록 신혼희망타운(공공분양) 잔여세대 추가 입주자모집공고",
+    "type": "sale",
+    "scope": "single",
+    "agency": "LH",
+    "district": "인천광역시",
+    "districtId": "incheon",
+    "status": "upcoming",
+    "deadline": "2026.11.09",
+    "announceDate": "2026.10.30",
+    "winnerAt": "2026.11.11",
+    "address": "",
+    "lat": 37.5380425,
+    "lng": 126.6680218,
+    "geocoded": "official-page",
+    "area": "55.95",
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "depositRange": null,
+    "rentRange": null,
+    "priceUnverified": true,
+    "priceSource": "lh-official-table",
+    "complexes": [
+      {
+        "name": null,
+        "rows": [
+          {
+            "houseType": "55.0000O",
+            "area": 55.95,
+            "supplyTotal": 801,
+            "supplyThisRound": 9,
+            "deposit": null,
+            "rent": null
+          }
+        ],
+        "lat": 37.5380425,
+        "lng": 126.6680218
+      }
+    ],
+    "salePriceManwon": 37441,
+    "supplyUnits": 9,
+    "totalUnits": 801,
+    "complexName": null,
+    "pnu": null,
+    "houseType": null,
+    "heatMethod": null,
+    "parkngCo": null,
+    "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/10/29/2024010255746918.jpg",
+    "coverPhotoLocal": "/lh-covers/lh-sale-0000061197.jpg",
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061197&ccrCnntSysDsCd=02&uppAisTpCd=39&aisTpCd=39&mi=1027",
+    "thumbSeed": 295,
+    "beginDate": "2026.11.09",
+    "detailFetchedAt": "2026-10-30T20:07:59.932Z"
   },
   {
     "id": "lh-sale-2015122300020936",
@@ -35770,8 +36198,8 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/LSE/10/27/2026102769163602.jpg",
     "coverPhotoLocal": "/lh-covers/lh-sale-2015122300020936.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020936&ccrCnntSysDsCd=03&uppAisTpCd=39&aisTpCd=42&mi=1026",
-    "thumbSeed": 290,
-    "detailFetchedAt": "2026-10-29T20:23:51.970Z"
+    "thumbSeed": 296,
+    "detailFetchedAt": "2026-10-30T20:08:00.622Z"
   },
   {
     "id": "lh-sale-0000061165",
@@ -35842,9 +36270,9 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/10/12/2026042866645394.jpg",
     "coverPhotoLocal": "/lh-covers/lh-sale-0000061165.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061165&ccrCnntSysDsCd=02&uppAisTpCd=39&aisTpCd=39&mi=1027",
-    "thumbSeed": 291,
+    "thumbSeed": 297,
     "beginDate": "2026.11.02",
-    "detailFetchedAt": "2026-10-29T20:23:51.943Z"
+    "detailFetchedAt": "2026-10-30T20:08:00.597Z"
   },
   {
     "id": "lh-sale-2015122300020886",
@@ -35856,94 +36284,14 @@
     "agency": "LH",
     "district": "전남광주통합특별시",
     "districtId": null,
-    "status": "open",
+    "status": "closed",
     "deadline": "2026.10.30",
     "announceDate": "2026.10.15",
-    "winnerAt": "2027.03.03",
-    "address": "",
-    "lat": 35.150712,
-    "lng": 126.7821846,
-    "geocoded": "official-page",
-    "area": "55.57~55.89",
-    "depositManwon": 0,
-    "monthlyRentManwon": 0,
-    "depositRange": null,
-    "rentRange": null,
-    "priceUnverified": true,
-    "priceSource": "lh-official-table",
-    "complexes": [
-      {
-        "name": null,
-        "rows": [
-          {
-            "houseType": "A-1(주거약자)",
-            "area": 55.83,
-            "supplyTotal": null,
-            "supplyThisRound": 20,
-            "deposit": null,
-            "rent": null
-          },
-          {
-            "houseType": "B-1(주거약자)",
-            "area": 55.57,
-            "supplyTotal": null,
-            "supplyThisRound": 20,
-            "deposit": null,
-            "rent": null
-          },
-          {
-            "houseType": "B-1(주거약자)",
-            "area": 55.77,
-            "supplyTotal": null,
-            "supplyThisRound": 20,
-            "deposit": null,
-            "rent": null
-          },
-          {
-            "houseType": "C-1(주거약자)",
-            "area": 55.89,
-            "supplyTotal": null,
-            "supplyThisRound": 20,
-            "deposit": null,
-            "rent": null
-          }
-        ],
-        "lat": 35.150712,
-        "lng": 126.7821846
-      }
-    ],
-    "salePriceManwon": null,
-    "supplyUnits": null,
-    "totalUnits": null,
-    "complexName": null,
-    "pnu": null,
-    "houseType": null,
-    "heatMethod": null,
-    "parkngCo": null,
-    "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2023/LSE/07/12/2023071253768250.jpg",
-    "coverPhotoLocal": "/lh-covers/lh-sale-2015122300020886.jpg",
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020886&ccrCnntSysDsCd=03&uppAisTpCd=39&aisTpCd=42&mi=1026",
-    "thumbSeed": 292,
-    "detailFetchedAt": "2026-10-29T20:23:52.287Z"
-  },
-  {
-    "id": "lh-sale-2015122300020669",
-    "pblancId": "2015122300020669",
-    "title": "[세종]행정중심복합도시 4-2생활권 M3블록 신혼희망타운 행복주택 예비입주자 모집(2026.10.01)",
-    "noticeTitle": "[세종]행정중심복합도시 4-2생활권 M3블록 신혼희망타운 행복주택 예비입주자 모집(2026.10.01)",
-    "type": "sale",
-    "scope": "single",
-    "agency": "LH",
-    "district": "세종특별자치시",
-    "districtId": "sejong",
-    "status": "closed",
-    "deadline": "2026.10.15",
-    "announceDate": "2026.10.01",
     "address": "",
     "lat": null,
     "lng": null,
     "geocoded": "none",
-    "area": "55.77~55.88",
+    "area": "55.57~55.89",
     "depositManwon": 0,
     "monthlyRentManwon": 0,
     "depositRange": null,
@@ -35955,24 +36303,16 @@
         "name": null,
         "rows": [
           {
-            "houseType": "55.88",
-            "area": 55.88,
+            "houseType": "55.83",
+            "area": 55.83,
             "deposit": null,
             "rent": null,
             "supplyTotal": null,
             "supplyThisRound": null
           },
           {
-            "houseType": "55.88",
-            "area": 55.88,
-            "deposit": null,
-            "rent": null,
-            "supplyTotal": null,
-            "supplyThisRound": null
-          },
-          {
-            "houseType": "55.77",
-            "area": 55.77,
+            "houseType": "55.57",
+            "area": 55.57,
             "deposit": null,
             "rent": null,
             "supplyTotal": null,
@@ -35981,6 +36321,14 @@
           {
             "houseType": "55.77",
             "area": 55.77,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          },
+          {
+            "houseType": "55.89",
+            "area": 55.89,
             "deposit": null,
             "rent": null,
             "supplyTotal": null,
@@ -35997,10 +36345,10 @@
     "houseType": null,
     "heatMethod": null,
     "parkngCo": null,
-    "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2021/LSE/06/23/2021062344673168.jpg",
-    "coverPhotoLocal": "/lh-covers/lh-sale-2015122300020669.jpg",
-    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020669&ccrCnntSysDsCd=03&uppAisTpCd=39&aisTpCd=42&mi=1026",
-    "thumbSeed": 293
+    "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2023/LSE/07/12/2023071253768250.jpg",
+    "coverPhotoLocal": "/lh-covers/lh-sale-2015122300020886.jpg",
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020886&ccrCnntSysDsCd=03&uppAisTpCd=39&aisTpCd=42&mi=1026",
+    "thumbSeed": 298
   },
   {
     "id": "lh-sale-2015122300020859",
@@ -36092,7 +36440,83 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2021/LSE/06/24/2021062444698258.png",
     "coverPhotoLocal": "/lh-covers/lh-sale-2015122300020859.png",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020859&ccrCnntSysDsCd=03&uppAisTpCd=39&aisTpCd=42&mi=1026",
-    "thumbSeed": 294
+    "thumbSeed": 299
+  },
+  {
+    "id": "lh-sale-2015122300020669",
+    "pblancId": "2015122300020669",
+    "title": "[세종]행정중심복합도시 4-2생활권 M3블록 신혼희망타운 행복주택 예비입주자 모집(2026.10.01)",
+    "noticeTitle": "[세종]행정중심복합도시 4-2생활권 M3블록 신혼희망타운 행복주택 예비입주자 모집(2026.10.01)",
+    "type": "sale",
+    "scope": "single",
+    "agency": "LH",
+    "district": "세종특별자치시",
+    "districtId": "sejong",
+    "status": "closed",
+    "deadline": "2026.10.15",
+    "announceDate": "2026.10.01",
+    "address": "",
+    "lat": null,
+    "lng": null,
+    "geocoded": "none",
+    "area": "55.77~55.88",
+    "depositManwon": 0,
+    "monthlyRentManwon": 0,
+    "depositRange": null,
+    "rentRange": null,
+    "priceUnverified": true,
+    "priceSource": "lh-api",
+    "complexes": [
+      {
+        "name": null,
+        "rows": [
+          {
+            "houseType": "55.88",
+            "area": 55.88,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          },
+          {
+            "houseType": "55.88",
+            "area": 55.88,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          },
+          {
+            "houseType": "55.77",
+            "area": 55.77,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          },
+          {
+            "houseType": "55.77",
+            "area": 55.77,
+            "deposit": null,
+            "rent": null,
+            "supplyTotal": null,
+            "supplyThisRound": null
+          }
+        ]
+      }
+    ],
+    "salePriceManwon": null,
+    "supplyUnits": null,
+    "totalUnits": null,
+    "complexName": null,
+    "pnu": null,
+    "houseType": null,
+    "heatMethod": null,
+    "parkngCo": null,
+    "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2021/LSE/06/23/2021062344673168.jpg",
+    "coverPhotoLocal": "/lh-covers/lh-sale-2015122300020669.jpg",
+    "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020669&ccrCnntSysDsCd=03&uppAisTpCd=39&aisTpCd=42&mi=1026",
+    "thumbSeed": 300
   },
   {
     "id": "lh-sale-0000061179",
@@ -36161,7 +36585,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/09/30/2026093068803239.jpg",
     "coverPhotoLocal": "/lh-covers/lh-sale-0000061179.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061179&ccrCnntSysDsCd=02&uppAisTpCd=39&aisTpCd=39&mi=1027",
-    "thumbSeed": 295
+    "thumbSeed": 301
   },
   {
     "id": "lh-sale-0000061181",
@@ -36214,7 +36638,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/09/23/2021010642689840.jpg",
     "coverPhotoLocal": "/lh-covers/lh-sale-0000061181.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061181&ccrCnntSysDsCd=02&uppAisTpCd=39&aisTpCd=39&mi=1027",
-    "thumbSeed": 296
+    "thumbSeed": 302
   },
   {
     "id": "lh-sale-2015122300020803",
@@ -36298,7 +36722,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/LSE/09/18/2026091868662077.jpg",
     "coverPhotoLocal": "/lh-covers/lh-sale-2015122300020803.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020803&ccrCnntSysDsCd=03&uppAisTpCd=39&aisTpCd=42&mi=1026",
-    "thumbSeed": 297
+    "thumbSeed": 303
   },
   {
     "id": "lh-sale-0000061175",
@@ -36359,7 +36783,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/09/16/2025091863581999.jpg",
     "coverPhotoLocal": "/lh-covers/lh-sale-0000061175.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061175&ccrCnntSysDsCd=02&uppAisTpCd=39&aisTpCd=39&mi=1027",
-    "thumbSeed": 298
+    "thumbSeed": 304
   },
   {
     "id": "lh-sale-0000061172",
@@ -36412,7 +36836,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/09/03/2022022447564861.JPG",
     "coverPhotoLocal": "/lh-covers/lh-sale-0000061172.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061172&ccrCnntSysDsCd=02&uppAisTpCd=39&aisTpCd=39&mi=1027",
-    "thumbSeed": 299
+    "thumbSeed": 305
   },
   {
     "id": "lh-sale-0000061153",
@@ -36465,7 +36889,7 @@
     "coverPhotoUrl": "https://apply.lh.or.kr/upload/Files/upload_dec/2026/HSL/07/29/2025073062874633.jpg",
     "coverPhotoLocal": "/lh-covers/lh-sale-0000061153.jpg",
     "sourceUrl": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061153&ccrCnntSysDsCd=02&uppAisTpCd=39&aisTpCd=39&mi=1027",
-    "thumbSeed": 300
+    "thumbSeed": 306
   },
   {
     "id": "lh-sale-0000061158",
@@ -36772,9 +37196,9 @@
     ],
     "depositRange": null,
     "rentRange": null,
-    "detailFetchedAt": "2026-10-29T20:23:52.234Z",
+    "detailFetchedAt": "2026-10-30T20:08:00.750Z",
     "officialNoticeStatus": "공고중",
-    "officialStatusCheckedAt": "2026-10-29T12:50:24.282Z",
+    "officialStatusCheckedAt": "2026-10-30T19:58:38.155Z",
     "collectionMethod": "official-detail-reconciliation"
   },
   {
@@ -37011,7 +37435,7 @@
       }
     ],
     "officialNoticeStatus": "정정공고중",
-    "officialStatusCheckedAt": "2026-10-29T12:50:24.722Z",
+    "officialStatusCheckedAt": "2026-10-30T19:58:38.155Z",
     "collectionMethod": "official-detail-reconciliation"
   },
   {
@@ -38279,9 +38703,9 @@
     ],
     "depositRange": null,
     "rentRange": null,
-    "detailFetchedAt": "2026-10-29T20:23:53.029Z",
+    "detailFetchedAt": "2026-10-30T20:08:01.002Z",
     "officialNoticeStatus": "공고중",
-    "officialStatusCheckedAt": "2026-10-29T12:50:27.896Z",
+    "officialStatusCheckedAt": "2026-10-30T19:58:38.155Z",
     "collectionMethod": "official-detail-reconciliation"
   },
   {
@@ -46196,7 +46620,7 @@
     "priceUnverified": true,
     "priceSource": "legacy-rounded",
     "officialNoticeStatus": "공고중",
-    "officialStatusCheckedAt": "2026-10-29T12:50:42.493Z",
+    "officialStatusCheckedAt": "2026-10-30T19:58:38.155Z",
     "collectionMethod": "official-detail-reconciliation"
   },
   {
